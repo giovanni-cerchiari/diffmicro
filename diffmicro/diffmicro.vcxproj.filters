@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\cpp-routine">
+      <UniqueIdentifier>{b92c9ddc-3b22-494b-97e4-d683b3c2b452}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\display_opencv">
+      <UniqueIdentifier>{ccbb2876-fbf8-4a9e-8dfd-3c1002ed7e08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\cpp-routine">
+      <UniqueIdentifier>{297a22d6-3523-4ad3-a967-5bb882cc494c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\display_opencv">
+      <UniqueIdentifier>{e8b96525-27ee-4010-8182-84af90073bee}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cpp-routine\angular_avg.cpp">
+      <Filter>Source Files\cpp-routine</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp-routine\dir.cpp">
+      <Filter>Source Files\cpp-routine</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp-routine\prep_matrix.cpp">
+      <Filter>Source Files\cpp-routine</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp-routine\prep_string.cpp">
+      <Filter>Source Files\cpp-routine</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp-routine\prep_vet.cpp">
+      <Filter>Source Files\cpp-routine</Filter>
+    </ClCompile>
+    <ClCompile Include="display_opencv\analysis_opencv.cpp">
+      <Filter>Source Files\display_opencv</Filter>
+    </ClCompile>
+    <ClCompile Include="display_opencv\button_opencv.cpp">
+      <Filter>Source Files\display_opencv</Filter>
+    </ClCompile>
+    <ClCompile Include="display_opencv\configure_gui_opencv.cpp">
+      <Filter>Source Files\display_opencv</Filter>
+    </ClCompile>
+    <ClCompile Include="display_opencv\control_opencv.cpp">
+      <Filter>Source Files\display_opencv</Filter>
+    </ClCompile>
+    <ClCompile Include="display_opencv\figure_opencv.cpp">
+      <Filter>Source Files\display_opencv</Filter>
+    </ClCompile>
+    <ClCompile Include="display_opencv\keyboard_opencv.cpp">
+      <Filter>Source Files\display_opencv</Filter>
+    </ClCompile>
+    <ClCompile Include="display_opencv\marker_draw_opencv.cpp">
+      <Filter>Source Files\display_opencv</Filter>
+    </ClCompile>
+    <ClCompile Include="display_opencv\minmax_trackbar_opencv.cpp">
+      <Filter>Source Files\display_opencv</Filter>
+    </ClCompile>
+    <ClCompile Include="display_opencv\mouse_opencv.cpp">
+      <Filter>Source Files\display_opencv</Filter>
+    </ClCompile>
+    <ClCompile Include="display_opencv\overlay_opencv.cpp">
+      <Filter>Source Files\display_opencv</Filter>
+    </ClCompile>
+    <ClCompile Include="display_opencv\single_value_trackbar_opencv.cpp">
+      <Filter>Source Files\display_opencv</Filter>
+    </ClCompile>
+    <ClCompile Include="display_opencv\textbox_opencv.cpp">
+      <Filter>Source Files\display_opencv</Filter>
+    </ClCompile>
+    <ClCompile Include="display_opencv\trackbar_opencv.cpp">
+      <Filter>Source Files\display_opencv</Filter>
+    </ClCompile>
+    <ClCompile Include="display_opencv\window_control_opencv.cpp">
+      <Filter>Source Files\display_opencv</Filter>
+    </ClCompile>
+    <ClCompile Include="display_opencv\window_display_opencv.cpp">
+      <Filter>Source Files\display_opencv</Filter>
+    </ClCompile>
+    <ClCompile Include="display_opencv\window_history_opencv.cpp">
+      <Filter>Source Files\display_opencv</Filter>
+    </ClCompile>
+    <ClCompile Include="correlation_cpu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="diffmicro.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="diffmicro_display.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="diffmicro_io.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="diffmicro_io_allsetted.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="diffmicro_io_initialization.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="diffmicro_io_load.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="diffmicro_log.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="diffmicro_ui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="diffmicro_valid_images.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="power_spectra.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="radial_storage_lut.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="correlation_function_selection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="timeavg_by_correlation_demo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="timeavg_by_correlation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cpu_gpu_load_next.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_Cpu_Gpu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cpp-routine\angular_avg.h">
+      <Filter>Header Files\cpp-routine</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp-routine\angular_integ.h">
+      <Filter>Header Files\cpp-routine</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp-routine\cuda_init.h">
+      <Filter>Header Files\cpp-routine</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp-routine\dir.h">
+      <Filter>Header Files\cpp-routine</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp-routine\dirent.h">
+      <Filter>Header Files\cpp-routine</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp-routine\global_define.h">
+      <Filter>Header Files\cpp-routine</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp-routine\prep_matrix.h">
+      <Filter>Header Files\cpp-routine</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp-routine\prep_string.h">
+      <Filter>Header Files\cpp-routine</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp-routine\prep_vet.h">
+      <Filter>Header Files\cpp-routine</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp-routine\stopwatch.h">
+      <Filter>Header Files\cpp-routine</Filter>
+    </ClInclude>
+    <ClInclude Include="display_opencv\analysis_opencv.h">
+      <Filter>Header Files\display_opencv</Filter>
+    </ClInclude>
+    <ClInclude Include="display_opencv\button_opencv.h">
+      <Filter>Header Files\display_opencv</Filter>
+    </ClInclude>
+    <ClInclude Include="display_opencv\configure_gui_opencv.h">
+      <Filter>Header Files\display_opencv</Filter>
+    </ClInclude>
+    <ClInclude Include="display_opencv\control_opencv.h">
+      <Filter>Header Files\display_opencv</Filter>
+    </ClInclude>
+    <ClInclude Include="display_opencv\controls_opencv.h">
+      <Filter>Header Files\display_opencv</Filter>
+    </ClInclude>
+    <ClInclude Include="display_opencv\convert_figure.h">
+      <Filter>Header Files\display_opencv</Filter>
+    </ClInclude>
+    <ClInclude Include="display_opencv\figure_opencv.h">
+      <Filter>Header Files\display_opencv</Filter>
+    </ClInclude>
+    <ClInclude Include="display_opencv\keyboard_opencv.h">
+      <Filter>Header Files\display_opencv</Filter>
+    </ClInclude>
+    <ClInclude Include="display_opencv\marker_draw_opencv.h">
+      <Filter>Header Files\display_opencv</Filter>
+    </ClInclude>
+    <ClInclude Include="display_opencv\minmax_trackbar_opencv.h">
+      <Filter>Header Files\display_opencv</Filter>
+    </ClInclude>
+    <ClInclude Include="display_opencv\mouse_opencv.h">
+      <Filter>Header Files\display_opencv</Filter>
+    </ClInclude>
+    <ClInclude Include="display_opencv\overlay_opencv.h">
+      <Filter>Header Files\display_opencv</Filter>
+    </ClInclude>
+    <ClInclude Include="display_opencv\single_value_trackbar_opencv.h">
+      <Filter>Header Files\display_opencv</Filter>
+    </ClInclude>
+    <ClInclude Include="display_opencv\textbox_opencv.h">
+      <Filter>Header Files\display_opencv</Filter>
+    </ClInclude>
+    <ClInclude Include="display_opencv\trackbar_opencv.h">
+      <Filter>Header Files\display_opencv</Filter>
+    </ClInclude>
+    <ClInclude Include="display_opencv\window_control_opencv.h">
+      <Filter>Header Files\display_opencv</Filter>
+    </ClInclude>
+    <ClInclude Include="display_opencv\window_display_opencv.h">
+      <Filter>Header Files\display_opencv</Filter>
+    </ClInclude>
+    <ClInclude Include="display_opencv\window_history_opencv.h">
+      <Filter>Header Files\display_opencv</Filter>
+    </ClInclude>
+    <ClInclude Include="correlation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="diffmicro_display.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="diffmicro_io.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="diffmicro_log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="diffmicro_ui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="power_spectra.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="radial_storage_lut.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="timeavg_by_correlation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp-routine\my_math.h">
+      <Filter>Header Files\cpp-routine</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp-routine\circular_index.h">
+      <Filter>Header Files\cpp-routine</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp-routine\contour.h">
+      <Filter>Header Files\cpp-routine</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp-routine\correlation_cpu.h">
+      <Filter>Header Files\cpp-routine</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp-routine\spherical_hyperbolical_projection.h">
+      <Filter>Header Files\cpp-routine</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp-routine\histogram.h">
+      <Filter>Header Files\cpp-routine</Filter>
+    </ClInclude>
+    <ClInclude Include="cpp-routine\tensor.h">
+      <Filter>Header Files\cpp-routine</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="user.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="correlation.cu" />
+    <CudaCompile Include="cpp-routine\cuda_init.cu" />
+    <CudaCompile Include="timeavg_correlation_gpu.cpp">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="memory_managment_timeseries_demo.cpp">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+  </ItemGroup>
+</Project>

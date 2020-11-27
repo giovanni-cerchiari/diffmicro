@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{0ECF8EE6-37BD-4B82-8C1F-626A8AC570CA}</ProjectGuid>
+    <RootNamespace>diffmicro</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 10.2.props" />
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files\opencv\3.0.0\build\include;C:\Program Files\fftw\fftw-3.3.3-dll64;.\;.\display_opencv;.\cpp-routine;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\opencv\3.0.0\build\x64\vc12\lib;C:\Program Files\fftw\fftw-3.3.3-dll64;$(LibraryPath)</LibraryPath>
+    <SourcePath>.\display_opencv;.\cpp-routine;$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files\opencv\3.0.0\build\include;C:\Program Files\fftw\fftw-3.3.3-dll64;.\;.\display_opencv;.\cpp-routine;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\opencv\3.0.0\build\x64\vc12\lib;C:\Program Files\fftw\fftw-3.3.3-dll64;$(LibraryPath)</LibraryPath>
+    <SourcePath>.\display_opencv;.\cpp-routine;$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Program Files\opencv\3.0.0\build\include;C:\Program Files\fftw\fftw-3.3.3-dll64;.\;.\display_opencv;.\cpp-routine;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\opencv\3.0.0\build\x64\vc12\lib;C:\Program Files\fftw\fftw-3.3.3-dll64;$(LibraryPath)</LibraryPath>
+    <SourcePath>.\display_opencv;.\cpp-routine;$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Program Files\opencv\3.0.0\build\include;C:\Program Files\fftw\fftw-3.3.3-dll64;.\;.\display_opencv;.\cpp-routine;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\opencv\3.0.0\build\x64\vc12\lib;C:\Program Files\fftw\fftw-3.3.3-dll64;$(LibraryPath)</LibraryPath>
+    <SourcePath>.\display_opencv;.\cpp-routine;$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="correlation_cpu.cpp" />
+    <ClCompile Include="correlation_function_selection.cpp" />
+    <ClCompile Include="cpp-routine\angular_avg.cpp" />
+    <ClCompile Include="cpp-routine\dir.cpp" />
+    <ClCompile Include="cpp-routine\prep_matrix.cpp" />
+    <ClCompile Include="cpp-routine\prep_string.cpp" />
+    <ClCompile Include="cpp-routine\prep_vet.cpp" />
+    <ClCompile Include="cpu_gpu_load_next.cpp" />
+    <ClCompile Include="diffmicro.cpp" />
+    <ClCompile Include="diffmicro_display.cpp" />
+    <ClCompile Include="diffmicro_io.cpp" />
+    <ClCompile Include="diffmicro_io_allsetted.cpp" />
+    <ClCompile Include="diffmicro_io_initialization.cpp" />
+    <ClCompile Include="diffmicro_io_load.cpp" />
+    <ClCompile Include="diffmicro_log.cpp" />
+    <ClCompile Include="diffmicro_ui.cpp" />
+    <ClCompile Include="diffmicro_valid_images.cpp" />
+    <ClCompile Include="display_opencv\analysis_opencv.cpp" />
+    <ClCompile Include="display_opencv\button_opencv.cpp" />
+    <ClCompile Include="display_opencv\configure_gui_opencv.cpp" />
+    <ClCompile Include="display_opencv\control_opencv.cpp" />
+    <ClCompile Include="display_opencv\figure_opencv.cpp" />
+    <ClCompile Include="display_opencv\keyboard_opencv.cpp" />
+    <ClCompile Include="display_opencv\marker_draw_opencv.cpp" />
+    <ClCompile Include="display_opencv\minmax_trackbar_opencv.cpp" />
+    <ClCompile Include="display_opencv\mouse_opencv.cpp" />
+    <ClCompile Include="display_opencv\overlay_opencv.cpp" />
+    <ClCompile Include="display_opencv\single_value_trackbar_opencv.cpp" />
+    <ClCompile Include="display_opencv\textbox_opencv.cpp" />
+    <ClCompile Include="display_opencv\trackbar_opencv.cpp" />
+    <ClCompile Include="display_opencv\window_control_opencv.cpp" />
+    <ClCompile Include="display_opencv\window_display_opencv.cpp" />
+    <ClCompile Include="display_opencv\window_history_opencv.cpp" />
+    <CudaCompile Include="memory_managment_timeseries_demo.cpp" />
+    <ClCompile Include="power_spectra.cpp" />
+    <ClCompile Include="radial_storage_lut.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="test_Cpu_Gpu.cpp" />
+    <ClCompile Include="timeavg_by_correlation.cpp" />
+    <ClCompile Include="timeavg_by_correlation_demo.cpp" />
+    <CudaCompile Include="timeavg_correlation_gpu.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="correlation.h" />
+    <ClInclude Include="cpp-routine\angular_avg.h" />
+    <ClInclude Include="cpp-routine\angular_integ.h" />
+    <ClInclude Include="cpp-routine\circular_index.h" />
+    <ClInclude Include="cpp-routine\contour.h" />
+    <ClInclude Include="cpp-routine\correlation_cpu.h" />
+    <ClInclude Include="cpp-routine\cuda_init.h" />
+    <ClInclude Include="cpp-routine\dir.h" />
+    <ClInclude Include="cpp-routine\dirent.h" />
+    <ClInclude Include="cpp-routine\global_define.h" />
+    <ClInclude Include="cpp-routine\histogram.h" />
+    <ClInclude Include="cpp-routine\my_math.h" />
+    <ClInclude Include="cpp-routine\prep_matrix.h" />
+    <ClInclude Include="cpp-routine\prep_string.h" />
+    <ClInclude Include="cpp-routine\prep_vet.h" />
+    <ClInclude Include="cpp-routine\spherical_hyperbolical_projection.h" />
+    <ClInclude Include="cpp-routine\stopwatch.h" />
+    <ClInclude Include="cpp-routine\tensor.h" />
+    <ClInclude Include="diffmicro_display.h" />
+    <ClInclude Include="diffmicro_io.h" />
+    <ClInclude Include="diffmicro_log.h" />
+    <ClInclude Include="diffmicro_ui.h" />
+    <ClInclude Include="display_opencv\analysis_opencv.h" />
+    <ClInclude Include="display_opencv\button_opencv.h" />
+    <ClInclude Include="display_opencv\configure_gui_opencv.h" />
+    <ClInclude Include="display_opencv\controls_opencv.h" />
+    <ClInclude Include="display_opencv\control_opencv.h" />
+    <ClInclude Include="display_opencv\convert_figure.h" />
+    <ClInclude Include="display_opencv\figure_opencv.h" />
+    <ClInclude Include="display_opencv\keyboard_opencv.h" />
+    <ClInclude Include="display_opencv\marker_draw_opencv.h" />
+    <ClInclude Include="display_opencv\minmax_trackbar_opencv.h" />
+    <ClInclude Include="display_opencv\mouse_opencv.h" />
+    <ClInclude Include="display_opencv\overlay_opencv.h" />
+    <ClInclude Include="display_opencv\single_value_trackbar_opencv.h" />
+    <ClInclude Include="display_opencv\textbox_opencv.h" />
+    <ClInclude Include="display_opencv\trackbar_opencv.h" />
+    <ClInclude Include="display_opencv\window_control_opencv.h" />
+    <ClInclude Include="display_opencv\window_display_opencv.h" />
+    <ClInclude Include="display_opencv\window_history_opencv.h" />
+    <ClInclude Include="power_spectra.h" />
+    <ClInclude Include="radial_storage_lut.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="timeavg_by_correlation.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="correlation.cu">
+      <FileType>Document</FileType>
+    </CudaCompile>
+    <CudaCompile Include="cpp-routine\cuda_init.cu">
+      <FileType>Document</FileType>
+    </CudaCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="user.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 10.2.targets" />
+  </ImportGroup>
+</Project>
