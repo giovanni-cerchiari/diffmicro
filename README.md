@@ -2,7 +2,7 @@
 
 This program implements the Differential Dynamic Algorithm.
 
-Given sequence of $`N`$ images $`I_n`$ equally spaced in time the program calculates the structure function $`d(m)`$ given by the following formula: 
+Given sequence of <img src="https://render.githubusercontent.com/render/math?math=N> images $I_n$ equally spaced in time the program calculates the structure function $`d(m)`$ given by the following formula: 
 
 $`d\left(m\right)=\frac{1}{N-m}\sum_{n=m}^{N-1}\lvert F_{xy} \left(I_{n-m}-I_{m}\right)\rvert^2`$ ,
 where
