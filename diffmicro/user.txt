@@ -1,5 +1,5 @@
-path_images	C:\samples\performance_image\
-images_interval	1	5000
+path_images	C:\samples\performance_image 512\
+images_interval	1	2000
 flg_file_valid_image	0
 number_of_averages	5000
 delay_max	5000
