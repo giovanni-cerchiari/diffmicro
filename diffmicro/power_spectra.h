@@ -136,6 +136,9 @@ in into the memory area of the power spectra with a refreshing calculus of the a
 */
 bool calc_power_spectra(INDEX dimy, INDEX dimx);
 
+/*This function allows you to plot the structure function */
+void plot_dinamics(INDEX dimx);
+
 /*!Calculating power spectra via time differences and FIFO memory*/
 void calc_power_spectra_fifo(INDEX nimages, INDEX& useri_dist_max, STORE_REAL* image_mean, INDEX& dimr, unsigned int* power_spectra_avg_counter, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs);
 /*! Calculating the power spectra via Fourier tranform of power series*/

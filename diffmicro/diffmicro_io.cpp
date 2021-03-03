@@ -281,6 +281,7 @@ bool diffmicro_user_interface::prep_file_list(std::string path, std::vector<std:
 			{
 				extension = list_file_tmp[i].substr(list_file_tmp[i].size() - 4, 4);
 				if ((0 == strcmp(".dat", extension.c_str())) ||
+					(0 == strcmp(".bin", extension.c_str())) ||
 		   			(0 == strcmp(".tif", extension.c_str())) ||
 			   		(0 == strcmp("tiff", extension.c_str())) )
 					{
@@ -323,35 +324,49 @@ void write_power_spectra(INDEX start_dist, INDEX npw, INDEX dimy, INDEX dimx, ST
 
 bool load_image(std::string &filename, INDEX &dimy, INDEX &dimx, bool read_im, unsigned short im[], bool flg_display)
 {
+	//int Binary = 1;
+	FILE* file_bin;
 	INDEX i, j;
 	cv::Mat img_cv;
+	int nb_val_lues;
 	
-	img_cv = cv::imread(filename, CV_LOAD_IMAGE_ANYDEPTH);
-
-	if (!img_cv.data)                              // Check for invalid input
-	{
-		std::cerr << "Could not open or find image : "<<filename << std::endl;
-		return false;
+	/*dimx = 512;
+	dimy = 512;
+	if ((true == read_im) && (Binary == 1)) {
+		file_bin = fopen(filename.c_str(), "rb");
+		if (file_bin == NULL)
+			std::cout << "ERROR" << std::endl;
+		nb_val_lues = fread(im, sizeof(unsigned short), dimx*dimy, file_bin);
+		fclose(file_bin);
 	}
+	else {
+		if (Binary != 1) {*/
+			img_cv = cv::imread(filename, CV_LOAD_IMAGE_ANYDEPTH);
 
-	//std::cerr << "img_cv.elemSize() = " << img_cv.elemSize() << std::endl;
+			if (!img_cv.data)                              // Check for invalid input
+			{
+				std::cerr << "Could not open or find image : " << filename << std::endl;
+				return false;
+			}
 
-	dimx = img_cv.cols;
-	dimy = img_cv.rows;
+			//std::cerr << "img_cv.elemSize() = " << img_cv.elemSize() << std::endl;
 
-	if ( (true == read_im) && (1 == img_cv.elemSize()) )
-	{
-		for (j = 0; j < img_cv.rows; ++j)
-			for (i = 0; i < img_cv.cols; ++i)
-				im[j*dimx + i] = (unsigned short)(img_cv.data[j * img_cv.step[0] + i]);
-	}
-	if ((true == read_im) && (2 == img_cv.elemSize()))
-	{
-		for (j = 0; j < img_cv.rows; ++j)
-			for (i = 0; i < img_cv.cols; ++i)
-				im[j*dimx + i] = *( (unsigned short*)( &(img_cv.data[j * img_cv.step[0] + i * img_cv.step[1]]) )  );
-	}
-
+			dimx = img_cv.cols;
+			dimy = img_cv.rows;
+			if ((true == read_im) && (1 == img_cv.elemSize()))
+			{
+				for (j = 0; j < img_cv.rows; ++j)
+					for (i = 0; i < img_cv.cols; ++i)
+						im[j * dimx + i] = (unsigned short)(img_cv.data[j * img_cv.step[0] + i]);
+			}
+			if ((true == read_im) && (2 == img_cv.elemSize()))
+			{
+				for (j = 0; j < img_cv.rows; ++j)
+					for (i = 0; i < img_cv.cols; ++i)
+						im[j * dimx + i] = *((unsigned short*)(&(img_cv.data[j * img_cv.step[0] + i * img_cv.step[1]])));
+			}
+	//	}
+	//}
 	if (true == flg_display) display_read(im);
 	return true;
 }

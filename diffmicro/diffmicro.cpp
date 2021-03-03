@@ -53,7 +53,6 @@ only the upper half of the averaged power spectra.
 #include <iostream>
 #include <cstdlib>
 #include <string>
-
 #include "cuda_init.h"
 
 #include "diffmicro_io.h"
@@ -61,7 +60,10 @@ only the upper half of the averaged power spectra.
 #include "diffmicro_log.h"
 #include "correlation.h"
 
-int main(int argc, char* argv[])
+#pragma comment (lib,"libeng.lib")
+#pragma comment (lib,"libmx.lib")
+
+ int main(int argc, char* argv[])
 	// argc = number of strings for starting the program = 2
 	// argv = array containing 'argc' strings for starting the program = diffmicro.exe path\users.txt
 	// users.txt contains all the info for starting the program
@@ -73,6 +75,7 @@ int main(int argc, char* argv[])
 	unsigned short *im = NULL;
 	std::string path_ui;
 	bool flg_file_init;
+	
 	std::cout <<"==============================================================="<<std::endl;
 	std::cout <<"diffmicro  Copyright (C) 2011  Giovanni Cerchiari"<<std::endl;
 	std::cout <<"diffmicro  Copyright (C) 2020  Giovanni Cerchiari, Mojtaba Norouzisadeh"<<std::endl;
@@ -80,7 +83,7 @@ int main(int argc, char* argv[])
 	std::cout <<"This is free software, and you are welcome to redistribute it"<<std::endl;
 	std::cout <<"under certain conditions;  visit : https://www.gnu.org/licenses/ for details."<<std::endl;
 	std::cout <<"==============================================================="<<std::endl;
-
+	
 	if (1 < argc)
 	{
 		path_ui = argv[1];
@@ -107,6 +110,7 @@ int main(int argc, char* argv[])
 	general_stw.start();
 
 	//load_binary_image(useri.file_list[0], dimy, dimx, false, im);
+	//std::string path = "C:\\samples\\performance_image 512\\pippo_0000.tif";
 	load_image(useri.file_list[0], dimy, dimx, false, im, false);
 	if (useri.flg_graph_mode)
 		initilize_display(dimx, dimy, useri.file_list.size());
@@ -143,11 +147,10 @@ int main(int argc, char* argv[])
 	
 	hardware_function_selection(useri.hardware);
 
-
-	
-
 	calc_power_spectra(dimy, dimx);
-
+	
+	plot_dinamics(dimx);
+	
 	//--------------------------------------------------------------
 	// printing elapsed times
 	general_stw.stop();
@@ -166,7 +169,7 @@ int main(int argc, char* argv[])
 	close_display();
 	delete[] im;
 	close_log();
-//	system("pause");
+	system("pause");
 //	delete[] im_default;
 	return 0;
 }

@@ -39,6 +39,7 @@ This functions and classes are written for diffmicro.exe application.
 #include "power_spectra.h"
 #include "diffmicro_display.h"
 #include "radial_storage_lut.h"
+#include<Engine.h>
 
 fifo_min::fifo_min()
 {
@@ -189,6 +190,7 @@ void calc_diagonal(INDEX starting_index, unsigned int power_spectra_avg_counter[
 
 		++i;
 	}
+	printf("jgfjgfjhgk");
 
 }
 
@@ -424,6 +426,49 @@ bool calc_power_spectra(INDEX dimy, INDEX dimx)
 	return true;
 }
 
+void plot_dinamics(INDEX dimx){
+
+	Engine* m_Engine = engOpen(NULL);
+	int d = (int)dimx;
+	int fr = (int)useri.frequency_max;
+	std::string pp = useri.azimuthal_avg_filename;
+
+	//mxArray* path_ = mxCreateDoubleMatrix(100, 1, mxSTRING);
+	mxArray* dimx_crop = mxCreateDoubleMatrix(1, 1, mxREAL);
+	mxArray* fr_max = mxCreateDoubleMatrix(1, 1, mxREAL);
+	mxArray* path_dinamics;
+	//memcpy((void*)mxGetPr(dimx_crop), (void*)d, sizeof(int) );
+	//engPutVariable(m_Engine, "dimx_cro", dimx_crop);
+	//char* pt = mxGetPr(dimx_crop);
+
+	double* d_crop = mxGetPr(dimx_crop);
+	d_crop[0] = (double)d;
+	engPutVariable(m_Engine, "dimx_cr", dimx_crop);
+
+	double* f = mxGetPr(fr_max);
+	f[0] = (double)fr;
+	engPutVariable(m_Engine, "frequency_max", fr_max);
+
+	path_dinamics = mxCreateString(useri.azimuthal_avg_filename.c_str());
+	engPutVariable(m_Engine, "p_dinamics", path_dinamics);
+
+	engEvalString(m_Engine, "fid = fopen(p_dinamics, 'rb');");
+	engEvalString(m_Engine, "size = fread(fid, 1, 'uint16');");
+	engEvalString(m_Engine, "dimy = fread(fid, 1, 'uint16');");
+	engEvalString(m_Engine, "dimx = fread(fid, 1, 'uint16');");
+	engEvalString(m_Engine, "azhavgs = fread(fid, [dimx, dimy], 'double');");
+	engEvalString(m_Engine, "dimazh = [dimx dimy];");
+	engEvalString(m_Engine, "figure(1);");
+	engEvalString(m_Engine, "left = 2;");
+	engEvalString(m_Engine, "right = min(dimx_cr(1) / 2, frequency_max);");
+	engEvalString(m_Engine, "xx = (left:right);");
+	engEvalString(m_Engine, "loglog(xx, (azhavgs(left:right, 1)), 'k');");
+	engEvalString(m_Engine, "hold on;");
+	engEvalString(m_Engine, "n = 2;");
+	engEvalString(m_Engine, "while (n <= dimazh(2) / 4) loglog(xx, (azhavgs(left:right, n)), 'k');loglog(xx, (azhavgs(left:right, n + 1)), 'r');loglog(xx, (azhavgs(left:right, n + 2)), 'g');loglog(xx, (azhavgs(left:right, n + 3)), 'b');n = n + 4;end");
+
+}
+
 void calc_power_spectra_fifo(INDEX nimages, INDEX &useri_dist_max, STORE_REAL* image_mean, INDEX &dimr, unsigned int* power_spectra_avg_counter, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs)
 {
 	INDEX j, jj;
@@ -450,15 +495,21 @@ void calc_power_spectra_fifo(INDEX nimages, INDEX &useri_dist_max, STORE_REAL* i
 		display_execution_map(useri.file_list.size(), execution_map);
 	//---------------------------------------------------------------------
 	fifo.init(s_power_spectra.numerosity, s_load_image.dim);
+
+	std::vector<std::thread> threads;
 	for (j = 0; j < n_group; ++j)
 	{
-		jj = 1 + j * s_power_spectra.numerosity;
-		// calculating a group of power spectra
-		calc_diagonal(jj, &(power_spectra_avg_counter[jj]), fifo, nimages, image_mean);
-		// npw is the number of power spectra to be transfered from the video card to the ram
-		npw = s_power_spectra.numerosity;
-		pw_save_and_azth_avg(ram_radial_lut, jj, npw, dimr, azh_avgs, ram_power_spectra);
+		threads.push_back(std::thread([&, j]() {
+			jj = 1 + j * s_power_spectra.numerosity;
+			// calculating a group of power spectra
+			calc_diagonal(jj, &(power_spectra_avg_counter[jj]), fifo, nimages, image_mean);
+			// npw is the number of power spectra to be transfered from the video card to the ram
+			npw = s_power_spectra.numerosity;
+			std::thread th1(pw_save_and_azth_avg, ram_radial_lut, jj, npw, dimr, azh_avgs, ram_power_spectra);
+			}));
 	}
+	for (auto& thread : threads)
+		thread.join();
 	//----------------------------------------------------------------------
 	// out of group elements
 	if (0 != group_rem)
