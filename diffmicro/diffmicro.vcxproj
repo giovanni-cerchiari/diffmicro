@@ -22,7 +22,7 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{0ECF8EE6-37BD-4B82-8C1F-626A8AC570CA}</ProjectGuid>
     <RootNamespace>diffmicro</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -41,13 +41,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -78,8 +78,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Program Files\opencv\3.0.0\build\include;C:\Program Files\fftw\fftw-3.3.3-dll64;.\;.\display_opencv;.\cpp-routine;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files\opencv\3.0.0\build\x64\vc12\lib;C:\Program Files\fftw\fftw-3.3.3-dll64;C:\Program Files\Polyspace\R2019b\bin\win64;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Program Files\MATLAB\R2018b\extern\include;C:\Program Files\opencv\3.0.0\build\include;C:\Program Files\fftw\fftw-3.3.3-dll64;.\;.\display_opencv;.\cpp-routine;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\MATLAB\R2018b\bin\win64;C:\Program Files\opencv\3.0.0\build\x64\vc12\lib;C:\Program Files\fftw\fftw-3.3.3-dll64;C:\Program Files\Polyspace\R2019b\bin\win64;$(LibraryPath)</LibraryPath>
     <SourcePath>.\display_opencv;.\cpp-routine;$(SourcePath)</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -90,8 +90,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\Program Files\opencv\3.0.0\build\include;C:\Program Files\fftw\fftw-3.3.3-dll64;.\;.\display_opencv;.\cpp-routine;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files\opencv\3.0.0\build\x64\vc12\lib;C:\Program Files\fftw\fftw-3.3.3-dll64;C:\Program Files\Polyspace\R2019b\bin\win64;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Program Files\MATLAB\R2018b\extern\include;C:\Program Files\opencv\3.0.0\build\include;C:\Program Files\fftw\fftw-3.3.3-dll64;.\;.\display_opencv;.\cpp-routine;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\MATLAB\R2018b\bin\win64;C:\Program Files\opencv\3.0.0\build\x64\vc12\lib;C:\Program Files\fftw\fftw-3.3.3-dll64;C:\Program Files\Polyspace\R2019b\bin\win64;$(LibraryPath)</LibraryPath>
     <SourcePath>.\display_opencv;.\cpp-routine;$(SourcePath)</SourcePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -117,8 +117,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>cuda.lib;cudart.lib;%(AdditionalDependencies);libmx.lib;libeng.lib;libmx.lib;libeng.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Program Files\Polyspace\R2019b\extern\lib\win64\microsoft;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>cuda.lib;cudart.lib;%(AdditionalDependencies);libmx.lib;libeng.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft;C:\Program Files\Polyspace\R2019b\extern\lib\win64\microsoft;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <CudaCompile>
       <TargetMachinePlatform>64</TargetMachinePlatform>
@@ -156,8 +156,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>cudart_static.lib;cudart.lib;%(AdditionalDependencies);libmx.lib;libeng.lib;libmx.lib;libeng.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Program Files\Polyspace\R2019b\extern\lib\win64\microsoft;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>cudart_static.lib;cudart.lib;%(AdditionalDependencies);libmx.lib;libeng.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Program Files\MATLAB\R2018b\extern\lib\win64\microsoft;C:\Program Files\Polyspace\R2019b\extern\lib\win64\microsoft;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <CudaCompile>
       <TargetMachinePlatform>64</TargetMachinePlatform>
@@ -216,7 +216,7 @@
     <ClInclude Include="cpp-routine\circular_index.h" />
     <ClInclude Include="cpp-routine\contour.h" />
     <ClInclude Include="cpp-routine\correlation_cpu.h" />
-    <ClInclude Include="cpp-routine\cuda_init.h" />
+    <CudaCompile Include="cpp-routine\cuda_init.h" />
     <ClInclude Include="cpp-routine\dir.h" />
     <ClInclude Include="cpp-routine\dirent.h" />
     <ClInclude Include="cpp-routine\global_define.h" />

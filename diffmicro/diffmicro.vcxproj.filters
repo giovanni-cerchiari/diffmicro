@@ -152,9 +152,6 @@
     <ClInclude Include="cpp-routine\angular_integ.h">
       <Filter>Header Files\cpp-routine</Filter>
     </ClInclude>
-    <ClInclude Include="cpp-routine\cuda_init.h">
-      <Filter>Header Files\cpp-routine</Filter>
-    </ClInclude>
     <ClInclude Include="cpp-routine\dir.h">
       <Filter>Header Files\cpp-routine</Filter>
     </ClInclude>
@@ -295,6 +292,9 @@
     </CudaCompile>
     <CudaCompile Include="memory_managment_timeseries_demo.cpp">
       <Filter>Source Files</Filter>
+    </CudaCompile>
+    <CudaCompile Include="cpp-routine\cuda_init.h">
+      <Filter>Header Files\cpp-routine</Filter>
     </CudaCompile>
   </ItemGroup>
 </Project>
