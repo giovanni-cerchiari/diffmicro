@@ -1,0 +1,40 @@
+\hypertarget{prep__vet_8cpp}{}\doxysection{diffmicro/cpp-\/routine/prep\+\_\+vet.cpp File Reference}
+\label{prep__vet_8cpp}\index{diffmicro/cpp-\/routine/prep\_vet.cpp@{diffmicro/cpp-\/routine/prep\_vet.cpp}}
+{\ttfamily \#include \char`\"{}stdafx.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prep\+\_\+vet.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{prep__vet_8cpp_a3c92162d08d94edfb79046f1a0b4e407}{prep\+\_\+vet\+\_\+del}} (std\+::vector$<$ \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $>$ \&vet, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dim\+\_\+extern\+\_\+vet)
+\item 
+void \mbox{\hyperlink{prep__vet_8cpp_ab02dde4666a7013829a656bb8bc38fd6}{look\+\_\+up\+\_\+table\+\_\+del}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimold, std\+::vector$<$ \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $>$ \&del, std\+::vector$<$ \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $>$ \&lut)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{prep__vet_8cpp_ab02dde4666a7013829a656bb8bc38fd6}\label{prep__vet_8cpp_ab02dde4666a7013829a656bb8bc38fd6}} 
+\index{prep\_vet.cpp@{prep\_vet.cpp}!look\_up\_table\_del@{look\_up\_table\_del}}
+\index{look\_up\_table\_del@{look\_up\_table\_del}!prep\_vet.cpp@{prep\_vet.cpp}}
+\doxysubsubsection{\texorpdfstring{look\_up\_table\_del()}{look\_up\_table\_del()}}
+{\footnotesize\ttfamily void look\+\_\+up\+\_\+table\+\_\+del (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimold,  }\item[{std\+::vector$<$ \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $>$ \&}]{del,  }\item[{std\+::vector$<$ \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $>$ \&}]{lut }\end{DoxyParamCaption})}
+
+The aim of this function is to generate a look-\/up-\/table (lut). This function receives a vector of indices of elements that should be deleted (del) in an external vector. This external vector is not passed to the function and has dimension dimold. Given these two inputs, the function elaborates lut having
+
+Output\+:
+\begin{DoxyItemize}
+\item lut\mbox{[}i\mbox{]} = new\+\_\+address\+\_\+for\+\_\+i\+\_\+element
+\item lut\mbox{[}i\mbox{]} = -\/1 (element to be deleted)
+\end{DoxyItemize}
+
+uses\+: prep\+\_\+vet\+\_\+del \mbox{\Hypertarget{prep__vet_8cpp_a3c92162d08d94edfb79046f1a0b4e407}\label{prep__vet_8cpp_a3c92162d08d94edfb79046f1a0b4e407}} 
+\index{prep\_vet.cpp@{prep\_vet.cpp}!prep\_vet\_del@{prep\_vet\_del}}
+\index{prep\_vet\_del@{prep\_vet\_del}!prep\_vet.cpp@{prep\_vet.cpp}}
+\doxysubsubsection{\texorpdfstring{prep\_vet\_del()}{prep\_vet\_del()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} prep\+\_\+vet\+\_\+del (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $>$ \&}]{vet,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dim\+\_\+extern\+\_\+vet }\end{DoxyParamCaption})}
+
+This function is used in del\+\_\+vet\+\_\+elements. The function prepares a vector of indices with the following properties\+:
+\begin{DoxyItemize}
+\item sorted ascending
+\item no multiple indices
+\item 0 $<$= index $<$ dim\+\_\+extern\+\_\+vet 
+\end{DoxyItemize}

@@ -1,0 +1,169 @@
+\hypertarget{marker__draw__opencv_8h}{}\doxysection{diffmicro/display\+\_\+opencv/marker\+\_\+draw\+\_\+opencv.h File Reference}
+\label{marker__draw__opencv_8h}\index{diffmicro/display\_opencv/marker\_draw\_opencv.h@{diffmicro/display\_opencv/marker\_draw\_opencv.h}}
+{\ttfamily \#include $<$opencv2/core/core.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/imgproc.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/imgcodecs.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/highgui/highgui.\+hpp$>$}\newline
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{marker__draw__opencv_8h_a95af1b6233a4099e60ff5465742d3063}{marker\+\_\+type\+\_\+opencv}} \{ \newline
+\mbox{\hyperlink{marker__draw__opencv_8h_a95af1b6233a4099e60ff5465742d3063ae953ab5959d679763ae72201ef8a367c}{MARKER\+\_\+\+NONE\+\_\+\+OPENCV}} = 0
+, \mbox{\hyperlink{marker__draw__opencv_8h_a95af1b6233a4099e60ff5465742d3063a9903f62c87dc18a52c78a3f8a580c567}{MARKER\+\_\+\+CIRCLE\+\_\+\+OPENCV}} = 1
+, \mbox{\hyperlink{marker__draw__opencv_8h_a95af1b6233a4099e60ff5465742d3063a964a6988ea8dc2cebbd19ec80b5febd1}{MARKER\+\_\+\+RECTANGLE\+\_\+\+OPENCV}} = 2
+, \mbox{\hyperlink{marker__draw__opencv_8h_a95af1b6233a4099e60ff5465742d3063accc86a6cf3b3ea1c027b083c68496d62}{MARKER\+\_\+\+CROSS\+\_\+\+OPENCV}} = 3
+, \newline
+\mbox{\hyperlink{marker__draw__opencv_8h_a95af1b6233a4099e60ff5465742d3063a451d12d00840cce086130bfd72d90f61}{MARKER\+\_\+\+TRIANGLE\+\_\+\+OPENCV}} = 4
+, \mbox{\hyperlink{marker__draw__opencv_8h_a95af1b6233a4099e60ff5465742d3063a33bda95acb80639d6264ee98893b5589}{MARKER\+\_\+\+DIAMOND\+\_\+\+OPENCV}} = 5
+ \}
+\item 
+enum \mbox{\hyperlink{marker__draw__opencv_8h_a9d9101c185b1f657017e05daf51d529f}{bar\+\_\+type\+\_\+opencv}} \{ \newline
+\mbox{\hyperlink{marker__draw__opencv_8h_a9d9101c185b1f657017e05daf51d529faf99c41c1a3236cfa33bb9ead319addd3}{BAR\+\_\+\+NONE\+\_\+\+OPENCV}} = 0
+, \mbox{\hyperlink{marker__draw__opencv_8h_a9d9101c185b1f657017e05daf51d529faba0d595cf298a32a243060ab80984248}{BAR\+\_\+\+SOLID\+\_\+\+OPENCV}} = 1
+, \mbox{\hyperlink{marker__draw__opencv_8h_a9d9101c185b1f657017e05daf51d529fa44f06d5269d80ea86f45ce8dbca6d6c6}{BAR\+\_\+\+EDGE\+\_\+\+OPENCV}} = 2
+, \mbox{\hyperlink{marker__draw__opencv_8h_a9d9101c185b1f657017e05daf51d529fa7e0f7af3bb6836987e3bc6ad0bcbd09d}{BAR\+\_\+\+SOLIDEDGE\+\_\+\+OPENCV}} = 3
+, \newline
+\mbox{\hyperlink{marker__draw__opencv_8h_a9d9101c185b1f657017e05daf51d529fa4e5bda1650b8c832e0a0e9c5136575a0}{BAR\+\_\+\+TOPLINE\+\_\+\+OPENCV}} = 4
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{marker__draw__opencv_8h_a10782fd8034750273fa9d7489e33193e}{draw\+\_\+circle}} (cv\+::\+Mat \&img, cv\+::\+Point \&x, int size, cv\+::\+Scalar $\ast$color)
+\item 
+void \mbox{\hyperlink{marker__draw__opencv_8h_a93de1574cb4418e9f3a0d46f8942b0af}{draw\+\_\+rectangle}} (cv\+::\+Mat \&img, cv\+::\+Point \&x, int size, cv\+::\+Scalar $\ast$color)
+\item 
+void \mbox{\hyperlink{marker__draw__opencv_8h_a2a62dc9fa6a238d23d7b5920a3a12e8a}{draw\+\_\+cross}} (cv\+::\+Mat \&img, cv\+::\+Point \&x, int size, cv\+::\+Scalar $\ast$color)
+\item 
+void \mbox{\hyperlink{marker__draw__opencv_8h_a11b3e5d1059a238b0cc8555a67160980}{draw\+\_\+triangle}} (cv\+::\+Mat \&img, cv\+::\+Point \&x, int size, cv\+::\+Scalar $\ast$color)
+\item 
+void \mbox{\hyperlink{marker__draw__opencv_8h_ae56afb13f7bf656f0f4bd9020050e2c5}{draw\+\_\+diamond}} (cv\+::\+Mat \&img, cv\+::\+Point \&x, int size, cv\+::\+Scalar $\ast$color)
+\item 
+void \mbox{\hyperlink{marker__draw__opencv_8h_ab145271c5e6e3364e6cf0629b41c908c}{draw\+\_\+solid\+\_\+bar}} (cv\+::\+Mat \&img, cv\+::\+Point $\ast$xbefore, cv\+::\+Point $\ast$x, cv\+::\+Point $\ast$xafter, cv\+::\+Scalar $\ast$color)
+\item 
+void \mbox{\hyperlink{marker__draw__opencv_8h_aa3f6fb1ddd9044d7bee7bc8576123dec}{draw\+\_\+edge\+\_\+bar}} (cv\+::\+Mat \&img, cv\+::\+Point $\ast$xbefore, cv\+::\+Point $\ast$x, cv\+::\+Point $\ast$xafter, cv\+::\+Scalar $\ast$color)
+\item 
+void \mbox{\hyperlink{marker__draw__opencv_8h_aa90cc5427634cba76c4667ca0fdd8099}{draw\+\_\+solidedge\+\_\+bar}} (cv\+::\+Mat \&img, cv\+::\+Point $\ast$xbefore, cv\+::\+Point $\ast$x, cv\+::\+Point $\ast$xafter, cv\+::\+Scalar $\ast$color)
+\item 
+void \mbox{\hyperlink{marker__draw__opencv_8h_a1d9bb94f85ec38cc7262be8e7fb33563}{draw\+\_\+topline\+\_\+bar}} (cv\+::\+Mat \&img, cv\+::\+Point $\ast$xbefore, cv\+::\+Point $\ast$x, cv\+::\+Point $\ast$xafter, cv\+::\+Scalar $\ast$color)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{marker__draw__opencv_8h_a9d9101c185b1f657017e05daf51d529f}\label{marker__draw__opencv_8h_a9d9101c185b1f657017e05daf51d529f}} 
+\index{marker\_draw\_opencv.h@{marker\_draw\_opencv.h}!bar\_type\_opencv@{bar\_type\_opencv}}
+\index{bar\_type\_opencv@{bar\_type\_opencv}!marker\_draw\_opencv.h@{marker\_draw\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{bar\_type\_opencv}{bar\_type\_opencv}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{marker__draw__opencv_8h_a9d9101c185b1f657017e05daf51d529f}{bar\+\_\+type\+\_\+opencv}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BAR\_NONE\_OPENCV@{BAR\_NONE\_OPENCV}!marker\_draw\_opencv.h@{marker\_draw\_opencv.h}}\index{marker\_draw\_opencv.h@{marker\_draw\_opencv.h}!BAR\_NONE\_OPENCV@{BAR\_NONE\_OPENCV}}}\mbox{\Hypertarget{marker__draw__opencv_8h_a9d9101c185b1f657017e05daf51d529faf99c41c1a3236cfa33bb9ead319addd3}\label{marker__draw__opencv_8h_a9d9101c185b1f657017e05daf51d529faf99c41c1a3236cfa33bb9ead319addd3}} 
+BAR\+\_\+\+NONE\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BAR\_SOLID\_OPENCV@{BAR\_SOLID\_OPENCV}!marker\_draw\_opencv.h@{marker\_draw\_opencv.h}}\index{marker\_draw\_opencv.h@{marker\_draw\_opencv.h}!BAR\_SOLID\_OPENCV@{BAR\_SOLID\_OPENCV}}}\mbox{\Hypertarget{marker__draw__opencv_8h_a9d9101c185b1f657017e05daf51d529faba0d595cf298a32a243060ab80984248}\label{marker__draw__opencv_8h_a9d9101c185b1f657017e05daf51d529faba0d595cf298a32a243060ab80984248}} 
+BAR\+\_\+\+SOLID\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BAR\_EDGE\_OPENCV@{BAR\_EDGE\_OPENCV}!marker\_draw\_opencv.h@{marker\_draw\_opencv.h}}\index{marker\_draw\_opencv.h@{marker\_draw\_opencv.h}!BAR\_EDGE\_OPENCV@{BAR\_EDGE\_OPENCV}}}\mbox{\Hypertarget{marker__draw__opencv_8h_a9d9101c185b1f657017e05daf51d529fa44f06d5269d80ea86f45ce8dbca6d6c6}\label{marker__draw__opencv_8h_a9d9101c185b1f657017e05daf51d529fa44f06d5269d80ea86f45ce8dbca6d6c6}} 
+BAR\+\_\+\+EDGE\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BAR\_SOLIDEDGE\_OPENCV@{BAR\_SOLIDEDGE\_OPENCV}!marker\_draw\_opencv.h@{marker\_draw\_opencv.h}}\index{marker\_draw\_opencv.h@{marker\_draw\_opencv.h}!BAR\_SOLIDEDGE\_OPENCV@{BAR\_SOLIDEDGE\_OPENCV}}}\mbox{\Hypertarget{marker__draw__opencv_8h_a9d9101c185b1f657017e05daf51d529fa7e0f7af3bb6836987e3bc6ad0bcbd09d}\label{marker__draw__opencv_8h_a9d9101c185b1f657017e05daf51d529fa7e0f7af3bb6836987e3bc6ad0bcbd09d}} 
+BAR\+\_\+\+SOLIDEDGE\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BAR\_TOPLINE\_OPENCV@{BAR\_TOPLINE\_OPENCV}!marker\_draw\_opencv.h@{marker\_draw\_opencv.h}}\index{marker\_draw\_opencv.h@{marker\_draw\_opencv.h}!BAR\_TOPLINE\_OPENCV@{BAR\_TOPLINE\_OPENCV}}}\mbox{\Hypertarget{marker__draw__opencv_8h_a9d9101c185b1f657017e05daf51d529fa4e5bda1650b8c832e0a0e9c5136575a0}\label{marker__draw__opencv_8h_a9d9101c185b1f657017e05daf51d529fa4e5bda1650b8c832e0a0e9c5136575a0}} 
+BAR\+\_\+\+TOPLINE\+\_\+\+OPENCV&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{marker__draw__opencv_8h_a95af1b6233a4099e60ff5465742d3063}\label{marker__draw__opencv_8h_a95af1b6233a4099e60ff5465742d3063}} 
+\index{marker\_draw\_opencv.h@{marker\_draw\_opencv.h}!marker\_type\_opencv@{marker\_type\_opencv}}
+\index{marker\_type\_opencv@{marker\_type\_opencv}!marker\_draw\_opencv.h@{marker\_draw\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{marker\_type\_opencv}{marker\_type\_opencv}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{marker__draw__opencv_8h_a95af1b6233a4099e60ff5465742d3063}{marker\+\_\+type\+\_\+opencv}}}
+
+These functions are used to draw particular shapes on images. They are intended to be used by overlays \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MARKER\_NONE\_OPENCV@{MARKER\_NONE\_OPENCV}!marker\_draw\_opencv.h@{marker\_draw\_opencv.h}}\index{marker\_draw\_opencv.h@{marker\_draw\_opencv.h}!MARKER\_NONE\_OPENCV@{MARKER\_NONE\_OPENCV}}}\mbox{\Hypertarget{marker__draw__opencv_8h_a95af1b6233a4099e60ff5465742d3063ae953ab5959d679763ae72201ef8a367c}\label{marker__draw__opencv_8h_a95af1b6233a4099e60ff5465742d3063ae953ab5959d679763ae72201ef8a367c}} 
+MARKER\+\_\+\+NONE\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MARKER\_CIRCLE\_OPENCV@{MARKER\_CIRCLE\_OPENCV}!marker\_draw\_opencv.h@{marker\_draw\_opencv.h}}\index{marker\_draw\_opencv.h@{marker\_draw\_opencv.h}!MARKER\_CIRCLE\_OPENCV@{MARKER\_CIRCLE\_OPENCV}}}\mbox{\Hypertarget{marker__draw__opencv_8h_a95af1b6233a4099e60ff5465742d3063a9903f62c87dc18a52c78a3f8a580c567}\label{marker__draw__opencv_8h_a95af1b6233a4099e60ff5465742d3063a9903f62c87dc18a52c78a3f8a580c567}} 
+MARKER\+\_\+\+CIRCLE\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MARKER\_RECTANGLE\_OPENCV@{MARKER\_RECTANGLE\_OPENCV}!marker\_draw\_opencv.h@{marker\_draw\_opencv.h}}\index{marker\_draw\_opencv.h@{marker\_draw\_opencv.h}!MARKER\_RECTANGLE\_OPENCV@{MARKER\_RECTANGLE\_OPENCV}}}\mbox{\Hypertarget{marker__draw__opencv_8h_a95af1b6233a4099e60ff5465742d3063a964a6988ea8dc2cebbd19ec80b5febd1}\label{marker__draw__opencv_8h_a95af1b6233a4099e60ff5465742d3063a964a6988ea8dc2cebbd19ec80b5febd1}} 
+MARKER\+\_\+\+RECTANGLE\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MARKER\_CROSS\_OPENCV@{MARKER\_CROSS\_OPENCV}!marker\_draw\_opencv.h@{marker\_draw\_opencv.h}}\index{marker\_draw\_opencv.h@{marker\_draw\_opencv.h}!MARKER\_CROSS\_OPENCV@{MARKER\_CROSS\_OPENCV}}}\mbox{\Hypertarget{marker__draw__opencv_8h_a95af1b6233a4099e60ff5465742d3063accc86a6cf3b3ea1c027b083c68496d62}\label{marker__draw__opencv_8h_a95af1b6233a4099e60ff5465742d3063accc86a6cf3b3ea1c027b083c68496d62}} 
+MARKER\+\_\+\+CROSS\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MARKER\_TRIANGLE\_OPENCV@{MARKER\_TRIANGLE\_OPENCV}!marker\_draw\_opencv.h@{marker\_draw\_opencv.h}}\index{marker\_draw\_opencv.h@{marker\_draw\_opencv.h}!MARKER\_TRIANGLE\_OPENCV@{MARKER\_TRIANGLE\_OPENCV}}}\mbox{\Hypertarget{marker__draw__opencv_8h_a95af1b6233a4099e60ff5465742d3063a451d12d00840cce086130bfd72d90f61}\label{marker__draw__opencv_8h_a95af1b6233a4099e60ff5465742d3063a451d12d00840cce086130bfd72d90f61}} 
+MARKER\+\_\+\+TRIANGLE\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MARKER\_DIAMOND\_OPENCV@{MARKER\_DIAMOND\_OPENCV}!marker\_draw\_opencv.h@{marker\_draw\_opencv.h}}\index{marker\_draw\_opencv.h@{marker\_draw\_opencv.h}!MARKER\_DIAMOND\_OPENCV@{MARKER\_DIAMOND\_OPENCV}}}\mbox{\Hypertarget{marker__draw__opencv_8h_a95af1b6233a4099e60ff5465742d3063a33bda95acb80639d6264ee98893b5589}\label{marker__draw__opencv_8h_a95af1b6233a4099e60ff5465742d3063a33bda95acb80639d6264ee98893b5589}} 
+MARKER\+\_\+\+DIAMOND\+\_\+\+OPENCV&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{marker__draw__opencv_8h_a10782fd8034750273fa9d7489e33193e}\label{marker__draw__opencv_8h_a10782fd8034750273fa9d7489e33193e}} 
+\index{marker\_draw\_opencv.h@{marker\_draw\_opencv.h}!draw\_circle@{draw\_circle}}
+\index{draw\_circle@{draw\_circle}!marker\_draw\_opencv.h@{marker\_draw\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{draw\_circle()}{draw\_circle()}}
+{\footnotesize\ttfamily void draw\+\_\+circle (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{img,  }\item[{cv\+::\+Point \&}]{x,  }\item[{int}]{size,  }\item[{cv\+::\+Scalar $\ast$}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{marker__draw__opencv_8h_a2a62dc9fa6a238d23d7b5920a3a12e8a}\label{marker__draw__opencv_8h_a2a62dc9fa6a238d23d7b5920a3a12e8a}} 
+\index{marker\_draw\_opencv.h@{marker\_draw\_opencv.h}!draw\_cross@{draw\_cross}}
+\index{draw\_cross@{draw\_cross}!marker\_draw\_opencv.h@{marker\_draw\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{draw\_cross()}{draw\_cross()}}
+{\footnotesize\ttfamily void draw\+\_\+cross (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{img,  }\item[{cv\+::\+Point \&}]{x,  }\item[{int}]{size,  }\item[{cv\+::\+Scalar $\ast$}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{marker__draw__opencv_8h_ae56afb13f7bf656f0f4bd9020050e2c5}\label{marker__draw__opencv_8h_ae56afb13f7bf656f0f4bd9020050e2c5}} 
+\index{marker\_draw\_opencv.h@{marker\_draw\_opencv.h}!draw\_diamond@{draw\_diamond}}
+\index{draw\_diamond@{draw\_diamond}!marker\_draw\_opencv.h@{marker\_draw\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{draw\_diamond()}{draw\_diamond()}}
+{\footnotesize\ttfamily void draw\+\_\+diamond (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{img,  }\item[{cv\+::\+Point \&}]{x,  }\item[{int}]{size,  }\item[{cv\+::\+Scalar $\ast$}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{marker__draw__opencv_8h_aa3f6fb1ddd9044d7bee7bc8576123dec}\label{marker__draw__opencv_8h_aa3f6fb1ddd9044d7bee7bc8576123dec}} 
+\index{marker\_draw\_opencv.h@{marker\_draw\_opencv.h}!draw\_edge\_bar@{draw\_edge\_bar}}
+\index{draw\_edge\_bar@{draw\_edge\_bar}!marker\_draw\_opencv.h@{marker\_draw\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{draw\_edge\_bar()}{draw\_edge\_bar()}}
+{\footnotesize\ttfamily void draw\+\_\+edge\+\_\+bar (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{img,  }\item[{cv\+::\+Point $\ast$}]{xbefore,  }\item[{cv\+::\+Point $\ast$}]{x,  }\item[{cv\+::\+Point $\ast$}]{xafter,  }\item[{cv\+::\+Scalar $\ast$}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{marker__draw__opencv_8h_a93de1574cb4418e9f3a0d46f8942b0af}\label{marker__draw__opencv_8h_a93de1574cb4418e9f3a0d46f8942b0af}} 
+\index{marker\_draw\_opencv.h@{marker\_draw\_opencv.h}!draw\_rectangle@{draw\_rectangle}}
+\index{draw\_rectangle@{draw\_rectangle}!marker\_draw\_opencv.h@{marker\_draw\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{draw\_rectangle()}{draw\_rectangle()}}
+{\footnotesize\ttfamily void draw\+\_\+rectangle (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{img,  }\item[{cv\+::\+Point \&}]{x,  }\item[{int}]{size,  }\item[{cv\+::\+Scalar $\ast$}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{marker__draw__opencv_8h_ab145271c5e6e3364e6cf0629b41c908c}\label{marker__draw__opencv_8h_ab145271c5e6e3364e6cf0629b41c908c}} 
+\index{marker\_draw\_opencv.h@{marker\_draw\_opencv.h}!draw\_solid\_bar@{draw\_solid\_bar}}
+\index{draw\_solid\_bar@{draw\_solid\_bar}!marker\_draw\_opencv.h@{marker\_draw\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{draw\_solid\_bar()}{draw\_solid\_bar()}}
+{\footnotesize\ttfamily void draw\+\_\+solid\+\_\+bar (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{img,  }\item[{cv\+::\+Point $\ast$}]{xbefore,  }\item[{cv\+::\+Point $\ast$}]{x,  }\item[{cv\+::\+Point $\ast$}]{xafter,  }\item[{cv\+::\+Scalar $\ast$}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{marker__draw__opencv_8h_aa90cc5427634cba76c4667ca0fdd8099}\label{marker__draw__opencv_8h_aa90cc5427634cba76c4667ca0fdd8099}} 
+\index{marker\_draw\_opencv.h@{marker\_draw\_opencv.h}!draw\_solidedge\_bar@{draw\_solidedge\_bar}}
+\index{draw\_solidedge\_bar@{draw\_solidedge\_bar}!marker\_draw\_opencv.h@{marker\_draw\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{draw\_solidedge\_bar()}{draw\_solidedge\_bar()}}
+{\footnotesize\ttfamily void draw\+\_\+solidedge\+\_\+bar (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{img,  }\item[{cv\+::\+Point $\ast$}]{xbefore,  }\item[{cv\+::\+Point $\ast$}]{x,  }\item[{cv\+::\+Point $\ast$}]{xafter,  }\item[{cv\+::\+Scalar $\ast$}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{marker__draw__opencv_8h_a1d9bb94f85ec38cc7262be8e7fb33563}\label{marker__draw__opencv_8h_a1d9bb94f85ec38cc7262be8e7fb33563}} 
+\index{marker\_draw\_opencv.h@{marker\_draw\_opencv.h}!draw\_topline\_bar@{draw\_topline\_bar}}
+\index{draw\_topline\_bar@{draw\_topline\_bar}!marker\_draw\_opencv.h@{marker\_draw\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{draw\_topline\_bar()}{draw\_topline\_bar()}}
+{\footnotesize\ttfamily void draw\+\_\+topline\+\_\+bar (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{img,  }\item[{cv\+::\+Point $\ast$}]{xbefore,  }\item[{cv\+::\+Point $\ast$}]{x,  }\item[{cv\+::\+Point $\ast$}]{xafter,  }\item[{cv\+::\+Scalar $\ast$}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{marker__draw__opencv_8h_a11b3e5d1059a238b0cc8555a67160980}\label{marker__draw__opencv_8h_a11b3e5d1059a238b0cc8555a67160980}} 
+\index{marker\_draw\_opencv.h@{marker\_draw\_opencv.h}!draw\_triangle@{draw\_triangle}}
+\index{draw\_triangle@{draw\_triangle}!marker\_draw\_opencv.h@{marker\_draw\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{draw\_triangle()}{draw\_triangle()}}
+{\footnotesize\ttfamily void draw\+\_\+triangle (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{img,  }\item[{cv\+::\+Point \&}]{x,  }\item[{int}]{size,  }\item[{cv\+::\+Scalar $\ast$}]{color }\end{DoxyParamCaption})}
+

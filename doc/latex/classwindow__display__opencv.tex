@@ -1,0 +1,546 @@
+\hypertarget{classwindow__display__opencv}{}\doxysection{window\+\_\+display\+\_\+opencv Class Reference}
+\label{classwindow__display__opencv}\index{window\_display\_opencv@{window\_display\_opencv}}
+
+
+{\ttfamily \#include $<$window\+\_\+display\+\_\+opencv.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classwindow__display__opencv_ab9e5d0c346390f4b0e7a41896241c4b4}{window\+\_\+display\+\_\+opencv}} (std\+::string \+\_\+name)
+\item 
+\mbox{\hyperlink{classwindow__display__opencv_a7e33b0b0b545c003a5b795fc581ea558}{window\+\_\+display\+\_\+opencv}} (const \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} \&wd)
+\item 
+\mbox{\hyperlink{classwindow__display__opencv_a032970e9ac69e14e5fcc466041a6d991}{$\sim$window\+\_\+display\+\_\+opencv}} ()
+\item 
+\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} \& \mbox{\hyperlink{classwindow__display__opencv_aa1a713ae756435368d1b8d376aede221}{operator=}} (const \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} \&wd)
+\item 
+void \mbox{\hyperlink{classwindow__display__opencv_a777f053daf365b787cf94f272b6b37d3}{create\+\_\+display\+\_\+window}} (unsigned int \mbox{\hyperlink{classwindow__display__opencv_ab21af235b22f5deb80cc34c1794d0108}{display\+\_\+dimx}}, unsigned int \mbox{\hyperlink{classwindow__display__opencv_a7c101014743bdf88c90f9ecd780d68cf}{display\+\_\+dimy}})
+\item 
+void \mbox{\hyperlink{classwindow__display__opencv_a3c6ef8521baddefb55abc529ca0fc391}{bind}} (unsigned int \+\_\+dimx, unsigned int \+\_\+dimy, double $\ast$img, unsigned int channel=0)
+\begin{DoxyCompactList}\small\item\em this method binds the display to the external matrix \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classwindow__display__opencv_ad5d4f81d41c3771dcafc2869034b8972}{intensity\+\_\+scale}} (bool \+\_\+auto\+\_\+scale=true, double \+\_\+min=0, double \+\_\+max=0)
+\begin{DoxyCompactList}\small\item\em this function fixes the intensity scale as whisehed if \+\_\+auto\+\_\+scale will be assigned false \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classwindow__display__opencv_ab236eabba71d6cafe79545a933793936}{show}} ()
+\item 
+void \mbox{\hyperlink{classwindow__display__opencv_acd85ee2edce3afc82a12e16dc6dc2d3d}{setscale}} (double \mbox{\hyperlink{classwindow__display__opencv_a8fc7a62c0cfb47ce045254178b627576}{scalex}}, double \mbox{\hyperlink{classwindow__display__opencv_ab3ba09a8efbadcf192b1c33fc39a942a}{scaley}})
+\begin{DoxyCompactList}\small\item\em allow to define the lateral size of the external matrix \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classwindow__display__opencv_aed93461cb2d0ad622bf6fafc2105792f}{setdisplayscale}} (double disp\+\_\+scalex, double disp\+\_\+scaley)
+\begin{DoxyCompactList}\small\item\em allow to define the lateral size of the window \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classwindow__display__opencv_a6e0a4fb544eb25ee701fa37de593a758}{set\+\_\+display\+\_\+area}} (double top\+\_\+left\mbox{[}$\,$\mbox{]}, double bottom\+\_\+right\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em allow to define the display area \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classwindow__display__opencv_a76643b67d0f266d065f7b6ad9a789173}{zoom}} (double zoomx, double zoomy)
+\begin{DoxyCompactList}\small\item\em zoom display \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classwindow__display__opencv_acd10b1db6052b84262fca1283447491e}{movewindow}} (float x, float y)
+\begin{DoxyCompactList}\small\item\em move window to percentace of the screen \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classwindow__display__opencv_a55ae9ab80d773b5221b87d441cc1e783}{movewindow}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em move window to pixel position on the screen \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classwindow__display__opencv_aef4fe0bb76079cb9ed3d5cbe9914b8d4}{y\+\_\+flip}} ()
+\begin{DoxyCompactList}\small\item\em allows flipping the y axis for function or images best view \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classwindow__display__opencv_a306c4442729df6964551b6130c5773a8}{save\+\_\+display}} (std\+::string filename)
+\item 
+double \mbox{\hyperlink{classwindow__display__opencv_a8fc7a62c0cfb47ce045254178b627576}{scalex}} ()
+\item 
+double \mbox{\hyperlink{classwindow__display__opencv_ab3ba09a8efbadcf192b1c33fc39a942a}{scaley}} ()
+\item 
+double \mbox{\hyperlink{classwindow__display__opencv_acb473bd6f3f6c666d11557a3ef5008f9}{display\+\_\+scalex}} ()
+\item 
+double \mbox{\hyperlink{classwindow__display__opencv_a1a880ef2709ffbead08ec91026c6d7d3}{display\+\_\+scaley}} ()
+\item 
+int \mbox{\hyperlink{classwindow__display__opencv_ab21af235b22f5deb80cc34c1794d0108}{display\+\_\+dimx}} ()
+\item 
+int \mbox{\hyperlink{classwindow__display__opencv_a7c101014743bdf88c90f9ecd780d68cf}{display\+\_\+dimy}} ()
+\item 
+double \mbox{\hyperlink{classwindow__display__opencv_ade1ed2fdc0059f1a62431fefab9043d8}{minval}} ()
+\item 
+double \mbox{\hyperlink{classwindow__display__opencv_a000c3850d5c379bea693622053c6e81f}{maxval}} ()
+\item 
+unsigned int \mbox{\hyperlink{classwindow__display__opencv_ab1bd6bf601605a390417f74ac2abdfe6}{n\+\_\+channels}} ()
+\item 
+void \mbox{\hyperlink{classwindow__display__opencv_aafa45f941a1e92b755049fe4e992b3e0}{erase\+\_\+overlay}} (\mbox{\hyperlink{classoverlay__opencv}{overlay\+\_\+opencv}} $\ast$ov)
+\begin{DoxyCompactList}\small\item\em delete the specified overlay \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classwindow__display__opencv_a92881342bf931832960d0997cff75f26}{name}}
+\begin{DoxyCompactList}\small\item\em name identifier of the window \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classwindow__display__opencv_a395ade2409b778cef26e065de747c162}{id}}
+\begin{DoxyCompactList}\small\item\em id of the figure is extremely useful to identify and manipulate the window in figure list \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classwindow__display__opencv_aa6db1eb2fe4b8eece2d0f13badc385fc}{start\+\_\+display}} \mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em upper left position that is displayed \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classoverlay__opencv}{overlay\+\_\+opencv}} $\ast$ \mbox{\hyperlink{classwindow__display__opencv_a54b5545483212a8d89be612dc0762987}{active\+\_\+overlay}}
+\begin{DoxyCompactList}\small\item\em overlays to display on top of the figure \end{DoxyCompactList}\item 
+std\+::list$<$ \mbox{\hyperlink{classoverlay__opencv}{overlay\+\_\+opencv}} $\ast$ $>$ \mbox{\hyperlink{classwindow__display__opencv_a27459eddff7ccd63b21f510ea115d146}{overlay}}
+\begin{DoxyCompactList}\small\item\em collection of the overlays for this window\+\_\+display \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} $\ast$ \mbox{\hyperlink{classwindow__display__opencv_a14c8bdb685ad5f46d6b7d3ee9c22768a}{active\+\_\+control}}
+\begin{DoxyCompactList}\small\item\em active object of the user interface \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} $\ast$ $>$ \mbox{\hyperlink{classwindow__display__opencv_aed78d5890087e12dd6a6282bcc53a4ee}{control}}
+\begin{DoxyCompactList}\small\item\em elements of the user interface for this window\+\_\+display \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classwindow__display__opencv_a6509e93d35a5e4f1c6919e0ebad11f0d}{dimx}}
+\begin{DoxyCompactList}\small\item\em dimensions of the external matrix/function/image \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classwindow__display__opencv_a1990da2fa2d378be2a47b0e382cfdcbd}{dimy}}
+\item 
+double $\ast$ \mbox{\hyperlink{classwindow__display__opencv_a6e04713b762fcd77a3fda803190da64c}{image}} \mbox{[}4\mbox{]}
+\begin{DoxyCompactList}\small\item\em pointer to the memory location of the external image \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classwindow__display__opencv_acba19dd85ebe162cbdfcbaa1a637ec93}{colormap}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classwindow__display__opencv_a53715ce80debcbf8412a96e3f8892541}{fill\+\_\+display\+\_\+matrices}} (double range)
+\item 
+void \mbox{\hyperlink{classwindow__display__opencv_a2129c28afca68003adaff392e54737a5}{min\+\_\+max\+\_\+images}} ()
+\item 
+void \mbox{\hyperlink{classwindow__display__opencv_ac6ea32009af6ac1f4adf92b7a0b8a3e7}{init}} ()
+\item 
+void \mbox{\hyperlink{classwindow__display__opencv_aabd805062a8d3fabb05ee7427225aad0}{init\+\_\+controls}} ()
+\item 
+void \mbox{\hyperlink{classwindow__display__opencv_a24af28e84c75dfd7a3fe7656962f9a3c}{clear}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{classwindow__display__opencv_a8b59e46aa1e183634d7a192134ceb8de}{dimc}}
+\begin{DoxyCompactList}\small\item\em number of matrices attributed to the image \end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{classwindow__display__opencv_a887f49ae053be1d34cc3807b4484b836}{image\+\_\+display}} \mbox{[}4\mbox{]}
+\begin{DoxyCompactList}\small\item\em ordinary grayscale display \end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{classwindow__display__opencv_a5d6b318fb10adbfe96eb69b8b74e27fb}{image\+\_\+display\+\_\+color}}
+\begin{DoxyCompactList}\small\item\em for colormap display \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classwindow__display__opencv_a273eef480343d7f07db5a9279a1e5547}{scale}} \mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em side dimension of one pixel of the general function \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classwindow__display__opencv_abdeaf7f41ea305856d8504d0f4319221}{scale\+\_\+display}} \mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em side dimension of one pixel as on display \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classwindow__display__opencv_a2fb932412f738cdaab4af4e9179df9cb}{m\+\_\+min}} \mbox{[}4\mbox{]}
+\begin{DoxyCompactList}\small\item\em minimum and maximum value at which the intensity will be normalized \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classwindow__display__opencv_a9abaddea6a5e05dc6077259919985573}{m\+\_\+max}} \mbox{[}4\mbox{]}
+\item 
+double \mbox{\hyperlink{classwindow__display__opencv_a43ea626839c78be0d6bc80ae4eea0501}{origin}} \mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em origin of chartesian axis \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class can be used to plot a function or an image on a window.
+
+Display pointer internal to the \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} may be equal to the external. In this way any external modification of the arrays will be reflected on the display. If you do not like this behavior, save your matrix outside. Besides, the user must free the memory of the pointer that we are \char`\"{}looking\char`\"{} into the windows.
+
+The absolute reference frame is define by the edge top left corner of the image. x axis, corresponding to index 0, is from left to right y axis, corresponding to index 1, is from oriented from top to bottom the dimension of each pixel as physical quantity is defined in scale\mbox{[}\mbox{]}
+
+While adding overlay to the \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} allocate them in the heap. The class take care of deleting all the overalys. If the overaly is allocated in the stack a memory error will occur. Again, overlay will point to some memory area that contains the final data of the image of the functions. These memory area are expected to be managed by the user. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classwindow__display__opencv_ab9e5d0c346390f4b0e7a41896241c4b4}\label{classwindow__display__opencv_ab9e5d0c346390f4b0e7a41896241c4b4}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!window\_display\_opencv@{window\_display\_opencv}}
+\index{window\_display\_opencv@{window\_display\_opencv}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{window\_display\_opencv()}{window\_display\_opencv()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily window\+\_\+display\+\_\+opencv\+::window\+\_\+display\+\_\+opencv (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classwindow__display__opencv_a7e33b0b0b545c003a5b795fc581ea558}\label{classwindow__display__opencv_a7e33b0b0b545c003a5b795fc581ea558}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!window\_display\_opencv@{window\_display\_opencv}}
+\index{window\_display\_opencv@{window\_display\_opencv}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{window\_display\_opencv()}{window\_display\_opencv()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily window\+\_\+display\+\_\+opencv\+::window\+\_\+display\+\_\+opencv (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} \&}]{wd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classwindow__display__opencv_a032970e9ac69e14e5fcc466041a6d991}\label{classwindow__display__opencv_a032970e9ac69e14e5fcc466041a6d991}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!````~window\_display\_opencv@{$\sim$window\_display\_opencv}}
+\index{````~window\_display\_opencv@{$\sim$window\_display\_opencv}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{$\sim$window\_display\_opencv()}{~window\_display\_opencv()}}
+{\footnotesize\ttfamily window\+\_\+display\+\_\+opencv\+::$\sim$window\+\_\+display\+\_\+opencv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classwindow__display__opencv_a3c6ef8521baddefb55abc529ca0fc391}\label{classwindow__display__opencv_a3c6ef8521baddefb55abc529ca0fc391}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!bind@{bind}}
+\index{bind@{bind}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{bind()}{bind()}}
+{\footnotesize\ttfamily void window\+\_\+display\+\_\+opencv\+::bind (\begin{DoxyParamCaption}\item[{unsigned int}]{\+\_\+dimx,  }\item[{unsigned int}]{\+\_\+dimy,  }\item[{double $\ast$}]{img,  }\item[{unsigned int}]{channel = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+this method binds the display to the external matrix 
+
+\mbox{\Hypertarget{classwindow__display__opencv_a24af28e84c75dfd7a3fe7656962f9a3c}\label{classwindow__display__opencv_a24af28e84c75dfd7a3fe7656962f9a3c}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!clear@{clear}}
+\index{clear@{clear}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void window\+\_\+display\+\_\+opencv\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classwindow__display__opencv_a777f053daf365b787cf94f272b6b37d3}\label{classwindow__display__opencv_a777f053daf365b787cf94f272b6b37d3}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!create\_display\_window@{create\_display\_window}}
+\index{create\_display\_window@{create\_display\_window}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{create\_display\_window()}{create\_display\_window()}}
+{\footnotesize\ttfamily void window\+\_\+display\+\_\+opencv\+::create\+\_\+display\+\_\+window (\begin{DoxyParamCaption}\item[{unsigned int}]{display\+\_\+dimx,  }\item[{unsigned int}]{display\+\_\+dimy }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classwindow__display__opencv_ab21af235b22f5deb80cc34c1794d0108}\label{classwindow__display__opencv_ab21af235b22f5deb80cc34c1794d0108}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!display\_dimx@{display\_dimx}}
+\index{display\_dimx@{display\_dimx}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{display\_dimx()}{display\_dimx()}}
+{\footnotesize\ttfamily int window\+\_\+display\+\_\+opencv\+::display\+\_\+dimx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classwindow__display__opencv_a7c101014743bdf88c90f9ecd780d68cf}\label{classwindow__display__opencv_a7c101014743bdf88c90f9ecd780d68cf}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!display\_dimy@{display\_dimy}}
+\index{display\_dimy@{display\_dimy}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{display\_dimy()}{display\_dimy()}}
+{\footnotesize\ttfamily int window\+\_\+display\+\_\+opencv\+::display\+\_\+dimy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classwindow__display__opencv_acb473bd6f3f6c666d11557a3ef5008f9}\label{classwindow__display__opencv_acb473bd6f3f6c666d11557a3ef5008f9}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!display\_scalex@{display\_scalex}}
+\index{display\_scalex@{display\_scalex}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{display\_scalex()}{display\_scalex()}}
+{\footnotesize\ttfamily double window\+\_\+display\+\_\+opencv\+::display\+\_\+scalex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classwindow__display__opencv_a1a880ef2709ffbead08ec91026c6d7d3}\label{classwindow__display__opencv_a1a880ef2709ffbead08ec91026c6d7d3}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!display\_scaley@{display\_scaley}}
+\index{display\_scaley@{display\_scaley}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{display\_scaley()}{display\_scaley()}}
+{\footnotesize\ttfamily double window\+\_\+display\+\_\+opencv\+::display\+\_\+scaley (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classwindow__display__opencv_aafa45f941a1e92b755049fe4e992b3e0}\label{classwindow__display__opencv_aafa45f941a1e92b755049fe4e992b3e0}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!erase\_overlay@{erase\_overlay}}
+\index{erase\_overlay@{erase\_overlay}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{erase\_overlay()}{erase\_overlay()}}
+{\footnotesize\ttfamily void window\+\_\+display\+\_\+opencv\+::erase\+\_\+overlay (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classoverlay__opencv}{overlay\+\_\+opencv}} $\ast$}]{ov }\end{DoxyParamCaption})}
+
+
+
+delete the specified overlay 
+
+\mbox{\Hypertarget{classwindow__display__opencv_a53715ce80debcbf8412a96e3f8892541}\label{classwindow__display__opencv_a53715ce80debcbf8412a96e3f8892541}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!fill\_display\_matrices@{fill\_display\_matrices}}
+\index{fill\_display\_matrices@{fill\_display\_matrices}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{fill\_display\_matrices()}{fill\_display\_matrices()}}
+{\footnotesize\ttfamily void window\+\_\+display\+\_\+opencv\+::fill\+\_\+display\+\_\+matrices (\begin{DoxyParamCaption}\item[{double}]{range }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classwindow__display__opencv_ac6ea32009af6ac1f4adf92b7a0b8a3e7}\label{classwindow__display__opencv_ac6ea32009af6ac1f4adf92b7a0b8a3e7}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!init@{init}}
+\index{init@{init}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void window\+\_\+display\+\_\+opencv\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classwindow__display__opencv_aabd805062a8d3fabb05ee7427225aad0}\label{classwindow__display__opencv_aabd805062a8d3fabb05ee7427225aad0}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!init\_controls@{init\_controls}}
+\index{init\_controls@{init\_controls}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{init\_controls()}{init\_controls()}}
+{\footnotesize\ttfamily void window\+\_\+display\+\_\+opencv\+::init\+\_\+controls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classwindow__display__opencv_ad5d4f81d41c3771dcafc2869034b8972}\label{classwindow__display__opencv_ad5d4f81d41c3771dcafc2869034b8972}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!intensity\_scale@{intensity\_scale}}
+\index{intensity\_scale@{intensity\_scale}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{intensity\_scale()}{intensity\_scale()}}
+{\footnotesize\ttfamily void window\+\_\+display\+\_\+opencv\+::intensity\+\_\+scale (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+auto\+\_\+scale = {\ttfamily true},  }\item[{double}]{\+\_\+min = {\ttfamily 0},  }\item[{double}]{\+\_\+max = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+this function fixes the intensity scale as whisehed if \+\_\+auto\+\_\+scale will be assigned false 
+
+\mbox{\Hypertarget{classwindow__display__opencv_a000c3850d5c379bea693622053c6e81f}\label{classwindow__display__opencv_a000c3850d5c379bea693622053c6e81f}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!maxval@{maxval}}
+\index{maxval@{maxval}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{maxval()}{maxval()}}
+{\footnotesize\ttfamily double window\+\_\+display\+\_\+opencv\+::maxval (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classwindow__display__opencv_a2129c28afca68003adaff392e54737a5}\label{classwindow__display__opencv_a2129c28afca68003adaff392e54737a5}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!min\_max\_images@{min\_max\_images}}
+\index{min\_max\_images@{min\_max\_images}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{min\_max\_images()}{min\_max\_images()}}
+{\footnotesize\ttfamily void window\+\_\+display\+\_\+opencv\+::min\+\_\+max\+\_\+images (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classwindow__display__opencv_ade1ed2fdc0059f1a62431fefab9043d8}\label{classwindow__display__opencv_ade1ed2fdc0059f1a62431fefab9043d8}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!minval@{minval}}
+\index{minval@{minval}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{minval()}{minval()}}
+{\footnotesize\ttfamily double window\+\_\+display\+\_\+opencv\+::minval (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classwindow__display__opencv_acd10b1db6052b84262fca1283447491e}\label{classwindow__display__opencv_acd10b1db6052b84262fca1283447491e}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!movewindow@{movewindow}}
+\index{movewindow@{movewindow}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{movewindow()}{movewindow()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void window\+\_\+display\+\_\+opencv\+::movewindow (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+
+
+move window to percentace of the screen 
+
+\mbox{\Hypertarget{classwindow__display__opencv_a55ae9ab80d773b5221b87d441cc1e783}\label{classwindow__display__opencv_a55ae9ab80d773b5221b87d441cc1e783}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!movewindow@{movewindow}}
+\index{movewindow@{movewindow}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{movewindow()}{movewindow()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void window\+\_\+display\+\_\+opencv\+::movewindow (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+move window to pixel position on the screen 
+
+\mbox{\Hypertarget{classwindow__display__opencv_ab1bd6bf601605a390417f74ac2abdfe6}\label{classwindow__display__opencv_ab1bd6bf601605a390417f74ac2abdfe6}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!n\_channels@{n\_channels}}
+\index{n\_channels@{n\_channels}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{n\_channels()}{n\_channels()}}
+{\footnotesize\ttfamily unsigned int window\+\_\+display\+\_\+opencv\+::n\+\_\+channels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classwindow__display__opencv_aa1a713ae756435368d1b8d376aede221}\label{classwindow__display__opencv_aa1a713ae756435368d1b8d376aede221}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!operator=@{operator=}}
+\index{operator=@{operator=}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} \& window\+\_\+display\+\_\+opencv\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} \&}]{wd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classwindow__display__opencv_a306c4442729df6964551b6130c5773a8}\label{classwindow__display__opencv_a306c4442729df6964551b6130c5773a8}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!save\_display@{save\_display}}
+\index{save\_display@{save\_display}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{save\_display()}{save\_display()}}
+{\footnotesize\ttfamily void window\+\_\+display\+\_\+opencv\+::save\+\_\+display (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classwindow__display__opencv_a8fc7a62c0cfb47ce045254178b627576}\label{classwindow__display__opencv_a8fc7a62c0cfb47ce045254178b627576}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!scalex@{scalex}}
+\index{scalex@{scalex}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{scalex()}{scalex()}}
+{\footnotesize\ttfamily double window\+\_\+display\+\_\+opencv\+::scalex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classwindow__display__opencv_ab3ba09a8efbadcf192b1c33fc39a942a}\label{classwindow__display__opencv_ab3ba09a8efbadcf192b1c33fc39a942a}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!scaley@{scaley}}
+\index{scaley@{scaley}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{scaley()}{scaley()}}
+{\footnotesize\ttfamily double window\+\_\+display\+\_\+opencv\+::scaley (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classwindow__display__opencv_a6e0a4fb544eb25ee701fa37de593a758}\label{classwindow__display__opencv_a6e0a4fb544eb25ee701fa37de593a758}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!set\_display\_area@{set\_display\_area}}
+\index{set\_display\_area@{set\_display\_area}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{set\_display\_area()}{set\_display\_area()}}
+{\footnotesize\ttfamily void window\+\_\+display\+\_\+opencv\+::set\+\_\+display\+\_\+area (\begin{DoxyParamCaption}\item[{double}]{top\+\_\+left\mbox{[}$\,$\mbox{]},  }\item[{double}]{bottom\+\_\+right\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+allow to define the display area 
+
+\mbox{\Hypertarget{classwindow__display__opencv_aed93461cb2d0ad622bf6fafc2105792f}\label{classwindow__display__opencv_aed93461cb2d0ad622bf6fafc2105792f}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!setdisplayscale@{setdisplayscale}}
+\index{setdisplayscale@{setdisplayscale}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{setdisplayscale()}{setdisplayscale()}}
+{\footnotesize\ttfamily void window\+\_\+display\+\_\+opencv\+::setdisplayscale (\begin{DoxyParamCaption}\item[{double}]{disp\+\_\+scalex,  }\item[{double}]{disp\+\_\+scaley }\end{DoxyParamCaption})}
+
+
+
+allow to define the lateral size of the window 
+
+\mbox{\Hypertarget{classwindow__display__opencv_acd85ee2edce3afc82a12e16dc6dc2d3d}\label{classwindow__display__opencv_acd85ee2edce3afc82a12e16dc6dc2d3d}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!setscale@{setscale}}
+\index{setscale@{setscale}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{setscale()}{setscale()}}
+{\footnotesize\ttfamily void window\+\_\+display\+\_\+opencv\+::setscale (\begin{DoxyParamCaption}\item[{double}]{scalex,  }\item[{double}]{scaley }\end{DoxyParamCaption})}
+
+
+
+allow to define the lateral size of the external matrix 
+
+\mbox{\Hypertarget{classwindow__display__opencv_ab236eabba71d6cafe79545a933793936}\label{classwindow__display__opencv_ab236eabba71d6cafe79545a933793936}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!show@{show}}
+\index{show@{show}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily void window\+\_\+display\+\_\+opencv\+::show (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classwindow__display__opencv_aef4fe0bb76079cb9ed3d5cbe9914b8d4}\label{classwindow__display__opencv_aef4fe0bb76079cb9ed3d5cbe9914b8d4}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!y\_flip@{y\_flip}}
+\index{y\_flip@{y\_flip}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{y\_flip()}{y\_flip()}}
+{\footnotesize\ttfamily void window\+\_\+display\+\_\+opencv\+::y\+\_\+flip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+allows flipping the y axis for function or images best view 
+
+\mbox{\Hypertarget{classwindow__display__opencv_a76643b67d0f266d065f7b6ad9a789173}\label{classwindow__display__opencv_a76643b67d0f266d065f7b6ad9a789173}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!zoom@{zoom}}
+\index{zoom@{zoom}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{zoom()}{zoom()}}
+{\footnotesize\ttfamily void window\+\_\+display\+\_\+opencv\+::zoom (\begin{DoxyParamCaption}\item[{double}]{zoomx,  }\item[{double}]{zoomy }\end{DoxyParamCaption})}
+
+
+
+zoom display 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classwindow__display__opencv_a14c8bdb685ad5f46d6b7d3ee9c22768a}\label{classwindow__display__opencv_a14c8bdb685ad5f46d6b7d3ee9c22768a}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!active\_control@{active\_control}}
+\index{active\_control@{active\_control}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{active\_control}{active\_control}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}}$\ast$ window\+\_\+display\+\_\+opencv\+::active\+\_\+control}
+
+
+
+active object of the user interface 
+
+\mbox{\Hypertarget{classwindow__display__opencv_a54b5545483212a8d89be612dc0762987}\label{classwindow__display__opencv_a54b5545483212a8d89be612dc0762987}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!active\_overlay@{active\_overlay}}
+\index{active\_overlay@{active\_overlay}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{active\_overlay}{active\_overlay}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoverlay__opencv}{overlay\+\_\+opencv}}$\ast$ window\+\_\+display\+\_\+opencv\+::active\+\_\+overlay}
+
+
+
+overlays to display on top of the figure 
+
+\mbox{\Hypertarget{classwindow__display__opencv_acba19dd85ebe162cbdfcbaa1a637ec93}\label{classwindow__display__opencv_acba19dd85ebe162cbdfcbaa1a637ec93}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!colormap@{colormap}}
+\index{colormap@{colormap}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{colormap}{colormap}}
+{\footnotesize\ttfamily int window\+\_\+display\+\_\+opencv\+::colormap}
+
+\mbox{\Hypertarget{classwindow__display__opencv_aed78d5890087e12dd6a6282bcc53a4ee}\label{classwindow__display__opencv_aed78d5890087e12dd6a6282bcc53a4ee}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!control@{control}}
+\index{control@{control}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{control}{control}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}}$\ast$$>$ window\+\_\+display\+\_\+opencv\+::control}
+
+
+
+elements of the user interface for this window\+\_\+display 
+
+\mbox{\Hypertarget{classwindow__display__opencv_a8b59e46aa1e183634d7a192134ceb8de}\label{classwindow__display__opencv_a8b59e46aa1e183634d7a192134ceb8de}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!dimc@{dimc}}
+\index{dimc@{dimc}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{dimc}{dimc}}
+{\footnotesize\ttfamily unsigned int window\+\_\+display\+\_\+opencv\+::dimc\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+number of matrices attributed to the image 
+
+\mbox{\Hypertarget{classwindow__display__opencv_a6509e93d35a5e4f1c6919e0ebad11f0d}\label{classwindow__display__opencv_a6509e93d35a5e4f1c6919e0ebad11f0d}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!dimx@{dimx}}
+\index{dimx@{dimx}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{dimx}{dimx}}
+{\footnotesize\ttfamily unsigned int window\+\_\+display\+\_\+opencv\+::dimx}
+
+
+
+dimensions of the external matrix/function/image 
+
+\mbox{\Hypertarget{classwindow__display__opencv_a1990da2fa2d378be2a47b0e382cfdcbd}\label{classwindow__display__opencv_a1990da2fa2d378be2a47b0e382cfdcbd}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!dimy@{dimy}}
+\index{dimy@{dimy}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{dimy}{dimy}}
+{\footnotesize\ttfamily unsigned int window\+\_\+display\+\_\+opencv\+::dimy}
+
+\mbox{\Hypertarget{classwindow__display__opencv_a395ade2409b778cef26e065de747c162}\label{classwindow__display__opencv_a395ade2409b778cef26e065de747c162}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!id@{id}}
+\index{id@{id}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int window\+\_\+display\+\_\+opencv\+::id}
+
+
+
+id of the figure is extremely useful to identify and manipulate the window in figure list 
+
+\mbox{\Hypertarget{classwindow__display__opencv_a6e04713b762fcd77a3fda803190da64c}\label{classwindow__display__opencv_a6e04713b762fcd77a3fda803190da64c}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!image@{image}}
+\index{image@{image}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{image}{image}}
+{\footnotesize\ttfamily double$\ast$ window\+\_\+display\+\_\+opencv\+::image\mbox{[}4\mbox{]}}
+
+
+
+pointer to the memory location of the external image 
+
+\mbox{\Hypertarget{classwindow__display__opencv_a887f49ae053be1d34cc3807b4484b836}\label{classwindow__display__opencv_a887f49ae053be1d34cc3807b4484b836}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!image\_display@{image\_display}}
+\index{image\_display@{image\_display}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{image\_display}{image\_display}}
+{\footnotesize\ttfamily cv\+::\+Mat window\+\_\+display\+\_\+opencv\+::image\+\_\+display\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+ordinary grayscale display 
+
+\mbox{\Hypertarget{classwindow__display__opencv_a5d6b318fb10adbfe96eb69b8b74e27fb}\label{classwindow__display__opencv_a5d6b318fb10adbfe96eb69b8b74e27fb}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!image\_display\_color@{image\_display\_color}}
+\index{image\_display\_color@{image\_display\_color}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{image\_display\_color}{image\_display\_color}}
+{\footnotesize\ttfamily cv\+::\+Mat window\+\_\+display\+\_\+opencv\+::image\+\_\+display\+\_\+color\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+for colormap display 
+
+\mbox{\Hypertarget{classwindow__display__opencv_a9abaddea6a5e05dc6077259919985573}\label{classwindow__display__opencv_a9abaddea6a5e05dc6077259919985573}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!m\_max@{m\_max}}
+\index{m\_max@{m\_max}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{m\_max}{m\_max}}
+{\footnotesize\ttfamily double window\+\_\+display\+\_\+opencv\+::m\+\_\+max\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classwindow__display__opencv_a2fb932412f738cdaab4af4e9179df9cb}\label{classwindow__display__opencv_a2fb932412f738cdaab4af4e9179df9cb}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!m\_min@{m\_min}}
+\index{m\_min@{m\_min}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{m\_min}{m\_min}}
+{\footnotesize\ttfamily double window\+\_\+display\+\_\+opencv\+::m\+\_\+min\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+minimum and maximum value at which the intensity will be normalized 
+
+\mbox{\Hypertarget{classwindow__display__opencv_a92881342bf931832960d0997cff75f26}\label{classwindow__display__opencv_a92881342bf931832960d0997cff75f26}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!name@{name}}
+\index{name@{name}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string window\+\_\+display\+\_\+opencv\+::name}
+
+
+
+name identifier of the window 
+
+\mbox{\Hypertarget{classwindow__display__opencv_a43ea626839c78be0d6bc80ae4eea0501}\label{classwindow__display__opencv_a43ea626839c78be0d6bc80ae4eea0501}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!origin@{origin}}
+\index{origin@{origin}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{origin}{origin}}
+{\footnotesize\ttfamily double window\+\_\+display\+\_\+opencv\+::origin\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+origin of chartesian axis 
+
+\mbox{\Hypertarget{classwindow__display__opencv_a27459eddff7ccd63b21f510ea115d146}\label{classwindow__display__opencv_a27459eddff7ccd63b21f510ea115d146}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!overlay@{overlay}}
+\index{overlay@{overlay}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{overlay}{overlay}}
+{\footnotesize\ttfamily std\+::list$<$\mbox{\hyperlink{classoverlay__opencv}{overlay\+\_\+opencv}}$\ast$$>$ window\+\_\+display\+\_\+opencv\+::overlay}
+
+
+
+collection of the overlays for this window\+\_\+display 
+
+\mbox{\Hypertarget{classwindow__display__opencv_a273eef480343d7f07db5a9279a1e5547}\label{classwindow__display__opencv_a273eef480343d7f07db5a9279a1e5547}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!scale@{scale}}
+\index{scale@{scale}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{scale}{scale}}
+{\footnotesize\ttfamily double window\+\_\+display\+\_\+opencv\+::scale\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+side dimension of one pixel of the general function 
+
+\mbox{\Hypertarget{classwindow__display__opencv_abdeaf7f41ea305856d8504d0f4319221}\label{classwindow__display__opencv_abdeaf7f41ea305856d8504d0f4319221}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!scale\_display@{scale\_display}}
+\index{scale\_display@{scale\_display}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{scale\_display}{scale\_display}}
+{\footnotesize\ttfamily double window\+\_\+display\+\_\+opencv\+::scale\+\_\+display\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+side dimension of one pixel as on display 
+
+\mbox{\Hypertarget{classwindow__display__opencv_aa6db1eb2fe4b8eece2d0f13badc385fc}\label{classwindow__display__opencv_aa6db1eb2fe4b8eece2d0f13badc385fc}} 
+\index{window\_display\_opencv@{window\_display\_opencv}!start\_display@{start\_display}}
+\index{start\_display@{start\_display}!window\_display\_opencv@{window\_display\_opencv}}
+\doxysubsubsection{\texorpdfstring{start\_display}{start\_display}}
+{\footnotesize\ttfamily double window\+\_\+display\+\_\+opencv\+::start\+\_\+display\mbox{[}2\mbox{]}}
+
+
+
+upper left position that is displayed 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+diffmicro/display\+\_\+opencv/\mbox{\hyperlink{window__display__opencv_8h}{window\+\_\+display\+\_\+opencv.\+h}}\item 
+diffmicro/display\+\_\+opencv/\mbox{\hyperlink{window__display__opencv_8cpp}{window\+\_\+display\+\_\+opencv.\+cpp}}\end{DoxyCompactItemize}

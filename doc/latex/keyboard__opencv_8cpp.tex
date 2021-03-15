@@ -1,0 +1,78 @@
+\hypertarget{keyboard__opencv_8cpp}{}\doxysection{diffmicro/display\+\_\+opencv/keyboard\+\_\+opencv.cpp File Reference}
+\label{keyboard__opencv_8cpp}\index{diffmicro/display\_opencv/keyboard\_opencv.cpp@{diffmicro/display\_opencv/keyboard\_opencv.cpp}}
+{\ttfamily \#include \char`\"{}stdafx.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include \char`\"{}mouse\+\_\+opencv.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}controls\+\_\+opencv.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}figure\+\_\+opencv.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}keyboard\+\_\+opencv.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{keyboard__opencv_8cpp_af7bab79a5d13a49683d3aeaff3416700}{snapshot\+\_\+folder}} (\char`\"{}.\textbackslash{}\textbackslash{}\char`\"{})
+\item 
+unsigned int \mbox{\hyperlink{keyboard__opencv_8cpp_a219a4e4ade17528aed23f1d37ec3866e}{snapshot\+\_\+sequential\+\_\+number}} (0)
+\item 
+int \mbox{\hyperlink{keyboard__opencv_8cpp_a48129cb68d0d4527eeb00a1c00983353}{refresh\+\_\+idle}} (int key)
+\item 
+int \mbox{\hyperlink{keyboard__opencv_8cpp_aaba606e1b735f3df2c49179e5700ab29}{refresh\+\_\+exit}} (int key)
+\item 
+void \mbox{\hyperlink{keyboard__opencv_8cpp_a1799b57063b3e751831b454d661f37fc}{waitkeyboard}} (int delay)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$ \mbox{\hyperlink{keyboard__opencv_8cpp_ae6e3ec396cb5b0ea3eedb0405d1ffb61}{handle\+\_\+on\+\_\+matrix\+\_\+callback\+\_\+\+F2\+\_\+paralize\+\_\+save}} )(int $\ast$x, double $\ast$xx, void $\ast$fig) = NULL
+\item 
+int($\ast$ \mbox{\hyperlink{keyboard__opencv_8cpp_a2837ef8fda2e6a3edc5aa0a4d6443b98}{refresh}} )(int key) = \mbox{\hyperlink{keyboard__opencv_8h_a48129cb68d0d4527eeb00a1c00983353}{refresh\+\_\+idle}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{keyboard__opencv_8cpp_aaba606e1b735f3df2c49179e5700ab29}\label{keyboard__opencv_8cpp_aaba606e1b735f3df2c49179e5700ab29}} 
+\index{keyboard\_opencv.cpp@{keyboard\_opencv.cpp}!refresh\_exit@{refresh\_exit}}
+\index{refresh\_exit@{refresh\_exit}!keyboard\_opencv.cpp@{keyboard\_opencv.cpp}}
+\doxysubsubsection{\texorpdfstring{refresh\_exit()}{refresh\_exit()}}
+{\footnotesize\ttfamily int refresh\+\_\+exit (\begin{DoxyParamCaption}\item[{int}]{key }\end{DoxyParamCaption})}
+
+This is an example refresh function. The refresh function is necessary to force display. \mbox{\Hypertarget{keyboard__opencv_8cpp_a48129cb68d0d4527eeb00a1c00983353}\label{keyboard__opencv_8cpp_a48129cb68d0d4527eeb00a1c00983353}} 
+\index{keyboard\_opencv.cpp@{keyboard\_opencv.cpp}!refresh\_idle@{refresh\_idle}}
+\index{refresh\_idle@{refresh\_idle}!keyboard\_opencv.cpp@{keyboard\_opencv.cpp}}
+\doxysubsubsection{\texorpdfstring{refresh\_idle()}{refresh\_idle()}}
+{\footnotesize\ttfamily int refresh\+\_\+idle (\begin{DoxyParamCaption}\item[{int}]{key }\end{DoxyParamCaption})}
+
+This is an example refresh function. The refresh function is necessary to force display. \mbox{\Hypertarget{keyboard__opencv_8cpp_af7bab79a5d13a49683d3aeaff3416700}\label{keyboard__opencv_8cpp_af7bab79a5d13a49683d3aeaff3416700}} 
+\index{keyboard\_opencv.cpp@{keyboard\_opencv.cpp}!snapshot\_folder@{snapshot\_folder}}
+\index{snapshot\_folder@{snapshot\_folder}!keyboard\_opencv.cpp@{keyboard\_opencv.cpp}}
+\doxysubsubsection{\texorpdfstring{snapshot\_folder()}{snapshot\_folder()}}
+{\footnotesize\ttfamily std\+::string snapshot\+\_\+folder (\begin{DoxyParamCaption}\item[{\char`\"{}.\textbackslash{}\textbackslash{}\char`\"{}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{keyboard__opencv_8cpp_a219a4e4ade17528aed23f1d37ec3866e}\label{keyboard__opencv_8cpp_a219a4e4ade17528aed23f1d37ec3866e}} 
+\index{keyboard\_opencv.cpp@{keyboard\_opencv.cpp}!snapshot\_sequential\_number@{snapshot\_sequential\_number}}
+\index{snapshot\_sequential\_number@{snapshot\_sequential\_number}!keyboard\_opencv.cpp@{keyboard\_opencv.cpp}}
+\doxysubsubsection{\texorpdfstring{snapshot\_sequential\_number()}{snapshot\_sequential\_number()}}
+{\footnotesize\ttfamily unsigned int snapshot\+\_\+sequential\+\_\+number (\begin{DoxyParamCaption}\item[{0}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{keyboard__opencv_8cpp_a1799b57063b3e751831b454d661f37fc}\label{keyboard__opencv_8cpp_a1799b57063b3e751831b454d661f37fc}} 
+\index{keyboard\_opencv.cpp@{keyboard\_opencv.cpp}!waitkeyboard@{waitkeyboard}}
+\index{waitkeyboard@{waitkeyboard}!keyboard\_opencv.cpp@{keyboard\_opencv.cpp}}
+\doxysubsubsection{\texorpdfstring{waitkeyboard()}{waitkeyboard()}}
+{\footnotesize\ttfamily void waitkeyboard (\begin{DoxyParamCaption}\item[{int}]{delay = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+we grab the keyboard key press in case of event. The delay allows to call function refresh even if no button is pressed 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{keyboard__opencv_8cpp_ae6e3ec396cb5b0ea3eedb0405d1ffb61}\label{keyboard__opencv_8cpp_ae6e3ec396cb5b0ea3eedb0405d1ffb61}} 
+\index{keyboard\_opencv.cpp@{keyboard\_opencv.cpp}!handle\_on\_matrix\_callback\_F2\_paralize\_save@{handle\_on\_matrix\_callback\_F2\_paralize\_save}}
+\index{handle\_on\_matrix\_callback\_F2\_paralize\_save@{handle\_on\_matrix\_callback\_F2\_paralize\_save}!keyboard\_opencv.cpp@{keyboard\_opencv.cpp}}
+\doxysubsubsection{\texorpdfstring{handle\_on\_matrix\_callback\_F2\_paralize\_save}{handle\_on\_matrix\_callback\_F2\_paralize\_save}}
+{\footnotesize\ttfamily void($\ast$ handle\+\_\+on\+\_\+matrix\+\_\+callback\+\_\+\+F2\+\_\+paralize\+\_\+save) (int $\ast$x, double $\ast$xx, void $\ast$fig) (\begin{DoxyParamCaption}\item[{int $\ast$}]{x,  }\item[{double $\ast$}]{xx,  }\item[{void $\ast$}]{fig }\end{DoxyParamCaption}) = NULL}
+
+\mbox{\Hypertarget{keyboard__opencv_8cpp_a2837ef8fda2e6a3edc5aa0a4d6443b98}\label{keyboard__opencv_8cpp_a2837ef8fda2e6a3edc5aa0a4d6443b98}} 
+\index{keyboard\_opencv.cpp@{keyboard\_opencv.cpp}!refresh@{refresh}}
+\index{refresh@{refresh}!keyboard\_opencv.cpp@{keyboard\_opencv.cpp}}
+\doxysubsubsection{\texorpdfstring{refresh}{refresh}}
+{\footnotesize\ttfamily int($\ast$ refresh) (int key) (\begin{DoxyParamCaption}\item[{int}]{key }\end{DoxyParamCaption}) = \mbox{\hyperlink{keyboard__opencv_8h_a48129cb68d0d4527eeb00a1c00983353}{refresh\+\_\+idle}}}
+
+refresh function is called after a certain delay or when a button is pressed 

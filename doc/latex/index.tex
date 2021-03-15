@@ -1,0 +1,4 @@
+\mbox{\hyperlink{diffmicro_8cpp}{diffmicro.\+cpp}} \+: Defines the entry point for the console application.
+
+The calculus that is going to be performed can be explained in the following way. A set of images equally spaced in time is given. The pictures are usually taken with a digital camera with a fixed frame rate. The program must evaluate all the power spectra belonging to the difference of any possible couple of images. All these power spectra can be organized in groups in respect to the time delay between the two images that generates the differences. The program should output the average power spectrum of each group and its azimuthal average.~\newline
+Note that, since the power spectrum is a symmetric matrix we can store only the upper half of the FFTs and perform the difference operation only over this upper half. So the output of the program is only the upper half of the averaged power spectra. 

@@ -1,0 +1,398 @@
+\hypertarget{my__math_8h}{}\doxysection{diffmicro/cpp-\/routine/my\+\_\+math.h File Reference}
+\label{my__math_8h}\index{diffmicro/cpp-\/routine/my\_math.h@{diffmicro/cpp-\/routine/my\_math.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include \char`\"{}prep\+\_\+vet.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}circular\+\_\+index.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}contour.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}spherical\+\_\+hyperbolical\+\_\+projection.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}correlation\+\_\+cpu.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{my__math_8h_ad9e8601d2fdc5195e7d6412aa2939180}{GREEK\+\_\+\+PI}}~3.\+14159265358979323846264338327950288419716939937510
+\begin{DoxyCompactList}\small\item\em 50 decimal digits greek\+\_\+pi \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{my__math_8h_a9bfd1543d6b6d42c33fcd0754a4568bb}{EPS\+\_\+\+INV\+\_\+\+MAT}}~0.\+00000000001
+\begin{DoxyCompactList}\small\item\em for comparisons among floating point numbers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename INT , typename INT2 $>$ }\\INT \mbox{\hyperlink{my__math_8h_a1afbf26e428de3e47b806ccdea979fed}{pow\+\_\+int}} (INT arg, INT2 exp)
+\item 
+{\footnotesize template$<$typename INT , typename FLOAT $>$ }\\void \mbox{\hyperlink{my__math_8h_a1837c4f3581f7d0da052487c39f0fc53}{gain\+\_\+a}} (INT \mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, FLOAT v\mbox{[}$\,$\mbox{]}, FLOAT gain)
+\item 
+double \mbox{\hyperlink{my__math_8h_a059c953423e00a28bfc5d7ffa06a69ef}{scalprod\+\_\+vv}} (std\+::vector$<$ double $>$ \&v1, std\+::vector$<$ double $>$ \&v2)
+\item 
+double \mbox{\hyperlink{my__math_8h_ac3d38be0f0fae89f38fa5fbab92278b4}{scalprod\+\_\+av}} (unsigned int \&dimvet, double $\ast$v1, std\+::vector$<$ double $>$ \&v2)
+\item 
+{\footnotesize template$<$typename FLOAT1 , typename FLOAT2 $>$ }\\double \mbox{\hyperlink{my__math_8h_ab01a49fa14c6e8d6e60325e836748b6d}{scalprod\+\_\+aa}} (unsigned int dimvet, FLOAT1 $\ast$v1, FLOAT2 $\ast$v2)
+\item 
+void \mbox{\hyperlink{my__math_8h_a97cfd5df25cc4932b3c6574affca99bc}{dif\+\_\+aa}} (unsigned int \&dimvet, double $\ast$min, double $\ast$sot, double $\ast$out)
+\item 
+void \mbox{\hyperlink{my__math_8h_ad3e6221272b56a854098403463ac8f36}{sum\+\_\+aa}} (unsigned int \&dimvet, double $\ast$v1, double $\ast$v2, double $\ast$out)
+\item 
+void \mbox{\hyperlink{my__math_8h_a5ec1b9a4e7c92bbd51734e92efa04497}{prod\+\_\+aa}} (unsigned int \&dimvet, double $\ast$v1, double $\ast$v2, double $\ast$out)
+\item 
+void \mbox{\hyperlink{my__math_8h_aeaec43b2e732a40e52f421764dabf47e}{div\+\_\+aa}} (unsigned int \&dimvet, double $\ast$divid, double $\ast$divis, double $\ast$out)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{my__math_8h_a30d5b0b55172cd642728583737de2e33}{integ\+\_\+a}} (unsigned int \&dimvet, T $\ast$vet)
+\item 
+{\footnotesize template$<$typename FLOAT , typename INT $>$ }\\void \mbox{\hyperlink{my__math_8h_a98e368e146f07cc205641d7c7ab91bec}{bias\+\_\+a}} (FLOAT bias, INT dimvet, FLOAT $\ast$vet)
+\item 
+{\footnotesize template$<$typename FLOAT , typename FLOAT1 $>$ }\\FLOAT \mbox{\hyperlink{my__math_8h_a737e9da5c3ca2ef0a54b38fb9ea6a2e1}{mean}} (unsigned int \mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, FLOAT1 $\ast$vet)
+\item 
+{\footnotesize template$<$typename UINT , typename FLOAT , typename FLOAT1 $>$ }\\void \mbox{\hyperlink{my__math_8h_a096485d512fb6991c67ccfa24a41d67d}{mean\+\_\+std}} (UINT \mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, FLOAT1 $\ast$vet, FLOAT \&\mbox{\hyperlink{my__math_8h_a737e9da5c3ca2ef0a54b38fb9ea6a2e1}{mean}}, FLOAT \&std)
+\item 
+{\footnotesize template$<$typename FLOAT , typename FLOAT1 , typename FLOAT2 $>$ }\\FLOAT \mbox{\hyperlink{my__math_8h_a9acba19dd643e23cb5fcd9863087cd36}{mean\+\_\+w}} (unsigned int \mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, FLOAT1 $\ast$vet, FLOAT2 $\ast$w)
+\item 
+{\footnotesize template$<$typename FLOAT1 , typename FLOAT2 , typename FLOAT3 $>$ }\\void \mbox{\hyperlink{my__math_8h_a11f3bfd0cbfa3d6c60cb0e97d4445699}{wedge\+\_\+vet}} (FLOAT1 $\ast$vet1, FLOAT2 $\ast$vet2, FLOAT3 $\ast$out)
+\item 
+{\footnotesize template$<$typename FLOAT $>$ }\\void \mbox{\hyperlink{my__math_8h_a13e22a14d1cc1497850c3f2a97299ab1}{cartesian\+\_\+to\+\_\+spherical}} (FLOAT c\mbox{[}$\,$\mbox{]}, FLOAT s\mbox{[}$\,$\mbox{]})
+\item 
+{\footnotesize template$<$typename FLOAT $>$ }\\void \mbox{\hyperlink{my__math_8h_a6b5b3b287a5d6ee7a4c648b4a5ce397a}{spherical\+\_\+to\+\_\+cartesian}} (FLOAT s\mbox{[}$\,$\mbox{]}, FLOAT c\mbox{[}$\,$\mbox{]})
+\item 
+{\footnotesize template$<$typename FLOAT1 , typename FLOAT2 $>$ }\\FLOAT2 \mbox{\hyperlink{my__math_8h_ae40970cd51ae4cb7f78163f23579f0c9}{normalize\+\_\+vet}} (unsigned int \mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, FLOAT1 $\ast$in, FLOAT2 $\ast$out)
+\item 
+{\footnotesize template$<$typename FLOAT1 , typename FLOAT2 $>$ }\\void \mbox{\hyperlink{my__math_8h_a9c5fb2ee26a064031d206a44051901e4}{mat\+\_\+trasp}} (unsigned int dim\+\_\+row, unsigned int dim\+\_\+col, FLOAT1 $\ast$in, FLOAT2 $\ast$out)
+\item 
+{\footnotesize template$<$typename FLOAT1 , typename FLOAT2 , typename FLOAT3 $>$ }\\void \mbox{\hyperlink{my__math_8h_a36b8643900d950ce1f6a25b30fc3019b}{mat\+\_\+by\+\_\+vet}} (unsigned int dim\+\_\+row, unsigned int dim\+\_\+col, FLOAT1 $\ast$mat, FLOAT2 $\ast$in, FLOAT3 $\ast$out)
+\item 
+{\footnotesize template$<$typename INT , typename FLOAT1 , typename FLOAT2 , typename FLOAT3 $>$ }\\void \mbox{\hyperlink{my__math_8h_a7b0e9f1844b009d731a4d73b2c344fec}{mat\+\_\+by\+\_\+mat}} (unsigned int dim\+\_\+row\+\_\+1, unsigned int dim\+\_\+col\+\_\+1, FLOAT1 $\ast$mat1, unsigned int dim\+\_\+col\+\_\+2, FLOAT2 $\ast$mat2, FLOAT3 $\ast$mat\+\_\+out)
+\item 
+{\footnotesize template$<$typename INT , typename FLOAT1 , typename FLOAT2 , typename FLOAT3 $>$ }\\void \mbox{\hyperlink{my__math_8h_af3242f0772d310549f145be503d5374f}{mat\+\_\+trasp\+\_\+by\+\_\+vet}} (INT dim\+\_\+row, INT dim\+\_\+col, FLOAT1 $\ast$mat, FLOAT2 $\ast$in, FLOAT3 $\ast$out)
+\item 
+{\footnotesize template$<$typename INT , typename FLOAT1 , typename FLOAT2 , typename FLOAT3 $>$ }\\void \mbox{\hyperlink{my__math_8h_a7fad0614a3c0d297406672b40c392afd}{mat\+\_\+trasp\+\_\+by\+\_\+mat}} (INT dim\+\_\+row\+\_\+1, INT dim\+\_\+col\+\_\+1, FLOAT1 $\ast$mat1, INT dim\+\_\+col\+\_\+2, FLOAT2 $\ast$mat2, FLOAT3 $\ast$mat\+\_\+out)
+\item 
+{\footnotesize template$<$typename INT , typename FLOAT1 , typename FLOAT2 , typename FLOAT3 $>$ }\\void \mbox{\hyperlink{my__math_8h_a2587b2c26b6e26d1944bf859697e9bb7}{mat\+\_\+by\+\_\+mat\+\_\+trasp}} (INT dim\+\_\+row\+\_\+1, INT dim\+\_\+col\+\_\+1, FLOAT1 $\ast$mat1, INT dim\+\_\+col\+\_\+2, FLOAT2 $\ast$mat2, FLOAT3 $\ast$mat\+\_\+out)
+\item 
+{\footnotesize template$<$typename INT , typename FLOAT $>$ }\\void \mbox{\hyperlink{my__math_8h_ac273b69c7da2ab9681cbf4a3aea219cf}{real\+\_\+space\+\_\+convolve\+\_\+mat}} (INT dimx, INT dimy, FLOAT mat\mbox{[}$\,$\mbox{]}, INT dimxk, INT dimyk, FLOAT kernel\mbox{[}$\,$\mbox{]}, FLOAT out\mbox{[}$\,$\mbox{]})
+\item 
+{\footnotesize template$<$typename FLOAT , typename FLOAT1 , typename FLOAT2 , typename FLOAT3 $>$ }\\FLOAT \mbox{\hyperlink{my__math_8h_a07d953b1e06fdcd28519dcb34aeed131}{equlin}} (unsigned int \mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, FLOAT1 $\ast$\+\_\+mat, FLOAT2 $\ast$vet, FLOAT3 $\ast$out)
+\item 
+{\footnotesize template$<$typename FLOAT $>$ }\\bool \mbox{\hyperlink{my__math_8h_a50bbb01cf95a60cad66c717bd7fe9191}{minsqrfit}} (unsigned int dimy, unsigned int dimpar, FLOAT $\ast$x, FLOAT $\ast$y, FLOAT $\ast$par, FLOAT $\ast$err\+\_\+par)
+\item 
+{\footnotesize template$<$typename FLOAT $>$ }\\bool \mbox{\hyperlink{my__math_8h_a6041ab5e9e04932b2e55115cdfe5b8c9}{poly\+\_\+fit}} (unsigned int \mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, FLOAT $\ast$x, FLOAT $\ast$y, unsigned int dimpar, FLOAT $\ast$powers, FLOAT $\ast$par, FLOAT $\ast$err\+\_\+par)
+\item 
+{\footnotesize template$<$typename FLOAT $>$ }\\bool \mbox{\hyperlink{my__math_8h_a868991103c47fc81b3d331affa85d4d1}{poly\+\_\+fit}} (unsigned int \mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, FLOAT $\ast$x, FLOAT $\ast$y, int max\+\_\+power, FLOAT $\ast$par, FLOAT $\ast$err\+\_\+par)
+\item 
+{\footnotesize template$<$typename FLOAT $>$ }\\bool \mbox{\hyperlink{my__math_8h_ab3792b05f34de8ff47e8057bb661e36e}{linear\+\_\+fit}} (unsigned int \mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, FLOAT $\ast$x, FLOAT $\ast$y, FLOAT $\ast$par, FLOAT $\ast$err\+\_\+par)
+\item 
+{\footnotesize template$<$typename FLOAT , typename FLOAT1 , typename FLOAT2 , typename FLOAT3 $>$ }\\bool \mbox{\hyperlink{my__math_8h_ae443d83261891fb5de4dd938f7318d60}{quadratic\+\_\+fit}} (unsigned int \mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, FLOAT1 $\ast$x, FLOAT2 $\ast$y, FLOAT3 $\ast$par, FLOAT3 $\ast$err\+\_\+par)
+\item 
+{\footnotesize template$<$typename FLOAT , typename FLOAT1 , typename FLOAT2 , typename FLOAT3 $>$ }\\bool \mbox{\hyperlink{my__math_8h_a24b4e9351b0bbe808b35b0364ec44550}{exp\+\_\+fit}} (unsigned int \mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, FLOAT1 $\ast$x, FLOAT2 $\ast$y, FLOAT3 $\ast$par, FLOAT3 $\ast$err\+\_\+par)
+\item 
+{\footnotesize template$<$typename FLOAT1 , typename FLOAT2 $>$ }\\void \mbox{\hyperlink{my__math_8h_ae1458e04e02641b24a515b7cf086f247}{circonference\+\_\+fit}} (unsigned int dimpoints, FLOAT1 $\ast$points, FLOAT2 $\ast$x0, FLOAT2 \&r)
+\item 
+{\footnotesize template$<$typename INT , typename FLOAT $>$ }\\void \mbox{\hyperlink{my__math_8h_a120e75709e76de6a95ca169857f14184}{pulse\+\_\+smooth}} (INT dimvet, INT dimpulse, FLOAT $\ast$vetin, FLOAT $\ast$vetout)
+\item 
+{\footnotesize template$<$typename INT , typename FLOAT $>$ }\\void \mbox{\hyperlink{my__math_8h_a377576052fb718520c7c8a2e7a116165}{kernel\+\_\+smooth}} (INT dimvet, INT dimkernel, FLOAT $\ast$kernel, FLOAT $\ast$vetin, FLOAT $\ast$vetout)
+\item 
+{\footnotesize template$<$typename FLOAT $>$ }\\void \mbox{\hyperlink{my__math_8h_a1972d38dbac9430574236ee3fa5e845a}{rotation}} (FLOAT $\ast$vet, FLOAT $\ast$rot)
+\item 
+{\footnotesize template$<$typename FLOAT $>$ }\\void \mbox{\hyperlink{my__math_8h_aa037e2ca13aa0ab45fffeb167e8753b7}{nord\+\_\+to\+\_\+rotation}} (FLOAT new\+\_\+nord\mbox{[}$\,$\mbox{]}, FLOAT mat\+\_\+new\+\_\+to\+\_\+old\mbox{[}$\,$\mbox{]}, FLOAT mat\+\_\+old\+\_\+to\+\_\+new\mbox{[}$\,$\mbox{]})
+\item 
+{\footnotesize template$<$typename FLOAT $>$ }\\bool \mbox{\hyperlink{my__math_8h_a8c66873a7ae078aaa7f01fbb2f1cd761}{intersect\+\_\+plane\+\_\+line}} (FLOAT plane\+\_\+pos\mbox{[}$\,$\mbox{]}, FLOAT plane\+\_\+normal\mbox{[}$\,$\mbox{]}, FLOAT line\+\_\+pos\mbox{[}$\,$\mbox{]}, FLOAT line\+\_\+direction\mbox{[}$\,$\mbox{]}, FLOAT pointout\mbox{[}$\,$\mbox{]}, FLOAT matcollisionout\mbox{[}$\,$\mbox{]}=NULL)
+\item 
+{\footnotesize template$<$typename UINT , typename FLOAT $>$ }\\void \mbox{\hyperlink{my__math_8h_ac68bae67bda22a79ffa3cf3249a73c78}{gradient\+\_\+numerical}} (void($\ast$f)(FLOAT $\ast$x, FLOAT $\ast$y), UINT dimx, UINT dimy, FLOAT $\ast$x, FLOAT $\ast$xtmp, FLOAT $\ast$y, FLOAT $\ast$ytmp, FLOAT $\ast$dx, FLOAT $\ast$grad)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{my__math_8h_a9bfd1543d6b6d42c33fcd0754a4568bb}\label{my__math_8h_a9bfd1543d6b6d42c33fcd0754a4568bb}} 
+\index{my\_math.h@{my\_math.h}!EPS\_INV\_MAT@{EPS\_INV\_MAT}}
+\index{EPS\_INV\_MAT@{EPS\_INV\_MAT}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{EPS\_INV\_MAT}{EPS\_INV\_MAT}}
+{\footnotesize\ttfamily \#define EPS\+\_\+\+INV\+\_\+\+MAT~0.\+00000000001}
+
+
+
+for comparisons among floating point numbers. 
+
+\mbox{\Hypertarget{my__math_8h_ad9e8601d2fdc5195e7d6412aa2939180}\label{my__math_8h_ad9e8601d2fdc5195e7d6412aa2939180}} 
+\index{my\_math.h@{my\_math.h}!GREEK\_PI@{GREEK\_PI}}
+\index{GREEK\_PI@{GREEK\_PI}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{GREEK\_PI}{GREEK\_PI}}
+{\footnotesize\ttfamily \#define GREEK\+\_\+\+PI~3.\+14159265358979323846264338327950288419716939937510}
+
+
+
+50 decimal digits greek\+\_\+pi 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{my__math_8h_a98e368e146f07cc205641d7c7ab91bec}\label{my__math_8h_a98e368e146f07cc205641d7c7ab91bec}} 
+\index{my\_math.h@{my\_math.h}!bias\_a@{bias\_a}}
+\index{bias\_a@{bias\_a}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{bias\_a()}{bias\_a()}}
+{\footnotesize\ttfamily template$<$typename FLOAT , typename INT $>$ \\
+void bias\+\_\+a (\begin{DoxyParamCaption}\item[{FLOAT}]{bias,  }\item[{INT}]{dimvet,  }\item[{FLOAT $\ast$}]{vet }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function adds a bias of all elements of vet \mbox{\Hypertarget{my__math_8h_a13e22a14d1cc1497850c3f2a97299ab1}\label{my__math_8h_a13e22a14d1cc1497850c3f2a97299ab1}} 
+\index{my\_math.h@{my\_math.h}!cartesian\_to\_spherical@{cartesian\_to\_spherical}}
+\index{cartesian\_to\_spherical@{cartesian\_to\_spherical}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{cartesian\_to\_spherical()}{cartesian\_to\_spherical()}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+void cartesian\+\_\+to\+\_\+spherical (\begin{DoxyParamCaption}\item[{FLOAT}]{c\mbox{[}$\,$\mbox{]},  }\item[{FLOAT}]{s\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{my__math_8h_ae1458e04e02641b24a515b7cf086f247}\label{my__math_8h_ae1458e04e02641b24a515b7cf086f247}} 
+\index{my\_math.h@{my\_math.h}!circonference\_fit@{circonference\_fit}}
+\index{circonference\_fit@{circonference\_fit}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{circonference\_fit()}{circonference\_fit()}}
+{\footnotesize\ttfamily template$<$typename FLOAT1 , typename FLOAT2 $>$ \\
+void circonference\+\_\+fit (\begin{DoxyParamCaption}\item[{unsigned int}]{dimpoints,  }\item[{FLOAT1 $\ast$}]{points,  }\item[{FLOAT2 $\ast$}]{x0,  }\item[{FLOAT2 \&}]{r }\end{DoxyParamCaption})}
+
+This function find the best circles which approximate the input data dimpoints -\/ number of points contained in points points -\/ points in space that approximate the circle. Points are stored (x\mbox{[}0\mbox{]}, y\mbox{[}0\mbox{]}, x\mbox{[}1\mbox{]}, y\mbox{[}1\mbox{]}....) x0 -\/ return coordinates of the middle point of the circle r -\/ radius of the circle \mbox{\Hypertarget{my__math_8h_a97cfd5df25cc4932b3c6574affca99bc}\label{my__math_8h_a97cfd5df25cc4932b3c6574affca99bc}} 
+\index{my\_math.h@{my\_math.h}!dif\_aa@{dif\_aa}}
+\index{dif\_aa@{dif\_aa}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{dif\_aa()}{dif\_aa()}}
+{\footnotesize\ttfamily void dif\+\_\+aa (\begin{DoxyParamCaption}\item[{unsigned int \&}]{dimvet,  }\item[{double $\ast$}]{min,  }\item[{double $\ast$}]{sot,  }\item[{double $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Makes the difference between two arrays element by element \mbox{\Hypertarget{my__math_8h_aeaec43b2e732a40e52f421764dabf47e}\label{my__math_8h_aeaec43b2e732a40e52f421764dabf47e}} 
+\index{my\_math.h@{my\_math.h}!div\_aa@{div\_aa}}
+\index{div\_aa@{div\_aa}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{div\_aa()}{div\_aa()}}
+{\footnotesize\ttfamily void div\+\_\+aa (\begin{DoxyParamCaption}\item[{unsigned int \&}]{dimvet,  }\item[{double $\ast$}]{divid,  }\item[{double $\ast$}]{divis,  }\item[{double $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+It divides two arrays element by element \mbox{\Hypertarget{my__math_8h_a07d953b1e06fdcd28519dcb34aeed131}\label{my__math_8h_a07d953b1e06fdcd28519dcb34aeed131}} 
+\index{my\_math.h@{my\_math.h}!equlin@{equlin}}
+\index{equlin@{equlin}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{equlin()}{equlin()}}
+{\footnotesize\ttfamily template$<$typename FLOAT , typename FLOAT1 , typename FLOAT2 , typename FLOAT3 $>$ \\
+FLOAT equlin (\begin{DoxyParamCaption}\item[{unsigned int}]{dim,  }\item[{FLOAT1 $\ast$}]{\+\_\+mat,  }\item[{FLOAT2 $\ast$}]{vet,  }\item[{FLOAT3 $\ast$}]{out }\end{DoxyParamCaption})}
+
+Solving linear equation using reduction methods. return value is the determinant of the matrix mat matrix mat must be square. vet==out is allowed \mbox{\Hypertarget{my__math_8h_a24b4e9351b0bbe808b35b0364ec44550}\label{my__math_8h_a24b4e9351b0bbe808b35b0364ec44550}} 
+\index{my\_math.h@{my\_math.h}!exp\_fit@{exp\_fit}}
+\index{exp\_fit@{exp\_fit}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{exp\_fit()}{exp\_fit()}}
+{\footnotesize\ttfamily template$<$typename FLOAT , typename FLOAT1 , typename FLOAT2 , typename FLOAT3 $>$ \\
+bool exp\+\_\+fit (\begin{DoxyParamCaption}\item[{unsigned int}]{dim,  }\item[{FLOAT1 $\ast$}]{x,  }\item[{FLOAT2 $\ast$}]{y,  }\item[{FLOAT3 $\ast$}]{par,  }\item[{FLOAT3 $\ast$}]{err\+\_\+par }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+y = par\mbox{[}0\mbox{]} $\ast$ exp(par\mbox{[}1\mbox{]} $\ast$ x) \mbox{\Hypertarget{my__math_8h_a1837c4f3581f7d0da052487c39f0fc53}\label{my__math_8h_a1837c4f3581f7d0da052487c39f0fc53}} 
+\index{my\_math.h@{my\_math.h}!gain\_a@{gain\_a}}
+\index{gain\_a@{gain\_a}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{gain\_a()}{gain\_a()}}
+{\footnotesize\ttfamily template$<$typename INT , typename FLOAT $>$ \\
+void gain\+\_\+a (\begin{DoxyParamCaption}\item[{INT}]{dim,  }\item[{FLOAT}]{v\mbox{[}$\,$\mbox{]},  }\item[{FLOAT}]{gain }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{my__math_8h_ac68bae67bda22a79ffa3cf3249a73c78}\label{my__math_8h_ac68bae67bda22a79ffa3cf3249a73c78}} 
+\index{my\_math.h@{my\_math.h}!gradient\_numerical@{gradient\_numerical}}
+\index{gradient\_numerical@{gradient\_numerical}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{gradient\_numerical()}{gradient\_numerical()}}
+{\footnotesize\ttfamily template$<$typename UINT , typename FLOAT $>$ \\
+void gradient\+\_\+numerical (\begin{DoxyParamCaption}\item[{void($\ast$)(FLOAT $\ast$x, FLOAT $\ast$y)}]{f,  }\item[{UINT}]{dimx,  }\item[{UINT}]{dimy,  }\item[{FLOAT $\ast$}]{x,  }\item[{FLOAT $\ast$}]{xtmp,  }\item[{FLOAT $\ast$}]{y,  }\item[{FLOAT $\ast$}]{ytmp,  }\item[{FLOAT $\ast$}]{dx,  }\item[{FLOAT $\ast$}]{grad }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{my__math_8h_a30d5b0b55172cd642728583737de2e33}\label{my__math_8h_a30d5b0b55172cd642728583737de2e33}} 
+\index{my\_math.h@{my\_math.h}!integ\_a@{integ\_a}}
+\index{integ\_a@{integ\_a}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{integ\_a()}{integ\_a()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T integ\+\_\+a (\begin{DoxyParamCaption}\item[{unsigned int \&}]{dimvet,  }\item[{T $\ast$}]{vet }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+It sums all the elements of the array vet \mbox{\Hypertarget{my__math_8h_a8c66873a7ae078aaa7f01fbb2f1cd761}\label{my__math_8h_a8c66873a7ae078aaa7f01fbb2f1cd761}} 
+\index{my\_math.h@{my\_math.h}!intersect\_plane\_line@{intersect\_plane\_line}}
+\index{intersect\_plane\_line@{intersect\_plane\_line}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{intersect\_plane\_line()}{intersect\_plane\_line()}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+bool intersect\+\_\+plane\+\_\+line (\begin{DoxyParamCaption}\item[{FLOAT}]{plane\+\_\+pos\mbox{[}$\,$\mbox{]},  }\item[{FLOAT}]{plane\+\_\+normal\mbox{[}$\,$\mbox{]},  }\item[{FLOAT}]{line\+\_\+pos\mbox{[}$\,$\mbox{]},  }\item[{FLOAT}]{line\+\_\+direction\mbox{[}$\,$\mbox{]},  }\item[{FLOAT}]{pointout\mbox{[}$\,$\mbox{]},  }\item[{FLOAT}]{matcollisionout\mbox{[}$\,$\mbox{]} = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+Find intersection point between a plane and a line. the function is thought in 3D \mbox{\Hypertarget{my__math_8h_a377576052fb718520c7c8a2e7a116165}\label{my__math_8h_a377576052fb718520c7c8a2e7a116165}} 
+\index{my\_math.h@{my\_math.h}!kernel\_smooth@{kernel\_smooth}}
+\index{kernel\_smooth@{kernel\_smooth}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{kernel\_smooth()}{kernel\_smooth()}}
+{\footnotesize\ttfamily template$<$typename INT , typename FLOAT $>$ \\
+void kernel\+\_\+smooth (\begin{DoxyParamCaption}\item[{INT}]{dimvet,  }\item[{INT}]{dimkernel,  }\item[{FLOAT $\ast$}]{kernel,  }\item[{FLOAT $\ast$}]{vetin,  }\item[{FLOAT $\ast$}]{vetout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+It gives back the convolution between a vector vetin and square impulse of lenght dimpulse. Square impulse is normalized to 1 \mbox{\Hypertarget{my__math_8h_ab3792b05f34de8ff47e8057bb661e36e}\label{my__math_8h_ab3792b05f34de8ff47e8057bb661e36e}} 
+\index{my\_math.h@{my\_math.h}!linear\_fit@{linear\_fit}}
+\index{linear\_fit@{linear\_fit}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{linear\_fit()}{linear\_fit()}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+bool linear\+\_\+fit (\begin{DoxyParamCaption}\item[{unsigned int}]{dim,  }\item[{FLOAT $\ast$}]{x,  }\item[{FLOAT $\ast$}]{y,  }\item[{FLOAT $\ast$}]{par,  }\item[{FLOAT $\ast$}]{err\+\_\+par }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{my__math_8h_a7b0e9f1844b009d731a4d73b2c344fec}\label{my__math_8h_a7b0e9f1844b009d731a4d73b2c344fec}} 
+\index{my\_math.h@{my\_math.h}!mat\_by\_mat@{mat\_by\_mat}}
+\index{mat\_by\_mat@{mat\_by\_mat}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{mat\_by\_mat()}{mat\_by\_mat()}}
+{\footnotesize\ttfamily template$<$typename INT , typename FLOAT1 , typename FLOAT2 , typename FLOAT3 $>$ \\
+void mat\+\_\+by\+\_\+mat (\begin{DoxyParamCaption}\item[{unsigned int}]{dim\+\_\+row\+\_\+1,  }\item[{unsigned int}]{dim\+\_\+col\+\_\+1,  }\item[{FLOAT1 $\ast$}]{mat1,  }\item[{unsigned int}]{dim\+\_\+col\+\_\+2,  }\item[{FLOAT2 $\ast$}]{mat2,  }\item[{FLOAT3 $\ast$}]{mat\+\_\+out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Multiplies a matrix by a vector rows by coloum \mbox{\Hypertarget{my__math_8h_a2587b2c26b6e26d1944bf859697e9bb7}\label{my__math_8h_a2587b2c26b6e26d1944bf859697e9bb7}} 
+\index{my\_math.h@{my\_math.h}!mat\_by\_mat\_trasp@{mat\_by\_mat\_trasp}}
+\index{mat\_by\_mat\_trasp@{mat\_by\_mat\_trasp}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{mat\_by\_mat\_trasp()}{mat\_by\_mat\_trasp()}}
+{\footnotesize\ttfamily template$<$typename INT , typename FLOAT1 , typename FLOAT2 , typename FLOAT3 $>$ \\
+void mat\+\_\+by\+\_\+mat\+\_\+trasp (\begin{DoxyParamCaption}\item[{INT}]{dim\+\_\+row\+\_\+1,  }\item[{INT}]{dim\+\_\+col\+\_\+1,  }\item[{FLOAT1 $\ast$}]{mat1,  }\item[{INT}]{dim\+\_\+col\+\_\+2,  }\item[{FLOAT2 $\ast$}]{mat2,  }\item[{FLOAT3 $\ast$}]{mat\+\_\+out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Multiplies a matrix by a matrix transposed rows by coloums \mbox{\Hypertarget{my__math_8h_a36b8643900d950ce1f6a25b30fc3019b}\label{my__math_8h_a36b8643900d950ce1f6a25b30fc3019b}} 
+\index{my\_math.h@{my\_math.h}!mat\_by\_vet@{mat\_by\_vet}}
+\index{mat\_by\_vet@{mat\_by\_vet}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{mat\_by\_vet()}{mat\_by\_vet()}}
+{\footnotesize\ttfamily template$<$typename FLOAT1 , typename FLOAT2 , typename FLOAT3 $>$ \\
+void mat\+\_\+by\+\_\+vet (\begin{DoxyParamCaption}\item[{unsigned int}]{dim\+\_\+row,  }\item[{unsigned int}]{dim\+\_\+col,  }\item[{FLOAT1 $\ast$}]{mat,  }\item[{FLOAT2 $\ast$}]{in,  }\item[{FLOAT3 $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Multiplies a matrix by a vector rows by coloum \mbox{\Hypertarget{my__math_8h_a9c5fb2ee26a064031d206a44051901e4}\label{my__math_8h_a9c5fb2ee26a064031d206a44051901e4}} 
+\index{my\_math.h@{my\_math.h}!mat\_trasp@{mat\_trasp}}
+\index{mat\_trasp@{mat\_trasp}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{mat\_trasp()}{mat\_trasp()}}
+{\footnotesize\ttfamily template$<$typename FLOAT1 , typename FLOAT2 $>$ \\
+void mat\+\_\+trasp (\begin{DoxyParamCaption}\item[{unsigned int}]{dim\+\_\+row,  }\item[{unsigned int}]{dim\+\_\+col,  }\item[{FLOAT1 $\ast$}]{in,  }\item[{FLOAT2 $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+transpose a matrix \mbox{\Hypertarget{my__math_8h_a7fad0614a3c0d297406672b40c392afd}\label{my__math_8h_a7fad0614a3c0d297406672b40c392afd}} 
+\index{my\_math.h@{my\_math.h}!mat\_trasp\_by\_mat@{mat\_trasp\_by\_mat}}
+\index{mat\_trasp\_by\_mat@{mat\_trasp\_by\_mat}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{mat\_trasp\_by\_mat()}{mat\_trasp\_by\_mat()}}
+{\footnotesize\ttfamily template$<$typename INT , typename FLOAT1 , typename FLOAT2 , typename FLOAT3 $>$ \\
+void mat\+\_\+trasp\+\_\+by\+\_\+mat (\begin{DoxyParamCaption}\item[{INT}]{dim\+\_\+row\+\_\+1,  }\item[{INT}]{dim\+\_\+col\+\_\+1,  }\item[{FLOAT1 $\ast$}]{mat1,  }\item[{INT}]{dim\+\_\+col\+\_\+2,  }\item[{FLOAT2 $\ast$}]{mat2,  }\item[{FLOAT3 $\ast$}]{mat\+\_\+out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Multiplies a matrix tranposed by a matrix rows by coloums \mbox{\Hypertarget{my__math_8h_af3242f0772d310549f145be503d5374f}\label{my__math_8h_af3242f0772d310549f145be503d5374f}} 
+\index{my\_math.h@{my\_math.h}!mat\_trasp\_by\_vet@{mat\_trasp\_by\_vet}}
+\index{mat\_trasp\_by\_vet@{mat\_trasp\_by\_vet}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{mat\_trasp\_by\_vet()}{mat\_trasp\_by\_vet()}}
+{\footnotesize\ttfamily template$<$typename INT , typename FLOAT1 , typename FLOAT2 , typename FLOAT3 $>$ \\
+void mat\+\_\+trasp\+\_\+by\+\_\+vet (\begin{DoxyParamCaption}\item[{INT}]{dim\+\_\+row,  }\item[{INT}]{dim\+\_\+col,  }\item[{FLOAT1 $\ast$}]{mat,  }\item[{FLOAT2 $\ast$}]{in,  }\item[{FLOAT3 $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Multiplies a matrix transposed by a vector rows by coloum \mbox{\Hypertarget{my__math_8h_a737e9da5c3ca2ef0a54b38fb9ea6a2e1}\label{my__math_8h_a737e9da5c3ca2ef0a54b38fb9ea6a2e1}} 
+\index{my\_math.h@{my\_math.h}!mean@{mean}}
+\index{mean@{mean}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{mean()}{mean()}}
+{\footnotesize\ttfamily template$<$typename FLOAT , typename FLOAT1 $>$ \\
+FLOAT mean (\begin{DoxyParamCaption}\item[{unsigned int}]{dim,  }\item[{FLOAT1 $\ast$}]{vet }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{my__math_8h_a096485d512fb6991c67ccfa24a41d67d}\label{my__math_8h_a096485d512fb6991c67ccfa24a41d67d}} 
+\index{my\_math.h@{my\_math.h}!mean\_std@{mean\_std}}
+\index{mean\_std@{mean\_std}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{mean\_std()}{mean\_std()}}
+{\footnotesize\ttfamily template$<$typename UINT , typename FLOAT , typename FLOAT1 $>$ \\
+void mean\+\_\+std (\begin{DoxyParamCaption}\item[{UINT}]{dim,  }\item[{FLOAT1 $\ast$}]{vet,  }\item[{FLOAT \&}]{mean,  }\item[{FLOAT \&}]{std }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{my__math_8h_a9acba19dd643e23cb5fcd9863087cd36}\label{my__math_8h_a9acba19dd643e23cb5fcd9863087cd36}} 
+\index{my\_math.h@{my\_math.h}!mean\_w@{mean\_w}}
+\index{mean\_w@{mean\_w}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{mean\_w()}{mean\_w()}}
+{\footnotesize\ttfamily template$<$typename FLOAT , typename FLOAT1 , typename FLOAT2 $>$ \\
+FLOAT mean\+\_\+w (\begin{DoxyParamCaption}\item[{unsigned int}]{dim,  }\item[{FLOAT1 $\ast$}]{vet,  }\item[{FLOAT2 $\ast$}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{my__math_8h_a50bbb01cf95a60cad66c717bd7fe9191}\label{my__math_8h_a50bbb01cf95a60cad66c717bd7fe9191}} 
+\index{my\_math.h@{my\_math.h}!minsqrfit@{minsqrfit}}
+\index{minsqrfit@{minsqrfit}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{minsqrfit()}{minsqrfit()}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+bool minsqrfit (\begin{DoxyParamCaption}\item[{unsigned int}]{dimy,  }\item[{unsigned int}]{dimpar,  }\item[{FLOAT $\ast$}]{x,  }\item[{FLOAT $\ast$}]{y,  }\item[{FLOAT $\ast$}]{par,  }\item[{FLOAT $\ast$}]{err\+\_\+par }\end{DoxyParamCaption})}
+
+x\mbox{[}matrix\mbox{]} $\ast$ par\mbox{[}colum vector\mbox{]} = y\mbox{[}coulum vector\mbox{]} \mbox{\Hypertarget{my__math_8h_aa037e2ca13aa0ab45fffeb167e8753b7}\label{my__math_8h_aa037e2ca13aa0ab45fffeb167e8753b7}} 
+\index{my\_math.h@{my\_math.h}!nord\_to\_rotation@{nord\_to\_rotation}}
+\index{nord\_to\_rotation@{nord\_to\_rotation}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{nord\_to\_rotation()}{nord\_to\_rotation()}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+void nord\+\_\+to\+\_\+rotation (\begin{DoxyParamCaption}\item[{FLOAT}]{new\+\_\+nord\mbox{[}$\,$\mbox{]},  }\item[{FLOAT}]{mat\+\_\+new\+\_\+to\+\_\+old\mbox{[}$\,$\mbox{]},  }\item[{FLOAT}]{mat\+\_\+old\+\_\+to\+\_\+new\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+calculates rotation matrices for a new nord into the reference system \mbox{\Hypertarget{my__math_8h_ae40970cd51ae4cb7f78163f23579f0c9}\label{my__math_8h_ae40970cd51ae4cb7f78163f23579f0c9}} 
+\index{my\_math.h@{my\_math.h}!normalize\_vet@{normalize\_vet}}
+\index{normalize\_vet@{normalize\_vet}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{normalize\_vet()}{normalize\_vet()}}
+{\footnotesize\ttfamily template$<$typename FLOAT1 , typename FLOAT2 $>$ \\
+FLOAT2 normalize\+\_\+vet (\begin{DoxyParamCaption}\item[{unsigned int}]{dim,  }\item[{FLOAT1 $\ast$}]{in,  }\item[{FLOAT2 $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+normalize an array \mbox{\Hypertarget{my__math_8h_a868991103c47fc81b3d331affa85d4d1}\label{my__math_8h_a868991103c47fc81b3d331affa85d4d1}} 
+\index{my\_math.h@{my\_math.h}!poly\_fit@{poly\_fit}}
+\index{poly\_fit@{poly\_fit}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{poly\_fit()}{poly\_fit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+bool poly\+\_\+fit (\begin{DoxyParamCaption}\item[{unsigned int}]{dim,  }\item[{FLOAT $\ast$}]{x,  }\item[{FLOAT $\ast$}]{y,  }\item[{int}]{max\+\_\+power,  }\item[{FLOAT $\ast$}]{par,  }\item[{FLOAT $\ast$}]{err\+\_\+par }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{my__math_8h_a6041ab5e9e04932b2e55115cdfe5b8c9}\label{my__math_8h_a6041ab5e9e04932b2e55115cdfe5b8c9}} 
+\index{my\_math.h@{my\_math.h}!poly\_fit@{poly\_fit}}
+\index{poly\_fit@{poly\_fit}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{poly\_fit()}{poly\_fit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+bool poly\+\_\+fit (\begin{DoxyParamCaption}\item[{unsigned int}]{dim,  }\item[{FLOAT $\ast$}]{x,  }\item[{FLOAT $\ast$}]{y,  }\item[{unsigned int}]{dimpar,  }\item[{FLOAT $\ast$}]{powers,  }\item[{FLOAT $\ast$}]{par,  }\item[{FLOAT $\ast$}]{err\+\_\+par }\end{DoxyParamCaption})}
+
+first float is the precision of the matrix inversion and general calculus \mbox{\Hypertarget{my__math_8h_a1afbf26e428de3e47b806ccdea979fed}\label{my__math_8h_a1afbf26e428de3e47b806ccdea979fed}} 
+\index{my\_math.h@{my\_math.h}!pow\_int@{pow\_int}}
+\index{pow\_int@{pow\_int}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{pow\_int()}{pow\_int()}}
+{\footnotesize\ttfamily template$<$typename INT , typename INT2 $>$ \\
+INT pow\+\_\+int (\begin{DoxyParamCaption}\item[{INT}]{arg,  }\item[{INT2}]{exp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+powers for integer numbers \mbox{\Hypertarget{my__math_8h_a5ec1b9a4e7c92bbd51734e92efa04497}\label{my__math_8h_a5ec1b9a4e7c92bbd51734e92efa04497}} 
+\index{my\_math.h@{my\_math.h}!prod\_aa@{prod\_aa}}
+\index{prod\_aa@{prod\_aa}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{prod\_aa()}{prod\_aa()}}
+{\footnotesize\ttfamily void prod\+\_\+aa (\begin{DoxyParamCaption}\item[{unsigned int \&}]{dimvet,  }\item[{double $\ast$}]{v1,  }\item[{double $\ast$}]{v2,  }\item[{double $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+It multiply two arrays element by element \mbox{\Hypertarget{my__math_8h_a120e75709e76de6a95ca169857f14184}\label{my__math_8h_a120e75709e76de6a95ca169857f14184}} 
+\index{my\_math.h@{my\_math.h}!pulse\_smooth@{pulse\_smooth}}
+\index{pulse\_smooth@{pulse\_smooth}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{pulse\_smooth()}{pulse\_smooth()}}
+{\footnotesize\ttfamily template$<$typename INT , typename FLOAT $>$ \\
+void pulse\+\_\+smooth (\begin{DoxyParamCaption}\item[{INT}]{dimvet,  }\item[{INT}]{dimpulse,  }\item[{FLOAT $\ast$}]{vetin,  }\item[{FLOAT $\ast$}]{vetout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+It gives back the convolution between a vector vetin and square impulse of lenght dimpulse. Square impulse is normalized to 1 \mbox{\Hypertarget{my__math_8h_ae443d83261891fb5de4dd938f7318d60}\label{my__math_8h_ae443d83261891fb5de4dd938f7318d60}} 
+\index{my\_math.h@{my\_math.h}!quadratic\_fit@{quadratic\_fit}}
+\index{quadratic\_fit@{quadratic\_fit}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{quadratic\_fit()}{quadratic\_fit()}}
+{\footnotesize\ttfamily template$<$typename FLOAT , typename FLOAT1 , typename FLOAT2 , typename FLOAT3 $>$ \\
+bool quadratic\+\_\+fit (\begin{DoxyParamCaption}\item[{unsigned int}]{dim,  }\item[{FLOAT1 $\ast$}]{x,  }\item[{FLOAT2 $\ast$}]{y,  }\item[{FLOAT3 $\ast$}]{par,  }\item[{FLOAT3 $\ast$}]{err\+\_\+par }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{my__math_8h_ac273b69c7da2ab9681cbf4a3aea219cf}\label{my__math_8h_ac273b69c7da2ab9681cbf4a3aea219cf}} 
+\index{my\_math.h@{my\_math.h}!real\_space\_convolve\_mat@{real\_space\_convolve\_mat}}
+\index{real\_space\_convolve\_mat@{real\_space\_convolve\_mat}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{real\_space\_convolve\_mat()}{real\_space\_convolve\_mat()}}
+{\footnotesize\ttfamily template$<$typename INT , typename FLOAT $>$ \\
+void real\+\_\+space\+\_\+convolve\+\_\+mat (\begin{DoxyParamCaption}\item[{INT}]{dimx,  }\item[{INT}]{dimy,  }\item[{FLOAT}]{mat\mbox{[}$\,$\mbox{]},  }\item[{INT}]{dimxk,  }\item[{INT}]{dimyk,  }\item[{FLOAT}]{kernel\mbox{[}$\,$\mbox{]},  }\item[{FLOAT}]{out\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+This function can be used to perform convolution of a big matrix with a small kernel This avoid the complication and the delay that in such a situation are involved in using the Fourier Transform. The operation is not performed on the edges. In practice the operation is performed only in case the kernel lays completely inside the bigger matrix. The old value is copied otherwise. dimxk and dimyk must be odd values
+
+warnings\+:
+\begin{DoxyItemize}
+\item INT must be a signed integer type
+\item out must have a different memory area than mat 
+\end{DoxyItemize}\mbox{\Hypertarget{my__math_8h_a1972d38dbac9430574236ee3fa5e845a}\label{my__math_8h_a1972d38dbac9430574236ee3fa5e845a}} 
+\index{my\_math.h@{my\_math.h}!rotation@{rotation}}
+\index{rotation@{rotation}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{rotation()}{rotation()}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+void rotation (\begin{DoxyParamCaption}\item[{FLOAT $\ast$}]{vet,  }\item[{FLOAT $\ast$}]{rot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function calculates a rotation matrix starting from a vector. Vector direction will be rotation axis while modulus the rotation angle. the function is thought in 3D \mbox{\Hypertarget{my__math_8h_ab01a49fa14c6e8d6e60325e836748b6d}\label{my__math_8h_ab01a49fa14c6e8d6e60325e836748b6d}} 
+\index{my\_math.h@{my\_math.h}!scalprod\_aa@{scalprod\_aa}}
+\index{scalprod\_aa@{scalprod\_aa}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{scalprod\_aa()}{scalprod\_aa()}}
+{\footnotesize\ttfamily template$<$typename FLOAT1 , typename FLOAT2 $>$ \\
+double scalprod\+\_\+aa (\begin{DoxyParamCaption}\item[{unsigned int}]{dimvet,  }\item[{FLOAT1 $\ast$}]{v1,  }\item[{FLOAT2 $\ast$}]{v2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Implement the scalar product bewteen two vectors. Sum over the poducts beteween the corresponding elements of the arrays \mbox{\Hypertarget{my__math_8h_ac3d38be0f0fae89f38fa5fbab92278b4}\label{my__math_8h_ac3d38be0f0fae89f38fa5fbab92278b4}} 
+\index{my\_math.h@{my\_math.h}!scalprod\_av@{scalprod\_av}}
+\index{scalprod\_av@{scalprod\_av}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{scalprod\_av()}{scalprod\_av()}}
+{\footnotesize\ttfamily double scalprod\+\_\+av (\begin{DoxyParamCaption}\item[{unsigned int \&}]{dimvet,  }\item[{double $\ast$}]{v1,  }\item[{std\+::vector$<$ double $>$ \&}]{v2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Implement the scalar product bewteen two vectors. Sum over the poducts beteween the corresponding elements of the vector and the array. Attention, no check to condition dimvet == v2.\+size \mbox{\Hypertarget{my__math_8h_a059c953423e00a28bfc5d7ffa06a69ef}\label{my__math_8h_a059c953423e00a28bfc5d7ffa06a69ef}} 
+\index{my\_math.h@{my\_math.h}!scalprod\_vv@{scalprod\_vv}}
+\index{scalprod\_vv@{scalprod\_vv}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{scalprod\_vv()}{scalprod\_vv()}}
+{\footnotesize\ttfamily double scalprod\+\_\+vv (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$ \&}]{v1,  }\item[{std\+::vector$<$ double $>$ \&}]{v2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Implement the scalar product bewteen two vectors. Sum over the poducts beteween the corresponding elements of the vectors. Attention, no check to condition v1.\+size == v2.\+size \mbox{\Hypertarget{my__math_8h_a6b5b3b287a5d6ee7a4c648b4a5ce397a}\label{my__math_8h_a6b5b3b287a5d6ee7a4c648b4a5ce397a}} 
+\index{my\_math.h@{my\_math.h}!spherical\_to\_cartesian@{spherical\_to\_cartesian}}
+\index{spherical\_to\_cartesian@{spherical\_to\_cartesian}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{spherical\_to\_cartesian()}{spherical\_to\_cartesian()}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+void spherical\+\_\+to\+\_\+cartesian (\begin{DoxyParamCaption}\item[{FLOAT}]{s\mbox{[}$\,$\mbox{]},  }\item[{FLOAT}]{c\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{my__math_8h_ad3e6221272b56a854098403463ac8f36}\label{my__math_8h_ad3e6221272b56a854098403463ac8f36}} 
+\index{my\_math.h@{my\_math.h}!sum\_aa@{sum\_aa}}
+\index{sum\_aa@{sum\_aa}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{sum\_aa()}{sum\_aa()}}
+{\footnotesize\ttfamily void sum\+\_\+aa (\begin{DoxyParamCaption}\item[{unsigned int \&}]{dimvet,  }\item[{double $\ast$}]{v1,  }\item[{double $\ast$}]{v2,  }\item[{double $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+It makes the sum of two arrays element by element \mbox{\Hypertarget{my__math_8h_a11f3bfd0cbfa3d6c60cb0e97d4445699}\label{my__math_8h_a11f3bfd0cbfa3d6c60cb0e97d4445699}} 
+\index{my\_math.h@{my\_math.h}!wedge\_vet@{wedge\_vet}}
+\index{wedge\_vet@{wedge\_vet}!my\_math.h@{my\_math.h}}
+\doxysubsubsection{\texorpdfstring{wedge\_vet()}{wedge\_vet()}}
+{\footnotesize\ttfamily template$<$typename FLOAT1 , typename FLOAT2 , typename FLOAT3 $>$ \\
+void wedge\+\_\+vet (\begin{DoxyParamCaption}\item[{FLOAT1 $\ast$}]{vet1,  }\item[{FLOAT2 $\ast$}]{vet2,  }\item[{FLOAT3 $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+vet wedge vet 

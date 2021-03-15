@@ -1,0 +1,219 @@
+\hypertarget{classstopwatch}{}\doxysection{stopwatch Class Reference}
+\label{classstopwatch}\index{stopwatch@{stopwatch}}
+
+
+{\ttfamily \#include $<$stopwatch.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classstopwatch_a427b7eff0db59c70a0239dc354b4323e}{stopwatch}} ()
+\item 
+\mbox{\hyperlink{classstopwatch_a1ef4a907ed848df58d3bc3a78f631629}{$\sim$stopwatch}} ()
+\item 
+void \mbox{\hyperlink{classstopwatch_a875bf8a472dff32a8190ec96e7fcf969}{start}} ()
+\item 
+double \mbox{\hyperlink{classstopwatch_a3bfa7f394f995ffa8ef866d1391e97cd}{stop}} ()
+\item 
+void \mbox{\hyperlink{classstopwatch_a68a314e2c797624fa84cfd44eac0310a}{reset}} ()
+\item 
+double \mbox{\hyperlink{classstopwatch_a9843c66ca11564518168afbd57318f74}{t}} ()
+\item 
+void \mbox{\hyperlink{classstopwatch_a8c7d1d3f395615e059db34f79cbfaca8}{operator=}} (\mbox{\hyperlink{classstopwatch}{stopwatch}} \&stw)
+\item 
+void \mbox{\hyperlink{classstopwatch_a095fc563f40e0556a773719fe65208c2}{operator=}} (double \mbox{\hyperlink{classstopwatch_a9843c66ca11564518168afbd57318f74}{t}})
+\item 
+double \mbox{\hyperlink{classstopwatch_a93ac3bc6d870e108720efae81bafe542}{operator+}} (\mbox{\hyperlink{classstopwatch}{stopwatch}} \&stw)
+\item 
+double \mbox{\hyperlink{classstopwatch_aeb8b42b04e478b8ca7acfd870711b5c3}{operator-\/}} (\mbox{\hyperlink{classstopwatch}{stopwatch}} \&stw)
+\item 
+double \mbox{\hyperlink{classstopwatch_af5f6a399426fd557f76e1fa51b15d9fd}{operator$\ast$}} (\mbox{\hyperlink{classstopwatch}{stopwatch}} \&stw)
+\item 
+double \mbox{\hyperlink{classstopwatch_aeafcf61f1d3ec5dcaec1794c8c6554a3}{operator/}} (\mbox{\hyperlink{classstopwatch}{stopwatch}} \&stw)
+\item 
+bool \mbox{\hyperlink{classstopwatch_af34321e13ba01dfc4c21b9241e9352c5}{operator$<$}} (\mbox{\hyperlink{classstopwatch}{stopwatch}} \&stw)
+\item 
+bool \mbox{\hyperlink{classstopwatch_ae6497acee0f527689deadb2b31ebda1d}{operator$>$}} (\mbox{\hyperlink{classstopwatch}{stopwatch}} \&stw)
+\item 
+bool \mbox{\hyperlink{classstopwatch_a8cc4dc12c5d3d8014be281be0878eac3}{operator$<$=}} (\mbox{\hyperlink{classstopwatch}{stopwatch}} \&stw)
+\item 
+bool \mbox{\hyperlink{classstopwatch_a4446e564aa162c1aa9586ff453733975}{operator$>$=}} (\mbox{\hyperlink{classstopwatch}{stopwatch}} \&stw)
+\item 
+bool \mbox{\hyperlink{classstopwatch_aca04bdfaccc328a88956f03ab2ceb881}{operator==}} (\mbox{\hyperlink{classstopwatch}{stopwatch}} \&stw)
+\item 
+bool \mbox{\hyperlink{classstopwatch_a551a8e55563313c2a6c62352ee13cc99}{operator!=}} (\mbox{\hyperlink{classstopwatch}{stopwatch}} \&stw)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+clock\+\_\+t \mbox{\hyperlink{classstopwatch_abf1878066618f9932a9a23351e41bc7c}{m\+\_\+start}}
+\item 
+clock\+\_\+t \mbox{\hyperlink{classstopwatch_a4ecb37fb38d5ea2a086709320b3424af}{m\+\_\+end}}
+\item 
+double \mbox{\hyperlink{classstopwatch_ad0373ca7beadb3bef43df498abc3f8a5}{m\+\_\+t}}
+\item 
+double \mbox{\hyperlink{classstopwatch_a303c7370b6a6d02ea2cdbc3019066d7c}{m\+\_\+sec\+\_\+over\+\_\+clock}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classstopwatch_af46a6b6dcf53ece5f3dc365d811812e8}{operator$<$$<$}} (std\+::ostream \&stream, \mbox{\hyperlink{classstopwatch}{stopwatch}} \&stw)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class stopwacth integrates the elapesed time between any call to functions \mbox{\hyperlink{classstopwatch_a875bf8a472dff32a8190ec96e7fcf969}{start()}} and \mbox{\hyperlink{classstopwatch_a3bfa7f394f995ffa8ef866d1391e97cd}{stop()}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classstopwatch_a427b7eff0db59c70a0239dc354b4323e}\label{classstopwatch_a427b7eff0db59c70a0239dc354b4323e}} 
+\index{stopwatch@{stopwatch}!stopwatch@{stopwatch}}
+\index{stopwatch@{stopwatch}!stopwatch@{stopwatch}}
+\doxysubsubsection{\texorpdfstring{stopwatch()}{stopwatch()}}
+{\footnotesize\ttfamily stopwatch\+::stopwatch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classstopwatch_a1ef4a907ed848df58d3bc3a78f631629}\label{classstopwatch_a1ef4a907ed848df58d3bc3a78f631629}} 
+\index{stopwatch@{stopwatch}!````~stopwatch@{$\sim$stopwatch}}
+\index{````~stopwatch@{$\sim$stopwatch}!stopwatch@{stopwatch}}
+\doxysubsubsection{\texorpdfstring{$\sim$stopwatch()}{~stopwatch()}}
+{\footnotesize\ttfamily stopwatch\+::$\sim$stopwatch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classstopwatch_a551a8e55563313c2a6c62352ee13cc99}\label{classstopwatch_a551a8e55563313c2a6c62352ee13cc99}} 
+\index{stopwatch@{stopwatch}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!stopwatch@{stopwatch}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool stopwatch\+::operator!= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstopwatch}{stopwatch}} \&}]{stw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classstopwatch_af5f6a399426fd557f76e1fa51b15d9fd}\label{classstopwatch_af5f6a399426fd557f76e1fa51b15d9fd}} 
+\index{stopwatch@{stopwatch}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!stopwatch@{stopwatch}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily double stopwatch\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstopwatch}{stopwatch}} \&}]{stw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classstopwatch_a93ac3bc6d870e108720efae81bafe542}\label{classstopwatch_a93ac3bc6d870e108720efae81bafe542}} 
+\index{stopwatch@{stopwatch}!operator+@{operator+}}
+\index{operator+@{operator+}!stopwatch@{stopwatch}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily double stopwatch\+::operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstopwatch}{stopwatch}} \&}]{stw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classstopwatch_aeb8b42b04e478b8ca7acfd870711b5c3}\label{classstopwatch_aeb8b42b04e478b8ca7acfd870711b5c3}} 
+\index{stopwatch@{stopwatch}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!stopwatch@{stopwatch}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily double stopwatch\+::operator-\/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstopwatch}{stopwatch}} \&}]{stw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classstopwatch_aeafcf61f1d3ec5dcaec1794c8c6554a3}\label{classstopwatch_aeafcf61f1d3ec5dcaec1794c8c6554a3}} 
+\index{stopwatch@{stopwatch}!operator/@{operator/}}
+\index{operator/@{operator/}!stopwatch@{stopwatch}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily double stopwatch\+::operator/ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstopwatch}{stopwatch}} \&}]{stw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classstopwatch_af34321e13ba01dfc4c21b9241e9352c5}\label{classstopwatch_af34321e13ba01dfc4c21b9241e9352c5}} 
+\index{stopwatch@{stopwatch}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!stopwatch@{stopwatch}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool stopwatch\+::operator$<$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstopwatch}{stopwatch}} \&}]{stw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classstopwatch_a8cc4dc12c5d3d8014be281be0878eac3}\label{classstopwatch_a8cc4dc12c5d3d8014be281be0878eac3}} 
+\index{stopwatch@{stopwatch}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!stopwatch@{stopwatch}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily bool stopwatch\+::operator$<$= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstopwatch}{stopwatch}} \&}]{stw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classstopwatch_a095fc563f40e0556a773719fe65208c2}\label{classstopwatch_a095fc563f40e0556a773719fe65208c2}} 
+\index{stopwatch@{stopwatch}!operator=@{operator=}}
+\index{operator=@{operator=}!stopwatch@{stopwatch}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void stopwatch\+::operator= (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classstopwatch_a8c7d1d3f395615e059db34f79cbfaca8}\label{classstopwatch_a8c7d1d3f395615e059db34f79cbfaca8}} 
+\index{stopwatch@{stopwatch}!operator=@{operator=}}
+\index{operator=@{operator=}!stopwatch@{stopwatch}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void stopwatch\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstopwatch}{stopwatch}} \&}]{stw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classstopwatch_aca04bdfaccc328a88956f03ab2ceb881}\label{classstopwatch_aca04bdfaccc328a88956f03ab2ceb881}} 
+\index{stopwatch@{stopwatch}!operator==@{operator==}}
+\index{operator==@{operator==}!stopwatch@{stopwatch}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool stopwatch\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstopwatch}{stopwatch}} \&}]{stw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classstopwatch_ae6497acee0f527689deadb2b31ebda1d}\label{classstopwatch_ae6497acee0f527689deadb2b31ebda1d}} 
+\index{stopwatch@{stopwatch}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!stopwatch@{stopwatch}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily bool stopwatch\+::operator$>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstopwatch}{stopwatch}} \&}]{stw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classstopwatch_a4446e564aa162c1aa9586ff453733975}\label{classstopwatch_a4446e564aa162c1aa9586ff453733975}} 
+\index{stopwatch@{stopwatch}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!stopwatch@{stopwatch}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily bool stopwatch\+::operator$>$= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classstopwatch}{stopwatch}} \&}]{stw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classstopwatch_a68a314e2c797624fa84cfd44eac0310a}\label{classstopwatch_a68a314e2c797624fa84cfd44eac0310a}} 
+\index{stopwatch@{stopwatch}!reset@{reset}}
+\index{reset@{reset}!stopwatch@{stopwatch}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void stopwatch\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classstopwatch_a875bf8a472dff32a8190ec96e7fcf969}\label{classstopwatch_a875bf8a472dff32a8190ec96e7fcf969}} 
+\index{stopwatch@{stopwatch}!start@{start}}
+\index{start@{start}!stopwatch@{stopwatch}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void stopwatch\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classstopwatch_a3bfa7f394f995ffa8ef866d1391e97cd}\label{classstopwatch_a3bfa7f394f995ffa8ef866d1391e97cd}} 
+\index{stopwatch@{stopwatch}!stop@{stop}}
+\index{stop@{stop}!stopwatch@{stopwatch}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily double stopwatch\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classstopwatch_a9843c66ca11564518168afbd57318f74}\label{classstopwatch_a9843c66ca11564518168afbd57318f74}} 
+\index{stopwatch@{stopwatch}!t@{t}}
+\index{t@{t}!stopwatch@{stopwatch}}
+\doxysubsubsection{\texorpdfstring{t()}{t()}}
+{\footnotesize\ttfamily double stopwatch\+::t (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classstopwatch_af46a6b6dcf53ece5f3dc365d811812e8}\label{classstopwatch_af46a6b6dcf53ece5f3dc365d811812e8}} 
+\index{stopwatch@{stopwatch}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!stopwatch@{stopwatch}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream,  }\item[{\mbox{\hyperlink{classstopwatch}{stopwatch}} \&}]{stw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classstopwatch_a4ecb37fb38d5ea2a086709320b3424af}\label{classstopwatch_a4ecb37fb38d5ea2a086709320b3424af}} 
+\index{stopwatch@{stopwatch}!m\_end@{m\_end}}
+\index{m\_end@{m\_end}!stopwatch@{stopwatch}}
+\doxysubsubsection{\texorpdfstring{m\_end}{m\_end}}
+{\footnotesize\ttfamily clock\+\_\+t stopwatch\+::m\+\_\+end\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classstopwatch_a303c7370b6a6d02ea2cdbc3019066d7c}\label{classstopwatch_a303c7370b6a6d02ea2cdbc3019066d7c}} 
+\index{stopwatch@{stopwatch}!m\_sec\_over\_clock@{m\_sec\_over\_clock}}
+\index{m\_sec\_over\_clock@{m\_sec\_over\_clock}!stopwatch@{stopwatch}}
+\doxysubsubsection{\texorpdfstring{m\_sec\_over\_clock}{m\_sec\_over\_clock}}
+{\footnotesize\ttfamily double stopwatch\+::m\+\_\+sec\+\_\+over\+\_\+clock\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classstopwatch_abf1878066618f9932a9a23351e41bc7c}\label{classstopwatch_abf1878066618f9932a9a23351e41bc7c}} 
+\index{stopwatch@{stopwatch}!m\_start@{m\_start}}
+\index{m\_start@{m\_start}!stopwatch@{stopwatch}}
+\doxysubsubsection{\texorpdfstring{m\_start}{m\_start}}
+{\footnotesize\ttfamily clock\+\_\+t stopwatch\+::m\+\_\+start\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classstopwatch_ad0373ca7beadb3bef43df498abc3f8a5}\label{classstopwatch_ad0373ca7beadb3bef43df498abc3f8a5}} 
+\index{stopwatch@{stopwatch}!m\_t@{m\_t}}
+\index{m\_t@{m\_t}!stopwatch@{stopwatch}}
+\doxysubsubsection{\texorpdfstring{m\_t}{m\_t}}
+{\footnotesize\ttfamily double stopwatch\+::m\+\_\+t\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+diffmicro/cpp-\/routine/\mbox{\hyperlink{stopwatch_8h}{stopwatch.\+h}}\end{DoxyCompactItemize}

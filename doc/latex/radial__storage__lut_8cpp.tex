@@ -1,0 +1,65 @@
+\hypertarget{radial__storage__lut_8cpp}{}\doxysection{diffmicro/radial\+\_\+storage\+\_\+lut.cpp File Reference}
+\label{radial__storage__lut_8cpp}\index{diffmicro/radial\_storage\_lut.cpp@{diffmicro/radial\_storage\_lut.cpp}}
+{\ttfamily \#include \char`\"{}stdafx.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}radial\+\_\+storage\+\_\+lut.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{radial__storage__lut_8cpp_a6f04922258eacd444ae504b4973a2412}{dim\+\_\+radial\+\_\+lut}} (0)
+\item 
+bool \mbox{\hyperlink{radial__storage__lut_8cpp_a0ebc929ee55eaffeb4784e6416457ffa}{comp\+\_\+radial\+\_\+storage\+\_\+lut\+\_\+struct}} (\mbox{\hyperlink{structradial__storage__lut__struct}{radial\+\_\+storage\+\_\+lut\+\_\+struct}} \&f1, \mbox{\hyperlink{structradial__storage__lut__struct}{radial\+\_\+storage\+\_\+lut\+\_\+struct}} \&f2)
+\item 
+void \mbox{\hyperlink{radial__storage__lut_8cpp_afd03f2843dff74992f2f7acf512c4089}{radial\+\_\+lut\+\_\+prepare\+\_\+vet}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimx, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimy, std\+::vector$<$ \mbox{\hyperlink{structradial__storage__lut__struct}{radial\+\_\+storage\+\_\+lut\+\_\+struct}} $>$ \&vet)
+\item 
+void \mbox{\hyperlink{radial__storage__lut_8cpp_a6036575d535a9671385aa094f723e4b3}{radial\+\_\+lut\+\_\+dimr\+\_\+from\+\_\+max\+\_\+freq}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimy, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimx, float max\+\_\+freq, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&\mbox{\hyperlink{angular__avg_8cpp_adc950669dbfb795e5084af275d5b6022}{dimr}})
+\item 
+void \mbox{\hyperlink{radial__storage__lut_8cpp_ac44a94aedbddcbc06e830f069da37ce2}{radial\+\_\+storage\+\_\+lut}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimy, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimx, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{angular__avg_8cpp_adc950669dbfb795e5084af275d5b6022}{dimr}}, unsigned int $\ast$lut)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int $\ast$ \mbox{\hyperlink{radial__storage__lut_8cpp_a01adbe1bf6b6fb88129e3ccba33749e8}{ram\+\_\+radial\+\_\+lut}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{radial__storage__lut_8cpp_a0ebc929ee55eaffeb4784e6416457ffa}\label{radial__storage__lut_8cpp_a0ebc929ee55eaffeb4784e6416457ffa}} 
+\index{radial\_storage\_lut.cpp@{radial\_storage\_lut.cpp}!comp\_radial\_storage\_lut\_struct@{comp\_radial\_storage\_lut\_struct}}
+\index{comp\_radial\_storage\_lut\_struct@{comp\_radial\_storage\_lut\_struct}!radial\_storage\_lut.cpp@{radial\_storage\_lut.cpp}}
+\doxysubsubsection{\texorpdfstring{comp\_radial\_storage\_lut\_struct()}{comp\_radial\_storage\_lut\_struct()}}
+{\footnotesize\ttfamily bool comp\+\_\+radial\+\_\+storage\+\_\+lut\+\_\+struct (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structradial__storage__lut__struct}{radial\+\_\+storage\+\_\+lut\+\_\+struct}} \&}]{f1,  }\item[{\mbox{\hyperlink{structradial__storage__lut__struct}{radial\+\_\+storage\+\_\+lut\+\_\+struct}} \&}]{f2 }\end{DoxyParamCaption})}
+
+This function compares two \mbox{\hyperlink{structradial__storage__lut__struct}{radial\+\_\+storage\+\_\+lut\+\_\+struct}} by comparing the radius. It is used to apply std\+::sort \mbox{\Hypertarget{radial__storage__lut_8cpp_a6f04922258eacd444ae504b4973a2412}\label{radial__storage__lut_8cpp_a6f04922258eacd444ae504b4973a2412}} 
+\index{radial\_storage\_lut.cpp@{radial\_storage\_lut.cpp}!dim\_radial\_lut@{dim\_radial\_lut}}
+\index{dim\_radial\_lut@{dim\_radial\_lut}!radial\_storage\_lut.cpp@{radial\_storage\_lut.cpp}}
+\doxysubsubsection{\texorpdfstring{dim\_radial\_lut()}{dim\_radial\_lut()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dim\+\_\+radial\+\_\+lut (\begin{DoxyParamCaption}\item[{0}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{radial__storage__lut_8cpp_a6036575d535a9671385aa094f723e4b3}\label{radial__storage__lut_8cpp_a6036575d535a9671385aa094f723e4b3}} 
+\index{radial\_storage\_lut.cpp@{radial\_storage\_lut.cpp}!radial\_lut\_dimr\_from\_max\_freq@{radial\_lut\_dimr\_from\_max\_freq}}
+\index{radial\_lut\_dimr\_from\_max\_freq@{radial\_lut\_dimr\_from\_max\_freq}!radial\_storage\_lut.cpp@{radial\_storage\_lut.cpp}}
+\doxysubsubsection{\texorpdfstring{radial\_lut\_dimr\_from\_max\_freq()}{radial\_lut\_dimr\_from\_max\_freq()}}
+{\footnotesize\ttfamily void radial\+\_\+lut\+\_\+dimr\+\_\+from\+\_\+max\+\_\+freq (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimy,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimx,  }\item[{float}]{max\+\_\+freq,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&}]{dimr }\end{DoxyParamCaption})}
+
+This function calculates the dimension of the radial look up table to allow for allocating the correct memory area \mbox{\Hypertarget{radial__storage__lut_8cpp_afd03f2843dff74992f2f7acf512c4089}\label{radial__storage__lut_8cpp_afd03f2843dff74992f2f7acf512c4089}} 
+\index{radial\_storage\_lut.cpp@{radial\_storage\_lut.cpp}!radial\_lut\_prepare\_vet@{radial\_lut\_prepare\_vet}}
+\index{radial\_lut\_prepare\_vet@{radial\_lut\_prepare\_vet}!radial\_storage\_lut.cpp@{radial\_storage\_lut.cpp}}
+\doxysubsubsection{\texorpdfstring{radial\_lut\_prepare\_vet()}{radial\_lut\_prepare\_vet()}}
+{\footnotesize\ttfamily void radial\+\_\+lut\+\_\+prepare\+\_\+vet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimx,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimy,  }\item[{std\+::vector$<$ \mbox{\hyperlink{structradial__storage__lut__struct}{radial\+\_\+storage\+\_\+lut\+\_\+struct}} $>$ \&}]{vet }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{radial__storage__lut_8cpp_ac44a94aedbddcbc06e830f069da37ce2}\label{radial__storage__lut_8cpp_ac44a94aedbddcbc06e830f069da37ce2}} 
+\index{radial\_storage\_lut.cpp@{radial\_storage\_lut.cpp}!radial\_storage\_lut@{radial\_storage\_lut}}
+\index{radial\_storage\_lut@{radial\_storage\_lut}!radial\_storage\_lut.cpp@{radial\_storage\_lut.cpp}}
+\doxysubsubsection{\texorpdfstring{radial\_storage\_lut()}{radial\_storage\_lut()}}
+{\footnotesize\ttfamily void radial\+\_\+storage\+\_\+lut (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimy,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimx,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimr,  }\item[{unsigned int $\ast$}]{lut }\end{DoxyParamCaption})}
+
+This function fill the variable lut with the look up table. Please, use radial\+\_\+lut\+\_\+dimr\+\_\+from\+\_\+max\+\_\+freq beforehand and prepare lut of correct length. 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{radial__storage__lut_8cpp_a01adbe1bf6b6fb88129e3ccba33749e8}\label{radial__storage__lut_8cpp_a01adbe1bf6b6fb88129e3ccba33749e8}} 
+\index{radial\_storage\_lut.cpp@{radial\_storage\_lut.cpp}!ram\_radial\_lut@{ram\_radial\_lut}}
+\index{ram\_radial\_lut@{ram\_radial\_lut}!radial\_storage\_lut.cpp@{radial\_storage\_lut.cpp}}
+\doxysubsubsection{\texorpdfstring{ram\_radial\_lut}{ram\_radial\_lut}}
+{\footnotesize\ttfamily unsigned int$\ast$ ram\+\_\+radial\+\_\+lut}
+
+memory area to store the radial look up table in CPU RAM 

@@ -1,0 +1,198 @@
+\hypertarget{configure__gui__opencv_8h}{}\doxysection{diffmicro/display\+\_\+opencv/configure\+\_\+gui\+\_\+opencv.h File Reference}
+\label{configure__gui__opencv_8h}\index{diffmicro/display\_opencv/configure\_gui\_opencv.h@{diffmicro/display\_opencv/configure\_gui\_opencv.h}}
+{\ttfamily \#include \char`\"{}dir.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include \char`\"{}global\+\_\+define.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prep\+\_\+string.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}controls\+\_\+opencv.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classui__variable}{ui\+\_\+variable}}
+\item 
+class \mbox{\hyperlink{classconfigure__gui__opencv}{configure\+\_\+gui\+\_\+opencv}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98}{ui\+\_\+variable\+\_\+type\+\_\+enum}} \{ \newline
+\mbox{\hyperlink{diffmicro__io_8h_ab753c44107e53fec3a274e818cb23d98ad86d710b087dd65ba17b4336fcc57791}{UI\+\_\+\+TYPE\+\_\+\+INDEX\+\_\+\+DIFFMICRO}} = 0
+, \mbox{\hyperlink{diffmicro__io_8h_ab753c44107e53fec3a274e818cb23d98acbb333e6df0fa461f7726dd7bff1e3c6}{UI\+\_\+\+TYPE\+\_\+\+MY\+\_\+\+REAL\+\_\+\+DIFFMICRO}} = 1
+, \mbox{\hyperlink{diffmicro__io_8h_ab753c44107e53fec3a274e818cb23d98ad6cb68b06d9f594c9770c593d721ddfe}{UI\+\_\+\+TYPE\+\_\+\+BOOL\+\_\+\+DIFFMICRO}} = 2
+, \mbox{\hyperlink{diffmicro__io_8h_ab753c44107e53fec3a274e818cb23d98ab9f4b0dfef61dc7445f0d68d85e3d2ab}{UI\+\_\+\+TYPE\+\_\+\+STRING\+\_\+\+DIFFMICRO}} = 3
+, \newline
+\mbox{\hyperlink{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a919b50e625cf36edb23aacbe6415528c}{UI\+\_\+\+TYPE\+\_\+\+INT8\+\_\+\+OPENCV}} = 0
+, \mbox{\hyperlink{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98aac675462ca28aae1ed177f863e7a1cf5}{UI\+\_\+\+TYPE\+\_\+\+UINT8\+\_\+\+OPENCV}} = 1
+, \mbox{\hyperlink{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a07f5b5125b27316eaed62360a72d2d2b}{UI\+\_\+\+TYPE\+\_\+\+INT16\+\_\+\+OPENCV}} = 2
+, \mbox{\hyperlink{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98aaeb77b81eebd67ee6cd29090cd4ec02d}{UI\+\_\+\+TYPE\+\_\+\+UINT16\+\_\+\+OPENCV}} = 3
+, \newline
+\mbox{\hyperlink{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a23dc115c144edb6d1f182158f8072dbf}{UI\+\_\+\+TYPE\+\_\+\+INT32\+\_\+\+OPENCV}} = 4
+, \mbox{\hyperlink{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98af1419088e2bd5cf5f22391ec60e7eb51}{UI\+\_\+\+TYPE\+\_\+\+UINT32\+\_\+\+OPENCV}} = 5
+, \mbox{\hyperlink{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98ab48edd72177fc8fffd2125c3c4ab08ed}{UI\+\_\+\+TYPE\+\_\+\+INT64\+\_\+\+OPENCV}} = 6
+, \mbox{\hyperlink{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a9e7b8f718e5c91b3e03f3fabaf2a389f}{UI\+\_\+\+TYPE\+\_\+\+UINT64\+\_\+\+OPENCV}} = 7
+, \newline
+\mbox{\hyperlink{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a8c9333c01b5fe6270107142b82e1bf56}{UI\+\_\+\+TYPE\+\_\+\+INT128\+\_\+\+OPENCV}} = 8
+, \mbox{\hyperlink{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a817129bbaa20956010620dcafb649e69}{UI\+\_\+\+TYPE\+\_\+\+UINT128\+\_\+\+OPENCV}} = 9
+, \mbox{\hyperlink{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a905f6c11ded3e23a4589a6f5348de84b}{UI\+\_\+\+TYPE\+\_\+\+FLOAT32\+\_\+\+OPENCV}} = 10
+, \mbox{\hyperlink{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a434dc32005ff814d2821d6659d6c294d}{UI\+\_\+\+TYPE\+\_\+\+FLOAT64\+\_\+\+OPENCV}} = 11
+, \newline
+\mbox{\hyperlink{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98afc9041b8486a9120253a53102cc1f29a}{UI\+\_\+\+TYPE\+\_\+\+FLOAT128\+\_\+\+OPENCV}} = 12
+, \mbox{\hyperlink{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a8e7880128a27c3162ab5d93ed5351f1b}{UI\+\_\+\+TYPE\+\_\+\+BOOL\+\_\+\+OPENCV}} = 20
+, \mbox{\hyperlink{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a21b2921a8c26f6bbfee8357d1622ef39}{UI\+\_\+\+TYPE\+\_\+\+STRING\+\_\+\+OPENCV}} = 30
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{configure__gui__opencv_8h_abaddc4e69edb5b5821946e8610e8bd68}{ui\+\_\+variable\+\_\+check\+\_\+default}} (std\+::vector$<$ \mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} $\ast$ $>$ \&v)
+\item 
+bool \mbox{\hyperlink{configure__gui__opencv_8h_a237ed165d87c5dd0d4a09767967b45f4}{ui\+\_\+variable\+\_\+check\+\_\+file}} (std\+::vector$<$ \mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} $\ast$ $>$ \&v)
+\item 
+bool \mbox{\hyperlink{configure__gui__opencv_8h_aa5bdcee4b60bbff539ad3895aca1f507}{ui\+\_\+variable\+\_\+check\+\_\+folder}} (std\+::vector$<$ \mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} $\ast$ $>$ \&v)
+\item 
+bool \mbox{\hyperlink{configure__gui__opencv_8h_a51da26e9e3b74fc5920b94e023f6f101}{ui\+\_\+variable\+\_\+check\+\_\+numeric}} (std\+::vector$<$ \mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} $\ast$ $>$ \&v)
+\item 
+bool \mbox{\hyperlink{configure__gui__opencv_8h_ad10b48ca65d825c60d3e5887f7613031}{ui\+\_\+variable\+\_\+check\+\_\+positive}} (std\+::vector$<$ \mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} $\ast$ $>$ \&v)
+\item 
+bool \mbox{\hyperlink{configure__gui__opencv_8h_a66e0632eece0b92a78630ece325602fa}{ui\+\_\+variable\+\_\+check\+\_\+integer}} (std\+::vector$<$ \mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} $\ast$ $>$ \&v)
+\item 
+bool \mbox{\hyperlink{configure__gui__opencv_8h_a9722d38f400d43d44848e3f904c4df27}{ui\+\_\+variable\+\_\+check\+\_\+unsigned\+\_\+integer}} (std\+::vector$<$ \mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} $\ast$ $>$ \&v)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98}\label{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98}} 
+\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!ui\_variable\_type\_enum@{ui\_variable\_type\_enum}}
+\index{ui\_variable\_type\_enum@{ui\_variable\_type\_enum}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{ui\_variable\_type\_enum}{ui\_variable\_type\_enum}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{diffmicro__io_8h_ab753c44107e53fec3a274e818cb23d98}{ui\+\_\+variable\+\_\+type\+\_\+enum}}}
+
+This enumerator is used to assign an integer number to a number type so that it will be possible to recongnize the number type at runtime inside the execution. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UI\_TYPE\_INDEX\_DIFFMICRO@{UI\_TYPE\_INDEX\_DIFFMICRO}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!UI\_TYPE\_INDEX\_DIFFMICRO@{UI\_TYPE\_INDEX\_DIFFMICRO}}}\mbox{\Hypertarget{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98ad86d710b087dd65ba17b4336fcc57791}\label{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98ad86d710b087dd65ba17b4336fcc57791}} 
+UI\+\_\+\+TYPE\+\_\+\+INDEX\+\_\+\+DIFFMICRO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UI\_TYPE\_MY\_REAL\_DIFFMICRO@{UI\_TYPE\_MY\_REAL\_DIFFMICRO}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!UI\_TYPE\_MY\_REAL\_DIFFMICRO@{UI\_TYPE\_MY\_REAL\_DIFFMICRO}}}\mbox{\Hypertarget{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98acbb333e6df0fa461f7726dd7bff1e3c6}\label{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98acbb333e6df0fa461f7726dd7bff1e3c6}} 
+UI\+\_\+\+TYPE\+\_\+\+MY\+\_\+\+REAL\+\_\+\+DIFFMICRO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UI\_TYPE\_BOOL\_DIFFMICRO@{UI\_TYPE\_BOOL\_DIFFMICRO}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!UI\_TYPE\_BOOL\_DIFFMICRO@{UI\_TYPE\_BOOL\_DIFFMICRO}}}\mbox{\Hypertarget{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98ad6cb68b06d9f594c9770c593d721ddfe}\label{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98ad6cb68b06d9f594c9770c593d721ddfe}} 
+UI\+\_\+\+TYPE\+\_\+\+BOOL\+\_\+\+DIFFMICRO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UI\_TYPE\_STRING\_DIFFMICRO@{UI\_TYPE\_STRING\_DIFFMICRO}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!UI\_TYPE\_STRING\_DIFFMICRO@{UI\_TYPE\_STRING\_DIFFMICRO}}}\mbox{\Hypertarget{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98ab9f4b0dfef61dc7445f0d68d85e3d2ab}\label{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98ab9f4b0dfef61dc7445f0d68d85e3d2ab}} 
+UI\+\_\+\+TYPE\+\_\+\+STRING\+\_\+\+DIFFMICRO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UI\_TYPE\_INT8\_OPENCV@{UI\_TYPE\_INT8\_OPENCV}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!UI\_TYPE\_INT8\_OPENCV@{UI\_TYPE\_INT8\_OPENCV}}}\mbox{\Hypertarget{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a919b50e625cf36edb23aacbe6415528c}\label{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a919b50e625cf36edb23aacbe6415528c}} 
+UI\+\_\+\+TYPE\+\_\+\+INT8\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UI\_TYPE\_UINT8\_OPENCV@{UI\_TYPE\_UINT8\_OPENCV}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!UI\_TYPE\_UINT8\_OPENCV@{UI\_TYPE\_UINT8\_OPENCV}}}\mbox{\Hypertarget{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98aac675462ca28aae1ed177f863e7a1cf5}\label{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98aac675462ca28aae1ed177f863e7a1cf5}} 
+UI\+\_\+\+TYPE\+\_\+\+UINT8\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UI\_TYPE\_INT16\_OPENCV@{UI\_TYPE\_INT16\_OPENCV}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!UI\_TYPE\_INT16\_OPENCV@{UI\_TYPE\_INT16\_OPENCV}}}\mbox{\Hypertarget{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a07f5b5125b27316eaed62360a72d2d2b}\label{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a07f5b5125b27316eaed62360a72d2d2b}} 
+UI\+\_\+\+TYPE\+\_\+\+INT16\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UI\_TYPE\_UINT16\_OPENCV@{UI\_TYPE\_UINT16\_OPENCV}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!UI\_TYPE\_UINT16\_OPENCV@{UI\_TYPE\_UINT16\_OPENCV}}}\mbox{\Hypertarget{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98aaeb77b81eebd67ee6cd29090cd4ec02d}\label{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98aaeb77b81eebd67ee6cd29090cd4ec02d}} 
+UI\+\_\+\+TYPE\+\_\+\+UINT16\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UI\_TYPE\_INT32\_OPENCV@{UI\_TYPE\_INT32\_OPENCV}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!UI\_TYPE\_INT32\_OPENCV@{UI\_TYPE\_INT32\_OPENCV}}}\mbox{\Hypertarget{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a23dc115c144edb6d1f182158f8072dbf}\label{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a23dc115c144edb6d1f182158f8072dbf}} 
+UI\+\_\+\+TYPE\+\_\+\+INT32\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UI\_TYPE\_UINT32\_OPENCV@{UI\_TYPE\_UINT32\_OPENCV}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!UI\_TYPE\_UINT32\_OPENCV@{UI\_TYPE\_UINT32\_OPENCV}}}\mbox{\Hypertarget{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98af1419088e2bd5cf5f22391ec60e7eb51}\label{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98af1419088e2bd5cf5f22391ec60e7eb51}} 
+UI\+\_\+\+TYPE\+\_\+\+UINT32\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UI\_TYPE\_INT64\_OPENCV@{UI\_TYPE\_INT64\_OPENCV}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!UI\_TYPE\_INT64\_OPENCV@{UI\_TYPE\_INT64\_OPENCV}}}\mbox{\Hypertarget{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98ab48edd72177fc8fffd2125c3c4ab08ed}\label{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98ab48edd72177fc8fffd2125c3c4ab08ed}} 
+UI\+\_\+\+TYPE\+\_\+\+INT64\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UI\_TYPE\_UINT64\_OPENCV@{UI\_TYPE\_UINT64\_OPENCV}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!UI\_TYPE\_UINT64\_OPENCV@{UI\_TYPE\_UINT64\_OPENCV}}}\mbox{\Hypertarget{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a9e7b8f718e5c91b3e03f3fabaf2a389f}\label{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a9e7b8f718e5c91b3e03f3fabaf2a389f}} 
+UI\+\_\+\+TYPE\+\_\+\+UINT64\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UI\_TYPE\_INT128\_OPENCV@{UI\_TYPE\_INT128\_OPENCV}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!UI\_TYPE\_INT128\_OPENCV@{UI\_TYPE\_INT128\_OPENCV}}}\mbox{\Hypertarget{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a8c9333c01b5fe6270107142b82e1bf56}\label{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a8c9333c01b5fe6270107142b82e1bf56}} 
+UI\+\_\+\+TYPE\+\_\+\+INT128\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UI\_TYPE\_UINT128\_OPENCV@{UI\_TYPE\_UINT128\_OPENCV}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!UI\_TYPE\_UINT128\_OPENCV@{UI\_TYPE\_UINT128\_OPENCV}}}\mbox{\Hypertarget{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a817129bbaa20956010620dcafb649e69}\label{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a817129bbaa20956010620dcafb649e69}} 
+UI\+\_\+\+TYPE\+\_\+\+UINT128\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UI\_TYPE\_FLOAT32\_OPENCV@{UI\_TYPE\_FLOAT32\_OPENCV}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!UI\_TYPE\_FLOAT32\_OPENCV@{UI\_TYPE\_FLOAT32\_OPENCV}}}\mbox{\Hypertarget{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a905f6c11ded3e23a4589a6f5348de84b}\label{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a905f6c11ded3e23a4589a6f5348de84b}} 
+UI\+\_\+\+TYPE\+\_\+\+FLOAT32\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UI\_TYPE\_FLOAT64\_OPENCV@{UI\_TYPE\_FLOAT64\_OPENCV}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!UI\_TYPE\_FLOAT64\_OPENCV@{UI\_TYPE\_FLOAT64\_OPENCV}}}\mbox{\Hypertarget{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a434dc32005ff814d2821d6659d6c294d}\label{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a434dc32005ff814d2821d6659d6c294d}} 
+UI\+\_\+\+TYPE\+\_\+\+FLOAT64\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UI\_TYPE\_FLOAT128\_OPENCV@{UI\_TYPE\_FLOAT128\_OPENCV}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!UI\_TYPE\_FLOAT128\_OPENCV@{UI\_TYPE\_FLOAT128\_OPENCV}}}\mbox{\Hypertarget{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98afc9041b8486a9120253a53102cc1f29a}\label{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98afc9041b8486a9120253a53102cc1f29a}} 
+UI\+\_\+\+TYPE\+\_\+\+FLOAT128\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UI\_TYPE\_BOOL\_OPENCV@{UI\_TYPE\_BOOL\_OPENCV}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!UI\_TYPE\_BOOL\_OPENCV@{UI\_TYPE\_BOOL\_OPENCV}}}\mbox{\Hypertarget{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a8e7880128a27c3162ab5d93ed5351f1b}\label{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a8e7880128a27c3162ab5d93ed5351f1b}} 
+UI\+\_\+\+TYPE\+\_\+\+BOOL\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UI\_TYPE\_STRING\_OPENCV@{UI\_TYPE\_STRING\_OPENCV}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!UI\_TYPE\_STRING\_OPENCV@{UI\_TYPE\_STRING\_OPENCV}}}\mbox{\Hypertarget{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a21b2921a8c26f6bbfee8357d1622ef39}\label{configure__gui__opencv_8h_ab753c44107e53fec3a274e818cb23d98a21b2921a8c26f6bbfee8357d1622ef39}} 
+UI\+\_\+\+TYPE\+\_\+\+STRING\+\_\+\+OPENCV&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{configure__gui__opencv_8h_abaddc4e69edb5b5821946e8610e8bd68}\label{configure__gui__opencv_8h_abaddc4e69edb5b5821946e8610e8bd68}} 
+\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!ui\_variable\_check\_default@{ui\_variable\_check\_default}}
+\index{ui\_variable\_check\_default@{ui\_variable\_check\_default}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{ui\_variable\_check\_default()}{ui\_variable\_check\_default()}}
+{\footnotesize\ttfamily bool ui\+\_\+variable\+\_\+check\+\_\+default (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} $\ast$ $>$ \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{configure__gui__opencv_8h_a237ed165d87c5dd0d4a09767967b45f4}\label{configure__gui__opencv_8h_a237ed165d87c5dd0d4a09767967b45f4}} 
+\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!ui\_variable\_check\_file@{ui\_variable\_check\_file}}
+\index{ui\_variable\_check\_file@{ui\_variable\_check\_file}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{ui\_variable\_check\_file()}{ui\_variable\_check\_file()}}
+{\footnotesize\ttfamily bool ui\+\_\+variable\+\_\+check\+\_\+file (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} $\ast$ $>$ \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{configure__gui__opencv_8h_aa5bdcee4b60bbff539ad3895aca1f507}\label{configure__gui__opencv_8h_aa5bdcee4b60bbff539ad3895aca1f507}} 
+\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!ui\_variable\_check\_folder@{ui\_variable\_check\_folder}}
+\index{ui\_variable\_check\_folder@{ui\_variable\_check\_folder}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{ui\_variable\_check\_folder()}{ui\_variable\_check\_folder()}}
+{\footnotesize\ttfamily bool ui\+\_\+variable\+\_\+check\+\_\+folder (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} $\ast$ $>$ \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{configure__gui__opencv_8h_a66e0632eece0b92a78630ece325602fa}\label{configure__gui__opencv_8h_a66e0632eece0b92a78630ece325602fa}} 
+\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!ui\_variable\_check\_integer@{ui\_variable\_check\_integer}}
+\index{ui\_variable\_check\_integer@{ui\_variable\_check\_integer}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{ui\_variable\_check\_integer()}{ui\_variable\_check\_integer()}}
+{\footnotesize\ttfamily bool ui\+\_\+variable\+\_\+check\+\_\+integer (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} $\ast$ $>$ \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{configure__gui__opencv_8h_a51da26e9e3b74fc5920b94e023f6f101}\label{configure__gui__opencv_8h_a51da26e9e3b74fc5920b94e023f6f101}} 
+\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!ui\_variable\_check\_numeric@{ui\_variable\_check\_numeric}}
+\index{ui\_variable\_check\_numeric@{ui\_variable\_check\_numeric}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{ui\_variable\_check\_numeric()}{ui\_variable\_check\_numeric()}}
+{\footnotesize\ttfamily bool ui\+\_\+variable\+\_\+check\+\_\+numeric (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} $\ast$ $>$ \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{configure__gui__opencv_8h_ad10b48ca65d825c60d3e5887f7613031}\label{configure__gui__opencv_8h_ad10b48ca65d825c60d3e5887f7613031}} 
+\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!ui\_variable\_check\_positive@{ui\_variable\_check\_positive}}
+\index{ui\_variable\_check\_positive@{ui\_variable\_check\_positive}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{ui\_variable\_check\_positive()}{ui\_variable\_check\_positive()}}
+{\footnotesize\ttfamily bool ui\+\_\+variable\+\_\+check\+\_\+positive (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} $\ast$ $>$ \&}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{configure__gui__opencv_8h_a9722d38f400d43d44848e3f904c4df27}\label{configure__gui__opencv_8h_a9722d38f400d43d44848e3f904c4df27}} 
+\index{configure\_gui\_opencv.h@{configure\_gui\_opencv.h}!ui\_variable\_check\_unsigned\_integer@{ui\_variable\_check\_unsigned\_integer}}
+\index{ui\_variable\_check\_unsigned\_integer@{ui\_variable\_check\_unsigned\_integer}!configure\_gui\_opencv.h@{configure\_gui\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{ui\_variable\_check\_unsigned\_integer()}{ui\_variable\_check\_unsigned\_integer()}}
+{\footnotesize\ttfamily bool ui\+\_\+variable\+\_\+check\+\_\+unsigned\+\_\+integer (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} $\ast$ $>$ \&}]{v }\end{DoxyParamCaption})}
+

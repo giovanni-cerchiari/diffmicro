@@ -1,0 +1,150 @@
+\hypertarget{classfifo__min}{}\doxysection{fifo\+\_\+min Class Reference}
+\label{classfifo__min}\index{fifo\_min@{fifo\_min}}
+
+
+{\ttfamily \#include $<$power\+\_\+spectra.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfifo__min_afff83a42c1c9a3a168d0fdf2aa894c26}{fifo\+\_\+min}} ()
+\item 
+\mbox{\hyperlink{classfifo__min_adad65151a5cfb26213d38165ba3242b3}{$\sim$fifo\+\_\+min}} ()
+\item 
+void \mbox{\hyperlink{classfifo__min_a0034990d35e5b545a1aa2243ca24ef36}{clear}} ()
+\item 
+void \mbox{\hyperlink{classfifo__min_aadec6b483e39dec263d347d79c3de5c4}{init}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \+\_\+size\+\_\+fifo, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} image\+\_\+size)
+\item 
+void \mbox{\hyperlink{classfifo__min_af06d2b9382709c8ce7b3d742f9fa95d7}{reset}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \+\_\+dist\+\_\+bias)
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classfifo__min_a998687a04300c00f9abb99d33b9268cc}{load\+\_\+next}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} ind\+\_\+sot, std\+::vector$<$ bool $>$ \&\mbox{\hyperlink{classfifo__min_a31f60ca49053ce9638661646423f4088}{flg\+\_\+valid\+\_\+image}}, \mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$image\+\_\+mean)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classfifo__min_a5bdaca166ec85cf70d48ea8ff215d42f}{size}}
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classfifo__min_aa52b6e440c3b1f946fa259ab3a42d7fd}{current\+\_\+size}}
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $\ast$ \mbox{\hyperlink{classfifo__min_aee94d04451c2ac93e0088013ab0ccf09}{file\+\_\+index}}
+\item 
+bool $\ast$ \mbox{\hyperlink{classfifo__min_a31f60ca49053ce9638661646423f4088}{flg\+\_\+valid\+\_\+image}}
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classfifo__min_a5c4a2eb303a564db3e897fe568698f42}{ind\+\_\+file}}
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classfifo__min_a443ec41d1d9ff8e8f75073898a2d5c46}{ind\+\_\+fifo}}
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classfifo__min_ad1b47abad73a19254a9304debf6c39b7}{dist\+\_\+bias}}
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $\ast$ \mbox{\hyperlink{classfifo__min_ac72db828dd2b410e72a70be341cc3217}{dist\+\_\+map}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This functions and classes are written for diffmicro.\+exe application.
+
+This file contains the high-\/level execution of the algorithms. In this file it is not known if the program is executing on GPU or CPU hardware. The difference is implemented via function pointers, which are used by the functions here implemented.
+
+This class is the memory manager of the power spectra calculus. Loading of the images is organized as a FIFO. The FIFO is only \char`\"{}virtual\char`\"{}\+: no memory area is cleaned or recreated, but allocated in the initialization of the program. This class uses this memory using a browsing index ind\+\_\+fifo that selects at each step a differet pointer inside the memory area. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classfifo__min_afff83a42c1c9a3a168d0fdf2aa894c26}\label{classfifo__min_afff83a42c1c9a3a168d0fdf2aa894c26}} 
+\index{fifo\_min@{fifo\_min}!fifo\_min@{fifo\_min}}
+\index{fifo\_min@{fifo\_min}!fifo\_min@{fifo\_min}}
+\doxysubsubsection{\texorpdfstring{fifo\_min()}{fifo\_min()}}
+{\footnotesize\ttfamily fifo\+\_\+min\+::fifo\+\_\+min (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This functions and classes are written for diffmicro.\+exe application. \mbox{\Hypertarget{classfifo__min_adad65151a5cfb26213d38165ba3242b3}\label{classfifo__min_adad65151a5cfb26213d38165ba3242b3}} 
+\index{fifo\_min@{fifo\_min}!````~fifo\_min@{$\sim$fifo\_min}}
+\index{````~fifo\_min@{$\sim$fifo\_min}!fifo\_min@{fifo\_min}}
+\doxysubsubsection{\texorpdfstring{$\sim$fifo\_min()}{~fifo\_min()}}
+{\footnotesize\ttfamily fifo\+\_\+min\+::$\sim$fifo\+\_\+min (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classfifo__min_a0034990d35e5b545a1aa2243ca24ef36}\label{classfifo__min_a0034990d35e5b545a1aa2243ca24ef36}} 
+\index{fifo\_min@{fifo\_min}!clear@{clear}}
+\index{clear@{clear}!fifo\_min@{fifo\_min}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void fifo\+\_\+min\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+clear variables and allocated memory \mbox{\Hypertarget{classfifo__min_aadec6b483e39dec263d347d79c3de5c4}\label{classfifo__min_aadec6b483e39dec263d347d79c3de5c4}} 
+\index{fifo\_min@{fifo\_min}!init@{init}}
+\index{init@{init}!fifo\_min@{fifo\_min}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void fifo\+\_\+min\+::init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{\+\_\+size\+\_\+fifo,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{image\+\_\+size }\end{DoxyParamCaption})}
+
+initilization\+:
+\begin{DoxyItemize}
+\item \+\_\+size\+\_\+fifo = maximum number of half FFTs of images storable on the graphic card
+\item image\+\_\+size = number of elements of a single image (necessary to allocate m\+\_\+im) 
+\end{DoxyItemize}\mbox{\Hypertarget{classfifo__min_a998687a04300c00f9abb99d33b9268cc}\label{classfifo__min_a998687a04300c00f9abb99d33b9268cc}} 
+\index{fifo\_min@{fifo\_min}!load\_next@{load\_next}}
+\index{load\_next@{load\_next}!fifo\_min@{fifo\_min}}
+\doxysubsubsection{\texorpdfstring{load\_next()}{load\_next()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} fifo\+\_\+min\+::load\+\_\+next (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{ind\+\_\+sot,  }\item[{std\+::vector$<$ bool $>$ \&}]{flg\+\_\+valid\+\_\+image,  }\item[{\mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$}]{image\+\_\+mean }\end{DoxyParamCaption})}
+
+refresh FIFO status loading the next pair of images. One in the FIFO and the other in dev\+\_\+fft memory area \mbox{\Hypertarget{classfifo__min_af06d2b9382709c8ce7b3d742f9fa95d7}\label{classfifo__min_af06d2b9382709c8ce7b3d742f9fa95d7}} 
+\index{fifo\_min@{fifo\_min}!reset@{reset}}
+\index{reset@{reset}!fifo\_min@{fifo\_min}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void fifo\+\_\+min\+::reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{\+\_\+dist\+\_\+bias }\end{DoxyParamCaption})}
+
+reset function is called before calculating a group of power spectra. \+\_\+dist\+\_\+bias corresponds to the starting index of the group-\/diagonal during the process 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classfifo__min_aa52b6e440c3b1f946fa259ab3a42d7fd}\label{classfifo__min_aa52b6e440c3b1f946fa259ab3a42d7fd}} 
+\index{fifo\_min@{fifo\_min}!current\_size@{current\_size}}
+\index{current\_size@{current\_size}!fifo\_min@{fifo\_min}}
+\doxysubsubsection{\texorpdfstring{current\_size}{current\_size}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} fifo\+\_\+min\+::current\+\_\+size}
+
+current number of elements stored in the FIFO \mbox{\Hypertarget{classfifo__min_ad1b47abad73a19254a9304debf6c39b7}\label{classfifo__min_ad1b47abad73a19254a9304debf6c39b7}} 
+\index{fifo\_min@{fifo\_min}!dist\_bias@{dist\_bias}}
+\index{dist\_bias@{dist\_bias}!fifo\_min@{fifo\_min}}
+\doxysubsubsection{\texorpdfstring{dist\_bias}{dist\_bias}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} fifo\+\_\+min\+::dist\+\_\+bias}
+
+bias to evaluate the correct dist\+\_\+map. It corresponds to the starting index of the group-\/diagonal during the process \mbox{\Hypertarget{classfifo__min_ac72db828dd2b410e72a70be341cc3217}\label{classfifo__min_ac72db828dd2b410e72a70be341cc3217}} 
+\index{fifo\_min@{fifo\_min}!dist\_map@{dist\_map}}
+\index{dist\_map@{dist\_map}!fifo\_min@{fifo\_min}}
+\doxysubsubsection{\texorpdfstring{dist\_map}{dist\_map}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}$\ast$ fifo\+\_\+min\+::dist\+\_\+map}
+
+This array associates the time delay between the images in the FIFO and the image to be substracted to the memory area of the corresponding power spectrum \mbox{\Hypertarget{classfifo__min_aee94d04451c2ac93e0088013ab0ccf09}\label{classfifo__min_aee94d04451c2ac93e0088013ab0ccf09}} 
+\index{fifo\_min@{fifo\_min}!file\_index@{file\_index}}
+\index{file\_index@{file\_index}!fifo\_min@{fifo\_min}}
+\doxysubsubsection{\texorpdfstring{file\_index}{file\_index}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}$\ast$ fifo\+\_\+min\+::file\+\_\+index}
+
+this array associates the index of the file stored to ind\+\_\+fifo \mbox{\Hypertarget{classfifo__min_a31f60ca49053ce9638661646423f4088}\label{classfifo__min_a31f60ca49053ce9638661646423f4088}} 
+\index{fifo\_min@{fifo\_min}!flg\_valid\_image@{flg\_valid\_image}}
+\index{flg\_valid\_image@{flg\_valid\_image}!fifo\_min@{fifo\_min}}
+\doxysubsubsection{\texorpdfstring{flg\_valid\_image}{flg\_valid\_image}}
+{\footnotesize\ttfamily bool$\ast$ fifo\+\_\+min\+::flg\+\_\+valid\+\_\+image}
+
+This flg is used to enable or disable one image into the fifo \mbox{\Hypertarget{classfifo__min_a443ec41d1d9ff8e8f75073898a2d5c46}\label{classfifo__min_a443ec41d1d9ff8e8f75073898a2d5c46}} 
+\index{fifo\_min@{fifo\_min}!ind\_fifo@{ind\_fifo}}
+\index{ind\_fifo@{ind\_fifo}!fifo\_min@{fifo\_min}}
+\doxysubsubsection{\texorpdfstring{ind\_fifo}{ind\_fifo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} fifo\+\_\+min\+::ind\+\_\+fifo}
+
+periodical index that points to a memory area of the FIFO \mbox{\Hypertarget{classfifo__min_a5c4a2eb303a564db3e897fe568698f42}\label{classfifo__min_a5c4a2eb303a564db3e897fe568698f42}} 
+\index{fifo\_min@{fifo\_min}!ind\_file@{ind\_file}}
+\index{ind\_file@{ind\_file}!fifo\_min@{fifo\_min}}
+\doxysubsubsection{\texorpdfstring{ind\_file}{ind\_file}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} fifo\+\_\+min\+::ind\+\_\+file}
+
+file to be loaded in the FIFO \mbox{\Hypertarget{classfifo__min_a5bdaca166ec85cf70d48ea8ff215d42f}\label{classfifo__min_a5bdaca166ec85cf70d48ea8ff215d42f}} 
+\index{fifo\_min@{fifo\_min}!size@{size}}
+\index{size@{size}!fifo\_min@{fifo\_min}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} fifo\+\_\+min\+::size}
+
+maximum number of upper half FFTs of images storable on the graphic card 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+diffmicro/\mbox{\hyperlink{power__spectra_8h}{power\+\_\+spectra.\+h}}\item 
+diffmicro/\mbox{\hyperlink{power__spectra_8cpp}{power\+\_\+spectra.\+cpp}}\end{DoxyCompactItemize}

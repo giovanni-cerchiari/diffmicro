@@ -1,0 +1,42 @@
+\hypertarget{cpu__gpu__load__next_8cpp}{}\doxysection{diffmicro/cpu\+\_\+gpu\+\_\+load\+\_\+next.cpp File Reference}
+\label{cpu__gpu__load__next_8cpp}\index{diffmicro/cpu\_gpu\_load\_next.cpp@{diffmicro/cpu\_gpu\_load\_next.cpp}}
+{\ttfamily \#include \char`\"{}stdafx.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}global\+\_\+define.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}cuda\+\_\+init.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}diffmicro\+\_\+io.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}power\+\_\+spectra.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}diffmicro\+\_\+log.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}correlation.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{cpu__gpu__load__next_8cpp_ab4768efa0354e7312463b5cb72b3d11e}{cpu\+\_\+gpu\+\_\+diff}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, fftw\+\_\+complex cpu\+\_\+d\mbox{[}$\,$\mbox{]}, cufft\+Double\+Complex gpu\+\_\+d\mbox{[}$\,$\mbox{]}, bool show)
+\item 
+void \mbox{\hyperlink{cpu__gpu__load__next_8cpp_aa6c1a2b956d98b186040c5bf6793b212}{cpu\+\_\+gpu\+\_\+diff}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, \mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} cpu\+\_\+d\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} gpu\+\_\+d\mbox{[}$\,$\mbox{]}, bool show)
+\item 
+int \mbox{\hyperlink{cpu__gpu__load__next_8cpp_ac46364a0e3d5464eb52602a8d7593431}{dfd\+\_\+main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{cpu__gpu__load__next_8cpp_ab4768efa0354e7312463b5cb72b3d11e}\label{cpu__gpu__load__next_8cpp_ab4768efa0354e7312463b5cb72b3d11e}} 
+\index{cpu\_gpu\_load\_next.cpp@{cpu\_gpu\_load\_next.cpp}!cpu\_gpu\_diff@{cpu\_gpu\_diff}}
+\index{cpu\_gpu\_diff@{cpu\_gpu\_diff}!cpu\_gpu\_load\_next.cpp@{cpu\_gpu\_load\_next.cpp}}
+\doxysubsubsection{\texorpdfstring{cpu\_gpu\_diff()}{cpu\_gpu\_diff()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void cpu\+\_\+gpu\+\_\+diff (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dim,  }\item[{fftw\+\_\+complex}]{cpu\+\_\+d\mbox{[}$\,$\mbox{]},  }\item[{cufft\+Double\+Complex}]{gpu\+\_\+d\mbox{[}$\,$\mbox{]},  }\item[{bool}]{show }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cpu__gpu__load__next_8cpp_aa6c1a2b956d98b186040c5bf6793b212}\label{cpu__gpu__load__next_8cpp_aa6c1a2b956d98b186040c5bf6793b212}} 
+\index{cpu\_gpu\_load\_next.cpp@{cpu\_gpu\_load\_next.cpp}!cpu\_gpu\_diff@{cpu\_gpu\_diff}}
+\index{cpu\_gpu\_diff@{cpu\_gpu\_diff}!cpu\_gpu\_load\_next.cpp@{cpu\_gpu\_load\_next.cpp}}
+\doxysubsubsection{\texorpdfstring{cpu\_gpu\_diff()}{cpu\_gpu\_diff()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void cpu\+\_\+gpu\+\_\+diff (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dim,  }\item[{\mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}}}]{cpu\+\_\+d\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}}}]{gpu\+\_\+d\mbox{[}$\,$\mbox{]},  }\item[{bool}]{show }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cpu__gpu__load__next_8cpp_ac46364a0e3d5464eb52602a8d7593431}\label{cpu__gpu__load__next_8cpp_ac46364a0e3d5464eb52602a8d7593431}} 
+\index{cpu\_gpu\_load\_next.cpp@{cpu\_gpu\_load\_next.cpp}!dfd\_main@{dfd\_main}}
+\index{dfd\_main@{dfd\_main}!cpu\_gpu\_load\_next.cpp@{cpu\_gpu\_load\_next.cpp}}
+\doxysubsubsection{\texorpdfstring{dfd\_main()}{dfd\_main()}}
+{\footnotesize\ttfamily int dfd\+\_\+main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+

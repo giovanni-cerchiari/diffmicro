@@ -1,0 +1,64 @@
+\hypertarget{keyboard__opencv_8h}{}\doxysection{diffmicro/display\+\_\+opencv/keyboard\+\_\+opencv.h File Reference}
+\label{keyboard__opencv_8h}\index{diffmicro/display\_opencv/keyboard\_opencv.h@{diffmicro/display\_opencv/keyboard\_opencv.h}}
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{keyboard__opencv_8h_a48129cb68d0d4527eeb00a1c00983353}{refresh\+\_\+idle}} (int key)
+\item 
+int \mbox{\hyperlink{keyboard__opencv_8h_aaba606e1b735f3df2c49179e5700ab29}{refresh\+\_\+exit}} (int key)
+\item 
+void \mbox{\hyperlink{keyboard__opencv_8h_a4d0abb52b97a2304a4ed7517d0c8b6aa}{waitkeyboard}} (int delay=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{keyboard__opencv_8h_a0cf2206bbbe4ea09ccbc9256dc493691}{snapshot\+\_\+folder}}
+\item 
+unsigned int \mbox{\hyperlink{keyboard__opencv_8h_a169f3cc77de9d8cce8f144a7598aeca3}{snapshot\+\_\+sequential\+\_\+number}}
+\item 
+int($\ast$ \mbox{\hyperlink{keyboard__opencv_8h_a2837ef8fda2e6a3edc5aa0a4d6443b98}{refresh}} )(int key)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{keyboard__opencv_8h_aaba606e1b735f3df2c49179e5700ab29}\label{keyboard__opencv_8h_aaba606e1b735f3df2c49179e5700ab29}} 
+\index{keyboard\_opencv.h@{keyboard\_opencv.h}!refresh\_exit@{refresh\_exit}}
+\index{refresh\_exit@{refresh\_exit}!keyboard\_opencv.h@{keyboard\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{refresh\_exit()}{refresh\_exit()}}
+{\footnotesize\ttfamily int refresh\+\_\+exit (\begin{DoxyParamCaption}\item[{int}]{key }\end{DoxyParamCaption})}
+
+This is an example refresh function. The refresh function is necessary to force display. \mbox{\Hypertarget{keyboard__opencv_8h_a48129cb68d0d4527eeb00a1c00983353}\label{keyboard__opencv_8h_a48129cb68d0d4527eeb00a1c00983353}} 
+\index{keyboard\_opencv.h@{keyboard\_opencv.h}!refresh\_idle@{refresh\_idle}}
+\index{refresh\_idle@{refresh\_idle}!keyboard\_opencv.h@{keyboard\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{refresh\_idle()}{refresh\_idle()}}
+{\footnotesize\ttfamily int refresh\+\_\+idle (\begin{DoxyParamCaption}\item[{int}]{key }\end{DoxyParamCaption})}
+
+This is an example refresh function. The refresh function is necessary to force display. \mbox{\Hypertarget{keyboard__opencv_8h_a4d0abb52b97a2304a4ed7517d0c8b6aa}\label{keyboard__opencv_8h_a4d0abb52b97a2304a4ed7517d0c8b6aa}} 
+\index{keyboard\_opencv.h@{keyboard\_opencv.h}!waitkeyboard@{waitkeyboard}}
+\index{waitkeyboard@{waitkeyboard}!keyboard\_opencv.h@{keyboard\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{waitkeyboard()}{waitkeyboard()}}
+{\footnotesize\ttfamily void waitkeyboard (\begin{DoxyParamCaption}\item[{int}]{delay = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+we grab the keyboard key press in case of event. The delay allows to call function refresh even if no button is pressed 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{keyboard__opencv_8h_a2837ef8fda2e6a3edc5aa0a4d6443b98}\label{keyboard__opencv_8h_a2837ef8fda2e6a3edc5aa0a4d6443b98}} 
+\index{keyboard\_opencv.h@{keyboard\_opencv.h}!refresh@{refresh}}
+\index{refresh@{refresh}!keyboard\_opencv.h@{keyboard\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{refresh}{refresh}}
+{\footnotesize\ttfamily int($\ast$ refresh) (int key) (\begin{DoxyParamCaption}\item[{int}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+refresh function is called after a certain delay or when a button is pressed \mbox{\Hypertarget{keyboard__opencv_8h_a0cf2206bbbe4ea09ccbc9256dc493691}\label{keyboard__opencv_8h_a0cf2206bbbe4ea09ccbc9256dc493691}} 
+\index{keyboard\_opencv.h@{keyboard\_opencv.h}!snapshot\_folder@{snapshot\_folder}}
+\index{snapshot\_folder@{snapshot\_folder}!keyboard\_opencv.h@{keyboard\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{snapshot\_folder}{snapshot\_folder}}
+{\footnotesize\ttfamily std\+::string snapshot\+\_\+folder\hspace{0.3cm}{\ttfamily [extern]}}
+
+This variable can be used to indicate where the snapshot of the program are stored \mbox{\Hypertarget{keyboard__opencv_8h_a169f3cc77de9d8cce8f144a7598aeca3}\label{keyboard__opencv_8h_a169f3cc77de9d8cce8f144a7598aeca3}} 
+\index{keyboard\_opencv.h@{keyboard\_opencv.h}!snapshot\_sequential\_number@{snapshot\_sequential\_number}}
+\index{snapshot\_sequential\_number@{snapshot\_sequential\_number}!keyboard\_opencv.h@{keyboard\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{snapshot\_sequential\_number}{snapshot\_sequential\_number}}
+{\footnotesize\ttfamily unsigned int snapshot\+\_\+sequential\+\_\+number\hspace{0.3cm}{\ttfamily [extern]}}
+
+This variable indicates the number of the snapshot that will appear in the file name. 

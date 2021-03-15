@@ -1,0 +1,168 @@
+\hypertarget{classaxes__opencv}{}\doxysection{axes\+\_\+opencv Class Reference}
+\label{classaxes__opencv}\index{axes\_opencv@{axes\_opencv}}
+
+
+{\ttfamily \#include $<$overlay\+\_\+opencv.\+h$>$}
+
+Inheritance diagram for axes\+\_\+opencv\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classaxes__opencv}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classaxes__opencv_a68dd3bec6495006e80ae3285e6bf882b}{axes\+\_\+opencv}} ()
+\item 
+\mbox{\hyperlink{classaxes__opencv_a30adf9b7a8a7918b4cd1847808d24abc}{axes\+\_\+opencv}} (const \mbox{\hyperlink{classaxes__opencv}{axes\+\_\+opencv}} \&ax)
+\item 
+\mbox{\hyperlink{classaxes__opencv_a0e36f2a6daa7495a73e23cd047cc35ae}{$\sim$axes\+\_\+opencv}} ()
+\item 
+const \mbox{\hyperlink{classaxes__opencv}{axes\+\_\+opencv}} \& \mbox{\hyperlink{classaxes__opencv_a2dfe3c7d9dbb7ed9a24daf1396f63036}{operator=}} (const \mbox{\hyperlink{classaxes__opencv}{axes\+\_\+opencv}} \&ax)
+\item 
+void \mbox{\hyperlink{classaxes__opencv_a8523deaedbaada5322063036aa66b4a9}{init}} ()
+\item 
+void \mbox{\hyperlink{classaxes__opencv_ac56a24ef3dabef087d7da52a52f9c192}{draw}} (cv\+::\+Mat \&img, double start\mbox{[}$\,$\mbox{]}, double scale\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{classaxes__opencv_ab5b9abac8de866b9a90bd67971ac6cc6}{edit}} (void $\ast$in)
+\item 
+void \mbox{\hyperlink{classaxes__opencv_a0176a1c5aa4f47ea38eb223b55a31daf}{getvalue}} (\mbox{\hyperlink{structreturn__get__value__overlay__opencv}{return\+\_\+get\+\_\+value\+\_\+overlay\+\_\+opencv}} $\ast$out)
+\item 
+void \mbox{\hyperlink{classaxes__opencv_ab2a73a4252d17012f1e25d367a9a1b8a}{num\+\_\+axis}} (double origin, double end, unsigned int n\+\_\+wished\+\_\+tick, unsigned int \&ntick, double \&start, double \&step)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{classaxes__opencv_a27d24010648cfd5260a7d5551e6f0b80}{dim\+\_\+tick}} \mbox{[}2\mbox{]}
+\item 
+int \mbox{\hyperlink{classaxes__opencv_a719fdcf680a696d9a7add7480bcb455f}{font\+\_\+number\+\_\+size}}
+\item 
+double \mbox{\hyperlink{classaxes__opencv_ab693ea7c959b2fbd0d6a9ccf4ff24a14}{font\+\_\+label\+\_\+size}}
+\item 
+std\+::string \mbox{\hyperlink{classaxes__opencv_a1fe471ee4c7f49060990d2ea657e5341}{xlabel}}
+\item 
+std\+::string \mbox{\hyperlink{classaxes__opencv_ad4aa141f335dd4cb72fd2b44f2ec6943}{ylabel}}
+\item 
+std\+::string \mbox{\hyperlink{classaxes__opencv_a043c4b41f39b461e6b40c5118db243ff}{label\+\_\+return}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This overlay implements the 2-\/D axes on the \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}}. It is used with \mbox{\hyperlink{classscatter__opencv}{scatter\+\_\+opencv}} and \mbox{\hyperlink{classbarplot__opencv}{barplot\+\_\+opencv}}. Plots are implemented as overalay to facilitate plotting over images. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classaxes__opencv_a68dd3bec6495006e80ae3285e6bf882b}\label{classaxes__opencv_a68dd3bec6495006e80ae3285e6bf882b}} 
+\index{axes\_opencv@{axes\_opencv}!axes\_opencv@{axes\_opencv}}
+\index{axes\_opencv@{axes\_opencv}!axes\_opencv@{axes\_opencv}}
+\doxysubsubsection{\texorpdfstring{axes\_opencv()}{axes\_opencv()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily axes\+\_\+opencv\+::axes\+\_\+opencv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classaxes__opencv_a30adf9b7a8a7918b4cd1847808d24abc}\label{classaxes__opencv_a30adf9b7a8a7918b4cd1847808d24abc}} 
+\index{axes\_opencv@{axes\_opencv}!axes\_opencv@{axes\_opencv}}
+\index{axes\_opencv@{axes\_opencv}!axes\_opencv@{axes\_opencv}}
+\doxysubsubsection{\texorpdfstring{axes\_opencv()}{axes\_opencv()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily axes\+\_\+opencv\+::axes\+\_\+opencv (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classaxes__opencv}{axes\+\_\+opencv}} \&}]{ax }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classaxes__opencv_a0e36f2a6daa7495a73e23cd047cc35ae}\label{classaxes__opencv_a0e36f2a6daa7495a73e23cd047cc35ae}} 
+\index{axes\_opencv@{axes\_opencv}!````~axes\_opencv@{$\sim$axes\_opencv}}
+\index{````~axes\_opencv@{$\sim$axes\_opencv}!axes\_opencv@{axes\_opencv}}
+\doxysubsubsection{\texorpdfstring{$\sim$axes\_opencv()}{~axes\_opencv()}}
+{\footnotesize\ttfamily axes\+\_\+opencv\+::$\sim$axes\+\_\+opencv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classaxes__opencv_ac56a24ef3dabef087d7da52a52f9c192}\label{classaxes__opencv_ac56a24ef3dabef087d7da52a52f9c192}} 
+\index{axes\_opencv@{axes\_opencv}!draw@{draw}}
+\index{draw@{draw}!axes\_opencv@{axes\_opencv}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void axes\+\_\+opencv\+::draw (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{img,  }\item[{double}]{start\mbox{[}$\,$\mbox{]},  }\item[{double}]{scale\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classoverlay__opencv_ae0d137278c2fd1f08109a10b9c1c5a4c}{overlay\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classaxes__opencv_ab5b9abac8de866b9a90bd67971ac6cc6}\label{classaxes__opencv_ab5b9abac8de866b9a90bd67971ac6cc6}} 
+\index{axes\_opencv@{axes\_opencv}!edit@{edit}}
+\index{edit@{edit}!axes\_opencv@{axes\_opencv}}
+\doxysubsubsection{\texorpdfstring{edit()}{edit()}}
+{\footnotesize\ttfamily void axes\+\_\+opencv\+::edit (\begin{DoxyParamCaption}\item[{void $\ast$}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classoverlay__opencv_a9a7785e0054e5fe93213260f7f1be036}{overlay\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classaxes__opencv_a0176a1c5aa4f47ea38eb223b55a31daf}\label{classaxes__opencv_a0176a1c5aa4f47ea38eb223b55a31daf}} 
+\index{axes\_opencv@{axes\_opencv}!getvalue@{getvalue}}
+\index{getvalue@{getvalue}!axes\_opencv@{axes\_opencv}}
+\doxysubsubsection{\texorpdfstring{getvalue()}{getvalue()}}
+{\footnotesize\ttfamily void axes\+\_\+opencv\+::getvalue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structreturn__get__value__overlay__opencv}{return\+\_\+get\+\_\+value\+\_\+overlay\+\_\+opencv}} $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classoverlay__opencv_a4ca2d355fc21e98c151f3c61cec313bf}{overlay\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classaxes__opencv_a8523deaedbaada5322063036aa66b4a9}\label{classaxes__opencv_a8523deaedbaada5322063036aa66b4a9}} 
+\index{axes\_opencv@{axes\_opencv}!init@{init}}
+\index{init@{init}!axes\_opencv@{axes\_opencv}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void axes\+\_\+opencv\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classaxes__opencv_ab2a73a4252d17012f1e25d367a9a1b8a}\label{classaxes__opencv_ab2a73a4252d17012f1e25d367a9a1b8a}} 
+\index{axes\_opencv@{axes\_opencv}!num\_axis@{num\_axis}}
+\index{num\_axis@{num\_axis}!axes\_opencv@{axes\_opencv}}
+\doxysubsubsection{\texorpdfstring{num\_axis()}{num\_axis()}}
+{\footnotesize\ttfamily void axes\+\_\+opencv\+::num\+\_\+axis (\begin{DoxyParamCaption}\item[{double}]{origin,  }\item[{double}]{end,  }\item[{unsigned int}]{n\+\_\+wished\+\_\+tick,  }\item[{unsigned int \&}]{ntick,  }\item[{double \&}]{start,  }\item[{double \&}]{step }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classaxes__opencv_a2dfe3c7d9dbb7ed9a24daf1396f63036}\label{classaxes__opencv_a2dfe3c7d9dbb7ed9a24daf1396f63036}} 
+\index{axes\_opencv@{axes\_opencv}!operator=@{operator=}}
+\index{operator=@{operator=}!axes\_opencv@{axes\_opencv}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classaxes__opencv}{axes\+\_\+opencv}} \& axes\+\_\+opencv\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classaxes__opencv}{axes\+\_\+opencv}} \&}]{ax }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classaxes__opencv_a27d24010648cfd5260a7d5551e6f0b80}\label{classaxes__opencv_a27d24010648cfd5260a7d5551e6f0b80}} 
+\index{axes\_opencv@{axes\_opencv}!dim\_tick@{dim\_tick}}
+\index{dim\_tick@{dim\_tick}!axes\_opencv@{axes\_opencv}}
+\doxysubsubsection{\texorpdfstring{dim\_tick}{dim\_tick}}
+{\footnotesize\ttfamily unsigned int axes\+\_\+opencv\+::dim\+\_\+tick\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{classaxes__opencv_ab693ea7c959b2fbd0d6a9ccf4ff24a14}\label{classaxes__opencv_ab693ea7c959b2fbd0d6a9ccf4ff24a14}} 
+\index{axes\_opencv@{axes\_opencv}!font\_label\_size@{font\_label\_size}}
+\index{font\_label\_size@{font\_label\_size}!axes\_opencv@{axes\_opencv}}
+\doxysubsubsection{\texorpdfstring{font\_label\_size}{font\_label\_size}}
+{\footnotesize\ttfamily double axes\+\_\+opencv\+::font\+\_\+label\+\_\+size}
+
+\mbox{\Hypertarget{classaxes__opencv_a719fdcf680a696d9a7add7480bcb455f}\label{classaxes__opencv_a719fdcf680a696d9a7add7480bcb455f}} 
+\index{axes\_opencv@{axes\_opencv}!font\_number\_size@{font\_number\_size}}
+\index{font\_number\_size@{font\_number\_size}!axes\_opencv@{axes\_opencv}}
+\doxysubsubsection{\texorpdfstring{font\_number\_size}{font\_number\_size}}
+{\footnotesize\ttfamily int axes\+\_\+opencv\+::font\+\_\+number\+\_\+size}
+
+\mbox{\Hypertarget{classaxes__opencv_a043c4b41f39b461e6b40c5118db243ff}\label{classaxes__opencv_a043c4b41f39b461e6b40c5118db243ff}} 
+\index{axes\_opencv@{axes\_opencv}!label\_return@{label\_return}}
+\index{label\_return@{label\_return}!axes\_opencv@{axes\_opencv}}
+\doxysubsubsection{\texorpdfstring{label\_return}{label\_return}}
+{\footnotesize\ttfamily std\+::string axes\+\_\+opencv\+::label\+\_\+return}
+
+\mbox{\Hypertarget{classaxes__opencv_a1fe471ee4c7f49060990d2ea657e5341}\label{classaxes__opencv_a1fe471ee4c7f49060990d2ea657e5341}} 
+\index{axes\_opencv@{axes\_opencv}!xlabel@{xlabel}}
+\index{xlabel@{xlabel}!axes\_opencv@{axes\_opencv}}
+\doxysubsubsection{\texorpdfstring{xlabel}{xlabel}}
+{\footnotesize\ttfamily std\+::string axes\+\_\+opencv\+::xlabel}
+
+\mbox{\Hypertarget{classaxes__opencv_ad4aa141f335dd4cb72fd2b44f2ec6943}\label{classaxes__opencv_ad4aa141f335dd4cb72fd2b44f2ec6943}} 
+\index{axes\_opencv@{axes\_opencv}!ylabel@{ylabel}}
+\index{ylabel@{ylabel}!axes\_opencv@{axes\_opencv}}
+\doxysubsubsection{\texorpdfstring{ylabel}{ylabel}}
+{\footnotesize\ttfamily std\+::string axes\+\_\+opencv\+::ylabel}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+diffmicro/display\+\_\+opencv/\mbox{\hyperlink{overlay__opencv_8h}{overlay\+\_\+opencv.\+h}}\item 
+diffmicro/display\+\_\+opencv/\mbox{\hyperlink{overlay__opencv_8cpp}{overlay\+\_\+opencv.\+cpp}}\end{DoxyCompactItemize}

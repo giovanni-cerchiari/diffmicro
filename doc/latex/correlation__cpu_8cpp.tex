@@ -1,0 +1,313 @@
+\hypertarget{correlation__cpu_8cpp}{}\doxysection{diffmicro/correlation\+\_\+cpu.cpp File Reference}
+\label{correlation__cpu_8cpp}\index{diffmicro/correlation\_cpu.cpp@{diffmicro/correlation\_cpu.cpp}}
+{\ttfamily \#include \char`\"{}stdafx.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}correlation.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned short $\ast$ \mbox{\hyperlink{correlation__cpu_8cpp_aa906a912bdcb1e0dc7940231a3666656}{dev\+\_\+im\+\_\+cpu}} (NULL)
+\item 
+unsigned int $\ast$ \mbox{\hyperlink{correlation__cpu_8cpp_a021adb45066809499804173329bb62dc}{dev\+\_\+radial\+\_\+lut\+\_\+cpu}} (NULL)
+\item 
+\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} $\ast$ \mbox{\hyperlink{correlation__cpu_8cpp_a57268d8a35c1eae383be43847f4ba98e}{dev\+\_\+fft\+\_\+cpu}} (NULL)
+\item 
+\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} $\ast$ \mbox{\hyperlink{correlation__cpu_8cpp_a88845bc40a6510b98ce6531ffbc9b106}{dev\+\_\+fft\+\_\+time\+\_\+cpu}} (NULL)
+\item 
+\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} $\ast$ \mbox{\hyperlink{correlation__cpu_8cpp_af695b9466cb9e61bc2c5f78b8621d860}{dev\+\_\+corr\+\_\+cpu}} (NULL)
+\item 
+\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} $\ast$ \mbox{\hyperlink{correlation__cpu_8cpp_a20b13802db323f282103837be9f09bf1}{dev\+\_\+images\+\_\+cpu}} (NULL)
+\item 
+\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} $\ast$ \mbox{\hyperlink{correlation__cpu_8cpp_a5ef950304c498ac6f44dc6b59c60e2b8}{dev\+\_\+image\+\_\+sot\+\_\+cpu}} (NULL)
+\item 
+\mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$ \mbox{\hyperlink{correlation__cpu_8cpp_a1e7d0c867fa7c9bdff6b762470ed364f}{dev\+\_\+power\+\_\+spectra\+\_\+cpu}} (NULL)
+\item 
+\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} \mbox{\hyperlink{correlation__cpu_8cpp_adbde811253ea1aa7ed0fa359c46f50d4}{one\+\_\+over\+\_\+fft\+\_\+norm\+\_\+cpu}} (0)
+\item 
+fftwf\+\_\+plan $\ast$ \mbox{\hyperlink{correlation__cpu_8cpp_a5d0c0f2138831ae57c141477f3b0e880}{plantime}} (NULL)
+\item 
+void \mbox{\hyperlink{correlation__cpu_8cpp_a4d2f7c5d520bb39a7e3edc42198a6068}{shorttorealwithgain\+\_\+cpu}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, unsigned short vets\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} gain, \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} vetc\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{correlation__cpu_8cpp_ade43f01f8dfc546f3726d478ea02f02a}{short\+\_\+to\+\_\+real\+\_\+with\+\_\+gain\+\_\+cpu}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} nth, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, unsigned short vets\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} gain, \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} vetc\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{correlation__cpu_8cpp_a30507d25d91034f258055d894ae941b1}{complextocomplexwithgain\+\_\+cpu}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} vets\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} gain, \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} vetc\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{correlation__cpu_8cpp_a93eb31ad164e02152b4e21abb8f37587}{complex\+\_\+to\+\_\+complex\+\_\+with\+\_\+gain\+\_\+cpu}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} nth, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} vets\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} gain, \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} vetc\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{correlation__cpu_8cpp_a2eb63ff1ce5917b0c3eed9d381fd65d8}{complextorealwithgain\+\_\+cpu}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} vets\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} gain, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} vetc\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{correlation__cpu_8cpp_a517eaa6aa0ba9cc33d6e0ac8b4a9b033}{complex\+\_\+to\+\_\+real\+\_\+with\+\_\+gain\+\_\+cpu}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} nth, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} vets\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} gain, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} vetc\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{correlation__cpu_8cpp_a82c706d5916132e6c220e7c3cdaacb42}{cpx\+\_\+row2col\+\_\+gain\+\_\+cpu}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimx\+\_\+in, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} i\+\_\+row\+\_\+in, \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} in\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} gain, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimx\+\_\+out, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} i\+\_\+col\+\_\+out, \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} out\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{correlation__cpu_8cpp_aaf7d9dc1d79dd7ffdfa8e8bace3ec88b}{cpx\+\_\+col2row\+\_\+gain\+\_\+cpu}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimcopy, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimx\+\_\+in, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} i\+\_\+col\+\_\+in, \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} in\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} gain, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimx\+\_\+out, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} i\+\_\+row\+\_\+out, \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} out\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{correlation__cpu_8cpp_aa8f76ebe64e2be5095ea7dc7a75b562a}{lutfft\+\_\+to\+\_\+timeseries\+\_\+cpu}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimcopy, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} gain, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} t, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} starting\+\_\+freq)
+\item 
+void \mbox{\hyperlink{correlation__cpu_8cpp_aa60793d5e55562e067806a3d65d30f2b}{timeseries\+\_\+to\+\_\+lutfft\+\_\+cpu}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimcopy, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} gain, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} t, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} starting\+\_\+freq)
+\item 
+void \mbox{\hyperlink{correlation__cpu_8cpp_a3288c8e57ea6ec985329e8dfdda01bf6}{timeseries\+\_\+to\+\_\+lutpw\+\_\+cpu}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimcopy, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} gain, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} t, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} starting\+\_\+freq, \mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$ram\+\_\+power\+\_\+spectra)
+\item 
+void \mbox{\hyperlink{correlation__cpu_8cpp_aedec2b843b2e19ea7ab83be807c2f281}{timeseriesanalysis\+\_\+cpu}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimtimeseries, \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} $\ast$tseries, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimfft, \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} $\ast$fft\+\_\+memory, fftw\+\_\+plan $\ast$tplan, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} $\ast$corr\+\_\+memory)
+\item 
+void \mbox{\hyperlink{correlation__cpu_8cpp_a000cf9ca6ee4476529d0af464647a9f4}{timeseriesanalysis\+\_\+cpu}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimtimeseries, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dim\+\_\+t, \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} $\ast$tseries, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimfft, \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} $\ast$fft\+\_\+memory, fftw\+\_\+plan $\ast$tplan, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} $\ast$corr\+\_\+memory)
+\item 
+void \mbox{\hyperlink{correlation__cpu_8cpp_a8319e07d089d262859e8e670c82ee266}{timeseriesanalysisgroup\+\_\+cpu}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimgroup, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimtimeseries, \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} $\ast$tseries, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimfft, \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} $\ast$fft\+\_\+memory, fftw\+\_\+plan $\ast$tplan, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} $\ast$corr\+\_\+memory)
+\item 
+void \mbox{\hyperlink{correlation__cpu_8cpp_abdbe22f260bef67ad9c151dceb90a672}{timeseries\+\_\+analysis\+\_\+cpu}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} nth)
+\item 
+void \mbox{\hyperlink{correlation__cpu_8cpp_abbac79a76bf6840ee313e12b445b26b9}{gaincomplexlut\+\_\+cpu}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, unsigned int $\ast$lut, \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} in\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} gain, \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} out\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{correlation__cpu_8cpp_a135bc55b8f4e51e4412227e607fa9246}{diffpwtavg\+\_\+cpu}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} min\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} sot\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} coef1, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} coef2, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} pw\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{correlation__cpu_8cpp_aa5c55126610b28fe8d5998b4c84c9350}{diff\+\_\+power\+\_\+spectrum\+\_\+to\+\_\+avg\+\_\+cpu}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} nth, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} min\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} sot\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} coef1, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} coef2, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} pw\mbox{[}$\,$\mbox{]})
+\item 
+int \mbox{\hyperlink{correlation__cpu_8cpp_af3ee2bf7bcf7943b6669020b67767c90}{cpu\+\_\+allocation}} (int flg\+\_\+mode, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&nimages, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&dimy, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&dimx, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&dim\+\_\+power\+\_\+spectrum, unsigned int $\ast$\mbox{\hyperlink{radial__storage__lut_8h_a01adbe1bf6b6fb88129e3ccba33749e8}{ram\+\_\+radial\+\_\+lut}})
+\item 
+void \mbox{\hyperlink{correlation__cpu_8cpp_a7bc9d8030de192d22691efe64215819e}{cpu\+\_\+free\+\_\+pointers}} ()
+\item 
+void \mbox{\hyperlink{correlation__cpu_8cpp_afb1de54e88f12915af5d4adde0ff686e}{cpu\+\_\+deallocation}} ()
+\item 
+int \mbox{\hyperlink{correlation__cpu_8cpp_a038828985833ae510f7bf076da0d9ef4}{image\+\_\+to\+\_\+dev\+\_\+cpu}} (\mbox{\hyperlink{global__define_8h_a1c75b6582cc4d9b86496d8c357204cef}{SIGNED\+\_\+\+INDEX}} ind\+\_\+fifo, \mbox{\hyperlink{global__define_8h_ac3e2e8b775e8c0eca32f242cbbee4b7f}{MY\+\_\+\+REAL}} \&\mbox{\hyperlink{my__math_8h_a737e9da5c3ca2ef0a54b38fb9ea6a2e1}{mean}}, unsigned short $\ast$im, bool flg\+\_\+debug)
+\item 
+void \mbox{\hyperlink{correlation__cpu_8cpp_a2eee44baa08da559e9f211eefd6fe709}{copy\+\_\+power\+\_\+spectra\+\_\+from\+\_\+dev\+\_\+cpu}} (\mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$power\+\_\+spectrum\+\_\+r)
+\item 
+void \mbox{\hyperlink{correlation__cpu_8cpp_a95993a9479ff537fc4cd9a138992424a}{diff\+\_\+power\+\_\+spectrum\+\_\+to\+\_\+avg\+\_\+cpu\+\_\+cpu}} (\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} coef1, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} coef2, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} j, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} ind\+\_\+dist)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+fftwf\+\_\+plan \mbox{\hyperlink{correlation__cpu_8cpp_ac862a0e313831d5881be4fba5710244c}{plan}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{correlation__cpu_8cpp_a93eb31ad164e02152b4e21abb8f37587}\label{correlation__cpu_8cpp_a93eb31ad164e02152b4e21abb8f37587}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!complex\_to\_complex\_with\_gain\_cpu@{complex\_to\_complex\_with\_gain\_cpu}}
+\index{complex\_to\_complex\_with\_gain\_cpu@{complex\_to\_complex\_with\_gain\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{complex\_to\_complex\_with\_gain\_cpu()}{complex\_to\_complex\_with\_gain\_cpu()}}
+{\footnotesize\ttfamily void complex\+\_\+to\+\_\+complex\+\_\+with\+\_\+gain\+\_\+cpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{nth,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dim,  }\item[{\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}}}]{vets\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{gain,  }\item[{\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}}}]{vetc\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+This function copy a complex array into another with a real gain factor. Multithreading execution. It uses complextocomplexwithgain\+\_\+cpu. \mbox{\Hypertarget{correlation__cpu_8cpp_a517eaa6aa0ba9cc33d6e0ac8b4a9b033}\label{correlation__cpu_8cpp_a517eaa6aa0ba9cc33d6e0ac8b4a9b033}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!complex\_to\_real\_with\_gain\_cpu@{complex\_to\_real\_with\_gain\_cpu}}
+\index{complex\_to\_real\_with\_gain\_cpu@{complex\_to\_real\_with\_gain\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{complex\_to\_real\_with\_gain\_cpu()}{complex\_to\_real\_with\_gain\_cpu()}}
+{\footnotesize\ttfamily void complex\+\_\+to\+\_\+real\+\_\+with\+\_\+gain\+\_\+cpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{nth,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dim,  }\item[{\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}}}]{vets\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{gain,  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{vetc\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+This function copy the real part of a complex array into an array with gain factor. Multithreading execution. It uses complextorealwithgain\+\_\+cpu. \mbox{\Hypertarget{correlation__cpu_8cpp_a30507d25d91034f258055d894ae941b1}\label{correlation__cpu_8cpp_a30507d25d91034f258055d894ae941b1}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!complextocomplexwithgain\_cpu@{complextocomplexwithgain\_cpu}}
+\index{complextocomplexwithgain\_cpu@{complextocomplexwithgain\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{complextocomplexwithgain\_cpu()}{complextocomplexwithgain\_cpu()}}
+{\footnotesize\ttfamily void complextocomplexwithgain\+\_\+cpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dim,  }\item[{\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}}}]{vets\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{gain,  }\item[{\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}}}]{vetc\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+This function copy a complex array into another with a real gain factor. Single thread execution. \mbox{\Hypertarget{correlation__cpu_8cpp_a2eb63ff1ce5917b0c3eed9d381fd65d8}\label{correlation__cpu_8cpp_a2eb63ff1ce5917b0c3eed9d381fd65d8}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!complextorealwithgain\_cpu@{complextorealwithgain\_cpu}}
+\index{complextorealwithgain\_cpu@{complextorealwithgain\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{complextorealwithgain\_cpu()}{complextorealwithgain\_cpu()}}
+{\footnotesize\ttfamily void complextorealwithgain\+\_\+cpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dim,  }\item[{\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}}}]{vets\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{gain,  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{vetc\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+This function copy the real part of a complex array into an array with gain factor. Single thread execution. \mbox{\Hypertarget{correlation__cpu_8cpp_a2eee44baa08da559e9f211eefd6fe709}\label{correlation__cpu_8cpp_a2eee44baa08da559e9f211eefd6fe709}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!copy\_power\_spectra\_from\_dev\_cpu@{copy\_power\_spectra\_from\_dev\_cpu}}
+\index{copy\_power\_spectra\_from\_dev\_cpu@{copy\_power\_spectra\_from\_dev\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{copy\_power\_spectra\_from\_dev\_cpu()}{copy\_power\_spectra\_from\_dev\_cpu()}}
+{\footnotesize\ttfamily void copy\+\_\+power\+\_\+spectra\+\_\+from\+\_\+dev\+\_\+cpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$}]{power\+\_\+spectrum\+\_\+r }\end{DoxyParamCaption})}
+
+This function mimic the behavior of copy\+\_\+power\+\_\+spectra\+\_\+from\+\_\+dev\+\_\+gpu \mbox{\Hypertarget{correlation__cpu_8cpp_af3ee2bf7bcf7943b6669020b67767c90}\label{correlation__cpu_8cpp_af3ee2bf7bcf7943b6669020b67767c90}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!cpu\_allocation@{cpu\_allocation}}
+\index{cpu\_allocation@{cpu\_allocation}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{cpu\_allocation()}{cpu\_allocation()}}
+{\footnotesize\ttfamily int cpu\+\_\+allocation (\begin{DoxyParamCaption}\item[{int}]{flg\+\_\+mode,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&}]{nimages,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&}]{dimy,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&}]{dimx,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&}]{dim\+\_\+power\+\_\+spectrum,  }\item[{unsigned int $\ast$}]{ram\+\_\+radial\+\_\+lut }\end{DoxyParamCaption})}
+
+This function allocates the memory card and initialize all sizes variable necessary to run the calculus for cpu execution. ~\newline
+Allocation of the memory on the video card is made with a trial and error process. It is found that if any memory allocation error occurs it is better to reallocate the entire memory. Note that, since the power spectrum is a symmetric matrix, we can store only the upper half of the FFTs and perform the difference operation only over this upper half. \mbox{\Hypertarget{correlation__cpu_8cpp_afb1de54e88f12915af5d4adde0ff686e}\label{correlation__cpu_8cpp_afb1de54e88f12915af5d4adde0ff686e}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!cpu\_deallocation@{cpu\_deallocation}}
+\index{cpu\_deallocation@{cpu\_deallocation}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{cpu\_deallocation()}{cpu\_deallocation()}}
+{\footnotesize\ttfamily void cpu\+\_\+deallocation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function releases memory allocated by cpu\+\_\+allocation \mbox{\Hypertarget{correlation__cpu_8cpp_a7bc9d8030de192d22691efe64215819e}\label{correlation__cpu_8cpp_a7bc9d8030de192d22691efe64215819e}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!cpu\_free\_pointers@{cpu\_free\_pointers}}
+\index{cpu\_free\_pointers@{cpu\_free\_pointers}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{cpu\_free\_pointers()}{cpu\_free\_pointers()}}
+{\footnotesize\ttfamily void cpu\+\_\+free\+\_\+pointers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function releases memory allocated by cpu\+\_\+allocation \mbox{\Hypertarget{correlation__cpu_8cpp_aaf7d9dc1d79dd7ffdfa8e8bace3ec88b}\label{correlation__cpu_8cpp_aaf7d9dc1d79dd7ffdfa8e8bace3ec88b}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!cpx\_col2row\_gain\_cpu@{cpx\_col2row\_gain\_cpu}}
+\index{cpx\_col2row\_gain\_cpu@{cpx\_col2row\_gain\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{cpx\_col2row\_gain\_cpu()}{cpx\_col2row\_gain\_cpu()}}
+{\footnotesize\ttfamily void cpx\+\_\+col2row\+\_\+gain\+\_\+cpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimcopy,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimx\+\_\+in,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{i\+\_\+col\+\_\+in,  }\item[{\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}}}]{in\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{gain,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimx\+\_\+out,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{i\+\_\+row\+\_\+out,  }\item[{\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}}}]{out\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Matrix copy. Copy a column into a row \mbox{\Hypertarget{correlation__cpu_8cpp_a82c706d5916132e6c220e7c3cdaacb42}\label{correlation__cpu_8cpp_a82c706d5916132e6c220e7c3cdaacb42}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!cpx\_row2col\_gain\_cpu@{cpx\_row2col\_gain\_cpu}}
+\index{cpx\_row2col\_gain\_cpu@{cpx\_row2col\_gain\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{cpx\_row2col\_gain\_cpu()}{cpx\_row2col\_gain\_cpu()}}
+{\footnotesize\ttfamily void cpx\+\_\+row2col\+\_\+gain\+\_\+cpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dim,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimx\+\_\+in,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{i\+\_\+row\+\_\+in,  }\item[{\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}}}]{in\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{gain,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimx\+\_\+out,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{i\+\_\+col\+\_\+out,  }\item[{\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}}}]{out\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Matrix copy. Copy a row into a column \mbox{\Hypertarget{correlation__cpu_8cpp_af695b9466cb9e61bc2c5f78b8621d860}\label{correlation__cpu_8cpp_af695b9466cb9e61bc2c5f78b8621d860}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!dev\_corr\_cpu@{dev\_corr\_cpu}}
+\index{dev\_corr\_cpu@{dev\_corr\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{dev\_corr\_cpu()}{dev\_corr\_cpu()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}$\ast$ dev\+\_\+corr\+\_\+cpu (\begin{DoxyParamCaption}\item[{NULL}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{correlation__cpu_8cpp_a57268d8a35c1eae383be43847f4ba98e}\label{correlation__cpu_8cpp_a57268d8a35c1eae383be43847f4ba98e}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!dev\_fft\_cpu@{dev\_fft\_cpu}}
+\index{dev\_fft\_cpu@{dev\_fft\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{dev\_fft\_cpu()}{dev\_fft\_cpu()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}}$\ast$ dev\+\_\+fft\+\_\+cpu (\begin{DoxyParamCaption}\item[{NULL}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{correlation__cpu_8cpp_a88845bc40a6510b98ce6531ffbc9b106}\label{correlation__cpu_8cpp_a88845bc40a6510b98ce6531ffbc9b106}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!dev\_fft\_time\_cpu@{dev\_fft\_time\_cpu}}
+\index{dev\_fft\_time\_cpu@{dev\_fft\_time\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{dev\_fft\_time\_cpu()}{dev\_fft\_time\_cpu()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}}$\ast$ dev\+\_\+fft\+\_\+time\+\_\+cpu (\begin{DoxyParamCaption}\item[{NULL}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{correlation__cpu_8cpp_aa906a912bdcb1e0dc7940231a3666656}\label{correlation__cpu_8cpp_aa906a912bdcb1e0dc7940231a3666656}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!dev\_im\_cpu@{dev\_im\_cpu}}
+\index{dev\_im\_cpu@{dev\_im\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{dev\_im\_cpu()}{dev\_im\_cpu()}}
+{\footnotesize\ttfamily unsigned short$\ast$ dev\+\_\+im\+\_\+cpu (\begin{DoxyParamCaption}\item[{NULL}]{ }\end{DoxyParamCaption})}
+
+These functions are written for diffmicro.\+exe application. \mbox{\Hypertarget{correlation__cpu_8cpp_a5ef950304c498ac6f44dc6b59c60e2b8}\label{correlation__cpu_8cpp_a5ef950304c498ac6f44dc6b59c60e2b8}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!dev\_image\_sot\_cpu@{dev\_image\_sot\_cpu}}
+\index{dev\_image\_sot\_cpu@{dev\_image\_sot\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{dev\_image\_sot\_cpu()}{dev\_image\_sot\_cpu()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}}$\ast$ dev\+\_\+image\+\_\+sot\+\_\+cpu (\begin{DoxyParamCaption}\item[{NULL}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{correlation__cpu_8cpp_a20b13802db323f282103837be9f09bf1}\label{correlation__cpu_8cpp_a20b13802db323f282103837be9f09bf1}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!dev\_images\_cpu@{dev\_images\_cpu}}
+\index{dev\_images\_cpu@{dev\_images\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{dev\_images\_cpu()}{dev\_images\_cpu()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}}$\ast$ dev\+\_\+images\+\_\+cpu (\begin{DoxyParamCaption}\item[{NULL}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{correlation__cpu_8cpp_a1e7d0c867fa7c9bdff6b762470ed364f}\label{correlation__cpu_8cpp_a1e7d0c867fa7c9bdff6b762470ed364f}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!dev\_power\_spectra\_cpu@{dev\_power\_spectra\_cpu}}
+\index{dev\_power\_spectra\_cpu@{dev\_power\_spectra\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{dev\_power\_spectra\_cpu()}{dev\_power\_spectra\_cpu()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}}$\ast$ dev\+\_\+power\+\_\+spectra\+\_\+cpu (\begin{DoxyParamCaption}\item[{NULL}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{correlation__cpu_8cpp_a021adb45066809499804173329bb62dc}\label{correlation__cpu_8cpp_a021adb45066809499804173329bb62dc}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!dev\_radial\_lut\_cpu@{dev\_radial\_lut\_cpu}}
+\index{dev\_radial\_lut\_cpu@{dev\_radial\_lut\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{dev\_radial\_lut\_cpu()}{dev\_radial\_lut\_cpu()}}
+{\footnotesize\ttfamily unsigned int$\ast$ dev\+\_\+radial\+\_\+lut\+\_\+cpu (\begin{DoxyParamCaption}\item[{NULL}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{correlation__cpu_8cpp_aa5c55126610b28fe8d5998b4c84c9350}\label{correlation__cpu_8cpp_aa5c55126610b28fe8d5998b4c84c9350}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!diff\_power\_spectrum\_to\_avg\_cpu@{diff\_power\_spectrum\_to\_avg\_cpu}}
+\index{diff\_power\_spectrum\_to\_avg\_cpu@{diff\_power\_spectrum\_to\_avg\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{diff\_power\_spectrum\_to\_avg\_cpu()}{diff\_power\_spectrum\_to\_avg\_cpu()}}
+{\footnotesize\ttfamily void diff\+\_\+power\+\_\+spectrum\+\_\+to\+\_\+avg\+\_\+cpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{nth,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dim,  }\item[{\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}}}]{min\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}}}]{sot\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{coef1,  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{coef2,  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{pw\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{correlation__cpu_8cpp_a95993a9479ff537fc4cd9a138992424a}\label{correlation__cpu_8cpp_a95993a9479ff537fc4cd9a138992424a}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!diff\_power\_spectrum\_to\_avg\_cpu\_cpu@{diff\_power\_spectrum\_to\_avg\_cpu\_cpu}}
+\index{diff\_power\_spectrum\_to\_avg\_cpu\_cpu@{diff\_power\_spectrum\_to\_avg\_cpu\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{diff\_power\_spectrum\_to\_avg\_cpu\_cpu()}{diff\_power\_spectrum\_to\_avg\_cpu\_cpu()}}
+{\footnotesize\ttfamily void diff\+\_\+power\+\_\+spectrum\+\_\+to\+\_\+avg\+\_\+cpu\+\_\+cpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{coef1,  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{coef2,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{j,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{ind\+\_\+dist }\end{DoxyParamCaption})}
+
+This function is a wrapper for the function diff\+\_\+power\+\_\+spectrum\+\_\+to\+\_\+avg\+\_\+cpu. This function is implemented to keep symmetry in the code between cpu and gpu execution. \mbox{\Hypertarget{correlation__cpu_8cpp_a135bc55b8f4e51e4412227e607fa9246}\label{correlation__cpu_8cpp_a135bc55b8f4e51e4412227e607fa9246}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!diffpwtavg\_cpu@{diffpwtavg\_cpu}}
+\index{diffpwtavg\_cpu@{diffpwtavg\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{diffpwtavg\_cpu()}{diffpwtavg\_cpu()}}
+{\footnotesize\ttfamily void diffpwtavg\+\_\+cpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dim,  }\item[{\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}}}]{min\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}}}]{sot\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{coef1,  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{coef2,  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{pw\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{correlation__cpu_8cpp_abbac79a76bf6840ee313e12b445b26b9}\label{correlation__cpu_8cpp_abbac79a76bf6840ee313e12b445b26b9}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!gaincomplexlut\_cpu@{gaincomplexlut\_cpu}}
+\index{gaincomplexlut\_cpu@{gaincomplexlut\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{gaincomplexlut\_cpu()}{gaincomplexlut\_cpu()}}
+{\footnotesize\ttfamily void gaincomplexlut\+\_\+cpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dim,  }\item[{unsigned int $\ast$}]{lut,  }\item[{\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}}}]{in\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{gain,  }\item[{\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}}}]{out\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+WARNING\+: Do not use this function in multithreading!!! \mbox{\Hypertarget{correlation__cpu_8cpp_a038828985833ae510f7bf076da0d9ef4}\label{correlation__cpu_8cpp_a038828985833ae510f7bf076da0d9ef4}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!image\_to\_dev\_cpu@{image\_to\_dev\_cpu}}
+\index{image\_to\_dev\_cpu@{image\_to\_dev\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{image\_to\_dev\_cpu()}{image\_to\_dev\_cpu()}}
+{\footnotesize\ttfamily int image\+\_\+to\+\_\+dev\+\_\+cpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_a1c75b6582cc4d9b86496d8c357204cef}{SIGNED\+\_\+\+INDEX}}}]{ind\+\_\+fifo,  }\item[{\mbox{\hyperlink{global__define_8h_ac3e2e8b775e8c0eca32f242cbbee4b7f}{MY\+\_\+\+REAL}} \&}]{mean,  }\item[{unsigned short $\ast$}]{im,  }\item[{bool}]{flg\+\_\+debug = {\ttfamily false} }\end{DoxyParamCaption})}
+
+This functions load a unsigned int 16bit image, performs its Fourier Transform on the temporary memory dev\+\_\+fft\+\_\+cpu and the store only the normalized upper half of the FFT in the prepared memory area pointed by dev\+\_\+store\+\_\+ptr.
+
+A value proportional to the average of the image is returned in the mean variable. \mbox{\Hypertarget{correlation__cpu_8cpp_aa8f76ebe64e2be5095ea7dc7a75b562a}\label{correlation__cpu_8cpp_aa8f76ebe64e2be5095ea7dc7a75b562a}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!lutfft\_to\_timeseries\_cpu@{lutfft\_to\_timeseries\_cpu}}
+\index{lutfft\_to\_timeseries\_cpu@{lutfft\_to\_timeseries\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{lutfft\_to\_timeseries\_cpu()}{lutfft\_to\_timeseries\_cpu()}}
+{\footnotesize\ttfamily void lutfft\+\_\+to\+\_\+timeseries\+\_\+cpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimcopy,  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{gain,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{t,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{starting\+\_\+freq }\end{DoxyParamCaption})}
+
+This function is used rearrange fft of the images after applying the radial look up table in the memory. Each fft pixel is sent to the correct point of the timeseries. The time series are composed by contigous wavevectors of the 2D FFTs coming from different images sorted by time increasing order. There is a time series for each wavevector. CPU hardware version. \mbox{\Hypertarget{correlation__cpu_8cpp_adbde811253ea1aa7ed0fa359c46f50d4}\label{correlation__cpu_8cpp_adbde811253ea1aa7ed0fa359c46f50d4}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!one\_over\_fft\_norm\_cpu@{one\_over\_fft\_norm\_cpu}}
+\index{one\_over\_fft\_norm\_cpu@{one\_over\_fft\_norm\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{one\_over\_fft\_norm\_cpu()}{one\_over\_fft\_norm\_cpu()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} one\+\_\+over\+\_\+fft\+\_\+norm\+\_\+cpu (\begin{DoxyParamCaption}\item[{0}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{correlation__cpu_8cpp_a5d0c0f2138831ae57c141477f3b0e880}\label{correlation__cpu_8cpp_a5d0c0f2138831ae57c141477f3b0e880}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!plantime@{plantime}}
+\index{plantime@{plantime}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{plantime()}{plantime()}}
+{\footnotesize\ttfamily fftwf\+\_\+plan$\ast$ plantime (\begin{DoxyParamCaption}\item[{NULL}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{correlation__cpu_8cpp_ade43f01f8dfc546f3726d478ea02f02a}\label{correlation__cpu_8cpp_ade43f01f8dfc546f3726d478ea02f02a}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!short\_to\_real\_with\_gain\_cpu@{short\_to\_real\_with\_gain\_cpu}}
+\index{short\_to\_real\_with\_gain\_cpu@{short\_to\_real\_with\_gain\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{short\_to\_real\_with\_gain\_cpu()}{short\_to\_real\_with\_gain\_cpu()}}
+{\footnotesize\ttfamily void short\+\_\+to\+\_\+real\+\_\+with\+\_\+gain\+\_\+cpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{nth,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dim,  }\item[{unsigned short}]{vets\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{gain,  }\item[{\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}}}]{vetc\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+convert an array of short into an array of complex values and multiplys by a real coefficient. The imaginary part is zeroed. This function uses multithreading option.
+\begin{DoxyItemize}
+\item nth -\/$>$ number of threads for execution
+\item dim -\/$>$ number of elements in the array
+\item vets -\/$>$ input
+\item gain -\/$>$ multiplicative term
+\item vetc -\/$>$ output 
+\end{DoxyItemize}\mbox{\Hypertarget{correlation__cpu_8cpp_a4d2f7c5d520bb39a7e3edc42198a6068}\label{correlation__cpu_8cpp_a4d2f7c5d520bb39a7e3edc42198a6068}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!shorttorealwithgain\_cpu@{shorttorealwithgain\_cpu}}
+\index{shorttorealwithgain\_cpu@{shorttorealwithgain\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{shorttorealwithgain\_cpu()}{shorttorealwithgain\_cpu()}}
+{\footnotesize\ttfamily void shorttorealwithgain\+\_\+cpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dim,  }\item[{unsigned short}]{vets\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{gain,  }\item[{\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}}}]{vetc\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+convert an array of short into an array of complex values and multiplys by a real coefficient. The imaginary part is zeroed.
+\begin{DoxyItemize}
+\item dim -\/$>$ number of elements in the array
+\item vets -\/$>$ input
+\item gain -\/$>$ multiplicative term
+\item vetc -\/$>$ output 
+\end{DoxyItemize}\mbox{\Hypertarget{correlation__cpu_8cpp_abdbe22f260bef67ad9c151dceb90a672}\label{correlation__cpu_8cpp_abdbe22f260bef67ad9c151dceb90a672}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!timeseries\_analysis\_cpu@{timeseries\_analysis\_cpu}}
+\index{timeseries\_analysis\_cpu@{timeseries\_analysis\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{timeseries\_analysis\_cpu()}{timeseries\_analysis\_cpu()}}
+{\footnotesize\ttfamily void timeseries\+\_\+analysis\+\_\+cpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{nth }\end{DoxyParamCaption})}
+
+This function executes the time series analysis on the wavevectors with selectable number of threads. \mbox{\Hypertarget{correlation__cpu_8cpp_aa60793d5e55562e067806a3d65d30f2b}\label{correlation__cpu_8cpp_aa60793d5e55562e067806a3d65d30f2b}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!timeseries\_to\_lutfft\_cpu@{timeseries\_to\_lutfft\_cpu}}
+\index{timeseries\_to\_lutfft\_cpu@{timeseries\_to\_lutfft\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{timeseries\_to\_lutfft\_cpu()}{timeseries\_to\_lutfft\_cpu()}}
+{\footnotesize\ttfamily void timeseries\+\_\+to\+\_\+lutfft\+\_\+cpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimcopy,  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{gain,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{t,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{starting\+\_\+freq }\end{DoxyParamCaption})}
+
+This function is the inverse of lutfft\+\_\+to\+\_\+timeseries. It reconstructs the ffts from the time series. \mbox{\Hypertarget{correlation__cpu_8cpp_a3288c8e57ea6ec985329e8dfdda01bf6}\label{correlation__cpu_8cpp_a3288c8e57ea6ec985329e8dfdda01bf6}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!timeseries\_to\_lutpw\_cpu@{timeseries\_to\_lutpw\_cpu}}
+\index{timeseries\_to\_lutpw\_cpu@{timeseries\_to\_lutpw\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{timeseries\_to\_lutpw\_cpu()}{timeseries\_to\_lutpw\_cpu()}}
+{\footnotesize\ttfamily void timeseries\+\_\+to\+\_\+lutpw\+\_\+cpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimcopy,  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{gain,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{t,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{starting\+\_\+freq,  }\item[{\mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$}]{ram\+\_\+power\+\_\+spectra }\end{DoxyParamCaption})}
+
+Reversing operation done by lutfft\+\_\+to\+\_\+timeseries to reconstruct from the time series the images. The results, being a power spectrum, is converted from a complex to a real memory area \mbox{\Hypertarget{correlation__cpu_8cpp_aedec2b843b2e19ea7ab83be807c2f281}\label{correlation__cpu_8cpp_aedec2b843b2e19ea7ab83be807c2f281}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!timeseriesanalysis\_cpu@{timeseriesanalysis\_cpu}}
+\index{timeseriesanalysis\_cpu@{timeseriesanalysis\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{timeseriesanalysis\_cpu()}{timeseriesanalysis\_cpu()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void timeseriesanalysis\+\_\+cpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimtimeseries,  }\item[{\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} $\ast$}]{tseries,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimfft,  }\item[{\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} $\ast$}]{fft\+\_\+memory,  }\item[{fftw\+\_\+plan $\ast$}]{tplan,  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} $\ast$}]{corr\+\_\+memory }\end{DoxyParamCaption})}
+
+This function performs the analysis of the time series of each pixel of the FFT of the images \mbox{\Hypertarget{correlation__cpu_8cpp_a000cf9ca6ee4476529d0af464647a9f4}\label{correlation__cpu_8cpp_a000cf9ca6ee4476529d0af464647a9f4}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!timeseriesanalysis\_cpu@{timeseriesanalysis\_cpu}}
+\index{timeseriesanalysis\_cpu@{timeseriesanalysis\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{timeseriesanalysis\_cpu()}{timeseriesanalysis\_cpu()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void timeseriesanalysis\+\_\+cpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimtimeseries,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dim\+\_\+t,  }\item[{\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} $\ast$}]{tseries,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimfft,  }\item[{\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} $\ast$}]{fft\+\_\+memory,  }\item[{fftw\+\_\+plan $\ast$}]{tplan,  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} $\ast$}]{corr\+\_\+memory }\end{DoxyParamCaption})}
+
+This function calculates the operation over the time series of a single wavevector on cpu hardware. \mbox{\Hypertarget{correlation__cpu_8cpp_a8319e07d089d262859e8e670c82ee266}\label{correlation__cpu_8cpp_a8319e07d089d262859e8e670c82ee266}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!timeseriesanalysisgroup\_cpu@{timeseriesanalysisgroup\_cpu}}
+\index{timeseriesanalysisgroup\_cpu@{timeseriesanalysisgroup\_cpu}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{timeseriesanalysisgroup\_cpu()}{timeseriesanalysisgroup\_cpu()}}
+{\footnotesize\ttfamily void timeseriesanalysisgroup\+\_\+cpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimgroup,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimtimeseries,  }\item[{\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} $\ast$}]{tseries,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimfft,  }\item[{\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} $\ast$}]{fft\+\_\+memory,  }\item[{fftw\+\_\+plan $\ast$}]{tplan,  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} $\ast$}]{corr\+\_\+memory }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{correlation__cpu_8cpp_ac862a0e313831d5881be4fba5710244c}\label{correlation__cpu_8cpp_ac862a0e313831d5881be4fba5710244c}} 
+\index{correlation\_cpu.cpp@{correlation\_cpu.cpp}!plan@{plan}}
+\index{plan@{plan}!correlation\_cpu.cpp@{correlation\_cpu.cpp}}
+\doxysubsubsection{\texorpdfstring{plan}{plan}}
+{\footnotesize\ttfamily fftwf\+\_\+plan plan}
+
