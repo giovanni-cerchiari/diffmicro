@@ -1,10 +1,10 @@
-path_images	C:\samples\performance_image 512\
+path_images	D:\giovanni\diffmicro\immagini\
 images_interval	1	100
 flg_file_valid_image	0
 number_of_averages	5000
 delay_max	5000
 frequency_max	128
-path_output	C:\samples\output\
+path_output	D:\giovanni\diffmicro\out\
 flg_write_images_average	1
 flg_write_power_spectra	0
 flg_write_azimuthal_averages	1
@@ -16,6 +16,6 @@ NUMBER_THREAD_GPU	2000
 NUMBER_THREAD_CPU	8
 RAM_CPU	8342177280
 # to show graph 1 ---> show the graph, 0----> don't show
-GRAPH_MODE	0
+GRAPH_MODE	1
 # if (start==1) the graphical user interface will not be opened
 start	1
