@@ -1,0 +1,29 @@
+\hypertarget{dir_8h}{}\doxysection{diffmicro/cpp-\/routine/dir.h File Reference}
+\label{dir_8h}\index{diffmicro/cpp-\/routine/dir.h@{diffmicro/cpp-\/routine/dir.h}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include \char`\"{}dirent.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{dir_8h_a58286fd278771a34edccd5adc32c6886}{list\+\_\+directory}} (std\+::string path, std\+::vector$<$ std\+::string $>$ \&list\+\_\+dir, std\+::vector$<$ std\+::string $>$ \&list\+\_\+file)
+\item 
+void \mbox{\hyperlink{dir_8h_a7b3ec6118ecbd467a4276af9495cf516}{load\+\_\+file\+\_\+pattern}} (std\+::string directory\+\_\+to\+\_\+search, std\+::string \&pattern, std\+::list$<$ std\+::string $>$ \&list\+\_\+load, bool flg\+\_\+recursive=true)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{dir_8h_a58286fd278771a34edccd5adc32c6886}\label{dir_8h_a58286fd278771a34edccd5adc32c6886}} 
+\index{dir.h@{dir.h}!list\_directory@{list\_directory}}
+\index{list\_directory@{list\_directory}!dir.h@{dir.h}}
+\doxysubsubsection{\texorpdfstring{list\_directory()}{list\_directory()}}
+{\footnotesize\ttfamily bool list\+\_\+directory (\begin{DoxyParamCaption}\item[{std\+::string}]{path,  }\item[{std\+::vector$<$ std\+::string $>$ \&}]{list\+\_\+dir,  }\item[{std\+::vector$<$ std\+::string $>$ \&}]{list\+\_\+file }\end{DoxyParamCaption})}
+
+this function list the subdirectories and the files contained in the directory whose path is path if return value = true the folder in path exist \mbox{\Hypertarget{dir_8h_a7b3ec6118ecbd467a4276af9495cf516}\label{dir_8h_a7b3ec6118ecbd467a4276af9495cf516}} 
+\index{dir.h@{dir.h}!load\_file\_pattern@{load\_file\_pattern}}
+\index{load\_file\_pattern@{load\_file\_pattern}!dir.h@{dir.h}}
+\doxysubsubsection{\texorpdfstring{load\_file\_pattern()}{load\_file\_pattern()}}
+{\footnotesize\ttfamily void load\+\_\+file\+\_\+pattern (\begin{DoxyParamCaption}\item[{std\+::string}]{directory\+\_\+to\+\_\+search,  }\item[{std\+::string \&}]{pattern,  }\item[{std\+::list$<$ std\+::string $>$ \&}]{list\+\_\+load,  }\item[{bool}]{flg\+\_\+recursive }\end{DoxyParamCaption})}
+
+This function gives back all the files that contains a certain string pattern inside 

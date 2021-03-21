@@ -1,0 +1,111 @@
+\hypertarget{window__display__opencv_8h}{}\doxysection{diffmicro/display\+\_\+opencv/window\+\_\+display\+\_\+opencv.h File Reference}
+\label{window__display__opencv_8h}\index{diffmicro/display\_opencv/window\_display\_opencv.h@{diffmicro/display\_opencv/window\_display\_opencv.h}}
+{\ttfamily \#include $<$opencv2/core/core.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/imgproc.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/imgcodecs.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/highgui/highgui.\+hpp$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include \char`\"{}mouse\+\_\+opencv.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}overlay\+\_\+opencv.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}controls\+\_\+opencv.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{window__display__opencv_8h_a4fb8c60ead306c76221e91b83f2503aa}{window\+\_\+display\+\_\+mode\+\_\+opencv}} \{ \mbox{\hyperlink{window__display__opencv_8h_a4fb8c60ead306c76221e91b83f2503aaa0749678075ddb55f7824c8b9e7d82dcb}{DISPLAY\+\_\+1\+\_\+\+CH\+\_\+\+OPENCV}} = 1
+, \mbox{\hyperlink{window__display__opencv_8h_a4fb8c60ead306c76221e91b83f2503aaaf3f079bef99985b7142a9f5d38e7e10e}{DISPLAY\+\_\+2\+\_\+\+CH\+\_\+\+OPENCV}} = 2
+, \mbox{\hyperlink{window__display__opencv_8h_a4fb8c60ead306c76221e91b83f2503aaa051d69c3ad3aa14a83236aa6e0acf5f3}{DISPLAY\+\_\+3\+\_\+\+CH\+\_\+\+OPENCV}} = 3
+ \}
+\item 
+enum \mbox{\hyperlink{window__display__opencv_8h_ae25f8ffe2b812697f1a35a91e003c7c7}{control\+\_\+id}} \{ \newline
+\mbox{\hyperlink{window__display__opencv_8h_ae25f8ffe2b812697f1a35a91e003c7c7a28a1d2c7dc3859fe1e70b3aec5a50318}{ID\+\_\+\+BUTTON\+\_\+\+AUTOSCALE}} = 0
+, \mbox{\hyperlink{window__display__opencv_8h_ae25f8ffe2b812697f1a35a91e003c7c7a4113b89614a6fe143d1b5ffc0b95c966}{ID\+\_\+\+BUTTON\+\_\+\+COLORMAP}} = 1
+, \mbox{\hyperlink{window__display__opencv_8h_ae25f8ffe2b812697f1a35a91e003c7c7a1e3de2d9c99edc12bd0eb756c97a486f}{ID\+\_\+\+BUTTON\+\_\+\+CONTOUR}} = 2
+, \mbox{\hyperlink{window__display__opencv_8h_ae25f8ffe2b812697f1a35a91e003c7c7ab179d0a4cd13b201cade3cacf07d76cd}{ID\+\_\+\+BUTTON\+\_\+\+OVERLAY}} = 3
+, \newline
+\mbox{\hyperlink{window__display__opencv_8h_ae25f8ffe2b812697f1a35a91e003c7c7a39744aad9cf0d3b880919f492cbcbbb5}{ID\+\_\+\+BUTTON\+\_\+\+YFLIP}} = 4
+, \mbox{\hyperlink{window__display__opencv_8h_ae25f8ffe2b812697f1a35a91e003c7c7a65199227d3a13028cdd4eb526092add2}{ID\+\_\+\+BUTTON\+\_\+\+MODE}} = 5
+, \mbox{\hyperlink{window__display__opencv_8h_ae25f8ffe2b812697f1a35a91e003c7c7a6f1f904b8739e54f0375daab7a908f47}{ID\+\_\+\+CTRL\+\_\+\+MINMAX\+\_\+\+TRACKBAR}} = 6
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{window__display__opencv_8h_afbb6edd6265e88ca802a2a4260226b4b}{max\+\_\+min\+\_\+display\+\_\+matrix}} (unsigned int \mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, double $\ast$mat, double \&max, double \&min)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{window__display__opencv_8h_ae25f8ffe2b812697f1a35a91e003c7c7}\label{window__display__opencv_8h_ae25f8ffe2b812697f1a35a91e003c7c7}} 
+\index{window\_display\_opencv.h@{window\_display\_opencv.h}!control\_id@{control\_id}}
+\index{control\_id@{control\_id}!window\_display\_opencv.h@{window\_display\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{control\_id}{control\_id}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{window__display__opencv_8h_ae25f8ffe2b812697f1a35a91e003c7c7}{control\+\_\+id}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ID\_BUTTON\_AUTOSCALE@{ID\_BUTTON\_AUTOSCALE}!window\_display\_opencv.h@{window\_display\_opencv.h}}\index{window\_display\_opencv.h@{window\_display\_opencv.h}!ID\_BUTTON\_AUTOSCALE@{ID\_BUTTON\_AUTOSCALE}}}\mbox{\Hypertarget{window__display__opencv_8h_ae25f8ffe2b812697f1a35a91e003c7c7a28a1d2c7dc3859fe1e70b3aec5a50318}\label{window__display__opencv_8h_ae25f8ffe2b812697f1a35a91e003c7c7a28a1d2c7dc3859fe1e70b3aec5a50318}} 
+ID\+\_\+\+BUTTON\+\_\+\+AUTOSCALE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ID\_BUTTON\_COLORMAP@{ID\_BUTTON\_COLORMAP}!window\_display\_opencv.h@{window\_display\_opencv.h}}\index{window\_display\_opencv.h@{window\_display\_opencv.h}!ID\_BUTTON\_COLORMAP@{ID\_BUTTON\_COLORMAP}}}\mbox{\Hypertarget{window__display__opencv_8h_ae25f8ffe2b812697f1a35a91e003c7c7a4113b89614a6fe143d1b5ffc0b95c966}\label{window__display__opencv_8h_ae25f8ffe2b812697f1a35a91e003c7c7a4113b89614a6fe143d1b5ffc0b95c966}} 
+ID\+\_\+\+BUTTON\+\_\+\+COLORMAP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ID\_BUTTON\_CONTOUR@{ID\_BUTTON\_CONTOUR}!window\_display\_opencv.h@{window\_display\_opencv.h}}\index{window\_display\_opencv.h@{window\_display\_opencv.h}!ID\_BUTTON\_CONTOUR@{ID\_BUTTON\_CONTOUR}}}\mbox{\Hypertarget{window__display__opencv_8h_ae25f8ffe2b812697f1a35a91e003c7c7a1e3de2d9c99edc12bd0eb756c97a486f}\label{window__display__opencv_8h_ae25f8ffe2b812697f1a35a91e003c7c7a1e3de2d9c99edc12bd0eb756c97a486f}} 
+ID\+\_\+\+BUTTON\+\_\+\+CONTOUR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ID\_BUTTON\_OVERLAY@{ID\_BUTTON\_OVERLAY}!window\_display\_opencv.h@{window\_display\_opencv.h}}\index{window\_display\_opencv.h@{window\_display\_opencv.h}!ID\_BUTTON\_OVERLAY@{ID\_BUTTON\_OVERLAY}}}\mbox{\Hypertarget{window__display__opencv_8h_ae25f8ffe2b812697f1a35a91e003c7c7ab179d0a4cd13b201cade3cacf07d76cd}\label{window__display__opencv_8h_ae25f8ffe2b812697f1a35a91e003c7c7ab179d0a4cd13b201cade3cacf07d76cd}} 
+ID\+\_\+\+BUTTON\+\_\+\+OVERLAY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ID\_BUTTON\_YFLIP@{ID\_BUTTON\_YFLIP}!window\_display\_opencv.h@{window\_display\_opencv.h}}\index{window\_display\_opencv.h@{window\_display\_opencv.h}!ID\_BUTTON\_YFLIP@{ID\_BUTTON\_YFLIP}}}\mbox{\Hypertarget{window__display__opencv_8h_ae25f8ffe2b812697f1a35a91e003c7c7a39744aad9cf0d3b880919f492cbcbbb5}\label{window__display__opencv_8h_ae25f8ffe2b812697f1a35a91e003c7c7a39744aad9cf0d3b880919f492cbcbbb5}} 
+ID\+\_\+\+BUTTON\+\_\+\+YFLIP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ID\_BUTTON\_MODE@{ID\_BUTTON\_MODE}!window\_display\_opencv.h@{window\_display\_opencv.h}}\index{window\_display\_opencv.h@{window\_display\_opencv.h}!ID\_BUTTON\_MODE@{ID\_BUTTON\_MODE}}}\mbox{\Hypertarget{window__display__opencv_8h_ae25f8ffe2b812697f1a35a91e003c7c7a65199227d3a13028cdd4eb526092add2}\label{window__display__opencv_8h_ae25f8ffe2b812697f1a35a91e003c7c7a65199227d3a13028cdd4eb526092add2}} 
+ID\+\_\+\+BUTTON\+\_\+\+MODE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ID\_CTRL\_MINMAX\_TRACKBAR@{ID\_CTRL\_MINMAX\_TRACKBAR}!window\_display\_opencv.h@{window\_display\_opencv.h}}\index{window\_display\_opencv.h@{window\_display\_opencv.h}!ID\_CTRL\_MINMAX\_TRACKBAR@{ID\_CTRL\_MINMAX\_TRACKBAR}}}\mbox{\Hypertarget{window__display__opencv_8h_ae25f8ffe2b812697f1a35a91e003c7c7a6f1f904b8739e54f0375daab7a908f47}\label{window__display__opencv_8h_ae25f8ffe2b812697f1a35a91e003c7c7a6f1f904b8739e54f0375daab7a908f47}} 
+ID\+\_\+\+CTRL\+\_\+\+MINMAX\+\_\+\+TRACKBAR&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{window__display__opencv_8h_a4fb8c60ead306c76221e91b83f2503aa}\label{window__display__opencv_8h_a4fb8c60ead306c76221e91b83f2503aa}} 
+\index{window\_display\_opencv.h@{window\_display\_opencv.h}!window\_display\_mode\_opencv@{window\_display\_mode\_opencv}}
+\index{window\_display\_mode\_opencv@{window\_display\_mode\_opencv}!window\_display\_opencv.h@{window\_display\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{window\_display\_mode\_opencv}{window\_display\_mode\_opencv}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{window__display__opencv_8h_a4fb8c60ead306c76221e91b83f2503aa}{window\+\_\+display\+\_\+mode\+\_\+opencv}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DISPLAY\_1\_CH\_OPENCV@{DISPLAY\_1\_CH\_OPENCV}!window\_display\_opencv.h@{window\_display\_opencv.h}}\index{window\_display\_opencv.h@{window\_display\_opencv.h}!DISPLAY\_1\_CH\_OPENCV@{DISPLAY\_1\_CH\_OPENCV}}}\mbox{\Hypertarget{window__display__opencv_8h_a4fb8c60ead306c76221e91b83f2503aaa0749678075ddb55f7824c8b9e7d82dcb}\label{window__display__opencv_8h_a4fb8c60ead306c76221e91b83f2503aaa0749678075ddb55f7824c8b9e7d82dcb}} 
+DISPLAY\+\_\+1\+\_\+\+CH\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DISPLAY\_2\_CH\_OPENCV@{DISPLAY\_2\_CH\_OPENCV}!window\_display\_opencv.h@{window\_display\_opencv.h}}\index{window\_display\_opencv.h@{window\_display\_opencv.h}!DISPLAY\_2\_CH\_OPENCV@{DISPLAY\_2\_CH\_OPENCV}}}\mbox{\Hypertarget{window__display__opencv_8h_a4fb8c60ead306c76221e91b83f2503aaaf3f079bef99985b7142a9f5d38e7e10e}\label{window__display__opencv_8h_a4fb8c60ead306c76221e91b83f2503aaaf3f079bef99985b7142a9f5d38e7e10e}} 
+DISPLAY\+\_\+2\+\_\+\+CH\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DISPLAY\_3\_CH\_OPENCV@{DISPLAY\_3\_CH\_OPENCV}!window\_display\_opencv.h@{window\_display\_opencv.h}}\index{window\_display\_opencv.h@{window\_display\_opencv.h}!DISPLAY\_3\_CH\_OPENCV@{DISPLAY\_3\_CH\_OPENCV}}}\mbox{\Hypertarget{window__display__opencv_8h_a4fb8c60ead306c76221e91b83f2503aaa051d69c3ad3aa14a83236aa6e0acf5f3}\label{window__display__opencv_8h_a4fb8c60ead306c76221e91b83f2503aaa051d69c3ad3aa14a83236aa6e0acf5f3}} 
+DISPLAY\+\_\+3\+\_\+\+CH\+\_\+\+OPENCV&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{window__display__opencv_8h_afbb6edd6265e88ca802a2a4260226b4b}\label{window__display__opencv_8h_afbb6edd6265e88ca802a2a4260226b4b}} 
+\index{window\_display\_opencv.h@{window\_display\_opencv.h}!max\_min\_display\_matrix@{max\_min\_display\_matrix}}
+\index{max\_min\_display\_matrix@{max\_min\_display\_matrix}!window\_display\_opencv.h@{window\_display\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{max\_min\_display\_matrix()}{max\_min\_display\_matrix()}}
+{\footnotesize\ttfamily void max\+\_\+min\+\_\+display\+\_\+matrix (\begin{DoxyParamCaption}\item[{unsigned int}]{dim,  }\item[{double $\ast$}]{mat,  }\item[{double \&}]{max,  }\item[{double \&}]{min }\end{DoxyParamCaption})}
+

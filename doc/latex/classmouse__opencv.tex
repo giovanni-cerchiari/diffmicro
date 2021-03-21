@@ -1,0 +1,247 @@
+\hypertarget{classmouse__opencv}{}\doxysection{mouse\+\_\+opencv Class Reference}
+\label{classmouse__opencv}\index{mouse\_opencv@{mouse\_opencv}}
+
+
+{\ttfamily \#include $<$mouse\+\_\+opencv.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmouse__opencv_a89cb196cb92279d165c92af32af814ff}{mouse\+\_\+opencv}} ()
+\item 
+\mbox{\hyperlink{classmouse__opencv_a022dc0201a2a6b0e7f07bbe8e850432e}{$\sim$mouse\+\_\+opencv}} ()
+\item 
+void \mbox{\hyperlink{classmouse__opencv_a6a79463245c45449c42eb8890894b0ed}{draw}} (cv\+::\+Mat \&img, double start\mbox{[}$\,$\mbox{]}, double scale\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{classmouse__opencv_a4be1be3d703091543d042f37c407756c}{left\+\_\+click}} ()
+\item 
+void \mbox{\hyperlink{classmouse__opencv_a34d2f5ce0a1f286ad6e5d6e99f2d2b85}{left\+\_\+move}} ()
+\item 
+void \mbox{\hyperlink{classmouse__opencv_a2f057edcb166eca246e51e24cd75dfa7}{right\+\_\+click}} ()
+\item 
+void \mbox{\hyperlink{classmouse__opencv_a33debbbef7360bef43570dff305f6a07}{wheel}} (int value)
+\item 
+void \mbox{\hyperlink{classmouse__opencv_a345399ca98ca8a87370612fff36b2000}{drawing}} (int ev, int \mbox{\hyperlink{classmouse__opencv_acada82b04bd9f0ba297263de6da5d302}{x}}, int y, int flags)
+\item 
+void \mbox{\hyperlink{classmouse__opencv_a21050cdfb5b8aba4cbf73c7d195f86a3}{plot}} (int ev, int \mbox{\hyperlink{classmouse__opencv_acada82b04bd9f0ba297263de6da5d302}{x}}, int y, int flags)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classmouse__opencv_a8c828c62c105501362a21cdb1469546d}{mouse\+\_\+opencv\+\_\+callback}} (int ev, int \mbox{\hyperlink{classmouse__opencv_acada82b04bd9f0ba297263de6da5d302}{x}}, int y, int flags, void $\ast$userdata)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcontour__opencv}{contour\+\_\+opencv}} $\ast$ \mbox{\hyperlink{classmouse__opencv_a128a2ffef1405e9bd836a0c5a4fbaf2b}{manual\+\_\+points}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classmouse__opencv_a2f66cebe11cd02167d3133c28f4fe779}{on\+\_\+click}} ()
+\item 
+void \mbox{\hyperlink{classmouse__opencv_a0b196f7e390fdffa7015981bb5f33052}{on\+\_\+release}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classmouse__opencv_acada82b04bd9f0ba297263de6da5d302}{x}} \mbox{[}8\mbox{]}
+\item 
+int $\ast$ \mbox{\hyperlink{classmouse__opencv_a2b1c499d7910d4d33a4eb3e1826aa5b1}{x\+\_\+current}}
+\item 
+int $\ast$ \mbox{\hyperlink{classmouse__opencv_a309b4aa8b798a603bae412b11a2446e5}{x\+\_\+onclick}}
+\item 
+int $\ast$ \mbox{\hyperlink{classmouse__opencv_ad636635ebde8a7ec4102dae33efe9773}{x\+\_\+onrelease}}
+\item 
+int $\ast$ \mbox{\hyperlink{classmouse__opencv_a5f11e46461593ae253b410a41f75bf59}{x\+\_\+previous}}
+\item 
+double \mbox{\hyperlink{classmouse__opencv_a35cf5fb806e8e64e8bbf7cd3890c3ffe}{xx}} \mbox{[}8\mbox{]}
+\item 
+double $\ast$ \mbox{\hyperlink{classmouse__opencv_af6a7fa93ca1021a1cd2581b8a39fcad2}{xx\+\_\+current}}
+\item 
+double $\ast$ \mbox{\hyperlink{classmouse__opencv_abdbe4371da5c05705e849ee2c2e1ce8f}{xx\+\_\+onclick}}
+\item 
+double $\ast$ \mbox{\hyperlink{classmouse__opencv_abef927fe500137a2e2424a66d0b0b8a4}{xx\+\_\+onrelease}}
+\item 
+double $\ast$ \mbox{\hyperlink{classmouse__opencv_a4f585d8608e07e2ada332233624967e0}{xx\+\_\+previous}}
+\item 
+int \mbox{\hyperlink{classmouse__opencv_a0a0ef458fb300b1d2045848d5cd93a3d}{mode}}
+\item 
+int \mbox{\hyperlink{classmouse__opencv_a3d7774005e94679072c7fff9166f52ed}{active\+\_\+overlay}}
+\item 
+\mbox{\hyperlink{classoverlay__opencv}{overlay\+\_\+opencv}} $\ast$ \mbox{\hyperlink{classmouse__opencv_a8f3436e26dab89524c51e7f80cb50213}{overlay\+\_\+edit}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is used to define the behaviour of the mouse while operating on a figure To distinguish which is the figure to be modified the cursor position will force the figure below to become the active\+\_\+figure (see \mbox{\hyperlink{figure__opencv_8h}{figure\+\_\+opencv.\+h}}) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmouse__opencv_a89cb196cb92279d165c92af32af814ff}\label{classmouse__opencv_a89cb196cb92279d165c92af32af814ff}} 
+\index{mouse\_opencv@{mouse\_opencv}!mouse\_opencv@{mouse\_opencv}}
+\index{mouse\_opencv@{mouse\_opencv}!mouse\_opencv@{mouse\_opencv}}
+\doxysubsubsection{\texorpdfstring{mouse\_opencv()}{mouse\_opencv()}}
+{\footnotesize\ttfamily mouse\+\_\+opencv\+::mouse\+\_\+opencv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmouse__opencv_a022dc0201a2a6b0e7f07bbe8e850432e}\label{classmouse__opencv_a022dc0201a2a6b0e7f07bbe8e850432e}} 
+\index{mouse\_opencv@{mouse\_opencv}!````~mouse\_opencv@{$\sim$mouse\_opencv}}
+\index{````~mouse\_opencv@{$\sim$mouse\_opencv}!mouse\_opencv@{mouse\_opencv}}
+\doxysubsubsection{\texorpdfstring{$\sim$mouse\_opencv()}{~mouse\_opencv()}}
+{\footnotesize\ttfamily mouse\+\_\+opencv\+::$\sim$mouse\+\_\+opencv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmouse__opencv_a6a79463245c45449c42eb8890894b0ed}\label{classmouse__opencv_a6a79463245c45449c42eb8890894b0ed}} 
+\index{mouse\_opencv@{mouse\_opencv}!draw@{draw}}
+\index{draw@{draw}!mouse\_opencv@{mouse\_opencv}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void mouse\+\_\+opencv\+::draw (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{img,  }\item[{double}]{start\mbox{[}$\,$\mbox{]},  }\item[{double}]{scale\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmouse__opencv_a345399ca98ca8a87370612fff36b2000}\label{classmouse__opencv_a345399ca98ca8a87370612fff36b2000}} 
+\index{mouse\_opencv@{mouse\_opencv}!drawing@{drawing}}
+\index{drawing@{drawing}!mouse\_opencv@{mouse\_opencv}}
+\doxysubsubsection{\texorpdfstring{drawing()}{drawing()}}
+{\footnotesize\ttfamily void mouse\+\_\+opencv\+::drawing (\begin{DoxyParamCaption}\item[{int}]{ev,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{flags }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmouse__opencv_a4be1be3d703091543d042f37c407756c}\label{classmouse__opencv_a4be1be3d703091543d042f37c407756c}} 
+\index{mouse\_opencv@{mouse\_opencv}!left\_click@{left\_click}}
+\index{left\_click@{left\_click}!mouse\_opencv@{mouse\_opencv}}
+\doxysubsubsection{\texorpdfstring{left\_click()}{left\_click()}}
+{\footnotesize\ttfamily void mouse\+\_\+opencv\+::left\+\_\+click (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmouse__opencv_a34d2f5ce0a1f286ad6e5d6e99f2d2b85}\label{classmouse__opencv_a34d2f5ce0a1f286ad6e5d6e99f2d2b85}} 
+\index{mouse\_opencv@{mouse\_opencv}!left\_move@{left\_move}}
+\index{left\_move@{left\_move}!mouse\_opencv@{mouse\_opencv}}
+\doxysubsubsection{\texorpdfstring{left\_move()}{left\_move()}}
+{\footnotesize\ttfamily void mouse\+\_\+opencv\+::left\+\_\+move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmouse__opencv_a8c828c62c105501362a21cdb1469546d}\label{classmouse__opencv_a8c828c62c105501362a21cdb1469546d}} 
+\index{mouse\_opencv@{mouse\_opencv}!mouse\_opencv\_callback@{mouse\_opencv\_callback}}
+\index{mouse\_opencv\_callback@{mouse\_opencv\_callback}!mouse\_opencv@{mouse\_opencv}}
+\doxysubsubsection{\texorpdfstring{mouse\_opencv\_callback()}{mouse\_opencv\_callback()}}
+{\footnotesize\ttfamily void mouse\+\_\+opencv\+::mouse\+\_\+opencv\+\_\+callback (\begin{DoxyParamCaption}\item[{int}]{ev,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{flags,  }\item[{void $\ast$}]{userdata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmouse__opencv_a2f66cebe11cd02167d3133c28f4fe779}\label{classmouse__opencv_a2f66cebe11cd02167d3133c28f4fe779}} 
+\index{mouse\_opencv@{mouse\_opencv}!on\_click@{on\_click}}
+\index{on\_click@{on\_click}!mouse\_opencv@{mouse\_opencv}}
+\doxysubsubsection{\texorpdfstring{on\_click()}{on\_click()}}
+{\footnotesize\ttfamily void mouse\+\_\+opencv\+::on\+\_\+click (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classmouse__opencv_a0b196f7e390fdffa7015981bb5f33052}\label{classmouse__opencv_a0b196f7e390fdffa7015981bb5f33052}} 
+\index{mouse\_opencv@{mouse\_opencv}!on\_release@{on\_release}}
+\index{on\_release@{on\_release}!mouse\_opencv@{mouse\_opencv}}
+\doxysubsubsection{\texorpdfstring{on\_release()}{on\_release()}}
+{\footnotesize\ttfamily void mouse\+\_\+opencv\+::on\+\_\+release (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classmouse__opencv_a21050cdfb5b8aba4cbf73c7d195f86a3}\label{classmouse__opencv_a21050cdfb5b8aba4cbf73c7d195f86a3}} 
+\index{mouse\_opencv@{mouse\_opencv}!plot@{plot}}
+\index{plot@{plot}!mouse\_opencv@{mouse\_opencv}}
+\doxysubsubsection{\texorpdfstring{plot()}{plot()}}
+{\footnotesize\ttfamily void mouse\+\_\+opencv\+::plot (\begin{DoxyParamCaption}\item[{int}]{ev,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{flags }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmouse__opencv_a2f057edcb166eca246e51e24cd75dfa7}\label{classmouse__opencv_a2f057edcb166eca246e51e24cd75dfa7}} 
+\index{mouse\_opencv@{mouse\_opencv}!right\_click@{right\_click}}
+\index{right\_click@{right\_click}!mouse\_opencv@{mouse\_opencv}}
+\doxysubsubsection{\texorpdfstring{right\_click()}{right\_click()}}
+{\footnotesize\ttfamily void mouse\+\_\+opencv\+::right\+\_\+click (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmouse__opencv_a33debbbef7360bef43570dff305f6a07}\label{classmouse__opencv_a33debbbef7360bef43570dff305f6a07}} 
+\index{mouse\_opencv@{mouse\_opencv}!wheel@{wheel}}
+\index{wheel@{wheel}!mouse\_opencv@{mouse\_opencv}}
+\doxysubsubsection{\texorpdfstring{wheel()}{wheel()}}
+{\footnotesize\ttfamily void mouse\+\_\+opencv\+::wheel (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmouse__opencv_a3d7774005e94679072c7fff9166f52ed}\label{classmouse__opencv_a3d7774005e94679072c7fff9166f52ed}} 
+\index{mouse\_opencv@{mouse\_opencv}!active\_overlay@{active\_overlay}}
+\index{active\_overlay@{active\_overlay}!mouse\_opencv@{mouse\_opencv}}
+\doxysubsubsection{\texorpdfstring{active\_overlay}{active\_overlay}}
+{\footnotesize\ttfamily int mouse\+\_\+opencv\+::active\+\_\+overlay\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classmouse__opencv_a128a2ffef1405e9bd836a0c5a4fbaf2b}\label{classmouse__opencv_a128a2ffef1405e9bd836a0c5a4fbaf2b}} 
+\index{mouse\_opencv@{mouse\_opencv}!manual\_points@{manual\_points}}
+\index{manual\_points@{manual\_points}!mouse\_opencv@{mouse\_opencv}}
+\doxysubsubsection{\texorpdfstring{manual\_points}{manual\_points}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcontour__opencv}{contour\+\_\+opencv}}$\ast$ mouse\+\_\+opencv\+::manual\+\_\+points}
+
+\mbox{\Hypertarget{classmouse__opencv_a0a0ef458fb300b1d2045848d5cd93a3d}\label{classmouse__opencv_a0a0ef458fb300b1d2045848d5cd93a3d}} 
+\index{mouse\_opencv@{mouse\_opencv}!mode@{mode}}
+\index{mode@{mode}!mouse\_opencv@{mouse\_opencv}}
+\doxysubsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily int mouse\+\_\+opencv\+::mode\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classmouse__opencv_a8f3436e26dab89524c51e7f80cb50213}\label{classmouse__opencv_a8f3436e26dab89524c51e7f80cb50213}} 
+\index{mouse\_opencv@{mouse\_opencv}!overlay\_edit@{overlay\_edit}}
+\index{overlay\_edit@{overlay\_edit}!mouse\_opencv@{mouse\_opencv}}
+\doxysubsubsection{\texorpdfstring{overlay\_edit}{overlay\_edit}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoverlay__opencv}{overlay\+\_\+opencv}}$\ast$ mouse\+\_\+opencv\+::overlay\+\_\+edit\hspace{0.3cm}{\ttfamily [protected]}}
+
+Overlays are the object drawn on figures as surplus. To edit one it is practical to have a pointer to the obejct under modification \mbox{\Hypertarget{classmouse__opencv_acada82b04bd9f0ba297263de6da5d302}\label{classmouse__opencv_acada82b04bd9f0ba297263de6da5d302}} 
+\index{mouse\_opencv@{mouse\_opencv}!x@{x}}
+\index{x@{x}!mouse\_opencv@{mouse\_opencv}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int mouse\+\_\+opencv\+::x\mbox{[}8\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classmouse__opencv_a2b1c499d7910d4d33a4eb3e1826aa5b1}\label{classmouse__opencv_a2b1c499d7910d4d33a4eb3e1826aa5b1}} 
+\index{mouse\_opencv@{mouse\_opencv}!x\_current@{x\_current}}
+\index{x\_current@{x\_current}!mouse\_opencv@{mouse\_opencv}}
+\doxysubsubsection{\texorpdfstring{x\_current}{x\_current}}
+{\footnotesize\ttfamily int$\ast$ mouse\+\_\+opencv\+::x\+\_\+current\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classmouse__opencv_a309b4aa8b798a603bae412b11a2446e5}\label{classmouse__opencv_a309b4aa8b798a603bae412b11a2446e5}} 
+\index{mouse\_opencv@{mouse\_opencv}!x\_onclick@{x\_onclick}}
+\index{x\_onclick@{x\_onclick}!mouse\_opencv@{mouse\_opencv}}
+\doxysubsubsection{\texorpdfstring{x\_onclick}{x\_onclick}}
+{\footnotesize\ttfamily int$\ast$ mouse\+\_\+opencv\+::x\+\_\+onclick\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classmouse__opencv_ad636635ebde8a7ec4102dae33efe9773}\label{classmouse__opencv_ad636635ebde8a7ec4102dae33efe9773}} 
+\index{mouse\_opencv@{mouse\_opencv}!x\_onrelease@{x\_onrelease}}
+\index{x\_onrelease@{x\_onrelease}!mouse\_opencv@{mouse\_opencv}}
+\doxysubsubsection{\texorpdfstring{x\_onrelease}{x\_onrelease}}
+{\footnotesize\ttfamily int$\ast$ mouse\+\_\+opencv\+::x\+\_\+onrelease\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classmouse__opencv_a5f11e46461593ae253b410a41f75bf59}\label{classmouse__opencv_a5f11e46461593ae253b410a41f75bf59}} 
+\index{mouse\_opencv@{mouse\_opencv}!x\_previous@{x\_previous}}
+\index{x\_previous@{x\_previous}!mouse\_opencv@{mouse\_opencv}}
+\doxysubsubsection{\texorpdfstring{x\_previous}{x\_previous}}
+{\footnotesize\ttfamily int$\ast$ mouse\+\_\+opencv\+::x\+\_\+previous\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classmouse__opencv_a35cf5fb806e8e64e8bbf7cd3890c3ffe}\label{classmouse__opencv_a35cf5fb806e8e64e8bbf7cd3890c3ffe}} 
+\index{mouse\_opencv@{mouse\_opencv}!xx@{xx}}
+\index{xx@{xx}!mouse\_opencv@{mouse\_opencv}}
+\doxysubsubsection{\texorpdfstring{xx}{xx}}
+{\footnotesize\ttfamily double mouse\+\_\+opencv\+::xx\mbox{[}8\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classmouse__opencv_af6a7fa93ca1021a1cd2581b8a39fcad2}\label{classmouse__opencv_af6a7fa93ca1021a1cd2581b8a39fcad2}} 
+\index{mouse\_opencv@{mouse\_opencv}!xx\_current@{xx\_current}}
+\index{xx\_current@{xx\_current}!mouse\_opencv@{mouse\_opencv}}
+\doxysubsubsection{\texorpdfstring{xx\_current}{xx\_current}}
+{\footnotesize\ttfamily double$\ast$ mouse\+\_\+opencv\+::xx\+\_\+current\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classmouse__opencv_abdbe4371da5c05705e849ee2c2e1ce8f}\label{classmouse__opencv_abdbe4371da5c05705e849ee2c2e1ce8f}} 
+\index{mouse\_opencv@{mouse\_opencv}!xx\_onclick@{xx\_onclick}}
+\index{xx\_onclick@{xx\_onclick}!mouse\_opencv@{mouse\_opencv}}
+\doxysubsubsection{\texorpdfstring{xx\_onclick}{xx\_onclick}}
+{\footnotesize\ttfamily double$\ast$ mouse\+\_\+opencv\+::xx\+\_\+onclick\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classmouse__opencv_abef927fe500137a2e2424a66d0b0b8a4}\label{classmouse__opencv_abef927fe500137a2e2424a66d0b0b8a4}} 
+\index{mouse\_opencv@{mouse\_opencv}!xx\_onrelease@{xx\_onrelease}}
+\index{xx\_onrelease@{xx\_onrelease}!mouse\_opencv@{mouse\_opencv}}
+\doxysubsubsection{\texorpdfstring{xx\_onrelease}{xx\_onrelease}}
+{\footnotesize\ttfamily double$\ast$ mouse\+\_\+opencv\+::xx\+\_\+onrelease\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classmouse__opencv_a4f585d8608e07e2ada332233624967e0}\label{classmouse__opencv_a4f585d8608e07e2ada332233624967e0}} 
+\index{mouse\_opencv@{mouse\_opencv}!xx\_previous@{xx\_previous}}
+\index{xx\_previous@{xx\_previous}!mouse\_opencv@{mouse\_opencv}}
+\doxysubsubsection{\texorpdfstring{xx\_previous}{xx\_previous}}
+{\footnotesize\ttfamily double$\ast$ mouse\+\_\+opencv\+::xx\+\_\+previous\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+diffmicro/display\+\_\+opencv/\mbox{\hyperlink{mouse__opencv_8h}{mouse\+\_\+opencv.\+h}}\item 
+diffmicro/display\+\_\+opencv/\mbox{\hyperlink{mouse__opencv_8cpp}{mouse\+\_\+opencv.\+cpp}}\end{DoxyCompactItemize}

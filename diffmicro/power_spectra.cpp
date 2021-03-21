@@ -426,7 +426,7 @@ bool calc_power_spectra(INDEX dimy, INDEX dimx)
 	return true;
 }
 
-void plot_dinamics(INDEX dimx){
+void plot_dynamics(INDEX dimx){
 
 	Engine* m_Engine = engOpen(NULL);
 	int d = (int)dimx;

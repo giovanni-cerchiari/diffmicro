@@ -32,3 +32,7 @@ This file is part of diffmicro.
 
 #pragma comment( lib, "libfftw3-3.lib")
 #pragma comment( lib, "libfftw3f-3.lib")
+
+
+#pragma comment (lib,"libeng.lib")
+#pragma comment (lib,"libmx.lib")

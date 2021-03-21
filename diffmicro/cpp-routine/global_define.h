@@ -31,6 +31,7 @@ This file contains global variable and macro that are used inside the program
 #ifndef _GLOBAL_DEFINE_H_
 #define _GLOBAL_DEFINE_H_
 
+#include <cufft.h>
 #include "fftw3.h"
 #include "wtypes.h"
 

@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['checkbox_5fazimuthal_5favg_5ffilename_1875',['CHECKBOX_AZIMUTHAL_AVG_FILENAME',['../diffmicro__io_8h.html#abbda2ddaf26d0cd2385df63f74ece679aa29770d7d33c8bb6732c9d3be5b1d249',1,'diffmicro_io.h']]],
+  ['checkbox_5fdist_5fmax_1876',['CHECKBOX_DIST_MAX',['../diffmicro__io_8h.html#abbda2ddaf26d0cd2385df63f74ece679a0c79e29579b144c260c1be4e63a1c5c0',1,'diffmicro_io.h']]],
+  ['checkbox_5fexecution_5fmode_1877',['CHECKBOX_EXECUTION_MODE',['../diffmicro__io_8h.html#abbda2ddaf26d0cd2385df63f74ece679a9c12f41376f7faad1c864eabfe8fc411',1,'diffmicro_io.h']]],
+  ['checkbox_5ffirst_5fimage_1878',['CHECKBOX_FIRST_IMAGE',['../diffmicro__io_8h.html#abbda2ddaf26d0cd2385df63f74ece679ae4a708807a3bad5299eae7092f33ed26',1,'diffmicro_io.h']]],
+  ['checkbox_5ffrequency_5fmax_1879',['CHECKBOX_FREQUENCY_MAX',['../diffmicro__io_8h.html#abbda2ddaf26d0cd2385df63f74ece679ab321ce2d9da64cbebaf6645b4f28cab6',1,'diffmicro_io.h']]],
+  ['checkbox_5fgraph_5fmode_1880',['CHECKBOX_GRAPH_MODE',['../diffmicro__io_8h.html#abbda2ddaf26d0cd2385df63f74ece679a8a076b911109e316ea77dfd391fffa1e',1,'diffmicro_io.h']]],
+  ['checkbox_5fhardware_5fselection_1881',['CHECKBOX_HARDWARE_SELECTION',['../diffmicro__io_8h.html#abbda2ddaf26d0cd2385df63f74ece679aa4f6b42da1ea62c0d50a8422a911fff2',1,'diffmicro_io.h']]],
+  ['checkbox_5flast_5fimage_1882',['CHECKBOX_LAST_IMAGE',['../diffmicro__io_8h.html#abbda2ddaf26d0cd2385df63f74ece679a6a485d0bc5742f848c4cfcb97c7af43f',1,'diffmicro_io.h']]],
+  ['checkbox_5flog_5ffilename_1883',['CHECKBOX_LOG_FILENAME',['../diffmicro__io_8h.html#abbda2ddaf26d0cd2385df63f74ece679aed44870ca1ccf971ac9bca41d8cc1493',1,'diffmicro_io.h']]],
+  ['checkbox_5fn_5fpw_5faverages_1884',['CHECKBOX_N_PW_AVERAGES',['../diffmicro__io_8h.html#abbda2ddaf26d0cd2385df63f74ece679aa7ea233494258a7817d56e2f40661ccc',1,'diffmicro_io.h']]],
+  ['checkbox_5fnumber_5fthread_5fcpu_1885',['CHECKBOX_NUMBER_THREAD_CPU',['../diffmicro__io_8h.html#abbda2ddaf26d0cd2385df63f74ece679ab5e03ea120a5ab339d666edc817a5b34',1,'diffmicro_io.h']]],
+  ['checkbox_5fnumber_5fthread_5fgpu_1886',['CHECKBOX_NUMBER_THREAD_GPU',['../diffmicro__io_8h.html#abbda2ddaf26d0cd2385df63f74ece679a5d7d0b594bc88cc31db279fdd64d1b31',1,'diffmicro_io.h']]],
+  ['checkbox_5fpath_5fimages_1887',['CHECKBOX_PATH_IMAGES',['../diffmicro__io_8h.html#abbda2ddaf26d0cd2385df63f74ece679a6a1f8c7fa924d73f4f162151709642d6',1,'diffmicro_io.h']]],
+  ['checkbox_5fpath_5fpower_5fspectra_1888',['CHECKBOX_PATH_POWER_SPECTRA',['../diffmicro__io_8h.html#abbda2ddaf26d0cd2385df63f74ece679aa2be40e8dcb622b2f71bc3017410d022',1,'diffmicro_io.h']]],
+  ['checkbox_5fpower_5fspectra_5ffilename_1889',['CHECKBOX_POWER_SPECTRA_FILENAME',['../diffmicro__io_8h.html#abbda2ddaf26d0cd2385df63f74ece679aa74c9a032d14b6da0c936773b53d0c81',1,'diffmicro_io.h']]],
+  ['checkbox_5fram_5fcpu_1890',['CHECKBOX_RAM_CPU',['../diffmicro__io_8h.html#abbda2ddaf26d0cd2385df63f74ece679ac301b9a4e3c212a51fa3dfbbbcf30e46',1,'diffmicro_io.h']]],
+  ['checkbox_5ftime_5ffilename_1891',['CHECKBOX_TIME_FILENAME',['../diffmicro__io_8h.html#abbda2ddaf26d0cd2385df63f74ece679abef68d9e74c20e1238b03175eb30945f',1,'diffmicro_io.h']]],
+  ['checkbox_5ftime_5fstep_1892',['CHECKBOX_TIME_STEP',['../diffmicro__io_8h.html#abbda2ddaf26d0cd2385df63f74ece679abfc73aacd290db317c64c1015471e73d',1,'diffmicro_io.h']]],
+  ['checkbox_5fvalid_5fimage_5ffilename_1893',['CHECKBOX_VALID_IMAGE_FILENAME',['../diffmicro__io_8h.html#abbda2ddaf26d0cd2385df63f74ece679a88a42aa366c870a228b1b6871dc0f3a9',1,'diffmicro_io.h']]],
+  ['ctrl_5fbutton_1894',['CTRL_BUTTON',['../control__opencv_8h.html#ac7f851d21ffaff48e314a97aafcd0da1a354e39407d4156fa42db9d58d6485c76',1,'control_opencv.h']]],
+  ['ctrl_5fminmax_5ftrackbar_1895',['CTRL_MINMAX_TRACKBAR',['../control__opencv_8h.html#ac7f851d21ffaff48e314a97aafcd0da1a8beba66dc6f31e361a617656ad92d31a',1,'control_opencv.h']]],
+  ['ctrl_5fsingle_5ftrackbar_1896',['CTRL_SINGLE_TRACKBAR',['../control__opencv_8h.html#ac7f851d21ffaff48e314a97aafcd0da1a0c2a17f1e4584fc79107e26d90cd7390',1,'control_opencv.h']]],
+  ['ctrl_5ftextbox_1897',['CTRL_TEXTBOX',['../control__opencv_8h.html#ac7f851d21ffaff48e314a97aafcd0da1a95a01f69f636023ba2cf1e3d6034a28a',1,'control_opencv.h']]]
+];

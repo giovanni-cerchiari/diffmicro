@@ -1,0 +1,108 @@
+\hypertarget{correlation__function__selection_8cpp}{}\doxysection{diffmicro/correlation\+\_\+function\+\_\+selection.cpp File Reference}
+\label{correlation__function__selection_8cpp}\index{diffmicro/correlation\_function\_selection.cpp@{diffmicro/correlation\_function\_selection.cpp}}
+{\ttfamily \#include \char`\"{}correlation.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{correlation__function__selection_8cpp_a2fe56e2515a7197dc8624a39c785dfc9}{hardware\+\_\+function\+\_\+selection}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} hardware)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int($\ast$ \mbox{\hyperlink{correlation__function__selection_8cpp_ade2c0d12b3f2602c3563e8598bd7f5cf}{diffmicro\+\_\+allocation}} )(int flg\+\_\+mode, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&nimages, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&dimy, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&dimx, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&dim\+\_\+power\+\_\+spectrum, unsigned int $\ast$\mbox{\hyperlink{radial__storage__lut_8h_a01adbe1bf6b6fb88129e3ccba33749e8}{ram\+\_\+radial\+\_\+lut}})
+\item 
+void($\ast$ \mbox{\hyperlink{correlation__function__selection_8cpp_a8e7818ea3b16316f693ca5a5a2d0d7c9}{diffmicro\+\_\+free\+\_\+pointers}} )()
+\item 
+void($\ast$ \mbox{\hyperlink{correlation__function__selection_8cpp_a3c9bc04dfd93f00657893f0ea3f93a46}{diffmicro\+\_\+deallocation}} )()
+\item 
+int($\ast$ \mbox{\hyperlink{correlation__function__selection_8cpp_a9b2eccad3f0332c3d7376f30190ef06f}{image\+\_\+to\+\_\+dev}} )(\mbox{\hyperlink{global__define_8h_a1c75b6582cc4d9b86496d8c357204cef}{SIGNED\+\_\+\+INDEX}} ind\+\_\+fifo, \mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} \&\mbox{\hyperlink{my__math_8h_a737e9da5c3ca2ef0a54b38fb9ea6a2e1}{mean}}, unsigned short $\ast$im, bool flg\+\_\+debug)
+\item 
+void($\ast$ \mbox{\hyperlink{correlation__function__selection_8cpp_a8abb34f03ac4936a4aa640b29dbad93b}{copy\+\_\+power\+\_\+spectra\+\_\+from\+\_\+dev}} )(\mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$power\+\_\+spectrum\+\_\+r)
+\item 
+void($\ast$ \mbox{\hyperlink{correlation__function__selection_8cpp_ab9eb17dbcea7cdd397b8ecd78e61f85a}{diff\+\_\+power\+\_\+spectrum\+\_\+to\+\_\+avg}} )(\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} coef1, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} coef2, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} j, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} ind\+\_\+dist)
+\item 
+void($\ast$ \mbox{\hyperlink{correlation__function__selection_8cpp_a8cc7886252b065624e6d589a4fc5b3da}{time\+\_\+series\+\_\+analysis}} )()
+\item 
+void($\ast$ \mbox{\hyperlink{correlation__function__selection_8cpp_a2555e2ef66a779689ecf5f1294bef9a1}{lutfft\+\_\+to\+\_\+timeseries}} )(\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimcopy, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} gain, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} t, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} starting\+\_\+freq)
+\item 
+void($\ast$ \mbox{\hyperlink{correlation__function__selection_8cpp_ab150c1e7182a8e9eedda1d74de0facca}{timeseries\+\_\+to\+\_\+lutfft}} )(\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimcopy, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} gain, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} t, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} starting\+\_\+freq)
+\item 
+void($\ast$ \mbox{\hyperlink{correlation__function__selection_8cpp_a3b7848019278f46c09dca05404747dea}{timeseries\+\_\+to\+\_\+lutpw}} )(\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimcopy, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} gain, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} t, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} starting\+\_\+freq, \mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$ram\+\_\+power\+\_\+spectra)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{correlation__function__selection_8cpp_a2fe56e2515a7197dc8624a39c785dfc9}\label{correlation__function__selection_8cpp_a2fe56e2515a7197dc8624a39c785dfc9}} 
+\index{correlation\_function\_selection.cpp@{correlation\_function\_selection.cpp}!hardware\_function\_selection@{hardware\_function\_selection}}
+\index{hardware\_function\_selection@{hardware\_function\_selection}!correlation\_function\_selection.cpp@{correlation\_function\_selection.cpp}}
+\doxysubsubsection{\texorpdfstring{hardware\_function\_selection()}{hardware\_function\_selection()}}
+{\footnotesize\ttfamily void hardware\+\_\+function\+\_\+selection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{harware }\end{DoxyParamCaption})}
+
+This function assign the correct pointer to function to execute the algorithm on cpu of gpu\+:
+\begin{DoxyItemize}
+\item if hardware == 0 -\/$>$ HARDWARE\+\_\+\+CPU (see macro definition)
+\item if hardware == 1 -\/$>$ HARDWARE\+\_\+\+GPU (see macro definition) 
+\end{DoxyItemize}
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{correlation__function__selection_8cpp_a8abb34f03ac4936a4aa640b29dbad93b}\label{correlation__function__selection_8cpp_a8abb34f03ac4936a4aa640b29dbad93b}} 
+\index{correlation\_function\_selection.cpp@{correlation\_function\_selection.cpp}!copy\_power\_spectra\_from\_dev@{copy\_power\_spectra\_from\_dev}}
+\index{copy\_power\_spectra\_from\_dev@{copy\_power\_spectra\_from\_dev}!correlation\_function\_selection.cpp@{correlation\_function\_selection.cpp}}
+\doxysubsubsection{\texorpdfstring{copy\_power\_spectra\_from\_dev}{copy\_power\_spectra\_from\_dev}}
+{\footnotesize\ttfamily void($\ast$ copy\+\_\+power\+\_\+spectra\+\_\+from\+\_\+dev) (\mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$power\+\_\+spectrum\+\_\+r) (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$}]{power\+\_\+spectrum\+\_\+r }\end{DoxyParamCaption})}
+
+The function pointer allows selecting the execution on gpu or cpu, while retaining the same code structure. \mbox{\Hypertarget{correlation__function__selection_8cpp_ab9eb17dbcea7cdd397b8ecd78e61f85a}\label{correlation__function__selection_8cpp_ab9eb17dbcea7cdd397b8ecd78e61f85a}} 
+\index{correlation\_function\_selection.cpp@{correlation\_function\_selection.cpp}!diff\_power\_spectrum\_to\_avg@{diff\_power\_spectrum\_to\_avg}}
+\index{diff\_power\_spectrum\_to\_avg@{diff\_power\_spectrum\_to\_avg}!correlation\_function\_selection.cpp@{correlation\_function\_selection.cpp}}
+\doxysubsubsection{\texorpdfstring{diff\_power\_spectrum\_to\_avg}{diff\_power\_spectrum\_to\_avg}}
+{\footnotesize\ttfamily void($\ast$ diff\+\_\+power\+\_\+spectrum\+\_\+to\+\_\+avg) (\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} coef1, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} coef2, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} j, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} ind\+\_\+dist) (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{coef1,  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{coef2,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{j,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{ind\+\_\+dist }\end{DoxyParamCaption})}
+
+This is the function pointer to execute diff\+\_\+power\+\_\+spectrum\+\_\+to\+\_\+avg\+\_\+gpu\+\_\+gpu or diff\+\_\+power\+\_\+spectrum\+\_\+to\+\_\+avg\+\_\+cpu\+\_\+cpu \mbox{\Hypertarget{correlation__function__selection_8cpp_ade2c0d12b3f2602c3563e8598bd7f5cf}\label{correlation__function__selection_8cpp_ade2c0d12b3f2602c3563e8598bd7f5cf}} 
+\index{correlation\_function\_selection.cpp@{correlation\_function\_selection.cpp}!diffmicro\_allocation@{diffmicro\_allocation}}
+\index{diffmicro\_allocation@{diffmicro\_allocation}!correlation\_function\_selection.cpp@{correlation\_function\_selection.cpp}}
+\doxysubsubsection{\texorpdfstring{diffmicro\_allocation}{diffmicro\_allocation}}
+{\footnotesize\ttfamily int($\ast$ diffmicro\+\_\+allocation) (int flg\+\_\+mode, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&nimages, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&dimy, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&dimx, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&dim\+\_\+power\+\_\+spectrum, unsigned int $\ast$\mbox{\hyperlink{radial__storage__lut_8h_a01adbe1bf6b6fb88129e3ccba33749e8}{ram\+\_\+radial\+\_\+lut}}) (\begin{DoxyParamCaption}\item[{int}]{flg\+\_\+mode,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&}]{nimages,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&}]{dimy,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&}]{dimx,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&}]{dim\+\_\+power\+\_\+spectrum,  }\item[{unsigned int $\ast$}]{ram\+\_\+radial\+\_\+lut }\end{DoxyParamCaption})}
+
+This function allocates the memory card and initialize all sizes variable necessary to run the calculus for cpu and gpu execution. \mbox{\Hypertarget{correlation__function__selection_8cpp_a3c9bc04dfd93f00657893f0ea3f93a46}\label{correlation__function__selection_8cpp_a3c9bc04dfd93f00657893f0ea3f93a46}} 
+\index{correlation\_function\_selection.cpp@{correlation\_function\_selection.cpp}!diffmicro\_deallocation@{diffmicro\_deallocation}}
+\index{diffmicro\_deallocation@{diffmicro\_deallocation}!correlation\_function\_selection.cpp@{correlation\_function\_selection.cpp}}
+\doxysubsubsection{\texorpdfstring{diffmicro\_deallocation}{diffmicro\_deallocation}}
+{\footnotesize\ttfamily void($\ast$ diffmicro\+\_\+deallocation) () (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function releases memory allocated by cpu\+\_\+allocation or gpu\+\_\+allocation. The function pointer allows selecting the execution on gpu or cpu, while retaining the same code structure. \mbox{\Hypertarget{correlation__function__selection_8cpp_a8e7818ea3b16316f693ca5a5a2d0d7c9}\label{correlation__function__selection_8cpp_a8e7818ea3b16316f693ca5a5a2d0d7c9}} 
+\index{correlation\_function\_selection.cpp@{correlation\_function\_selection.cpp}!diffmicro\_free\_pointers@{diffmicro\_free\_pointers}}
+\index{diffmicro\_free\_pointers@{diffmicro\_free\_pointers}!correlation\_function\_selection.cpp@{correlation\_function\_selection.cpp}}
+\doxysubsubsection{\texorpdfstring{diffmicro\_free\_pointers}{diffmicro\_free\_pointers}}
+{\footnotesize\ttfamily void($\ast$ diffmicro\+\_\+free\+\_\+pointers) () (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function releases memory allocated by cpu\+\_\+allocation or gpu\+\_\+allocation. The function pointer allows selecting the execution on gpu or cpu, while retaining the same code structure. \mbox{\Hypertarget{correlation__function__selection_8cpp_a9b2eccad3f0332c3d7376f30190ef06f}\label{correlation__function__selection_8cpp_a9b2eccad3f0332c3d7376f30190ef06f}} 
+\index{correlation\_function\_selection.cpp@{correlation\_function\_selection.cpp}!image\_to\_dev@{image\_to\_dev}}
+\index{image\_to\_dev@{image\_to\_dev}!correlation\_function\_selection.cpp@{correlation\_function\_selection.cpp}}
+\doxysubsubsection{\texorpdfstring{image\_to\_dev}{image\_to\_dev}}
+{\footnotesize\ttfamily int($\ast$ image\+\_\+to\+\_\+dev) (\mbox{\hyperlink{global__define_8h_a1c75b6582cc4d9b86496d8c357204cef}{SIGNED\+\_\+\+INDEX}} ind\+\_\+fifo, \mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} \&\mbox{\hyperlink{my__math_8h_a737e9da5c3ca2ef0a54b38fb9ea6a2e1}{mean}}, unsigned short $\ast$im, bool flg\+\_\+debug) (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_a1c75b6582cc4d9b86496d8c357204cef}{SIGNED\+\_\+\+INDEX}}}]{ind\+\_\+fifo,  }\item[{\mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} \&}]{mean,  }\item[{unsigned short $\ast$}]{im,  }\item[{bool}]{flg\+\_\+debug }\end{DoxyParamCaption})}
+
+The function pointer allows selecting the execution on gpu or cpu, while retaining the same code structure. \mbox{\Hypertarget{correlation__function__selection_8cpp_a2555e2ef66a779689ecf5f1294bef9a1}\label{correlation__function__selection_8cpp_a2555e2ef66a779689ecf5f1294bef9a1}} 
+\index{correlation\_function\_selection.cpp@{correlation\_function\_selection.cpp}!lutfft\_to\_timeseries@{lutfft\_to\_timeseries}}
+\index{lutfft\_to\_timeseries@{lutfft\_to\_timeseries}!correlation\_function\_selection.cpp@{correlation\_function\_selection.cpp}}
+\doxysubsubsection{\texorpdfstring{lutfft\_to\_timeseries}{lutfft\_to\_timeseries}}
+{\footnotesize\ttfamily void($\ast$ lutfft\+\_\+to\+\_\+timeseries) (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimcopy, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} gain, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} t, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} starting\+\_\+freq) (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimcopy,  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{gain,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{t,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{starting\+\_\+freq }\end{DoxyParamCaption})}
+
+The function pointer allows selecting the execution on gpu or cpu, while retaining the same code structure. \mbox{\Hypertarget{correlation__function__selection_8cpp_a8cc7886252b065624e6d589a4fc5b3da}\label{correlation__function__selection_8cpp_a8cc7886252b065624e6d589a4fc5b3da}} 
+\index{correlation\_function\_selection.cpp@{correlation\_function\_selection.cpp}!time\_series\_analysis@{time\_series\_analysis}}
+\index{time\_series\_analysis@{time\_series\_analysis}!correlation\_function\_selection.cpp@{correlation\_function\_selection.cpp}}
+\doxysubsubsection{\texorpdfstring{time\_series\_analysis}{time\_series\_analysis}}
+{\footnotesize\ttfamily void($\ast$ time\+\_\+series\+\_\+analysis) () (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+The function pointer allows selecting the execution on gpu or cpu, while retaining the same code structure. \mbox{\Hypertarget{correlation__function__selection_8cpp_ab150c1e7182a8e9eedda1d74de0facca}\label{correlation__function__selection_8cpp_ab150c1e7182a8e9eedda1d74de0facca}} 
+\index{correlation\_function\_selection.cpp@{correlation\_function\_selection.cpp}!timeseries\_to\_lutfft@{timeseries\_to\_lutfft}}
+\index{timeseries\_to\_lutfft@{timeseries\_to\_lutfft}!correlation\_function\_selection.cpp@{correlation\_function\_selection.cpp}}
+\doxysubsubsection{\texorpdfstring{timeseries\_to\_lutfft}{timeseries\_to\_lutfft}}
+{\footnotesize\ttfamily void($\ast$ timeseries\+\_\+to\+\_\+lutfft) (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimcopy, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} gain, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} t, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} starting\+\_\+freq) (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimcopy,  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{gain,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{t,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{starting\+\_\+freq }\end{DoxyParamCaption})}
+
+The function pointer allows selecting the execution on gpu or cpu, while retaining the same code structure. \mbox{\Hypertarget{correlation__function__selection_8cpp_a3b7848019278f46c09dca05404747dea}\label{correlation__function__selection_8cpp_a3b7848019278f46c09dca05404747dea}} 
+\index{correlation\_function\_selection.cpp@{correlation\_function\_selection.cpp}!timeseries\_to\_lutpw@{timeseries\_to\_lutpw}}
+\index{timeseries\_to\_lutpw@{timeseries\_to\_lutpw}!correlation\_function\_selection.cpp@{correlation\_function\_selection.cpp}}
+\doxysubsubsection{\texorpdfstring{timeseries\_to\_lutpw}{timeseries\_to\_lutpw}}
+{\footnotesize\ttfamily void($\ast$ timeseries\+\_\+to\+\_\+lutpw) (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimcopy, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} gain, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} t, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} starting\+\_\+freq, \mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$ram\+\_\+power\+\_\+spectra) (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimcopy,  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{gain,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{t,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{starting\+\_\+freq,  }\item[{\mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$}]{ram\+\_\+power\+\_\+spectra }\end{DoxyParamCaption})}
+
+The function pointer allows selecting the execution on gpu or cpu, while retaining the same code structure. 

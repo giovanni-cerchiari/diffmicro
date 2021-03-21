@@ -60,8 +60,6 @@ only the upper half of the averaged power spectra.
 #include "diffmicro_log.h"
 #include "correlation.h"
 
-#pragma comment (lib,"libeng.lib")
-#pragma comment (lib,"libmx.lib")
 
  int main(int argc, char* argv[])
 	// argc = number of strings for starting the program = 2
@@ -149,7 +147,7 @@ only the upper half of the averaged power spectra.
 
 	calc_power_spectra(dimy, dimx);
 	
-	plot_dinamics(dimx);
+	plot_dynamics(dimx);
 	
 	//--------------------------------------------------------------
 	// printing elapsed times

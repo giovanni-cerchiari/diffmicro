@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['ui_5ftype_5fbool_5fdiffmicro_1963',['UI_TYPE_BOOL_DIFFMICRO',['../diffmicro__io_8h.html#ab753c44107e53fec3a274e818cb23d98ad6cb68b06d9f594c9770c593d721ddfe',1,'diffmicro_io.h']]],
+  ['ui_5ftype_5fbool_5fopencv_1964',['UI_TYPE_BOOL_OPENCV',['../configure__gui__opencv_8h.html#ab753c44107e53fec3a274e818cb23d98a8e7880128a27c3162ab5d93ed5351f1b',1,'configure_gui_opencv.h']]],
+  ['ui_5ftype_5ffloat128_5fopencv_1965',['UI_TYPE_FLOAT128_OPENCV',['../configure__gui__opencv_8h.html#ab753c44107e53fec3a274e818cb23d98afc9041b8486a9120253a53102cc1f29a',1,'configure_gui_opencv.h']]],
+  ['ui_5ftype_5ffloat32_5fopencv_1966',['UI_TYPE_FLOAT32_OPENCV',['../configure__gui__opencv_8h.html#ab753c44107e53fec3a274e818cb23d98a905f6c11ded3e23a4589a6f5348de84b',1,'configure_gui_opencv.h']]],
+  ['ui_5ftype_5ffloat64_5fopencv_1967',['UI_TYPE_FLOAT64_OPENCV',['../configure__gui__opencv_8h.html#ab753c44107e53fec3a274e818cb23d98a434dc32005ff814d2821d6659d6c294d',1,'configure_gui_opencv.h']]],
+  ['ui_5ftype_5findex_5fdiffmicro_1968',['UI_TYPE_INDEX_DIFFMICRO',['../diffmicro__io_8h.html#ab753c44107e53fec3a274e818cb23d98ad86d710b087dd65ba17b4336fcc57791',1,'diffmicro_io.h']]],
+  ['ui_5ftype_5fint128_5fopencv_1969',['UI_TYPE_INT128_OPENCV',['../configure__gui__opencv_8h.html#ab753c44107e53fec3a274e818cb23d98a8c9333c01b5fe6270107142b82e1bf56',1,'configure_gui_opencv.h']]],
+  ['ui_5ftype_5fint16_5fopencv_1970',['UI_TYPE_INT16_OPENCV',['../configure__gui__opencv_8h.html#ab753c44107e53fec3a274e818cb23d98a07f5b5125b27316eaed62360a72d2d2b',1,'configure_gui_opencv.h']]],
+  ['ui_5ftype_5fint32_5fopencv_1971',['UI_TYPE_INT32_OPENCV',['../configure__gui__opencv_8h.html#ab753c44107e53fec3a274e818cb23d98a23dc115c144edb6d1f182158f8072dbf',1,'configure_gui_opencv.h']]],
+  ['ui_5ftype_5fint64_5fopencv_1972',['UI_TYPE_INT64_OPENCV',['../configure__gui__opencv_8h.html#ab753c44107e53fec3a274e818cb23d98ab48edd72177fc8fffd2125c3c4ab08ed',1,'configure_gui_opencv.h']]],
+  ['ui_5ftype_5fint8_5fopencv_1973',['UI_TYPE_INT8_OPENCV',['../configure__gui__opencv_8h.html#ab753c44107e53fec3a274e818cb23d98a919b50e625cf36edb23aacbe6415528c',1,'configure_gui_opencv.h']]],
+  ['ui_5ftype_5fmy_5freal_5fdiffmicro_1974',['UI_TYPE_MY_REAL_DIFFMICRO',['../diffmicro__io_8h.html#ab753c44107e53fec3a274e818cb23d98acbb333e6df0fa461f7726dd7bff1e3c6',1,'diffmicro_io.h']]],
+  ['ui_5ftype_5fstring_5fdiffmicro_1975',['UI_TYPE_STRING_DIFFMICRO',['../diffmicro__io_8h.html#ab753c44107e53fec3a274e818cb23d98ab9f4b0dfef61dc7445f0d68d85e3d2ab',1,'diffmicro_io.h']]],
+  ['ui_5ftype_5fstring_5fopencv_1976',['UI_TYPE_STRING_OPENCV',['../configure__gui__opencv_8h.html#ab753c44107e53fec3a274e818cb23d98a21b2921a8c26f6bbfee8357d1622ef39',1,'configure_gui_opencv.h']]],
+  ['ui_5ftype_5fuint128_5fopencv_1977',['UI_TYPE_UINT128_OPENCV',['../configure__gui__opencv_8h.html#ab753c44107e53fec3a274e818cb23d98a817129bbaa20956010620dcafb649e69',1,'configure_gui_opencv.h']]],
+  ['ui_5ftype_5fuint16_5fopencv_1978',['UI_TYPE_UINT16_OPENCV',['../configure__gui__opencv_8h.html#ab753c44107e53fec3a274e818cb23d98aaeb77b81eebd67ee6cd29090cd4ec02d',1,'configure_gui_opencv.h']]],
+  ['ui_5ftype_5fuint32_5fopencv_1979',['UI_TYPE_UINT32_OPENCV',['../configure__gui__opencv_8h.html#ab753c44107e53fec3a274e818cb23d98af1419088e2bd5cf5f22391ec60e7eb51',1,'configure_gui_opencv.h']]],
+  ['ui_5ftype_5fuint64_5fopencv_1980',['UI_TYPE_UINT64_OPENCV',['../configure__gui__opencv_8h.html#ab753c44107e53fec3a274e818cb23d98a9e7b8f718e5c91b3e03f3fabaf2a389f',1,'configure_gui_opencv.h']]],
+  ['ui_5ftype_5fuint8_5fopencv_1981',['UI_TYPE_UINT8_OPENCV',['../configure__gui__opencv_8h.html#ab753c44107e53fec3a274e818cb23d98aac675462ca28aae1ed177f863e7a1cf5',1,'configure_gui_opencv.h']]]
+];

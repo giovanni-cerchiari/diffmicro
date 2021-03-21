@@ -1,0 +1,43 @@
+\hypertarget{prep__string_8cpp}{}\doxysection{diffmicro/cpp-\/routine/prep\+\_\+string.cpp File Reference}
+\label{prep__string_8cpp}\index{diffmicro/cpp-\/routine/prep\_string.cpp@{diffmicro/cpp-\/routine/prep\_string.cpp}}
+{\ttfamily \#include \char`\"{}stdafx.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prep\+\_\+string.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{prep__string_8cpp_a47361d70ceffc3376afe0aef170fb057}{is\+\_\+numeric}} (std\+::string \&str)
+\item 
+bool \mbox{\hyperlink{prep__string_8cpp_a560b878515bf15bf3a92cb8ad450febb}{is\+\_\+int}} (std\+::string \&str)
+\item 
+void \mbox{\hyperlink{prep__string_8cpp_a26ab8359d2dbf35eecc130393ba18554}{split}} (char separator, std\+::string in, std\+::vector$<$ std\+::string $>$ \&out)
+\item 
+bool \mbox{\hyperlink{prep__string_8cpp_a03a04d0e2afc65c11b50da56d81a8bcb}{extract\+\_\+folder\+\_\+from\+\_\+filename}} (std\+::string filename, std\+::string \&folder)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{prep__string_8cpp_a03a04d0e2afc65c11b50da56d81a8bcb}\label{prep__string_8cpp_a03a04d0e2afc65c11b50da56d81a8bcb}} 
+\index{prep\_string.cpp@{prep\_string.cpp}!extract\_folder\_from\_filename@{extract\_folder\_from\_filename}}
+\index{extract\_folder\_from\_filename@{extract\_folder\_from\_filename}!prep\_string.cpp@{prep\_string.cpp}}
+\doxysubsubsection{\texorpdfstring{extract\_folder\_from\_filename()}{extract\_folder\_from\_filename()}}
+{\footnotesize\ttfamily bool extract\+\_\+folder\+\_\+from\+\_\+filename (\begin{DoxyParamCaption}\item[{std\+::string}]{filename,  }\item[{std\+::string \&}]{folder }\end{DoxyParamCaption})}
+
+This function attempts to extract the foldername from a complete filename using \textquotesingle{}\textbackslash{}\textquotesingle{} character If folder name is not found returns false \mbox{\Hypertarget{prep__string_8cpp_a560b878515bf15bf3a92cb8ad450febb}\label{prep__string_8cpp_a560b878515bf15bf3a92cb8ad450febb}} 
+\index{prep\_string.cpp@{prep\_string.cpp}!is\_int@{is\_int}}
+\index{is\_int@{is\_int}!prep\_string.cpp@{prep\_string.cpp}}
+\doxysubsubsection{\texorpdfstring{is\_int()}{is\_int()}}
+{\footnotesize\ttfamily bool is\+\_\+int (\begin{DoxyParamCaption}\item[{std\+::string \&}]{str }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{prep__string_8cpp_a47361d70ceffc3376afe0aef170fb057}\label{prep__string_8cpp_a47361d70ceffc3376afe0aef170fb057}} 
+\index{prep\_string.cpp@{prep\_string.cpp}!is\_numeric@{is\_numeric}}
+\index{is\_numeric@{is\_numeric}!prep\_string.cpp@{prep\_string.cpp}}
+\doxysubsubsection{\texorpdfstring{is\_numeric()}{is\_numeric()}}
+{\footnotesize\ttfamily bool is\+\_\+numeric (\begin{DoxyParamCaption}\item[{std\+::string \&}]{str }\end{DoxyParamCaption})}
+
+Returns true if the string can be interpreted as a number otherwise false \mbox{\Hypertarget{prep__string_8cpp_a26ab8359d2dbf35eecc130393ba18554}\label{prep__string_8cpp_a26ab8359d2dbf35eecc130393ba18554}} 
+\index{prep\_string.cpp@{prep\_string.cpp}!split@{split}}
+\index{split@{split}!prep\_string.cpp@{prep\_string.cpp}}
+\doxysubsubsection{\texorpdfstring{split()}{split()}}
+{\footnotesize\ttfamily void split (\begin{DoxyParamCaption}\item[{char}]{separator,  }\item[{std\+::string}]{in,  }\item[{std\+::vector$<$ std\+::string $>$ \&}]{out }\end{DoxyParamCaption})}
+
+This function split the input string in a vector of strings called out. separator is the character that is used to separate the sub-\/strings. The separator is not included in any of the out\mbox{[}i\mbox{]} strings and empty strings are allowed 

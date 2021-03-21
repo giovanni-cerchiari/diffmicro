@@ -1,0 +1,97 @@
+\hypertarget{diffmicro__io_8cpp}{}\doxysection{diffmicro/diffmicro\+\_\+io.cpp File Reference}
+\label{diffmicro__io_8cpp}\index{diffmicro/diffmicro\_io.cpp@{diffmicro/diffmicro\_io.cpp}}
+{\ttfamily \#include \char`\"{}stdafx.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}diffmicro\+\_\+io.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}figure\+\_\+opencv.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{diffmicro__io_8cpp_afa070c49a3d92348c2ac6aa57069575b}{comp\+\_\+filenum}} (\mbox{\hyperlink{structfile__num}{file\+\_\+num}} \&f1, \mbox{\hyperlink{structfile__num}{file\+\_\+num}} \&f2)
+\item 
+void \mbox{\hyperlink{diffmicro__io_8cpp_a75105c8acddda746f110def0815b94ee}{file\+\_\+num\+\_\+assign}} (std\+::string \&file, \mbox{\hyperlink{structfile__num}{file\+\_\+num}} \&filenum)
+\item 
+bool \mbox{\hyperlink{diffmicro__io_8cpp_aae802dc2bdabbf3543ec202833ad2477}{comp\+\_\+str}} (std\+::string \&st1, std\+::string \&st2)
+\item 
+bool \mbox{\hyperlink{diffmicro__io_8cpp_ae3bbeb29864dc981959ac69534d6a837}{load\+\_\+binary\+\_\+image}} (std\+::string \&filename, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&dimy, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&dimx, bool read\+\_\+im, unsigned short im\mbox{[}$\,$\mbox{]}, bool flg\+\_\+display)
+\item 
+void \mbox{\hyperlink{diffmicro__io_8cpp_a0105c6723b5c985034fc4dcf5bf9dadb}{write\+\_\+power\+\_\+spectra}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} start\+\_\+dist, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} npw, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimy, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimx, \mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} power\+\_\+spectra\mbox{[}$\,$\mbox{]})
+\item 
+bool \mbox{\hyperlink{diffmicro__io_8cpp_aa7561de13ab8b83bb8eab19ee4ce04f0}{load\+\_\+image}} (std\+::string \&filename, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&dimy, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&dimx, bool read\+\_\+im, unsigned short im\mbox{[}$\,$\mbox{]}, bool flg\+\_\+display)
+\item 
+\mbox{\hyperlink{classui__variable}{ui\+\_\+variable}} $\ast$ \mbox{\hyperlink{diffmicro__io_8cpp_a7f79e5863a091362b3d9370b9cc416d6}{select\+\_\+control}} (\mbox{\hyperlink{classui__variable}{ui\+\_\+variable}} $\ast$to\+\_\+be\+\_\+selected, std\+::list$<$ \mbox{\hyperlink{classui__variable}{ui\+\_\+variable}} $\ast$ $>$ lst)
+\item 
+void \mbox{\hyperlink{diffmicro__io_8cpp_ac991022b189784cc016b4a1d14f59f2c}{start\+\_\+gui}} (std\+::string file\+\_\+ui, bool force\+\_\+start\+\_\+gui)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdiffmicro__user__interface}{diffmicro\+\_\+user\+\_\+interface}} \mbox{\hyperlink{diffmicro__io_8cpp_a216b70921b66112bb927549cca433a5a}{useri}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{diffmicro__io_8cpp_afa070c49a3d92348c2ac6aa57069575b}\label{diffmicro__io_8cpp_afa070c49a3d92348c2ac6aa57069575b}} 
+\index{diffmicro\_io.cpp@{diffmicro\_io.cpp}!comp\_filenum@{comp\_filenum}}
+\index{comp\_filenum@{comp\_filenum}!diffmicro\_io.cpp@{diffmicro\_io.cpp}}
+\doxysubsubsection{\texorpdfstring{comp\_filenum()}{comp\_filenum()}}
+{\footnotesize\ttfamily bool comp\+\_\+filenum (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfile__num}{file\+\_\+num}} \&}]{f1,  }\item[{\mbox{\hyperlink{structfile__num}{file\+\_\+num}} \&}]{f2 }\end{DoxyParamCaption})}
+
+function used with std\+::sort for comparisions of \mbox{\hyperlink{structfile__num}{file\+\_\+num}} structures \mbox{\Hypertarget{diffmicro__io_8cpp_aae802dc2bdabbf3543ec202833ad2477}\label{diffmicro__io_8cpp_aae802dc2bdabbf3543ec202833ad2477}} 
+\index{diffmicro\_io.cpp@{diffmicro\_io.cpp}!comp\_str@{comp\_str}}
+\index{comp\_str@{comp\_str}!diffmicro\_io.cpp@{diffmicro\_io.cpp}}
+\doxysubsubsection{\texorpdfstring{comp\_str()}{comp\_str()}}
+{\footnotesize\ttfamily bool comp\+\_\+str (\begin{DoxyParamCaption}\item[{std\+::string \&}]{st1,  }\item[{std\+::string \&}]{st2 }\end{DoxyParamCaption})}
+
+string comparision for sorting pourposes \mbox{\Hypertarget{diffmicro__io_8cpp_a75105c8acddda746f110def0815b94ee}\label{diffmicro__io_8cpp_a75105c8acddda746f110def0815b94ee}} 
+\index{diffmicro\_io.cpp@{diffmicro\_io.cpp}!file\_num\_assign@{file\_num\_assign}}
+\index{file\_num\_assign@{file\_num\_assign}!diffmicro\_io.cpp@{diffmicro\_io.cpp}}
+\doxysubsubsection{\texorpdfstring{file\_num\_assign()}{file\_num\_assign()}}
+{\footnotesize\ttfamily void file\+\_\+num\+\_\+assign (\begin{DoxyParamCaption}\item[{std\+::string \&}]{file,  }\item[{\mbox{\hyperlink{structfile__num}{file\+\_\+num}} \&}]{filenum }\end{DoxyParamCaption})}
+
+This function calculates the number to assign to the structure filenum starting from the string file. filenum.\+num will be the last number readable in the string file \mbox{\Hypertarget{diffmicro__io_8cpp_ae3bbeb29864dc981959ac69534d6a837}\label{diffmicro__io_8cpp_ae3bbeb29864dc981959ac69534d6a837}} 
+\index{diffmicro\_io.cpp@{diffmicro\_io.cpp}!load\_binary\_image@{load\_binary\_image}}
+\index{load\_binary\_image@{load\_binary\_image}!diffmicro\_io.cpp@{diffmicro\_io.cpp}}
+\doxysubsubsection{\texorpdfstring{load\_binary\_image()}{load\_binary\_image()}}
+{\footnotesize\ttfamily bool load\+\_\+binary\+\_\+image (\begin{DoxyParamCaption}\item[{std\+::string \&}]{filename,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&}]{dimy,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&}]{dimx,  }\item[{bool}]{read\+\_\+im,  }\item[{unsigned short}]{im\mbox{[}$\,$\mbox{]},  }\item[{bool}]{flg\+\_\+display = {\ttfamily false} }\end{DoxyParamCaption})}
+
+This functon reads images that are store with this binary format\+:
+\begin{DoxyItemize}
+\item uint16 dimy x1
+\item uint16 dimx x1
+\item uint16 images x(dimx$\ast$dimy)
+\end{DoxyItemize}
+
+the memory area unsigned short im\mbox{[}\mbox{]} should be prepared in advance. So if you call the function with read\+\_\+im == false the image is not read from the hard drive and yuo can recollect the image size information \mbox{\Hypertarget{diffmicro__io_8cpp_aa7561de13ab8b83bb8eab19ee4ce04f0}\label{diffmicro__io_8cpp_aa7561de13ab8b83bb8eab19ee4ce04f0}} 
+\index{diffmicro\_io.cpp@{diffmicro\_io.cpp}!load\_image@{load\_image}}
+\index{load\_image@{load\_image}!diffmicro\_io.cpp@{diffmicro\_io.cpp}}
+\doxysubsubsection{\texorpdfstring{load\_image()}{load\_image()}}
+{\footnotesize\ttfamily bool load\+\_\+image (\begin{DoxyParamCaption}\item[{std\+::string \&}]{filename,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&}]{dimy,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&}]{dimx,  }\item[{bool}]{read\+\_\+im,  }\item[{unsigned short}]{im\mbox{[}$\,$\mbox{]},  }\item[{bool}]{flg\+\_\+display = {\ttfamily false} }\end{DoxyParamCaption})}
+
+Load any grayscale image format to matrix of unsigned char using opencv \mbox{\Hypertarget{diffmicro__io_8cpp_a7f79e5863a091362b3d9370b9cc416d6}\label{diffmicro__io_8cpp_a7f79e5863a091362b3d9370b9cc416d6}} 
+\index{diffmicro\_io.cpp@{diffmicro\_io.cpp}!select\_control@{select\_control}}
+\index{select\_control@{select\_control}!diffmicro\_io.cpp@{diffmicro\_io.cpp}}
+\doxysubsubsection{\texorpdfstring{select\_control()}{select\_control()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classui__variable}{ui\+\_\+variable}}$\ast$ select\+\_\+control (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classui__variable}{ui\+\_\+variable}} $\ast$}]{to\+\_\+be\+\_\+selected,  }\item[{std\+::list$<$ \mbox{\hyperlink{classui__variable}{ui\+\_\+variable}} $\ast$ $>$}]{lst }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{diffmicro__io_8cpp_ac991022b189784cc016b4a1d14f59f2c}\label{diffmicro__io_8cpp_ac991022b189784cc016b4a1d14f59f2c}} 
+\index{diffmicro\_io.cpp@{diffmicro\_io.cpp}!start\_gui@{start\_gui}}
+\index{start\_gui@{start\_gui}!diffmicro\_io.cpp@{diffmicro\_io.cpp}}
+\doxysubsubsection{\texorpdfstring{start\_gui()}{start\_gui()}}
+{\footnotesize\ttfamily void start\+\_\+gui (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+\_\+ui,  }\item[{bool}]{force\+\_\+start\+\_\+gui }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{diffmicro__io_8cpp_a0105c6723b5c985034fc4dcf5bf9dadb}\label{diffmicro__io_8cpp_a0105c6723b5c985034fc4dcf5bf9dadb}} 
+\index{diffmicro\_io.cpp@{diffmicro\_io.cpp}!write\_power\_spectra@{write\_power\_spectra}}
+\index{write\_power\_spectra@{write\_power\_spectra}!diffmicro\_io.cpp@{diffmicro\_io.cpp}}
+\doxysubsubsection{\texorpdfstring{write\_power\_spectra()}{write\_power\_spectra()}}
+{\footnotesize\ttfamily void write\+\_\+power\+\_\+spectra (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{start\+\_\+dist,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{npw,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimy,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimx,  }\item[{\mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}}}]{power\+\_\+spectra\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+With the help of \+: bool \mbox{\hyperlink{diffmicro__io_8h_ac89260f85402c09072f42181316c5617}{write\+\_\+mat\+\_\+to\+\_\+file(std\+::string \&filename, INDEX dimy, INDEX dimx, FLOAT mat\mbox{[}$\,$\mbox{]})}} this function writes to file the power spectra stored in power\+\_\+spectra\mbox{[}\mbox{]}. The name of the file is fixed and has an increasing index number that starts from start\+\_\+dist value 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{diffmicro__io_8cpp_a216b70921b66112bb927549cca433a5a}\label{diffmicro__io_8cpp_a216b70921b66112bb927549cca433a5a}} 
+\index{diffmicro\_io.cpp@{diffmicro\_io.cpp}!useri@{useri}}
+\index{useri@{useri}!diffmicro\_io.cpp@{diffmicro\_io.cpp}}
+\doxysubsubsection{\texorpdfstring{useri}{useri}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classdiffmicro__user__interface}{diffmicro\+\_\+user\+\_\+interface}} useri}
+
+This functions and classes are written for diffmicro.\+exe application. 

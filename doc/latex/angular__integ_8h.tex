@@ -1,0 +1,58 @@
+\hypertarget{angular__integ_8h}{}\doxysection{diffmicro/cpp-\/routine/angular\+\_\+integ.h File Reference}
+\label{angular__integ_8h}\index{diffmicro/cpp-\/routine/angular\_integ.h@{diffmicro/cpp-\/routine/angular\_integ.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{angular__integ_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}~size\+\_\+t
+\item 
+\#define \mbox{\hyperlink{angular__integ_8h_ad9e8601d2fdc5195e7d6412aa2939180}{GREEK\+\_\+\+PI}}~3.\+1415926535897932384626433832795
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename FLOAT $>$ }\\void \mbox{\hyperlink{angular__integ_8h_a4cc88cc80d46ca3267d1023d38e447d9}{average\+\_\+quadrants}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimxin, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimyin, FLOAT $\ast$in, FLOAT $\ast$out)
+\item 
+{\footnotesize template$<$typename FLOAT $>$ }\\void \mbox{\hyperlink{angular__integ_8h_aae5ff6cdabf9e5199282d87ba3db5808}{angular\+\_\+average}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{angular__avg_8cpp_ab261825fae9abc123071a8ebafad2e89}{dimside}}, FLOAT $\ast$mat, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&dimout, FLOAT $\ast$avg)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{angular__integ_8h_ad9e8601d2fdc5195e7d6412aa2939180}\label{angular__integ_8h_ad9e8601d2fdc5195e7d6412aa2939180}} 
+\index{angular\_integ.h@{angular\_integ.h}!GREEK\_PI@{GREEK\_PI}}
+\index{GREEK\_PI@{GREEK\_PI}!angular\_integ.h@{angular\_integ.h}}
+\doxysubsubsection{\texorpdfstring{GREEK\_PI}{GREEK\_PI}}
+{\footnotesize\ttfamily \#define GREEK\+\_\+\+PI~3.\+1415926535897932384626433832795}
+
+\mbox{\Hypertarget{angular__integ_8h_ac6885dbfb371c33e523c7fb046118b36}\label{angular__integ_8h_ac6885dbfb371c33e523c7fb046118b36}} 
+\index{angular\_integ.h@{angular\_integ.h}!INDEX@{INDEX}}
+\index{INDEX@{INDEX}!angular\_integ.h@{angular\_integ.h}}
+\doxysubsubsection{\texorpdfstring{INDEX}{INDEX}}
+{\footnotesize\ttfamily \#define INDEX~size\+\_\+t}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{angular__integ_8h_aae5ff6cdabf9e5199282d87ba3db5808}\label{angular__integ_8h_aae5ff6cdabf9e5199282d87ba3db5808}} 
+\index{angular\_integ.h@{angular\_integ.h}!angular\_average@{angular\_average}}
+\index{angular\_average@{angular\_average}!angular\_integ.h@{angular\_integ.h}}
+\doxysubsubsection{\texorpdfstring{angular\_average()}{angular\_average()}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+void angular\+\_\+average (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimside,  }\item[{FLOAT $\ast$}]{mat,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&}]{dimout,  }\item[{FLOAT $\ast$}]{avg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{angular__integ_8h_a4cc88cc80d46ca3267d1023d38e447d9}\label{angular__integ_8h_a4cc88cc80d46ca3267d1023d38e447d9}} 
+\index{angular\_integ.h@{angular\_integ.h}!average\_quadrants@{average\_quadrants}}
+\index{average\_quadrants@{average\_quadrants}!angular\_integ.h@{angular\_integ.h}}
+\doxysubsubsection{\texorpdfstring{average\_quadrants()}{average\_quadrants()}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+void average\+\_\+quadrants (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimxin,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimyin,  }\item[{FLOAT $\ast$}]{in,  }\item[{FLOAT $\ast$}]{out }\end{DoxyParamCaption})}
+
+To perform angular integral on all 4 quadrants folding of the quadrants is necessary. We use here FFT convention for element placing and we assume even dimensions dimxout = dimxin/2 dimyout = dimyin/2 

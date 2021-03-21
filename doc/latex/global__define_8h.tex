@@ -1,0 +1,220 @@
+\hypertarget{global__define_8h}{}\doxysection{diffmicro/cpp-\/routine/global\+\_\+define.h File Reference}
+\label{global__define_8h}\index{diffmicro/cpp-\/routine/global\_define.h@{diffmicro/cpp-\/routine/global\_define.h}}
+{\ttfamily \#include $<$cufft.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}fftw3.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}wtypes.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{global__define_8h_a7e7232f278193dd8684f973ee70ef3f5}{MY\+\_\+\+DEBUG}}~1
+\item 
+\#define \mbox{\hyperlink{global__define_8h_ad9e8601d2fdc5195e7d6412aa2939180}{GREEK\+\_\+\+PI}}~3.\+14159265358979323846264338327950288419716939937510
+\item 
+\#define \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}~unsigned \+\_\+\+\_\+int64
+\item 
+\#define \mbox{\hyperlink{global__define_8h_a1c75b6582cc4d9b86496d8c357204cef}{SIGNED\+\_\+\+INDEX}}~\+\_\+\+\_\+int64
+\item 
+\#define \mbox{\hyperlink{global__define_8h_ac3e2e8b775e8c0eca32f242cbbee4b7f}{MY\+\_\+\+REAL}}~double
+\item 
+\#define \mbox{\hyperlink{global__define_8h_aa2b4ec58d136b55d98135c44a4420bad}{N\+\_\+\+MAX\+\_\+\+THREADS}}~8
+\item 
+\#define \mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}}~double
+\item 
+\#define \mbox{\hyperlink{global__define_8h_ac317f0db7bc9b83a3e61b228b47524e5}{STORE\+\_\+\+TYPE\+\_\+\+FLOAT}}~1
+\item 
+\#define \mbox{\hyperlink{global__define_8h_acdd1ce816d48894bc9c636ac00984802}{STORE\+\_\+\+TYPE\+\_\+\+DOUBLE}}~2
+\item 
+\#define \mbox{\hyperlink{global__define_8h_ab414d665774f919f7ff4b531e60d6821}{STORE\+\_\+\+TYPE}}~\mbox{\hyperlink{global__define_8h_acdd1ce816d48894bc9c636ac00984802}{STORE\+\_\+\+TYPE\+\_\+\+DOUBLE}}
+\item 
+\#define \mbox{\hyperlink{global__define_8h_a2b48349cc4d35eefe2455d0f83751af7}{HARDWARE\+\_\+\+CPU}}~0
+\item 
+\#define \mbox{\hyperlink{global__define_8h_a792a11e74b1b0d6a0ef41188fabe509d}{HARDWARE\+\_\+\+GPU}}~1
+\item 
+\#define \mbox{\hyperlink{global__define_8h_aef54453f4c2bf4baba8f0a3b4d9e79ed}{CUFFT\+\_\+\+TYPE\+\_\+\+FLOAT}}~1
+\item 
+\#define \mbox{\hyperlink{global__define_8h_ae6b2731cccfb5e5e9c45e8136014d336}{CUFFT\+\_\+\+TYPE\+\_\+\+DOUBLE}}~2
+\item 
+\#define \mbox{\hyperlink{global__define_8h_a2b12bc54c7b38eb4cb4d587be5d55cc1}{CUFFT\+\_\+\+TYPE}}~\mbox{\hyperlink{global__define_8h_ae6b2731cccfb5e5e9c45e8136014d336}{CUFFT\+\_\+\+TYPE\+\_\+\+DOUBLE}}
+\item 
+\#define \mbox{\hyperlink{global__define_8h_a9d7c39132437d1f39d0549067e12071a}{CUFFT\+\_\+\+REAL}}~cufft\+Double\+Real
+\item 
+\#define \mbox{\hyperlink{global__define_8h_a1bde1bb0a0089c19e835450c28ec0f81}{CUFFT\+\_\+\+COMPLEX}}~cufft\+Double\+Complex
+\item 
+\#define \mbox{\hyperlink{global__define_8h_a2b12bc54c7b38eb4cb4d587be5d55cc1}{CUFFT\+\_\+\+TYPE}}~\mbox{\hyperlink{global__define_8h_ae6b2731cccfb5e5e9c45e8136014d336}{CUFFT\+\_\+\+TYPE\+\_\+\+DOUBLE}}
+\item 
+\#define \mbox{\hyperlink{global__define_8h_a15d40306543c528e1bea3484ffa83d9e}{FFTW\+\_\+\+TYPE\+\_\+\+FLOAT}}~1
+\item 
+\#define \mbox{\hyperlink{global__define_8h_a2f123e27d56681a030d824c722f618e0}{FFTW\+\_\+\+TYPE\+\_\+\+DOUBLE}}~2
+\item 
+\#define \mbox{\hyperlink{global__define_8h_af4e942c70323bf108fe043678835f6ef}{FFTW\+\_\+\+TYPE}}~\mbox{\hyperlink{global__define_8h_a2f123e27d56681a030d824c722f618e0}{FFTW\+\_\+\+TYPE\+\_\+\+DOUBLE}}
+\item 
+\#define \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}~double
+\item 
+\#define \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}}~fftw\+\_\+complex
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename TYPE $>$ }\\void \mbox{\hyperlink{global__define_8h_af4c07b050114f9bc54adb5ebf11336fd}{my\+\_\+delete}} (TYPE $\ast$ptr)
+\item 
+{\footnotesize template$<$typename IND $>$ }\\void \mbox{\hyperlink{global__define_8h_a3f79ce92e3029d97e7b1451b94621e4a}{Get\+Desktop\+Resolution}} (IND \&horizontal, IND \&vertical)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{global__define_8h_a1bde1bb0a0089c19e835450c28ec0f81}\label{global__define_8h_a1bde1bb0a0089c19e835450c28ec0f81}} 
+\index{global\_define.h@{global\_define.h}!CUFFT\_COMPLEX@{CUFFT\_COMPLEX}}
+\index{CUFFT\_COMPLEX@{CUFFT\_COMPLEX}!global\_define.h@{global\_define.h}}
+\doxysubsubsection{\texorpdfstring{CUFFT\_COMPLEX}{CUFFT\_COMPLEX}}
+{\footnotesize\ttfamily \#define CUFFT\+\_\+\+COMPLEX~cufft\+Double\+Complex}
+
+\mbox{\Hypertarget{global__define_8h_a9d7c39132437d1f39d0549067e12071a}\label{global__define_8h_a9d7c39132437d1f39d0549067e12071a}} 
+\index{global\_define.h@{global\_define.h}!CUFFT\_REAL@{CUFFT\_REAL}}
+\index{CUFFT\_REAL@{CUFFT\_REAL}!global\_define.h@{global\_define.h}}
+\doxysubsubsection{\texorpdfstring{CUFFT\_REAL}{CUFFT\_REAL}}
+{\footnotesize\ttfamily \#define CUFFT\+\_\+\+REAL~cufft\+Double\+Real}
+
+\mbox{\Hypertarget{global__define_8h_a2b12bc54c7b38eb4cb4d587be5d55cc1}\label{global__define_8h_a2b12bc54c7b38eb4cb4d587be5d55cc1}} 
+\index{global\_define.h@{global\_define.h}!CUFFT\_TYPE@{CUFFT\_TYPE}}
+\index{CUFFT\_TYPE@{CUFFT\_TYPE}!global\_define.h@{global\_define.h}}
+\doxysubsubsection{\texorpdfstring{CUFFT\_TYPE}{CUFFT\_TYPE}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define CUFFT\+\_\+\+TYPE~\mbox{\hyperlink{global__define_8h_ae6b2731cccfb5e5e9c45e8136014d336}{CUFFT\+\_\+\+TYPE\+\_\+\+DOUBLE}}}
+
+\mbox{\Hypertarget{global__define_8h_a2b12bc54c7b38eb4cb4d587be5d55cc1}\label{global__define_8h_a2b12bc54c7b38eb4cb4d587be5d55cc1}} 
+\index{global\_define.h@{global\_define.h}!CUFFT\_TYPE@{CUFFT\_TYPE}}
+\index{CUFFT\_TYPE@{CUFFT\_TYPE}!global\_define.h@{global\_define.h}}
+\doxysubsubsection{\texorpdfstring{CUFFT\_TYPE}{CUFFT\_TYPE}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define CUFFT\+\_\+\+TYPE~\mbox{\hyperlink{global__define_8h_ae6b2731cccfb5e5e9c45e8136014d336}{CUFFT\+\_\+\+TYPE\+\_\+\+DOUBLE}}}
+
+\mbox{\Hypertarget{global__define_8h_ae6b2731cccfb5e5e9c45e8136014d336}\label{global__define_8h_ae6b2731cccfb5e5e9c45e8136014d336}} 
+\index{global\_define.h@{global\_define.h}!CUFFT\_TYPE\_DOUBLE@{CUFFT\_TYPE\_DOUBLE}}
+\index{CUFFT\_TYPE\_DOUBLE@{CUFFT\_TYPE\_DOUBLE}!global\_define.h@{global\_define.h}}
+\doxysubsubsection{\texorpdfstring{CUFFT\_TYPE\_DOUBLE}{CUFFT\_TYPE\_DOUBLE}}
+{\footnotesize\ttfamily \#define CUFFT\+\_\+\+TYPE\+\_\+\+DOUBLE~2}
+
+\mbox{\Hypertarget{global__define_8h_aef54453f4c2bf4baba8f0a3b4d9e79ed}\label{global__define_8h_aef54453f4c2bf4baba8f0a3b4d9e79ed}} 
+\index{global\_define.h@{global\_define.h}!CUFFT\_TYPE\_FLOAT@{CUFFT\_TYPE\_FLOAT}}
+\index{CUFFT\_TYPE\_FLOAT@{CUFFT\_TYPE\_FLOAT}!global\_define.h@{global\_define.h}}
+\doxysubsubsection{\texorpdfstring{CUFFT\_TYPE\_FLOAT}{CUFFT\_TYPE\_FLOAT}}
+{\footnotesize\ttfamily \#define CUFFT\+\_\+\+TYPE\+\_\+\+FLOAT~1}
+
+\mbox{\Hypertarget{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}\label{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}} 
+\index{global\_define.h@{global\_define.h}!FFTW\_COMPLEX@{FFTW\_COMPLEX}}
+\index{FFTW\_COMPLEX@{FFTW\_COMPLEX}!global\_define.h@{global\_define.h}}
+\doxysubsubsection{\texorpdfstring{FFTW\_COMPLEX}{FFTW\_COMPLEX}}
+{\footnotesize\ttfamily \#define FFTW\+\_\+\+COMPLEX~fftw\+\_\+complex}
+
+\mbox{\Hypertarget{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}\label{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}} 
+\index{global\_define.h@{global\_define.h}!FFTW\_REAL@{FFTW\_REAL}}
+\index{FFTW\_REAL@{FFTW\_REAL}!global\_define.h@{global\_define.h}}
+\doxysubsubsection{\texorpdfstring{FFTW\_REAL}{FFTW\_REAL}}
+{\footnotesize\ttfamily \#define FFTW\+\_\+\+REAL~double}
+
+\mbox{\Hypertarget{global__define_8h_af4e942c70323bf108fe043678835f6ef}\label{global__define_8h_af4e942c70323bf108fe043678835f6ef}} 
+\index{global\_define.h@{global\_define.h}!FFTW\_TYPE@{FFTW\_TYPE}}
+\index{FFTW\_TYPE@{FFTW\_TYPE}!global\_define.h@{global\_define.h}}
+\doxysubsubsection{\texorpdfstring{FFTW\_TYPE}{FFTW\_TYPE}}
+{\footnotesize\ttfamily \#define FFTW\+\_\+\+TYPE~\mbox{\hyperlink{global__define_8h_a2f123e27d56681a030d824c722f618e0}{FFTW\+\_\+\+TYPE\+\_\+\+DOUBLE}}}
+
+\mbox{\Hypertarget{global__define_8h_a2f123e27d56681a030d824c722f618e0}\label{global__define_8h_a2f123e27d56681a030d824c722f618e0}} 
+\index{global\_define.h@{global\_define.h}!FFTW\_TYPE\_DOUBLE@{FFTW\_TYPE\_DOUBLE}}
+\index{FFTW\_TYPE\_DOUBLE@{FFTW\_TYPE\_DOUBLE}!global\_define.h@{global\_define.h}}
+\doxysubsubsection{\texorpdfstring{FFTW\_TYPE\_DOUBLE}{FFTW\_TYPE\_DOUBLE}}
+{\footnotesize\ttfamily \#define FFTW\+\_\+\+TYPE\+\_\+\+DOUBLE~2}
+
+\mbox{\Hypertarget{global__define_8h_a15d40306543c528e1bea3484ffa83d9e}\label{global__define_8h_a15d40306543c528e1bea3484ffa83d9e}} 
+\index{global\_define.h@{global\_define.h}!FFTW\_TYPE\_FLOAT@{FFTW\_TYPE\_FLOAT}}
+\index{FFTW\_TYPE\_FLOAT@{FFTW\_TYPE\_FLOAT}!global\_define.h@{global\_define.h}}
+\doxysubsubsection{\texorpdfstring{FFTW\_TYPE\_FLOAT}{FFTW\_TYPE\_FLOAT}}
+{\footnotesize\ttfamily \#define FFTW\+\_\+\+TYPE\+\_\+\+FLOAT~1}
+
+\mbox{\Hypertarget{global__define_8h_ad9e8601d2fdc5195e7d6412aa2939180}\label{global__define_8h_ad9e8601d2fdc5195e7d6412aa2939180}} 
+\index{global\_define.h@{global\_define.h}!GREEK\_PI@{GREEK\_PI}}
+\index{GREEK\_PI@{GREEK\_PI}!global\_define.h@{global\_define.h}}
+\doxysubsubsection{\texorpdfstring{GREEK\_PI}{GREEK\_PI}}
+{\footnotesize\ttfamily \#define GREEK\+\_\+\+PI~3.\+14159265358979323846264338327950288419716939937510}
+
+\mbox{\Hypertarget{global__define_8h_a2b48349cc4d35eefe2455d0f83751af7}\label{global__define_8h_a2b48349cc4d35eefe2455d0f83751af7}} 
+\index{global\_define.h@{global\_define.h}!HARDWARE\_CPU@{HARDWARE\_CPU}}
+\index{HARDWARE\_CPU@{HARDWARE\_CPU}!global\_define.h@{global\_define.h}}
+\doxysubsubsection{\texorpdfstring{HARDWARE\_CPU}{HARDWARE\_CPU}}
+{\footnotesize\ttfamily \#define HARDWARE\+\_\+\+CPU~0}
+
+\mbox{\Hypertarget{global__define_8h_a792a11e74b1b0d6a0ef41188fabe509d}\label{global__define_8h_a792a11e74b1b0d6a0ef41188fabe509d}} 
+\index{global\_define.h@{global\_define.h}!HARDWARE\_GPU@{HARDWARE\_GPU}}
+\index{HARDWARE\_GPU@{HARDWARE\_GPU}!global\_define.h@{global\_define.h}}
+\doxysubsubsection{\texorpdfstring{HARDWARE\_GPU}{HARDWARE\_GPU}}
+{\footnotesize\ttfamily \#define HARDWARE\+\_\+\+GPU~1}
+
+\mbox{\Hypertarget{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}\label{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}} 
+\index{global\_define.h@{global\_define.h}!INDEX@{INDEX}}
+\index{INDEX@{INDEX}!global\_define.h@{global\_define.h}}
+\doxysubsubsection{\texorpdfstring{INDEX}{INDEX}}
+{\footnotesize\ttfamily \#define INDEX~unsigned \+\_\+\+\_\+int64}
+
+\mbox{\Hypertarget{global__define_8h_a7e7232f278193dd8684f973ee70ef3f5}\label{global__define_8h_a7e7232f278193dd8684f973ee70ef3f5}} 
+\index{global\_define.h@{global\_define.h}!MY\_DEBUG@{MY\_DEBUG}}
+\index{MY\_DEBUG@{MY\_DEBUG}!global\_define.h@{global\_define.h}}
+\doxysubsubsection{\texorpdfstring{MY\_DEBUG}{MY\_DEBUG}}
+{\footnotesize\ttfamily \#define MY\+\_\+\+DEBUG~1}
+
+This file contains global variable and macro that are used inside the program \mbox{\Hypertarget{global__define_8h_ac3e2e8b775e8c0eca32f242cbbee4b7f}\label{global__define_8h_ac3e2e8b775e8c0eca32f242cbbee4b7f}} 
+\index{global\_define.h@{global\_define.h}!MY\_REAL@{MY\_REAL}}
+\index{MY\_REAL@{MY\_REAL}!global\_define.h@{global\_define.h}}
+\doxysubsubsection{\texorpdfstring{MY\_REAL}{MY\_REAL}}
+{\footnotesize\ttfamily \#define MY\+\_\+\+REAL~double}
+
+\mbox{\Hypertarget{global__define_8h_aa2b4ec58d136b55d98135c44a4420bad}\label{global__define_8h_aa2b4ec58d136b55d98135c44a4420bad}} 
+\index{global\_define.h@{global\_define.h}!N\_MAX\_THREADS@{N\_MAX\_THREADS}}
+\index{N\_MAX\_THREADS@{N\_MAX\_THREADS}!global\_define.h@{global\_define.h}}
+\doxysubsubsection{\texorpdfstring{N\_MAX\_THREADS}{N\_MAX\_THREADS}}
+{\footnotesize\ttfamily \#define N\+\_\+\+MAX\+\_\+\+THREADS~8}
+
+\mbox{\Hypertarget{global__define_8h_a1c75b6582cc4d9b86496d8c357204cef}\label{global__define_8h_a1c75b6582cc4d9b86496d8c357204cef}} 
+\index{global\_define.h@{global\_define.h}!SIGNED\_INDEX@{SIGNED\_INDEX}}
+\index{SIGNED\_INDEX@{SIGNED\_INDEX}!global\_define.h@{global\_define.h}}
+\doxysubsubsection{\texorpdfstring{SIGNED\_INDEX}{SIGNED\_INDEX}}
+{\footnotesize\ttfamily \#define SIGNED\+\_\+\+INDEX~\+\_\+\+\_\+int64}
+
+\mbox{\Hypertarget{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}\label{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}} 
+\index{global\_define.h@{global\_define.h}!STORE\_REAL@{STORE\_REAL}}
+\index{STORE\_REAL@{STORE\_REAL}!global\_define.h@{global\_define.h}}
+\doxysubsubsection{\texorpdfstring{STORE\_REAL}{STORE\_REAL}}
+{\footnotesize\ttfamily \#define STORE\+\_\+\+REAL~double}
+
+\mbox{\Hypertarget{global__define_8h_ab414d665774f919f7ff4b531e60d6821}\label{global__define_8h_ab414d665774f919f7ff4b531e60d6821}} 
+\index{global\_define.h@{global\_define.h}!STORE\_TYPE@{STORE\_TYPE}}
+\index{STORE\_TYPE@{STORE\_TYPE}!global\_define.h@{global\_define.h}}
+\doxysubsubsection{\texorpdfstring{STORE\_TYPE}{STORE\_TYPE}}
+{\footnotesize\ttfamily \#define STORE\+\_\+\+TYPE~\mbox{\hyperlink{global__define_8h_acdd1ce816d48894bc9c636ac00984802}{STORE\+\_\+\+TYPE\+\_\+\+DOUBLE}}}
+
+\mbox{\Hypertarget{global__define_8h_acdd1ce816d48894bc9c636ac00984802}\label{global__define_8h_acdd1ce816d48894bc9c636ac00984802}} 
+\index{global\_define.h@{global\_define.h}!STORE\_TYPE\_DOUBLE@{STORE\_TYPE\_DOUBLE}}
+\index{STORE\_TYPE\_DOUBLE@{STORE\_TYPE\_DOUBLE}!global\_define.h@{global\_define.h}}
+\doxysubsubsection{\texorpdfstring{STORE\_TYPE\_DOUBLE}{STORE\_TYPE\_DOUBLE}}
+{\footnotesize\ttfamily \#define STORE\+\_\+\+TYPE\+\_\+\+DOUBLE~2}
+
+\mbox{\Hypertarget{global__define_8h_ac317f0db7bc9b83a3e61b228b47524e5}\label{global__define_8h_ac317f0db7bc9b83a3e61b228b47524e5}} 
+\index{global\_define.h@{global\_define.h}!STORE\_TYPE\_FLOAT@{STORE\_TYPE\_FLOAT}}
+\index{STORE\_TYPE\_FLOAT@{STORE\_TYPE\_FLOAT}!global\_define.h@{global\_define.h}}
+\doxysubsubsection{\texorpdfstring{STORE\_TYPE\_FLOAT}{STORE\_TYPE\_FLOAT}}
+{\footnotesize\ttfamily \#define STORE\+\_\+\+TYPE\+\_\+\+FLOAT~1}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{global__define_8h_a3f79ce92e3029d97e7b1451b94621e4a}\label{global__define_8h_a3f79ce92e3029d97e7b1451b94621e4a}} 
+\index{global\_define.h@{global\_define.h}!GetDesktopResolution@{GetDesktopResolution}}
+\index{GetDesktopResolution@{GetDesktopResolution}!global\_define.h@{global\_define.h}}
+\doxysubsubsection{\texorpdfstring{GetDesktopResolution()}{GetDesktopResolution()}}
+{\footnotesize\ttfamily template$<$typename IND $>$ \\
+void Get\+Desktop\+Resolution (\begin{DoxyParamCaption}\item[{IND \&}]{horizontal,  }\item[{IND \&}]{vertical }\end{DoxyParamCaption})}
+
+This function gets the horizontal and vertical screen sizes in pixel \mbox{\Hypertarget{global__define_8h_af4c07b050114f9bc54adb5ebf11336fd}\label{global__define_8h_af4c07b050114f9bc54adb5ebf11336fd}} 
+\index{global\_define.h@{global\_define.h}!my\_delete@{my\_delete}}
+\index{my\_delete@{my\_delete}!global\_define.h@{global\_define.h}}
+\doxysubsubsection{\texorpdfstring{my\_delete()}{my\_delete()}}
+{\footnotesize\ttfamily template$<$typename TYPE $>$ \\
+void my\+\_\+delete (\begin{DoxyParamCaption}\item[{TYPE $\ast$}]{ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This function could be used to delete any generic pointer, but it does not work always. 

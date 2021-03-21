@@ -139,6 +139,7 @@ void diffmicro_user_interface::initialize()
 	int n_cols = 15;
 	int line = 1;
 	bool flg;
+	unsigned char* panel_data_i_uc;
 
 	name = "optionsw";
 
@@ -154,7 +155,12 @@ void diffmicro_user_interface::initialize()
 	dimy_panel = (dimy_panel*8) / 10;
 
 	panel.create(dimy_panel, dimx_panel, CV_8U);
-	for (i = 0; i < panel.rows*panel.cols; ++i) (unsigned char)(panel.data[i]) = 0;
+	for (i = 0; i < panel.rows * panel.cols; ++i)
+	{
+		panel_data_i_uc = (unsigned char*)(&(panel.data[i]));
+		panel_data_i_uc[0] = 0;
+	}
+
 	cv::cvtColor(panel, panel, CV_GRAY2RGB);
 
 	cv::setMouseCallback(name, diffmicro_user_interface::callback_mouse, NULL);

@@ -1,0 +1,108 @@
+\hypertarget{power__spectra_8h}{}\doxysection{diffmicro/power\+\_\+spectra.h File Reference}
+\label{power__spectra_8h}\index{diffmicro/power\_spectra.h@{diffmicro/power\_spectra.h}}
+{\ttfamily \#include \char`\"{}global\+\_\+define.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}prep\+\_\+string.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}diffmicro\+\_\+io.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}correlation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}angular\+\_\+avg.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}diffmicro\+\_\+log.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classfifo__min}{fifo\+\_\+min}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{power__spectra_8h_afc5b30dabb19ceef0615376f18a7b303}{calc\+\_\+power\+\_\+spectra}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimy, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimx)
+\item 
+void \mbox{\hyperlink{power__spectra_8h_a6f6ca922b1b694a7ece939b0d72c1e05}{plot\+\_\+dinamics}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimx)
+\item 
+void \mbox{\hyperlink{power__spectra_8h_a64a77b278f3a8205e9fcbb23df7e4db0}{calc\+\_\+power\+\_\+spectra\+\_\+fifo}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} nimages, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&useri\+\_\+dist\+\_\+max, \mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$image\+\_\+mean, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&\mbox{\hyperlink{angular__avg_8cpp_adc950669dbfb795e5084af275d5b6022}{dimr}}, unsigned int $\ast$power\+\_\+spectra\+\_\+avg\+\_\+counter, \mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$ram\+\_\+power\+\_\+spectra, \mbox{\hyperlink{global__define_8h_ac3e2e8b775e8c0eca32f242cbbee4b7f}{MY\+\_\+\+REAL}} $\ast$azh\+\_\+avgs)
+\item 
+void \mbox{\hyperlink{power__spectra_8h_ac919affbf2eee1504b782d6ad40347c0}{calc\+\_\+power\+\_\+spectra\+\_\+autocorr}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimy, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimx, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} nimages, \mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$image\+\_\+mean, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&\mbox{\hyperlink{angular__avg_8cpp_adc950669dbfb795e5084af275d5b6022}{dimr}}, unsigned int $\ast$power\+\_\+spectra\+\_\+avg\+\_\+counter, \mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$ram\+\_\+power\+\_\+spectra, \mbox{\hyperlink{global__define_8h_ac3e2e8b775e8c0eca32f242cbbee4b7f}{MY\+\_\+\+REAL}} $\ast$azh\+\_\+avgs)
+\item 
+void \mbox{\hyperlink{power__spectra_8h_a5cb59834dd30cafd6ea93916f4f54075}{calc\+\_\+diagonal}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} starting\+\_\+index, unsigned int power\+\_\+spectra\+\_\+avg\+\_\+counter\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{classfifo__min}{fifo\+\_\+min}} \&fifo, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} nimages, \mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} image\+\_\+mean\mbox{[}$\,$\mbox{]}, bool flg\+\_\+debug=false)
+\item 
+void \mbox{\hyperlink{power__spectra_8h_acb48a707dbc3b63ae1f0689107e2edde}{power\+\_\+spectra\+\_\+from\+\_\+dev}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} n\+\_\+pw, unsigned int $\ast$\mbox{\hyperlink{radial__storage__lut_8h_a01adbe1bf6b6fb88129e3ccba33749e8}{ram\+\_\+radial\+\_\+lut}}, \mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} ram\+\_\+power\+\_\+spectra\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} start\+\_\+dist\+\_\+display=0, bool flg\+\_\+debug=false)
+\item 
+int \mbox{\hyperlink{power__spectra_8h_a58512c32bf21cb97240bbf887c902c22}{diff\+\_\+autocorr}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dim\+\_\+file\+\_\+list, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dim\+\_\+fifo, unsigned int $\ast$counter\+\_\+avg, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} ind\+\_\+sot, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $\ast$file\+\_\+index, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $\ast$dist\+\_\+map, std\+::vector$<$ bool $>$ \&flg\+\_\+valid\+\_\+image\+\_\+fifo, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} n\+\_\+max\+\_\+avg)
+\item 
+void \mbox{\hyperlink{power__spectra_8h_ae62a60745038ea2a7ab28ede47b9f7ee}{load\+\_\+memory\+\_\+for\+\_\+time\+\_\+correlation}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimx, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimy, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} nimages, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} start\+\_\+spacial\+\_\+freq\+\_\+in\+\_\+lut, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimfreq, unsigned short $\ast$m\+\_\+im, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} $\ast$image\+\_\+mean)
+\item 
+void \mbox{\hyperlink{power__spectra_8h_a4f3344701681f3b58ff328d75ba04043}{read\+\_\+memory\+\_\+after\+\_\+time\+\_\+correlation}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} nimages, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{angular__avg_8cpp_adc950669dbfb795e5084af275d5b6022}{dimr}}, \mbox{\hyperlink{global__define_8h_ac3e2e8b775e8c0eca32f242cbbee4b7f}{MY\+\_\+\+REAL}} $\ast$azh\+\_\+avgs, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} $\ast$ram\+\_\+power\+\_\+spectra)
+\item 
+void \mbox{\hyperlink{power__spectra_8h_a0647855550082b220717d53591400b84}{save\+\_\+partial\+\_\+timeseries}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} nimages, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} igroup, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimgroup, \mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$ram\+\_\+power\+\_\+spectra)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{power__spectra_8h_a5cb59834dd30cafd6ea93916f4f54075}\label{power__spectra_8h_a5cb59834dd30cafd6ea93916f4f54075}} 
+\index{power\_spectra.h@{power\_spectra.h}!calc\_diagonal@{calc\_diagonal}}
+\index{calc\_diagonal@{calc\_diagonal}!power\_spectra.h@{power\_spectra.h}}
+\doxysubsubsection{\texorpdfstring{calc\_diagonal()}{calc\_diagonal()}}
+{\footnotesize\ttfamily void calc\+\_\+diagonal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{starting\+\_\+index,  }\item[{unsigned int}]{power\+\_\+spectra\+\_\+avg\+\_\+counter\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{classfifo__min}{fifo\+\_\+min}} \&}]{fifo,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{nimages,  }\item[{\mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}}}]{image\+\_\+mean\mbox{[}$\,$\mbox{]},  }\item[{bool}]{flg\+\_\+debug }\end{DoxyParamCaption})}
+
+This function executes the calculation on a macro-\/diagonal of the FIFO algorithm.
+
+This function calculates a group of average of power spectra. See bool \mbox{\hyperlink{power__spectra_8cpp_afc5b30dabb19ceef0615376f18a7b303}{calc\+\_\+power\+\_\+spectra(\+INDEX dimy, INDEX dimx)}} for further details \mbox{\Hypertarget{power__spectra_8h_afc5b30dabb19ceef0615376f18a7b303}\label{power__spectra_8h_afc5b30dabb19ceef0615376f18a7b303}} 
+\index{power\_spectra.h@{power\_spectra.h}!calc\_power\_spectra@{calc\_power\_spectra}}
+\index{calc\_power\_spectra@{calc\_power\_spectra}!power\_spectra.h@{power\_spectra.h}}
+\doxysubsubsection{\texorpdfstring{calc\_power\_spectra()}{calc\_power\_spectra()}}
+{\footnotesize\ttfamily bool calc\+\_\+power\+\_\+spectra (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimy,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimx }\end{DoxyParamCaption})}
+
+This function manage all the calculations of the program in FIFO mode. In the first part memory areas are prepared for the calculus. In the second part the calculus is performed. ~\newline
+The calculus of the differences is made on the video card in the Fourier space. Since the output should be all the power spectra averaged in respect to any possible time delay, only the averaged power spectra needs to saved and not all the power spectra coming from all the possible couple of differences. For this reason only the memory of the averaged power spectra is allocated. The optimal memory occupancy of the video card is found to be when we can perform as many differences as many power spectra we can store. This means that the total number of storable FFTs should be equal to the total number of power spectra that are present at the same time on the video card. ~\newline
+For this reason the memory IO with the video card is organized as follows. First we select a group of power spectra to be calculated. These power spectra are intended displaced in time-\/delay one aside to the other. Then we organize a FIFO over the memory area of the FFTs. At each cycle of the algorithm we load two images, one into the FIFO and the other in the temporary memory area where all the FFTs are calculated. In the FIFO are stored in sequence a group of images separated in time by the frame rate of the camera. The picture outside the FIFO is selected in order to satisfy the appropriate temporal delay condition for all the images in the FIFO. In fact since the power spectra are of the same number as the images stored and both of them contains elements contiguous in time separation; it is possible to select the appropriate frame that make all the possible differences storable in into the memory area of the power spectra with a refreshing calculus of the average value \mbox{\Hypertarget{power__spectra_8h_ac919affbf2eee1504b782d6ad40347c0}\label{power__spectra_8h_ac919affbf2eee1504b782d6ad40347c0}} 
+\index{power\_spectra.h@{power\_spectra.h}!calc\_power\_spectra\_autocorr@{calc\_power\_spectra\_autocorr}}
+\index{calc\_power\_spectra\_autocorr@{calc\_power\_spectra\_autocorr}!power\_spectra.h@{power\_spectra.h}}
+\doxysubsubsection{\texorpdfstring{calc\_power\_spectra\_autocorr()}{calc\_power\_spectra\_autocorr()}}
+{\footnotesize\ttfamily void calc\+\_\+power\+\_\+spectra\+\_\+autocorr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimy,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimx,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{nimages,  }\item[{\mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$}]{image\+\_\+mean,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&}]{dimr,  }\item[{unsigned int $\ast$}]{power\+\_\+spectra\+\_\+avg\+\_\+counter,  }\item[{\mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$}]{ram\+\_\+power\+\_\+spectra,  }\item[{\mbox{\hyperlink{global__define_8h_ac3e2e8b775e8c0eca32f242cbbee4b7f}{MY\+\_\+\+REAL}} $\ast$}]{azh\+\_\+avgs }\end{DoxyParamCaption})}
+
+Calculating the power spectra via Fourier tranform of power series \mbox{\Hypertarget{power__spectra_8h_a64a77b278f3a8205e9fcbb23df7e4db0}\label{power__spectra_8h_a64a77b278f3a8205e9fcbb23df7e4db0}} 
+\index{power\_spectra.h@{power\_spectra.h}!calc\_power\_spectra\_fifo@{calc\_power\_spectra\_fifo}}
+\index{calc\_power\_spectra\_fifo@{calc\_power\_spectra\_fifo}!power\_spectra.h@{power\_spectra.h}}
+\doxysubsubsection{\texorpdfstring{calc\_power\_spectra\_fifo()}{calc\_power\_spectra\_fifo()}}
+{\footnotesize\ttfamily void calc\+\_\+power\+\_\+spectra\+\_\+fifo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{nimages,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&}]{useri\+\_\+dist\+\_\+max,  }\item[{\mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$}]{image\+\_\+mean,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&}]{dimr,  }\item[{unsigned int $\ast$}]{power\+\_\+spectra\+\_\+avg\+\_\+counter,  }\item[{\mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$}]{ram\+\_\+power\+\_\+spectra,  }\item[{\mbox{\hyperlink{global__define_8h_ac3e2e8b775e8c0eca32f242cbbee4b7f}{MY\+\_\+\+REAL}} $\ast$}]{azh\+\_\+avgs }\end{DoxyParamCaption})}
+
+Calculating power spectra via time differences and FIFO memory \mbox{\Hypertarget{power__spectra_8h_a58512c32bf21cb97240bbf887c902c22}\label{power__spectra_8h_a58512c32bf21cb97240bbf887c902c22}} 
+\index{power\_spectra.h@{power\_spectra.h}!diff\_autocorr@{diff\_autocorr}}
+\index{diff\_autocorr@{diff\_autocorr}!power\_spectra.h@{power\_spectra.h}}
+\doxysubsubsection{\texorpdfstring{diff\_autocorr()}{diff\_autocorr()}}
+{\footnotesize\ttfamily int diff\+\_\+autocorr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dim\+\_\+file\+\_\+list,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dim\+\_\+fifo,  }\item[{unsigned int $\ast$}]{counter\+\_\+avg,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{ind\+\_\+sot,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $\ast$}]{file\+\_\+index,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $\ast$}]{dist\+\_\+map,  }\item[{std\+::vector$<$ bool $>$ \&}]{flg\+\_\+valid\+\_\+image\+\_\+fifo,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{n\+\_\+max\+\_\+avg }\end{DoxyParamCaption})}
+
+This function updates the power spectra with differences of ffts. It is used in the FIFO algorithm. \mbox{\Hypertarget{power__spectra_8h_ae62a60745038ea2a7ab28ede47b9f7ee}\label{power__spectra_8h_ae62a60745038ea2a7ab28ede47b9f7ee}} 
+\index{power\_spectra.h@{power\_spectra.h}!load\_memory\_for\_time\_correlation@{load\_memory\_for\_time\_correlation}}
+\index{load\_memory\_for\_time\_correlation@{load\_memory\_for\_time\_correlation}!power\_spectra.h@{power\_spectra.h}}
+\doxysubsubsection{\texorpdfstring{load\_memory\_for\_time\_correlation()}{load\_memory\_for\_time\_correlation()}}
+{\footnotesize\ttfamily void load\+\_\+memory\+\_\+for\+\_\+time\+\_\+correlation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimx,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimy,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{nimages,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{start\+\_\+spacial\+\_\+freq\+\_\+in\+\_\+lut,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimfreq,  }\item[{unsigned short $\ast$}]{m\+\_\+im,  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} $\ast$}]{image\+\_\+mean }\end{DoxyParamCaption})}
+
+This function loads all the pictures to fill the memory area with the time series. The time series are the series of fft pixel of each image sorted by increasing time. \mbox{\Hypertarget{power__spectra_8h_a6f6ca922b1b694a7ece939b0d72c1e05}\label{power__spectra_8h_a6f6ca922b1b694a7ece939b0d72c1e05}} 
+\index{power\_spectra.h@{power\_spectra.h}!plot\_dinamics@{plot\_dinamics}}
+\index{plot\_dinamics@{plot\_dinamics}!power\_spectra.h@{power\_spectra.h}}
+\doxysubsubsection{\texorpdfstring{plot\_dinamics()}{plot\_dinamics()}}
+{\footnotesize\ttfamily void plot\+\_\+dinamics (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimx }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{power__spectra_8h_acb48a707dbc3b63ae1f0689107e2edde}\label{power__spectra_8h_acb48a707dbc3b63ae1f0689107e2edde}} 
+\index{power\_spectra.h@{power\_spectra.h}!power\_spectra\_from\_dev@{power\_spectra\_from\_dev}}
+\index{power\_spectra\_from\_dev@{power\_spectra\_from\_dev}!power\_spectra.h@{power\_spectra.h}}
+\doxysubsubsection{\texorpdfstring{power\_spectra\_from\_dev()}{power\_spectra\_from\_dev()}}
+{\footnotesize\ttfamily void power\+\_\+spectra\+\_\+from\+\_\+dev (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{n\+\_\+pw,  }\item[{unsigned int $\ast$}]{ram\+\_\+radial\+\_\+lut,  }\item[{\mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}}}]{ram\+\_\+power\+\_\+spectra\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{start\+\_\+dist\+\_\+display = {\ttfamily 0},  }\item[{bool}]{flg\+\_\+debug = {\ttfamily false} }\end{DoxyParamCaption})}
+
+copy n\+\_\+pw power spectra from video card to ram\+\_\+power\+\_\+spectra. Note that power\+\_\+spectra on the video card are already stored one in queue to the other \mbox{\Hypertarget{power__spectra_8h_a4f3344701681f3b58ff328d75ba04043}\label{power__spectra_8h_a4f3344701681f3b58ff328d75ba04043}} 
+\index{power\_spectra.h@{power\_spectra.h}!read\_memory\_after\_time\_correlation@{read\_memory\_after\_time\_correlation}}
+\index{read\_memory\_after\_time\_correlation@{read\_memory\_after\_time\_correlation}!power\_spectra.h@{power\_spectra.h}}
+\doxysubsubsection{\texorpdfstring{read\_memory\_after\_time\_correlation()}{read\_memory\_after\_time\_correlation()}}
+{\footnotesize\ttfamily void read\+\_\+memory\+\_\+after\+\_\+time\+\_\+correlation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{nimages,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimr,  }\item[{\mbox{\hyperlink{global__define_8h_ac3e2e8b775e8c0eca32f242cbbee4b7f}{MY\+\_\+\+REAL}} $\ast$}]{azh\+\_\+avgs,  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} $\ast$}]{ram\+\_\+power\+\_\+spectra }\end{DoxyParamCaption})}
+
+This function reads the final result of the calculation to reconverted the elaborated time series into images \mbox{\Hypertarget{power__spectra_8h_a0647855550082b220717d53591400b84}\label{power__spectra_8h_a0647855550082b220717d53591400b84}} 
+\index{power\_spectra.h@{power\_spectra.h}!save\_partial\_timeseries@{save\_partial\_timeseries}}
+\index{save\_partial\_timeseries@{save\_partial\_timeseries}!power\_spectra.h@{power\_spectra.h}}
+\doxysubsubsection{\texorpdfstring{save\_partial\_timeseries()}{save\_partial\_timeseries()}}
+{\footnotesize\ttfamily void save\+\_\+partial\+\_\+timeseries (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{nimages,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{igroup,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimgroup,  }\item[{\mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$}]{ram\+\_\+power\+\_\+spectra }\end{DoxyParamCaption})}
+
+This function saves partial results of the time series analysis on disk to be merged in the final stage of the program. The temporary files that are written are the output files, which are subsequently overwritten after the merge. 

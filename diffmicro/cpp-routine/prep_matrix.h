@@ -120,7 +120,7 @@ inline void trasp_mat(unsigned int dimrow, unsigned int dimcol, ELE *in, ELE *ou
 template<typename INT, typename FLOATIN, typename FLOATOUT>
 void copy_submatrix_periodical(INT dimxin, INT dimyin, FLOATIN matin[], INT startx, INT starty, INT dimxout, INT dimyout, FLOATOUT matout[])
 {
-	UINT i, j;
+	INT i, j;
 	circular_index<INT> iin, jin;
 	FLOATOUT *row_out;
 	FLOATIN *row_in;

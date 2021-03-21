@@ -376,9 +376,14 @@ bool load_image(std::string &filename, INDEX &dimy, INDEX &dimx, bool read_im, u
 void diffmicro_user_interface::resize_window(unsigned int display_dimx, unsigned int display_dimy)
 {
 	unsigned int i;
+	unsigned char* panel_data_i_uc;
 	panel.deallocate();
 	panel.create(display_dimy, display_dimx, CV_8U);
-	for (i = 0; i < panel.rows*panel.cols; ++i) (unsigned char)(panel.data[i]) = 0;
+	for (i = 0; i < panel.rows * panel.cols; ++i)
+	{
+		panel_data_i_uc = (unsigned char*)(&(panel.data[i]));
+		panel_data_i_uc[0] = 0;
+	}
 	cv::cvtColor(panel, panel, CV_GRAY2RGB);
 }
 

@@ -1,0 +1,145 @@
+\hypertarget{classwindow__control__opencv}{}\doxysection{window\+\_\+control\+\_\+opencv Class Reference}
+\label{classwindow__control__opencv}\index{window\_control\_opencv@{window\_control\_opencv}}
+
+
+{\ttfamily \#include $<$window\+\_\+control\+\_\+opencv.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classwindow__control__opencv_afc1e7df68d57358a91aa71a1a137e990}{window\+\_\+control\+\_\+opencv}} ()
+\item 
+\mbox{\hyperlink{classwindow__control__opencv_ac3b5376e3d4097c4dcc2b4c27f3cfcfb}{$\sim$window\+\_\+control\+\_\+opencv}} ()
+\item 
+void \mbox{\hyperlink{classwindow__control__opencv_afd6062eb2f7ebc4e312a99985b8a7067}{show}} (\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} \&fig)
+\item 
+void \mbox{\hyperlink{classwindow__control__opencv_a46562de0cf5fb6d702c6a9c6800e7bb8}{resize\+\_\+window}} (unsigned int display\+\_\+dimx, unsigned int display\+\_\+dimy)
+\item 
+void \mbox{\hyperlink{classwindow__control__opencv_a3393ce2374ade4927071743679ef202d}{move\+\_\+window}} (float x, float y)
+\item 
+void \mbox{\hyperlink{classwindow__control__opencv_a567896c39a60b827bd4857e297c356b1}{move\+\_\+window}} (int x, int y)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classwindow__control__opencv_a7b21f1809368eeeffbfb39b23bac9607}{callback\+\_\+mouse}} (int ev, int x, int y, int flags, void $\ast$userdata)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classwindow__control__opencv_acfd2616c49458c7259b3bc718f414ff3}{name}}
+\item 
+cv\+::\+Mat \mbox{\hyperlink{classwindow__control__opencv_a53fc634276753899afff85f9db843bbc}{panel}}
+\item 
+float \mbox{\hyperlink{classwindow__control__opencv_af793b69fcd03eba442738e53b42f6f40}{xx}} \mbox{[}8\mbox{]}
+\item 
+float $\ast$ \mbox{\hyperlink{classwindow__control__opencv_adb0535630c38ff74007f6d371292692a}{xx\+\_\+current}}
+\item 
+float $\ast$ \mbox{\hyperlink{classwindow__control__opencv_af89430b2d885bcc3a8a771e83dcb0ff9}{xx\+\_\+previous}}
+\item 
+float $\ast$ \mbox{\hyperlink{classwindow__control__opencv_a998d89a0d3692935305bcee2682eca38}{xx\+\_\+onclick}}
+\item 
+float $\ast$ \mbox{\hyperlink{classwindow__control__opencv_a0af792c7e010de4b9bdfaf6999b65677}{xx\+\_\+onrelease}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This window displays the user interface. The user interface refers to the active figure. To change the active figure while using the program the user can over with the mouse on any figure of choice. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classwindow__control__opencv_afc1e7df68d57358a91aa71a1a137e990}\label{classwindow__control__opencv_afc1e7df68d57358a91aa71a1a137e990}} 
+\index{window\_control\_opencv@{window\_control\_opencv}!window\_control\_opencv@{window\_control\_opencv}}
+\index{window\_control\_opencv@{window\_control\_opencv}!window\_control\_opencv@{window\_control\_opencv}}
+\doxysubsubsection{\texorpdfstring{window\_control\_opencv()}{window\_control\_opencv()}}
+{\footnotesize\ttfamily window\+\_\+control\+\_\+opencv\+::window\+\_\+control\+\_\+opencv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classwindow__control__opencv_ac3b5376e3d4097c4dcc2b4c27f3cfcfb}\label{classwindow__control__opencv_ac3b5376e3d4097c4dcc2b4c27f3cfcfb}} 
+\index{window\_control\_opencv@{window\_control\_opencv}!````~window\_control\_opencv@{$\sim$window\_control\_opencv}}
+\index{````~window\_control\_opencv@{$\sim$window\_control\_opencv}!window\_control\_opencv@{window\_control\_opencv}}
+\doxysubsubsection{\texorpdfstring{$\sim$window\_control\_opencv()}{~window\_control\_opencv()}}
+{\footnotesize\ttfamily window\+\_\+control\+\_\+opencv\+::$\sim$window\+\_\+control\+\_\+opencv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classwindow__control__opencv_a7b21f1809368eeeffbfb39b23bac9607}\label{classwindow__control__opencv_a7b21f1809368eeeffbfb39b23bac9607}} 
+\index{window\_control\_opencv@{window\_control\_opencv}!callback\_mouse@{callback\_mouse}}
+\index{callback\_mouse@{callback\_mouse}!window\_control\_opencv@{window\_control\_opencv}}
+\doxysubsubsection{\texorpdfstring{callback\_mouse()}{callback\_mouse()}}
+{\footnotesize\ttfamily void window\+\_\+control\+\_\+opencv\+::callback\+\_\+mouse (\begin{DoxyParamCaption}\item[{int}]{ev,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{flags,  }\item[{void $\ast$}]{userdata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classwindow__control__opencv_a3393ce2374ade4927071743679ef202d}\label{classwindow__control__opencv_a3393ce2374ade4927071743679ef202d}} 
+\index{window\_control\_opencv@{window\_control\_opencv}!move\_window@{move\_window}}
+\index{move\_window@{move\_window}!window\_control\_opencv@{window\_control\_opencv}}
+\doxysubsubsection{\texorpdfstring{move\_window()}{move\_window()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void window\+\_\+control\+\_\+opencv\+::move\+\_\+window (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classwindow__control__opencv_a567896c39a60b827bd4857e297c356b1}\label{classwindow__control__opencv_a567896c39a60b827bd4857e297c356b1}} 
+\index{window\_control\_opencv@{window\_control\_opencv}!move\_window@{move\_window}}
+\index{move\_window@{move\_window}!window\_control\_opencv@{window\_control\_opencv}}
+\doxysubsubsection{\texorpdfstring{move\_window()}{move\_window()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void window\+\_\+control\+\_\+opencv\+::move\+\_\+window (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classwindow__control__opencv_a46562de0cf5fb6d702c6a9c6800e7bb8}\label{classwindow__control__opencv_a46562de0cf5fb6d702c6a9c6800e7bb8}} 
+\index{window\_control\_opencv@{window\_control\_opencv}!resize\_window@{resize\_window}}
+\index{resize\_window@{resize\_window}!window\_control\_opencv@{window\_control\_opencv}}
+\doxysubsubsection{\texorpdfstring{resize\_window()}{resize\_window()}}
+{\footnotesize\ttfamily void window\+\_\+control\+\_\+opencv\+::resize\+\_\+window (\begin{DoxyParamCaption}\item[{unsigned int}]{display\+\_\+dimx,  }\item[{unsigned int}]{display\+\_\+dimy }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classwindow__control__opencv_afd6062eb2f7ebc4e312a99985b8a7067}\label{classwindow__control__opencv_afd6062eb2f7ebc4e312a99985b8a7067}} 
+\index{window\_control\_opencv@{window\_control\_opencv}!show@{show}}
+\index{show@{show}!window\_control\_opencv@{window\_control\_opencv}}
+\doxysubsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily void window\+\_\+control\+\_\+opencv\+::show (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} \&}]{fig }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classwindow__control__opencv_acfd2616c49458c7259b3bc718f414ff3}\label{classwindow__control__opencv_acfd2616c49458c7259b3bc718f414ff3}} 
+\index{window\_control\_opencv@{window\_control\_opencv}!name@{name}}
+\index{name@{name}!window\_control\_opencv@{window\_control\_opencv}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string window\+\_\+control\+\_\+opencv\+::name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classwindow__control__opencv_a53fc634276753899afff85f9db843bbc}\label{classwindow__control__opencv_a53fc634276753899afff85f9db843bbc}} 
+\index{window\_control\_opencv@{window\_control\_opencv}!panel@{panel}}
+\index{panel@{panel}!window\_control\_opencv@{window\_control\_opencv}}
+\doxysubsubsection{\texorpdfstring{panel}{panel}}
+{\footnotesize\ttfamily cv\+::\+Mat window\+\_\+control\+\_\+opencv\+::panel\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classwindow__control__opencv_af793b69fcd03eba442738e53b42f6f40}\label{classwindow__control__opencv_af793b69fcd03eba442738e53b42f6f40}} 
+\index{window\_control\_opencv@{window\_control\_opencv}!xx@{xx}}
+\index{xx@{xx}!window\_control\_opencv@{window\_control\_opencv}}
+\doxysubsubsection{\texorpdfstring{xx}{xx}}
+{\footnotesize\ttfamily float window\+\_\+control\+\_\+opencv\+::xx\mbox{[}8\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classwindow__control__opencv_adb0535630c38ff74007f6d371292692a}\label{classwindow__control__opencv_adb0535630c38ff74007f6d371292692a}} 
+\index{window\_control\_opencv@{window\_control\_opencv}!xx\_current@{xx\_current}}
+\index{xx\_current@{xx\_current}!window\_control\_opencv@{window\_control\_opencv}}
+\doxysubsubsection{\texorpdfstring{xx\_current}{xx\_current}}
+{\footnotesize\ttfamily float$\ast$ window\+\_\+control\+\_\+opencv\+::xx\+\_\+current\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classwindow__control__opencv_a998d89a0d3692935305bcee2682eca38}\label{classwindow__control__opencv_a998d89a0d3692935305bcee2682eca38}} 
+\index{window\_control\_opencv@{window\_control\_opencv}!xx\_onclick@{xx\_onclick}}
+\index{xx\_onclick@{xx\_onclick}!window\_control\_opencv@{window\_control\_opencv}}
+\doxysubsubsection{\texorpdfstring{xx\_onclick}{xx\_onclick}}
+{\footnotesize\ttfamily float$\ast$ window\+\_\+control\+\_\+opencv\+::xx\+\_\+onclick\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classwindow__control__opencv_a0af792c7e010de4b9bdfaf6999b65677}\label{classwindow__control__opencv_a0af792c7e010de4b9bdfaf6999b65677}} 
+\index{window\_control\_opencv@{window\_control\_opencv}!xx\_onrelease@{xx\_onrelease}}
+\index{xx\_onrelease@{xx\_onrelease}!window\_control\_opencv@{window\_control\_opencv}}
+\doxysubsubsection{\texorpdfstring{xx\_onrelease}{xx\_onrelease}}
+{\footnotesize\ttfamily float$\ast$ window\+\_\+control\+\_\+opencv\+::xx\+\_\+onrelease\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classwindow__control__opencv_af89430b2d885bcc3a8a771e83dcb0ff9}\label{classwindow__control__opencv_af89430b2d885bcc3a8a771e83dcb0ff9}} 
+\index{window\_control\_opencv@{window\_control\_opencv}!xx\_previous@{xx\_previous}}
+\index{xx\_previous@{xx\_previous}!window\_control\_opencv@{window\_control\_opencv}}
+\doxysubsubsection{\texorpdfstring{xx\_previous}{xx\_previous}}
+{\footnotesize\ttfamily float$\ast$ window\+\_\+control\+\_\+opencv\+::xx\+\_\+previous\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+diffmicro/display\+\_\+opencv/\mbox{\hyperlink{window__control__opencv_8h}{window\+\_\+control\+\_\+opencv.\+h}}\item 
+diffmicro/display\+\_\+opencv/\mbox{\hyperlink{window__control__opencv_8cpp}{window\+\_\+control\+\_\+opencv.\+cpp}}\end{DoxyCompactItemize}

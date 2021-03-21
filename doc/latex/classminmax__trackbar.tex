@@ -1,0 +1,221 @@
+\hypertarget{classminmax__trackbar}{}\doxysection{minmax\+\_\+trackbar Class Reference}
+\label{classminmax__trackbar}\index{minmax\_trackbar@{minmax\_trackbar}}
+
+
+{\ttfamily \#include $<$minmax\+\_\+trackbar\+\_\+opencv.\+h$>$}
+
+Inheritance diagram for minmax\+\_\+trackbar\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classminmax__trackbar}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classminmax__trackbar_a38349807c5b0c50cfc0ec931b1974d41}{minmax\+\_\+trackbar}} (int \+\_\+id=-\/1, std\+::string \+\_\+name=\char`\"{}\char`\"{})
+\item 
+\mbox{\hyperlink{classminmax__trackbar_a03b3952efbac4c6f2ea24420da5bd68e}{minmax\+\_\+trackbar}} (const \mbox{\hyperlink{classminmax__trackbar}{minmax\+\_\+trackbar}} \&ctrl)
+\item 
+\mbox{\hyperlink{classminmax__trackbar_a652bb8fa41ac4c82ce40bcd1f067c755}{$\sim$minmax\+\_\+trackbar}} ()
+\item 
+void \mbox{\hyperlink{classminmax__trackbar_a5269890b5cf205875a421717f7f7372b}{select}} ()
+\item 
+void \mbox{\hyperlink{classminmax__trackbar_a554771f575590c99c081c8784ce4adf7}{deselect}} ()
+\item 
+void \mbox{\hyperlink{classminmax__trackbar_ac9e0ec6dacf9b194373bd1e347c1eaba}{enable}} ()
+\item 
+void \mbox{\hyperlink{classminmax__trackbar_a30ab2b816411001af24132adfa8b4641}{disable}} ()
+\item 
+virtual int \mbox{\hyperlink{classminmax__trackbar_ad60624c2249640aabd66e1063b5e7e76}{handle}} (float pos\mbox{[}$\,$\mbox{]})
+\item 
+virtual \mbox{\hyperlink{classminmax__trackbar}{minmax\+\_\+trackbar}} \& \mbox{\hyperlink{classminmax__trackbar_a96a72c0bea3292729975e25e169670c5}{operator=}} (const \mbox{\hyperlink{classminmax__trackbar}{minmax\+\_\+trackbar}} \&ctrl)
+\item 
+void \mbox{\hyperlink{classminmax__trackbar_ab7c83e1ce2cea6688a59ca8f643cd91f}{get\+\_\+value}} (void $\ast$out)
+\begin{DoxyCompactList}\small\item\em retrive the value of the control \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classminmax__trackbar_aab67bccd0acfbc5761d95b977931bf01}{set\+\_\+value}} (void $\ast$in)
+\begin{DoxyCompactList}\small\item\em Implementation for setting the value of the control. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classminmax__trackbar_a456b2ddf4e38212edd64d5f56890e626}{onclick}} (float pos\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{classminmax__trackbar_a8f0713c4f25637ca99393e4446b99268}{onmove}} (float pos\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{classminmax__trackbar_a667341d45596162f48018b7df27a1eac}{onrelease}} (float pos\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{classminmax__trackbar_ae04a9c593a6338de8b3143688c671957}{update}} (float pos\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{classminmax__trackbar_aae367668c478acf89c8b37a0bcf37ec9}{set\+\_\+maximum\+\_\+value}} (int \+\_\+new\+\_\+max)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classminmax__trackbar_ac095df35f33101c968863b1f367f5c47}{selected\+\_\+handle}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+This is a special trackbar that changes the dynamic range of an image. The dynamic range have a maximum and a minimum value. With this trackbar it is possible to modify maximum, minimum and average value within an interval See \mbox{\hyperlink{classtrackbar__opencv}{trackbar\+\_\+opencv}} and \mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} for further details 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classminmax__trackbar_a38349807c5b0c50cfc0ec931b1974d41}\label{classminmax__trackbar_a38349807c5b0c50cfc0ec931b1974d41}} 
+\index{minmax\_trackbar@{minmax\_trackbar}!minmax\_trackbar@{minmax\_trackbar}}
+\index{minmax\_trackbar@{minmax\_trackbar}!minmax\_trackbar@{minmax\_trackbar}}
+\doxysubsubsection{\texorpdfstring{minmax\_trackbar()}{minmax\_trackbar()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily minmax\+\_\+trackbar\+::minmax\+\_\+trackbar (\begin{DoxyParamCaption}\item[{int}]{\+\_\+id = {\ttfamily -\/1},  }\item[{std\+::string}]{\+\_\+name = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classminmax__trackbar_a03b3952efbac4c6f2ea24420da5bd68e}\label{classminmax__trackbar_a03b3952efbac4c6f2ea24420da5bd68e}} 
+\index{minmax\_trackbar@{minmax\_trackbar}!minmax\_trackbar@{minmax\_trackbar}}
+\index{minmax\_trackbar@{minmax\_trackbar}!minmax\_trackbar@{minmax\_trackbar}}
+\doxysubsubsection{\texorpdfstring{minmax\_trackbar()}{minmax\_trackbar()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily minmax\+\_\+trackbar\+::minmax\+\_\+trackbar (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classminmax__trackbar}{minmax\+\_\+trackbar}} \&}]{ctrl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classminmax__trackbar_a652bb8fa41ac4c82ce40bcd1f067c755}\label{classminmax__trackbar_a652bb8fa41ac4c82ce40bcd1f067c755}} 
+\index{minmax\_trackbar@{minmax\_trackbar}!````~minmax\_trackbar@{$\sim$minmax\_trackbar}}
+\index{````~minmax\_trackbar@{$\sim$minmax\_trackbar}!minmax\_trackbar@{minmax\_trackbar}}
+\doxysubsubsection{\texorpdfstring{$\sim$minmax\_trackbar()}{~minmax\_trackbar()}}
+{\footnotesize\ttfamily minmax\+\_\+trackbar\+::$\sim$minmax\+\_\+trackbar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classminmax__trackbar_a554771f575590c99c081c8784ce4adf7}\label{classminmax__trackbar_a554771f575590c99c081c8784ce4adf7}} 
+\index{minmax\_trackbar@{minmax\_trackbar}!deselect@{deselect}}
+\index{deselect@{deselect}!minmax\_trackbar@{minmax\_trackbar}}
+\doxysubsubsection{\texorpdfstring{deselect()}{deselect()}}
+{\footnotesize\ttfamily void minmax\+\_\+trackbar\+::deselect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classcontrol__opencv_a19b5594e89aa9bdd52ae60e136d06f19}{control\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classminmax__trackbar_a30ab2b816411001af24132adfa8b4641}\label{classminmax__trackbar_a30ab2b816411001af24132adfa8b4641}} 
+\index{minmax\_trackbar@{minmax\_trackbar}!disable@{disable}}
+\index{disable@{disable}!minmax\_trackbar@{minmax\_trackbar}}
+\doxysubsubsection{\texorpdfstring{disable()}{disable()}}
+{\footnotesize\ttfamily void minmax\+\_\+trackbar\+::disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classcontrol__opencv_a25047659ab43ddea969993fd6a8b529a}{control\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classminmax__trackbar_ac9e0ec6dacf9b194373bd1e347c1eaba}\label{classminmax__trackbar_ac9e0ec6dacf9b194373bd1e347c1eaba}} 
+\index{minmax\_trackbar@{minmax\_trackbar}!enable@{enable}}
+\index{enable@{enable}!minmax\_trackbar@{minmax\_trackbar}}
+\doxysubsubsection{\texorpdfstring{enable()}{enable()}}
+{\footnotesize\ttfamily void minmax\+\_\+trackbar\+::enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classcontrol__opencv_ad32f68e30e77a6d943861089bab77ee6}{control\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classminmax__trackbar_ab7c83e1ce2cea6688a59ca8f643cd91f}\label{classminmax__trackbar_ab7c83e1ce2cea6688a59ca8f643cd91f}} 
+\index{minmax\_trackbar@{minmax\_trackbar}!get\_value@{get\_value}}
+\index{get\_value@{get\_value}!minmax\_trackbar@{minmax\_trackbar}}
+\doxysubsubsection{\texorpdfstring{get\_value()}{get\_value()}}
+{\footnotesize\ttfamily void minmax\+\_\+trackbar\+::get\+\_\+value (\begin{DoxyParamCaption}\item[{void $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+retrive the value of the control 
+
+
+
+Implements \mbox{\hyperlink{classtrackbar__opencv_abcb2e5671fe31c979cb826d167dfebe1}{trackbar\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classminmax__trackbar_ad60624c2249640aabd66e1063b5e7e76}\label{classminmax__trackbar_ad60624c2249640aabd66e1063b5e7e76}} 
+\index{minmax\_trackbar@{minmax\_trackbar}!handle@{handle}}
+\index{handle@{handle}!minmax\_trackbar@{minmax\_trackbar}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily int minmax\+\_\+trackbar\+::handle (\begin{DoxyParamCaption}\item[{float}]{pos\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Multiple actions are possible and multiple grabbing point for the pointer are possible as well This method should return any negative number in case no action should take place. 
+
+Implements \mbox{\hyperlink{classtrackbar__opencv_a05daf78483a230384e40b86c12edf954}{trackbar\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classminmax__trackbar_a456b2ddf4e38212edd64d5f56890e626}\label{classminmax__trackbar_a456b2ddf4e38212edd64d5f56890e626}} 
+\index{minmax\_trackbar@{minmax\_trackbar}!onclick@{onclick}}
+\index{onclick@{onclick}!minmax\_trackbar@{minmax\_trackbar}}
+\doxysubsubsection{\texorpdfstring{onclick()}{onclick()}}
+{\footnotesize\ttfamily void minmax\+\_\+trackbar\+::onclick (\begin{DoxyParamCaption}\item[{float}]{pos\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This method is intended to be called in case \mbox{\hyperlink{classcontrol__opencv_a2f15253b1a43a3a1a8f35666c9f2b25a}{control\+\_\+opencv\+::handle}} would return a value $>$= 0 and arranges the behaviour of the control when the mouse button of choice is pressed the first time 
+
+Implements \mbox{\hyperlink{classtrackbar__opencv_a9c14d0b399c760faa2115066e850f60c}{trackbar\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classminmax__trackbar_a8f0713c4f25637ca99393e4446b99268}\label{classminmax__trackbar_a8f0713c4f25637ca99393e4446b99268}} 
+\index{minmax\_trackbar@{minmax\_trackbar}!onmove@{onmove}}
+\index{onmove@{onmove}!minmax\_trackbar@{minmax\_trackbar}}
+\doxysubsubsection{\texorpdfstring{onmove()}{onmove()}}
+{\footnotesize\ttfamily void minmax\+\_\+trackbar\+::onmove (\begin{DoxyParamCaption}\item[{float}]{pos\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This method is intended to be called in case \mbox{\hyperlink{classcontrol__opencv_a8a3999887dc29d664b8f593966126701}{control\+\_\+opencv\+::onclick}} was already called. It defines the behviour in case of mouse move with button pressed. 
+
+Implements \mbox{\hyperlink{classtrackbar__opencv_a015c62fec17be9ace7f3bd900c78fc68}{trackbar\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classminmax__trackbar_a667341d45596162f48018b7df27a1eac}\label{classminmax__trackbar_a667341d45596162f48018b7df27a1eac}} 
+\index{minmax\_trackbar@{minmax\_trackbar}!onrelease@{onrelease}}
+\index{onrelease@{onrelease}!minmax\_trackbar@{minmax\_trackbar}}
+\doxysubsubsection{\texorpdfstring{onrelease()}{onrelease()}}
+{\footnotesize\ttfamily void minmax\+\_\+trackbar\+::onrelease (\begin{DoxyParamCaption}\item[{float}]{pos\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This method is intended to be called in case \mbox{\hyperlink{classcontrol__opencv_a8a3999887dc29d664b8f593966126701}{control\+\_\+opencv\+::onclick}} was already called. It arranges the behaviour of the control when the mouse button of choice is released 
+
+Implements \mbox{\hyperlink{classtrackbar__opencv_a079d95852f2b133e8be218576d295aca}{trackbar\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classminmax__trackbar_a96a72c0bea3292729975e25e169670c5}\label{classminmax__trackbar_a96a72c0bea3292729975e25e169670c5}} 
+\index{minmax\_trackbar@{minmax\_trackbar}!operator=@{operator=}}
+\index{operator=@{operator=}!minmax\_trackbar@{minmax\_trackbar}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classminmax__trackbar}{minmax\+\_\+trackbar}} \& minmax\+\_\+trackbar\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classminmax__trackbar}{minmax\+\_\+trackbar}} \&}]{ctrl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classminmax__trackbar_a5269890b5cf205875a421717f7f7372b}\label{classminmax__trackbar_a5269890b5cf205875a421717f7f7372b}} 
+\index{minmax\_trackbar@{minmax\_trackbar}!select@{select}}
+\index{select@{select}!minmax\_trackbar@{minmax\_trackbar}}
+\doxysubsubsection{\texorpdfstring{select()}{select()}}
+{\footnotesize\ttfamily void minmax\+\_\+trackbar\+::select (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classcontrol__opencv_a4ac93e85c01756b55db885f06bea7e2b}{control\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classminmax__trackbar_aae367668c478acf89c8b37a0bcf37ec9}\label{classminmax__trackbar_aae367668c478acf89c8b37a0bcf37ec9}} 
+\index{minmax\_trackbar@{minmax\_trackbar}!set\_maximum\_value@{set\_maximum\_value}}
+\index{set\_maximum\_value@{set\_maximum\_value}!minmax\_trackbar@{minmax\_trackbar}}
+\doxysubsubsection{\texorpdfstring{set\_maximum\_value()}{set\_maximum\_value()}}
+{\footnotesize\ttfamily void minmax\+\_\+trackbar\+::set\+\_\+maximum\+\_\+value (\begin{DoxyParamCaption}\item[{int}]{\+\_\+new\+\_\+max }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classminmax__trackbar_aab67bccd0acfbc5761d95b977931bf01}\label{classminmax__trackbar_aab67bccd0acfbc5761d95b977931bf01}} 
+\index{minmax\_trackbar@{minmax\_trackbar}!set\_value@{set\_value}}
+\index{set\_value@{set\_value}!minmax\_trackbar@{minmax\_trackbar}}
+\doxysubsubsection{\texorpdfstring{set\_value()}{set\_value()}}
+{\footnotesize\ttfamily void minmax\+\_\+trackbar\+::set\+\_\+value (\begin{DoxyParamCaption}\item[{void $\ast$}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation for setting the value of the control. 
+
+
+
+Implements \mbox{\hyperlink{classtrackbar__opencv_a2f9d33903712ded639ae3bb109b8cf61}{trackbar\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classminmax__trackbar_ae04a9c593a6338de8b3143688c671957}\label{classminmax__trackbar_ae04a9c593a6338de8b3143688c671957}} 
+\index{minmax\_trackbar@{minmax\_trackbar}!update@{update}}
+\index{update@{update}!minmax\_trackbar@{minmax\_trackbar}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void minmax\+\_\+trackbar\+::update (\begin{DoxyParamCaption}\item[{float}]{pos\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classminmax__trackbar_ac095df35f33101c968863b1f367f5c47}\label{classminmax__trackbar_ac095df35f33101c968863b1f367f5c47}} 
+\index{minmax\_trackbar@{minmax\_trackbar}!selected\_handle@{selected\_handle}}
+\index{selected\_handle@{selected\_handle}!minmax\_trackbar@{minmax\_trackbar}}
+\doxysubsubsection{\texorpdfstring{selected\_handle}{selected\_handle}}
+{\footnotesize\ttfamily int minmax\+\_\+trackbar\+::selected\+\_\+handle\hspace{0.3cm}{\ttfamily [protected]}}
+
+The handles are in this case 3 1) minimum 2) middle value 3) maximum 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+diffmicro/display\+\_\+opencv/\mbox{\hyperlink{minmax__trackbar__opencv_8h}{minmax\+\_\+trackbar\+\_\+opencv.\+h}}\item 
+diffmicro/display\+\_\+opencv/\mbox{\hyperlink{minmax__trackbar__opencv_8cpp}{minmax\+\_\+trackbar\+\_\+opencv.\+cpp}}\end{DoxyCompactItemize}

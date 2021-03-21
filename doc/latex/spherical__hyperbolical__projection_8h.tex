@@ -1,0 +1,88 @@
+\hypertarget{spherical__hyperbolical__projection_8h}{}\doxysection{diffmicro/cpp-\/routine/spherical\+\_\+hyperbolical\+\_\+projection.h File Reference}
+\label{spherical__hyperbolical__projection_8h}\index{diffmicro/cpp-\/routine/spherical\_hyperbolical\_projection.h@{diffmicro/cpp-\/routine/spherical\_hyperbolical\_projection.h}}
+{\ttfamily \#include $<$cmath$>$}\newline
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{spherical__hyperbolical__projection_8h_a4a0dc52ffc61db6d6b1180bdc93c77ca}{spheric\+\_\+hyperbolic\+\_\+project\+\_\+enum}} \{ \mbox{\hyperlink{spherical__hyperbolical__projection_8h_a4a0dc52ffc61db6d6b1180bdc93c77caad90a5f8e2e6403bff24c3cc86c81da25}{SPHERICAL\+\_\+\+PROJECTION}} = 0
+, \mbox{\hyperlink{spherical__hyperbolical__projection_8h_a4a0dc52ffc61db6d6b1180bdc93c77caabbddbc8650859003d66d4b2980aefb79}{HYPERBOLICAL\+\_\+\+PROJECTION}} = 1
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename FLOAT , typename UINT $>$ }\\void \mbox{\hyperlink{spherical__hyperbolical__projection_8h_a485ab028d8fe3583fb85f3038b1504b3}{spheric\+\_\+hyperbolic\+\_\+indices\+\_\+for\+\_\+projection}} (FLOAT r, UINT dimx, UINT dimy, FLOAT scale\mbox{[}$\,$\mbox{]}, FLOAT $\ast$indout, int type=0)
+\item 
+{\footnotesize template$<$typename FLOAT , typename UINT $>$ }\\void \mbox{\hyperlink{spherical__hyperbolical__projection_8h_ac45bdeaa580c12b6697d7241e1cf748e}{spheric\+\_\+hyperbolic\+\_\+indices\+\_\+reduction}} (UINT dimxin, UINT dimyin, FLOAT in\mbox{[}$\,$\mbox{]}, FLOAT center\mbox{[}$\,$\mbox{]}, FLOAT scale\mbox{[}$\,$\mbox{]}, UINT dimxout, UINT dimyout, FLOAT ind\mbox{[}$\,$\mbox{]}, UINT \&dimindok, UINT indok\mbox{[}$\,$\mbox{]}, UINT \&dimindzero, UINT indzero\mbox{[}$\,$\mbox{]})
+\item 
+{\footnotesize template$<$typename FLOAT , typename UINT $>$ }\\void \mbox{\hyperlink{spherical__hyperbolical__projection_8h_a67fde32b62c065e2878e38fd50739f97}{spheric\+\_\+hyperbolic\+\_\+projection\+\_\+with\+\_\+indices}} (FLOAT in\mbox{[}$\,$\mbox{]}, UINT dimok, UINT indok\mbox{[}$\,$\mbox{]}, UINT dimzero, UINT indzero\mbox{[}$\,$\mbox{]}, FLOAT out\mbox{[}$\,$\mbox{]})
+\item 
+{\footnotesize template$<$typename FLOAT , typename UINT $>$ }\\void \mbox{\hyperlink{spherical__hyperbolical__projection_8h_aa5f1aa1f4cd883a6be2498aec3b83f84}{spheric\+\_\+hyperbolic\+\_\+projection\+\_\+easy}} (FLOAT r, UINT dimxin, UINT dimyin, FLOAT in\mbox{[}$\,$\mbox{]}, FLOAT center\mbox{[}$\,$\mbox{]}, FLOAT scale\mbox{[}$\,$\mbox{]}, UINT dimxout, UINT dimyout, FLOAT out\mbox{[}$\,$\mbox{]}, int type=0)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{spherical__hyperbolical__projection_8h_a4a0dc52ffc61db6d6b1180bdc93c77ca}\label{spherical__hyperbolical__projection_8h_a4a0dc52ffc61db6d6b1180bdc93c77ca}} 
+\index{spherical\_hyperbolical\_projection.h@{spherical\_hyperbolical\_projection.h}!spheric\_hyperbolic\_project\_enum@{spheric\_hyperbolic\_project\_enum}}
+\index{spheric\_hyperbolic\_project\_enum@{spheric\_hyperbolic\_project\_enum}!spherical\_hyperbolical\_projection.h@{spherical\_hyperbolical\_projection.h}}
+\doxysubsubsection{\texorpdfstring{spheric\_hyperbolic\_project\_enum}{spheric\_hyperbolic\_project\_enum}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{spherical__hyperbolical__projection_8h_a4a0dc52ffc61db6d6b1180bdc93c77ca}{spheric\+\_\+hyperbolic\+\_\+project\+\_\+enum}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPHERICAL\_PROJECTION@{SPHERICAL\_PROJECTION}!spherical\_hyperbolical\_projection.h@{spherical\_hyperbolical\_projection.h}}\index{spherical\_hyperbolical\_projection.h@{spherical\_hyperbolical\_projection.h}!SPHERICAL\_PROJECTION@{SPHERICAL\_PROJECTION}}}\mbox{\Hypertarget{spherical__hyperbolical__projection_8h_a4a0dc52ffc61db6d6b1180bdc93c77caad90a5f8e2e6403bff24c3cc86c81da25}\label{spherical__hyperbolical__projection_8h_a4a0dc52ffc61db6d6b1180bdc93c77caad90a5f8e2e6403bff24c3cc86c81da25}} 
+SPHERICAL\+\_\+\+PROJECTION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HYPERBOLICAL\_PROJECTION@{HYPERBOLICAL\_PROJECTION}!spherical\_hyperbolical\_projection.h@{spherical\_hyperbolical\_projection.h}}\index{spherical\_hyperbolical\_projection.h@{spherical\_hyperbolical\_projection.h}!HYPERBOLICAL\_PROJECTION@{HYPERBOLICAL\_PROJECTION}}}\mbox{\Hypertarget{spherical__hyperbolical__projection_8h_a4a0dc52ffc61db6d6b1180bdc93c77caabbddbc8650859003d66d4b2980aefb79}\label{spherical__hyperbolical__projection_8h_a4a0dc52ffc61db6d6b1180bdc93c77caabbddbc8650859003d66d4b2980aefb79}} 
+HYPERBOLICAL\+\_\+\+PROJECTION&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{spherical__hyperbolical__projection_8h_a485ab028d8fe3583fb85f3038b1504b3}\label{spherical__hyperbolical__projection_8h_a485ab028d8fe3583fb85f3038b1504b3}} 
+\index{spherical\_hyperbolical\_projection.h@{spherical\_hyperbolical\_projection.h}!spheric\_hyperbolic\_indices\_for\_projection@{spheric\_hyperbolic\_indices\_for\_projection}}
+\index{spheric\_hyperbolic\_indices\_for\_projection@{spheric\_hyperbolic\_indices\_for\_projection}!spherical\_hyperbolical\_projection.h@{spherical\_hyperbolical\_projection.h}}
+\doxysubsubsection{\texorpdfstring{spheric\_hyperbolic\_indices\_for\_projection()}{spheric\_hyperbolic\_indices\_for\_projection()}}
+{\footnotesize\ttfamily template$<$typename FLOAT , typename UINT $>$ \\
+void spheric\+\_\+hyperbolic\+\_\+indices\+\_\+for\+\_\+projection (\begin{DoxyParamCaption}\item[{FLOAT}]{r,  }\item[{UINT}]{dimx,  }\item[{UINT}]{dimy,  }\item[{FLOAT}]{scale\mbox{[}$\,$\mbox{]},  }\item[{FLOAT $\ast$}]{indout,  }\item[{int}]{type = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+This function returns the mapped indices coordinates for spherical or hyperbolical projection of images. It is intended to allow the reconstruction of images deformed by fish-\/eye lenses. The output indices are thought to be one where the value of the matrix pixel has to be read. The decision how to behave with the output indices (if interpolating or not) is deferred outside this function The indices are stored this way \+: x0,y0,x1,y1,...
+
+
+\begin{DoxyItemize}
+\item r radius in the third dimension out of the picture of the sphere
+\item dimx, dimy dimensions of the indout matrix
+\item center\mbox{[}\mbox{]} (centerx, centery) bias position of the center of the sphere in image plane
+\item scale\mbox{[}\mbox{]} (scalex, scaley) pixel lateral dimension
+\item indout output
+\item type (0 == spherical), (1== hyperbolical) 
+\end{DoxyItemize}\mbox{\Hypertarget{spherical__hyperbolical__projection_8h_ac45bdeaa580c12b6697d7241e1cf748e}\label{spherical__hyperbolical__projection_8h_ac45bdeaa580c12b6697d7241e1cf748e}} 
+\index{spherical\_hyperbolical\_projection.h@{spherical\_hyperbolical\_projection.h}!spheric\_hyperbolic\_indices\_reduction@{spheric\_hyperbolic\_indices\_reduction}}
+\index{spheric\_hyperbolic\_indices\_reduction@{spheric\_hyperbolic\_indices\_reduction}!spherical\_hyperbolical\_projection.h@{spherical\_hyperbolical\_projection.h}}
+\doxysubsubsection{\texorpdfstring{spheric\_hyperbolic\_indices\_reduction()}{spheric\_hyperbolic\_indices\_reduction()}}
+{\footnotesize\ttfamily template$<$typename FLOAT , typename UINT $>$ \\
+void spheric\+\_\+hyperbolic\+\_\+indices\+\_\+reduction (\begin{DoxyParamCaption}\item[{UINT}]{dimxin,  }\item[{UINT}]{dimyin,  }\item[{FLOAT}]{in\mbox{[}$\,$\mbox{]},  }\item[{FLOAT}]{center\mbox{[}$\,$\mbox{]},  }\item[{FLOAT}]{scale\mbox{[}$\,$\mbox{]},  }\item[{UINT}]{dimxout,  }\item[{UINT}]{dimyout,  }\item[{FLOAT}]{ind\mbox{[}$\,$\mbox{]},  }\item[{UINT \&}]{dimindok,  }\item[{UINT}]{indok\mbox{[}$\,$\mbox{]},  }\item[{UINT \&}]{dimindzero,  }\item[{UINT}]{indzero\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+This function take into consideration the copy job and reduces all the redirection of the matrices in terms of two indices array\+:
+
+indok is the array of pixel where an effective copy is taking place indzero is the array of pixel where no corresponding pixel exist and might be assigned value zero
+
+indok and indzero indices are the already prepared global indices to jump directly into the matrices. No row-\/column calculation is further needed. indok memory layout -\/$>$ (indok\+\_\+in\+\_\+0, indok\+\_\+out\+\_\+0, indok\+\_\+in\+\_\+1, indok\+\_\+out\+\_\+1,...) indzero memory layout -\/$>$ (indzero\+\_\+0, indzero\+\_\+1, indero\+\_\+2...)
+
+center\mbox{[}\mbox{]} (centerx, centery) is the center of the sphere on the input matrix in pixel scale \mbox{\Hypertarget{spherical__hyperbolical__projection_8h_aa5f1aa1f4cd883a6be2498aec3b83f84}\label{spherical__hyperbolical__projection_8h_aa5f1aa1f4cd883a6be2498aec3b83f84}} 
+\index{spherical\_hyperbolical\_projection.h@{spherical\_hyperbolical\_projection.h}!spheric\_hyperbolic\_projection\_easy@{spheric\_hyperbolic\_projection\_easy}}
+\index{spheric\_hyperbolic\_projection\_easy@{spheric\_hyperbolic\_projection\_easy}!spherical\_hyperbolical\_projection.h@{spherical\_hyperbolical\_projection.h}}
+\doxysubsubsection{\texorpdfstring{spheric\_hyperbolic\_projection\_easy()}{spheric\_hyperbolic\_projection\_easy()}}
+{\footnotesize\ttfamily template$<$typename FLOAT , typename UINT $>$ \\
+void spheric\+\_\+hyperbolic\+\_\+projection\+\_\+easy (\begin{DoxyParamCaption}\item[{FLOAT}]{r,  }\item[{UINT}]{dimxin,  }\item[{UINT}]{dimyin,  }\item[{FLOAT}]{in\mbox{[}$\,$\mbox{]},  }\item[{FLOAT}]{center\mbox{[}$\,$\mbox{]},  }\item[{FLOAT}]{scale\mbox{[}$\,$\mbox{]},  }\item[{UINT}]{dimxout,  }\item[{UINT}]{dimyout,  }\item[{FLOAT}]{out\mbox{[}$\,$\mbox{]},  }\item[{int}]{type = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Example function to show the usage of the functions contained in this file To speed up execution the indices may be saved \mbox{\Hypertarget{spherical__hyperbolical__projection_8h_a67fde32b62c065e2878e38fd50739f97}\label{spherical__hyperbolical__projection_8h_a67fde32b62c065e2878e38fd50739f97}} 
+\index{spherical\_hyperbolical\_projection.h@{spherical\_hyperbolical\_projection.h}!spheric\_hyperbolic\_projection\_with\_indices@{spheric\_hyperbolic\_projection\_with\_indices}}
+\index{spheric\_hyperbolic\_projection\_with\_indices@{spheric\_hyperbolic\_projection\_with\_indices}!spherical\_hyperbolical\_projection.h@{spherical\_hyperbolical\_projection.h}}
+\doxysubsubsection{\texorpdfstring{spheric\_hyperbolic\_projection\_with\_indices()}{spheric\_hyperbolic\_projection\_with\_indices()}}
+{\footnotesize\ttfamily template$<$typename FLOAT , typename UINT $>$ \\
+void spheric\+\_\+hyperbolic\+\_\+projection\+\_\+with\+\_\+indices (\begin{DoxyParamCaption}\item[{FLOAT}]{in\mbox{[}$\,$\mbox{]},  }\item[{UINT}]{dimok,  }\item[{UINT}]{indok\mbox{[}$\,$\mbox{]},  }\item[{UINT}]{dimzero,  }\item[{UINT}]{indzero\mbox{[}$\,$\mbox{]},  }\item[{FLOAT}]{out\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+The easy part of the projection \+:). Copy what has to be copied and put to zero what would be non-\/defined 
