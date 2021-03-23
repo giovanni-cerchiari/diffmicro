@@ -1,15 +1,15 @@
-path_images	C:\samples\performance_image 512\
+path_images	C:\samples\Binary input\
 images_interval	1	100
 flg_file_valid_image	0
-number_of_averages	5000
-delay_max	5000
-frequency_max	128
+number_of_averages	2000
+delay_max	2000
+frequency_max	100
 path_output	C:\samples\output\
 flg_write_images_average	1
 flg_write_power_spectra	0
 flg_write_azimuthal_averages	1
 # to specify EXECUTION MODE 1 ---> FIFO , 0----> Time correlation
-EXECUTION_MODE	0
+EXECUTION_MODE	1
 # to specify EXECUTION MODE 1 ---> CPU , 0----> GPU
 HARDWARE_SELECTION	0
 NUMBER_THREAD_GPU	2000

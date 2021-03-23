@@ -324,13 +324,13 @@ void write_power_spectra(INDEX start_dist, INDEX npw, INDEX dimy, INDEX dimx, ST
 
 bool load_image(std::string &filename, INDEX &dimy, INDEX &dimx, bool read_im, unsigned short im[], bool flg_display)
 {
-	//int Binary = 1;
+	int Binary = 1;
 	FILE* file_bin;
 	INDEX i, j;
 	cv::Mat img_cv;
 	int nb_val_lues;
 	
-	/*dimx = 512;
+	dimx = 512;
 	dimy = 512;
 	if ((true == read_im) && (Binary == 1)) {
 		file_bin = fopen(filename.c_str(), "rb");
@@ -340,7 +340,7 @@ bool load_image(std::string &filename, INDEX &dimy, INDEX &dimx, bool read_im, u
 		fclose(file_bin);
 	}
 	else {
-		if (Binary != 1) {*/
+		if (Binary != 1) {
 			img_cv = cv::imread(filename, CV_LOAD_IMAGE_ANYDEPTH);
 
 			if (!img_cv.data)                              // Check for invalid input
@@ -365,8 +365,8 @@ bool load_image(std::string &filename, INDEX &dimy, INDEX &dimx, bool read_im, u
 					for (i = 0; i < img_cv.cols; ++i)
 						im[j * dimx + i] = *((unsigned short*)(&(img_cv.data[j * img_cv.step[0] + i * img_cv.step[1]])));
 			}
-	//	}
-	//}
+		}
+	}
 	if (true == flg_display) display_read(im);
 	return true;
 }

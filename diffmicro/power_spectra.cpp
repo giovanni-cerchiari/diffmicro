@@ -169,7 +169,7 @@ INDEX fifo_min::load_next(INDEX ind_sot, std::vector<bool> &flg_valid_image, STO
 /*!
 This function calculates a group of average of power spectra. See bool calc_power_spectra(INDEX dimy, INDEX dimx) for further details
 */
-void calc_diagonal(INDEX starting_index, unsigned int power_spectra_avg_counter[], fifo_min &fifo, INDEX nimages, STORE_REAL image_mean[], bool flg_debug)
+void calc_diagonal(int k,INDEX starting_index, unsigned int power_spectra_avg_counter[], fifo_min &fifo, INDEX nimages, STORE_REAL image_mean[], bool flg_debug)
 {
 	
 	int flg_continue_averages = 1;
@@ -190,7 +190,7 @@ void calc_diagonal(INDEX starting_index, unsigned int power_spectra_avg_counter[
 
 		++i;
 	}
-	printf("jgfjgfjhgk");
+	
 
 }
 
@@ -361,13 +361,18 @@ bool calc_power_spectra(INDEX dimy, INDEX dimx)
 	switch (useri.execution_mode)
 	{
 	case DIFFMICRO_MODE_FIFO:
+
 		//-------------------------------------------------------------------
 		// group averages initialization
 		power_spectra_avg_counter = new unsigned int[useri.file_list.size()];
 		ram_power_spectra = new STORE_REAL[s_power_spectra.numerosity * dimx * dimy / 2];
+
+		calc_power_spectra_ALL(nimages, dimx, dimy, dimr,ram_power_spectra, azh_avgs);
+
+
 		memset(power_spectra_avg_counter, 0, useri.file_list.size() * sizeof(unsigned int));
-		calc_power_spectra_fifo(nimages, useri_dist_max, image_mean, dimr,
-			                      power_spectra_avg_counter, ram_power_spectra, azh_avgs);
+		//calc_power_spectra_fifo(nimages, useri_dist_max, image_mean, dimr,
+			             //       power_spectra_avg_counter, ram_power_spectra, azh_avgs);
 		if (useri.flg_graph_mode)
 			display_average(useri.file_list.size(), power_spectra_avg_counter, &average_counter_window, &average_counter_scatter, &x_avg_counter, &y_avg_counter, "avg counter");
 
@@ -426,7 +431,7 @@ bool calc_power_spectra(INDEX dimy, INDEX dimx)
 	return true;
 }
 
-void plot_dinamics(INDEX dimx){
+void plot_dynamics(INDEX dimx){
 
 	Engine* m_Engine = engOpen(NULL);
 	int d = (int)dimx;
@@ -468,7 +473,93 @@ void plot_dinamics(INDEX dimx){
 	engEvalString(m_Engine, "while (n <= dimazh(2) / 4) loglog(xx, (azhavgs(left:right, n)), 'k');loglog(xx, (azhavgs(left:right, n + 1)), 'r');loglog(xx, (azhavgs(left:right, n + 2)), 'g');loglog(xx, (azhavgs(left:right, n + 3)), 'b');n = n + 4;end");
 
 }
+void calc_power_spectra_ALL(INDEX nimages, INDEX dimy, INDEX dimx, INDEX& dimr, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs) {
+	
+	//cufftHandle plan_;
+	//memory = dev_im_gpu_, s_load_image.memory_tot + dev_fft_gpu_, s_fft.memory_tot + CUFFT_COMPLEX *dev_images_gpu(NULL)
+	CUFFT_COMPLEX* dev_fft_gpu_(NULL);
+	unsigned short* dev_im_gpu_(NULL);
+	unsigned short* m_im_;
+	int alloc_status_li_, alloc_status_fft_;
+	alloc_status_li_ = cudaMalloc(&dev_im_gpu_, s_load_image.memory_tot);
+	if (cudaSuccess != alloc_status_li_) {
 
+		std::cout << "ERROR: cudaMalloc " << std::endl;
+	}
+
+	alloc_status_fft_ = cudaMalloc(&dev_fft_gpu_, s_fft.memory_tot);
+	if (cudaSuccess != alloc_status_fft_) {
+
+		std::cout << "ERROR: cudaMalloc dev_fft_gpu_" << std::endl;
+	}
+	/*alloc_status_fft_ = cudaMalloc(&dev_fft_gpu_, s_fft.memory_tot);
+	if (cudaSuccess != alloc_status_fft_) {
+
+		std::cout << "ERROR: cudaMalloc " << std::endl;
+	}*/
+
+/*#if (CUFFT_TYPE == CUFFT_TYPE_DOUBLE)
+	cufftExecZ2Z(plan_, dev_fft_gpu_, dev_fft_gpu_, CUFFT_FORWARD);
+#else
+#error Unknown CUDA type selected
+#endif*/
+	m_im_ = new unsigned short[dimx * dimy];
+	for (int i = 0; i < nimages; i++) {
+
+		time_reading_from_disk.start();
+		load_image(useri.file_list[i], dimy, dimx, true, m_im_, flg_display_read);
+		time_reading_from_disk.stop();
+
+		time_from_host_to_device.start();
+		cudaMemcpy(dev_im_gpu_, m_im_, s_load_image.memory_one, cudaMemcpyHostToDevice);
+		time_from_host_to_device.stop();
+
+		// from image to complex matrix
+		Image_to_complex_matrix(dev_im_gpu_, dev_fft_gpu_,i);
+
+	}
+
+	/*CUFFT_COMPLEX* tmp_display_cpx_(NULL);
+
+	tmp_display_cpx_ = new CUFFT_COMPLEX[nimages*s_fft_images.dim];
+
+	cudaMemcpy(tmp_display_cpx_, dev_images_gpu, nimages * s_fft_images.memory_one, cudaMemcpyDeviceToHost);
+	for (int ii = 0; ii < nimages * s_fft_images.dim; ++ii)
+		std::cout << tmp_display_cpx_[ii].x << "  + i " << tmp_display_cpx_[ii].y << std::endl;*/
+
+	//memory = dev_ALLfft_diff, s_power_spectra.memory_one * (nimages - 1) + STORE_REAL *dev_power_spectra_gpu(NULL);
+
+	/*
+	int accessible = 0;
+	cudaDeviceCanAccessPeer(&accessible, 0, 0);
+	*/
+
+	int device_count = 0;
+	cudaGetDeviceCount(&device_count);
+
+	std::vector<std::thread> threads;
+	for (int i = 0; i < device_count; i++) {
+
+		threads.push_back(std::thread([&, i]() {
+
+			int cudaStatus = cudaSetDevice(i);
+
+			if (cudaStatus != cudaSuccess) {
+				fprintf(stderr, "cudaSetDevice failed!  Do you have a CUDA-capable GPU installed?");
+				// goto Error;
+			}
+
+			Calc_structure_function(nimages,i, device_count);
+
+			}));
+
+	}
+	for (auto& thread : threads)
+		thread.join();
+
+	pw_save_and_azth_avg(ram_radial_lut, 0, nimages, dimr, azh_avgs, ram_power_spectra);
+	
+}
 void calc_power_spectra_fifo(INDEX nimages, INDEX &useri_dist_max, STORE_REAL* image_mean, INDEX &dimr, unsigned int* power_spectra_avg_counter, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs)
 {
 	INDEX j, jj;
@@ -499,26 +590,38 @@ void calc_power_spectra_fifo(INDEX nimages, INDEX &useri_dist_max, STORE_REAL* i
 	std::vector<std::thread> threads;
 	for (j = 0; j < n_group; ++j)
 	{
-		threads.push_back(std::thread([&, j]() {
+		//threads.push_back(std::thread([&, j]() {
 			jj = 1 + j * s_power_spectra.numerosity;
 			// calculating a group of power spectra
-			calc_diagonal(jj, &(power_spectra_avg_counter[jj]), fifo, nimages, image_mean);
+			int k = 0;
+			calc_diagonal(k,jj, &(power_spectra_avg_counter[jj]), fifo, nimages, image_mean);
 			// npw is the number of power spectra to be transfered from the video card to the ram
 			npw = s_power_spectra.numerosity;
-			std::thread th1(pw_save_and_azth_avg, ram_radial_lut, jj, npw, dimr, azh_avgs, ram_power_spectra);
-			}));
+			pw_save_and_azth_avg( ram_radial_lut, jj, npw, dimr, azh_avgs, ram_power_spectra);
+			//}));
 	}
-	for (auto& thread : threads)
-		thread.join();
+	//for (auto& thread : threads)
+		//thread.join();
 	//----------------------------------------------------------------------
 	// out of group elements
 	if (0 != group_rem)
 	{
 		fifo.init(group_rem, s_load_image.dim);
 		jj = 1 + j * s_power_spectra.numerosity;
-		calc_diagonal(jj, &(power_spectra_avg_counter[jj]), fifo, nimages, image_mean);
+
+		//for (int k = 0; k < 1; k++) {
+
+			//threads.push_back(std::thread([&, k]() {
+		int k = 0;
+				calc_diagonal(k,jj, &(power_spectra_avg_counter[jj]), fifo, nimages, image_mean);
+
+				//}));
+		//}
+		
+		for (auto& thread : threads)
+			thread.join();
 		npw = group_rem;
-		pw_save_and_azth_avg(ram_radial_lut, jj, npw, dimr, azh_avgs, ram_power_spectra);
+		pw_save_and_azth_avg(ram_radial_lut, jj, npw, dimr, azh_avgs, ram_power_spectra); //use this for version 3
 	}
 	//-------------------------------------------------------------------------
 	update_execution_map(useri.file_list.size(), execution_map);
@@ -637,6 +740,12 @@ void power_spectra_from_dev(INDEX n_pw, unsigned int* ram_radial_lut, STORE_REAL
 	power_spectrum_r = new STORE_REAL[s_power_spectra.dim * s_power_spectra.numerosity];
 
 	copy_power_spectra_from_dev(power_spectrum_r);
+
+	/*for (int i = 0; i < s_power_spectra.dim * s_power_spectra.numerosity; i++) {
+
+		std::cout << i <<"   "<<power_spectrum_r[i] << std::endl;
+	}*/
+
 	//---------------------------------------------------------------
 	if (useri.flg_graph_mode)
 	{

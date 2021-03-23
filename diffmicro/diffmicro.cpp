@@ -110,8 +110,8 @@ only the upper half of the averaged power spectra.
 	general_stw.start();
 
 	//load_binary_image(useri.file_list[0], dimy, dimx, false, im);
-	//std::string path = "C:\\samples\\performance_image 512\\pippo_0000.tif";
-	load_image(useri.file_list[0], dimy, dimx, false, im, false);
+	std::string path = "C:\\samples\\performance_image 512\\pippo_0000.tif";
+	load_image(path, dimy, dimx, false, im, false);
 	if (useri.flg_graph_mode)
 		initilize_display(dimx, dimy, useri.file_list.size());
 	im = new unsigned short[dimx*dimy];
@@ -149,7 +149,7 @@ only the upper half of the averaged power spectra.
 
 	calc_power_spectra(dimy, dimx);
 	
-	plot_dinamics(dimx);
+	plot_dynamics(dimx);
 	
 	//--------------------------------------------------------------
 	// printing elapsed times

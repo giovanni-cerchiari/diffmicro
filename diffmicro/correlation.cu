@@ -65,7 +65,10 @@ CUFFT_COMPLEX *dev_images_gpu(NULL);
 CUFFT_COMPLEX *dev_image_sot_gpu(NULL);
 STORE_REAL *dev_power_spectra_gpu(NULL);
 
-
+//Mohammed
+//CUFFT_COMPLEX* dev_fft_gpu_(NULL);
+STORE_REAL* dev_ALLfft_diff(NULL);
+STORE_REAL* dev_ALLpower_spectra(NULL);
 
 
 //! this is the inverse norm of the FFT to have the operation normalized
@@ -86,6 +89,8 @@ __global__ void short_to_real_with_gain(INDEX dim, unsigned short in[], CUFFT_RE
 	{
 		out[i].x = gain * (CUFFT_REAL)(in[i]);
 		out[i].y = 0.;
+
+		//std::cout << out[i].x << std::endl;
 	}
 }
 
@@ -257,6 +262,47 @@ __global__ void complextorealwithgain_gpu(INDEX dim, CUFFT_COMPLEX vets[], CUFFT
 	{
 		vetc[i] = gain * vets[i].x;
 	}
+}
+
+__global__ void fft_diff(int z, INDEX fft_size, INDEX nb_fft, CUFFT_COMPLEX ALLfft[], STORE_REAL ALLfft_diff[])
+{
+	int ii = blockIdx.y * blockDim.y + threadIdx.y;
+	int j = blockIdx.x * blockDim.x + threadIdx.x;
+	CUFFT_REAL difx, dify;
+	//for (int ii = 0; ii < nb_fft - 1; ii++) {
+	   // for (int j = 0; j < fft_size; j++) {
+	if ((ii < nb_fft - 1 - z) && (j < fft_size)) {
+
+		difx= ALLfft[j + ii * fft_size].x - ALLfft[j + fft_size + ii * fft_size + z * fft_size].x;
+		dify= ALLfft[j + ii * fft_size].y - ALLfft[j + fft_size + ii * fft_size + z * fft_size].y;
+
+		ALLfft_diff[j + ii * fft_size] = difx*difx + dify*dify;
+	}
+	//std::cout << ALLfft_diff[j + ii * fft_size] << "   ";
+// }
+ //std::cout << std::endl;
+//}
+}
+
+__global__ void structure_function(int z, INDEX fft_size, INDEX nb_fft, STORE_REAL ALLfft_diff[], STORE_REAL power_spectra[])
+{
+	//int z = blockIdx.y * blockDim.y + threadIdx.y;
+
+	int k = blockIdx.x * blockDim.x + threadIdx.x;
+
+	/*tot = 0;
+	for (int len = 1; len <= z; len++) {
+		tot += fft_size * (nb_fft - len);
+	}*/
+
+	double norm = 1. / (nb_fft - (z + 1));
+
+	if ((k < fft_size) && (z < nb_fft - 1)) {
+		for (int kk = 0; kk < nb_fft - 1 - z; kk++) {
+			power_spectra[k + z * fft_size] += norm*ALLfft_diff[k + kk * fft_size];
+		}
+	}
+
 }
 
 void time_series_analysis_gpu() {
@@ -465,7 +511,6 @@ int gpu_allocation(int flg_mode, INDEX &nimages, INDEX &dimy, INDEX &dimx, INDEX
 	{
 	case DIFFMICRO_MODE_FIFO:
 
-		
 
 		alloc_status_im = cudaMalloc(&dev_images_gpu, s_fft_images.memory_one * capacity );
 		alloc_status_pw = cudaMalloc(&dev_power_spectra_gpu, s_power_spectra.memory_one * capacity );
@@ -788,6 +833,193 @@ void gpu_deallocation()
 	cufftDestroy(tplan);
 }
 
+void Image_to_complex_matrix(unsigned short* dev_im_gpu_, CUFFT_COMPLEX* dev_fft_gpu_, int i) {
+
+	CUFFT_COMPLEX* dev_store_ptr;
+	dev_store_ptr = &(dev_images_gpu[i * s_fft_images.dim]);
+
+	time_fft_norm.start();
+	short_to_real_with_gain << <s_load_image.cexe.nbk, s_load_image.cexe.nth >> >
+		(s_load_image.dim, dev_im_gpu_, (CUFFT_REAL)(one_over_fft_norm), dev_fft_gpu_);
+
+	cufftExecZ2Z(plan, dev_fft_gpu_, dev_fft_gpu_, CUFFT_FORWARD);
+
+	cudaDeviceSynchronize();
+
+
+	CUFFT_REAL mean_tmp;
+	STORE_REAL mean;
+	// normalization
+	cudaMemcpy(&mean_tmp, dev_fft_gpu_, sizeof(CUFFT_REAL), cudaMemcpyDeviceToHost);
+
+	mean = mean_tmp;
+	if (mean < 0.000000000000001)
+	{
+		mean = 1.;
+		mean_tmp = 1.;
+		//ret = 1;
+		waitkeyboard(0);
+	}
+	mean_tmp = (CUFFT_REAL)(1. / mean_tmp);
+
+	gain_complex_lut << <s_fft_images.cexe.nbk, s_fft_images.cexe.nth >> >
+		(mean_tmp, s_fft_images.dim, dev_radial_lut_gpu, dev_fft_gpu_, dev_store_ptr);
+	
+
+	time_fft_norm.stop();
+
+	cudaDeviceSynchronize();
+	/*CUFFT_COMPLEX* tmp_display_cpx_(NULL);
+
+	tmp_display_cpx_ = new CUFFT_COMPLEX[s_fft_images.dim];
+
+	cudaMemcpy(tmp_display_cpx_, dev_store_ptr, s_fft_images.memory_one, cudaMemcpyDeviceToHost);
+	for (int ii = 0; ii < s_fft_images.dim; ++ii)
+		std::cout << tmp_display_cpx_[ii].x << "  + i " << tmp_display_cpx_[ii].y << std::endl;*/
+
+}
+
+void Calc_structure_function(int nimages,int i,int device_count) {
+
+
+	int alloc_status_li_ = cudaMalloc((void**)&dev_ALLfft_diff, s_power_spectra.memory_one * (nimages - 1));
+	//cudaStatus = cudaMalloc((void**)&dev_ALLfft_diff, lenght_ALLfft_diff * sizeof(int));
+	if (alloc_status_li_ != cudaSuccess) {
+		fprintf(stderr, "cudaMalloc dev_ALLfft_diff failed!");
+		// goto Error;
+	}
+	lldiv_t group = std::div((long long)(nimages), (long long)(device_count));
+
+	int n_group = (int)(group.quot);
+
+	int  group_rem = (int)(group.rem);
+	/*alloc_status_li_ = cudaMalloc((void**)&dev_ALLpower_spectra, s_power_spectra.memory_one * nimages);
+	if (alloc_status_li_ != cudaSuccess) {
+		fprintf(stderr, "cudaMalloc dev_ALLpower_spectra failed!");
+		// goto Error;
+	}*/
+
+	//Kernel 1 dim
+	int threads = 32;
+	int blocksx = (s_power_spectra.dim + threads - 1) / threads;
+	int blocksy;// = (nb_fft + threads - 2) / threads;
+   // dim3 THREADS(threads, threads);
+   // dim3 BLOCKS(blocksx, blocksy);
+	//int tot;
+
+	//Kernel 2 dim
+	int threads1 = 32;
+	int blocksx1 = (s_power_spectra.dim + threads1 - 1) / threads1;
+	//int blocksx = (fft_size + threads - 1) / threads;
+	//int blocksy1 = (nb_fft + threads1 - 2) / threads1;
+	dim3 THREADS1(threads1);
+	dim3 BLOCKS1(blocksx1);
+	cudaError_t cudaStatus;
+
+	//for (int z = i* (n_group+ group_rem); z < n_group + group_rem + i* n_group; z++) {
+	for (int z = 0; z < nimages-1; z++) {
+
+
+		//int threads = 32;
+	    // int blocksx = (fft_size + threads - 1) / threads;
+		blocksy = (nimages + threads - 2 - z) / threads;
+		dim3 THREADS(threads, threads);
+		dim3 BLOCKS(blocksx, blocksy);
+		/*tot = 0;
+		for (int len = 1; len <= z; len++) {
+			tot += fft_size * (nb_fft - len);
+		}*/
+		time_differences.start();
+		fft_diff << <BLOCKS, THREADS >> > (z, s_power_spectra.dim, nimages, dev_images_gpu, dev_ALLfft_diff);
+		cudaStatus = cudaDeviceSynchronize();
+		
+		structure_function << <BLOCKS1, THREADS1 >> > (z, s_power_spectra.dim, nimages, dev_ALLfft_diff, dev_power_spectra_gpu);
+		
+		time_differences.stop();
+		/*cudaStatus = cudaGetLastError();
+		if (cudaStatus != cudaSuccess) {
+			fprintf(stderr, "addKernel launch failed: %s\n", cudaGetErrorString(cudaStatus));
+			//goto Error;
+		}*/
+		//}
+			// cudaDeviceSynchronize waits for the kernel to finish, and returns
+			// any errors encountered during the launch.
+		//cudaStatus = cudaDeviceSynchronize();
+
+		/*if (cudaStatus != cudaSuccess) {
+			fprintf(stderr, "cudaDeviceSynchronize returned error code %d after launching addKernel!\n", cudaStatus);
+			//goto Error;
+		}*/
+
+		// Copy output vector from GPU buffer to host memory.
+
+		/*cudaStatus = cudaMemcpy(ALLfft_diff_GPU, dev_ALLfft_diff, fft_size * (nb_fft - 1) * sizeof(int), cudaMemcpyDeviceToHost);
+		//cudaStatus = cudaMemcpy(ALLfft_diff_GPU, dev_ALLfft_diff, lenght_ALLfft_diff * sizeof(int), cudaMemcpyDeviceToHost);
+		if (cudaStatus != cudaSuccess) {
+			fprintf(stderr, "cudaMemcpy failed!");
+			//goto Error;
+		}
+
+		std::cout << std::endl << std::endl;*/
+		// int tot = 0;
+
+
+
+		/*for (int ii = 0; ii < nb_fft - 1 - z; ii++) {
+			for (int j = 0; j < fft_size; j++) {
+				//ALLfft_diff[j + ii * fft_size] = ALLfft[j + ii * fft_size] - ALLfft[j + fft_size + ii * fft_size];
+				std::cout << ALLfft_diff_GPU[j + ii * fft_size] << "   ";
+			}
+			std::cout << std::endl;
+		}*/
+
+		//std::cout << std::endl << std::endl;
+
+		//std::cout << std::endl << std::endl;
+
+		// exit(0);
+		 //int z = 0;
+		
+
+		
+
+
+		/*cudaStatus = cudaGetLastError();
+		if (cudaStatus != cudaSuccess) {
+			fprintf(stderr, "addKerne2 launch failed: %s\n", cudaGetErrorString(cudaStatus));
+			//goto Error;
+		}
+
+		// cudaDeviceSynchronize waits for the kernel to finish, and returns
+		// any errors encountered during the launch.
+		cudaStatus = cudaDeviceSynchronize();
+		if (cudaStatus != cudaSuccess) {
+			fprintf(stderr, "cudaDeviceSynchronize returned error code %d after launching addKernel!\n", cudaStatus);
+			//goto Error;
+		}*/
+
+
+
+		// Copy output vector from GPU buffer to host memory.
+		/*cudaStatus = cudaMemcpy(power_spectra_GPU, dev_ALLpower_spectra, s_power_spectra.memory_one * (nimages - 1), cudaMemcpyDeviceToHost);
+		if (cudaStatus != cudaSuccess) {
+			fprintf(stderr, "cudaMemcpy failed!");
+			//goto Error;
+		}
+		//std::cout << std::endl << std::endl;
+		//for (int z = 0; z < nb_fft - 1; z++) {
+
+		std::cout << "d(" << z + 1 << ") =" << std::endl;
+		for (int k = 0; k < fft_size; k++) {
+
+			std::cout << power_spectra_GPU[k + z * fft_size] << "   ";
+		}
+
+		std::cout << std::endl << "-------------------------------------" << std::endl;*/
+	}
+
+
+}
 
 int image_to_dev_gpu(SIGNED_INDEX ind_fifo, STORE_REAL &mean, unsigned short *im, bool flg_debug)
 {
@@ -847,6 +1079,7 @@ int image_to_dev_gpu(SIGNED_INDEX ind_fifo, STORE_REAL &mean, unsigned short *im
 	// from image to complex matrix
 	short_to_real_with_gain<<<s_load_image.cexe.nbk, s_load_image.cexe.nth>>>
 		                      (s_load_image.dim ,dev_im_gpu, (CUFFT_REAL)(one_over_fft_norm), dev_fft_gpu);
+
 	cudaDeviceSynchronize();
 	if (true == flg_debug)
 	{
@@ -940,12 +1173,22 @@ int image_to_dev_gpu(SIGNED_INDEX ind_fifo, STORE_REAL &mean, unsigned short *im
 
 void copy_power_spectra_from_dev_gpu(STORE_REAL *power_spectrum_r)
 {
-	cudaMemcpy(power_spectrum_r, dev_power_spectra_gpu, s_power_spectra.memory_tot, cudaMemcpyDeviceToHost);
+	int version3 = 0;
+	if (version3 == 0) {
+		cudaMemcpy(power_spectrum_r, dev_power_spectra_gpu, s_power_spectra.memory_tot, cudaMemcpyDeviceToHost);
+	}
+	else {
+
+		cudaMemcpy(power_spectrum_r, dev_power_spectra_gpu, s_power_spectra.memory_tot, cudaMemcpyDeviceToHost);
+
+	}
 }
 
 
 void diff_power_spectrum_to_avg_gpu_gpu(CUFFT_REAL coef1, CUFFT_REAL coef2, INDEX j, INDEX ind_dist)
 {
+	//std::cout << ind_dist <<"   "<< coef1<<"   "<< coef2<< std::endl;
+
 	diff_power_spectrum_to_avg_gpu << <s_power_spectra.cexe.nbk, s_power_spectra.cexe.nth >> >
 		(s_power_spectra.dim, &(dev_images_gpu[j * s_fft_images.dim]), dev_image_sot_gpu, coef1, coef2, &(dev_power_spectra_gpu[ind_dist * s_power_spectra.dim]));
 

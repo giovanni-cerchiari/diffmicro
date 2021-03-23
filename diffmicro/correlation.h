@@ -327,6 +327,9 @@ void timeseries_to_lutpw_cpu(INDEX dimcopy, FFTW_REAL gain, INDEX t, INDEX start
 /*!The function pointer allows selecting the execution on gpu or cpu, while retaining the same code structure.*/
 extern void (*timeseries_to_lutpw)(INDEX dimcopy, FFTW_REAL gain, INDEX t, INDEX starting_freq, STORE_REAL* ram_power_spectra);
 
+void Image_to_complex_matrix(unsigned short* dev_im_gpu_, CUFFT_COMPLEX* dev_fft_gpu_,int i);
+
+void Calc_structure_function(int nimages,int i,int device_count);
 
 //void timeseriesanalysis_gpu(INDEX dimtimeseries, CUFFT_COMPLEX* tseries, INDEX dimfft, CUFFT_COMPLEX* fft_memory, cufftHandle* tplan, CUFFT_REAL* corr_memory);
 
