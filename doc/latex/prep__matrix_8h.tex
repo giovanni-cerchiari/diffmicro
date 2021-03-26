@@ -1,0 +1,56 @@
+\hypertarget{prep__matrix_8h}{}\doxysection{diffmicro/cpp-\/routine/prep\+\_\+matrix.h File Reference}
+\label{prep__matrix_8h}\index{diffmicro/cpp-\/routine/prep\_matrix.h@{diffmicro/cpp-\/routine/prep\_matrix.h}}
+{\ttfamily \#include \char`\"{}circular\+\_\+index.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename UINT , typename ELE $>$ }\\void \mbox{\hyperlink{prep__matrix_8h_af86500bfb14b640655a86991de872ca3}{print\+\_\+mat}} (std\+::ostream \&out, UINT dimx, UINT dimy, ELE mat\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{prep__matrix_8h_a62fd1b28077c770586b04161fd77b810}{edge\+\_\+vet\+\_\+init\+\_\+indices}} (unsigned int dimin, unsigned int dimout, unsigned int \&start\+\_\+in, unsigned int \&start\+\_\+out, \mbox{\hyperlink{classcircular__index}{circular\+\_\+index}}$<$ unsigned int $>$ \&index\+\_\+in, \mbox{\hyperlink{classcircular__index}{circular\+\_\+index}}$<$ unsigned int $>$ \&index\+\_\+out, unsigned int \&dimmim)
+\item 
+{\footnotesize template$<$typename FLOAT $>$ }\\void \mbox{\hyperlink{prep__matrix_8h_a987565314205837d5aaaee12340c3e2a}{edge\+\_\+matrix}} (unsigned int dimrowin, unsigned int dimcolin, FLOAT $\ast$in, unsigned int dimrowout, unsigned int dimcolout, FLOAT $\ast$out)
+\item 
+{\footnotesize template$<$typename ELE $>$ }\\void \mbox{\hyperlink{prep__matrix_8h_a9b96666017bffeb661564b9f3eb612b3}{trasp\+\_\+mat}} (unsigned int dimrow, unsigned int dimcol, ELE $\ast$in, ELE $\ast$out)
+\item 
+{\footnotesize template$<$typename INT , typename FLOATIN , typename FLOATOUT $>$ }\\void \mbox{\hyperlink{prep__matrix_8h_a3c5ab4b45a538f914c96486868789151}{copy\+\_\+submatrix\+\_\+periodical}} (INT dimxin, INT dimyin, FLOATIN matin\mbox{[}$\,$\mbox{]}, INT startx, INT starty, INT dimxout, INT dimyout, FLOATOUT matout\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{prep__matrix_8h_a3c5ab4b45a538f914c96486868789151}\label{prep__matrix_8h_a3c5ab4b45a538f914c96486868789151}} 
+\index{prep\_matrix.h@{prep\_matrix.h}!copy\_submatrix\_periodical@{copy\_submatrix\_periodical}}
+\index{copy\_submatrix\_periodical@{copy\_submatrix\_periodical}!prep\_matrix.h@{prep\_matrix.h}}
+\doxysubsubsection{\texorpdfstring{copy\_submatrix\_periodical()}{copy\_submatrix\_periodical()}}
+{\footnotesize\ttfamily template$<$typename INT , typename FLOATIN , typename FLOATOUT $>$ \\
+void copy\+\_\+submatrix\+\_\+periodical (\begin{DoxyParamCaption}\item[{INT}]{dimxin,  }\item[{INT}]{dimyin,  }\item[{FLOATIN}]{matin\mbox{[}$\,$\mbox{]},  }\item[{INT}]{startx,  }\item[{INT}]{starty,  }\item[{INT}]{dimxout,  }\item[{INT}]{dimyout,  }\item[{FLOATOUT}]{matout\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+submatrix copy with periodiacally boundary condition \mbox{\Hypertarget{prep__matrix_8h_a987565314205837d5aaaee12340c3e2a}\label{prep__matrix_8h_a987565314205837d5aaaee12340c3e2a}} 
+\index{prep\_matrix.h@{prep\_matrix.h}!edge\_matrix@{edge\_matrix}}
+\index{edge\_matrix@{edge\_matrix}!prep\_matrix.h@{prep\_matrix.h}}
+\doxysubsubsection{\texorpdfstring{edge\_matrix()}{edge\_matrix()}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+void edge\+\_\+matrix (\begin{DoxyParamCaption}\item[{unsigned int}]{dimrowin,  }\item[{unsigned int}]{dimcolin,  }\item[{FLOAT $\ast$}]{in,  }\item[{unsigned int}]{dimrowout,  }\item[{unsigned int}]{dimcolout,  }\item[{FLOAT $\ast$}]{out }\end{DoxyParamCaption})}
+
+add or delete a cross of elements in or from the middle of the matrix \mbox{\Hypertarget{prep__matrix_8h_a62fd1b28077c770586b04161fd77b810}\label{prep__matrix_8h_a62fd1b28077c770586b04161fd77b810}} 
+\index{prep\_matrix.h@{prep\_matrix.h}!edge\_vet\_init\_indices@{edge\_vet\_init\_indices}}
+\index{edge\_vet\_init\_indices@{edge\_vet\_init\_indices}!prep\_matrix.h@{prep\_matrix.h}}
+\doxysubsubsection{\texorpdfstring{edge\_vet\_init\_indices()}{edge\_vet\_init\_indices()}}
+{\footnotesize\ttfamily void edge\+\_\+vet\+\_\+init\+\_\+indices (\begin{DoxyParamCaption}\item[{unsigned int}]{dimin,  }\item[{unsigned int}]{dimout,  }\item[{unsigned int \&}]{start\+\_\+in,  }\item[{unsigned int \&}]{start\+\_\+out,  }\item[{\mbox{\hyperlink{classcircular__index}{circular\+\_\+index}}$<$ unsigned int $>$ \&}]{index\+\_\+in,  }\item[{\mbox{\hyperlink{classcircular__index}{circular\+\_\+index}}$<$ unsigned int $>$ \&}]{index\+\_\+out,  }\item[{unsigned int \&}]{dimmim }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{prep__matrix_8h_af86500bfb14b640655a86991de872ca3}\label{prep__matrix_8h_af86500bfb14b640655a86991de872ca3}} 
+\index{prep\_matrix.h@{prep\_matrix.h}!print\_mat@{print\_mat}}
+\index{print\_mat@{print\_mat}!prep\_matrix.h@{prep\_matrix.h}}
+\doxysubsubsection{\texorpdfstring{print\_mat()}{print\_mat()}}
+{\footnotesize\ttfamily template$<$typename UINT , typename ELE $>$ \\
+void print\+\_\+mat (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{UINT}]{dimx,  }\item[{UINT}]{dimy,  }\item[{ELE}]{mat\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+This function print a matrix stored into an array on an output stream \mbox{\Hypertarget{prep__matrix_8h_a9b96666017bffeb661564b9f3eb612b3}\label{prep__matrix_8h_a9b96666017bffeb661564b9f3eb612b3}} 
+\index{prep\_matrix.h@{prep\_matrix.h}!trasp\_mat@{trasp\_mat}}
+\index{trasp\_mat@{trasp\_mat}!prep\_matrix.h@{prep\_matrix.h}}
+\doxysubsubsection{\texorpdfstring{trasp\_mat()}{trasp\_mat()}}
+{\footnotesize\ttfamily template$<$typename ELE $>$ \\
+void trasp\+\_\+mat (\begin{DoxyParamCaption}\item[{unsigned int}]{dimrow,  }\item[{unsigned int}]{dimcol,  }\item[{ELE $\ast$}]{in,  }\item[{ELE $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+matrix trasposition.\+Safe self-\/transposition 

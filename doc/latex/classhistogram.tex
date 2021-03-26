@@ -1,0 +1,158 @@
+\hypertarget{classhistogram}{}\doxysection{histogram$<$ TYPE, WEIGHT $>$ Class Template Reference}
+\label{classhistogram}\index{histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}}
+
+
+{\ttfamily \#include $<$histogram.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhistogram_ae0a40dcaba571afe1d0152efdd3a2027}{histogram}} ()
+\item 
+\mbox{\hyperlink{classhistogram_adad3420cdcd9326e78b523246ccb0575}{$\sim$histogram}} ()
+\item 
+void \mbox{\hyperlink{classhistogram_a3f2b56a82f61123e682d6d31978237d8}{clear}} ()
+\item 
+bool \mbox{\hyperlink{classhistogram_af68c063e8c553d1d8fc83a56993d74e3}{init}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimensions, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} binnumber\mbox{[}$\,$\mbox{]}, TYPE startbin\mbox{[}$\,$\mbox{]}, TYPE binstep\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{classhistogram_a40ac3dd2fce241027a8b4783100afbfb}{zero}} ()
+\item 
+void \mbox{\hyperlink{classhistogram_a4d0191ec603c3875cba2928f8a112180}{update}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimvet, TYPE $\ast$x, WEIGHT $\ast$w)
+\item 
+void \mbox{\hyperlink{classhistogram_a460ed9ae081013e70306c804ac2809a8}{update}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimvet, TYPE $\ast$x)
+\item 
+bool \mbox{\hyperlink{classhistogram_a1190e91f2920c6db39207c906deba7d4}{write\+\_\+binaryfile}} (std\+::string filename)
+\item 
+void \mbox{\hyperlink{classhistogram_aa99663969172c6904db6a23e41f2eb26}{write\+\_\+binary}} (FILE $\ast$fid)
+\item 
+bool \mbox{\hyperlink{classhistogram_a1d65f90111719585e0784e59af433ffe}{read\+\_\+binaryfile}} (std\+::string filename)
+\item 
+bool \mbox{\hyperlink{classhistogram_aa7d0b78643f2f1118a00c92b5d00613b}{read\+\_\+binary}} (FILE $\ast$fid)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TYPE $\ast$ \mbox{\hyperlink{classhistogram_a25498e8021e0019d76902cb857c5e701}{start}}
+\item 
+TYPE $\ast$ \mbox{\hyperlink{classhistogram_a3669c11ca66d652ebfb340c2d1fc3d24}{step}}
+\item 
+\mbox{\hyperlink{classtensor}{tensor}}$<$ WEIGHT $>$ \mbox{\hyperlink{classhistogram_a68c4a088233290baab4beece036b4ffc}{freq}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename TYPE, typename WEIGHT$>$\newline
+class histogram$<$ TYPE, WEIGHT $>$}
+
+This class implements a multidimensional histogram. The coordinates of each bin are intended as central coordinate of the bin Step is the physical dimension of each bin. Bins are intended as squared and equal in shape one to the other. Data feeded into the histogram are snapped to the closet bin without extending their influence over other bins. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classhistogram_ae0a40dcaba571afe1d0152efdd3a2027}\label{classhistogram_ae0a40dcaba571afe1d0152efdd3a2027}} 
+\index{histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}!histogram@{histogram}}
+\index{histogram@{histogram}!histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}}
+\doxysubsubsection{\texorpdfstring{histogram()}{histogram()}}
+{\footnotesize\ttfamily template$<$typename TYPE , typename WEIGHT $>$ \\
+\mbox{\hyperlink{classhistogram}{histogram}}$<$ TYPE, WEIGHT $>$\+::\mbox{\hyperlink{classhistogram}{histogram}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classhistogram_adad3420cdcd9326e78b523246ccb0575}\label{classhistogram_adad3420cdcd9326e78b523246ccb0575}} 
+\index{histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}!````~histogram@{$\sim$histogram}}
+\index{````~histogram@{$\sim$histogram}!histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$histogram()}{~histogram()}}
+{\footnotesize\ttfamily template$<$typename TYPE , typename WEIGHT $>$ \\
+\mbox{\hyperlink{classhistogram}{histogram}}$<$ TYPE, WEIGHT $>$\+::$\sim$\mbox{\hyperlink{classhistogram}{histogram}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classhistogram_a3f2b56a82f61123e682d6d31978237d8}\label{classhistogram_a3f2b56a82f61123e682d6d31978237d8}} 
+\index{histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}!clear@{clear}}
+\index{clear@{clear}!histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$typename TYPE , typename WEIGHT $>$ \\
+void \mbox{\hyperlink{classhistogram}{histogram}}$<$ TYPE, WEIGHT $>$\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Memory clear function \mbox{\Hypertarget{classhistogram_af68c063e8c553d1d8fc83a56993d74e3}\label{classhistogram_af68c063e8c553d1d8fc83a56993d74e3}} 
+\index{histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}!init@{init}}
+\index{init@{init}!histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily template$<$typename TYPE , typename WEIGHT $>$ \\
+bool \mbox{\hyperlink{classhistogram}{histogram}}$<$ TYPE, WEIGHT $>$\+::init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimensions,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{binnumber\mbox{[}$\,$\mbox{]},  }\item[{TYPE}]{startbin\mbox{[}$\,$\mbox{]},  }\item[{TYPE}]{binstep\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Memory initialization of the histogram. Frequency memory area is set to zero. \mbox{\Hypertarget{classhistogram_aa7d0b78643f2f1118a00c92b5d00613b}\label{classhistogram_aa7d0b78643f2f1118a00c92b5d00613b}} 
+\index{histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}!read\_binary@{read\_binary}}
+\index{read\_binary@{read\_binary}!histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}}
+\doxysubsubsection{\texorpdfstring{read\_binary()}{read\_binary()}}
+{\footnotesize\ttfamily template$<$typename TYPE , typename WEIGHT $>$ \\
+bool \mbox{\hyperlink{classhistogram}{histogram}}$<$ TYPE, WEIGHT $>$\+::read\+\_\+binary (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{fid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+this method reads histogram from an already opened binary file according to write\+\_\+binary \mbox{\Hypertarget{classhistogram_a1d65f90111719585e0784e59af433ffe}\label{classhistogram_a1d65f90111719585e0784e59af433ffe}} 
+\index{histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}!read\_binaryfile@{read\_binaryfile}}
+\index{read\_binaryfile@{read\_binaryfile}!histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}}
+\doxysubsubsection{\texorpdfstring{read\_binaryfile()}{read\_binaryfile()}}
+{\footnotesize\ttfamily template$<$typename TYPE , typename WEIGHT $>$ \\
+bool \mbox{\hyperlink{classhistogram}{histogram}}$<$ TYPE, WEIGHT $>$\+::read\+\_\+binaryfile (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+this method reads histogram from a binary file according to write\+\_\+binary \mbox{\Hypertarget{classhistogram_a460ed9ae081013e70306c804ac2809a8}\label{classhistogram_a460ed9ae081013e70306c804ac2809a8}} 
+\index{histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}!update@{update}}
+\index{update@{update}!histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename TYPE , typename WEIGHT $>$ \\
+void \mbox{\hyperlink{classhistogram}{histogram}}$<$ TYPE, WEIGHT $>$\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimvet,  }\item[{TYPE $\ast$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Use this method to feed histogram with new values. This method can be called more than once to update histograms values. For each mathing the corresponding frequency value is incremented by 1 \mbox{\Hypertarget{classhistogram_a4d0191ec603c3875cba2928f8a112180}\label{classhistogram_a4d0191ec603c3875cba2928f8a112180}} 
+\index{histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}!update@{update}}
+\index{update@{update}!histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TYPE , typename WEIGHT $>$ \\
+void \mbox{\hyperlink{classhistogram}{histogram}}$<$ TYPE, WEIGHT $>$\+::update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimvet,  }\item[{TYPE $\ast$}]{x,  }\item[{WEIGHT $\ast$}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Use this method to feed histogram with new values. This method can be called more than once to update histograms values. For each mathing the corresponding frequency value is incremented by the corresponding weight (w\mbox{[}\mbox{]}) \mbox{\Hypertarget{classhistogram_aa99663969172c6904db6a23e41f2eb26}\label{classhistogram_aa99663969172c6904db6a23e41f2eb26}} 
+\index{histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}!write\_binary@{write\_binary}}
+\index{write\_binary@{write\_binary}!histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}}
+\doxysubsubsection{\texorpdfstring{write\_binary()}{write\_binary()}}
+{\footnotesize\ttfamily template$<$typename TYPE , typename WEIGHT $>$ \\
+void \mbox{\hyperlink{classhistogram}{histogram}}$<$ TYPE, WEIGHT $>$\+::write\+\_\+binary (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{fid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+write histogram to an already opened binary file \mbox{\Hypertarget{classhistogram_a1190e91f2920c6db39207c906deba7d4}\label{classhistogram_a1190e91f2920c6db39207c906deba7d4}} 
+\index{histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}!write\_binaryfile@{write\_binaryfile}}
+\index{write\_binaryfile@{write\_binaryfile}!histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}}
+\doxysubsubsection{\texorpdfstring{write\_binaryfile()}{write\_binaryfile()}}
+{\footnotesize\ttfamily template$<$typename TYPE , typename WEIGHT $>$ \\
+bool \mbox{\hyperlink{classhistogram}{histogram}}$<$ TYPE, WEIGHT $>$\+::write\+\_\+binaryfile (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+this method writes histogram to a binary file. Suggested extension .hst \mbox{\Hypertarget{classhistogram_a40ac3dd2fce241027a8b4783100afbfb}\label{classhistogram_a40ac3dd2fce241027a8b4783100afbfb}} 
+\index{histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}!zero@{zero}}
+\index{zero@{zero}!histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}}
+\doxysubsubsection{\texorpdfstring{zero()}{zero()}}
+{\footnotesize\ttfamily template$<$typename TYPE , typename WEIGHT $>$ \\
+void \mbox{\hyperlink{classhistogram}{histogram}}$<$ TYPE, WEIGHT $>$\+::zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This method put to zero each value of the histogram 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classhistogram_a68c4a088233290baab4beece036b4ffc}\label{classhistogram_a68c4a088233290baab4beece036b4ffc}} 
+\index{histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}!freq@{freq}}
+\index{freq@{freq}!histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}}
+\doxysubsubsection{\texorpdfstring{freq}{freq}}
+{\footnotesize\ttfamily template$<$typename TYPE , typename WEIGHT $>$ \\
+\mbox{\hyperlink{classtensor}{tensor}}$<$WEIGHT$>$ \mbox{\hyperlink{classhistogram}{histogram}}$<$ TYPE, WEIGHT $>$\+::freq}
+
+\mbox{\Hypertarget{classhistogram_a25498e8021e0019d76902cb857c5e701}\label{classhistogram_a25498e8021e0019d76902cb857c5e701}} 
+\index{histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}!start@{start}}
+\index{start@{start}!histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}}
+\doxysubsubsection{\texorpdfstring{start}{start}}
+{\footnotesize\ttfamily template$<$typename TYPE , typename WEIGHT $>$ \\
+TYPE$\ast$ \mbox{\hyperlink{classhistogram}{histogram}}$<$ TYPE, WEIGHT $>$\+::start}
+
+\mbox{\Hypertarget{classhistogram_a3669c11ca66d652ebfb340c2d1fc3d24}\label{classhistogram_a3669c11ca66d652ebfb340c2d1fc3d24}} 
+\index{histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}!step@{step}}
+\index{step@{step}!histogram$<$ TYPE, WEIGHT $>$@{histogram$<$ TYPE, WEIGHT $>$}}
+\doxysubsubsection{\texorpdfstring{step}{step}}
+{\footnotesize\ttfamily template$<$typename TYPE , typename WEIGHT $>$ \\
+TYPE$\ast$ \mbox{\hyperlink{classhistogram}{histogram}}$<$ TYPE, WEIGHT $>$\+::step}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+diffmicro/cpp-\/routine/\mbox{\hyperlink{histogram_8h}{histogram.\+h}}\end{DoxyCompactItemize}

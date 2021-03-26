@@ -1,0 +1,273 @@
+\hypertarget{classtensor}{}\doxysection{tensor$<$ FLOAT $>$ Class Template Reference}
+\label{classtensor}\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+
+
+{\ttfamily \#include $<$tensor.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtensor_a310b30a236444f6080487d0ed3c04c54}{tensor}} ()
+\item 
+\mbox{\hyperlink{classtensor_ae03e4116fde7ae91df2b76c82d45d4fc}{tensor}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} space\+\_\+dimension,...)
+\item 
+\mbox{\hyperlink{classtensor_ab3ab45564a0983352e77378c52dec9c8}{tensor}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $\ast$\mbox{\hyperlink{classtensor_a2fc9239f68ecafea2c662d57bb14f69b}{dim}}, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} space\+\_\+dimension)
+\item 
+virtual void \mbox{\hyperlink{classtensor_a60e3d57bca832640391e1d4928aa742d}{resize}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} space\+\_\+dimension=1,...)
+\item 
+virtual void \mbox{\hyperlink{classtensor_a5fe20da96dcf7d5d37244326d026bbe2}{resize}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} space\+\_\+dimension, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $\ast$\mbox{\hyperlink{classtensor_a2fc9239f68ecafea2c662d57bb14f69b}{dim}})
+\item 
+virtual void \mbox{\hyperlink{classtensor_a91ba514c95c410ea5004d854d1878bc6}{clear}} ()
+\item 
+\mbox{\hyperlink{classtensor_a1ed86709a75461423a721b5609a9e1e9}{$\sim$tensor}} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+virtual FLOAT \mbox{\hyperlink{classtensor_a66af42e07c3011a6af3ffbe5942f1724}{operator()}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} index,...) const
+\item 
+virtual FLOAT \& \mbox{\hyperlink{classtensor_af0a1a9e4c7c43d6a3fa99e137c52e051}{operator()}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} index,...)
+\item 
+virtual FLOAT \mbox{\hyperlink{classtensor_a37894ddabbd6537c05a5b336cd092d25}{operator()}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $\ast$index) const
+\item 
+virtual FLOAT \& \mbox{\hyperlink{classtensor_a83439c0429f001e5c4fd8869174c5e53}{operator()}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $\ast$index)
+\item 
+virtual \mbox{\hyperlink{classtensor}{tensor}} \& \mbox{\hyperlink{classtensor_affdf405eac3ca17a229110c103c2a17c}{operator=}} (\mbox{\hyperlink{classtensor}{tensor}} \&t)
+\item 
+void \mbox{\hyperlink{classtensor_af4b3123873f32025e3307309ba481f88}{save\+\_\+file}} (std\+::string file\+\_\+name)
+\item 
+virtual bool \mbox{\hyperlink{classtensor_a97e093f2ea852cdb22b379615b881a40}{load\+\_\+file}} (std\+::string file\+\_\+name)
+\item 
+FLOAT $\ast$ \mbox{\hyperlink{classtensor_ad443b7f88030e589985faa6bbc176d53}{ptr}} ()
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $\ast$ \mbox{\hyperlink{classtensor_a2fc9239f68ecafea2c662d57bb14f69b}{dim}} ()
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $\ast$ \mbox{\hyperlink{classtensor_abc04f37dd9cc6a6231e82df54a70baf8}{jump}} ()
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classtensor_aec96801c37cb032edd61d4ff5e84e149}{dimspace}} ()
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classtensor_a0739c6a89e880d5f5d1475fbdff368ef}{size}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classtensor_a5b8da64a81a57fd504a30e1717658c45}{m\+\_\+resize\+\_\+valist}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&space\+\_\+dimension, va\+\_\+list \&ap)
+\item 
+void \mbox{\hyperlink{classtensor_aeb1119f1cc8223ebdb3333cea16a8def}{m\+\_\+resize}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&space\+\_\+dimension, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $\ast$\mbox{\hyperlink{classtensor_a2fc9239f68ecafea2c662d57bb14f69b}{dim}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+FLOAT $\ast$ \mbox{\hyperlink{classtensor_a40ec9156bd87cb66630e57f824a73aa3}{m\+\_\+ptr}}
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $\ast$ \mbox{\hyperlink{classtensor_a6d962ba460997e41e1c7ce5fbc808e6e}{m\+\_\+dim}}
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $\ast$ \mbox{\hyperlink{classtensor_ad48005a012dee741f8f836db91bc7164}{m\+\_\+jump}}
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classtensor_a5715ef36e4723fe1e8e6211552c33b6f}{m\+\_\+dimspace}}
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classtensor_a9014e55f884a76c487ccd9c6e9485024}{m\+\_\+size}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename FLOAT$>$\newline
+class tensor$<$ FLOAT $>$}
+
+This class implements a tensor of generic type for memory managment. Particularly useful for high-\/performance computing or to operate directly inside the memory is the possibility to use high-\/level function for allocation and delete, but at the same time to get the pointer to memory when it is needed. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtensor_a310b30a236444f6080487d0ed3c04c54}\label{classtensor_a310b30a236444f6080487d0ed3c04c54}} 
+\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}!tensor@{tensor}}
+\index{tensor@{tensor}!tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{tensor()}{tensor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+\mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$\+::\mbox{\hyperlink{classtensor}{tensor}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classtensor_ae03e4116fde7ae91df2b76c82d45d4fc}\label{classtensor_ae03e4116fde7ae91df2b76c82d45d4fc}} 
+\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}!tensor@{tensor}}
+\index{tensor@{tensor}!tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{tensor()}{tensor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+\mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$\+::\mbox{\hyperlink{classtensor}{tensor}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{space\+\_\+dimension,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classtensor_ab3ab45564a0983352e77378c52dec9c8}\label{classtensor_ab3ab45564a0983352e77378c52dec9c8}} 
+\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}!tensor@{tensor}}
+\index{tensor@{tensor}!tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{tensor()}{tensor()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+\mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$\+::\mbox{\hyperlink{classtensor}{tensor}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $\ast$}]{dim,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{space\+\_\+dimension }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classtensor_a1ed86709a75461423a721b5609a9e1e9}\label{classtensor_a1ed86709a75461423a721b5609a9e1e9}} 
+\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}!````~tensor@{$\sim$tensor}}
+\index{````~tensor@{$\sim$tensor}!tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$tensor()}{~tensor()}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+\mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$\+::$\sim$\mbox{\hyperlink{classtensor}{tensor}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+destructor 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtensor_a91ba514c95c410ea5004d854d1878bc6}\label{classtensor_a91ba514c95c410ea5004d854d1878bc6}} 
+\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}!clear@{clear}}
+\index{clear@{clear}!tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+virtual void \mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classtensor_a2fc9239f68ecafea2c662d57bb14f69b}\label{classtensor_a2fc9239f68ecafea2c662d57bb14f69b}} 
+\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}!dim@{dim}}
+\index{dim@{dim}!tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{dim()}{dim()}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}$\ast$ \mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$\+::dim (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classtensor_aec96801c37cb032edd61d4ff5e84e149}\label{classtensor_aec96801c37cb032edd61d4ff5e84e149}} 
+\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}!dimspace@{dimspace}}
+\index{dimspace@{dimspace}!tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{dimspace()}{dimspace()}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$\+::dimspace (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classtensor_abc04f37dd9cc6a6231e82df54a70baf8}\label{classtensor_abc04f37dd9cc6a6231e82df54a70baf8}} 
+\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}!jump@{jump}}
+\index{jump@{jump}!tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{jump()}{jump()}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}$\ast$ \mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$\+::jump (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classtensor_a97e093f2ea852cdb22b379615b881a40}\label{classtensor_a97e093f2ea852cdb22b379615b881a40}} 
+\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}!load\_file@{load\_file}}
+\index{load\_file@{load\_file}!tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{load\_file()}{load\_file()}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+virtual bool \mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$\+::load\+\_\+file (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classtensor_aeb1119f1cc8223ebdb3333cea16a8def}\label{classtensor_aeb1119f1cc8223ebdb3333cea16a8def}} 
+\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}!m\_resize@{m\_resize}}
+\index{m\_resize@{m\_resize}!tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{m\_resize()}{m\_resize()}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+void \mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$\+::m\+\_\+resize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&}]{space\+\_\+dimension,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $\ast$}]{dim }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtensor_a5b8da64a81a57fd504a30e1717658c45}\label{classtensor_a5b8da64a81a57fd504a30e1717658c45}} 
+\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}!m\_resize\_valist@{m\_resize\_valist}}
+\index{m\_resize\_valist@{m\_resize\_valist}!tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{m\_resize\_valist()}{m\_resize\_valist()}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+void \mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$\+::m\+\_\+resize\+\_\+valist (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&}]{space\+\_\+dimension,  }\item[{va\+\_\+list \&}]{ap }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtensor_a83439c0429f001e5c4fd8869174c5e53}\label{classtensor_a83439c0429f001e5c4fd8869174c5e53}} 
+\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+virtual FLOAT\& \mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $\ast$}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classtensor_a37894ddabbd6537c05a5b336cd092d25}\label{classtensor_a37894ddabbd6537c05a5b336cd092d25}} 
+\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+virtual FLOAT \mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $\ast$}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classtensor_af0a1a9e4c7c43d6a3fa99e137c52e051}\label{classtensor_af0a1a9e4c7c43d6a3fa99e137c52e051}} 
+\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+virtual FLOAT\& \mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{index,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classtensor_a66af42e07c3011a6af3ffbe5942f1724}\label{classtensor_a66af42e07c3011a6af3ffbe5942f1724}} 
+\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+virtual FLOAT \mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$\+::operator() (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{index,  }\item[{}]{... }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classtensor_affdf405eac3ca17a229110c103c2a17c}\label{classtensor_affdf405eac3ca17a229110c103c2a17c}} 
+\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+virtual \mbox{\hyperlink{classtensor}{tensor}}\& \mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$ \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classtensor_ad443b7f88030e589985faa6bbc176d53}\label{classtensor_ad443b7f88030e589985faa6bbc176d53}} 
+\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}!ptr@{ptr}}
+\index{ptr@{ptr}!tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{ptr()}{ptr()}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+FLOAT$\ast$ \mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$\+::ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classtensor_a5fe20da96dcf7d5d37244326d026bbe2}\label{classtensor_a5fe20da96dcf7d5d37244326d026bbe2}} 
+\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}!resize@{resize}}
+\index{resize@{resize}!tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+virtual void \mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$\+::resize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{space\+\_\+dimension,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $\ast$}]{dim }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classtensor_a60e3d57bca832640391e1d4928aa742d}\label{classtensor_a60e3d57bca832640391e1d4928aa742d}} 
+\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}!resize@{resize}}
+\index{resize@{resize}!tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+virtual void \mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$\+::resize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{space\+\_\+dimension = {\ttfamily 1},  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classtensor_af4b3123873f32025e3307309ba481f88}\label{classtensor_af4b3123873f32025e3307309ba481f88}} 
+\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}!save\_file@{save\_file}}
+\index{save\_file@{save\_file}!tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{save\_file()}{save\_file()}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+void \mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$\+::save\+\_\+file (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+\_\+name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classtensor_a0739c6a89e880d5f5d1475fbdff368ef}\label{classtensor_a0739c6a89e880d5f5d1475fbdff368ef}} 
+\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}!size@{size}}
+\index{size@{size}!tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtensor_a6d962ba460997e41e1c7ce5fbc808e6e}\label{classtensor_a6d962ba460997e41e1c7ce5fbc808e6e}} 
+\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}!m\_dim@{m\_dim}}
+\index{m\_dim@{m\_dim}!tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{m\_dim}{m\_dim}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}$\ast$ \mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$\+::m\+\_\+dim\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtensor_a5715ef36e4723fe1e8e6211552c33b6f}\label{classtensor_a5715ef36e4723fe1e8e6211552c33b6f}} 
+\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}!m\_dimspace@{m\_dimspace}}
+\index{m\_dimspace@{m\_dimspace}!tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{m\_dimspace}{m\_dimspace}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$\+::m\+\_\+dimspace\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtensor_ad48005a012dee741f8f836db91bc7164}\label{classtensor_ad48005a012dee741f8f836db91bc7164}} 
+\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}!m\_jump@{m\_jump}}
+\index{m\_jump@{m\_jump}!tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{m\_jump}{m\_jump}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}$\ast$ \mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$\+::m\+\_\+jump\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtensor_a40ec9156bd87cb66630e57f824a73aa3}\label{classtensor_a40ec9156bd87cb66630e57f824a73aa3}} 
+\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}!m\_ptr@{m\_ptr}}
+\index{m\_ptr@{m\_ptr}!tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{m\_ptr}{m\_ptr}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+FLOAT$\ast$ \mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$\+::m\+\_\+ptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classtensor_a9014e55f884a76c487ccd9c6e9485024}\label{classtensor_a9014e55f884a76c487ccd9c6e9485024}} 
+\index{tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}!m\_size@{m\_size}}
+\index{m\_size@{m\_size}!tensor$<$ FLOAT $>$@{tensor$<$ FLOAT $>$}}
+\doxysubsubsection{\texorpdfstring{m\_size}{m\_size}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classtensor}{tensor}}$<$ FLOAT $>$\+::m\+\_\+size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+diffmicro/cpp-\/routine/\mbox{\hyperlink{tensor_8h}{tensor.\+h}}\end{DoxyCompactItemize}

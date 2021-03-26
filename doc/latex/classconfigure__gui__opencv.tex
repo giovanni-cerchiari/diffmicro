@@ -1,0 +1,271 @@
+\hypertarget{classconfigure__gui__opencv}{}\doxysection{configure\+\_\+gui\+\_\+opencv Class Reference}
+\label{classconfigure__gui__opencv}\index{configure\_gui\_opencv@{configure\_gui\_opencv}}
+
+
+{\ttfamily \#include $<$configure\+\_\+gui\+\_\+opencv.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classconfigure__gui__opencv_a1573527c0910ed2ff5ad26310cb1a07d}{configure\+\_\+gui\+\_\+opencv}} ()
+\item 
+\mbox{\hyperlink{classconfigure__gui__opencv_ae5b355eb9b0d043a39923a62cbd38104}{$\sim$configure\+\_\+gui\+\_\+opencv}} ()
+\item 
+void \mbox{\hyperlink{classconfigure__gui__opencv_afca9717b8d3a04539665017a776d826c}{show}} ()
+\item 
+void \mbox{\hyperlink{classconfigure__gui__opencv_acc95fdacaedd7c3898cd4d4d1275f1cc}{resize\+\_\+window}} (unsigned int display\+\_\+dimx, unsigned int display\+\_\+dimy)
+\item 
+void \mbox{\hyperlink{classconfigure__gui__opencv_aabe16d6ee2d665c932fd259c9eaef193}{move\+\_\+window}} (float x, float y)
+\item 
+void \mbox{\hyperlink{classconfigure__gui__opencv_ad8dfa678ce2c5027e61775c8758b3826}{move\+\_\+window}} (int x, int y)
+\item 
+\mbox{\hyperlink{classui__variable}{ui\+\_\+variable}} $\ast$ \mbox{\hyperlink{classconfigure__gui__opencv_ae2ff5a7d0c6feb991de88caa1a5934da}{get\+\_\+variable}} (int id)
+\item 
+bool \mbox{\hyperlink{classconfigure__gui__opencv_a47cf44e68e002563654c50ccfd909aba}{load}} (std\+::string file\+\_\+ui)
+\item 
+bool \mbox{\hyperlink{classconfigure__gui__opencv_ae54dfddd9ecaa4f34ef8cc1c06b9d29f}{save}} (std\+::string filename=\char`\"{}\char`\"{})
+\item 
+bool \mbox{\hyperlink{classconfigure__gui__opencv_ad9b64267684c6ca80d01c71460e6dedd}{all\+\_\+setted}} ()
+\item 
+void \mbox{\hyperlink{classconfigure__gui__opencv_aec058164269976bc2bf01b1d7c6b951f}{variables\+\_\+to\+\_\+gui}} ()
+\item 
+void \mbox{\hyperlink{classconfigure__gui__opencv_a28a6f19c0cf5ada2c33a9601d2caa6f6}{gui\+\_\+to\+\_\+variables}} ()
+\item 
+void \mbox{\hyperlink{classconfigure__gui__opencv_aa87ad4351be43f08e3a69c2e51308449}{write\+\_\+time\+\_\+sequence\+\_\+to\+\_\+file}} ()
+\item 
+void \mbox{\hyperlink{classconfigure__gui__opencv_a552478def69fcc9ce2f7746652cdb7bd}{close\+\_\+window}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classconfigure__gui__opencv_ae6ef35bc1126888bb41e38081a86d0a5}{callback\+\_\+mouse}} (int ev, int x, int y, int flags, void $\ast$userdata)
+\item 
+static int \mbox{\hyperlink{classconfigure__gui__opencv_a91f303dff3649f9db373e8fe1a2b87e1}{keyboard\+\_\+refresh}} (int key)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classconfigure__gui__opencv_a15bb6049f769800d75a7b5902c7c3224}{flg\+\_\+start}}
+\item 
+\mbox{\hyperlink{classui__variable}{ui\+\_\+variable}} $\ast$ \mbox{\hyperlink{classconfigure__gui__opencv_a603c567ed768f95762b161dd3ed3b9a5}{active\+\_\+variable}}
+\begin{DoxyCompactList}\small\item\em active object of the user interface \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classconfigure__gui__opencv_aba5dd1871171d122fe12e6ecc6aa7da6}{file\+\_\+list}}
+\item 
+std\+::vector$<$ bool $>$ \mbox{\hyperlink{classconfigure__gui__opencv_a142e2c582bb152ecb42b55388c189a74}{flg\+\_\+valid\+\_\+image}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{global__define_8h_ac3e2e8b775e8c0eca32f242cbbee4b7f}{MY\+\_\+\+REAL}} $>$ \mbox{\hyperlink{classconfigure__gui__opencv_a50bc0863839545e4bf829e22fb00b4f7}{time}}
+\item 
+std\+::list$<$ \mbox{\hyperlink{classui__variable}{ui\+\_\+variable}} $\ast$ $>$ \mbox{\hyperlink{classconfigure__gui__opencv_ad4038c22768a149e09b97c1aa2267e32}{option}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classconfigure__gui__opencv_a69578d93e9bcba58524b8088928dae3d}{name}}
+\item 
+cv\+::\+Mat \mbox{\hyperlink{classconfigure__gui__opencv_ab8808bae55db0a612d99f76fb0d2c3c9}{panel}}
+\item 
+float \mbox{\hyperlink{classconfigure__gui__opencv_afa5cf452072b9d881b99059551039f0c}{xx}} \mbox{[}8\mbox{]}
+\item 
+float $\ast$ \mbox{\hyperlink{classconfigure__gui__opencv_a7abcb410417859584096ffe3bfbfa02c}{xx\+\_\+current}}
+\item 
+float $\ast$ \mbox{\hyperlink{classconfigure__gui__opencv_a2fdb467f1b282188d7d2e414a4e6965a}{xx\+\_\+previous}}
+\item 
+float $\ast$ \mbox{\hyperlink{classconfigure__gui__opencv_aba73c4179395d59054c5c784a0ebd463}{xx\+\_\+onclick}}
+\item 
+float $\ast$ \mbox{\hyperlink{classconfigure__gui__opencv_aad17dd8902850c5460be9686806d844b}{xx\+\_\+onrelease}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is written for diffmicro application. This class stores all the user preferences about the execution of the program. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classconfigure__gui__opencv_a1573527c0910ed2ff5ad26310cb1a07d}\label{classconfigure__gui__opencv_a1573527c0910ed2ff5ad26310cb1a07d}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{configure\_gui\_opencv()}{configure\_gui\_opencv()}}
+{\footnotesize\ttfamily configure\+\_\+gui\+\_\+opencv\+::configure\+\_\+gui\+\_\+opencv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+constructor \mbox{\Hypertarget{classconfigure__gui__opencv_ae5b355eb9b0d043a39923a62cbd38104}\label{classconfigure__gui__opencv_ae5b355eb9b0d043a39923a62cbd38104}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!````~configure\_gui\_opencv@{$\sim$configure\_gui\_opencv}}
+\index{````~configure\_gui\_opencv@{$\sim$configure\_gui\_opencv}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{$\sim$configure\_gui\_opencv()}{~configure\_gui\_opencv()}}
+{\footnotesize\ttfamily configure\+\_\+gui\+\_\+opencv\+::$\sim$configure\+\_\+gui\+\_\+opencv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+destructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classconfigure__gui__opencv_ad9b64267684c6ca80d01c71460e6dedd}\label{classconfigure__gui__opencv_ad9b64267684c6ca80d01c71460e6dedd}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!all\_setted@{all\_setted}}
+\index{all\_setted@{all\_setted}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{all\_setted()}{all\_setted()}}
+{\footnotesize\ttfamily bool configure\+\_\+gui\+\_\+opencv\+::all\+\_\+setted (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classconfigure__gui__opencv_ae6ef35bc1126888bb41e38081a86d0a5}\label{classconfigure__gui__opencv_ae6ef35bc1126888bb41e38081a86d0a5}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!callback\_mouse@{callback\_mouse}}
+\index{callback\_mouse@{callback\_mouse}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{callback\_mouse()}{callback\_mouse()}}
+{\footnotesize\ttfamily static void configure\+\_\+gui\+\_\+opencv\+::callback\+\_\+mouse (\begin{DoxyParamCaption}\item[{int}]{ev,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{flags,  }\item[{void $\ast$}]{userdata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classconfigure__gui__opencv_a552478def69fcc9ce2f7746652cdb7bd}\label{classconfigure__gui__opencv_a552478def69fcc9ce2f7746652cdb7bd}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!close\_window@{close\_window}}
+\index{close\_window@{close\_window}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{close\_window()}{close\_window()}}
+{\footnotesize\ttfamily void configure\+\_\+gui\+\_\+opencv\+::close\+\_\+window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classconfigure__gui__opencv_ae2ff5a7d0c6feb991de88caa1a5934da}\label{classconfigure__gui__opencv_ae2ff5a7d0c6feb991de88caa1a5934da}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!get\_variable@{get\_variable}}
+\index{get\_variable@{get\_variable}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{get\_variable()}{get\_variable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classui__variable}{ui\+\_\+variable}}$\ast$ configure\+\_\+gui\+\_\+opencv\+::get\+\_\+variable (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classconfigure__gui__opencv_a28a6f19c0cf5ada2c33a9601d2caa6f6}\label{classconfigure__gui__opencv_a28a6f19c0cf5ada2c33a9601d2caa6f6}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!gui\_to\_variables@{gui\_to\_variables}}
+\index{gui\_to\_variables@{gui\_to\_variables}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{gui\_to\_variables()}{gui\_to\_variables()}}
+{\footnotesize\ttfamily void configure\+\_\+gui\+\_\+opencv\+::gui\+\_\+to\+\_\+variables (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classconfigure__gui__opencv_a91f303dff3649f9db373e8fe1a2b87e1}\label{classconfigure__gui__opencv_a91f303dff3649f9db373e8fe1a2b87e1}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!keyboard\_refresh@{keyboard\_refresh}}
+\index{keyboard\_refresh@{keyboard\_refresh}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{keyboard\_refresh()}{keyboard\_refresh()}}
+{\footnotesize\ttfamily static int configure\+\_\+gui\+\_\+opencv\+::keyboard\+\_\+refresh (\begin{DoxyParamCaption}\item[{int}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classconfigure__gui__opencv_a47cf44e68e002563654c50ccfd909aba}\label{classconfigure__gui__opencv_a47cf44e68e002563654c50ccfd909aba}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!load@{load}}
+\index{load@{load}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily bool configure\+\_\+gui\+\_\+opencv\+::load (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+\_\+ui }\end{DoxyParamCaption})}
+
+class initialization from file. The input entry must be store in diffrenet The file is made with a series of tags in char$\ast$ format that sould be satisfaid. After the tag a tab (\char`\"{}\textbackslash{}t\char`\"{}) character should be left to separate the entry value. Tags can be placed in any order \mbox{\Hypertarget{classconfigure__gui__opencv_aabe16d6ee2d665c932fd259c9eaef193}\label{classconfigure__gui__opencv_aabe16d6ee2d665c932fd259c9eaef193}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!move\_window@{move\_window}}
+\index{move\_window@{move\_window}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{move\_window()}{move\_window()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void configure\+\_\+gui\+\_\+opencv\+::move\+\_\+window (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classconfigure__gui__opencv_ad8dfa678ce2c5027e61775c8758b3826}\label{classconfigure__gui__opencv_ad8dfa678ce2c5027e61775c8758b3826}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!move\_window@{move\_window}}
+\index{move\_window@{move\_window}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{move\_window()}{move\_window()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void configure\+\_\+gui\+\_\+opencv\+::move\+\_\+window (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classconfigure__gui__opencv_acc95fdacaedd7c3898cd4d4d1275f1cc}\label{classconfigure__gui__opencv_acc95fdacaedd7c3898cd4d4d1275f1cc}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!resize\_window@{resize\_window}}
+\index{resize\_window@{resize\_window}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{resize\_window()}{resize\_window()}}
+{\footnotesize\ttfamily void configure\+\_\+gui\+\_\+opencv\+::resize\+\_\+window (\begin{DoxyParamCaption}\item[{unsigned int}]{display\+\_\+dimx,  }\item[{unsigned int}]{display\+\_\+dimy }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classconfigure__gui__opencv_ae54dfddd9ecaa4f34ef8cc1c06b9d29f}\label{classconfigure__gui__opencv_ae54dfddd9ecaa4f34ef8cc1c06b9d29f}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!save@{save}}
+\index{save@{save}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily bool configure\+\_\+gui\+\_\+opencv\+::save (\begin{DoxyParamCaption}\item[{std\+::string}]{filename = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classconfigure__gui__opencv_afca9717b8d3a04539665017a776d826c}\label{classconfigure__gui__opencv_afca9717b8d3a04539665017a776d826c}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!show@{show}}
+\index{show@{show}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily void configure\+\_\+gui\+\_\+opencv\+::show (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classconfigure__gui__opencv_aec058164269976bc2bf01b1d7c6b951f}\label{classconfigure__gui__opencv_aec058164269976bc2bf01b1d7c6b951f}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!variables\_to\_gui@{variables\_to\_gui}}
+\index{variables\_to\_gui@{variables\_to\_gui}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{variables\_to\_gui()}{variables\_to\_gui()}}
+{\footnotesize\ttfamily void configure\+\_\+gui\+\_\+opencv\+::variables\+\_\+to\+\_\+gui (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classconfigure__gui__opencv_aa87ad4351be43f08e3a69c2e51308449}\label{classconfigure__gui__opencv_aa87ad4351be43f08e3a69c2e51308449}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!write\_time\_sequence\_to\_file@{write\_time\_sequence\_to\_file}}
+\index{write\_time\_sequence\_to\_file@{write\_time\_sequence\_to\_file}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{write\_time\_sequence\_to\_file()}{write\_time\_sequence\_to\_file()}}
+{\footnotesize\ttfamily void configure\+\_\+gui\+\_\+opencv\+::write\+\_\+time\+\_\+sequence\+\_\+to\+\_\+file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classconfigure__gui__opencv_a603c567ed768f95762b161dd3ed3b9a5}\label{classconfigure__gui__opencv_a603c567ed768f95762b161dd3ed3b9a5}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!active\_variable@{active\_variable}}
+\index{active\_variable@{active\_variable}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{active\_variable}{active\_variable}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classui__variable}{ui\+\_\+variable}}$\ast$ configure\+\_\+gui\+\_\+opencv\+::active\+\_\+variable}
+
+
+
+active object of the user interface 
+
+\mbox{\Hypertarget{classconfigure__gui__opencv_aba5dd1871171d122fe12e6ecc6aa7da6}\label{classconfigure__gui__opencv_aba5dd1871171d122fe12e6ecc6aa7da6}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!file\_list@{file\_list}}
+\index{file\_list@{file\_list}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{file\_list}{file\_list}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string$>$ configure\+\_\+gui\+\_\+opencv\+::file\+\_\+list}
+
+vector of the files to be processed \mbox{\Hypertarget{classconfigure__gui__opencv_a15bb6049f769800d75a7b5902c7c3224}\label{classconfigure__gui__opencv_a15bb6049f769800d75a7b5902c7c3224}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!flg\_start@{flg\_start}}
+\index{flg\_start@{flg\_start}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{flg\_start}{flg\_start}}
+{\footnotesize\ttfamily bool configure\+\_\+gui\+\_\+opencv\+::flg\+\_\+start}
+
+\mbox{\Hypertarget{classconfigure__gui__opencv_a142e2c582bb152ecb42b55388c189a74}\label{classconfigure__gui__opencv_a142e2c582bb152ecb42b55388c189a74}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!flg\_valid\_image@{flg\_valid\_image}}
+\index{flg\_valid\_image@{flg\_valid\_image}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{flg\_valid\_image}{flg\_valid\_image}}
+{\footnotesize\ttfamily std\+::vector$<$bool$>$ configure\+\_\+gui\+\_\+opencv\+::flg\+\_\+valid\+\_\+image}
+
+flg to know if an image is valid or not \mbox{\Hypertarget{classconfigure__gui__opencv_a69578d93e9bcba58524b8088928dae3d}\label{classconfigure__gui__opencv_a69578d93e9bcba58524b8088928dae3d}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!name@{name}}
+\index{name@{name}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string configure\+\_\+gui\+\_\+opencv\+::name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classconfigure__gui__opencv_ad4038c22768a149e09b97c1aa2267e32}\label{classconfigure__gui__opencv_ad4038c22768a149e09b97c1aa2267e32}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!option@{option}}
+\index{option@{option}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{option}{option}}
+{\footnotesize\ttfamily std\+::list$<$\mbox{\hyperlink{classui__variable}{ui\+\_\+variable}}$\ast$$>$ configure\+\_\+gui\+\_\+opencv\+::option}
+
+\mbox{\Hypertarget{classconfigure__gui__opencv_ab8808bae55db0a612d99f76fb0d2c3c9}\label{classconfigure__gui__opencv_ab8808bae55db0a612d99f76fb0d2c3c9}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!panel@{panel}}
+\index{panel@{panel}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{panel}{panel}}
+{\footnotesize\ttfamily cv\+::\+Mat configure\+\_\+gui\+\_\+opencv\+::panel\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classconfigure__gui__opencv_a50bc0863839545e4bf829e22fb00b4f7}\label{classconfigure__gui__opencv_a50bc0863839545e4bf829e22fb00b4f7}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!time@{time}}
+\index{time@{time}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{time}{time}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{global__define_8h_ac3e2e8b775e8c0eca32f242cbbee4b7f}{MY\+\_\+\+REAL}}$>$ configure\+\_\+gui\+\_\+opencv\+::time}
+
+time stamp for each image \mbox{\Hypertarget{classconfigure__gui__opencv_afa5cf452072b9d881b99059551039f0c}\label{classconfigure__gui__opencv_afa5cf452072b9d881b99059551039f0c}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!xx@{xx}}
+\index{xx@{xx}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{xx}{xx}}
+{\footnotesize\ttfamily float configure\+\_\+gui\+\_\+opencv\+::xx\mbox{[}8\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classconfigure__gui__opencv_a7abcb410417859584096ffe3bfbfa02c}\label{classconfigure__gui__opencv_a7abcb410417859584096ffe3bfbfa02c}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!xx\_current@{xx\_current}}
+\index{xx\_current@{xx\_current}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{xx\_current}{xx\_current}}
+{\footnotesize\ttfamily float$\ast$ configure\+\_\+gui\+\_\+opencv\+::xx\+\_\+current\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classconfigure__gui__opencv_aba73c4179395d59054c5c784a0ebd463}\label{classconfigure__gui__opencv_aba73c4179395d59054c5c784a0ebd463}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!xx\_onclick@{xx\_onclick}}
+\index{xx\_onclick@{xx\_onclick}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{xx\_onclick}{xx\_onclick}}
+{\footnotesize\ttfamily float$\ast$ configure\+\_\+gui\+\_\+opencv\+::xx\+\_\+onclick\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classconfigure__gui__opencv_aad17dd8902850c5460be9686806d844b}\label{classconfigure__gui__opencv_aad17dd8902850c5460be9686806d844b}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!xx\_onrelease@{xx\_onrelease}}
+\index{xx\_onrelease@{xx\_onrelease}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{xx\_onrelease}{xx\_onrelease}}
+{\footnotesize\ttfamily float$\ast$ configure\+\_\+gui\+\_\+opencv\+::xx\+\_\+onrelease\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classconfigure__gui__opencv_a2fdb467f1b282188d7d2e414a4e6965a}\label{classconfigure__gui__opencv_a2fdb467f1b282188d7d2e414a4e6965a}} 
+\index{configure\_gui\_opencv@{configure\_gui\_opencv}!xx\_previous@{xx\_previous}}
+\index{xx\_previous@{xx\_previous}!configure\_gui\_opencv@{configure\_gui\_opencv}}
+\doxysubsubsection{\texorpdfstring{xx\_previous}{xx\_previous}}
+{\footnotesize\ttfamily float$\ast$ configure\+\_\+gui\+\_\+opencv\+::xx\+\_\+previous\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+diffmicro/display\+\_\+opencv/\mbox{\hyperlink{configure__gui__opencv_8h}{configure\+\_\+gui\+\_\+opencv.\+h}}\end{DoxyCompactItemize}

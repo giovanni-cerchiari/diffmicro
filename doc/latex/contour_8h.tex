@@ -1,0 +1,46 @@
+\hypertarget{contour_8h}{}\doxysection{diffmicro/cpp-\/routine/contour.h File Reference}
+\label{contour_8h}\index{diffmicro/cpp-\/routine/contour.h@{diffmicro/cpp-\/routine/contour.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include \char`\"{}prep\+\_\+matrix.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}my\+\_\+math.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename UINT , typename FLOAT $>$ }\\void \mbox{\hyperlink{contour_8h_a99f9e128eff39728707efe3c297a3af9}{equipoints\+\_\+estimate\+\_\+deviation}} (UINT dimx, UINT dimy, FLOAT $\ast$mat, FLOAT val, FLOAT \&similarity, UINT windowside=7)
+\item 
+{\footnotesize template$<$typename UINT , typename FLOAT $>$ }\\void \mbox{\hyperlink{contour_8h_a3a5e12c1f2b2dbc759a4b6b90d0465d9}{equipoints}} (UINT dimx, UINT dimy, FLOAT $\ast$mat, FLOAT val, UINT \&dimpoints, UINT $\ast$point, FLOAT deviation=-\/1)
+\item 
+{\footnotesize template$<$typename UINT , typename FLOAT , typename MASKTYPE $>$ }\\void \mbox{\hyperlink{contour_8h_ae688f0c11911c9fa062a93ffea0c0170}{equipoints\+\_\+mask}} (UINT dimx, UINT dimy, FLOAT $\ast$mat, FLOAT val, MASKTYPE $\ast$out, FLOAT deviation=-\/1)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{contour_8h_a3a5e12c1f2b2dbc759a4b6b90d0465d9}\label{contour_8h_a3a5e12c1f2b2dbc759a4b6b90d0465d9}} 
+\index{contour.h@{contour.h}!equipoints@{equipoints}}
+\index{equipoints@{equipoints}!contour.h@{contour.h}}
+\doxysubsubsection{\texorpdfstring{equipoints()}{equipoints()}}
+{\footnotesize\ttfamily template$<$typename UINT , typename FLOAT $>$ \\
+void equipoints (\begin{DoxyParamCaption}\item[{UINT}]{dimx,  }\item[{UINT}]{dimy,  }\item[{FLOAT $\ast$}]{mat,  }\item[{FLOAT}]{val,  }\item[{UINT \&}]{dimpoints,  }\item[{UINT $\ast$}]{point,  }\item[{FLOAT}]{deviation = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+Find in a matrix all the position where the value is similar to val Two values v1 and v2 are similar if deviation$>$=fabs(v1-\/v2) dimx, dimy -\/$>$ matrix dimension mat -\/$>$ matrix val -\/$>$ value of the points to be found dimpoints -\/$>$ number of found point point -\/$>$ found point indicated as (x\mbox{[}0\mbox{]}, y\mbox{[}0\mbox{]}, x\mbox{[}1\mbox{]}, y\mbox{[}1\mbox{]} ...) if NULL only dimpoints is returned. deviation -\/$>$ see above description. Can be stimated with equipoints\+\_\+estimate\+\_\+deviation \mbox{\Hypertarget{contour_8h_a99f9e128eff39728707efe3c297a3af9}\label{contour_8h_a99f9e128eff39728707efe3c297a3af9}} 
+\index{contour.h@{contour.h}!equipoints\_estimate\_deviation@{equipoints\_estimate\_deviation}}
+\index{equipoints\_estimate\_deviation@{equipoints\_estimate\_deviation}!contour.h@{contour.h}}
+\doxysubsubsection{\texorpdfstring{equipoints\_estimate\_deviation()}{equipoints\_estimate\_deviation()}}
+{\footnotesize\ttfamily template$<$typename UINT , typename FLOAT $>$ \\
+void equipoints\+\_\+estimate\+\_\+deviation (\begin{DoxyParamCaption}\item[{UINT}]{dimx,  }\item[{UINT}]{dimy,  }\item[{FLOAT $\ast$}]{mat,  }\item[{FLOAT}]{val,  }\item[{FLOAT \&}]{similarity,  }\item[{UINT}]{windowside = {\ttfamily 7} }\end{DoxyParamCaption})}
+
+This set of funtions are inteded to find contour courve in a contour-\/plot like behaviour
+
+This function might be used togheter with equipoints. It makes an estimation about the deviation of the points that could constitue a line of equal-\/value points. In practice it is worthless to ask for the same value, but better to similar value. This function attempts a definition of similarity. The idea is that in a courour plot it is possible to draw a line. Therefore considering a matrix around a coutour point the deviation is estimated as max and min. The deviation to be considered is the one that allows to pick up approximately the points that would allow a line to go through the matrix.
+
+dimx, dimy -\/$>$ dimension of the matrix of values mat -\/$>$ function matrix val -\/$>$ value of the of the equivalent points similarity -\/$>$ calculated deviation of similarity windowside -\/$>$ dimension of the submatrix where the alghoritm will run \mbox{\Hypertarget{contour_8h_ae688f0c11911c9fa062a93ffea0c0170}\label{contour_8h_ae688f0c11911c9fa062a93ffea0c0170}} 
+\index{contour.h@{contour.h}!equipoints\_mask@{equipoints\_mask}}
+\index{equipoints\_mask@{equipoints\_mask}!contour.h@{contour.h}}
+\doxysubsubsection{\texorpdfstring{equipoints\_mask()}{equipoints\_mask()}}
+{\footnotesize\ttfamily template$<$typename UINT , typename FLOAT , typename MASKTYPE $>$ \\
+void equipoints\+\_\+mask (\begin{DoxyParamCaption}\item[{UINT}]{dimx,  }\item[{UINT}]{dimy,  }\item[{FLOAT $\ast$}]{mat,  }\item[{FLOAT}]{val,  }\item[{MASKTYPE $\ast$}]{out,  }\item[{FLOAT}]{deviation = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+Uses equipoints function to elaborate a matrix with 0 where no points are matching and 1 where equivalent points are found. dimx, dimy -\/$>$ matri dimension mat -\/$>$ matrix val -\/$>$ value to look for mask -\/$>$ matrix of the same dimension of to be used as output 

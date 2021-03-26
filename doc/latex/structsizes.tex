@@ -1,0 +1,115 @@
+\hypertarget{structsizes}{}\doxysection{sizes Struct Reference}
+\label{structsizes}\index{sizes@{sizes}}
+
+
+{\ttfamily \#include $<$correlation.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{structsizes_a7aba7d5b079a83cebd93f8c05e475f01}{dimx}}
+\begin{DoxyCompactList}\small\item\em number of colums of the matrix-\/image \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{structsizes_a16ba2cba4402ce04a15b077a0af80123}{dimy}}
+\begin{DoxyCompactList}\small\item\em number of rows of the matrix-\/image \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{structsizes_ab403c50d035c4b9a1b5aebcafeecc33b}{dim}}
+\begin{DoxyCompactList}\small\item\em = dimx $\ast$ dimy \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{structsizes_ad2fce34cf790933a39d59a2cb0749e49}{numerosity}}
+\begin{DoxyCompactList}\small\item\em number of this matrix-\/image type storable on the video card (memory already allocated) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{structsizes_ae890fe9264c9f882cae4abc2e66ff484}{memory\+\_\+one}}
+\begin{DoxyCompactList}\small\item\em memory size in byte of a single matrix-\/image \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{structsizes_a6603e4ade76c5d2e0a1addca1b3254d8}{memory\+\_\+tot}}
+\begin{DoxyCompactList}\small\item\em = memory\+\_\+one $\ast$ numerosity \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcuda__exec}{cuda\+\_\+exec}} \mbox{\hyperlink{structsizes_a125b0fde5e57dda5c1cdcd1ba0ca99e4}{cexe}}
+\begin{DoxyCompactList}\small\item\em \#blocks and \#threads necessary to browse all the pixel of a single image as a linear vector \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This functions are written for diffmicro.\+exe application.
+
+This file contains the functions that execute the main algorithm on cpu and gpu. Execution on the different hardware is implemented with minimal modifications on the main algorithm by using function pointers. Function pointers selection is performed in
+
+This structure and the function void \mbox{\hyperlink{correlation_8h_a1450ba6698042b271c113e15436b1bac}{calc\+\_\+sizes(\+INDEX dimy, INDEX dimx, INDEX n\+\_\+tot, INDEX size\+\_\+of\+\_\+element, sizes \&s)}} allow to store in a single place the values concerning the memory managment of some allocated memory. To understand the working principle we will make the example an image. To store a series of images the following data are saved
+\begin{DoxyItemize}
+\item dimension in pixels dimx, dimy and dim = dimx$\ast$dimy
+\item numerosity -\/$>$ the stored number of images
+\item memory\+\_\+one -\/$>$ memory size in byte of one image
+\item memory\+\_\+tot -\/$>$ memory size in byte for the total number of images
+\item cexe -\/$>$ CUDA \#blocks and \#threads necessary to browse all the pixel of a single image as a linear vector 
+\end{DoxyItemize}
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structsizes_a125b0fde5e57dda5c1cdcd1ba0ca99e4}\label{structsizes_a125b0fde5e57dda5c1cdcd1ba0ca99e4}} 
+\index{sizes@{sizes}!cexe@{cexe}}
+\index{cexe@{cexe}!sizes@{sizes}}
+\doxysubsubsection{\texorpdfstring{cexe}{cexe}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcuda__exec}{cuda\+\_\+exec}} sizes\+::cexe}
+
+
+
+\#blocks and \#threads necessary to browse all the pixel of a single image as a linear vector 
+
+\mbox{\Hypertarget{structsizes_ab403c50d035c4b9a1b5aebcafeecc33b}\label{structsizes_ab403c50d035c4b9a1b5aebcafeecc33b}} 
+\index{sizes@{sizes}!dim@{dim}}
+\index{dim@{dim}!sizes@{sizes}}
+\doxysubsubsection{\texorpdfstring{dim}{dim}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} sizes\+::dim}
+
+
+
+= dimx $\ast$ dimy 
+
+\mbox{\Hypertarget{structsizes_a7aba7d5b079a83cebd93f8c05e475f01}\label{structsizes_a7aba7d5b079a83cebd93f8c05e475f01}} 
+\index{sizes@{sizes}!dimx@{dimx}}
+\index{dimx@{dimx}!sizes@{sizes}}
+\doxysubsubsection{\texorpdfstring{dimx}{dimx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} sizes\+::dimx}
+
+
+
+number of colums of the matrix-\/image 
+
+\mbox{\Hypertarget{structsizes_a16ba2cba4402ce04a15b077a0af80123}\label{structsizes_a16ba2cba4402ce04a15b077a0af80123}} 
+\index{sizes@{sizes}!dimy@{dimy}}
+\index{dimy@{dimy}!sizes@{sizes}}
+\doxysubsubsection{\texorpdfstring{dimy}{dimy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} sizes\+::dimy}
+
+
+
+number of rows of the matrix-\/image 
+
+\mbox{\Hypertarget{structsizes_ae890fe9264c9f882cae4abc2e66ff484}\label{structsizes_ae890fe9264c9f882cae4abc2e66ff484}} 
+\index{sizes@{sizes}!memory\_one@{memory\_one}}
+\index{memory\_one@{memory\_one}!sizes@{sizes}}
+\doxysubsubsection{\texorpdfstring{memory\_one}{memory\_one}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} sizes\+::memory\+\_\+one}
+
+
+
+memory size in byte of a single matrix-\/image 
+
+\mbox{\Hypertarget{structsizes_a6603e4ade76c5d2e0a1addca1b3254d8}\label{structsizes_a6603e4ade76c5d2e0a1addca1b3254d8}} 
+\index{sizes@{sizes}!memory\_tot@{memory\_tot}}
+\index{memory\_tot@{memory\_tot}!sizes@{sizes}}
+\doxysubsubsection{\texorpdfstring{memory\_tot}{memory\_tot}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} sizes\+::memory\+\_\+tot}
+
+
+
+= memory\+\_\+one $\ast$ numerosity 
+
+\mbox{\Hypertarget{structsizes_ad2fce34cf790933a39d59a2cb0749e49}\label{structsizes_ad2fce34cf790933a39d59a2cb0749e49}} 
+\index{sizes@{sizes}!numerosity@{numerosity}}
+\index{numerosity@{numerosity}!sizes@{sizes}}
+\doxysubsubsection{\texorpdfstring{numerosity}{numerosity}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} sizes\+::numerosity}
+
+
+
+number of this matrix-\/image type storable on the video card (memory already allocated) 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+diffmicro/\mbox{\hyperlink{correlation_8h}{correlation.\+h}}\end{DoxyCompactItemize}

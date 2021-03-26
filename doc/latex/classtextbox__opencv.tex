@@ -1,0 +1,276 @@
+\hypertarget{classtextbox__opencv}{}\doxysection{textbox\+\_\+opencv Class Reference}
+\label{classtextbox__opencv}\index{textbox\_opencv@{textbox\_opencv}}
+
+
+{\ttfamily \#include $<$textbox\+\_\+opencv.\+h$>$}
+
+Inheritance diagram for textbox\+\_\+opencv\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtextbox__opencv}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtextbox__opencv_a3140709dbee41dd5ec71c436490ab1ad}{textbox\+\_\+opencv}} (int \+\_\+id=-\/1, std\+::string \+\_\+name=\char`\"{}\char`\"{})
+\item 
+\mbox{\hyperlink{classtextbox__opencv_a4f0be6d620492efeeef726d64f410dfa}{$\sim$textbox\+\_\+opencv}} ()
+\item 
+void \mbox{\hyperlink{classtextbox__opencv_ae18152b9bd07ccf7ab4d945eb182a833}{select}} ()
+\item 
+void \mbox{\hyperlink{classtextbox__opencv_ac35db35a71e3ba2fb81e22f81f7478a6}{deselect}} ()
+\item 
+void \mbox{\hyperlink{classtextbox__opencv_ada6c1b7b3d34e774c9f94ad04403e139}{enable}} ()
+\item 
+void \mbox{\hyperlink{classtextbox__opencv_a99b6b7eed56eaf6dbdd1d039a09ddc24}{disable}} ()
+\item 
+void \mbox{\hyperlink{classtextbox__opencv_a186b8908a1830c32577e6026eced8a2a}{draw}} (cv\+::\+Mat \&img)
+\item 
+int \mbox{\hyperlink{classtextbox__opencv_a966203d1f7dc07159aae39e825ed0768}{handle}} (float pos\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{classtextbox__opencv}{textbox\+\_\+opencv}} \& \mbox{\hyperlink{classtextbox__opencv_ad9b3211cfbc201cd44db2801ca4a4d4f}{operator=}} (const \mbox{\hyperlink{classtextbox__opencv}{textbox\+\_\+opencv}} \&ctrl)
+\item 
+\mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} \& \mbox{\hyperlink{classtextbox__opencv_ac055106b47b2364ddac301c10b7562fc}{operator=}} (const \mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} \&ctrl)
+\item 
+void \mbox{\hyperlink{classtextbox__opencv_a07e7d2e43484827a3f8f3ab39cf0b0ff}{get\+\_\+value}} (void $\ast$out)
+\begin{DoxyCompactList}\small\item\em retrive the value of the control \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtextbox__opencv_aad6c317ca003ffc9d27c5e5252c698e1}{set\+\_\+value}} (void $\ast$in)
+\begin{DoxyCompactList}\small\item\em Implementation for setting the value of the control. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classtextbox__opencv_a345df4f2569cec1376442f6094a966dd}{onclick}} (float pos\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{classtextbox__opencv_a80b835147a5bceff1e8aced1486dd8eb}{onmove}} (float pos\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{classtextbox__opencv_a0d3d5caa30b8cf444594ca16d45381f7}{onrelease}} (float pos\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classtextbox__opencv_a0f7bbae4681dd6b431b6908187e6ad92}{text}}
+\item 
+bool \mbox{\hyperlink{classtextbox__opencv_ab32410401b83c99fcb46e8f9772015a1}{selected}}
+\item 
+cv\+::\+Scalar $\ast$ \mbox{\hyperlink{classtextbox__opencv_a4406afb223dd16469c31fd8da031682f}{color\+\_\+background}}
+\item 
+cv\+::\+Scalar $\ast$ \mbox{\hyperlink{classtextbox__opencv_ac0826a421d067eb25e227d22791b3300}{color\+\_\+label}}
+\item 
+cv\+::\+Scalar \mbox{\hyperlink{classtextbox__opencv_a18a1dd7af9885e7abd76b4bf22eca803}{color\+\_\+label\+\_\+normal}}
+\item 
+cv\+::\+Scalar \mbox{\hyperlink{classtextbox__opencv_a815e7f1bae9b10586ef0ff7e8a54f11f}{color\+\_\+label\+\_\+selected}}
+\item 
+cv\+::\+Scalar \mbox{\hyperlink{classtextbox__opencv_a99ce3b1b10863af84340cfbdd2f4bfe4}{color\+\_\+background\+\_\+enabled}}
+\item 
+cv\+::\+Scalar \mbox{\hyperlink{classtextbox__opencv_a6ee7a4b9a0496e83137f5b4962ec159f}{color\+\_\+background\+\_\+disabled}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is used for user interface. Control textbox may be used to read and write on a text string. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtextbox__opencv_a3140709dbee41dd5ec71c436490ab1ad}\label{classtextbox__opencv_a3140709dbee41dd5ec71c436490ab1ad}} 
+\index{textbox\_opencv@{textbox\_opencv}!textbox\_opencv@{textbox\_opencv}}
+\index{textbox\_opencv@{textbox\_opencv}!textbox\_opencv@{textbox\_opencv}}
+\doxysubsubsection{\texorpdfstring{textbox\_opencv()}{textbox\_opencv()}}
+{\footnotesize\ttfamily textbox\+\_\+opencv\+::textbox\+\_\+opencv (\begin{DoxyParamCaption}\item[{int}]{\+\_\+id = {\ttfamily -\/1},  }\item[{std\+::string}]{\+\_\+name = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classtextbox__opencv_a4f0be6d620492efeeef726d64f410dfa}\label{classtextbox__opencv_a4f0be6d620492efeeef726d64f410dfa}} 
+\index{textbox\_opencv@{textbox\_opencv}!````~textbox\_opencv@{$\sim$textbox\_opencv}}
+\index{````~textbox\_opencv@{$\sim$textbox\_opencv}!textbox\_opencv@{textbox\_opencv}}
+\doxysubsubsection{\texorpdfstring{$\sim$textbox\_opencv()}{~textbox\_opencv()}}
+{\footnotesize\ttfamily textbox\+\_\+opencv\+::$\sim$textbox\+\_\+opencv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtextbox__opencv_ac35db35a71e3ba2fb81e22f81f7478a6}\label{classtextbox__opencv_ac35db35a71e3ba2fb81e22f81f7478a6}} 
+\index{textbox\_opencv@{textbox\_opencv}!deselect@{deselect}}
+\index{deselect@{deselect}!textbox\_opencv@{textbox\_opencv}}
+\doxysubsubsection{\texorpdfstring{deselect()}{deselect()}}
+{\footnotesize\ttfamily void textbox\+\_\+opencv\+::deselect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classcontrol__opencv_a19b5594e89aa9bdd52ae60e136d06f19}{control\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classtextbox__opencv_a99b6b7eed56eaf6dbdd1d039a09ddc24}\label{classtextbox__opencv_a99b6b7eed56eaf6dbdd1d039a09ddc24}} 
+\index{textbox\_opencv@{textbox\_opencv}!disable@{disable}}
+\index{disable@{disable}!textbox\_opencv@{textbox\_opencv}}
+\doxysubsubsection{\texorpdfstring{disable()}{disable()}}
+{\footnotesize\ttfamily void textbox\+\_\+opencv\+::disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classcontrol__opencv_a25047659ab43ddea969993fd6a8b529a}{control\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classtextbox__opencv_a186b8908a1830c32577e6026eced8a2a}\label{classtextbox__opencv_a186b8908a1830c32577e6026eced8a2a}} 
+\index{textbox\_opencv@{textbox\_opencv}!draw@{draw}}
+\index{draw@{draw}!textbox\_opencv@{textbox\_opencv}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void textbox\+\_\+opencv\+::draw (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{img }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classcontrol__opencv_aa52da1a4d33cec9ea56a87ba6237ce96}{control\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classtextbox__opencv_ada6c1b7b3d34e774c9f94ad04403e139}\label{classtextbox__opencv_ada6c1b7b3d34e774c9f94ad04403e139}} 
+\index{textbox\_opencv@{textbox\_opencv}!enable@{enable}}
+\index{enable@{enable}!textbox\_opencv@{textbox\_opencv}}
+\doxysubsubsection{\texorpdfstring{enable()}{enable()}}
+{\footnotesize\ttfamily void textbox\+\_\+opencv\+::enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classcontrol__opencv_ad32f68e30e77a6d943861089bab77ee6}{control\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classtextbox__opencv_a07e7d2e43484827a3f8f3ab39cf0b0ff}\label{classtextbox__opencv_a07e7d2e43484827a3f8f3ab39cf0b0ff}} 
+\index{textbox\_opencv@{textbox\_opencv}!get\_value@{get\_value}}
+\index{get\_value@{get\_value}!textbox\_opencv@{textbox\_opencv}}
+\doxysubsubsection{\texorpdfstring{get\_value()}{get\_value()}}
+{\footnotesize\ttfamily void textbox\+\_\+opencv\+::get\+\_\+value (\begin{DoxyParamCaption}\item[{void $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+retrive the value of the control 
+
+
+
+Implements \mbox{\hyperlink{classcontrol__opencv_a9341761724df27f36d2a372a32de3895}{control\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classtextbox__opencv_a966203d1f7dc07159aae39e825ed0768}\label{classtextbox__opencv_a966203d1f7dc07159aae39e825ed0768}} 
+\index{textbox\_opencv@{textbox\_opencv}!handle@{handle}}
+\index{handle@{handle}!textbox\_opencv@{textbox\_opencv}}
+\doxysubsubsection{\texorpdfstring{handle()}{handle()}}
+{\footnotesize\ttfamily int textbox\+\_\+opencv\+::handle (\begin{DoxyParamCaption}\item[{float}]{pos\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Multiple actions are possible and multiple grabbing point for the pointer are possible as well This method should return any negative number in case no action should take place. 
+
+Implements \mbox{\hyperlink{classcontrol__opencv_a2f15253b1a43a3a1a8f35666c9f2b25a}{control\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classtextbox__opencv_a345df4f2569cec1376442f6094a966dd}\label{classtextbox__opencv_a345df4f2569cec1376442f6094a966dd}} 
+\index{textbox\_opencv@{textbox\_opencv}!onclick@{onclick}}
+\index{onclick@{onclick}!textbox\_opencv@{textbox\_opencv}}
+\doxysubsubsection{\texorpdfstring{onclick()}{onclick()}}
+{\footnotesize\ttfamily void textbox\+\_\+opencv\+::onclick (\begin{DoxyParamCaption}\item[{float}]{pos\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This method is intended to be called in case \mbox{\hyperlink{classcontrol__opencv_a2f15253b1a43a3a1a8f35666c9f2b25a}{control\+\_\+opencv\+::handle}} would return a value $>$= 0 and arranges the behaviour of the control when the mouse button of choice is pressed the first time 
+
+Implements \mbox{\hyperlink{classcontrol__opencv_a8a3999887dc29d664b8f593966126701}{control\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classtextbox__opencv_a80b835147a5bceff1e8aced1486dd8eb}\label{classtextbox__opencv_a80b835147a5bceff1e8aced1486dd8eb}} 
+\index{textbox\_opencv@{textbox\_opencv}!onmove@{onmove}}
+\index{onmove@{onmove}!textbox\_opencv@{textbox\_opencv}}
+\doxysubsubsection{\texorpdfstring{onmove()}{onmove()}}
+{\footnotesize\ttfamily void textbox\+\_\+opencv\+::onmove (\begin{DoxyParamCaption}\item[{float}]{pos\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This method is intended to be called in case \mbox{\hyperlink{classcontrol__opencv_a8a3999887dc29d664b8f593966126701}{control\+\_\+opencv\+::onclick}} was already called. It defines the behviour in case of mouse move with button pressed. 
+
+Implements \mbox{\hyperlink{classcontrol__opencv_a0ff6f30bb5ef331cb7428a6ecf4aeea1}{control\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classtextbox__opencv_a0d3d5caa30b8cf444594ca16d45381f7}\label{classtextbox__opencv_a0d3d5caa30b8cf444594ca16d45381f7}} 
+\index{textbox\_opencv@{textbox\_opencv}!onrelease@{onrelease}}
+\index{onrelease@{onrelease}!textbox\_opencv@{textbox\_opencv}}
+\doxysubsubsection{\texorpdfstring{onrelease()}{onrelease()}}
+{\footnotesize\ttfamily void textbox\+\_\+opencv\+::onrelease (\begin{DoxyParamCaption}\item[{float}]{pos\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This method is intended to be called in case \mbox{\hyperlink{classcontrol__opencv_a8a3999887dc29d664b8f593966126701}{control\+\_\+opencv\+::onclick}} was already called. It arranges the behaviour of the control when the mouse button of choice is released 
+
+Implements \mbox{\hyperlink{classcontrol__opencv_aa6e9cb083bdb73b25f4674aaa16aaf69}{control\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classtextbox__opencv_ac055106b47b2364ddac301c10b7562fc}\label{classtextbox__opencv_ac055106b47b2364ddac301c10b7562fc}} 
+\index{textbox\_opencv@{textbox\_opencv}!operator=@{operator=}}
+\index{operator=@{operator=}!textbox\_opencv@{textbox\_opencv}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}}\& textbox\+\_\+opencv\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} \&}]{ctrl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classcontrol__opencv_ac36db47e260c4f6674da5d8dc5b901cd}{control\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classtextbox__opencv_ad9b3211cfbc201cd44db2801ca4a4d4f}\label{classtextbox__opencv_ad9b3211cfbc201cd44db2801ca4a4d4f}} 
+\index{textbox\_opencv@{textbox\_opencv}!operator=@{operator=}}
+\index{operator=@{operator=}!textbox\_opencv@{textbox\_opencv}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtextbox__opencv}{textbox\+\_\+opencv}}\& textbox\+\_\+opencv\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtextbox__opencv}{textbox\+\_\+opencv}} \&}]{ctrl }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classtextbox__opencv_ae18152b9bd07ccf7ab4d945eb182a833}\label{classtextbox__opencv_ae18152b9bd07ccf7ab4d945eb182a833}} 
+\index{textbox\_opencv@{textbox\_opencv}!select@{select}}
+\index{select@{select}!textbox\_opencv@{textbox\_opencv}}
+\doxysubsubsection{\texorpdfstring{select()}{select()}}
+{\footnotesize\ttfamily void textbox\+\_\+opencv\+::select (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classcontrol__opencv_a4ac93e85c01756b55db885f06bea7e2b}{control\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classtextbox__opencv_aad6c317ca003ffc9d27c5e5252c698e1}\label{classtextbox__opencv_aad6c317ca003ffc9d27c5e5252c698e1}} 
+\index{textbox\_opencv@{textbox\_opencv}!set\_value@{set\_value}}
+\index{set\_value@{set\_value}!textbox\_opencv@{textbox\_opencv}}
+\doxysubsubsection{\texorpdfstring{set\_value()}{set\_value()}}
+{\footnotesize\ttfamily void textbox\+\_\+opencv\+::set\+\_\+value (\begin{DoxyParamCaption}\item[{void $\ast$}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implementation for setting the value of the control. 
+
+
+
+Implements \mbox{\hyperlink{classcontrol__opencv_a4d85bf1fad428f8d0b257f6dc3996de8}{control\+\_\+opencv}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classtextbox__opencv_a4406afb223dd16469c31fd8da031682f}\label{classtextbox__opencv_a4406afb223dd16469c31fd8da031682f}} 
+\index{textbox\_opencv@{textbox\_opencv}!color\_background@{color\_background}}
+\index{color\_background@{color\_background}!textbox\_opencv@{textbox\_opencv}}
+\doxysubsubsection{\texorpdfstring{color\_background}{color\_background}}
+{\footnotesize\ttfamily cv\+::\+Scalar$\ast$ textbox\+\_\+opencv\+::color\+\_\+background}
+
+\mbox{\Hypertarget{classtextbox__opencv_a6ee7a4b9a0496e83137f5b4962ec159f}\label{classtextbox__opencv_a6ee7a4b9a0496e83137f5b4962ec159f}} 
+\index{textbox\_opencv@{textbox\_opencv}!color\_background\_disabled@{color\_background\_disabled}}
+\index{color\_background\_disabled@{color\_background\_disabled}!textbox\_opencv@{textbox\_opencv}}
+\doxysubsubsection{\texorpdfstring{color\_background\_disabled}{color\_background\_disabled}}
+{\footnotesize\ttfamily cv\+::\+Scalar textbox\+\_\+opencv\+::color\+\_\+background\+\_\+disabled}
+
+\mbox{\Hypertarget{classtextbox__opencv_a99ce3b1b10863af84340cfbdd2f4bfe4}\label{classtextbox__opencv_a99ce3b1b10863af84340cfbdd2f4bfe4}} 
+\index{textbox\_opencv@{textbox\_opencv}!color\_background\_enabled@{color\_background\_enabled}}
+\index{color\_background\_enabled@{color\_background\_enabled}!textbox\_opencv@{textbox\_opencv}}
+\doxysubsubsection{\texorpdfstring{color\_background\_enabled}{color\_background\_enabled}}
+{\footnotesize\ttfamily cv\+::\+Scalar textbox\+\_\+opencv\+::color\+\_\+background\+\_\+enabled}
+
+\mbox{\Hypertarget{classtextbox__opencv_ac0826a421d067eb25e227d22791b3300}\label{classtextbox__opencv_ac0826a421d067eb25e227d22791b3300}} 
+\index{textbox\_opencv@{textbox\_opencv}!color\_label@{color\_label}}
+\index{color\_label@{color\_label}!textbox\_opencv@{textbox\_opencv}}
+\doxysubsubsection{\texorpdfstring{color\_label}{color\_label}}
+{\footnotesize\ttfamily cv\+::\+Scalar$\ast$ textbox\+\_\+opencv\+::color\+\_\+label}
+
+\mbox{\Hypertarget{classtextbox__opencv_a18a1dd7af9885e7abd76b4bf22eca803}\label{classtextbox__opencv_a18a1dd7af9885e7abd76b4bf22eca803}} 
+\index{textbox\_opencv@{textbox\_opencv}!color\_label\_normal@{color\_label\_normal}}
+\index{color\_label\_normal@{color\_label\_normal}!textbox\_opencv@{textbox\_opencv}}
+\doxysubsubsection{\texorpdfstring{color\_label\_normal}{color\_label\_normal}}
+{\footnotesize\ttfamily cv\+::\+Scalar textbox\+\_\+opencv\+::color\+\_\+label\+\_\+normal}
+
+\mbox{\Hypertarget{classtextbox__opencv_a815e7f1bae9b10586ef0ff7e8a54f11f}\label{classtextbox__opencv_a815e7f1bae9b10586ef0ff7e8a54f11f}} 
+\index{textbox\_opencv@{textbox\_opencv}!color\_label\_selected@{color\_label\_selected}}
+\index{color\_label\_selected@{color\_label\_selected}!textbox\_opencv@{textbox\_opencv}}
+\doxysubsubsection{\texorpdfstring{color\_label\_selected}{color\_label\_selected}}
+{\footnotesize\ttfamily cv\+::\+Scalar textbox\+\_\+opencv\+::color\+\_\+label\+\_\+selected}
+
+\mbox{\Hypertarget{classtextbox__opencv_ab32410401b83c99fcb46e8f9772015a1}\label{classtextbox__opencv_ab32410401b83c99fcb46e8f9772015a1}} 
+\index{textbox\_opencv@{textbox\_opencv}!selected@{selected}}
+\index{selected@{selected}!textbox\_opencv@{textbox\_opencv}}
+\doxysubsubsection{\texorpdfstring{selected}{selected}}
+{\footnotesize\ttfamily bool textbox\+\_\+opencv\+::selected}
+
+\mbox{\Hypertarget{classtextbox__opencv_a0f7bbae4681dd6b431b6908187e6ad92}\label{classtextbox__opencv_a0f7bbae4681dd6b431b6908187e6ad92}} 
+\index{textbox\_opencv@{textbox\_opencv}!text@{text}}
+\index{text@{text}!textbox\_opencv@{textbox\_opencv}}
+\doxysubsubsection{\texorpdfstring{text}{text}}
+{\footnotesize\ttfamily std\+::string textbox\+\_\+opencv\+::text}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+diffmicro/display\+\_\+opencv/\mbox{\hyperlink{textbox__opencv_8h}{textbox\+\_\+opencv.\+h}}\item 
+diffmicro/display\+\_\+opencv/\mbox{\hyperlink{textbox__opencv_8cpp}{textbox\+\_\+opencv.\+cpp}}\end{DoxyCompactItemize}

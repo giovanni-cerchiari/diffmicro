@@ -1,0 +1,65 @@
+\hypertarget{control__opencv_8h}{}\doxysection{diffmicro/display\+\_\+opencv/control\+\_\+opencv.h File Reference}
+\label{control__opencv_8h}\index{diffmicro/display\_opencv/control\_opencv.h@{diffmicro/display\_opencv/control\_opencv.h}}
+{\ttfamily \#include $<$opencv2/core/core.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/imgproc.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/imgcodecs.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/highgui/highgui.\+hpp$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{control__opencv_8h_ac7f851d21ffaff48e314a97aafcd0da1}{control\+\_\+types}} \{ \mbox{\hyperlink{control__opencv_8h_ac7f851d21ffaff48e314a97aafcd0da1a354e39407d4156fa42db9d58d6485c76}{CTRL\+\_\+\+BUTTON}} = 0
+, \mbox{\hyperlink{control__opencv_8h_ac7f851d21ffaff48e314a97aafcd0da1a0c2a17f1e4584fc79107e26d90cd7390}{CTRL\+\_\+\+SINGLE\+\_\+\+TRACKBAR}} = 1
+, \mbox{\hyperlink{control__opencv_8h_ac7f851d21ffaff48e314a97aafcd0da1a8beba66dc6f31e361a617656ad92d31a}{CTRL\+\_\+\+MINMAX\+\_\+\+TRACKBAR}} = 2
+, \mbox{\hyperlink{control__opencv_8h_ac7f851d21ffaff48e314a97aafcd0da1a95a01f69f636023ba2cf1e3d6034a28a}{CTRL\+\_\+\+TEXTBOX}} = 3
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} $\ast$ \mbox{\hyperlink{control__opencv_8h_a6629df1588dba4c26203df804274bbcf}{select\+\_\+control}} (\mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} $\ast$, std\+::vector$<$ \mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} $\ast$ $>$ lst)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{control__opencv_8h_ac7f851d21ffaff48e314a97aafcd0da1}\label{control__opencv_8h_ac7f851d21ffaff48e314a97aafcd0da1}} 
+\index{control\_opencv.h@{control\_opencv.h}!control\_types@{control\_types}}
+\index{control\_types@{control\_types}!control\_opencv.h@{control\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{control\_types}{control\_types}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{control__opencv_8h_ac7f851d21ffaff48e314a97aafcd0da1}{control\+\_\+types}}}
+
+It might be useful to quikly know which type of control is from time to time in order not to fail the pointer cast. This enum is inteded to facilitate this process and the specified number should be assigned in any control constructor to the variable any\+\_\+control\+\_\+opencv\+::type \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTRL\_BUTTON@{CTRL\_BUTTON}!control\_opencv.h@{control\_opencv.h}}\index{control\_opencv.h@{control\_opencv.h}!CTRL\_BUTTON@{CTRL\_BUTTON}}}\mbox{\Hypertarget{control__opencv_8h_ac7f851d21ffaff48e314a97aafcd0da1a354e39407d4156fa42db9d58d6485c76}\label{control__opencv_8h_ac7f851d21ffaff48e314a97aafcd0da1a354e39407d4156fa42db9d58d6485c76}} 
+CTRL\+\_\+\+BUTTON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTRL\_SINGLE\_TRACKBAR@{CTRL\_SINGLE\_TRACKBAR}!control\_opencv.h@{control\_opencv.h}}\index{control\_opencv.h@{control\_opencv.h}!CTRL\_SINGLE\_TRACKBAR@{CTRL\_SINGLE\_TRACKBAR}}}\mbox{\Hypertarget{control__opencv_8h_ac7f851d21ffaff48e314a97aafcd0da1a0c2a17f1e4584fc79107e26d90cd7390}\label{control__opencv_8h_ac7f851d21ffaff48e314a97aafcd0da1a0c2a17f1e4584fc79107e26d90cd7390}} 
+CTRL\+\_\+\+SINGLE\+\_\+\+TRACKBAR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTRL\_MINMAX\_TRACKBAR@{CTRL\_MINMAX\_TRACKBAR}!control\_opencv.h@{control\_opencv.h}}\index{control\_opencv.h@{control\_opencv.h}!CTRL\_MINMAX\_TRACKBAR@{CTRL\_MINMAX\_TRACKBAR}}}\mbox{\Hypertarget{control__opencv_8h_ac7f851d21ffaff48e314a97aafcd0da1a8beba66dc6f31e361a617656ad92d31a}\label{control__opencv_8h_ac7f851d21ffaff48e314a97aafcd0da1a8beba66dc6f31e361a617656ad92d31a}} 
+CTRL\+\_\+\+MINMAX\+\_\+\+TRACKBAR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTRL\_TEXTBOX@{CTRL\_TEXTBOX}!control\_opencv.h@{control\_opencv.h}}\index{control\_opencv.h@{control\_opencv.h}!CTRL\_TEXTBOX@{CTRL\_TEXTBOX}}}\mbox{\Hypertarget{control__opencv_8h_ac7f851d21ffaff48e314a97aafcd0da1a95a01f69f636023ba2cf1e3d6034a28a}\label{control__opencv_8h_ac7f851d21ffaff48e314a97aafcd0da1a95a01f69f636023ba2cf1e3d6034a28a}} 
+CTRL\+\_\+\+TEXTBOX&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{control__opencv_8h_a6629df1588dba4c26203df804274bbcf}\label{control__opencv_8h_a6629df1588dba4c26203df804274bbcf}} 
+\index{control\_opencv.h@{control\_opencv.h}!select\_control@{select\_control}}
+\index{select\_control@{select\_control}!control\_opencv.h@{control\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{select\_control()}{select\_control()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}}$\ast$ select\+\_\+control (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} $\ast$}]{to\+\_\+be\+\_\+selected,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} $\ast$ $>$}]{lst }\end{DoxyParamCaption})}
+
+This function toggles the selection option of a \mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} inside the vector so that only one \mbox{\hyperlink{classcontrol__opencv}{control\+\_\+opencv}} is selected and all others are deselected. 

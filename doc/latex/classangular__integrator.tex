@@ -1,0 +1,278 @@
+\hypertarget{classangular__integrator}{}\doxysection{angular\+\_\+integrator$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$ Class Template Reference}
+\label{classangular__integrator}\index{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}}
+
+
+{\ttfamily \#include $<$angular\+\_\+integ.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classangular__integrator_a5e036c3d38a70f94989a39753bcab001}{angular\+\_\+integrator}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dim\+\_\+side=1, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classangular__integrator_a3b0618f1bbe74ce89b143a5d240a7ba9}{pixel\+\_\+division}}=8)
+\item 
+\mbox{\hyperlink{classangular__integrator_a43ebfaa7274886039e781d5a0fcdeda2}{angular\+\_\+integrator}} (\mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}} \&ang\+\_\+int)
+\item 
+\mbox{\hyperlink{classangular__integrator_ad180bf351854b3602711bf07aed21bde}{$\sim$angular\+\_\+integrator}} ()
+\item 
+void \mbox{\hyperlink{classangular__integrator_a6f17f62df3ae1bb17da005505b7afba5}{clear}} ()
+\item 
+void \mbox{\hyperlink{classangular__integrator_add59c67c63f71225fdf9102c61cce15b}{init}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dim\+\_\+side, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classangular__integrator_a3b0618f1bbe74ce89b143a5d240a7ba9}{pixel\+\_\+division}}=8)
+\item 
+void \mbox{\hyperlink{classangular__integrator_aa05644d7fc4a8d038ff1e5748c9898da}{operator=}} (\mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}} \&ang\+\_\+int)
+\item 
+void \mbox{\hyperlink{classangular__integrator_af4204bb059d710bb5d61c3a963487900}{operator()}} (FLOAT\+\_\+\+IN mat\mbox{[}$\,$\mbox{]}, FLOAT\+\_\+\+OUT integ\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classangular__integrator_a7fb09470905ea932af458353fb8ea09f}{dimside}} ()
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classangular__integrator_aa95f488b9ff77cfab0381df31c2adfd7}{size}} ()
+\item 
+FLOAT\+\_\+\+OUT $\ast$ \mbox{\hyperlink{classangular__integrator_a7380d016f1cc8c13b93ca46902706ca8}{w}} ()
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $\ast$ \mbox{\hyperlink{classangular__integrator_a3d9db0faf03b3846d70901b7fe9b5f80}{ind}} ()
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classangular__integrator_a3b0618f1bbe74ce89b143a5d240a7ba9}{pixel\+\_\+division}} ()
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classangular__integrator_acb10499d0df219c6ca9994bde3569dd2}{dimr}} ()
+\item 
+FLOAT\+\_\+\+OUT $\ast$ \mbox{\hyperlink{classangular__integrator_a07b57a2aa7998fa1083676e8d5e54553}{wr}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classangular__integrator_a87af8c13170544adc14994e0848577ae}{def\+\_\+alloc}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dim\+\_\+side)
+\item 
+void \mbox{\hyperlink{classangular__integrator_aab441fe512d6f5d63856037c71d091f3}{rad\+\_\+to\+\_\+ind\+\_\+w}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&x, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&y, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&\mbox{\hyperlink{classangular__integrator_a3d9db0faf03b3846d70901b7fe9b5f80}{ind}}, FLOAT\+\_\+\+OUT \mbox{\hyperlink{classangular__integrator_a7380d016f1cc8c13b93ca46902706ca8}{w}}\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classangular__integrator_ac7c4420942a34ceb87afc930a70f6470}{m\+\_\+dimside}}
+\begin{DoxyCompactList}\small\item\em square matrix side dimension \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classangular__integrator_afd435c72d4cbc3bd6e3c1026eb97dfb7}{m\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em = m\+\_\+dimside $\ast$ m\+\_\+dimside \end{DoxyCompactList}\item 
+FLOAT\+\_\+\+OUT $\ast$ \mbox{\hyperlink{classangular__integrator_ab4701fb07191134c3be7189cbe5de9a7}{m\+\_\+w}}
+\begin{DoxyCompactList}\small\item\em matrix of weights to calculate the azimuthal integral \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} $\ast$ \mbox{\hyperlink{classangular__integrator_adf0b3b40e3f25eb5a10d0ac13876eed1}{m\+\_\+ind}}
+\begin{DoxyCompactList}\small\item\em matrix that stores for each pixel the shortest falling index position in the output array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classangular__integrator_a7b35858594a392d3fca3a520f4f7110e}{m\+\_\+px\+\_\+div}}
+\begin{DoxyCompactList}\small\item\em pixel sub-\/division per side. Sub-\/division of pixel are used to evaluate the weights matrix m\+\_\+w \end{DoxyCompactList}\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classangular__integrator_ae9fdd051c19f9776e5b128b172987c7b}{m\+\_\+dimr}}
+\begin{DoxyCompactList}\small\item\em output array dimension \end{DoxyCompactList}\item 
+FLOAT\+\_\+\+OUT $\ast$ \mbox{\hyperlink{classangular__integrator_a392d2b236bb8a46c1026c33dbdea4292}{m\+\_\+wr}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename FLOAT\+\_\+\+OUT, typename FLOAT\+\_\+\+IN$>$\newline
+class angular\+\_\+integrator$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$}
+
+this functor calculates the angular integral of a square matrix from (0,0) corner. The mean position of the (0,0) element of the matrix is intended to be in position (0,0)
+
+The output of the integral is one dimensional vector of dimension m\+\_\+dimr. The space beetween each element of this output vector have to be intended equal to the distance between to adiacent pixel in the orizontal and vertical directions.
+
+The integral is evaluated as a weighted sum over all the pixels. The two more distance points inside a pixel of side 1 (the two that stays on the diagonal) have a separating distance of sqrt(2). This means that in the most comlicated case a pixel can overlap at maximum three different distances in the output array. We say that a pixel \char`\"{}falls\char`\"{} at a certein distance if it should be taken into account in evaluating the azimuthal integral for a determinate output position.
+
+First of all the three falling distances for each pixel are calculated. In practice a matrix of index m\+\_\+ind is prepared. The matrix stores for each pixel the shortest falling index position in the output array. Then a matrix of wheights is calculated. This weights are the sub-\/area of each pixel that falls inside a determined annulus. For each pixel are store in sequence three wheights and respctively the first wheight correspond to the index stored in m\+\_\+ind\mbox{[}pixel\+\_\+index\mbox{]}, the second in (m\+\_\+ind\mbox{[}pixel\+\_\+index\mbox{]}+1) and the third in (m\+\_\+ind\mbox{[}pixel\+\_\+index\mbox{]}+2)
+
+The sub-\/areas are calculated in a not random motecarlo alghoritm. Each pixel are subdivided in subpixels. The ratio beetween the number of sub-\/pixels that fall into a determined annular region above the total number of sub-\/pixels is considered as the weight of the pixel for the specific anular distance. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classangular__integrator_a5e036c3d38a70f94989a39753bcab001}\label{classangular__integrator_a5e036c3d38a70f94989a39753bcab001}} 
+\index{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}!angular\_integrator@{angular\_integrator}}
+\index{angular\_integrator@{angular\_integrator}!angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}}
+\doxysubsubsection{\texorpdfstring{angular\_integrator()}{angular\_integrator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename FLOAT\+\_\+\+OUT , typename FLOAT\+\_\+\+IN $>$ \\
+\mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$\+::\mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dim\+\_\+side = {\ttfamily 1},  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{pixel\+\_\+division = {\ttfamily 8} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classangular__integrator_a43ebfaa7274886039e781d5a0fcdeda2}\label{classangular__integrator_a43ebfaa7274886039e781d5a0fcdeda2}} 
+\index{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}!angular\_integrator@{angular\_integrator}}
+\index{angular\_integrator@{angular\_integrator}!angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}}
+\doxysubsubsection{\texorpdfstring{angular\_integrator()}{angular\_integrator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename FLOAT\+\_\+\+OUT , typename FLOAT\+\_\+\+IN $>$ \\
+\mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$\+::\mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$ \&}]{ang\+\_\+int }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classangular__integrator_ad180bf351854b3602711bf07aed21bde}\label{classangular__integrator_ad180bf351854b3602711bf07aed21bde}} 
+\index{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}!````~angular\_integrator@{$\sim$angular\_integrator}}
+\index{````~angular\_integrator@{$\sim$angular\_integrator}!angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$angular\_integrator()}{~angular\_integrator()}}
+{\footnotesize\ttfamily template$<$typename FLOAT\+\_\+\+OUT , typename FLOAT\+\_\+\+IN $>$ \\
+\mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$\+::$\sim$\mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classangular__integrator_a6f17f62df3ae1bb17da005505b7afba5}\label{classangular__integrator_a6f17f62df3ae1bb17da005505b7afba5}} 
+\index{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}!clear@{clear}}
+\index{clear@{clear}!angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$typename FLOAT\+\_\+\+OUT , typename FLOAT\+\_\+\+IN $>$ \\
+void \mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+clear variables and pointers \mbox{\Hypertarget{classangular__integrator_a87af8c13170544adc14994e0848577ae}\label{classangular__integrator_a87af8c13170544adc14994e0848577ae}} 
+\index{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}!def\_alloc@{def\_alloc}}
+\index{def\_alloc@{def\_alloc}!angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}}
+\doxysubsubsection{\texorpdfstring{def\_alloc()}{def\_alloc()}}
+{\footnotesize\ttfamily template$<$typename FLOAT\+\_\+\+OUT , typename FLOAT\+\_\+\+IN $>$ \\
+void \mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$\+::def\+\_\+alloc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dim\+\_\+side }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+allocation of the necessary space of the functor \mbox{\Hypertarget{classangular__integrator_acb10499d0df219c6ca9994bde3569dd2}\label{classangular__integrator_acb10499d0df219c6ca9994bde3569dd2}} 
+\index{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}!dimr@{dimr}}
+\index{dimr@{dimr}!angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}}
+\doxysubsubsection{\texorpdfstring{dimr()}{dimr()}}
+{\footnotesize\ttfamily template$<$typename FLOAT\+\_\+\+OUT , typename FLOAT\+\_\+\+IN $>$ \\
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$\+::dimr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classangular__integrator_a7fb09470905ea932af458353fb8ea09f}\label{classangular__integrator_a7fb09470905ea932af458353fb8ea09f}} 
+\index{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}!dimside@{dimside}}
+\index{dimside@{dimside}!angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}}
+\doxysubsubsection{\texorpdfstring{dimside()}{dimside()}}
+{\footnotesize\ttfamily template$<$typename FLOAT\+\_\+\+OUT , typename FLOAT\+\_\+\+IN $>$ \\
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$\+::dimside (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classangular__integrator_a3d9db0faf03b3846d70901b7fe9b5f80}\label{classangular__integrator_a3d9db0faf03b3846d70901b7fe9b5f80}} 
+\index{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}!ind@{ind}}
+\index{ind@{ind}!angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}}
+\doxysubsubsection{\texorpdfstring{ind()}{ind()}}
+{\footnotesize\ttfamily template$<$typename FLOAT\+\_\+\+OUT , typename FLOAT\+\_\+\+IN $>$ \\
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}$\ast$ \mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$\+::ind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classangular__integrator_add59c67c63f71225fdf9102c61cce15b}\label{classangular__integrator_add59c67c63f71225fdf9102c61cce15b}} 
+\index{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}!init@{init}}
+\index{init@{init}!angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily template$<$typename FLOAT\+\_\+\+OUT , typename FLOAT\+\_\+\+IN $>$ \\
+void \mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$\+::init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dim\+\_\+side,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{pixel\+\_\+division = {\ttfamily 8} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+initialization.
+\begin{DoxyItemize}
+\item dim\+\_\+side is the side in elements of the square matrix of which the angular integral should evaluated
+\item pixel\+\_\+division are the sub-\/division per side of a pixel that are used to evaluate the weights matrix m\+\_\+w 
+\end{DoxyItemize}\mbox{\Hypertarget{classangular__integrator_af4204bb059d710bb5d61c3a963487900}\label{classangular__integrator_af4204bb059d710bb5d61c3a963487900}} 
+\index{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily template$<$typename FLOAT\+\_\+\+OUT , typename FLOAT\+\_\+\+IN $>$ \\
+void \mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$\+::operator() (\begin{DoxyParamCaption}\item[{FLOAT\+\_\+\+IN}]{mat\mbox{[}$\,$\mbox{]},  }\item[{FLOAT\+\_\+\+OUT}]{integ\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+This is the functor function. As you see the initialization should be done before calling the functor and the memory are of the integral should be also prepared in advance \mbox{\Hypertarget{classangular__integrator_aa05644d7fc4a8d038ff1e5748c9898da}\label{classangular__integrator_aa05644d7fc4a8d038ff1e5748c9898da}} 
+\index{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename FLOAT\+\_\+\+OUT , typename FLOAT\+\_\+\+IN $>$ \\
+void \mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$ \&}]{ang\+\_\+int }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+copy operator \mbox{\Hypertarget{classangular__integrator_a3b0618f1bbe74ce89b143a5d240a7ba9}\label{classangular__integrator_a3b0618f1bbe74ce89b143a5d240a7ba9}} 
+\index{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}!pixel\_division@{pixel\_division}}
+\index{pixel\_division@{pixel\_division}!angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}}
+\doxysubsubsection{\texorpdfstring{pixel\_division()}{pixel\_division()}}
+{\footnotesize\ttfamily template$<$typename FLOAT\+\_\+\+OUT , typename FLOAT\+\_\+\+IN $>$ \\
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$\+::pixel\+\_\+division (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classangular__integrator_aab441fe512d6f5d63856037c71d091f3}\label{classangular__integrator_aab441fe512d6f5d63856037c71d091f3}} 
+\index{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}!rad\_to\_ind\_w@{rad\_to\_ind\_w}}
+\index{rad\_to\_ind\_w@{rad\_to\_ind\_w}!angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}}
+\doxysubsubsection{\texorpdfstring{rad\_to\_ind\_w()}{rad\_to\_ind\_w()}}
+{\footnotesize\ttfamily template$<$typename FLOAT\+\_\+\+OUT , typename FLOAT\+\_\+\+IN $>$ \\
+void \mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$\+::rad\+\_\+to\+\_\+ind\+\_\+w (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&}]{x,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&}]{y,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&}]{ind,  }\item[{FLOAT\+\_\+\+OUT}]{w\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+From pixel indices to its m\+\_\+ind and weigh \mbox{\Hypertarget{classangular__integrator_aa95f488b9ff77cfab0381df31c2adfd7}\label{classangular__integrator_aa95f488b9ff77cfab0381df31c2adfd7}} 
+\index{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}!size@{size}}
+\index{size@{size}!angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename FLOAT\+\_\+\+OUT , typename FLOAT\+\_\+\+IN $>$ \\
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classangular__integrator_a7380d016f1cc8c13b93ca46902706ca8}\label{classangular__integrator_a7380d016f1cc8c13b93ca46902706ca8}} 
+\index{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}!w@{w}}
+\index{w@{w}!angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}}
+\doxysubsubsection{\texorpdfstring{w()}{w()}}
+{\footnotesize\ttfamily template$<$typename FLOAT\+\_\+\+OUT , typename FLOAT\+\_\+\+IN $>$ \\
+FLOAT\+\_\+\+OUT$\ast$ \mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$\+::w (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classangular__integrator_a07b57a2aa7998fa1083676e8d5e54553}\label{classangular__integrator_a07b57a2aa7998fa1083676e8d5e54553}} 
+\index{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}!wr@{wr}}
+\index{wr@{wr}!angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}}
+\doxysubsubsection{\texorpdfstring{wr()}{wr()}}
+{\footnotesize\ttfamily template$<$typename FLOAT\+\_\+\+OUT , typename FLOAT\+\_\+\+IN $>$ \\
+FLOAT\+\_\+\+OUT$\ast$ \mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$\+::wr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classangular__integrator_ae9fdd051c19f9776e5b128b172987c7b}\label{classangular__integrator_ae9fdd051c19f9776e5b128b172987c7b}} 
+\index{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}!m\_dimr@{m\_dimr}}
+\index{m\_dimr@{m\_dimr}!angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}}
+\doxysubsubsection{\texorpdfstring{m\_dimr}{m\_dimr}}
+{\footnotesize\ttfamily template$<$typename FLOAT\+\_\+\+OUT , typename FLOAT\+\_\+\+IN $>$ \\
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$\+::m\+\_\+dimr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+output array dimension 
+
+\mbox{\Hypertarget{classangular__integrator_ac7c4420942a34ceb87afc930a70f6470}\label{classangular__integrator_ac7c4420942a34ceb87afc930a70f6470}} 
+\index{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}!m\_dimside@{m\_dimside}}
+\index{m\_dimside@{m\_dimside}!angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}}
+\doxysubsubsection{\texorpdfstring{m\_dimside}{m\_dimside}}
+{\footnotesize\ttfamily template$<$typename FLOAT\+\_\+\+OUT , typename FLOAT\+\_\+\+IN $>$ \\
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$\+::m\+\_\+dimside\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+square matrix side dimension 
+
+\mbox{\Hypertarget{classangular__integrator_adf0b3b40e3f25eb5a10d0ac13876eed1}\label{classangular__integrator_adf0b3b40e3f25eb5a10d0ac13876eed1}} 
+\index{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}!m\_ind@{m\_ind}}
+\index{m\_ind@{m\_ind}!angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}}
+\doxysubsubsection{\texorpdfstring{m\_ind}{m\_ind}}
+{\footnotesize\ttfamily template$<$typename FLOAT\+\_\+\+OUT , typename FLOAT\+\_\+\+IN $>$ \\
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}$\ast$ \mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$\+::m\+\_\+ind\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+matrix that stores for each pixel the shortest falling index position in the output array. 
+
+\mbox{\Hypertarget{classangular__integrator_a7b35858594a392d3fca3a520f4f7110e}\label{classangular__integrator_a7b35858594a392d3fca3a520f4f7110e}} 
+\index{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}!m\_px\_div@{m\_px\_div}}
+\index{m\_px\_div@{m\_px\_div}!angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}}
+\doxysubsubsection{\texorpdfstring{m\_px\_div}{m\_px\_div}}
+{\footnotesize\ttfamily template$<$typename FLOAT\+\_\+\+OUT , typename FLOAT\+\_\+\+IN $>$ \\
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$\+::m\+\_\+px\+\_\+div\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+pixel sub-\/division per side. Sub-\/division of pixel are used to evaluate the weights matrix m\+\_\+w 
+
+\mbox{\Hypertarget{classangular__integrator_afd435c72d4cbc3bd6e3c1026eb97dfb7}\label{classangular__integrator_afd435c72d4cbc3bd6e3c1026eb97dfb7}} 
+\index{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}!m\_size@{m\_size}}
+\index{m\_size@{m\_size}!angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}}
+\doxysubsubsection{\texorpdfstring{m\_size}{m\_size}}
+{\footnotesize\ttfamily template$<$typename FLOAT\+\_\+\+OUT , typename FLOAT\+\_\+\+IN $>$ \\
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$\+::m\+\_\+size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+= m\+\_\+dimside $\ast$ m\+\_\+dimside 
+
+\mbox{\Hypertarget{classangular__integrator_ab4701fb07191134c3be7189cbe5de9a7}\label{classangular__integrator_ab4701fb07191134c3be7189cbe5de9a7}} 
+\index{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}!m\_w@{m\_w}}
+\index{m\_w@{m\_w}!angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}}
+\doxysubsubsection{\texorpdfstring{m\_w}{m\_w}}
+{\footnotesize\ttfamily template$<$typename FLOAT\+\_\+\+OUT , typename FLOAT\+\_\+\+IN $>$ \\
+FLOAT\+\_\+\+OUT$\ast$ \mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$\+::m\+\_\+w\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+matrix of weights to calculate the azimuthal integral 
+
+\mbox{\Hypertarget{classangular__integrator_a392d2b236bb8a46c1026c33dbdea4292}\label{classangular__integrator_a392d2b236bb8a46c1026c33dbdea4292}} 
+\index{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}!m\_wr@{m\_wr}}
+\index{m\_wr@{m\_wr}!angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$@{angular\_integrator$<$ FLOAT\_OUT, FLOAT\_IN $>$}}
+\doxysubsubsection{\texorpdfstring{m\_wr}{m\_wr}}
+{\footnotesize\ttfamily template$<$typename FLOAT\+\_\+\+OUT , typename FLOAT\+\_\+\+IN $>$ \\
+FLOAT\+\_\+\+OUT$\ast$ \mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ FLOAT\+\_\+\+OUT, FLOAT\+\_\+\+IN $>$\+::m\+\_\+wr\hspace{0.3cm}{\ttfamily [protected]}}
+
+this array contains the azimuthal integral of a matrix full of ones. This means that this are the azimuthal weights integrate and srinked on a possible output array. The division of any output array with this one trasform the angular integral into an angular average. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+diffmicro/cpp-\/routine/\mbox{\hyperlink{angular__integ_8h}{angular\+\_\+integ.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,187 @@
+\hypertarget{diffmicro__log_8h}{}\doxysection{diffmicro/diffmicro\+\_\+log.h File Reference}
+\label{diffmicro__log_8h}\index{diffmicro/diffmicro\_log.h@{diffmicro/diffmicro\_log.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include \char`\"{}stopwatch.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}diffmicro\+\_\+io.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}correlation.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{diffmicro__log_8h_a8b928fea5ace50525bc630a11c3f3486}{init\+\_\+log}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimtime)
+\item 
+void \mbox{\hyperlink{diffmicro__log_8h_a1712ca0ebe2fce033e7535e49627f255}{print\+\_\+log}} (std\+::ostream \&out, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&dimy, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&dimx)
+\item 
+void \mbox{\hyperlink{diffmicro__log_8h_a481a880e3f160319f4a4f25840b8d213}{close\+\_\+log}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classstopwatch}{stopwatch}} \mbox{\hyperlink{diffmicro__log_8h_a7a309e1a515ac83c285e07cc94b64beb}{time\+\_\+reading\+\_\+from\+\_\+disk}}
+\item 
+\mbox{\hyperlink{classstopwatch}{stopwatch}} \mbox{\hyperlink{diffmicro__log_8h_a667e001c30f4557a933d3fb86f09115f}{time\+\_\+writing\+\_\+on\+\_\+disk}}
+\item 
+\mbox{\hyperlink{classstopwatch}{stopwatch}} \mbox{\hyperlink{diffmicro__log_8h_a6b479d8e22101e3e4fc730e3aedfaf5b}{time\+\_\+from\+\_\+host\+\_\+to\+\_\+device}}
+\item 
+\mbox{\hyperlink{classstopwatch}{stopwatch}} \mbox{\hyperlink{diffmicro__log_8h_a5db437186a276daf5a4979fd38555876}{time\+\_\+from\+\_\+device\+\_\+to\+\_\+host}}
+\item 
+\mbox{\hyperlink{classstopwatch}{stopwatch}} \mbox{\hyperlink{diffmicro__log_8h_ab20c37e8dac8916c37f15f50ee421989}{time\+\_\+fft\+\_\+norm}}
+\item 
+\mbox{\hyperlink{classstopwatch}{stopwatch}} \mbox{\hyperlink{diffmicro__log_8h_af61e05bae41742ceb438fcccaf83a54d}{time\+\_\+differences}}
+\item 
+\mbox{\hyperlink{classstopwatch}{stopwatch}} \mbox{\hyperlink{diffmicro__log_8h_aadaa9be0da1b973a68ffe51b28429db7}{time\+\_\+azh\+\_\+avg}}
+\item 
+\mbox{\hyperlink{classstopwatch}{stopwatch}} \mbox{\hyperlink{diffmicro__log_8h_a3ee036fc93c6bde8cc15ced630fe3fc6}{general\+\_\+stw}}
+\item 
+\mbox{\hyperlink{classstopwatch}{stopwatch}} \mbox{\hyperlink{diffmicro__log_8h_a1c2c8a35b510be840e37491f858d98c2}{time\+\_\+time\+\_\+correlation}}
+\item 
+\mbox{\hyperlink{classstopwatch}{stopwatch}} \mbox{\hyperlink{diffmicro__log_8h_a0818b20c4a7cfb57977d07ef78c584df}{time\+\_\+reshuffling\+\_\+memory}}
+\item 
+unsigned long \mbox{\hyperlink{diffmicro__log_8h_a41be001c8172733c207d26839d136a21}{n\+\_\+computed\+\_\+fft}}
+\item 
+unsigned long \mbox{\hyperlink{diffmicro__log_8h_ae8c83c25ef8962a48c7c88113af26a0f}{n\+\_\+computed\+\_\+diff}}
+\item 
+unsigned long \mbox{\hyperlink{diffmicro__log_8h_af6cc0495d5f1aabdc567bbfe2a1692d6}{n\+\_\+groups\+\_\+reload}}
+\item 
+unsigned long \mbox{\hyperlink{diffmicro__log_8h_aadf22f33283ddfd2f91646f95ca58743}{radial\+\_\+lut\+\_\+length}}
+\item 
+unsigned long \mbox{\hyperlink{diffmicro__log_8h_aa0a93ae39902472d7cfccaa063a0677d}{n\+\_\+capacity}}
+\item 
+unsigned long \mbox{\hyperlink{diffmicro__log_8h_a4209c5b884a6d4ffdce2367eea4c097d}{tot\+\_\+memory\+\_\+fft\+\_\+images}}
+\item 
+unsigned long \mbox{\hyperlink{diffmicro__log_8h_ac3a750d2c19f217d573609b613c230be}{tot\+\_\+calculation\+\_\+memory}}
+\item 
+unsigned char $\ast$ \mbox{\hyperlink{diffmicro__log_8h_a6c52f6fe0de197697ea9c34e53e748f9}{execution\+\_\+map}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{diffmicro__log_8h_a481a880e3f160319f4a4f25840b8d213}\label{diffmicro__log_8h_a481a880e3f160319f4a4f25840b8d213}} 
+\index{diffmicro\_log.h@{diffmicro\_log.h}!close\_log@{close\_log}}
+\index{close\_log@{close\_log}!diffmicro\_log.h@{diffmicro\_log.h}}
+\doxysubsubsection{\texorpdfstring{close\_log()}{close\_log()}}
+{\footnotesize\ttfamily void close\+\_\+log (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function must be called at the beginning of the program to free the memory of the log enviroment of diffmicro. \mbox{\Hypertarget{diffmicro__log_8h_a8b928fea5ace50525bc630a11c3f3486}\label{diffmicro__log_8h_a8b928fea5ace50525bc630a11c3f3486}} 
+\index{diffmicro\_log.h@{diffmicro\_log.h}!init\_log@{init\_log}}
+\index{init\_log@{init\_log}!diffmicro\_log.h@{diffmicro\_log.h}}
+\doxysubsubsection{\texorpdfstring{init\_log()}{init\_log()}}
+{\footnotesize\ttfamily void init\+\_\+log (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimtime }\end{DoxyParamCaption})}
+
+This function must be called at the beginning of the program to initialize the log enviroment of diffmicro. \mbox{\Hypertarget{diffmicro__log_8h_a1712ca0ebe2fce033e7535e49627f255}\label{diffmicro__log_8h_a1712ca0ebe2fce033e7535e49627f255}} 
+\index{diffmicro\_log.h@{diffmicro\_log.h}!print\_log@{print\_log}}
+\index{print\_log@{print\_log}!diffmicro\_log.h@{diffmicro\_log.h}}
+\doxysubsubsection{\texorpdfstring{print\_log()}{print\_log()}}
+{\footnotesize\ttfamily void print\+\_\+log (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&}]{dimy,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&}]{dimx }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{diffmicro__log_8h_a6c52f6fe0de197697ea9c34e53e748f9}\label{diffmicro__log_8h_a6c52f6fe0de197697ea9c34e53e748f9}} 
+\index{diffmicro\_log.h@{diffmicro\_log.h}!execution\_map@{execution\_map}}
+\index{execution\_map@{execution\_map}!diffmicro\_log.h@{diffmicro\_log.h}}
+\doxysubsubsection{\texorpdfstring{execution\_map}{execution\_map}}
+{\footnotesize\ttfamily unsigned char$\ast$ execution\+\_\+map\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__log_8h_a3ee036fc93c6bde8cc15ced630fe3fc6}\label{diffmicro__log_8h_a3ee036fc93c6bde8cc15ced630fe3fc6}} 
+\index{diffmicro\_log.h@{diffmicro\_log.h}!general\_stw@{general\_stw}}
+\index{general\_stw@{general\_stw}!diffmicro\_log.h@{diffmicro\_log.h}}
+\doxysubsubsection{\texorpdfstring{general\_stw}{general\_stw}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classstopwatch}{stopwatch}} general\+\_\+stw\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__log_8h_aa0a93ae39902472d7cfccaa063a0677d}\label{diffmicro__log_8h_aa0a93ae39902472d7cfccaa063a0677d}} 
+\index{diffmicro\_log.h@{diffmicro\_log.h}!n\_capacity@{n\_capacity}}
+\index{n\_capacity@{n\_capacity}!diffmicro\_log.h@{diffmicro\_log.h}}
+\doxysubsubsection{\texorpdfstring{n\_capacity}{n\_capacity}}
+{\footnotesize\ttfamily unsigned long n\+\_\+capacity\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__log_8h_ae8c83c25ef8962a48c7c88113af26a0f}\label{diffmicro__log_8h_ae8c83c25ef8962a48c7c88113af26a0f}} 
+\index{diffmicro\_log.h@{diffmicro\_log.h}!n\_computed\_diff@{n\_computed\_diff}}
+\index{n\_computed\_diff@{n\_computed\_diff}!diffmicro\_log.h@{diffmicro\_log.h}}
+\doxysubsubsection{\texorpdfstring{n\_computed\_diff}{n\_computed\_diff}}
+{\footnotesize\ttfamily unsigned long n\+\_\+computed\+\_\+diff\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__log_8h_a41be001c8172733c207d26839d136a21}\label{diffmicro__log_8h_a41be001c8172733c207d26839d136a21}} 
+\index{diffmicro\_log.h@{diffmicro\_log.h}!n\_computed\_fft@{n\_computed\_fft}}
+\index{n\_computed\_fft@{n\_computed\_fft}!diffmicro\_log.h@{diffmicro\_log.h}}
+\doxysubsubsection{\texorpdfstring{n\_computed\_fft}{n\_computed\_fft}}
+{\footnotesize\ttfamily unsigned long n\+\_\+computed\+\_\+fft\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__log_8h_af6cc0495d5f1aabdc567bbfe2a1692d6}\label{diffmicro__log_8h_af6cc0495d5f1aabdc567bbfe2a1692d6}} 
+\index{diffmicro\_log.h@{diffmicro\_log.h}!n\_groups\_reload@{n\_groups\_reload}}
+\index{n\_groups\_reload@{n\_groups\_reload}!diffmicro\_log.h@{diffmicro\_log.h}}
+\doxysubsubsection{\texorpdfstring{n\_groups\_reload}{n\_groups\_reload}}
+{\footnotesize\ttfamily unsigned long n\+\_\+groups\+\_\+reload\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__log_8h_aadf22f33283ddfd2f91646f95ca58743}\label{diffmicro__log_8h_aadf22f33283ddfd2f91646f95ca58743}} 
+\index{diffmicro\_log.h@{diffmicro\_log.h}!radial\_lut\_length@{radial\_lut\_length}}
+\index{radial\_lut\_length@{radial\_lut\_length}!diffmicro\_log.h@{diffmicro\_log.h}}
+\doxysubsubsection{\texorpdfstring{radial\_lut\_length}{radial\_lut\_length}}
+{\footnotesize\ttfamily unsigned long radial\+\_\+lut\+\_\+length\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__log_8h_aadaa9be0da1b973a68ffe51b28429db7}\label{diffmicro__log_8h_aadaa9be0da1b973a68ffe51b28429db7}} 
+\index{diffmicro\_log.h@{diffmicro\_log.h}!time\_azh\_avg@{time\_azh\_avg}}
+\index{time\_azh\_avg@{time\_azh\_avg}!diffmicro\_log.h@{diffmicro\_log.h}}
+\doxysubsubsection{\texorpdfstring{time\_azh\_avg}{time\_azh\_avg}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classstopwatch}{stopwatch}} time\+\_\+azh\+\_\+avg\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__log_8h_af61e05bae41742ceb438fcccaf83a54d}\label{diffmicro__log_8h_af61e05bae41742ceb438fcccaf83a54d}} 
+\index{diffmicro\_log.h@{diffmicro\_log.h}!time\_differences@{time\_differences}}
+\index{time\_differences@{time\_differences}!diffmicro\_log.h@{diffmicro\_log.h}}
+\doxysubsubsection{\texorpdfstring{time\_differences}{time\_differences}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classstopwatch}{stopwatch}} time\+\_\+differences\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__log_8h_ab20c37e8dac8916c37f15f50ee421989}\label{diffmicro__log_8h_ab20c37e8dac8916c37f15f50ee421989}} 
+\index{diffmicro\_log.h@{diffmicro\_log.h}!time\_fft\_norm@{time\_fft\_norm}}
+\index{time\_fft\_norm@{time\_fft\_norm}!diffmicro\_log.h@{diffmicro\_log.h}}
+\doxysubsubsection{\texorpdfstring{time\_fft\_norm}{time\_fft\_norm}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classstopwatch}{stopwatch}} time\+\_\+fft\+\_\+norm\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__log_8h_a5db437186a276daf5a4979fd38555876}\label{diffmicro__log_8h_a5db437186a276daf5a4979fd38555876}} 
+\index{diffmicro\_log.h@{diffmicro\_log.h}!time\_from\_device\_to\_host@{time\_from\_device\_to\_host}}
+\index{time\_from\_device\_to\_host@{time\_from\_device\_to\_host}!diffmicro\_log.h@{diffmicro\_log.h}}
+\doxysubsubsection{\texorpdfstring{time\_from\_device\_to\_host}{time\_from\_device\_to\_host}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classstopwatch}{stopwatch}} time\+\_\+from\+\_\+device\+\_\+to\+\_\+host\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__log_8h_a6b479d8e22101e3e4fc730e3aedfaf5b}\label{diffmicro__log_8h_a6b479d8e22101e3e4fc730e3aedfaf5b}} 
+\index{diffmicro\_log.h@{diffmicro\_log.h}!time\_from\_host\_to\_device@{time\_from\_host\_to\_device}}
+\index{time\_from\_host\_to\_device@{time\_from\_host\_to\_device}!diffmicro\_log.h@{diffmicro\_log.h}}
+\doxysubsubsection{\texorpdfstring{time\_from\_host\_to\_device}{time\_from\_host\_to\_device}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classstopwatch}{stopwatch}} time\+\_\+from\+\_\+host\+\_\+to\+\_\+device\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__log_8h_a7a309e1a515ac83c285e07cc94b64beb}\label{diffmicro__log_8h_a7a309e1a515ac83c285e07cc94b64beb}} 
+\index{diffmicro\_log.h@{diffmicro\_log.h}!time\_reading\_from\_disk@{time\_reading\_from\_disk}}
+\index{time\_reading\_from\_disk@{time\_reading\_from\_disk}!diffmicro\_log.h@{diffmicro\_log.h}}
+\doxysubsubsection{\texorpdfstring{time\_reading\_from\_disk}{time\_reading\_from\_disk}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classstopwatch}{stopwatch}} time\+\_\+reading\+\_\+from\+\_\+disk\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__log_8h_a0818b20c4a7cfb57977d07ef78c584df}\label{diffmicro__log_8h_a0818b20c4a7cfb57977d07ef78c584df}} 
+\index{diffmicro\_log.h@{diffmicro\_log.h}!time\_reshuffling\_memory@{time\_reshuffling\_memory}}
+\index{time\_reshuffling\_memory@{time\_reshuffling\_memory}!diffmicro\_log.h@{diffmicro\_log.h}}
+\doxysubsubsection{\texorpdfstring{time\_reshuffling\_memory}{time\_reshuffling\_memory}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classstopwatch}{stopwatch}} time\+\_\+reshuffling\+\_\+memory\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__log_8h_a1c2c8a35b510be840e37491f858d98c2}\label{diffmicro__log_8h_a1c2c8a35b510be840e37491f858d98c2}} 
+\index{diffmicro\_log.h@{diffmicro\_log.h}!time\_time\_correlation@{time\_time\_correlation}}
+\index{time\_time\_correlation@{time\_time\_correlation}!diffmicro\_log.h@{diffmicro\_log.h}}
+\doxysubsubsection{\texorpdfstring{time\_time\_correlation}{time\_time\_correlation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classstopwatch}{stopwatch}} time\+\_\+time\+\_\+correlation\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__log_8h_a667e001c30f4557a933d3fb86f09115f}\label{diffmicro__log_8h_a667e001c30f4557a933d3fb86f09115f}} 
+\index{diffmicro\_log.h@{diffmicro\_log.h}!time\_writing\_on\_disk@{time\_writing\_on\_disk}}
+\index{time\_writing\_on\_disk@{time\_writing\_on\_disk}!diffmicro\_log.h@{diffmicro\_log.h}}
+\doxysubsubsection{\texorpdfstring{time\_writing\_on\_disk}{time\_writing\_on\_disk}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classstopwatch}{stopwatch}} time\+\_\+writing\+\_\+on\+\_\+disk\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__log_8h_ac3a750d2c19f217d573609b613c230be}\label{diffmicro__log_8h_ac3a750d2c19f217d573609b613c230be}} 
+\index{diffmicro\_log.h@{diffmicro\_log.h}!tot\_calculation\_memory@{tot\_calculation\_memory}}
+\index{tot\_calculation\_memory@{tot\_calculation\_memory}!diffmicro\_log.h@{diffmicro\_log.h}}
+\doxysubsubsection{\texorpdfstring{tot\_calculation\_memory}{tot\_calculation\_memory}}
+{\footnotesize\ttfamily unsigned long tot\+\_\+calculation\+\_\+memory\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__log_8h_a4209c5b884a6d4ffdce2367eea4c097d}\label{diffmicro__log_8h_a4209c5b884a6d4ffdce2367eea4c097d}} 
+\index{diffmicro\_log.h@{diffmicro\_log.h}!tot\_memory\_fft\_images@{tot\_memory\_fft\_images}}
+\index{tot\_memory\_fft\_images@{tot\_memory\_fft\_images}!diffmicro\_log.h@{diffmicro\_log.h}}
+\doxysubsubsection{\texorpdfstring{tot\_memory\_fft\_images}{tot\_memory\_fft\_images}}
+{\footnotesize\ttfamily unsigned long tot\+\_\+memory\+\_\+fft\+\_\+images\hspace{0.3cm}{\ttfamily [extern]}}
+

@@ -1,0 +1,186 @@
+\hypertarget{figure__opencv_8h}{}\doxysection{diffmicro/display\+\_\+opencv/figure\+\_\+opencv.h File Reference}
+\label{figure__opencv_8h}\index{diffmicro/display\_opencv/figure\_opencv.h@{diffmicro/display\_opencv/figure\_opencv.h}}
+{\ttfamily \#include \char`\"{}keyboard\+\_\+opencv.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}window\+\_\+display\+\_\+opencv.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} $\ast$ \mbox{\hyperlink{figure__opencv_8h_adb856adaf65d78ac9a740a387ef11d2a}{find\+\_\+figure}} (int id\+\_\+figure)
+\item 
+\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} $\ast$ \mbox{\hyperlink{figure__opencv_8h_a3c1eaf984b2936cad93768e411468cb7}{open\+\_\+figure}} (int id\+\_\+figure)
+\item 
+void \mbox{\hyperlink{figure__opencv_8h_a5f5679e61464f20eb80838c4b2859ff5}{figure\+\_\+grid}} (unsigned int n\+\_\+figure, std\+::list$<$ int $>$ \&id\+\_\+figure)
+\item 
+void \mbox{\hyperlink{figure__opencv_8h_ae6441f502ce878f4a141ba997d2f8d90}{add\+\_\+axes\+\_\+and\+\_\+legend}} (\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} $\ast$fig)
+\item 
+\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} $\ast$ \mbox{\hyperlink{figure__opencv_8h_a343bfd8b2967fb5705ca5184b8370ed0}{new\+\_\+figure}} (unsigned int dimx, unsigned int dimy, double $\ast$img)
+\item 
+\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} $\ast$ \mbox{\hyperlink{figure__opencv_8h_aed9c1992881094971fedaa2953a50616}{new\+\_\+figure}} (unsigned int dimx, unsigned int dimy, unsigned int dim\+\_\+channel, double $\ast$$\ast$images)
+\item 
+\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} $\ast$ \mbox{\hyperlink{figure__opencv_8h_af60f782998e8c4ceb8549a770133955e}{plot}} (\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} $\ast$fig, \mbox{\hyperlink{classscatter__opencv}{scatter\+\_\+opencv}} $\ast$scatter)
+\item 
+\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} $\ast$ \mbox{\hyperlink{figure__opencv_8h_af9e7b83755d67e2cdea880e174159f0e}{plot}} (\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} $\ast$fig, \mbox{\hyperlink{classbarplot__opencv}{barplot\+\_\+opencv}} $\ast$barplot)
+\item 
+\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} $\ast$ \mbox{\hyperlink{figure__opencv_8h_a6b71560f5fa426289b7b36eabc1eb1f9}{plot}} (int id\+\_\+figure, \mbox{\hyperlink{classscatter__opencv}{scatter\+\_\+opencv}} $\ast$scatter)
+\item 
+\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} $\ast$ \mbox{\hyperlink{figure__opencv_8h_aaf8d3be2717ec026121005bbec4052bf}{plot}} (int id\+\_\+figure, \mbox{\hyperlink{classbarplot__opencv}{barplot\+\_\+opencv}} $\ast$barplot)
+\item 
+void \mbox{\hyperlink{figure__opencv_8h_af59ab6d703792e39e212b970c044ddf2}{adapt\+\_\+plot\+\_\+area\+\_\+to\+\_\+function}} (\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} $\ast$fig, unsigned int dimpoint, double $\ast$x, double $\ast$y)
+\item 
+void \mbox{\hyperlink{figure__opencv_8h_a84d6275e29472ec806fc93fb092aeb86}{volume\+\_\+movie}} (unsigned int dimx, unsigned int dimy, unsigned int dimz, unsigned int n\+\_\+channels, double $\ast$$\ast$vol, int frame\+\_\+time\+\_\+step\+\_\+ms)
+\item 
+\mbox{\hyperlink{classaxes__opencv}{axes\+\_\+opencv}} $\ast$ \mbox{\hyperlink{figure__opencv_8h_a60d5d1aac2b01ccc8315ee92963e13cb}{get\+\_\+axes}} (int id\+\_\+figure)
+\item 
+\mbox{\hyperlink{classaxes__opencv}{axes\+\_\+opencv}} $\ast$ \mbox{\hyperlink{figure__opencv_8h_a221a5671575564a624a62c453afc8bee}{get\+\_\+axes}} (\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} $\ast$fig)
+\item 
+void \mbox{\hyperlink{figure__opencv_8h_acd375036542224132e242bad363a79fe}{delete\+\_\+figure}} (int id)
+\item 
+void \mbox{\hyperlink{figure__opencv_8h_a0cd9c887f90ccdc3220259b01e91b564}{delete\+\_\+figures}} ()
+\item 
+void \mbox{\hyperlink{figure__opencv_8h_a57ce6c2d9dce20c14e334f2f6dbc5a8d}{init\+\_\+figure\+\_\+enviroment}} ()
+\item 
+void \mbox{\hyperlink{figure__opencv_8h_a7811191365cf22b0aa183db04a08a0ca}{close\+\_\+figure\+\_\+enviroment}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{figure__opencv_8h_a238352859751f876822882fee32ca430}{flg\+\_\+figure\+\_\+enviroment}}
+\item 
+\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} $\ast$ \mbox{\hyperlink{figure__opencv_8h_afaf0a9395a3069e5c1e15c4b3dd0eee2}{active\+\_\+figure}}
+\item 
+std\+::list$<$ \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} $\ast$ $>$ \mbox{\hyperlink{figure__opencv_8h_a9d43c5b4f3e1ffe1726eb8c5e8f78655}{figure}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{figure__opencv_8h_af59ab6d703792e39e212b970c044ddf2}\label{figure__opencv_8h_af59ab6d703792e39e212b970c044ddf2}} 
+\index{figure\_opencv.h@{figure\_opencv.h}!adapt\_plot\_area\_to\_function@{adapt\_plot\_area\_to\_function}}
+\index{adapt\_plot\_area\_to\_function@{adapt\_plot\_area\_to\_function}!figure\_opencv.h@{figure\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{adapt\_plot\_area\_to\_function()}{adapt\_plot\_area\_to\_function()}}
+{\footnotesize\ttfamily void adapt\+\_\+plot\+\_\+area\+\_\+to\+\_\+function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} $\ast$}]{fig,  }\item[{unsigned int}]{dimpoint,  }\item[{double $\ast$}]{x,  }\item[{double $\ast$}]{y }\end{DoxyParamCaption})}
+
+This function can be used to make the plot appear within the range of the datapoints specified as input. \mbox{\Hypertarget{figure__opencv_8h_ae6441f502ce878f4a141ba997d2f8d90}\label{figure__opencv_8h_ae6441f502ce878f4a141ba997d2f8d90}} 
+\index{figure\_opencv.h@{figure\_opencv.h}!add\_axes\_and\_legend@{add\_axes\_and\_legend}}
+\index{add\_axes\_and\_legend@{add\_axes\_and\_legend}!figure\_opencv.h@{figure\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{add\_axes\_and\_legend()}{add\_axes\_and\_legend()}}
+{\footnotesize\ttfamily void add\+\_\+axes\+\_\+and\+\_\+legend (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} $\ast$}]{fig }\end{DoxyParamCaption})}
+
+Check if axes and legend are already present in the specified \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}}. If not it adds them to the overlays of the window \mbox{\Hypertarget{figure__opencv_8h_a7811191365cf22b0aa183db04a08a0ca}\label{figure__opencv_8h_a7811191365cf22b0aa183db04a08a0ca}} 
+\index{figure\_opencv.h@{figure\_opencv.h}!close\_figure\_enviroment@{close\_figure\_enviroment}}
+\index{close\_figure\_enviroment@{close\_figure\_enviroment}!figure\_opencv.h@{figure\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{close\_figure\_enviroment()}{close\_figure\_enviroment()}}
+{\footnotesize\ttfamily void close\+\_\+figure\+\_\+enviroment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function close the plot enviroment \mbox{\Hypertarget{figure__opencv_8h_acd375036542224132e242bad363a79fe}\label{figure__opencv_8h_acd375036542224132e242bad363a79fe}} 
+\index{figure\_opencv.h@{figure\_opencv.h}!delete\_figure@{delete\_figure}}
+\index{delete\_figure@{delete\_figure}!figure\_opencv.h@{figure\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{delete\_figure()}{delete\_figure()}}
+{\footnotesize\ttfamily void delete\+\_\+figure (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+This funtion frees the memory used by one figure \mbox{\Hypertarget{figure__opencv_8h_a0cd9c887f90ccdc3220259b01e91b564}\label{figure__opencv_8h_a0cd9c887f90ccdc3220259b01e91b564}} 
+\index{figure\_opencv.h@{figure\_opencv.h}!delete\_figures@{delete\_figures}}
+\index{delete\_figures@{delete\_figures}!figure\_opencv.h@{figure\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{delete\_figures()}{delete\_figures()}}
+{\footnotesize\ttfamily void delete\+\_\+figures (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This funtion frees memory of all figures \mbox{\Hypertarget{figure__opencv_8h_a5f5679e61464f20eb80838c4b2859ff5}\label{figure__opencv_8h_a5f5679e61464f20eb80838c4b2859ff5}} 
+\index{figure\_opencv.h@{figure\_opencv.h}!figure\_grid@{figure\_grid}}
+\index{figure\_grid@{figure\_grid}!figure\_opencv.h@{figure\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{figure\_grid()}{figure\_grid()}}
+{\footnotesize\ttfamily void figure\+\_\+grid (\begin{DoxyParamCaption}\item[{unsigned int}]{n\+\_\+figure,  }\item[{std\+::list$<$ int $>$ \&}]{id\+\_\+figure }\end{DoxyParamCaption})}
+
+Creation of a grid of figure for ease of display \mbox{\Hypertarget{figure__opencv_8h_adb856adaf65d78ac9a740a387ef11d2a}\label{figure__opencv_8h_adb856adaf65d78ac9a740a387ef11d2a}} 
+\index{figure\_opencv.h@{figure\_opencv.h}!find\_figure@{find\_figure}}
+\index{find\_figure@{find\_figure}!figure\_opencv.h@{figure\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{find\_figure()}{find\_figure()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}}$\ast$ find\+\_\+figure (\begin{DoxyParamCaption}\item[{int}]{id\+\_\+figure }\end{DoxyParamCaption})}
+
+High level function to prepare a new window with to matrix $\ast$img \mbox{\Hypertarget{figure__opencv_8h_a60d5d1aac2b01ccc8315ee92963e13cb}\label{figure__opencv_8h_a60d5d1aac2b01ccc8315ee92963e13cb}} 
+\index{figure\_opencv.h@{figure\_opencv.h}!get\_axes@{get\_axes}}
+\index{get\_axes@{get\_axes}!figure\_opencv.h@{figure\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{get\_axes()}{get\_axes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classaxes__opencv}{axes\+\_\+opencv}}$\ast$ get\+\_\+axes (\begin{DoxyParamCaption}\item[{int}]{id\+\_\+figure }\end{DoxyParamCaption})}
+
+Usefull fuction for changing the properties of the axes of a \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}}. \mbox{\Hypertarget{figure__opencv_8h_a221a5671575564a624a62c453afc8bee}\label{figure__opencv_8h_a221a5671575564a624a62c453afc8bee}} 
+\index{figure\_opencv.h@{figure\_opencv.h}!get\_axes@{get\_axes}}
+\index{get\_axes@{get\_axes}!figure\_opencv.h@{figure\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{get\_axes()}{get\_axes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classaxes__opencv}{axes\+\_\+opencv}}$\ast$ get\+\_\+axes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} $\ast$}]{fig }\end{DoxyParamCaption})}
+
+Usefull fuction for changing the properties of the axes of a \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}}. \mbox{\Hypertarget{figure__opencv_8h_a57ce6c2d9dce20c14e334f2f6dbc5a8d}\label{figure__opencv_8h_a57ce6c2d9dce20c14e334f2f6dbc5a8d}} 
+\index{figure\_opencv.h@{figure\_opencv.h}!init\_figure\_enviroment@{init\_figure\_enviroment}}
+\index{init\_figure\_enviroment@{init\_figure\_enviroment}!figure\_opencv.h@{figure\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{init\_figure\_enviroment()}{init\_figure\_enviroment()}}
+{\footnotesize\ttfamily void init\+\_\+figure\+\_\+enviroment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function intialize the plot enviroment \mbox{\Hypertarget{figure__opencv_8h_a343bfd8b2967fb5705ca5184b8370ed0}\label{figure__opencv_8h_a343bfd8b2967fb5705ca5184b8370ed0}} 
+\index{figure\_opencv.h@{figure\_opencv.h}!new\_figure@{new\_figure}}
+\index{new\_figure@{new\_figure}!figure\_opencv.h@{figure\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{new\_figure()}{new\_figure()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}}$\ast$ new\+\_\+figure (\begin{DoxyParamCaption}\item[{unsigned int}]{dimx,  }\item[{unsigned int}]{dimy,  }\item[{double $\ast$}]{img }\end{DoxyParamCaption})}
+
+New window for image display is created \mbox{\Hypertarget{figure__opencv_8h_aed9c1992881094971fedaa2953a50616}\label{figure__opencv_8h_aed9c1992881094971fedaa2953a50616}} 
+\index{figure\_opencv.h@{figure\_opencv.h}!new\_figure@{new\_figure}}
+\index{new\_figure@{new\_figure}!figure\_opencv.h@{figure\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{new\_figure()}{new\_figure()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}}$\ast$ new\+\_\+figure (\begin{DoxyParamCaption}\item[{unsigned int}]{dimx,  }\item[{unsigned int}]{dimy,  }\item[{unsigned int}]{dim\+\_\+channel,  }\item[{double $\ast$$\ast$}]{images }\end{DoxyParamCaption})}
+
+New window for image display is created. Multiple channels are allowed. No more than 3 channels are supported. Each double matrix is inteded as a different channel \mbox{\Hypertarget{figure__opencv_8h_a3c1eaf984b2936cad93768e411468cb7}\label{figure__opencv_8h_a3c1eaf984b2936cad93768e411468cb7}} 
+\index{figure\_opencv.h@{figure\_opencv.h}!open\_figure@{open\_figure}}
+\index{open\_figure@{open\_figure}!figure\_opencv.h@{figure\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{open\_figure()}{open\_figure()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}}$\ast$ open\+\_\+figure (\begin{DoxyParamCaption}\item[{int}]{id\+\_\+figure }\end{DoxyParamCaption})}
+
+If the figure exist in figure list than return the pointer. If not, the function creates a new window, adds it to figure list and returns the pointer. \mbox{\Hypertarget{figure__opencv_8h_aaf8d3be2717ec026121005bbec4052bf}\label{figure__opencv_8h_aaf8d3be2717ec026121005bbec4052bf}} 
+\index{figure\_opencv.h@{figure\_opencv.h}!plot@{plot}}
+\index{plot@{plot}!figure\_opencv.h@{figure\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{plot()}{plot()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}}$\ast$ plot (\begin{DoxyParamCaption}\item[{int}]{id\+\_\+figure,  }\item[{\mbox{\hyperlink{classbarplot__opencv}{barplot\+\_\+opencv}} $\ast$}]{barplot }\end{DoxyParamCaption})}
+
+An image for display of a plot can be opened with open\+\_\+figure. If the window is not present in figure list a new \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} is created and added to figure list \mbox{\Hypertarget{figure__opencv_8h_a6b71560f5fa426289b7b36eabc1eb1f9}\label{figure__opencv_8h_a6b71560f5fa426289b7b36eabc1eb1f9}} 
+\index{figure\_opencv.h@{figure\_opencv.h}!plot@{plot}}
+\index{plot@{plot}!figure\_opencv.h@{figure\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{plot()}{plot()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}}$\ast$ plot (\begin{DoxyParamCaption}\item[{int}]{id\+\_\+figure,  }\item[{\mbox{\hyperlink{classscatter__opencv}{scatter\+\_\+opencv}} $\ast$}]{scatter }\end{DoxyParamCaption})}
+
+An image for display of a plot can be opened with open\+\_\+figure. If the window is not present in figure list a new \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} is created and added to figure list \mbox{\Hypertarget{figure__opencv_8h_af9e7b83755d67e2cdea880e174159f0e}\label{figure__opencv_8h_af9e7b83755d67e2cdea880e174159f0e}} 
+\index{figure\_opencv.h@{figure\_opencv.h}!plot@{plot}}
+\index{plot@{plot}!figure\_opencv.h@{figure\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{plot()}{plot()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}}$\ast$ plot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} $\ast$}]{fig,  }\item[{\mbox{\hyperlink{classbarplot__opencv}{barplot\+\_\+opencv}} $\ast$}]{barplot }\end{DoxyParamCaption})}
+
+An image for display of a plot can be opened with open\+\_\+figure. If NULL == fig a new \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} is created and added to figure list \mbox{\Hypertarget{figure__opencv_8h_af60f782998e8c4ceb8549a770133955e}\label{figure__opencv_8h_af60f782998e8c4ceb8549a770133955e}} 
+\index{figure\_opencv.h@{figure\_opencv.h}!plot@{plot}}
+\index{plot@{plot}!figure\_opencv.h@{figure\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{plot()}{plot()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}}$\ast$ plot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} $\ast$}]{fig,  }\item[{\mbox{\hyperlink{classscatter__opencv}{scatter\+\_\+opencv}} $\ast$}]{scatter }\end{DoxyParamCaption})}
+
+An image for display of a plot can be opened with open\+\_\+figure. If NULL == fig a new \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} is created and added to figure list \mbox{\Hypertarget{figure__opencv_8h_a84d6275e29472ec806fc93fb092aeb86}\label{figure__opencv_8h_a84d6275e29472ec806fc93fb092aeb86}} 
+\index{figure\_opencv.h@{figure\_opencv.h}!volume\_movie@{volume\_movie}}
+\index{volume\_movie@{volume\_movie}!figure\_opencv.h@{figure\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{volume\_movie()}{volume\_movie()}}
+{\footnotesize\ttfamily void volume\+\_\+movie (\begin{DoxyParamCaption}\item[{unsigned int}]{dimx,  }\item[{unsigned int}]{dimy,  }\item[{unsigned int}]{dimz,  }\item[{unsigned int}]{n\+\_\+channels,  }\item[{double $\ast$$\ast$}]{vol,  }\item[{int}]{frame\+\_\+time\+\_\+step\+\_\+ms }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{figure__opencv_8h_afaf0a9395a3069e5c1e15c4b3dd0eee2}\label{figure__opencv_8h_afaf0a9395a3069e5c1e15c4b3dd0eee2}} 
+\index{figure\_opencv.h@{figure\_opencv.h}!active\_figure@{active\_figure}}
+\index{active\_figure@{active\_figure}!figure\_opencv.h@{figure\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{active\_figure}{active\_figure}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}}$\ast$ active\+\_\+figure\hspace{0.3cm}{\ttfamily [extern]}}
+
+This is the currently selected figure. There shall be always a valid active figure. Otherwise, the behaviour of the program is undefined.
+
+Note\+: I found more practical having only one window for user interface and history to display those property for one figure only at time. \mbox{\Hypertarget{figure__opencv_8h_a9d43c5b4f3e1ffe1726eb8c5e8f78655}\label{figure__opencv_8h_a9d43c5b4f3e1ffe1726eb8c5e8f78655}} 
+\index{figure\_opencv.h@{figure\_opencv.h}!figure@{figure}}
+\index{figure@{figure}!figure\_opencv.h@{figure\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{figure}{figure}}
+{\footnotesize\ttfamily std\+::list$<$\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}}$\ast$$>$ figure\hspace{0.3cm}{\ttfamily [extern]}}
+
+There can be more that one figure on the screen. Here is the place where they are stored togheter. By making sure that this variable it is used, the program will also take case of deleting all the figures at the end of the exection. \mbox{\Hypertarget{figure__opencv_8h_a238352859751f876822882fee32ca430}\label{figure__opencv_8h_a238352859751f876822882fee32ca430}} 
+\index{figure\_opencv.h@{figure\_opencv.h}!flg\_figure\_enviroment@{flg\_figure\_enviroment}}
+\index{flg\_figure\_enviroment@{flg\_figure\_enviroment}!figure\_opencv.h@{figure\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{flg\_figure\_enviroment}{flg\_figure\_enviroment}}
+{\footnotesize\ttfamily bool flg\+\_\+figure\+\_\+enviroment\hspace{0.3cm}{\ttfamily [extern]}}
+

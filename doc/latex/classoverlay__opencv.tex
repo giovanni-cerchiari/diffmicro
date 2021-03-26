@@ -1,0 +1,189 @@
+\hypertarget{classoverlay__opencv}{}\doxysection{overlay\+\_\+opencv Class Reference}
+\label{classoverlay__opencv}\index{overlay\_opencv@{overlay\_opencv}}
+
+
+{\ttfamily \#include $<$overlay\+\_\+opencv.\+h$>$}
+
+Inheritance diagram for overlay\+\_\+opencv\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.000000cm]{classoverlay__opencv}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classoverlay__opencv_a2767e7a94298485449234b4c42cac3f9}{overlay\+\_\+opencv}} (std\+::string \+\_\+name=\char`\"{}\char`\"{})
+\item 
+\mbox{\hyperlink{classoverlay__opencv_ad719c90de2c1ee662418d045cb66a4e8}{overlay\+\_\+opencv}} (const \mbox{\hyperlink{classoverlay__opencv}{overlay\+\_\+opencv}} \&ov)
+\item 
+virtual \mbox{\hyperlink{classoverlay__opencv_a68d512d93f6b27c2608b40dad9ea94ba}{$\sim$overlay\+\_\+opencv}} ()
+\item 
+const \mbox{\hyperlink{classoverlay__opencv}{overlay\+\_\+opencv}} \& \mbox{\hyperlink{classoverlay__opencv_a0f08611194ed1751c334c326273d2f76}{operator=}} (const \mbox{\hyperlink{classoverlay__opencv}{overlay\+\_\+opencv}} \&ov)
+\item 
+virtual void \mbox{\hyperlink{classoverlay__opencv_ae0d137278c2fd1f08109a10b9c1c5a4c}{draw}} (cv\+::\+Mat \&img, double start\mbox{[}$\,$\mbox{]}, double scale\mbox{[}$\,$\mbox{]})=0
+\item 
+virtual void \mbox{\hyperlink{classoverlay__opencv_a9a7785e0054e5fe93213260f7f1be036}{edit}} (void $\ast$in)=0
+\item 
+virtual void \mbox{\hyperlink{classoverlay__opencv_a4ca2d355fc21e98c151f3c61cec313bf}{getvalue}} (\mbox{\hyperlink{structreturn__get__value__overlay__opencv}{return\+\_\+get\+\_\+value\+\_\+overlay\+\_\+opencv}} $\ast$out)=0
+\item 
+void \mbox{\hyperlink{classoverlay__opencv_aa1d237d8d6f90b0cbd9f6cd4d423904a}{select}} ()
+\item 
+void \mbox{\hyperlink{classoverlay__opencv_a9f1cc5f55889f7e96287aa8165e51adf}{deselect}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classoverlay__opencv_a2f61d83764b3a82c0c8c8a367d22e15e}{selected}}
+\begin{DoxyCompactList}\small\item\em Is this overlay selected? \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classoverlay__opencv_a5187fa643a6257a0172d9850222dab12}{id}}
+\item 
+int \mbox{\hyperlink{classoverlay__opencv_aaafe001c46a871545fca00bd8c22547f}{type}}
+\item 
+std\+::string \mbox{\hyperlink{classoverlay__opencv_a70da3886c5f791c36977426073ca79bd}{name}}
+\item 
+cv\+::\+Scalar $\ast$ \mbox{\hyperlink{classoverlay__opencv_a4915589fb8646ed284a2571b92dbe964}{color}}
+\begin{DoxyCompactList}\small\item\em Apperance color. \end{DoxyCompactList}\item 
+cv\+::\+Scalar \mbox{\hyperlink{classoverlay__opencv_a5a51252fe2353ba99758293e4f382d50}{color\+\_\+normal}}
+\begin{DoxyCompactList}\small\item\em Apperance color in case selected == false. \end{DoxyCompactList}\item 
+cv\+::\+Scalar \mbox{\hyperlink{classoverlay__opencv_a09c3e864eab1fd6cf3532d65b8f7bce3}{color\+\_\+selection}}
+\begin{DoxyCompactList}\small\item\em Apperance color in case selected == true. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classoverlay__opencv_a2767e7a94298485449234b4c42cac3f9}\label{classoverlay__opencv_a2767e7a94298485449234b4c42cac3f9}} 
+\index{overlay\_opencv@{overlay\_opencv}!overlay\_opencv@{overlay\_opencv}}
+\index{overlay\_opencv@{overlay\_opencv}!overlay\_opencv@{overlay\_opencv}}
+\doxysubsubsection{\texorpdfstring{overlay\_opencv()}{overlay\_opencv()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily overlay\+\_\+opencv\+::overlay\+\_\+opencv (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+name = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoverlay__opencv_ad719c90de2c1ee662418d045cb66a4e8}\label{classoverlay__opencv_ad719c90de2c1ee662418d045cb66a4e8}} 
+\index{overlay\_opencv@{overlay\_opencv}!overlay\_opencv@{overlay\_opencv}}
+\index{overlay\_opencv@{overlay\_opencv}!overlay\_opencv@{overlay\_opencv}}
+\doxysubsubsection{\texorpdfstring{overlay\_opencv()}{overlay\_opencv()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily overlay\+\_\+opencv\+::overlay\+\_\+opencv (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classoverlay__opencv}{overlay\+\_\+opencv}} \&}]{ov }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoverlay__opencv_a68d512d93f6b27c2608b40dad9ea94ba}\label{classoverlay__opencv_a68d512d93f6b27c2608b40dad9ea94ba}} 
+\index{overlay\_opencv@{overlay\_opencv}!````~overlay\_opencv@{$\sim$overlay\_opencv}}
+\index{````~overlay\_opencv@{$\sim$overlay\_opencv}!overlay\_opencv@{overlay\_opencv}}
+\doxysubsubsection{\texorpdfstring{$\sim$overlay\_opencv()}{~overlay\_opencv()}}
+{\footnotesize\ttfamily virtual overlay\+\_\+opencv\+::$\sim$overlay\+\_\+opencv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classoverlay__opencv_a9f1cc5f55889f7e96287aa8165e51adf}\label{classoverlay__opencv_a9f1cc5f55889f7e96287aa8165e51adf}} 
+\index{overlay\_opencv@{overlay\_opencv}!deselect@{deselect}}
+\index{deselect@{deselect}!overlay\_opencv@{overlay\_opencv}}
+\doxysubsubsection{\texorpdfstring{deselect()}{deselect()}}
+{\footnotesize\ttfamily void overlay\+\_\+opencv\+::deselect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classoverlay__opencv_ae0d137278c2fd1f08109a10b9c1c5a4c}\label{classoverlay__opencv_ae0d137278c2fd1f08109a10b9c1c5a4c}} 
+\index{overlay\_opencv@{overlay\_opencv}!draw@{draw}}
+\index{draw@{draw}!overlay\_opencv@{overlay\_opencv}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily virtual void overlay\+\_\+opencv\+::draw (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{img,  }\item[{double}]{start\mbox{[}$\,$\mbox{]},  }\item[{double}]{scale\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classtext__opencv_a9be503c88f28ff85e6d43e443600831b}{text\+\_\+opencv}}, \mbox{\hyperlink{classtext__absolute__opencv_a2f20bd2b2f5615102746784fc95ad82a}{text\+\_\+absolute\+\_\+opencv}}, \mbox{\hyperlink{classtext__relative__opencv_a28e654188489259f05411fc9197c1360}{text\+\_\+relative\+\_\+opencv}}, \mbox{\hyperlink{classbarplot__opencv_aa560129cf8f0e80bff3366d4e97012e6}{barplot\+\_\+opencv}}, \mbox{\hyperlink{classlegend__opencv_a27d56a5c0e0f1a8e0a9b334d908c48b0}{legend\+\_\+opencv}}, \mbox{\hyperlink{classaxes__opencv_ac56a24ef3dabef087d7da52a52f9c192}{axes\+\_\+opencv}}, \mbox{\hyperlink{classscatter__opencv_a579b89644706a6477faefa91a56365ed}{scatter\+\_\+opencv}}, \mbox{\hyperlink{classcontour__opencv_a2ed4b6fa955485dfee90396bc2b0f58e}{contour\+\_\+opencv}}, \mbox{\hyperlink{classrectangle__opencv_aabf47eb57b2da7b7c7668eb2796f80e0}{rectangle\+\_\+opencv}}, and \mbox{\hyperlink{classcircle__opencv_a57a86cefd35f86a8393a248e524dcbc3}{circle\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classoverlay__opencv_a9a7785e0054e5fe93213260f7f1be036}\label{classoverlay__opencv_a9a7785e0054e5fe93213260f7f1be036}} 
+\index{overlay\_opencv@{overlay\_opencv}!edit@{edit}}
+\index{edit@{edit}!overlay\_opencv@{overlay\_opencv}}
+\doxysubsubsection{\texorpdfstring{edit()}{edit()}}
+{\footnotesize\ttfamily virtual void overlay\+\_\+opencv\+::edit (\begin{DoxyParamCaption}\item[{void $\ast$}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classtext__opencv_a68fe10f15d69862103472d9698e9bb13}{text\+\_\+opencv}}, \mbox{\hyperlink{classbarplot__opencv_a72c86cc42a552ced46bf60d64a7952b7}{barplot\+\_\+opencv}}, \mbox{\hyperlink{classlegend__opencv_acdff530f8d4ab3133dd6346d6a258d78}{legend\+\_\+opencv}}, \mbox{\hyperlink{classaxes__opencv_ab5b9abac8de866b9a90bd67971ac6cc6}{axes\+\_\+opencv}}, \mbox{\hyperlink{classscatter__opencv_a5f898916987aedaa9a6797f8025dd23a}{scatter\+\_\+opencv}}, \mbox{\hyperlink{classcontour__opencv_a3cb95a0e05a2fdb817bd2fa58204ae1e}{contour\+\_\+opencv}}, \mbox{\hyperlink{classrectangle__opencv_a1ab42811519675aa6efe55bcf427a33d}{rectangle\+\_\+opencv}}, and \mbox{\hyperlink{classcircle__opencv_a587bcb62f3da94ae64f4ec42603edb21}{circle\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classoverlay__opencv_a4ca2d355fc21e98c151f3c61cec313bf}\label{classoverlay__opencv_a4ca2d355fc21e98c151f3c61cec313bf}} 
+\index{overlay\_opencv@{overlay\_opencv}!getvalue@{getvalue}}
+\index{getvalue@{getvalue}!overlay\_opencv@{overlay\_opencv}}
+\doxysubsubsection{\texorpdfstring{getvalue()}{getvalue()}}
+{\footnotesize\ttfamily virtual void overlay\+\_\+opencv\+::getvalue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structreturn__get__value__overlay__opencv}{return\+\_\+get\+\_\+value\+\_\+overlay\+\_\+opencv}} $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classtext__opencv_acea8ca3115d9369d8b980bff371c7153}{text\+\_\+opencv}}, \mbox{\hyperlink{classbarplot__opencv_abee9b27d9865fb668c4d468cebad8614}{barplot\+\_\+opencv}}, \mbox{\hyperlink{classlegend__opencv_a6b1e9e6ba4e2c0599db98ba220c79759}{legend\+\_\+opencv}}, \mbox{\hyperlink{classaxes__opencv_a0176a1c5aa4f47ea38eb223b55a31daf}{axes\+\_\+opencv}}, \mbox{\hyperlink{classscatter__opencv_ad1c18722a79f77c1290ab3f4d8e75e87}{scatter\+\_\+opencv}}, \mbox{\hyperlink{classcontour__opencv_a6f53f457b82427e21eeb6e340f693a53}{contour\+\_\+opencv}}, \mbox{\hyperlink{classrectangle__opencv_aa6fdaa39d4d148e4941607746bb9936e}{rectangle\+\_\+opencv}}, and \mbox{\hyperlink{classcircle__opencv_af3f99b1e67f1d6078468ba8d59ef9015}{circle\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classoverlay__opencv_a0f08611194ed1751c334c326273d2f76}\label{classoverlay__opencv_a0f08611194ed1751c334c326273d2f76}} 
+\index{overlay\_opencv@{overlay\_opencv}!operator=@{operator=}}
+\index{operator=@{operator=}!overlay\_opencv@{overlay\_opencv}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classoverlay__opencv}{overlay\+\_\+opencv}}\& overlay\+\_\+opencv\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classoverlay__opencv}{overlay\+\_\+opencv}} \&}]{ov }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoverlay__opencv_aa1d237d8d6f90b0cbd9f6cd4d423904a}\label{classoverlay__opencv_aa1d237d8d6f90b0cbd9f6cd4d423904a}} 
+\index{overlay\_opencv@{overlay\_opencv}!select@{select}}
+\index{select@{select}!overlay\_opencv@{overlay\_opencv}}
+\doxysubsubsection{\texorpdfstring{select()}{select()}}
+{\footnotesize\ttfamily void overlay\+\_\+opencv\+::select (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classoverlay__opencv_a4915589fb8646ed284a2571b92dbe964}\label{classoverlay__opencv_a4915589fb8646ed284a2571b92dbe964}} 
+\index{overlay\_opencv@{overlay\_opencv}!color@{color}}
+\index{color@{color}!overlay\_opencv@{overlay\_opencv}}
+\doxysubsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily cv\+::\+Scalar$\ast$ overlay\+\_\+opencv\+::color}
+
+
+
+Apperance color. 
+
+\mbox{\Hypertarget{classoverlay__opencv_a5a51252fe2353ba99758293e4f382d50}\label{classoverlay__opencv_a5a51252fe2353ba99758293e4f382d50}} 
+\index{overlay\_opencv@{overlay\_opencv}!color\_normal@{color\_normal}}
+\index{color\_normal@{color\_normal}!overlay\_opencv@{overlay\_opencv}}
+\doxysubsubsection{\texorpdfstring{color\_normal}{color\_normal}}
+{\footnotesize\ttfamily cv\+::\+Scalar overlay\+\_\+opencv\+::color\+\_\+normal}
+
+
+
+Apperance color in case selected == false. 
+
+\mbox{\Hypertarget{classoverlay__opencv_a09c3e864eab1fd6cf3532d65b8f7bce3}\label{classoverlay__opencv_a09c3e864eab1fd6cf3532d65b8f7bce3}} 
+\index{overlay\_opencv@{overlay\_opencv}!color\_selection@{color\_selection}}
+\index{color\_selection@{color\_selection}!overlay\_opencv@{overlay\_opencv}}
+\doxysubsubsection{\texorpdfstring{color\_selection}{color\_selection}}
+{\footnotesize\ttfamily cv\+::\+Scalar overlay\+\_\+opencv\+::color\+\_\+selection}
+
+
+
+Apperance color in case selected == true. 
+
+\mbox{\Hypertarget{classoverlay__opencv_a5187fa643a6257a0172d9850222dab12}\label{classoverlay__opencv_a5187fa643a6257a0172d9850222dab12}} 
+\index{overlay\_opencv@{overlay\_opencv}!id@{id}}
+\index{id@{id}!overlay\_opencv@{overlay\_opencv}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int overlay\+\_\+opencv\+::id}
+
+\mbox{\Hypertarget{classoverlay__opencv_a70da3886c5f791c36977426073ca79bd}\label{classoverlay__opencv_a70da3886c5f791c36977426073ca79bd}} 
+\index{overlay\_opencv@{overlay\_opencv}!name@{name}}
+\index{name@{name}!overlay\_opencv@{overlay\_opencv}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string overlay\+\_\+opencv\+::name}
+
+\mbox{\Hypertarget{classoverlay__opencv_a2f61d83764b3a82c0c8c8a367d22e15e}\label{classoverlay__opencv_a2f61d83764b3a82c0c8c8a367d22e15e}} 
+\index{overlay\_opencv@{overlay\_opencv}!selected@{selected}}
+\index{selected@{selected}!overlay\_opencv@{overlay\_opencv}}
+\doxysubsubsection{\texorpdfstring{selected}{selected}}
+{\footnotesize\ttfamily bool overlay\+\_\+opencv\+::selected}
+
+
+
+Is this overlay selected? 
+
+\mbox{\Hypertarget{classoverlay__opencv_aaafe001c46a871545fca00bd8c22547f}\label{classoverlay__opencv_aaafe001c46a871545fca00bd8c22547f}} 
+\index{overlay\_opencv@{overlay\_opencv}!type@{type}}
+\index{type@{type}!overlay\_opencv@{overlay\_opencv}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily int overlay\+\_\+opencv\+::type}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+diffmicro/display\+\_\+opencv/\mbox{\hyperlink{overlay__opencv_8h}{overlay\+\_\+opencv.\+h}}\item 
+diffmicro/display\+\_\+opencv/\mbox{\hyperlink{overlay__opencv_8cpp}{overlay\+\_\+opencv.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,227 @@
+\hypertarget{classscatter__opencv}{}\doxysection{scatter\+\_\+opencv Class Reference}
+\label{classscatter__opencv}\index{scatter\_opencv@{scatter\_opencv}}
+
+
+{\ttfamily \#include $<$overlay\+\_\+opencv.\+h$>$}
+
+Inheritance diagram for scatter\+\_\+opencv\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classscatter__opencv}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classscatter__opencv_a0d9b873e66b0f4d807a1faddbb39dad2}{scatter\+\_\+opencv}} ()
+\item 
+\mbox{\hyperlink{classscatter__opencv_a962913862dbb44c617a3536911ea5a53}{scatter\+\_\+opencv}} (const \mbox{\hyperlink{classscatter__opencv}{scatter\+\_\+opencv}} \&sc)
+\item 
+\mbox{\hyperlink{classscatter__opencv_aea7876a5247ee5bbda299a20677bedfc}{$\sim$scatter\+\_\+opencv}} ()
+\item 
+const \mbox{\hyperlink{classscatter__opencv}{scatter\+\_\+opencv}} \& \mbox{\hyperlink{classscatter__opencv_a5be062e058f669a69d7979f24995fdbe}{operator=}} (const \mbox{\hyperlink{classscatter__opencv}{scatter\+\_\+opencv}} \&cr)
+\item 
+void \mbox{\hyperlink{classscatter__opencv_ac4238d5968a5d8ee4f621f606619107a}{init}} ()
+\item 
+void \mbox{\hyperlink{classscatter__opencv_a579b89644706a6477faefa91a56365ed}{draw}} (cv\+::\+Mat \&img, double start\mbox{[}$\,$\mbox{]}, double scale\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{classscatter__opencv_a5f898916987aedaa9a6797f8025dd23a}{edit}} (void $\ast$in)
+\item 
+void \mbox{\hyperlink{classscatter__opencv_ad1c18722a79f77c1290ab3f4d8e75e87}{getvalue}} (\mbox{\hyperlink{structreturn__get__value__overlay__opencv}{return\+\_\+get\+\_\+value\+\_\+overlay\+\_\+opencv}} $\ast$out)
+\item 
+void \mbox{\hyperlink{classscatter__opencv_aa5037e169d653969d3f6973fb62d16c4}{set\+\_\+marker\+\_\+type}} (int \+\_\+type)
+\item 
+int \mbox{\hyperlink{classscatter__opencv_a3ffd8579d8b4f0bf48d8ccc75b206623}{get\+\_\+marker\+\_\+type}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$ \mbox{\hyperlink{classscatter__opencv_ae5c4b4ad51a2927ce18245dbfc464727}{marker\+\_\+draw}} )(cv\+::\+Mat \&img, cv\+::\+Point \&\mbox{\hyperlink{classscatter__opencv_a4fb8949c0ee257f4c5305af7f9258afa}{x}}, int size, cv\+::\+Scalar $\ast$\mbox{\hyperlink{classoverlay__opencv_a4915589fb8646ed284a2571b92dbe964}{color}})
+\item 
+unsigned int \mbox{\hyperlink{classscatter__opencv_a9c0487ed58d873449b883aa863805334}{dimpoint}}
+\item 
+double $\ast$ \mbox{\hyperlink{classscatter__opencv_a4fb8949c0ee257f4c5305af7f9258afa}{x}}
+\item 
+double $\ast$ \mbox{\hyperlink{classscatter__opencv_a744942d15d44a64a28c13cf1a6bc51ab}{y}}
+\item 
+double $\ast$ \mbox{\hyperlink{classscatter__opencv_a55371c93cf603cbec545b3768dfb9b94}{errx}}
+\item 
+double $\ast$ \mbox{\hyperlink{classscatter__opencv_aa34cdb61fde6b0b228eb849748ccfb5f}{erry}}
+\item 
+int \mbox{\hyperlink{classscatter__opencv_a757d90d288b4703ded23f965c810e16e}{marker\+\_\+size}}
+\item 
+int \mbox{\hyperlink{classscatter__opencv_aa93958f298bfd2a4f7108b114e95fcbb}{line\+\_\+thickness}}
+\item 
+int \mbox{\hyperlink{classscatter__opencv_ab7b85db1c85c99a0e8302955877588f0}{line\+\_\+type\+\_\+internal\+\_\+opencv}}
+\item 
+int \mbox{\hyperlink{classscatter__opencv_a7e890e013ca1553dcb07b321b4e45675}{line\+\_\+type}}
+\item 
+std\+::string \mbox{\hyperlink{classscatter__opencv_af2bd6bbf4a5cab33e32a093c3b8be0b9}{label}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classscatter__opencv_a01afdbccb782c0297a1cb11f0f301f13}{marker\+\_\+type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This overlay implements a scatter plot on the \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}}. Plots are made as overalay to facilitate plotting over images. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classscatter__opencv_a0d9b873e66b0f4d807a1faddbb39dad2}\label{classscatter__opencv_a0d9b873e66b0f4d807a1faddbb39dad2}} 
+\index{scatter\_opencv@{scatter\_opencv}!scatter\_opencv@{scatter\_opencv}}
+\index{scatter\_opencv@{scatter\_opencv}!scatter\_opencv@{scatter\_opencv}}
+\doxysubsubsection{\texorpdfstring{scatter\_opencv()}{scatter\_opencv()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily scatter\+\_\+opencv\+::scatter\+\_\+opencv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscatter__opencv_a962913862dbb44c617a3536911ea5a53}\label{classscatter__opencv_a962913862dbb44c617a3536911ea5a53}} 
+\index{scatter\_opencv@{scatter\_opencv}!scatter\_opencv@{scatter\_opencv}}
+\index{scatter\_opencv@{scatter\_opencv}!scatter\_opencv@{scatter\_opencv}}
+\doxysubsubsection{\texorpdfstring{scatter\_opencv()}{scatter\_opencv()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily scatter\+\_\+opencv\+::scatter\+\_\+opencv (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscatter__opencv}{scatter\+\_\+opencv}} \&}]{sc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classscatter__opencv_aea7876a5247ee5bbda299a20677bedfc}\label{classscatter__opencv_aea7876a5247ee5bbda299a20677bedfc}} 
+\index{scatter\_opencv@{scatter\_opencv}!````~scatter\_opencv@{$\sim$scatter\_opencv}}
+\index{````~scatter\_opencv@{$\sim$scatter\_opencv}!scatter\_opencv@{scatter\_opencv}}
+\doxysubsubsection{\texorpdfstring{$\sim$scatter\_opencv()}{~scatter\_opencv()}}
+{\footnotesize\ttfamily scatter\+\_\+opencv\+::$\sim$scatter\+\_\+opencv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classscatter__opencv_a579b89644706a6477faefa91a56365ed}\label{classscatter__opencv_a579b89644706a6477faefa91a56365ed}} 
+\index{scatter\_opencv@{scatter\_opencv}!draw@{draw}}
+\index{draw@{draw}!scatter\_opencv@{scatter\_opencv}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void scatter\+\_\+opencv\+::draw (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{img,  }\item[{double}]{start\mbox{[}$\,$\mbox{]},  }\item[{double}]{scale\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classoverlay__opencv_ae0d137278c2fd1f08109a10b9c1c5a4c}{overlay\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classscatter__opencv_a5f898916987aedaa9a6797f8025dd23a}\label{classscatter__opencv_a5f898916987aedaa9a6797f8025dd23a}} 
+\index{scatter\_opencv@{scatter\_opencv}!edit@{edit}}
+\index{edit@{edit}!scatter\_opencv@{scatter\_opencv}}
+\doxysubsubsection{\texorpdfstring{edit()}{edit()}}
+{\footnotesize\ttfamily void scatter\+\_\+opencv\+::edit (\begin{DoxyParamCaption}\item[{void $\ast$}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classoverlay__opencv_a9a7785e0054e5fe93213260f7f1be036}{overlay\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classscatter__opencv_a3ffd8579d8b4f0bf48d8ccc75b206623}\label{classscatter__opencv_a3ffd8579d8b4f0bf48d8ccc75b206623}} 
+\index{scatter\_opencv@{scatter\_opencv}!get\_marker\_type@{get\_marker\_type}}
+\index{get\_marker\_type@{get\_marker\_type}!scatter\_opencv@{scatter\_opencv}}
+\doxysubsubsection{\texorpdfstring{get\_marker\_type()}{get\_marker\_type()}}
+{\footnotesize\ttfamily int scatter\+\_\+opencv\+::get\+\_\+marker\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classscatter__opencv_ad1c18722a79f77c1290ab3f4d8e75e87}\label{classscatter__opencv_ad1c18722a79f77c1290ab3f4d8e75e87}} 
+\index{scatter\_opencv@{scatter\_opencv}!getvalue@{getvalue}}
+\index{getvalue@{getvalue}!scatter\_opencv@{scatter\_opencv}}
+\doxysubsubsection{\texorpdfstring{getvalue()}{getvalue()}}
+{\footnotesize\ttfamily void scatter\+\_\+opencv\+::getvalue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structreturn__get__value__overlay__opencv}{return\+\_\+get\+\_\+value\+\_\+overlay\+\_\+opencv}} $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classoverlay__opencv_a4ca2d355fc21e98c151f3c61cec313bf}{overlay\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classscatter__opencv_ac4238d5968a5d8ee4f621f606619107a}\label{classscatter__opencv_ac4238d5968a5d8ee4f621f606619107a}} 
+\index{scatter\_opencv@{scatter\_opencv}!init@{init}}
+\index{init@{init}!scatter\_opencv@{scatter\_opencv}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void scatter\+\_\+opencv\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscatter__opencv_a5be062e058f669a69d7979f24995fdbe}\label{classscatter__opencv_a5be062e058f669a69d7979f24995fdbe}} 
+\index{scatter\_opencv@{scatter\_opencv}!operator=@{operator=}}
+\index{operator=@{operator=}!scatter\_opencv@{scatter\_opencv}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classscatter__opencv}{scatter\+\_\+opencv}} \& scatter\+\_\+opencv\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classscatter__opencv}{scatter\+\_\+opencv}} \&}]{cr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classscatter__opencv_aa5037e169d653969d3f6973fb62d16c4}\label{classscatter__opencv_aa5037e169d653969d3f6973fb62d16c4}} 
+\index{scatter\_opencv@{scatter\_opencv}!set\_marker\_type@{set\_marker\_type}}
+\index{set\_marker\_type@{set\_marker\_type}!scatter\_opencv@{scatter\_opencv}}
+\doxysubsubsection{\texorpdfstring{set\_marker\_type()}{set\_marker\_type()}}
+{\footnotesize\ttfamily void scatter\+\_\+opencv\+::set\+\_\+marker\+\_\+type (\begin{DoxyParamCaption}\item[{int}]{\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classscatter__opencv_a9c0487ed58d873449b883aa863805334}\label{classscatter__opencv_a9c0487ed58d873449b883aa863805334}} 
+\index{scatter\_opencv@{scatter\_opencv}!dimpoint@{dimpoint}}
+\index{dimpoint@{dimpoint}!scatter\_opencv@{scatter\_opencv}}
+\doxysubsubsection{\texorpdfstring{dimpoint}{dimpoint}}
+{\footnotesize\ttfamily unsigned int scatter\+\_\+opencv\+::dimpoint}
+
+\mbox{\Hypertarget{classscatter__opencv_a55371c93cf603cbec545b3768dfb9b94}\label{classscatter__opencv_a55371c93cf603cbec545b3768dfb9b94}} 
+\index{scatter\_opencv@{scatter\_opencv}!errx@{errx}}
+\index{errx@{errx}!scatter\_opencv@{scatter\_opencv}}
+\doxysubsubsection{\texorpdfstring{errx}{errx}}
+{\footnotesize\ttfamily double$\ast$ scatter\+\_\+opencv\+::errx}
+
+\mbox{\Hypertarget{classscatter__opencv_aa34cdb61fde6b0b228eb849748ccfb5f}\label{classscatter__opencv_aa34cdb61fde6b0b228eb849748ccfb5f}} 
+\index{scatter\_opencv@{scatter\_opencv}!erry@{erry}}
+\index{erry@{erry}!scatter\_opencv@{scatter\_opencv}}
+\doxysubsubsection{\texorpdfstring{erry}{erry}}
+{\footnotesize\ttfamily double$\ast$ scatter\+\_\+opencv\+::erry}
+
+\mbox{\Hypertarget{classscatter__opencv_af2bd6bbf4a5cab33e32a093c3b8be0b9}\label{classscatter__opencv_af2bd6bbf4a5cab33e32a093c3b8be0b9}} 
+\index{scatter\_opencv@{scatter\_opencv}!label@{label}}
+\index{label@{label}!scatter\_opencv@{scatter\_opencv}}
+\doxysubsubsection{\texorpdfstring{label}{label}}
+{\footnotesize\ttfamily std\+::string scatter\+\_\+opencv\+::label}
+
+\mbox{\Hypertarget{classscatter__opencv_aa93958f298bfd2a4f7108b114e95fcbb}\label{classscatter__opencv_aa93958f298bfd2a4f7108b114e95fcbb}} 
+\index{scatter\_opencv@{scatter\_opencv}!line\_thickness@{line\_thickness}}
+\index{line\_thickness@{line\_thickness}!scatter\_opencv@{scatter\_opencv}}
+\doxysubsubsection{\texorpdfstring{line\_thickness}{line\_thickness}}
+{\footnotesize\ttfamily int scatter\+\_\+opencv\+::line\+\_\+thickness}
+
+\mbox{\Hypertarget{classscatter__opencv_a7e890e013ca1553dcb07b321b4e45675}\label{classscatter__opencv_a7e890e013ca1553dcb07b321b4e45675}} 
+\index{scatter\_opencv@{scatter\_opencv}!line\_type@{line\_type}}
+\index{line\_type@{line\_type}!scatter\_opencv@{scatter\_opencv}}
+\doxysubsubsection{\texorpdfstring{line\_type}{line\_type}}
+{\footnotesize\ttfamily int scatter\+\_\+opencv\+::line\+\_\+type}
+
+\mbox{\Hypertarget{classscatter__opencv_ab7b85db1c85c99a0e8302955877588f0}\label{classscatter__opencv_ab7b85db1c85c99a0e8302955877588f0}} 
+\index{scatter\_opencv@{scatter\_opencv}!line\_type\_internal\_opencv@{line\_type\_internal\_opencv}}
+\index{line\_type\_internal\_opencv@{line\_type\_internal\_opencv}!scatter\_opencv@{scatter\_opencv}}
+\doxysubsubsection{\texorpdfstring{line\_type\_internal\_opencv}{line\_type\_internal\_opencv}}
+{\footnotesize\ttfamily int scatter\+\_\+opencv\+::line\+\_\+type\+\_\+internal\+\_\+opencv}
+
+\mbox{\Hypertarget{classscatter__opencv_ae5c4b4ad51a2927ce18245dbfc464727}\label{classscatter__opencv_ae5c4b4ad51a2927ce18245dbfc464727}} 
+\index{scatter\_opencv@{scatter\_opencv}!marker\_draw@{marker\_draw}}
+\index{marker\_draw@{marker\_draw}!scatter\_opencv@{scatter\_opencv}}
+\doxysubsubsection{\texorpdfstring{marker\_draw}{marker\_draw}}
+{\footnotesize\ttfamily void($\ast$ scatter\+\_\+opencv\+::marker\+\_\+draw) (cv\+::\+Mat \&img, cv\+::\+Point \&\mbox{\hyperlink{classscatter__opencv_a4fb8949c0ee257f4c5305af7f9258afa}{x}}, int size, cv\+::\+Scalar $\ast$\mbox{\hyperlink{classoverlay__opencv_a4915589fb8646ed284a2571b92dbe964}{color}})}
+
+\mbox{\Hypertarget{classscatter__opencv_a757d90d288b4703ded23f965c810e16e}\label{classscatter__opencv_a757d90d288b4703ded23f965c810e16e}} 
+\index{scatter\_opencv@{scatter\_opencv}!marker\_size@{marker\_size}}
+\index{marker\_size@{marker\_size}!scatter\_opencv@{scatter\_opencv}}
+\doxysubsubsection{\texorpdfstring{marker\_size}{marker\_size}}
+{\footnotesize\ttfamily int scatter\+\_\+opencv\+::marker\+\_\+size}
+
+\mbox{\Hypertarget{classscatter__opencv_a01afdbccb782c0297a1cb11f0f301f13}\label{classscatter__opencv_a01afdbccb782c0297a1cb11f0f301f13}} 
+\index{scatter\_opencv@{scatter\_opencv}!marker\_type@{marker\_type}}
+\index{marker\_type@{marker\_type}!scatter\_opencv@{scatter\_opencv}}
+\doxysubsubsection{\texorpdfstring{marker\_type}{marker\_type}}
+{\footnotesize\ttfamily int scatter\+\_\+opencv\+::marker\+\_\+type\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classscatter__opencv_a4fb8949c0ee257f4c5305af7f9258afa}\label{classscatter__opencv_a4fb8949c0ee257f4c5305af7f9258afa}} 
+\index{scatter\_opencv@{scatter\_opencv}!x@{x}}
+\index{x@{x}!scatter\_opencv@{scatter\_opencv}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily double$\ast$ scatter\+\_\+opencv\+::x}
+
+\mbox{\Hypertarget{classscatter__opencv_a744942d15d44a64a28c13cf1a6bc51ab}\label{classscatter__opencv_a744942d15d44a64a28c13cf1a6bc51ab}} 
+\index{scatter\_opencv@{scatter\_opencv}!y@{y}}
+\index{y@{y}!scatter\_opencv@{scatter\_opencv}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily double$\ast$ scatter\+\_\+opencv\+::y}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+diffmicro/display\+\_\+opencv/\mbox{\hyperlink{overlay__opencv_8h}{overlay\+\_\+opencv.\+h}}\item 
+diffmicro/display\+\_\+opencv/\mbox{\hyperlink{overlay__opencv_8cpp}{overlay\+\_\+opencv.\+cpp}}\end{DoxyCompactItemize}

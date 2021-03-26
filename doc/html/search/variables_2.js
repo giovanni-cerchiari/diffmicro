@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['cached_1604',['cached',['../struct_d_i_r.html#a3a41d5f8c72e7d7100c0259f375d2993',1,'DIR']]],
+  ['capacity_1605',['capacity',['../classcontour__opencv.html#ad71ae16ea5f3581c0851843b4ba421a3',1,'contour_opencv']]],
+  ['cexe_1606',['cexe',['../structsizes.html#a125b0fde5e57dda5c1cdcd1ba0ca99e4',1,'sizes']]],
+  ['color_1607',['color',['../classoverlay__opencv.html#a4915589fb8646ed284a2571b92dbe964',1,'overlay_opencv::color()'],['../classtrackbar__opencv.html#aa226efa0fc2191f9b11c7a2fcabd82fb',1,'trackbar_opencv::color()']]],
+  ['color_5fbackground_1608',['color_background',['../classtextbox__opencv.html#a4406afb223dd16469c31fd8da031682f',1,'textbox_opencv']]],
+  ['color_5fbackground_5fdisabled_1609',['color_background_disabled',['../classtextbox__opencv.html#a6ee7a4b9a0496e83137f5b4962ec159f',1,'textbox_opencv']]],
+  ['color_5fbackground_5fenabled_1610',['color_background_enabled',['../classtextbox__opencv.html#a99ce3b1b10863af84340cfbdd2f4bfe4',1,'textbox_opencv']]],
+  ['color_5ffalse_1611',['color_false',['../classbutton__opencv.html#a079f086f5647b6abfb3b9711d3bc116b',1,'button_opencv']]],
+  ['color_5ffalse_5fdisabled_1612',['color_false_disabled',['../classbutton__opencv.html#a1be848c4edaf43eea32709dd51838df5',1,'button_opencv']]],
+  ['color_5ffalse_5fenabled_1613',['color_false_enabled',['../classbutton__opencv.html#ac7debf7fa6098ef7b80bb057f3da4058',1,'button_opencv']]],
+  ['color_5flabel_1614',['color_label',['../classtextbox__opencv.html#ac0826a421d067eb25e227d22791b3300',1,'textbox_opencv']]],
+  ['color_5flabel_5ffalse_1615',['color_label_false',['../classbutton__opencv.html#a7a81b5a0580f6b5f499808e8416b9dc1',1,'button_opencv']]],
+  ['color_5flabel_5fnormal_1616',['color_label_normal',['../classtextbox__opencv.html#a18a1dd7af9885e7abd76b4bf22eca803',1,'textbox_opencv']]],
+  ['color_5flabel_5fselected_1617',['color_label_selected',['../classtextbox__opencv.html#a815e7f1bae9b10586ef0ff7e8a54f11f',1,'textbox_opencv']]],
+  ['color_5flabel_5ftrue_1618',['color_label_true',['../classbutton__opencv.html#ac55b8928588fb5ce24d83a2ebc7a6b2a',1,'button_opencv']]],
+  ['color_5fnormal_1619',['color_normal',['../classoverlay__opencv.html#a5a51252fe2353ba99758293e4f382d50',1,'overlay_opencv']]],
+  ['color_5fselection_1620',['color_selection',['../classoverlay__opencv.html#a09c3e864eab1fd6cf3532d65b8f7bce3',1,'overlay_opencv']]],
+  ['color_5ftrue_1621',['color_true',['../classbutton__opencv.html#a93562e1dd9e2f6da8bfaf9f0a8660b3a',1,'button_opencv']]],
+  ['color_5ftrue_5fdisabled_1622',['color_true_disabled',['../classbutton__opencv.html#a6a7a6d377493d1746d654b1b4a40499c',1,'button_opencv']]],
+  ['color_5ftrue_5fenabled_1623',['color_true_enabled',['../classbutton__opencv.html#a2fbfef4ebf03be13968656270170d6a7',1,'button_opencv']]],
+  ['colormap_1624',['colormap',['../classwindow__display__opencv.html#acba19dd85ebe162cbdfcbaa1a637ec93',1,'window_display_opencv']]],
+  ['control_1625',['control',['../classui__variable.html#afc632fa569ec86615f1e91ff71a0d531',1,'ui_variable::control()'],['../classui__variable.html#a57bffd1402203faf773574f234fd29c4',1,'ui_variable::control()'],['../classwindow__display__opencv.html#aed78d5890087e12dd6a6282bcc53a4ee',1,'window_display_opencv::control()']]],
+  ['copy_5fpower_5fspectra_5ffrom_5fdev_1626',['copy_power_spectra_from_dev',['../correlation_8h.html#a8abb34f03ac4936a4aa640b29dbad93b',1,'copy_power_spectra_from_dev():&#160;correlation_function_selection.cpp'],['../correlation__function__selection_8cpp.html#a8abb34f03ac4936a4aa640b29dbad93b',1,'copy_power_spectra_from_dev():&#160;correlation_function_selection.cpp']]],
+  ['curentry_1627',['curentry',['../struct_d_i_r.html#a2b88d08147004e777fd7ce4afc71fc2c',1,'DIR']]],
+  ['current_5fsize_1628',['current_size',['../classfifo__min.html#aa52b6e440c3b1f946fa259ab3a42d7fd',1,'fifo_min']]]
+];

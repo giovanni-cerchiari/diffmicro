@@ -1,0 +1,161 @@
+\hypertarget{classwindow__history__opencv}{}\doxysection{window\+\_\+history\+\_\+opencv Class Reference}
+\label{classwindow__history__opencv}\index{window\_history\_opencv@{window\_history\_opencv}}
+
+
+{\ttfamily \#include $<$window\+\_\+history\+\_\+opencv.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classwindow__history__opencv_afb177b0a4c77fc39a39668af2847a082}{window\+\_\+history\+\_\+opencv}} ()
+\item 
+\mbox{\hyperlink{classwindow__history__opencv_a062aec219f9d74155b7ae1bf01a6976c}{$\sim$window\+\_\+history\+\_\+opencv}} ()
+\item 
+void \mbox{\hyperlink{classwindow__history__opencv_a2f1e0a8ba6995cd0d66e0ec7eb3166c6}{show}} (\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} \&fig)
+\item 
+void \mbox{\hyperlink{classwindow__history__opencv_a9a3358d1b4af04800dbddb5eb9b4e380}{resize\+\_\+window}} (unsigned int display\+\_\+dimx, unsigned int display\+\_\+dimy)
+\item 
+void \mbox{\hyperlink{classwindow__history__opencv_ad7d2762c15b69a78c4e3538cb5f47de6}{move\+\_\+window}} (float x, float y)
+\item 
+void \mbox{\hyperlink{classwindow__history__opencv_a4aa11b91c9823b0169a1478b9e00e367}{move\+\_\+window}} (int x, int y)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classwindow__history__opencv_a64afb8ed8118e50c15f2e6694247af76}{callback\+\_\+mouse}} (int ev, int x, int y, int flags, void $\ast$userdata)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classwindow__history__opencv_a4d7982659fea89f0aeccee3cdaf07d89}{name}}
+\item 
+cv\+::\+Mat \mbox{\hyperlink{classwindow__history__opencv_a629e6cae5d0dcdaa27a60d9a0e9be7de}{panel}}
+\item 
+float \mbox{\hyperlink{classwindow__history__opencv_ae2512980b1dcaa42a9670cf2144eb71e}{vertical\+\_\+dimension}}
+\item 
+float \mbox{\hyperlink{classwindow__history__opencv_a1bc7b21f15b0e301bdc4faae417ec4d4}{xx}} \mbox{[}8\mbox{]}
+\item 
+float $\ast$ \mbox{\hyperlink{classwindow__history__opencv_ac34fbcb94c78e7feb3dc58c8361bbe64}{xx\+\_\+current}}
+\item 
+float $\ast$ \mbox{\hyperlink{classwindow__history__opencv_a6c874c900632de40770f2182f88dad33}{xx\+\_\+previous}}
+\item 
+float $\ast$ \mbox{\hyperlink{classwindow__history__opencv_a5b8ae1af86613fb247f5bff4bada88a8}{xx\+\_\+onclick}}
+\item 
+float $\ast$ \mbox{\hyperlink{classwindow__history__opencv_adb17eb2065c4d07c2f775e738d8a78b0}{xx\+\_\+onrelease}}
+\item 
+\mbox{\hyperlink{classoverlay__opencv}{overlay\+\_\+opencv}} $\ast$ \mbox{\hyperlink{classwindow__history__opencv_a8605f90f00c56448864c8b00fe8e190f}{selected\+\_\+overlay}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This window is used to manage the overlay that appears on a window\+\_\+display 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classwindow__history__opencv_afb177b0a4c77fc39a39668af2847a082}\label{classwindow__history__opencv_afb177b0a4c77fc39a39668af2847a082}} 
+\index{window\_history\_opencv@{window\_history\_opencv}!window\_history\_opencv@{window\_history\_opencv}}
+\index{window\_history\_opencv@{window\_history\_opencv}!window\_history\_opencv@{window\_history\_opencv}}
+\doxysubsubsection{\texorpdfstring{window\_history\_opencv()}{window\_history\_opencv()}}
+{\footnotesize\ttfamily window\+\_\+history\+\_\+opencv\+::window\+\_\+history\+\_\+opencv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classwindow__history__opencv_a062aec219f9d74155b7ae1bf01a6976c}\label{classwindow__history__opencv_a062aec219f9d74155b7ae1bf01a6976c}} 
+\index{window\_history\_opencv@{window\_history\_opencv}!````~window\_history\_opencv@{$\sim$window\_history\_opencv}}
+\index{````~window\_history\_opencv@{$\sim$window\_history\_opencv}!window\_history\_opencv@{window\_history\_opencv}}
+\doxysubsubsection{\texorpdfstring{$\sim$window\_history\_opencv()}{~window\_history\_opencv()}}
+{\footnotesize\ttfamily window\+\_\+history\+\_\+opencv\+::$\sim$window\+\_\+history\+\_\+opencv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classwindow__history__opencv_a64afb8ed8118e50c15f2e6694247af76}\label{classwindow__history__opencv_a64afb8ed8118e50c15f2e6694247af76}} 
+\index{window\_history\_opencv@{window\_history\_opencv}!callback\_mouse@{callback\_mouse}}
+\index{callback\_mouse@{callback\_mouse}!window\_history\_opencv@{window\_history\_opencv}}
+\doxysubsubsection{\texorpdfstring{callback\_mouse()}{callback\_mouse()}}
+{\footnotesize\ttfamily void window\+\_\+history\+\_\+opencv\+::callback\+\_\+mouse (\begin{DoxyParamCaption}\item[{int}]{ev,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{flags,  }\item[{void $\ast$}]{userdata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classwindow__history__opencv_ad7d2762c15b69a78c4e3538cb5f47de6}\label{classwindow__history__opencv_ad7d2762c15b69a78c4e3538cb5f47de6}} 
+\index{window\_history\_opencv@{window\_history\_opencv}!move\_window@{move\_window}}
+\index{move\_window@{move\_window}!window\_history\_opencv@{window\_history\_opencv}}
+\doxysubsubsection{\texorpdfstring{move\_window()}{move\_window()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void window\+\_\+history\+\_\+opencv\+::move\+\_\+window (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classwindow__history__opencv_a4aa11b91c9823b0169a1478b9e00e367}\label{classwindow__history__opencv_a4aa11b91c9823b0169a1478b9e00e367}} 
+\index{window\_history\_opencv@{window\_history\_opencv}!move\_window@{move\_window}}
+\index{move\_window@{move\_window}!window\_history\_opencv@{window\_history\_opencv}}
+\doxysubsubsection{\texorpdfstring{move\_window()}{move\_window()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void window\+\_\+history\+\_\+opencv\+::move\+\_\+window (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classwindow__history__opencv_a9a3358d1b4af04800dbddb5eb9b4e380}\label{classwindow__history__opencv_a9a3358d1b4af04800dbddb5eb9b4e380}} 
+\index{window\_history\_opencv@{window\_history\_opencv}!resize\_window@{resize\_window}}
+\index{resize\_window@{resize\_window}!window\_history\_opencv@{window\_history\_opencv}}
+\doxysubsubsection{\texorpdfstring{resize\_window()}{resize\_window()}}
+{\footnotesize\ttfamily void window\+\_\+history\+\_\+opencv\+::resize\+\_\+window (\begin{DoxyParamCaption}\item[{unsigned int}]{display\+\_\+dimx,  }\item[{unsigned int}]{display\+\_\+dimy }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classwindow__history__opencv_a2f1e0a8ba6995cd0d66e0ec7eb3166c6}\label{classwindow__history__opencv_a2f1e0a8ba6995cd0d66e0ec7eb3166c6}} 
+\index{window\_history\_opencv@{window\_history\_opencv}!show@{show}}
+\index{show@{show}!window\_history\_opencv@{window\_history\_opencv}}
+\doxysubsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily void window\+\_\+history\+\_\+opencv\+::show (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} \&}]{fig }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classwindow__history__opencv_a4d7982659fea89f0aeccee3cdaf07d89}\label{classwindow__history__opencv_a4d7982659fea89f0aeccee3cdaf07d89}} 
+\index{window\_history\_opencv@{window\_history\_opencv}!name@{name}}
+\index{name@{name}!window\_history\_opencv@{window\_history\_opencv}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string window\+\_\+history\+\_\+opencv\+::name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classwindow__history__opencv_a629e6cae5d0dcdaa27a60d9a0e9be7de}\label{classwindow__history__opencv_a629e6cae5d0dcdaa27a60d9a0e9be7de}} 
+\index{window\_history\_opencv@{window\_history\_opencv}!panel@{panel}}
+\index{panel@{panel}!window\_history\_opencv@{window\_history\_opencv}}
+\doxysubsubsection{\texorpdfstring{panel}{panel}}
+{\footnotesize\ttfamily cv\+::\+Mat window\+\_\+history\+\_\+opencv\+::panel\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classwindow__history__opencv_a8605f90f00c56448864c8b00fe8e190f}\label{classwindow__history__opencv_a8605f90f00c56448864c8b00fe8e190f}} 
+\index{window\_history\_opencv@{window\_history\_opencv}!selected\_overlay@{selected\_overlay}}
+\index{selected\_overlay@{selected\_overlay}!window\_history\_opencv@{window\_history\_opencv}}
+\doxysubsubsection{\texorpdfstring{selected\_overlay}{selected\_overlay}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoverlay__opencv}{overlay\+\_\+opencv}}$\ast$ window\+\_\+history\+\_\+opencv\+::selected\+\_\+overlay\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classwindow__history__opencv_ae2512980b1dcaa42a9670cf2144eb71e}\label{classwindow__history__opencv_ae2512980b1dcaa42a9670cf2144eb71e}} 
+\index{window\_history\_opencv@{window\_history\_opencv}!vertical\_dimension@{vertical\_dimension}}
+\index{vertical\_dimension@{vertical\_dimension}!window\_history\_opencv@{window\_history\_opencv}}
+\doxysubsubsection{\texorpdfstring{vertical\_dimension}{vertical\_dimension}}
+{\footnotesize\ttfamily float window\+\_\+history\+\_\+opencv\+::vertical\+\_\+dimension\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classwindow__history__opencv_a1bc7b21f15b0e301bdc4faae417ec4d4}\label{classwindow__history__opencv_a1bc7b21f15b0e301bdc4faae417ec4d4}} 
+\index{window\_history\_opencv@{window\_history\_opencv}!xx@{xx}}
+\index{xx@{xx}!window\_history\_opencv@{window\_history\_opencv}}
+\doxysubsubsection{\texorpdfstring{xx}{xx}}
+{\footnotesize\ttfamily float window\+\_\+history\+\_\+opencv\+::xx\mbox{[}8\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classwindow__history__opencv_ac34fbcb94c78e7feb3dc58c8361bbe64}\label{classwindow__history__opencv_ac34fbcb94c78e7feb3dc58c8361bbe64}} 
+\index{window\_history\_opencv@{window\_history\_opencv}!xx\_current@{xx\_current}}
+\index{xx\_current@{xx\_current}!window\_history\_opencv@{window\_history\_opencv}}
+\doxysubsubsection{\texorpdfstring{xx\_current}{xx\_current}}
+{\footnotesize\ttfamily float$\ast$ window\+\_\+history\+\_\+opencv\+::xx\+\_\+current\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classwindow__history__opencv_a5b8ae1af86613fb247f5bff4bada88a8}\label{classwindow__history__opencv_a5b8ae1af86613fb247f5bff4bada88a8}} 
+\index{window\_history\_opencv@{window\_history\_opencv}!xx\_onclick@{xx\_onclick}}
+\index{xx\_onclick@{xx\_onclick}!window\_history\_opencv@{window\_history\_opencv}}
+\doxysubsubsection{\texorpdfstring{xx\_onclick}{xx\_onclick}}
+{\footnotesize\ttfamily float$\ast$ window\+\_\+history\+\_\+opencv\+::xx\+\_\+onclick\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classwindow__history__opencv_adb17eb2065c4d07c2f775e738d8a78b0}\label{classwindow__history__opencv_adb17eb2065c4d07c2f775e738d8a78b0}} 
+\index{window\_history\_opencv@{window\_history\_opencv}!xx\_onrelease@{xx\_onrelease}}
+\index{xx\_onrelease@{xx\_onrelease}!window\_history\_opencv@{window\_history\_opencv}}
+\doxysubsubsection{\texorpdfstring{xx\_onrelease}{xx\_onrelease}}
+{\footnotesize\ttfamily float$\ast$ window\+\_\+history\+\_\+opencv\+::xx\+\_\+onrelease\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classwindow__history__opencv_a6c874c900632de40770f2182f88dad33}\label{classwindow__history__opencv_a6c874c900632de40770f2182f88dad33}} 
+\index{window\_history\_opencv@{window\_history\_opencv}!xx\_previous@{xx\_previous}}
+\index{xx\_previous@{xx\_previous}!window\_history\_opencv@{window\_history\_opencv}}
+\doxysubsubsection{\texorpdfstring{xx\_previous}{xx\_previous}}
+{\footnotesize\ttfamily float$\ast$ window\+\_\+history\+\_\+opencv\+::xx\+\_\+previous\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+diffmicro/display\+\_\+opencv/\mbox{\hyperlink{window__history__opencv_8h}{window\+\_\+history\+\_\+opencv.\+h}}\item 
+diffmicro/display\+\_\+opencv/\mbox{\hyperlink{window__history__opencv_8cpp}{window\+\_\+history\+\_\+opencv.\+cpp}}\end{DoxyCompactItemize}

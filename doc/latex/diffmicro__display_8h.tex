@@ -1,0 +1,217 @@
+\hypertarget{diffmicro__display_8h}{}\doxysection{diffmicro/diffmicro\+\_\+display.h File Reference}
+\label{diffmicro__display_8h}\index{diffmicro/diffmicro\_display.h@{diffmicro/diffmicro\_display.h}}
+{\ttfamily \#include \char`\"{}global\+\_\+define.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}figure\+\_\+opencv.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{diffmicro__display_8h_abdded0bb4ce5832905a9c85f588e46f4}{initilize\+\_\+display}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimx, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimy, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimfile)
+\item 
+void \mbox{\hyperlink{diffmicro__display_8h_afc0eb3e932bb1456e7f27dbbfa185236}{display\+\_\+read}} (unsigned short $\ast$img)
+\item 
+void \mbox{\hyperlink{diffmicro__display_8h_ae229a61b96495a3591915959bbcfb91c}{display\+\_\+execution\+\_\+map}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimfilelist, unsigned char $\ast$exe\+\_\+map)
+\item 
+void \mbox{\hyperlink{diffmicro__display_8h_ad039d092c2b60a8f872675c2703e766e}{update\+\_\+execution\+\_\+map}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimfilelist, unsigned char $\ast$exe\+\_\+map)
+\item 
+{\footnotesize template$<$typename TYPE $>$ }\\void \mbox{\hyperlink{diffmicro__display_8h_aee58f7a614a44009753dad301781b87f}{display\+\_\+average}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimfilelist, TYPE $\ast$average, \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} $\ast$$\ast$win, \mbox{\hyperlink{classscatter__opencv}{scatter\+\_\+opencv}} $\ast$$\ast$sc, double $\ast$$\ast$x, double $\ast$$\ast$y, std\+::string ylabel)
+\item 
+void \mbox{\hyperlink{diffmicro__display_8h_a67d0972d024c5ca2f9e13ca755d44e1b}{display\+\_\+power\+\_\+spectrum\+\_\+r}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dist, \mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$pw)
+\item 
+void \mbox{\hyperlink{diffmicro__display_8h_a78e15800c4a6c9d3f5ae4582964da88a}{display\+\_\+power\+\_\+spectrum\+\_\+normal}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dist, \mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$pw)
+\item 
+void \mbox{\hyperlink{diffmicro__display_8h_a1c3419645592287d2440f85c8aa731be}{display\+\_\+radial\+\_\+lut}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimy, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimx, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{radial__storage__lut_8cpp_a6f04922258eacd444ae504b4973a2412}{dim\+\_\+radial\+\_\+lut}}, unsigned int $\ast$lut)
+\item 
+void \mbox{\hyperlink{diffmicro__display_8h_aec544f2541e338734d23ee7d4c40b7a9}{display\+\_\+open\+\_\+azhavg}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{angular__avg_8cpp_adc950669dbfb795e5084af275d5b6022}{dimr}})
+\item 
+void \mbox{\hyperlink{diffmicro__display_8h_a1429309601990119c45e226ae81e3254}{display\+\_\+update\+\_\+azhavg}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{angular__avg_8cpp_adc950669dbfb795e5084af275d5b6022}{dimr}}, double $\ast$azhavg)
+\item 
+void \mbox{\hyperlink{diffmicro__display_8h_a97a5aa252e97ec5a05f5f21221cdd87e}{close\+\_\+display}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{diffmicro__display_8h_af6b0b6a93d3c8100da30bb492bbddc97}{flg\+\_\+display\+\_\+read}}
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{diffmicro__display_8h_a386b0abd0df6b13eff4a95ef0024440e}{display\+\_\+read\+\_\+mat\+\_\+dimx}}
+\item 
+\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{diffmicro__display_8h_ae35093125a0f641532c2255f4aefd1da}{display\+\_\+read\+\_\+mat\+\_\+dimy}}
+\item 
+double $\ast$ \mbox{\hyperlink{diffmicro__display_8h_a45f0c921545ef1e1d2d7a4f85876d389}{display\+\_\+read\+\_\+mat}}
+\item 
+\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} $\ast$ \mbox{\hyperlink{diffmicro__display_8h_add0937768b5e552309da82a0199641e4}{read\+\_\+image\+\_\+window}}
+\item 
+double $\ast$ \mbox{\hyperlink{diffmicro__display_8h_a25dd9a86dc510219389903bbbddd00fb}{display\+\_\+pw\+\_\+mat}}
+\item 
+\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} $\ast$ \mbox{\hyperlink{diffmicro__display_8h_ad4ccfcaa6c54e78dc70145bed612acc0}{average\+\_\+counter\+\_\+window}}
+\item 
+\mbox{\hyperlink{classscatter__opencv}{scatter\+\_\+opencv}} $\ast$ \mbox{\hyperlink{diffmicro__display_8h_a1767c35e0eee0f017130ccea97085372}{average\+\_\+counter\+\_\+scatter}}
+\item 
+double $\ast$ \mbox{\hyperlink{diffmicro__display_8h_a9cbb008d1a941a36540185c84bd23ccf}{x\+\_\+avg\+\_\+counter}}
+\item 
+double $\ast$ \mbox{\hyperlink{diffmicro__display_8h_a46490ebc69b2c750a3da079c0f5d4690}{y\+\_\+avg\+\_\+counter}}
+\item 
+\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} $\ast$ \mbox{\hyperlink{diffmicro__display_8h_ad4439689ddafc2a17e2b4c4fbeb58e86}{average\+\_\+window}}
+\item 
+\mbox{\hyperlink{classscatter__opencv}{scatter\+\_\+opencv}} $\ast$ \mbox{\hyperlink{diffmicro__display_8h_aa37d1ad90a9586763a37d75087952715}{average\+\_\+scatter}}
+\item 
+double $\ast$ \mbox{\hyperlink{diffmicro__display_8h_ab6c5d814be889e585944aa6be8b7c30d}{x\+\_\+avg}}
+\item 
+double $\ast$ \mbox{\hyperlink{diffmicro__display_8h_a3aa06714acf7bb7a76a20422c54becf2}{y\+\_\+avg}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{diffmicro__display_8h_a97a5aa252e97ec5a05f5f21221cdd87e}\label{diffmicro__display_8h_a97a5aa252e97ec5a05f5f21221cdd87e}} 
+\index{diffmicro\_display.h@{diffmicro\_display.h}!close\_display@{close\_display}}
+\index{close\_display@{close\_display}!diffmicro\_display.h@{diffmicro\_display.h}}
+\doxysubsubsection{\texorpdfstring{close\_display()}{close\_display()}}
+{\footnotesize\ttfamily void close\+\_\+display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function must be called at the end of the program to free the memory used for display. \mbox{\Hypertarget{diffmicro__display_8h_aee58f7a614a44009753dad301781b87f}\label{diffmicro__display_8h_aee58f7a614a44009753dad301781b87f}} 
+\index{diffmicro\_display.h@{diffmicro\_display.h}!display\_average@{display\_average}}
+\index{display\_average@{display\_average}!diffmicro\_display.h@{diffmicro\_display.h}}
+\doxysubsubsection{\texorpdfstring{display\_average()}{display\_average()}}
+{\footnotesize\ttfamily template$<$typename TYPE $>$ \\
+void display\+\_\+average (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimfilelist,  }\item[{TYPE $\ast$}]{average,  }\item[{\mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} $\ast$$\ast$}]{win,  }\item[{\mbox{\hyperlink{classscatter__opencv}{scatter\+\_\+opencv}} $\ast$$\ast$}]{sc,  }\item[{double $\ast$$\ast$}]{x,  }\item[{double $\ast$$\ast$}]{y,  }\item[{std\+::string}]{ylabel }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{diffmicro__display_8h_ae229a61b96495a3591915959bbcfb91c}\label{diffmicro__display_8h_ae229a61b96495a3591915959bbcfb91c}} 
+\index{diffmicro\_display.h@{diffmicro\_display.h}!display\_execution\_map@{display\_execution\_map}}
+\index{display\_execution\_map@{display\_execution\_map}!diffmicro\_display.h@{diffmicro\_display.h}}
+\doxysubsubsection{\texorpdfstring{display\_execution\_map()}{display\_execution\_map()}}
+{\footnotesize\ttfamily void display\+\_\+execution\+\_\+map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimfilelist,  }\item[{unsigned char $\ast$}]{exe\+\_\+map }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{diffmicro__display_8h_aec544f2541e338734d23ee7d4c40b7a9}\label{diffmicro__display_8h_aec544f2541e338734d23ee7d4c40b7a9}} 
+\index{diffmicro\_display.h@{diffmicro\_display.h}!display\_open\_azhavg@{display\_open\_azhavg}}
+\index{display\_open\_azhavg@{display\_open\_azhavg}!diffmicro\_display.h@{diffmicro\_display.h}}
+\doxysubsubsection{\texorpdfstring{display\_open\_azhavg()}{display\_open\_azhavg()}}
+{\footnotesize\ttfamily void display\+\_\+open\+\_\+azhavg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{diffmicro__display_8h_a78e15800c4a6c9d3f5ae4582964da88a}\label{diffmicro__display_8h_a78e15800c4a6c9d3f5ae4582964da88a}} 
+\index{diffmicro\_display.h@{diffmicro\_display.h}!display\_power\_spectrum\_normal@{display\_power\_spectrum\_normal}}
+\index{display\_power\_spectrum\_normal@{display\_power\_spectrum\_normal}!diffmicro\_display.h@{diffmicro\_display.h}}
+\doxysubsubsection{\texorpdfstring{display\_power\_spectrum\_normal()}{display\_power\_spectrum\_normal()}}
+{\footnotesize\ttfamily void display\+\_\+power\+\_\+spectrum\+\_\+normal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dist,  }\item[{\mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$}]{pw }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{diffmicro__display_8h_a67d0972d024c5ca2f9e13ca755d44e1b}\label{diffmicro__display_8h_a67d0972d024c5ca2f9e13ca755d44e1b}} 
+\index{diffmicro\_display.h@{diffmicro\_display.h}!display\_power\_spectrum\_r@{display\_power\_spectrum\_r}}
+\index{display\_power\_spectrum\_r@{display\_power\_spectrum\_r}!diffmicro\_display.h@{diffmicro\_display.h}}
+\doxysubsubsection{\texorpdfstring{display\_power\_spectrum\_r()}{display\_power\_spectrum\_r()}}
+{\footnotesize\ttfamily void display\+\_\+power\+\_\+spectrum\+\_\+r (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dist,  }\item[{\mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$}]{pw }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{diffmicro__display_8h_a1c3419645592287d2440f85c8aa731be}\label{diffmicro__display_8h_a1c3419645592287d2440f85c8aa731be}} 
+\index{diffmicro\_display.h@{diffmicro\_display.h}!display\_radial\_lut@{display\_radial\_lut}}
+\index{display\_radial\_lut@{display\_radial\_lut}!diffmicro\_display.h@{diffmicro\_display.h}}
+\doxysubsubsection{\texorpdfstring{display\_radial\_lut()}{display\_radial\_lut()}}
+{\footnotesize\ttfamily void display\+\_\+radial\+\_\+lut (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimy,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimx,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dim\+\_\+radial\+\_\+lut,  }\item[{unsigned int $\ast$}]{lut }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{diffmicro__display_8h_afc0eb3e932bb1456e7f27dbbfa185236}\label{diffmicro__display_8h_afc0eb3e932bb1456e7f27dbbfa185236}} 
+\index{diffmicro\_display.h@{diffmicro\_display.h}!display\_read@{display\_read}}
+\index{display\_read@{display\_read}!diffmicro\_display.h@{diffmicro\_display.h}}
+\doxysubsubsection{\texorpdfstring{display\_read()}{display\_read()}}
+{\footnotesize\ttfamily void display\+\_\+read (\begin{DoxyParamCaption}\item[{unsigned short $\ast$}]{img }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{diffmicro__display_8h_a1429309601990119c45e226ae81e3254}\label{diffmicro__display_8h_a1429309601990119c45e226ae81e3254}} 
+\index{diffmicro\_display.h@{diffmicro\_display.h}!display\_update\_azhavg@{display\_update\_azhavg}}
+\index{display\_update\_azhavg@{display\_update\_azhavg}!diffmicro\_display.h@{diffmicro\_display.h}}
+\doxysubsubsection{\texorpdfstring{display\_update\_azhavg()}{display\_update\_azhavg()}}
+{\footnotesize\ttfamily void display\+\_\+update\+\_\+azhavg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimr,  }\item[{double $\ast$}]{azhavg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{diffmicro__display_8h_abdded0bb4ce5832905a9c85f588e46f4}\label{diffmicro__display_8h_abdded0bb4ce5832905a9c85f588e46f4}} 
+\index{diffmicro\_display.h@{diffmicro\_display.h}!initilize\_display@{initilize\_display}}
+\index{initilize\_display@{initilize\_display}!diffmicro\_display.h@{diffmicro\_display.h}}
+\doxysubsubsection{\texorpdfstring{initilize\_display()}{initilize\_display()}}
+{\footnotesize\ttfamily void initilize\+\_\+display (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimx,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimy,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimfile }\end{DoxyParamCaption})}
+
+This function must be called to initialize the display enviroment of diffmicro. \mbox{\Hypertarget{diffmicro__display_8h_ad039d092c2b60a8f872675c2703e766e}\label{diffmicro__display_8h_ad039d092c2b60a8f872675c2703e766e}} 
+\index{diffmicro\_display.h@{diffmicro\_display.h}!update\_execution\_map@{update\_execution\_map}}
+\index{update\_execution\_map@{update\_execution\_map}!diffmicro\_display.h@{diffmicro\_display.h}}
+\doxysubsubsection{\texorpdfstring{update\_execution\_map()}{update\_execution\_map()}}
+{\footnotesize\ttfamily void update\+\_\+execution\+\_\+map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimfilelist,  }\item[{unsigned char $\ast$}]{exe\+\_\+map }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{diffmicro__display_8h_a1767c35e0eee0f017130ccea97085372}\label{diffmicro__display_8h_a1767c35e0eee0f017130ccea97085372}} 
+\index{diffmicro\_display.h@{diffmicro\_display.h}!average\_counter\_scatter@{average\_counter\_scatter}}
+\index{average\_counter\_scatter@{average\_counter\_scatter}!diffmicro\_display.h@{diffmicro\_display.h}}
+\doxysubsubsection{\texorpdfstring{average\_counter\_scatter}{average\_counter\_scatter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classscatter__opencv}{scatter\+\_\+opencv}}$\ast$ average\+\_\+counter\+\_\+scatter\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__display_8h_ad4ccfcaa6c54e78dc70145bed612acc0}\label{diffmicro__display_8h_ad4ccfcaa6c54e78dc70145bed612acc0}} 
+\index{diffmicro\_display.h@{diffmicro\_display.h}!average\_counter\_window@{average\_counter\_window}}
+\index{average\_counter\_window@{average\_counter\_window}!diffmicro\_display.h@{diffmicro\_display.h}}
+\doxysubsubsection{\texorpdfstring{average\_counter\_window}{average\_counter\_window}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}}$\ast$ average\+\_\+counter\+\_\+window\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__display_8h_aa37d1ad90a9586763a37d75087952715}\label{diffmicro__display_8h_aa37d1ad90a9586763a37d75087952715}} 
+\index{diffmicro\_display.h@{diffmicro\_display.h}!average\_scatter@{average\_scatter}}
+\index{average\_scatter@{average\_scatter}!diffmicro\_display.h@{diffmicro\_display.h}}
+\doxysubsubsection{\texorpdfstring{average\_scatter}{average\_scatter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classscatter__opencv}{scatter\+\_\+opencv}}$\ast$ average\+\_\+scatter\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__display_8h_ad4439689ddafc2a17e2b4c4fbeb58e86}\label{diffmicro__display_8h_ad4439689ddafc2a17e2b4c4fbeb58e86}} 
+\index{diffmicro\_display.h@{diffmicro\_display.h}!average\_window@{average\_window}}
+\index{average\_window@{average\_window}!diffmicro\_display.h@{diffmicro\_display.h}}
+\doxysubsubsection{\texorpdfstring{average\_window}{average\_window}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}}$\ast$ average\+\_\+window\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__display_8h_a25dd9a86dc510219389903bbbddd00fb}\label{diffmicro__display_8h_a25dd9a86dc510219389903bbbddd00fb}} 
+\index{diffmicro\_display.h@{diffmicro\_display.h}!display\_pw\_mat@{display\_pw\_mat}}
+\index{display\_pw\_mat@{display\_pw\_mat}!diffmicro\_display.h@{diffmicro\_display.h}}
+\doxysubsubsection{\texorpdfstring{display\_pw\_mat}{display\_pw\_mat}}
+{\footnotesize\ttfamily double$\ast$ display\+\_\+pw\+\_\+mat\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__display_8h_a45f0c921545ef1e1d2d7a4f85876d389}\label{diffmicro__display_8h_a45f0c921545ef1e1d2d7a4f85876d389}} 
+\index{diffmicro\_display.h@{diffmicro\_display.h}!display\_read\_mat@{display\_read\_mat}}
+\index{display\_read\_mat@{display\_read\_mat}!diffmicro\_display.h@{diffmicro\_display.h}}
+\doxysubsubsection{\texorpdfstring{display\_read\_mat}{display\_read\_mat}}
+{\footnotesize\ttfamily double$\ast$ display\+\_\+read\+\_\+mat\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__display_8h_a386b0abd0df6b13eff4a95ef0024440e}\label{diffmicro__display_8h_a386b0abd0df6b13eff4a95ef0024440e}} 
+\index{diffmicro\_display.h@{diffmicro\_display.h}!display\_read\_mat\_dimx@{display\_read\_mat\_dimx}}
+\index{display\_read\_mat\_dimx@{display\_read\_mat\_dimx}!diffmicro\_display.h@{diffmicro\_display.h}}
+\doxysubsubsection{\texorpdfstring{display\_read\_mat\_dimx}{display\_read\_mat\_dimx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} display\+\_\+read\+\_\+mat\+\_\+dimx\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__display_8h_ae35093125a0f641532c2255f4aefd1da}\label{diffmicro__display_8h_ae35093125a0f641532c2255f4aefd1da}} 
+\index{diffmicro\_display.h@{diffmicro\_display.h}!display\_read\_mat\_dimy@{display\_read\_mat\_dimy}}
+\index{display\_read\_mat\_dimy@{display\_read\_mat\_dimy}!diffmicro\_display.h@{diffmicro\_display.h}}
+\doxysubsubsection{\texorpdfstring{display\_read\_mat\_dimy}{display\_read\_mat\_dimy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} display\+\_\+read\+\_\+mat\+\_\+dimy\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__display_8h_af6b0b6a93d3c8100da30bb492bbddc97}\label{diffmicro__display_8h_af6b0b6a93d3c8100da30bb492bbddc97}} 
+\index{diffmicro\_display.h@{diffmicro\_display.h}!flg\_display\_read@{flg\_display\_read}}
+\index{flg\_display\_read@{flg\_display\_read}!diffmicro\_display.h@{diffmicro\_display.h}}
+\doxysubsubsection{\texorpdfstring{flg\_display\_read}{flg\_display\_read}}
+{\footnotesize\ttfamily bool flg\+\_\+display\+\_\+read\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__display_8h_add0937768b5e552309da82a0199641e4}\label{diffmicro__display_8h_add0937768b5e552309da82a0199641e4}} 
+\index{diffmicro\_display.h@{diffmicro\_display.h}!read\_image\_window@{read\_image\_window}}
+\index{read\_image\_window@{read\_image\_window}!diffmicro\_display.h@{diffmicro\_display.h}}
+\doxysubsubsection{\texorpdfstring{read\_image\_window}{read\_image\_window}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}}$\ast$ read\+\_\+image\+\_\+window\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__display_8h_ab6c5d814be889e585944aa6be8b7c30d}\label{diffmicro__display_8h_ab6c5d814be889e585944aa6be8b7c30d}} 
+\index{diffmicro\_display.h@{diffmicro\_display.h}!x\_avg@{x\_avg}}
+\index{x\_avg@{x\_avg}!diffmicro\_display.h@{diffmicro\_display.h}}
+\doxysubsubsection{\texorpdfstring{x\_avg}{x\_avg}}
+{\footnotesize\ttfamily double$\ast$ x\+\_\+avg\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__display_8h_a9cbb008d1a941a36540185c84bd23ccf}\label{diffmicro__display_8h_a9cbb008d1a941a36540185c84bd23ccf}} 
+\index{diffmicro\_display.h@{diffmicro\_display.h}!x\_avg\_counter@{x\_avg\_counter}}
+\index{x\_avg\_counter@{x\_avg\_counter}!diffmicro\_display.h@{diffmicro\_display.h}}
+\doxysubsubsection{\texorpdfstring{x\_avg\_counter}{x\_avg\_counter}}
+{\footnotesize\ttfamily double$\ast$ x\+\_\+avg\+\_\+counter\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__display_8h_a3aa06714acf7bb7a76a20422c54becf2}\label{diffmicro__display_8h_a3aa06714acf7bb7a76a20422c54becf2}} 
+\index{diffmicro\_display.h@{diffmicro\_display.h}!y\_avg@{y\_avg}}
+\index{y\_avg@{y\_avg}!diffmicro\_display.h@{diffmicro\_display.h}}
+\doxysubsubsection{\texorpdfstring{y\_avg}{y\_avg}}
+{\footnotesize\ttfamily double$\ast$ y\+\_\+avg\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{diffmicro__display_8h_a46490ebc69b2c750a3da079c0f5d4690}\label{diffmicro__display_8h_a46490ebc69b2c750a3da079c0f5d4690}} 
+\index{diffmicro\_display.h@{diffmicro\_display.h}!y\_avg\_counter@{y\_avg\_counter}}
+\index{y\_avg\_counter@{y\_avg\_counter}!diffmicro\_display.h@{diffmicro\_display.h}}
+\doxysubsubsection{\texorpdfstring{y\_avg\_counter}{y\_avg\_counter}}
+{\footnotesize\ttfamily double$\ast$ y\+\_\+avg\+\_\+counter\hspace{0.3cm}{\ttfamily [extern]}}
+

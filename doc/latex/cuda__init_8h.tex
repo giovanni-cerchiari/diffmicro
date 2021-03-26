@@ -1,0 +1,66 @@
+\hypertarget{cuda__init_8h}{}\doxysection{diffmicro/cpp-\/routine/cuda\+\_\+init.h File Reference}
+\label{cuda__init_8h}\index{diffmicro/cpp-\/routine/cuda\_init.h@{diffmicro/cpp-\/routine/cuda\_init.h}}
+{\ttfamily \#include $<$cuda.\+h$>$}\newline
+{\ttfamily \#include $<$cuda\+\_\+runtime.\+h$>$}\newline
+{\ttfamily \#include $<$cufft.\+h$>$}\newline
+{\ttfamily \#include $<$cuda\+\_\+texture\+\_\+types.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}global\+\_\+define.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcuda__exec}{cuda\+\_\+exec}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{cuda__init_8h_a2f219d4b3776418a047d5b30b4f09fc8}{cuda\+\_\+init}} (bool print)
+\item 
+void \mbox{\hyperlink{cuda__init_8h_a6d3f547ee30e961481362f9d22d18454}{cuda\+\_\+end}} ()
+\item 
+cuda\+Error\+\_\+t \mbox{\hyperlink{cuda__init_8h_aee1e0cecaa6c726eee12ea01de6e5f9d}{my\+\_\+cudafree}} (void $\ast$ptr)
+\item 
+void \mbox{\hyperlink{cuda__init_8h_a9b065f9dd3c3327424eea24c8f0dffbb}{calc\+\_\+cuda\+\_\+exec}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} n\+\_\+total\+\_\+threads, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} Threads\+Per\+Block, \mbox{\hyperlink{structcuda__exec}{cuda\+\_\+exec}} $\ast$exec)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+cuda\+Device\+Prop \mbox{\hyperlink{cuda__init_8h_abc437f342049ab295e33fd1f4b74c46d}{device\+Prop}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{cuda__init_8h_a9b065f9dd3c3327424eea24c8f0dffbb}\label{cuda__init_8h_a9b065f9dd3c3327424eea24c8f0dffbb}} 
+\index{cuda\_init.h@{cuda\_init.h}!calc\_cuda\_exec@{calc\_cuda\_exec}}
+\index{calc\_cuda\_exec@{calc\_cuda\_exec}!cuda\_init.h@{cuda\_init.h}}
+\doxysubsubsection{\texorpdfstring{calc\_cuda\_exec()}{calc\_cuda\_exec()}}
+{\footnotesize\ttfamily void calc\+\_\+cuda\+\_\+exec (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{n\+\_\+total\+\_\+threads,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{Threads\+Per\+Block,  }\item[{\mbox{\hyperlink{structcuda__exec}{cuda\+\_\+exec}} $\ast$}]{exec }\end{DoxyParamCaption})}
+
+This function can be used to calculate \mbox{\hyperlink{structcuda__exec}{cuda\+\_\+exec}} given the total ammount of threads that the user would like to execute and the maximuma Threads\+Per\+Block that the user would like to execute in the kernels. The final number of threads to be executed will be exec.\+nbk$\ast$exec.nth $>$= n\+\_\+total\+\_\+threads. \mbox{\Hypertarget{cuda__init_8h_a6d3f547ee30e961481362f9d22d18454}\label{cuda__init_8h_a6d3f547ee30e961481362f9d22d18454}} 
+\index{cuda\_init.h@{cuda\_init.h}!cuda\_end@{cuda\_end}}
+\index{cuda\_end@{cuda\_end}!cuda\_init.h@{cuda\_init.h}}
+\doxysubsubsection{\texorpdfstring{cuda\_end()}{cuda\_end()}}
+{\footnotesize\ttfamily void cuda\+\_\+end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This function should be called at the end of the program to free the memory used by CUDA. \mbox{\Hypertarget{cuda__init_8h_a2f219d4b3776418a047d5b30b4f09fc8}\label{cuda__init_8h_a2f219d4b3776418a047d5b30b4f09fc8}} 
+\index{cuda\_init.h@{cuda\_init.h}!cuda\_init@{cuda\_init}}
+\index{cuda\_init@{cuda\_init}!cuda\_init.h@{cuda\_init.h}}
+\doxysubsubsection{\texorpdfstring{cuda\_init()}{cuda\_init()}}
+{\footnotesize\ttfamily bool cuda\+\_\+init (\begin{DoxyParamCaption}\item[{bool}]{print }\end{DoxyParamCaption})}
+
+This function should be called at the beginning of the program to prepare CUDA execution. \mbox{\Hypertarget{cuda__init_8h_aee1e0cecaa6c726eee12ea01de6e5f9d}\label{cuda__init_8h_aee1e0cecaa6c726eee12ea01de6e5f9d}} 
+\index{cuda\_init.h@{cuda\_init.h}!my\_cudafree@{my\_cudafree}}
+\index{my\_cudafree@{my\_cudafree}!cuda\_init.h@{cuda\_init.h}}
+\doxysubsubsection{\texorpdfstring{my\_cudafree()}{my\_cudafree()}}
+{\footnotesize\ttfamily cuda\+Error\+\_\+t my\+\_\+cudafree (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{cuda__init_8h_abc437f342049ab295e33fd1f4b74c46d}\label{cuda__init_8h_abc437f342049ab295e33fd1f4b74c46d}} 
+\index{cuda\_init.h@{cuda\_init.h}!deviceProp@{deviceProp}}
+\index{deviceProp@{deviceProp}!cuda\_init.h@{cuda\_init.h}}
+\doxysubsubsection{\texorpdfstring{deviceProp}{deviceProp}}
+{\footnotesize\ttfamily cuda\+Device\+Prop device\+Prop\hspace{0.3cm}{\ttfamily [extern]}}
+
+This structure contains the relevant data of the GPU card 

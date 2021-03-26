@@ -1,0 +1,55 @@
+\hypertarget{angular__avg_8h}{}\doxysection{diffmicro/cpp-\/routine/angular\+\_\+avg.h File Reference}
+\label{angular__avg_8h}\index{diffmicro/cpp-\/routine/angular\_avg.h@{diffmicro/cpp-\/routine/angular\_avg.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include \char`\"{}global\+\_\+define.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}angular\+\_\+integ.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{angular__avg_8h_a0906e9c8a294b5cc1a9db16e7853e4f7}{power\+\_\+spectra\+\_\+to\+\_\+azhavg\+\_\+init}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} nth, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \+\_\+dimside, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&\+\_\+dimr)
+\item 
+void \mbox{\hyperlink{angular__avg_8h_a162b3db0dd533d9528e237ca38059a62}{power\+\_\+spectra\+\_\+to\+\_\+azhavg\+\_\+free}} ()
+\item 
+void \mbox{\hyperlink{angular__avg_8h_ad4c7cae20f022714921a47094e06be2c}{power\+\_\+spectra\+\_\+to\+\_\+azhavg}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} npw, \mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$pw, \mbox{\hyperlink{global__define_8h_ac3e2e8b775e8c0eca32f242cbbee4b7f}{MY\+\_\+\+REAL}} $\ast$azh\+\_\+avgs)
+\item 
+void \mbox{\hyperlink{angular__avg_8h_aa2d39c295083ab8e514f002b4d0a5019}{power\+\_\+spectrum\+\_\+to\+\_\+azhavg}} (\mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$pw, \mbox{\hyperlink{global__define_8h_ac3e2e8b775e8c0eca32f242cbbee4b7f}{MY\+\_\+\+REAL}} $\ast$azh\+\_\+avg, \mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$mat, \mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ \mbox{\hyperlink{global__define_8h_ac3e2e8b775e8c0eca32f242cbbee4b7f}{MY\+\_\+\+REAL}}, \mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $>$ $\ast$ang\+\_\+int)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{angular__avg_8h_ad4c7cae20f022714921a47094e06be2c}\label{angular__avg_8h_ad4c7cae20f022714921a47094e06be2c}} 
+\index{angular\_avg.h@{angular\_avg.h}!power\_spectra\_to\_azhavg@{power\_spectra\_to\_azhavg}}
+\index{power\_spectra\_to\_azhavg@{power\_spectra\_to\_azhavg}!angular\_avg.h@{angular\_avg.h}}
+\doxysubsubsection{\texorpdfstring{power\_spectra\_to\_azhavg()}{power\_spectra\_to\_azhavg()}}
+{\footnotesize\ttfamily void power\+\_\+spectra\+\_\+to\+\_\+azhavg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{npw,  }\item[{\mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$}]{pw,  }\item[{\mbox{\hyperlink{global__define_8h_ac3e2e8b775e8c0eca32f242cbbee4b7f}{MY\+\_\+\+REAL}} $\ast$}]{azh\+\_\+avgs }\end{DoxyParamCaption})}
+
+This function organize the trivial parallelization over the azimuthal averages.
+
+It runs N\+\_\+\+MAX\+\_\+\+THREADS threads over N\+\_\+\+MAX\+\_\+\+THREADS different power spectra and compute separately each azimuthal average \mbox{\Hypertarget{angular__avg_8h_a162b3db0dd533d9528e237ca38059a62}\label{angular__avg_8h_a162b3db0dd533d9528e237ca38059a62}} 
+\index{angular\_avg.h@{angular\_avg.h}!power\_spectra\_to\_azhavg\_free@{power\_spectra\_to\_azhavg\_free}}
+\index{power\_spectra\_to\_azhavg\_free@{power\_spectra\_to\_azhavg\_free}!angular\_avg.h@{angular\_avg.h}}
+\doxysubsubsection{\texorpdfstring{power\_spectra\_to\_azhavg\_free()}{power\_spectra\_to\_azhavg\_free()}}
+{\footnotesize\ttfamily void power\+\_\+spectra\+\_\+to\+\_\+azhavg\+\_\+free (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+memory free of the threads \mbox{\Hypertarget{angular__avg_8h_a0906e9c8a294b5cc1a9db16e7853e4f7}\label{angular__avg_8h_a0906e9c8a294b5cc1a9db16e7853e4f7}} 
+\index{angular\_avg.h@{angular\_avg.h}!power\_spectra\_to\_azhavg\_init@{power\_spectra\_to\_azhavg\_init}}
+\index{power\_spectra\_to\_azhavg\_init@{power\_spectra\_to\_azhavg\_init}!angular\_avg.h@{angular\_avg.h}}
+\doxysubsubsection{\texorpdfstring{power\_spectra\_to\_azhavg\_init()}{power\_spectra\_to\_azhavg\_init()}}
+{\footnotesize\ttfamily void power\+\_\+spectra\+\_\+to\+\_\+azhavg\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{nth,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{\+\_\+dimside,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \&}]{\+\_\+dimr }\end{DoxyParamCaption})}
+
+initialization of the azimuthal averages calculus
+\begin{DoxyItemize}
+\item Initialization of one \+: angular\+\_\+integrator$<$\+REAL, STORE\+\_\+\+REAL$>$
+\item Initialization of the Threads arguments (WARNING! -\/$>$ there must be one angular integrator and one temporary matrix for each thread)
+\item nth -\/$>$ number of threads 
+\end{DoxyItemize}\mbox{\Hypertarget{angular__avg_8h_aa2d39c295083ab8e514f002b4d0a5019}\label{angular__avg_8h_aa2d39c295083ab8e514f002b4d0a5019}} 
+\index{angular\_avg.h@{angular\_avg.h}!power\_spectrum\_to\_azhavg@{power\_spectrum\_to\_azhavg}}
+\index{power\_spectrum\_to\_azhavg@{power\_spectrum\_to\_azhavg}!angular\_avg.h@{angular\_avg.h}}
+\doxysubsubsection{\texorpdfstring{power\_spectrum\_to\_azhavg()}{power\_spectrum\_to\_azhavg()}}
+{\footnotesize\ttfamily void power\+\_\+spectrum\+\_\+to\+\_\+azhavg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$}]{pw,  }\item[{\mbox{\hyperlink{global__define_8h_ac3e2e8b775e8c0eca32f242cbbee4b7f}{MY\+\_\+\+REAL}} $\ast$}]{azh\+\_\+avg,  }\item[{\mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $\ast$}]{mat,  }\item[{\mbox{\hyperlink{classangular__integrator}{angular\+\_\+integrator}}$<$ \mbox{\hyperlink{global__define_8h_ac3e2e8b775e8c0eca32f242cbbee4b7f}{MY\+\_\+\+REAL}}, \mbox{\hyperlink{global__define_8h_aa43dd964c8e638a472f0d20011a2b7dd}{STORE\+\_\+\+REAL}} $>$ $\ast$}]{ang\+\_\+int }\end{DoxyParamCaption})}
+
+This function organize the parallelization over the azimuthal averages.
+
+It runs N\+\_\+\+MAX\+\_\+\+THREADS threads over N\+\_\+\+MAX\+\_\+\+THREADS different power spectra and compute separately the azimuthal average of each image 

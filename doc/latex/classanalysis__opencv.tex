@@ -1,0 +1,152 @@
+\hypertarget{classanalysis__opencv}{}\doxysection{analysis\+\_\+opencv Class Reference}
+\label{classanalysis__opencv}\index{analysis\_opencv@{analysis\_opencv}}
+
+
+{\ttfamily \#include $<$analysis\+\_\+opencv.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classanalysis__opencv_ab5800d1c2bf2df26a21de34a1a123937}{analysis\+\_\+opencv}} ()
+\item 
+\mbox{\hyperlink{classanalysis__opencv_a724ed8ad30c182724f895217f5581a33}{$\sim$analysis\+\_\+opencv}} ()
+\item 
+virtual void \mbox{\hyperlink{classanalysis__opencv_aefb3398d19b6b90ed853e8ffdbf0a648}{run}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classanalysis__opencv_a429bfe81a48ddf8be624ebd38f63d31c}{get\+\_\+value}} (void $\ast$val)=0
+\item 
+void \mbox{\hyperlink{classanalysis__opencv_a33b1f5e10db21789f69c52f057456e5d}{clear}} ()
+\item 
+void \mbox{\hyperlink{classanalysis__opencv_a049597e3a322f0dc938fb29c8b981d20}{alloc}} (unsigned int \+\_\+dimx, unsigned int \+\_\+dimvalue, unsigned int \+\_\+dimlut)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classanalysis__opencv_af75514997260a13969cf8dff2583fe12}{type}}
+\item 
+int \mbox{\hyperlink{classanalysis__opencv_afdd250ec8e21282a2a00b05c5658240c}{id}}
+\item 
+std\+::string \mbox{\hyperlink{classanalysis__opencv_a47f28a2ea94aea634bc153bc62780003}{name}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classanalysis__opencv_adbd97a005c84093e3eeea9bc1639de2c}{dimx}}
+\item 
+double $\ast$ \mbox{\hyperlink{classanalysis__opencv_ad7e6ac8d1d50751c68e6268e0209b787}{x}}
+\item 
+unsigned int \mbox{\hyperlink{classanalysis__opencv_a6f824304accee3e3c11b9223476e141d}{dimvalue}}
+\item 
+double $\ast$ \mbox{\hyperlink{classanalysis__opencv_aee0aaf9d236bb27ff7d2292d163ed68e}{value}}
+\item 
+unsigned int \mbox{\hyperlink{classanalysis__opencv_a9da5f9d08eec93285fdbe8820dc673cf}{dimlut}}
+\item 
+unsigned int $\ast$ \mbox{\hyperlink{classanalysis__opencv_a6c29276487299419464a3c7d569f6105}{lut}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Analysis opencv should be an operation applied on the data contained into a \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classanalysis__opencv_ab5800d1c2bf2df26a21de34a1a123937}\label{classanalysis__opencv_ab5800d1c2bf2df26a21de34a1a123937}} 
+\index{analysis\_opencv@{analysis\_opencv}!analysis\_opencv@{analysis\_opencv}}
+\index{analysis\_opencv@{analysis\_opencv}!analysis\_opencv@{analysis\_opencv}}
+\doxysubsubsection{\texorpdfstring{analysis\_opencv()}{analysis\_opencv()}}
+{\footnotesize\ttfamily analysis\+\_\+opencv\+::analysis\+\_\+opencv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classanalysis__opencv_a724ed8ad30c182724f895217f5581a33}\label{classanalysis__opencv_a724ed8ad30c182724f895217f5581a33}} 
+\index{analysis\_opencv@{analysis\_opencv}!````~analysis\_opencv@{$\sim$analysis\_opencv}}
+\index{````~analysis\_opencv@{$\sim$analysis\_opencv}!analysis\_opencv@{analysis\_opencv}}
+\doxysubsubsection{\texorpdfstring{$\sim$analysis\_opencv()}{~analysis\_opencv()}}
+{\footnotesize\ttfamily analysis\+\_\+opencv\+::$\sim$analysis\+\_\+opencv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classanalysis__opencv_a049597e3a322f0dc938fb29c8b981d20}\label{classanalysis__opencv_a049597e3a322f0dc938fb29c8b981d20}} 
+\index{analysis\_opencv@{analysis\_opencv}!alloc@{alloc}}
+\index{alloc@{alloc}!analysis\_opencv@{analysis\_opencv}}
+\doxysubsubsection{\texorpdfstring{alloc()}{alloc()}}
+{\footnotesize\ttfamily void analysis\+\_\+opencv\+::alloc (\begin{DoxyParamCaption}\item[{unsigned int}]{\+\_\+dimx,  }\item[{unsigned int}]{\+\_\+dimvalue,  }\item[{unsigned int}]{\+\_\+dimlut }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classanalysis__opencv_a33b1f5e10db21789f69c52f057456e5d}\label{classanalysis__opencv_a33b1f5e10db21789f69c52f057456e5d}} 
+\index{analysis\_opencv@{analysis\_opencv}!clear@{clear}}
+\index{clear@{clear}!analysis\_opencv@{analysis\_opencv}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void analysis\+\_\+opencv\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classanalysis__opencv_a429bfe81a48ddf8be624ebd38f63d31c}\label{classanalysis__opencv_a429bfe81a48ddf8be624ebd38f63d31c}} 
+\index{analysis\_opencv@{analysis\_opencv}!get\_value@{get\_value}}
+\index{get\_value@{get\_value}!analysis\_opencv@{analysis\_opencv}}
+\doxysubsubsection{\texorpdfstring{get\_value()}{get\_value()}}
+{\footnotesize\ttfamily virtual void analysis\+\_\+opencv\+::get\+\_\+value (\begin{DoxyParamCaption}\item[{void $\ast$}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{classanalysis__opencv_aefb3398d19b6b90ed853e8ffdbf0a648}\label{classanalysis__opencv_aefb3398d19b6b90ed853e8ffdbf0a648}} 
+\index{analysis\_opencv@{analysis\_opencv}!run@{run}}
+\index{run@{run}!analysis\_opencv@{analysis\_opencv}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily virtual void analysis\+\_\+opencv\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classanalysis__opencv_a9da5f9d08eec93285fdbe8820dc673cf}\label{classanalysis__opencv_a9da5f9d08eec93285fdbe8820dc673cf}} 
+\index{analysis\_opencv@{analysis\_opencv}!dimlut@{dimlut}}
+\index{dimlut@{dimlut}!analysis\_opencv@{analysis\_opencv}}
+\doxysubsubsection{\texorpdfstring{dimlut}{dimlut}}
+{\footnotesize\ttfamily unsigned int analysis\+\_\+opencv\+::dimlut\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classanalysis__opencv_a6f824304accee3e3c11b9223476e141d}\label{classanalysis__opencv_a6f824304accee3e3c11b9223476e141d}} 
+\index{analysis\_opencv@{analysis\_opencv}!dimvalue@{dimvalue}}
+\index{dimvalue@{dimvalue}!analysis\_opencv@{analysis\_opencv}}
+\doxysubsubsection{\texorpdfstring{dimvalue}{dimvalue}}
+{\footnotesize\ttfamily unsigned int analysis\+\_\+opencv\+::dimvalue\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classanalysis__opencv_adbd97a005c84093e3eeea9bc1639de2c}\label{classanalysis__opencv_adbd97a005c84093e3eeea9bc1639de2c}} 
+\index{analysis\_opencv@{analysis\_opencv}!dimx@{dimx}}
+\index{dimx@{dimx}!analysis\_opencv@{analysis\_opencv}}
+\doxysubsubsection{\texorpdfstring{dimx}{dimx}}
+{\footnotesize\ttfamily double analysis\+\_\+opencv\+::dimx\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classanalysis__opencv_afdd250ec8e21282a2a00b05c5658240c}\label{classanalysis__opencv_afdd250ec8e21282a2a00b05c5658240c}} 
+\index{analysis\_opencv@{analysis\_opencv}!id@{id}}
+\index{id@{id}!analysis\_opencv@{analysis\_opencv}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int analysis\+\_\+opencv\+::id}
+
+\mbox{\Hypertarget{classanalysis__opencv_a6c29276487299419464a3c7d569f6105}\label{classanalysis__opencv_a6c29276487299419464a3c7d569f6105}} 
+\index{analysis\_opencv@{analysis\_opencv}!lut@{lut}}
+\index{lut@{lut}!analysis\_opencv@{analysis\_opencv}}
+\doxysubsubsection{\texorpdfstring{lut}{lut}}
+{\footnotesize\ttfamily unsigned int$\ast$ analysis\+\_\+opencv\+::lut\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classanalysis__opencv_a47f28a2ea94aea634bc153bc62780003}\label{classanalysis__opencv_a47f28a2ea94aea634bc153bc62780003}} 
+\index{analysis\_opencv@{analysis\_opencv}!name@{name}}
+\index{name@{name}!analysis\_opencv@{analysis\_opencv}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string analysis\+\_\+opencv\+::name}
+
+\mbox{\Hypertarget{classanalysis__opencv_af75514997260a13969cf8dff2583fe12}\label{classanalysis__opencv_af75514997260a13969cf8dff2583fe12}} 
+\index{analysis\_opencv@{analysis\_opencv}!type@{type}}
+\index{type@{type}!analysis\_opencv@{analysis\_opencv}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily int analysis\+\_\+opencv\+::type}
+
+\mbox{\Hypertarget{classanalysis__opencv_aee0aaf9d236bb27ff7d2292d163ed68e}\label{classanalysis__opencv_aee0aaf9d236bb27ff7d2292d163ed68e}} 
+\index{analysis\_opencv@{analysis\_opencv}!value@{value}}
+\index{value@{value}!analysis\_opencv@{analysis\_opencv}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily double$\ast$ analysis\+\_\+opencv\+::value\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classanalysis__opencv_ad7e6ac8d1d50751c68e6268e0209b787}\label{classanalysis__opencv_ad7e6ac8d1d50751c68e6268e0209b787}} 
+\index{analysis\_opencv@{analysis\_opencv}!x@{x}}
+\index{x@{x}!analysis\_opencv@{analysis\_opencv}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily double$\ast$ analysis\+\_\+opencv\+::x\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+diffmicro/display\+\_\+opencv/\mbox{\hyperlink{analysis__opencv_8h}{analysis\+\_\+opencv.\+h}}\end{DoxyCompactItemize}

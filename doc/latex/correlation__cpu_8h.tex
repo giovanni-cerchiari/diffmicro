@@ -1,0 +1,46 @@
+\hypertarget{correlation__cpu_8h}{}\doxysection{diffmicro/cpp-\/routine/correlation\+\_\+cpu.h File Reference}
+\label{correlation__cpu_8h}\index{diffmicro/cpp-\/routine/correlation\_cpu.h@{diffmicro/cpp-\/routine/correlation\_cpu.h}}
+{\ttfamily \#include \char`\"{}my\+\_\+math.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename FLOAT $>$ }\\void \mbox{\hyperlink{correlation__cpu_8h_ab46ae5ec619f8e08b3946117674b4ea6}{calculate\+\_\+linear\+\_\+overlap\+\_\+weight}} (int \&\mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, FLOAT shift, int shift\+\_\+index\mbox{[}$\,$\mbox{]}, FLOAT weight\mbox{[}$\,$\mbox{]})
+\item 
+{\footnotesize template$<$typename FLOAT $>$ }\\void \mbox{\hyperlink{correlation__cpu_8h_aab137eed31a2b4559f92edf8875d51aa}{get\+\_\+index\+\_\+shift\+\_\+and\+\_\+weight}} (FLOAT shift\mbox{[}$\,$\mbox{]}, int \&\mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, int shift\+\_\+index\mbox{[}$\,$\mbox{]}, FLOAT weight\mbox{[}$\,$\mbox{]})
+\item 
+{\footnotesize template$<$typename FLOATOUT , typename FLOAT $>$ }\\FLOATOUT \mbox{\hyperlink{correlation__cpu_8h_ad27ce0c4af3c7e8818b2cf90379ba054}{one\+\_\+point\+\_\+correlation}} (int dimx, int dimy, FLOAT mat\mbox{[}$\,$\mbox{]}, int dimx\+\_\+kernel, int dimy\+\_\+kernel, FLOAT kernel\mbox{[}$\,$\mbox{]}, FLOAT point\+\_\+shift\mbox{[}$\,$\mbox{]})
+\item 
+{\footnotesize template$<$typename FLOAT $>$ }\\void \mbox{\hyperlink{correlation__cpu_8h_abe60cdcaf95b26ff781e9e9e597e06c7}{line\+\_\+correlation}} (int dimx, int dimy, FLOAT mat\mbox{[}$\,$\mbox{]}, int dimx\+\_\+kernel, int dimy\+\_\+kernel, FLOAT kernel\mbox{[}$\,$\mbox{]}, int dimline, FLOAT line\+\_\+points\mbox{[}$\,$\mbox{]}, FLOAT corr\+\_\+line\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{correlation__cpu_8h_ab46ae5ec619f8e08b3946117674b4ea6}\label{correlation__cpu_8h_ab46ae5ec619f8e08b3946117674b4ea6}} 
+\index{correlation\_cpu.h@{correlation\_cpu.h}!calculate\_linear\_overlap\_weight@{calculate\_linear\_overlap\_weight}}
+\index{calculate\_linear\_overlap\_weight@{calculate\_linear\_overlap\_weight}!correlation\_cpu.h@{correlation\_cpu.h}}
+\doxysubsubsection{\texorpdfstring{calculate\_linear\_overlap\_weight()}{calculate\_linear\_overlap\_weight()}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+void calculate\+\_\+linear\+\_\+overlap\+\_\+weight (\begin{DoxyParamCaption}\item[{int \&}]{dim,  }\item[{FLOAT}]{shift,  }\item[{int}]{shift\+\_\+index\mbox{[}$\,$\mbox{]},  }\item[{FLOAT}]{weight\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+This function is needed by one point correlation to evaluate antialising correction \mbox{\Hypertarget{correlation__cpu_8h_aab137eed31a2b4559f92edf8875d51aa}\label{correlation__cpu_8h_aab137eed31a2b4559f92edf8875d51aa}} 
+\index{correlation\_cpu.h@{correlation\_cpu.h}!get\_index\_shift\_and\_weight@{get\_index\_shift\_and\_weight}}
+\index{get\_index\_shift\_and\_weight@{get\_index\_shift\_and\_weight}!correlation\_cpu.h@{correlation\_cpu.h}}
+\doxysubsubsection{\texorpdfstring{get\_index\_shift\_and\_weight()}{get\_index\_shift\_and\_weight()}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+void get\+\_\+index\+\_\+shift\+\_\+and\+\_\+weight (\begin{DoxyParamCaption}\item[{FLOAT}]{shift\mbox{[}$\,$\mbox{]},  }\item[{int \&}]{dim,  }\item[{int}]{shift\+\_\+index\mbox{[}$\,$\mbox{]},  }\item[{FLOAT}]{weight\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+This function is needed by one point correlation to evaluate antialising correction \mbox{\Hypertarget{correlation__cpu_8h_abe60cdcaf95b26ff781e9e9e597e06c7}\label{correlation__cpu_8h_abe60cdcaf95b26ff781e9e9e597e06c7}} 
+\index{correlation\_cpu.h@{correlation\_cpu.h}!line\_correlation@{line\_correlation}}
+\index{line\_correlation@{line\_correlation}!correlation\_cpu.h@{correlation\_cpu.h}}
+\doxysubsubsection{\texorpdfstring{line\_correlation()}{line\_correlation()}}
+{\footnotesize\ttfamily template$<$typename FLOAT $>$ \\
+void line\+\_\+correlation (\begin{DoxyParamCaption}\item[{int}]{dimx,  }\item[{int}]{dimy,  }\item[{FLOAT}]{mat\mbox{[}$\,$\mbox{]},  }\item[{int}]{dimx\+\_\+kernel,  }\item[{int}]{dimy\+\_\+kernel,  }\item[{FLOAT}]{kernel\mbox{[}$\,$\mbox{]},  }\item[{int}]{dimline,  }\item[{FLOAT}]{line\+\_\+points\mbox{[}$\,$\mbox{]},  }\item[{FLOAT}]{corr\+\_\+line\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+By using one\+\_\+point\+\_\+correlation, this function performs the correlation of two images along a line. \mbox{\Hypertarget{correlation__cpu_8h_ad27ce0c4af3c7e8818b2cf90379ba054}\label{correlation__cpu_8h_ad27ce0c4af3c7e8818b2cf90379ba054}} 
+\index{correlation\_cpu.h@{correlation\_cpu.h}!one\_point\_correlation@{one\_point\_correlation}}
+\index{one\_point\_correlation@{one\_point\_correlation}!correlation\_cpu.h@{correlation\_cpu.h}}
+\doxysubsubsection{\texorpdfstring{one\_point\_correlation()}{one\_point\_correlation()}}
+{\footnotesize\ttfamily template$<$typename FLOATOUT , typename FLOAT $>$ \\
+FLOATOUT one\+\_\+point\+\_\+correlation (\begin{DoxyParamCaption}\item[{int}]{dimx,  }\item[{int}]{dimy,  }\item[{FLOAT}]{mat\mbox{[}$\,$\mbox{]},  }\item[{int}]{dimx\+\_\+kernel,  }\item[{int}]{dimy\+\_\+kernel,  }\item[{FLOAT}]{kernel\mbox{[}$\,$\mbox{]},  }\item[{FLOAT}]{point\+\_\+shift\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+This function performs the one point shift correlation between to images correcting for antialisiaing The pixel is splitted according to the overlap with the other picture and the scalar product is weighted by the area of overlap. 

@@ -1,0 +1,55 @@
+\hypertarget{memory__managment__timeseries__demo_8cpp}{}\doxysection{diffmicro/memory\+\_\+managment\+\_\+timeseries\+\_\+demo.cpp File Reference}
+\label{memory__managment__timeseries__demo_8cpp}\index{diffmicro/memory\_managment\_timeseries\_demo.cpp@{diffmicro/memory\_managment\_timeseries\_demo.cpp}}
+{\ttfamily \#include \char`\"{}figure\+\_\+opencv.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}power\+\_\+spectra.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}diffmicro\+\_\+io.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}cuda\+\_\+init.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}device\+\_\+launch\+\_\+parameters.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+global\+\_\+\+\_\+ void \mbox{\hyperlink{memory__managment__timeseries__demo_8cpp_ac98829f34b6145ec11a5f5b91c8f11ad}{cpx\+\_\+col2row\+\_\+gain\+\_\+\+\_\+gpu}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimcopy, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimx\+\_\+in, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} i\+\_\+col\+\_\+in, \mbox{\hyperlink{global__define_8h_a1bde1bb0a0089c19e835450c28ec0f81}{CUFFT\+\_\+\+COMPLEX}} in\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{global__define_8h_a9d7c39132437d1f39d0549067e12071a}{CUFFT\+\_\+\+REAL}} gain, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimx\+\_\+out, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} i\+\_\+row\+\_\+out, \mbox{\hyperlink{global__define_8h_a1bde1bb0a0089c19e835450c28ec0f81}{CUFFT\+\_\+\+COMPLEX}} out\mbox{[}$\,$\mbox{]})
+\item 
+\+\_\+\+\_\+global\+\_\+\+\_\+ void \mbox{\hyperlink{memory__managment__timeseries__demo_8cpp_ab8e80501bb016a961fc956f5e8521684}{cpx\+\_\+row2col\+\_\+gain\+\_\+\+\_\+gpu}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} \mbox{\hyperlink{angular__avg_8cpp_a03f6b3124408853b45da62746d71a526}{dim}}, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimx\+\_\+in, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} i\+\_\+row\+\_\+in, \mbox{\hyperlink{global__define_8h_a1bde1bb0a0089c19e835450c28ec0f81}{CUFFT\+\_\+\+COMPLEX}} in\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}} gain, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimx\+\_\+out, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} i\+\_\+col\+\_\+out, \mbox{\hyperlink{global__define_8h_a1bde1bb0a0089c19e835450c28ec0f81}{CUFFT\+\_\+\+COMPLEX}} out\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{memory__managment__timeseries__demo_8cpp_a3649c8131b33a33ed5a2d0757a5378b1}{printcpxmat}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimx, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimy, \mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} $\ast$mat)
+\item 
+void \mbox{\hyperlink{memory__managment__timeseries__demo_8cpp_a577e6fbd2a3d310deaeb401aed09a203}{printcpxmat}} (\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimx, \mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}} dimy, \mbox{\hyperlink{global__define_8h_a1bde1bb0a0089c19e835450c28ec0f81}{CUFFT\+\_\+\+COMPLEX}} $\ast$mat)
+\item 
+int \mbox{\hyperlink{memory__managment__timeseries__demo_8cpp_a2c09eff81e633939a241b98f50913097}{ddd\+\_\+main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{memory__managment__timeseries__demo_8cpp_ac98829f34b6145ec11a5f5b91c8f11ad}\label{memory__managment__timeseries__demo_8cpp_ac98829f34b6145ec11a5f5b91c8f11ad}} 
+\index{memory\_managment\_timeseries\_demo.cpp@{memory\_managment\_timeseries\_demo.cpp}!cpx\_col2row\_gain\_\_gpu@{cpx\_col2row\_gain\_\_gpu}}
+\index{cpx\_col2row\_gain\_\_gpu@{cpx\_col2row\_gain\_\_gpu}!memory\_managment\_timeseries\_demo.cpp@{memory\_managment\_timeseries\_demo.cpp}}
+\doxysubsubsection{\texorpdfstring{cpx\_col2row\_gain\_\_gpu()}{cpx\_col2row\_gain\_\_gpu()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+global\+\_\+\+\_\+ void cpx\+\_\+col2row\+\_\+gain\+\_\+\+\_\+gpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimcopy,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimx\+\_\+in,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{i\+\_\+col\+\_\+in,  }\item[{\mbox{\hyperlink{global__define_8h_a1bde1bb0a0089c19e835450c28ec0f81}{CUFFT\+\_\+\+COMPLEX}}}]{in\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{global__define_8h_a9d7c39132437d1f39d0549067e12071a}{CUFFT\+\_\+\+REAL}}}]{gain,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimx\+\_\+out,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{i\+\_\+row\+\_\+out,  }\item[{\mbox{\hyperlink{global__define_8h_a1bde1bb0a0089c19e835450c28ec0f81}{CUFFT\+\_\+\+COMPLEX}}}]{out\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{memory__managment__timeseries__demo_8cpp_ab8e80501bb016a961fc956f5e8521684}\label{memory__managment__timeseries__demo_8cpp_ab8e80501bb016a961fc956f5e8521684}} 
+\index{memory\_managment\_timeseries\_demo.cpp@{memory\_managment\_timeseries\_demo.cpp}!cpx\_row2col\_gain\_\_gpu@{cpx\_row2col\_gain\_\_gpu}}
+\index{cpx\_row2col\_gain\_\_gpu@{cpx\_row2col\_gain\_\_gpu}!memory\_managment\_timeseries\_demo.cpp@{memory\_managment\_timeseries\_demo.cpp}}
+\doxysubsubsection{\texorpdfstring{cpx\_row2col\_gain\_\_gpu()}{cpx\_row2col\_gain\_\_gpu()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+global\+\_\+\+\_\+ void cpx\+\_\+row2col\+\_\+gain\+\_\+\+\_\+gpu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dim,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimx\+\_\+in,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{i\+\_\+row\+\_\+in,  }\item[{\mbox{\hyperlink{global__define_8h_a1bde1bb0a0089c19e835450c28ec0f81}{CUFFT\+\_\+\+COMPLEX}}}]{in\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{global__define_8h_ad55fd9952588fe62ec9f09979ea33523}{FFTW\+\_\+\+REAL}}}]{gain,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimx\+\_\+out,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{i\+\_\+col\+\_\+out,  }\item[{\mbox{\hyperlink{global__define_8h_a1bde1bb0a0089c19e835450c28ec0f81}{CUFFT\+\_\+\+COMPLEX}}}]{out\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{memory__managment__timeseries__demo_8cpp_a2c09eff81e633939a241b98f50913097}\label{memory__managment__timeseries__demo_8cpp_a2c09eff81e633939a241b98f50913097}} 
+\index{memory\_managment\_timeseries\_demo.cpp@{memory\_managment\_timeseries\_demo.cpp}!ddd\_main@{ddd\_main}}
+\index{ddd\_main@{ddd\_main}!memory\_managment\_timeseries\_demo.cpp@{memory\_managment\_timeseries\_demo.cpp}}
+\doxysubsubsection{\texorpdfstring{ddd\_main()}{ddd\_main()}}
+{\footnotesize\ttfamily int ddd\+\_\+main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{memory__managment__timeseries__demo_8cpp_a577e6fbd2a3d310deaeb401aed09a203}\label{memory__managment__timeseries__demo_8cpp_a577e6fbd2a3d310deaeb401aed09a203}} 
+\index{memory\_managment\_timeseries\_demo.cpp@{memory\_managment\_timeseries\_demo.cpp}!printcpxmat@{printcpxmat}}
+\index{printcpxmat@{printcpxmat}!memory\_managment\_timeseries\_demo.cpp@{memory\_managment\_timeseries\_demo.cpp}}
+\doxysubsubsection{\texorpdfstring{printcpxmat()}{printcpxmat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void printcpxmat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimx,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimy,  }\item[{\mbox{\hyperlink{global__define_8h_a1bde1bb0a0089c19e835450c28ec0f81}{CUFFT\+\_\+\+COMPLEX}} $\ast$}]{mat }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{memory__managment__timeseries__demo_8cpp_a3649c8131b33a33ed5a2d0757a5378b1}\label{memory__managment__timeseries__demo_8cpp_a3649c8131b33a33ed5a2d0757a5378b1}} 
+\index{memory\_managment\_timeseries\_demo.cpp@{memory\_managment\_timeseries\_demo.cpp}!printcpxmat@{printcpxmat}}
+\index{printcpxmat@{printcpxmat}!memory\_managment\_timeseries\_demo.cpp@{memory\_managment\_timeseries\_demo.cpp}}
+\doxysubsubsection{\texorpdfstring{printcpxmat()}{printcpxmat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void printcpxmat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimx,  }\item[{\mbox{\hyperlink{global__define_8h_ac6885dbfb371c33e523c7fb046118b36}{INDEX}}}]{dimy,  }\item[{\mbox{\hyperlink{global__define_8h_a3a9e2084b68d75ecbd768975af5d628f}{FFTW\+\_\+\+COMPLEX}} $\ast$}]{mat }\end{DoxyParamCaption})}
+

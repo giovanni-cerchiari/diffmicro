@@ -56,7 +56,7 @@ the maximuma ThreadsPerBlock that the user would like to execute in the kernels.
 be exec.nbk*exec.nth >= n_total_threads. */
 void calc_cuda_exec(INDEX n_total_threads, INDEX ThreadsPerBlock, cuda_exec *exec);
 
-/*!This kernel is left here for example. This kernel multiplies the input array by a constant.*/
+/*!This kernel is left here for example. This kernel multiplies the input array by a constant.
 template<typename FLOAT>
 __global__ void gain_ary_device(FLOAT gain, INDEX dim, FLOAT *in, FLOAT *out)
 {
@@ -65,6 +65,6 @@ __global__ void gain_ary_device(FLOAT gain, INDEX dim, FLOAT *in, FLOAT *out)
 	{
 		out[i] = gain*in[i];
 	}
-}
+}*/
 
 #endif

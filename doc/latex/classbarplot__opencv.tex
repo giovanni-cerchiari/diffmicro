@@ -1,0 +1,195 @@
+\hypertarget{classbarplot__opencv}{}\doxysection{barplot\+\_\+opencv Class Reference}
+\label{classbarplot__opencv}\index{barplot\_opencv@{barplot\_opencv}}
+
+
+{\ttfamily \#include $<$overlay\+\_\+opencv.\+h$>$}
+
+Inheritance diagram for barplot\+\_\+opencv\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbarplot__opencv}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbarplot__opencv_a99e63dd9849d7d1daf3c8d000d6f1ba3}{barplot\+\_\+opencv}} ()
+\item 
+\mbox{\hyperlink{classbarplot__opencv_a6d62bf98d1950b55f6a0faa5bb25c67c}{barplot\+\_\+opencv}} (const \mbox{\hyperlink{classbarplot__opencv}{barplot\+\_\+opencv}} \&ax)
+\item 
+\mbox{\hyperlink{classbarplot__opencv_a37cdb283abdab45ddc5eb34f485a99c1}{$\sim$barplot\+\_\+opencv}} ()
+\item 
+const \mbox{\hyperlink{classbarplot__opencv}{barplot\+\_\+opencv}} \& \mbox{\hyperlink{classbarplot__opencv_a20530572e0a2ff5448d45eb390196429}{operator=}} (const \mbox{\hyperlink{classbarplot__opencv}{barplot\+\_\+opencv}} \&ax)
+\item 
+void \mbox{\hyperlink{classbarplot__opencv_a229d0f02609a4b27be1a818885c3e166}{init}} ()
+\item 
+void \mbox{\hyperlink{classbarplot__opencv_aa560129cf8f0e80bff3366d4e97012e6}{draw}} (cv\+::\+Mat \&img, double start\mbox{[}$\,$\mbox{]}, double scale\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{classbarplot__opencv_a72c86cc42a552ced46bf60d64a7952b7}{edit}} (void $\ast$in)
+\item 
+void \mbox{\hyperlink{classbarplot__opencv_abee9b27d9865fb668c4d468cebad8614}{getvalue}} (\mbox{\hyperlink{structreturn__get__value__overlay__opencv}{return\+\_\+get\+\_\+value\+\_\+overlay\+\_\+opencv}} $\ast$out)
+\item 
+void \mbox{\hyperlink{classbarplot__opencv_a375ea595d15fe34c6f6c3037ab036feb}{set\+\_\+bar\+\_\+type}} (int \+\_\+type)
+\item 
+int \mbox{\hyperlink{classbarplot__opencv_a49cf147ed34e66cef7470c5fa26c36f7}{get\+\_\+bar\+\_\+type}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$ \mbox{\hyperlink{classbarplot__opencv_a5a629ecbf540443d63c2d2d6110848b7}{bar\+\_\+draw}} )(cv\+::\+Mat \&img, cv\+::\+Point $\ast$xbefore, cv\+::\+Point $\ast$\mbox{\hyperlink{classbarplot__opencv_a535a5cc164c7c99412e27ac492968196}{x}}, cv\+::\+Point $\ast$xafter, cv\+::\+Scalar $\ast$\mbox{\hyperlink{classoverlay__opencv_a4915589fb8646ed284a2571b92dbe964}{color}})
+\item 
+unsigned int \mbox{\hyperlink{classbarplot__opencv_aac7d7c492a2ab814a49e4d8f1fe56e72}{dimpoint}}
+\item 
+double $\ast$ \mbox{\hyperlink{classbarplot__opencv_a535a5cc164c7c99412e27ac492968196}{x}}
+\item 
+double $\ast$ \mbox{\hyperlink{classbarplot__opencv_ace99fc74c4181529d98d04bbf31e2a34}{y}}
+\item 
+double $\ast$ \mbox{\hyperlink{classbarplot__opencv_ac8d77a6e8e564dadbf39900bd9b3077e}{errx}}
+\item 
+double $\ast$ \mbox{\hyperlink{classbarplot__opencv_a3679ea1b1995172cfe68121eae7c3e38}{erry}}
+\item 
+std\+::string \mbox{\hyperlink{classbarplot__opencv_a15a65672ff1359a91e2790102f400b8c}{label}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classbarplot__opencv_a5f0a6c9c1ddd9a517ea5ea99cec558a9}{bar\+\_\+type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This overlay implements a bar plot on the \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}}. Plots are made as overalay to facilitate plotting over images. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbarplot__opencv_a99e63dd9849d7d1daf3c8d000d6f1ba3}\label{classbarplot__opencv_a99e63dd9849d7d1daf3c8d000d6f1ba3}} 
+\index{barplot\_opencv@{barplot\_opencv}!barplot\_opencv@{barplot\_opencv}}
+\index{barplot\_opencv@{barplot\_opencv}!barplot\_opencv@{barplot\_opencv}}
+\doxysubsubsection{\texorpdfstring{barplot\_opencv()}{barplot\_opencv()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily barplot\+\_\+opencv\+::barplot\+\_\+opencv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classbarplot__opencv_a6d62bf98d1950b55f6a0faa5bb25c67c}\label{classbarplot__opencv_a6d62bf98d1950b55f6a0faa5bb25c67c}} 
+\index{barplot\_opencv@{barplot\_opencv}!barplot\_opencv@{barplot\_opencv}}
+\index{barplot\_opencv@{barplot\_opencv}!barplot\_opencv@{barplot\_opencv}}
+\doxysubsubsection{\texorpdfstring{barplot\_opencv()}{barplot\_opencv()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily barplot\+\_\+opencv\+::barplot\+\_\+opencv (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classbarplot__opencv}{barplot\+\_\+opencv}} \&}]{ax }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classbarplot__opencv_a37cdb283abdab45ddc5eb34f485a99c1}\label{classbarplot__opencv_a37cdb283abdab45ddc5eb34f485a99c1}} 
+\index{barplot\_opencv@{barplot\_opencv}!````~barplot\_opencv@{$\sim$barplot\_opencv}}
+\index{````~barplot\_opencv@{$\sim$barplot\_opencv}!barplot\_opencv@{barplot\_opencv}}
+\doxysubsubsection{\texorpdfstring{$\sim$barplot\_opencv()}{~barplot\_opencv()}}
+{\footnotesize\ttfamily barplot\+\_\+opencv\+::$\sim$barplot\+\_\+opencv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbarplot__opencv_aa560129cf8f0e80bff3366d4e97012e6}\label{classbarplot__opencv_aa560129cf8f0e80bff3366d4e97012e6}} 
+\index{barplot\_opencv@{barplot\_opencv}!draw@{draw}}
+\index{draw@{draw}!barplot\_opencv@{barplot\_opencv}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void barplot\+\_\+opencv\+::draw (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{img,  }\item[{double}]{start\mbox{[}$\,$\mbox{]},  }\item[{double}]{scale\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classoverlay__opencv_ae0d137278c2fd1f08109a10b9c1c5a4c}{overlay\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classbarplot__opencv_a72c86cc42a552ced46bf60d64a7952b7}\label{classbarplot__opencv_a72c86cc42a552ced46bf60d64a7952b7}} 
+\index{barplot\_opencv@{barplot\_opencv}!edit@{edit}}
+\index{edit@{edit}!barplot\_opencv@{barplot\_opencv}}
+\doxysubsubsection{\texorpdfstring{edit()}{edit()}}
+{\footnotesize\ttfamily void barplot\+\_\+opencv\+::edit (\begin{DoxyParamCaption}\item[{void $\ast$}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classoverlay__opencv_a9a7785e0054e5fe93213260f7f1be036}{overlay\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classbarplot__opencv_a49cf147ed34e66cef7470c5fa26c36f7}\label{classbarplot__opencv_a49cf147ed34e66cef7470c5fa26c36f7}} 
+\index{barplot\_opencv@{barplot\_opencv}!get\_bar\_type@{get\_bar\_type}}
+\index{get\_bar\_type@{get\_bar\_type}!barplot\_opencv@{barplot\_opencv}}
+\doxysubsubsection{\texorpdfstring{get\_bar\_type()}{get\_bar\_type()}}
+{\footnotesize\ttfamily int barplot\+\_\+opencv\+::get\+\_\+bar\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classbarplot__opencv_abee9b27d9865fb668c4d468cebad8614}\label{classbarplot__opencv_abee9b27d9865fb668c4d468cebad8614}} 
+\index{barplot\_opencv@{barplot\_opencv}!getvalue@{getvalue}}
+\index{getvalue@{getvalue}!barplot\_opencv@{barplot\_opencv}}
+\doxysubsubsection{\texorpdfstring{getvalue()}{getvalue()}}
+{\footnotesize\ttfamily void barplot\+\_\+opencv\+::getvalue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structreturn__get__value__overlay__opencv}{return\+\_\+get\+\_\+value\+\_\+overlay\+\_\+opencv}} $\ast$}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classoverlay__opencv_a4ca2d355fc21e98c151f3c61cec313bf}{overlay\+\_\+opencv}}.
+
+\mbox{\Hypertarget{classbarplot__opencv_a229d0f02609a4b27be1a818885c3e166}\label{classbarplot__opencv_a229d0f02609a4b27be1a818885c3e166}} 
+\index{barplot\_opencv@{barplot\_opencv}!init@{init}}
+\index{init@{init}!barplot\_opencv@{barplot\_opencv}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void barplot\+\_\+opencv\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classbarplot__opencv_a20530572e0a2ff5448d45eb390196429}\label{classbarplot__opencv_a20530572e0a2ff5448d45eb390196429}} 
+\index{barplot\_opencv@{barplot\_opencv}!operator=@{operator=}}
+\index{operator=@{operator=}!barplot\_opencv@{barplot\_opencv}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classbarplot__opencv}{barplot\+\_\+opencv}} \& barplot\+\_\+opencv\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classbarplot__opencv}{barplot\+\_\+opencv}} \&}]{ax }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classbarplot__opencv_a375ea595d15fe34c6f6c3037ab036feb}\label{classbarplot__opencv_a375ea595d15fe34c6f6c3037ab036feb}} 
+\index{barplot\_opencv@{barplot\_opencv}!set\_bar\_type@{set\_bar\_type}}
+\index{set\_bar\_type@{set\_bar\_type}!barplot\_opencv@{barplot\_opencv}}
+\doxysubsubsection{\texorpdfstring{set\_bar\_type()}{set\_bar\_type()}}
+{\footnotesize\ttfamily void barplot\+\_\+opencv\+::set\+\_\+bar\+\_\+type (\begin{DoxyParamCaption}\item[{int}]{\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classbarplot__opencv_a5a629ecbf540443d63c2d2d6110848b7}\label{classbarplot__opencv_a5a629ecbf540443d63c2d2d6110848b7}} 
+\index{barplot\_opencv@{barplot\_opencv}!bar\_draw@{bar\_draw}}
+\index{bar\_draw@{bar\_draw}!barplot\_opencv@{barplot\_opencv}}
+\doxysubsubsection{\texorpdfstring{bar\_draw}{bar\_draw}}
+{\footnotesize\ttfamily void($\ast$ barplot\+\_\+opencv\+::bar\+\_\+draw) (cv\+::\+Mat \&img, cv\+::\+Point $\ast$xbefore, cv\+::\+Point $\ast$\mbox{\hyperlink{classbarplot__opencv_a535a5cc164c7c99412e27ac492968196}{x}}, cv\+::\+Point $\ast$xafter, cv\+::\+Scalar $\ast$\mbox{\hyperlink{classoverlay__opencv_a4915589fb8646ed284a2571b92dbe964}{color}})}
+
+\mbox{\Hypertarget{classbarplot__opencv_a5f0a6c9c1ddd9a517ea5ea99cec558a9}\label{classbarplot__opencv_a5f0a6c9c1ddd9a517ea5ea99cec558a9}} 
+\index{barplot\_opencv@{barplot\_opencv}!bar\_type@{bar\_type}}
+\index{bar\_type@{bar\_type}!barplot\_opencv@{barplot\_opencv}}
+\doxysubsubsection{\texorpdfstring{bar\_type}{bar\_type}}
+{\footnotesize\ttfamily int barplot\+\_\+opencv\+::bar\+\_\+type\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classbarplot__opencv_aac7d7c492a2ab814a49e4d8f1fe56e72}\label{classbarplot__opencv_aac7d7c492a2ab814a49e4d8f1fe56e72}} 
+\index{barplot\_opencv@{barplot\_opencv}!dimpoint@{dimpoint}}
+\index{dimpoint@{dimpoint}!barplot\_opencv@{barplot\_opencv}}
+\doxysubsubsection{\texorpdfstring{dimpoint}{dimpoint}}
+{\footnotesize\ttfamily unsigned int barplot\+\_\+opencv\+::dimpoint}
+
+\mbox{\Hypertarget{classbarplot__opencv_ac8d77a6e8e564dadbf39900bd9b3077e}\label{classbarplot__opencv_ac8d77a6e8e564dadbf39900bd9b3077e}} 
+\index{barplot\_opencv@{barplot\_opencv}!errx@{errx}}
+\index{errx@{errx}!barplot\_opencv@{barplot\_opencv}}
+\doxysubsubsection{\texorpdfstring{errx}{errx}}
+{\footnotesize\ttfamily double$\ast$ barplot\+\_\+opencv\+::errx}
+
+\mbox{\Hypertarget{classbarplot__opencv_a3679ea1b1995172cfe68121eae7c3e38}\label{classbarplot__opencv_a3679ea1b1995172cfe68121eae7c3e38}} 
+\index{barplot\_opencv@{barplot\_opencv}!erry@{erry}}
+\index{erry@{erry}!barplot\_opencv@{barplot\_opencv}}
+\doxysubsubsection{\texorpdfstring{erry}{erry}}
+{\footnotesize\ttfamily double$\ast$ barplot\+\_\+opencv\+::erry}
+
+\mbox{\Hypertarget{classbarplot__opencv_a15a65672ff1359a91e2790102f400b8c}\label{classbarplot__opencv_a15a65672ff1359a91e2790102f400b8c}} 
+\index{barplot\_opencv@{barplot\_opencv}!label@{label}}
+\index{label@{label}!barplot\_opencv@{barplot\_opencv}}
+\doxysubsubsection{\texorpdfstring{label}{label}}
+{\footnotesize\ttfamily std\+::string barplot\+\_\+opencv\+::label}
+
+\mbox{\Hypertarget{classbarplot__opencv_a535a5cc164c7c99412e27ac492968196}\label{classbarplot__opencv_a535a5cc164c7c99412e27ac492968196}} 
+\index{barplot\_opencv@{barplot\_opencv}!x@{x}}
+\index{x@{x}!barplot\_opencv@{barplot\_opencv}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily double$\ast$ barplot\+\_\+opencv\+::x}
+
+\mbox{\Hypertarget{classbarplot__opencv_ace99fc74c4181529d98d04bbf31e2a34}\label{classbarplot__opencv_ace99fc74c4181529d98d04bbf31e2a34}} 
+\index{barplot\_opencv@{barplot\_opencv}!y@{y}}
+\index{y@{y}!barplot\_opencv@{barplot\_opencv}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily double$\ast$ barplot\+\_\+opencv\+::y}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+diffmicro/display\+\_\+opencv/\mbox{\hyperlink{overlay__opencv_8h}{overlay\+\_\+opencv.\+h}}\item 
+diffmicro/display\+\_\+opencv/\mbox{\hyperlink{overlay__opencv_8cpp}{overlay\+\_\+opencv.\+cpp}}\end{DoxyCompactItemize}

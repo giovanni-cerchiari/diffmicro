@@ -1,0 +1,227 @@
+\hypertarget{dirent_8h}{}\doxysection{diffmicro/cpp-\/routine/dirent.h File Reference}
+\label{dirent_8h}\index{diffmicro/cpp-\/routine/dirent.h@{diffmicro/cpp-\/routine/dirent.h}}
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdirent}{dirent}}
+\item 
+struct \mbox{\hyperlink{struct_d_i_r}{DIR}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{dirent_8h_ac7bef5d85e3dcd73eef56ad39ffc84a9}{WIN32\+\_\+\+LEAN\+\_\+\+AND\+\_\+\+MEAN}}
+\item 
+\#define \mbox{\hyperlink{dirent_8h_a5c5b74a1cb1a1ae83572500b94e1938f}{S\+\_\+\+IFBLK}}~0                            /$\ast$ block device $\ast$/
+\item 
+\#define \mbox{\hyperlink{dirent_8h_afef163ce62372757e84bd9fc88c07aad}{S\+\_\+\+IFLNK}}~0                            /$\ast$ link $\ast$/
+\item 
+\#define \mbox{\hyperlink{dirent_8h_a28e80cd43106882904be148b2a397d42}{S\+\_\+\+IFSOCK}}~0                            /$\ast$ socket $\ast$/
+\item 
+\#define \mbox{\hyperlink{dirent_8h_a1e6aefd9b3e29578655bcdf140e43fda}{\+\_\+\+DIRENT\+\_\+\+HAVE\+\_\+\+D\+\_\+\+TYPE}}
+\item 
+\#define \mbox{\hyperlink{dirent_8h_a293ce58a2d39f35c52f7f4516a857057}{DT\+\_\+\+UNKNOWN}}~0
+\item 
+\#define \mbox{\hyperlink{dirent_8h_a9973595cf6775b1b29d7274ab4c0d623}{DT\+\_\+\+REG}}~S\+\_\+\+IFREG
+\item 
+\#define \mbox{\hyperlink{dirent_8h_a1dcee67486bc4238096ecb61e2d9ffd1}{DT\+\_\+\+DIR}}~S\+\_\+\+IFDIR
+\item 
+\#define \mbox{\hyperlink{dirent_8h_a6fabe696c35bf34daa67931b4c245c7d}{DT\+\_\+\+FIFO}}~S\+\_\+\+IFFIFO
+\item 
+\#define \mbox{\hyperlink{dirent_8h_aaa6ed2fc54836a2c7d9b698923705f5e}{DT\+\_\+\+SOCK}}~\mbox{\hyperlink{dirent_8h_a28e80cd43106882904be148b2a397d42}{S\+\_\+\+IFSOCK}}
+\item 
+\#define \mbox{\hyperlink{dirent_8h_a7d0095c3caf2c334bf222608d02576d7}{DT\+\_\+\+CHR}}~S\+\_\+\+IFCHR
+\item 
+\#define \mbox{\hyperlink{dirent_8h_a212cebbaad682bc6c3bf798c8749abc5}{DT\+\_\+\+BLK}}~\mbox{\hyperlink{dirent_8h_a5c5b74a1cb1a1ae83572500b94e1938f}{S\+\_\+\+IFBLK}}
+\item 
+\#define \mbox{\hyperlink{dirent_8h_af862352847d1b389ef162ec1222130a8}{IFTODT}}(mode)~((mode) \& S\+\_\+\+IFMT)
+\item 
+\#define \mbox{\hyperlink{dirent_8h_a74d60eb436b31daadb1fa753c65f024a}{DTTOIF}}(type)~(type)
+\item 
+\#define \mbox{\hyperlink{dirent_8h_a8ae224a2b1fa6eba69bb2bc34b864a24}{S\+\_\+\+ISFIFO}}(mode)~(((mode) \& S\+\_\+\+IFMT) == S\+\_\+\+IFFIFO)
+\item 
+\#define \mbox{\hyperlink{dirent_8h_a3746cdc5aac871e6f6504fbcbd29ef1d}{S\+\_\+\+ISDIR}}(mode)~(((mode) \& S\+\_\+\+IFMT) == S\+\_\+\+IFDIR)
+\item 
+\#define \mbox{\hyperlink{dirent_8h_aad0f32c2c182238f2ff71c83e6ab65a0}{S\+\_\+\+ISREG}}(mode)~(((mode) \& S\+\_\+\+IFMT) == S\+\_\+\+IFREG)
+\item 
+\#define \mbox{\hyperlink{dirent_8h_a765eef536bcb3bd7bacdd675dc2fba13}{S\+\_\+\+ISLNK}}(mode)~(((mode) \& S\+\_\+\+IFMT) == \mbox{\hyperlink{dirent_8h_afef163ce62372757e84bd9fc88c07aad}{S\+\_\+\+IFLNK}})
+\item 
+\#define \mbox{\hyperlink{dirent_8h_a397ddd128980f1ee034653da2e9d8f6e}{S\+\_\+\+ISSOCK}}(mode)~(((mode) \& S\+\_\+\+IFMT) == \mbox{\hyperlink{dirent_8h_a28e80cd43106882904be148b2a397d42}{S\+\_\+\+IFSOCK}})
+\item 
+\#define \mbox{\hyperlink{dirent_8h_aae33be85d242a1317f972cf2b189f03d}{S\+\_\+\+ISCHR}}(mode)~(((mode) \& S\+\_\+\+IFMT) == S\+\_\+\+IFCHR)
+\item 
+\#define \mbox{\hyperlink{dirent_8h_a8b86a24d84c3cfce39cc832a017656ba}{S\+\_\+\+ISBLK}}(mode)~(((mode) \& S\+\_\+\+IFMT) == \mbox{\hyperlink{dirent_8h_a5c5b74a1cb1a1ae83572500b94e1938f}{S\+\_\+\+IFBLK}})
+\item 
+\#define \mbox{\hyperlink{dirent_8h_aa2e13c8559b60f71dcc1f23f5a08864c}{DIRENT\+\_\+\+STRNCPY}}(dest,  src,  size)~strncpy((dest),(src),(size))
+\item 
+\#define \mbox{\hyperlink{dirent_8h_adc150180329c653aaf572e9017d974f8}{DIRENT\+\_\+\+SET\+\_\+\+ERRNO}}(x)~(errno = (x))
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structdirent}{dirent}} \mbox{\hyperlink{dirent_8h_ae50c911db67dfb4b55fbfc97a557f6f2}{dirent}}
+\item 
+typedef struct \mbox{\hyperlink{struct_d_i_r}{DIR}} \mbox{\hyperlink{dirent_8h_a805632179a707f8794b35f089c940cb3}{DIR}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{dirent_8h_a1e6aefd9b3e29578655bcdf140e43fda}\label{dirent_8h_a1e6aefd9b3e29578655bcdf140e43fda}} 
+\index{dirent.h@{dirent.h}!\_DIRENT\_HAVE\_D\_TYPE@{\_DIRENT\_HAVE\_D\_TYPE}}
+\index{\_DIRENT\_HAVE\_D\_TYPE@{\_DIRENT\_HAVE\_D\_TYPE}!dirent.h@{dirent.h}}
+\doxysubsubsection{\texorpdfstring{\_DIRENT\_HAVE\_D\_TYPE}{\_DIRENT\_HAVE\_D\_TYPE}}
+{\footnotesize\ttfamily \#define \+\_\+\+DIRENT\+\_\+\+HAVE\+\_\+\+D\+\_\+\+TYPE}
+
+\mbox{\Hypertarget{dirent_8h_adc150180329c653aaf572e9017d974f8}\label{dirent_8h_adc150180329c653aaf572e9017d974f8}} 
+\index{dirent.h@{dirent.h}!DIRENT\_SET\_ERRNO@{DIRENT\_SET\_ERRNO}}
+\index{DIRENT\_SET\_ERRNO@{DIRENT\_SET\_ERRNO}!dirent.h@{dirent.h}}
+\doxysubsubsection{\texorpdfstring{DIRENT\_SET\_ERRNO}{DIRENT\_SET\_ERRNO}}
+{\footnotesize\ttfamily \#define DIRENT\+\_\+\+SET\+\_\+\+ERRNO(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(errno = (x))}
+
+\mbox{\Hypertarget{dirent_8h_aa2e13c8559b60f71dcc1f23f5a08864c}\label{dirent_8h_aa2e13c8559b60f71dcc1f23f5a08864c}} 
+\index{dirent.h@{dirent.h}!DIRENT\_STRNCPY@{DIRENT\_STRNCPY}}
+\index{DIRENT\_STRNCPY@{DIRENT\_STRNCPY}!dirent.h@{dirent.h}}
+\doxysubsubsection{\texorpdfstring{DIRENT\_STRNCPY}{DIRENT\_STRNCPY}}
+{\footnotesize\ttfamily \#define DIRENT\+\_\+\+STRNCPY(\begin{DoxyParamCaption}\item[{}]{dest,  }\item[{}]{src,  }\item[{}]{size }\end{DoxyParamCaption})~strncpy((dest),(src),(size))}
+
+\mbox{\Hypertarget{dirent_8h_a212cebbaad682bc6c3bf798c8749abc5}\label{dirent_8h_a212cebbaad682bc6c3bf798c8749abc5}} 
+\index{dirent.h@{dirent.h}!DT\_BLK@{DT\_BLK}}
+\index{DT\_BLK@{DT\_BLK}!dirent.h@{dirent.h}}
+\doxysubsubsection{\texorpdfstring{DT\_BLK}{DT\_BLK}}
+{\footnotesize\ttfamily \#define DT\+\_\+\+BLK~\mbox{\hyperlink{dirent_8h_a5c5b74a1cb1a1ae83572500b94e1938f}{S\+\_\+\+IFBLK}}}
+
+\mbox{\Hypertarget{dirent_8h_a7d0095c3caf2c334bf222608d02576d7}\label{dirent_8h_a7d0095c3caf2c334bf222608d02576d7}} 
+\index{dirent.h@{dirent.h}!DT\_CHR@{DT\_CHR}}
+\index{DT\_CHR@{DT\_CHR}!dirent.h@{dirent.h}}
+\doxysubsubsection{\texorpdfstring{DT\_CHR}{DT\_CHR}}
+{\footnotesize\ttfamily \#define DT\+\_\+\+CHR~S\+\_\+\+IFCHR}
+
+\mbox{\Hypertarget{dirent_8h_a1dcee67486bc4238096ecb61e2d9ffd1}\label{dirent_8h_a1dcee67486bc4238096ecb61e2d9ffd1}} 
+\index{dirent.h@{dirent.h}!DT\_DIR@{DT\_DIR}}
+\index{DT\_DIR@{DT\_DIR}!dirent.h@{dirent.h}}
+\doxysubsubsection{\texorpdfstring{DT\_DIR}{DT\_DIR}}
+{\footnotesize\ttfamily \#define DT\+\_\+\+DIR~S\+\_\+\+IFDIR}
+
+\mbox{\Hypertarget{dirent_8h_a6fabe696c35bf34daa67931b4c245c7d}\label{dirent_8h_a6fabe696c35bf34daa67931b4c245c7d}} 
+\index{dirent.h@{dirent.h}!DT\_FIFO@{DT\_FIFO}}
+\index{DT\_FIFO@{DT\_FIFO}!dirent.h@{dirent.h}}
+\doxysubsubsection{\texorpdfstring{DT\_FIFO}{DT\_FIFO}}
+{\footnotesize\ttfamily \#define DT\+\_\+\+FIFO~S\+\_\+\+IFFIFO}
+
+\mbox{\Hypertarget{dirent_8h_a9973595cf6775b1b29d7274ab4c0d623}\label{dirent_8h_a9973595cf6775b1b29d7274ab4c0d623}} 
+\index{dirent.h@{dirent.h}!DT\_REG@{DT\_REG}}
+\index{DT\_REG@{DT\_REG}!dirent.h@{dirent.h}}
+\doxysubsubsection{\texorpdfstring{DT\_REG}{DT\_REG}}
+{\footnotesize\ttfamily \#define DT\+\_\+\+REG~S\+\_\+\+IFREG}
+
+\mbox{\Hypertarget{dirent_8h_aaa6ed2fc54836a2c7d9b698923705f5e}\label{dirent_8h_aaa6ed2fc54836a2c7d9b698923705f5e}} 
+\index{dirent.h@{dirent.h}!DT\_SOCK@{DT\_SOCK}}
+\index{DT\_SOCK@{DT\_SOCK}!dirent.h@{dirent.h}}
+\doxysubsubsection{\texorpdfstring{DT\_SOCK}{DT\_SOCK}}
+{\footnotesize\ttfamily \#define DT\+\_\+\+SOCK~\mbox{\hyperlink{dirent_8h_a28e80cd43106882904be148b2a397d42}{S\+\_\+\+IFSOCK}}}
+
+\mbox{\Hypertarget{dirent_8h_a293ce58a2d39f35c52f7f4516a857057}\label{dirent_8h_a293ce58a2d39f35c52f7f4516a857057}} 
+\index{dirent.h@{dirent.h}!DT\_UNKNOWN@{DT\_UNKNOWN}}
+\index{DT\_UNKNOWN@{DT\_UNKNOWN}!dirent.h@{dirent.h}}
+\doxysubsubsection{\texorpdfstring{DT\_UNKNOWN}{DT\_UNKNOWN}}
+{\footnotesize\ttfamily \#define DT\+\_\+\+UNKNOWN~0}
+
+\mbox{\Hypertarget{dirent_8h_a74d60eb436b31daadb1fa753c65f024a}\label{dirent_8h_a74d60eb436b31daadb1fa753c65f024a}} 
+\index{dirent.h@{dirent.h}!DTTOIF@{DTTOIF}}
+\index{DTTOIF@{DTTOIF}!dirent.h@{dirent.h}}
+\doxysubsubsection{\texorpdfstring{DTTOIF}{DTTOIF}}
+{\footnotesize\ttfamily \#define DTTOIF(\begin{DoxyParamCaption}\item[{}]{type }\end{DoxyParamCaption})~(type)}
+
+\mbox{\Hypertarget{dirent_8h_af862352847d1b389ef162ec1222130a8}\label{dirent_8h_af862352847d1b389ef162ec1222130a8}} 
+\index{dirent.h@{dirent.h}!IFTODT@{IFTODT}}
+\index{IFTODT@{IFTODT}!dirent.h@{dirent.h}}
+\doxysubsubsection{\texorpdfstring{IFTODT}{IFTODT}}
+{\footnotesize\ttfamily \#define IFTODT(\begin{DoxyParamCaption}\item[{}]{mode }\end{DoxyParamCaption})~((mode) \& S\+\_\+\+IFMT)}
+
+\mbox{\Hypertarget{dirent_8h_a5c5b74a1cb1a1ae83572500b94e1938f}\label{dirent_8h_a5c5b74a1cb1a1ae83572500b94e1938f}} 
+\index{dirent.h@{dirent.h}!S\_IFBLK@{S\_IFBLK}}
+\index{S\_IFBLK@{S\_IFBLK}!dirent.h@{dirent.h}}
+\doxysubsubsection{\texorpdfstring{S\_IFBLK}{S\_IFBLK}}
+{\footnotesize\ttfamily \#define S\+\_\+\+IFBLK~0                            /$\ast$ block device $\ast$/}
+
+\mbox{\Hypertarget{dirent_8h_afef163ce62372757e84bd9fc88c07aad}\label{dirent_8h_afef163ce62372757e84bd9fc88c07aad}} 
+\index{dirent.h@{dirent.h}!S\_IFLNK@{S\_IFLNK}}
+\index{S\_IFLNK@{S\_IFLNK}!dirent.h@{dirent.h}}
+\doxysubsubsection{\texorpdfstring{S\_IFLNK}{S\_IFLNK}}
+{\footnotesize\ttfamily \#define S\+\_\+\+IFLNK~0                            /$\ast$ link $\ast$/}
+
+\mbox{\Hypertarget{dirent_8h_a28e80cd43106882904be148b2a397d42}\label{dirent_8h_a28e80cd43106882904be148b2a397d42}} 
+\index{dirent.h@{dirent.h}!S\_IFSOCK@{S\_IFSOCK}}
+\index{S\_IFSOCK@{S\_IFSOCK}!dirent.h@{dirent.h}}
+\doxysubsubsection{\texorpdfstring{S\_IFSOCK}{S\_IFSOCK}}
+{\footnotesize\ttfamily \#define S\+\_\+\+IFSOCK~0                            /$\ast$ socket $\ast$/}
+
+\mbox{\Hypertarget{dirent_8h_a8b86a24d84c3cfce39cc832a017656ba}\label{dirent_8h_a8b86a24d84c3cfce39cc832a017656ba}} 
+\index{dirent.h@{dirent.h}!S\_ISBLK@{S\_ISBLK}}
+\index{S\_ISBLK@{S\_ISBLK}!dirent.h@{dirent.h}}
+\doxysubsubsection{\texorpdfstring{S\_ISBLK}{S\_ISBLK}}
+{\footnotesize\ttfamily \#define S\+\_\+\+ISBLK(\begin{DoxyParamCaption}\item[{}]{mode }\end{DoxyParamCaption})~(((mode) \& S\+\_\+\+IFMT) == \mbox{\hyperlink{dirent_8h_a5c5b74a1cb1a1ae83572500b94e1938f}{S\+\_\+\+IFBLK}})}
+
+\mbox{\Hypertarget{dirent_8h_aae33be85d242a1317f972cf2b189f03d}\label{dirent_8h_aae33be85d242a1317f972cf2b189f03d}} 
+\index{dirent.h@{dirent.h}!S\_ISCHR@{S\_ISCHR}}
+\index{S\_ISCHR@{S\_ISCHR}!dirent.h@{dirent.h}}
+\doxysubsubsection{\texorpdfstring{S\_ISCHR}{S\_ISCHR}}
+{\footnotesize\ttfamily \#define S\+\_\+\+ISCHR(\begin{DoxyParamCaption}\item[{}]{mode }\end{DoxyParamCaption})~(((mode) \& S\+\_\+\+IFMT) == S\+\_\+\+IFCHR)}
+
+\mbox{\Hypertarget{dirent_8h_a3746cdc5aac871e6f6504fbcbd29ef1d}\label{dirent_8h_a3746cdc5aac871e6f6504fbcbd29ef1d}} 
+\index{dirent.h@{dirent.h}!S\_ISDIR@{S\_ISDIR}}
+\index{S\_ISDIR@{S\_ISDIR}!dirent.h@{dirent.h}}
+\doxysubsubsection{\texorpdfstring{S\_ISDIR}{S\_ISDIR}}
+{\footnotesize\ttfamily \#define S\+\_\+\+ISDIR(\begin{DoxyParamCaption}\item[{}]{mode }\end{DoxyParamCaption})~(((mode) \& S\+\_\+\+IFMT) == S\+\_\+\+IFDIR)}
+
+\mbox{\Hypertarget{dirent_8h_a8ae224a2b1fa6eba69bb2bc34b864a24}\label{dirent_8h_a8ae224a2b1fa6eba69bb2bc34b864a24}} 
+\index{dirent.h@{dirent.h}!S\_ISFIFO@{S\_ISFIFO}}
+\index{S\_ISFIFO@{S\_ISFIFO}!dirent.h@{dirent.h}}
+\doxysubsubsection{\texorpdfstring{S\_ISFIFO}{S\_ISFIFO}}
+{\footnotesize\ttfamily \#define S\+\_\+\+ISFIFO(\begin{DoxyParamCaption}\item[{}]{mode }\end{DoxyParamCaption})~(((mode) \& S\+\_\+\+IFMT) == S\+\_\+\+IFFIFO)}
+
+\mbox{\Hypertarget{dirent_8h_a765eef536bcb3bd7bacdd675dc2fba13}\label{dirent_8h_a765eef536bcb3bd7bacdd675dc2fba13}} 
+\index{dirent.h@{dirent.h}!S\_ISLNK@{S\_ISLNK}}
+\index{S\_ISLNK@{S\_ISLNK}!dirent.h@{dirent.h}}
+\doxysubsubsection{\texorpdfstring{S\_ISLNK}{S\_ISLNK}}
+{\footnotesize\ttfamily \#define S\+\_\+\+ISLNK(\begin{DoxyParamCaption}\item[{}]{mode }\end{DoxyParamCaption})~(((mode) \& S\+\_\+\+IFMT) == \mbox{\hyperlink{dirent_8h_afef163ce62372757e84bd9fc88c07aad}{S\+\_\+\+IFLNK}})}
+
+\mbox{\Hypertarget{dirent_8h_aad0f32c2c182238f2ff71c83e6ab65a0}\label{dirent_8h_aad0f32c2c182238f2ff71c83e6ab65a0}} 
+\index{dirent.h@{dirent.h}!S\_ISREG@{S\_ISREG}}
+\index{S\_ISREG@{S\_ISREG}!dirent.h@{dirent.h}}
+\doxysubsubsection{\texorpdfstring{S\_ISREG}{S\_ISREG}}
+{\footnotesize\ttfamily \#define S\+\_\+\+ISREG(\begin{DoxyParamCaption}\item[{}]{mode }\end{DoxyParamCaption})~(((mode) \& S\+\_\+\+IFMT) == S\+\_\+\+IFREG)}
+
+\mbox{\Hypertarget{dirent_8h_a397ddd128980f1ee034653da2e9d8f6e}\label{dirent_8h_a397ddd128980f1ee034653da2e9d8f6e}} 
+\index{dirent.h@{dirent.h}!S\_ISSOCK@{S\_ISSOCK}}
+\index{S\_ISSOCK@{S\_ISSOCK}!dirent.h@{dirent.h}}
+\doxysubsubsection{\texorpdfstring{S\_ISSOCK}{S\_ISSOCK}}
+{\footnotesize\ttfamily \#define S\+\_\+\+ISSOCK(\begin{DoxyParamCaption}\item[{}]{mode }\end{DoxyParamCaption})~(((mode) \& S\+\_\+\+IFMT) == \mbox{\hyperlink{dirent_8h_a28e80cd43106882904be148b2a397d42}{S\+\_\+\+IFSOCK}})}
+
+\mbox{\Hypertarget{dirent_8h_ac7bef5d85e3dcd73eef56ad39ffc84a9}\label{dirent_8h_ac7bef5d85e3dcd73eef56ad39ffc84a9}} 
+\index{dirent.h@{dirent.h}!WIN32\_LEAN\_AND\_MEAN@{WIN32\_LEAN\_AND\_MEAN}}
+\index{WIN32\_LEAN\_AND\_MEAN@{WIN32\_LEAN\_AND\_MEAN}!dirent.h@{dirent.h}}
+\doxysubsubsection{\texorpdfstring{WIN32\_LEAN\_AND\_MEAN}{WIN32\_LEAN\_AND\_MEAN}}
+{\footnotesize\ttfamily \#define WIN32\+\_\+\+LEAN\+\_\+\+AND\+\_\+\+MEAN}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{dirent_8h_a805632179a707f8794b35f089c940cb3}\label{dirent_8h_a805632179a707f8794b35f089c940cb3}} 
+\index{dirent.h@{dirent.h}!DIR@{DIR}}
+\index{DIR@{DIR}!dirent.h@{dirent.h}}
+\doxysubsubsection{\texorpdfstring{DIR}{DIR}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_d_i_r}{DIR}} \mbox{\hyperlink{struct_d_i_r}{DIR}}}
+
+\mbox{\Hypertarget{dirent_8h_ae50c911db67dfb4b55fbfc97a557f6f2}\label{dirent_8h_ae50c911db67dfb4b55fbfc97a557f6f2}} 
+\index{dirent.h@{dirent.h}!dirent@{dirent}}
+\index{dirent@{dirent}!dirent.h@{dirent.h}}
+\doxysubsubsection{\texorpdfstring{dirent}{dirent}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structdirent}{dirent}} \mbox{\hyperlink{structdirent}{dirent}}}
+

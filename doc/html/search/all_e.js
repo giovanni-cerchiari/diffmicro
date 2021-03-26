@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['n_5fcapacity_569',['n_capacity',['../diffmicro__log_8cpp.html#a45bf7070573b16af74e57af312c92193',1,'n_capacity(0):&#160;diffmicro_log.cpp'],['../diffmicro__log_8h.html#aa0a93ae39902472d7cfccaa063a0677d',1,'n_capacity():&#160;diffmicro_log.h']]],
+  ['n_5fchannels_570',['n_channels',['../classwindow__display__opencv.html#ab1bd6bf601605a390417f74ac2abdfe6',1,'window_display_opencv']]],
+  ['n_5fcomputed_5fdiff_571',['n_computed_diff',['../diffmicro__log_8cpp.html#a38f3a476b6f8f7b7428c99e2fce87522',1,'n_computed_diff(0):&#160;diffmicro_log.cpp'],['../diffmicro__log_8h.html#ae8c83c25ef8962a48c7c88113af26a0f',1,'n_computed_diff():&#160;diffmicro_log.h']]],
+  ['n_5fcomputed_5ffft_572',['n_computed_fft',['../diffmicro__log_8cpp.html#addbbf9f3be3dcff475df6740466a524f',1,'n_computed_fft(0):&#160;diffmicro_log.cpp'],['../diffmicro__log_8h.html#a41be001c8172733c207d26839d136a21',1,'n_computed_fft():&#160;diffmicro_log.h']]],
+  ['n_5fgroups_5freload_573',['n_groups_reload',['../diffmicro__log_8h.html#af6cc0495d5f1aabdc567bbfe2a1692d6',1,'n_groups_reload():&#160;diffmicro_log.h'],['../diffmicro__log_8cpp.html#a97148d6cc03ec86d4989ccaedac1f310',1,'n_groups_reload(0):&#160;diffmicro_log.cpp']]],
+  ['n_5fmax_5fthreads_574',['N_MAX_THREADS',['../global__define_8h.html#aa2b4ec58d136b55d98135c44a4420bad',1,'global_define.h']]],
+  ['n_5fpw_5faverages_575',['n_pw_averages',['../classdiffmicro__user__interface.html#aafb19d115083238ca01fbbbf3d193fa4',1,'diffmicro_user_interface']]],
+  ['n_5fpw_5faverages_576',['N_PW_AVERAGES',['../diffmicro__io_8h.html#abbda2ddaf26d0cd2385df63f74ece679aaee820c2d9591c88b9b09c37922241d5',1,'diffmicro_io.h']]],
+  ['name_577',['name',['../classdiffmicro__user__interface.html#a0fbc8f81afbd4ddfa94e8ea1d2a44e18',1,'diffmicro_user_interface::name()'],['../classanalysis__opencv.html#a47f28a2ea94aea634bc153bc62780003',1,'analysis_opencv::name()'],['../classconfigure__gui__opencv.html#a69578d93e9bcba58524b8088928dae3d',1,'configure_gui_opencv::name()'],['../classcontrol__opencv.html#a35dfbcd7234876bdf2143e42c391ed29',1,'control_opencv::name()'],['../classoverlay__opencv.html#a70da3886c5f791c36977426073ca79bd',1,'overlay_opencv::name()'],['../classwindow__control__opencv.html#acfd2616c49458c7259b3bc718f414ff3',1,'window_control_opencv::name()'],['../classwindow__display__opencv.html#a92881342bf931832960d0997cff75f26',1,'window_display_opencv::name()'],['../classwindow__history__opencv.html#a4d7982659fea89f0aeccee3cdaf07d89',1,'window_history_opencv::name()']]],
+  ['nbk_578',['nbk',['../structcuda__exec.html#a4496eec10d64346617692a8f2d57e7b0',1,'cuda_exec']]],
+  ['new_5ffigure_579',['new_figure',['../figure__opencv_8cpp.html#a343bfd8b2967fb5705ca5184b8370ed0',1,'new_figure(unsigned int dimx, unsigned int dimy, double *img):&#160;figure_opencv.cpp'],['../figure__opencv_8cpp.html#aed9c1992881094971fedaa2953a50616',1,'new_figure(unsigned int dimx, unsigned int dimy, unsigned int dim_channel, double **images):&#160;figure_opencv.cpp'],['../figure__opencv_8h.html#a343bfd8b2967fb5705ca5184b8370ed0',1,'new_figure(unsigned int dimx, unsigned int dimy, double *img):&#160;figure_opencv.cpp'],['../figure__opencv_8h.html#aed9c1992881094971fedaa2953a50616',1,'new_figure(unsigned int dimx, unsigned int dimy, unsigned int dim_channel, double **images):&#160;figure_opencv.cpp']]],
+  ['new_5ffigure_5ft_580',['new_figure_t',['../convert__figure_8h.html#a825a9591ca4f52aa62ced4482272fec5',1,'convert_figure.h']]],
+  ['nord_5fto_5frotation_581',['nord_to_rotation',['../my__math_8h.html#aa037e2ca13aa0ab45fffeb167e8753b7',1,'my_math.h']]],
+  ['normalize_5fvet_582',['normalize_vet',['../my__math_8h.html#ae40970cd51ae4cb7f78163f23579f0c9',1,'my_math.h']]],
+  ['nth_583',['nth',['../structcuda__exec.html#ac1b997983227f22b52cddb9597a1913a',1,'cuda_exec']]],
+  ['nthread_584',['nthread',['../classdiffmicro__user__interface.html#aff4be54b245c0678e04916d887dde7fc',1,'diffmicro_user_interface']]],
+  ['nthread_5fgpu_585',['nthread_gpu',['../classdiffmicro__user__interface.html#a2d2b7fe0aa3e647911ea3ad802639177',1,'diffmicro_user_interface']]],
+  ['num_586',['num',['../structfile__num.html#ad11b60c8a404e5ae18f035d24f10c435',1,'file_num']]],
+  ['num_5faxis_587',['num_axis',['../classaxes__opencv.html#ab2a73a4252d17012f1e25d367a9a1b8a',1,'axes_opencv']]],
+  ['number_5fbk_5fth_588',['number_bk_th',['../correlation_8h.html#adbc604418567a90a37cc516f247709e5',1,'correlation.h']]],
+  ['number_5fthread_5fcpu_589',['NUMBER_THREAD_CPU',['../diffmicro__io_8h.html#abbda2ddaf26d0cd2385df63f74ece679a680e90b7d8d954f80487d8bbb8763798',1,'diffmicro_io.h']]],
+  ['number_5fthread_5fgpu_590',['NUMBER_THREAD_GPU',['../diffmicro__io_8h.html#abbda2ddaf26d0cd2385df63f74ece679a6efe8004103a7f3a2c0cd9a884b91de8',1,'diffmicro_io.h']]],
+  ['numerosity_591',['numerosity',['../structsizes.html#ad2fce34cf790933a39d59a2cb0749e49',1,'sizes']]]
+];

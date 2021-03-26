@@ -1,0 +1,186 @@
+\hypertarget{overlay__opencv_8h}{}\doxysection{diffmicro/display\+\_\+opencv/overlay\+\_\+opencv.h File Reference}
+\label{overlay__opencv_8h}\index{diffmicro/display\_opencv/overlay\_opencv.h@{diffmicro/display\_opencv/overlay\_opencv.h}}
+{\ttfamily \#include $<$opencv2/core/core.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/imgproc.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/imgcodecs.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/highgui/highgui.\+hpp$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+{\ttfamily \#include \char`\"{}marker\+\_\+draw\+\_\+opencv.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}my\+\_\+math.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structreturn__get__value__overlay__opencv}{return\+\_\+get\+\_\+value\+\_\+overlay\+\_\+opencv}}
+\item 
+class \mbox{\hyperlink{classoverlay__opencv}{overlay\+\_\+opencv}}
+\item 
+struct \mbox{\hyperlink{structgeometric__shape__edit__parameters}{geometric\+\_\+shape\+\_\+edit\+\_\+parameters}}
+\item 
+class \mbox{\hyperlink{classcircle__opencv}{circle\+\_\+opencv}}
+\item 
+class \mbox{\hyperlink{classrectangle__opencv}{rectangle\+\_\+opencv}}
+\item 
+struct \mbox{\hyperlink{structcontour__opencv__edit__parameters}{contour\+\_\+opencv\+\_\+edit\+\_\+parameters}}
+\item 
+class \mbox{\hyperlink{classcontour__opencv}{contour\+\_\+opencv}}
+\item 
+class \mbox{\hyperlink{classscatter__opencv}{scatter\+\_\+opencv}}
+\item 
+class \mbox{\hyperlink{classaxes__opencv}{axes\+\_\+opencv}}
+\item 
+class \mbox{\hyperlink{classlegend__opencv}{legend\+\_\+opencv}}
+\item 
+class \mbox{\hyperlink{classbarplot__opencv}{barplot\+\_\+opencv}}
+\item 
+class \mbox{\hyperlink{classtext__opencv}{text\+\_\+opencv}}
+\item 
+class \mbox{\hyperlink{classtext__relative__opencv}{text\+\_\+relative\+\_\+opencv}}
+\item 
+class \mbox{\hyperlink{classtext__absolute__opencv}{text\+\_\+absolute\+\_\+opencv}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{overlay__opencv_8h_a38346f0c073667171c98929bf09a0394}{type\+\_\+return\+\_\+get\+\_\+value\+\_\+overlay\+\_\+opencv}} \{ \mbox{\hyperlink{overlay__opencv_8h_a38346f0c073667171c98929bf09a0394aa29834ac11581d680d3405ba82590bb5}{OOV\+\_\+\+TYPE\+\_\+\+DOUBLE}} = 0
+, \mbox{\hyperlink{overlay__opencv_8h_a38346f0c073667171c98929bf09a0394af68982c9507f534be42eddc7294c8341}{OOV\+\_\+\+TYPE\+\_\+\+STRING}} = 1
+ \}
+\item 
+enum \mbox{\hyperlink{overlay__opencv_8h_a27b69325b2e331a209db47a315c017ed}{overlay\+\_\+type\+\_\+opencv}} \{ \newline
+\mbox{\hyperlink{overlay__opencv_8h_a27b69325b2e331a209db47a315c017edaf89e8ae0959002e78747ab6495fcd923}{OVERLAY\+\_\+\+UNKNOWN\+\_\+\+OPENCV}} = 0
+, \mbox{\hyperlink{overlay__opencv_8h_a27b69325b2e331a209db47a315c017edac7ebd6648a069484b9f43d9a57bbb38c}{OVERLAY\+\_\+\+CIRLE\+\_\+\+OPENCV}} = 1
+, \mbox{\hyperlink{overlay__opencv_8h_a27b69325b2e331a209db47a315c017eda39458e8ac6d4d5632a6d24e95125b4bc}{OVERLAY\+\_\+\+RECTANGLE\+\_\+\+OPENCV}} = 2
+, \mbox{\hyperlink{overlay__opencv_8h_a27b69325b2e331a209db47a315c017edad7a138ec4be4cd67b241690ebdcb4dc4}{OVERLAY\+\_\+\+CONTOUR\+\_\+\+OPENCV}} = 3
+, \newline
+\mbox{\hyperlink{overlay__opencv_8h_a27b69325b2e331a209db47a315c017eda2259501fe1a312f7fe673307dbc558b5}{OVERLAY\+\_\+\+SCATTER\+\_\+\+OPENCV}} =4
+, \mbox{\hyperlink{overlay__opencv_8h_a27b69325b2e331a209db47a315c017edac8d5dbea2d66e627be68ad44eb5cb057}{OVERLAY\+\_\+\+AXES\+\_\+\+OPENCV}} = 5
+, \mbox{\hyperlink{overlay__opencv_8h_a27b69325b2e331a209db47a315c017edad80224f18512f9cc69d14f3e7c65becc}{OVERLAY\+\_\+\+LEGEND\+\_\+\+OPENCV}} = 6
+, \mbox{\hyperlink{overlay__opencv_8h_a27b69325b2e331a209db47a315c017eda1343744126476d8fb664042b6f250999}{OVERLAY\+\_\+\+BARPLOT\+\_\+\+OPENCV}} = 7
+, \newline
+\mbox{\hyperlink{overlay__opencv_8h_a27b69325b2e331a209db47a315c017edada808fcccc79ee708dcabc5c812db187}{OVERLAY\+\_\+\+TEXT\+\_\+\+RELATIVE\+\_\+\+OPENCV}} = 8
+, \mbox{\hyperlink{overlay__opencv_8h_a27b69325b2e331a209db47a315c017eda3831acc3c2a52751c5994588c643efe1}{OVERLAY\+\_\+\+TEXT\+\_\+\+ABSOLUTE\+\_\+\+OPENCV}} = 9
+ \}
+\item 
+enum \mbox{\hyperlink{overlay__opencv_8h_a09895f183d6b42d9fa45212077f47479}{geometric\+\_\+shape\+\_\+draw\+\_\+type}} \{ \mbox{\hyperlink{overlay__opencv_8h_a09895f183d6b42d9fa45212077f47479ab60effa02e09e2b4ed0cee7e7a7c3fa3}{GEOMETRIC\+\_\+\+SHAPE\+\_\+\+DRAW\+\_\+\+TYPE\+\_\+\+SIMPLE}} = 0
+, \mbox{\hyperlink{overlay__opencv_8h_a09895f183d6b42d9fa45212077f47479a01e5a81a9e741c15c0ca87e6c50f75f3}{GEOMETRIC\+\_\+\+SHAPE\+\_\+\+DRAW\+\_\+\+TYPE\+\_\+\+VERBOSE}} = 1
+ \}
+\item 
+enum \mbox{\hyperlink{overlay__opencv_8h_a5775db654f0b9cc11e93cce0a44451dc}{line\+\_\+type\+\_\+opencv}} \{ \mbox{\hyperlink{overlay__opencv_8h_a5775db654f0b9cc11e93cce0a44451dca4b3a71a9380f59f21d355988cc176f7b}{LINE\+\_\+\+NONE\+\_\+\+OPENCV}} = 0
+, \mbox{\hyperlink{overlay__opencv_8h_a5775db654f0b9cc11e93cce0a44451dcafffe54c5ef770d48718209e749f1c68f}{LINE\+\_\+\+NORMAL\+\_\+\+OPENCV}} = 1
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classoverlay__opencv}{overlay\+\_\+opencv}} $\ast$ \mbox{\hyperlink{overlay__opencv_8h_a553a506cee3c746d0520a8552656fa4a}{select\+\_\+overlay}} (int i\+\_\+to\+\_\+select, std\+::list$<$ \mbox{\hyperlink{classoverlay__opencv}{overlay\+\_\+opencv}} $\ast$ $>$ lst)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{overlay__opencv_8h_a09895f183d6b42d9fa45212077f47479}\label{overlay__opencv_8h_a09895f183d6b42d9fa45212077f47479}} 
+\index{overlay\_opencv.h@{overlay\_opencv.h}!geometric\_shape\_draw\_type@{geometric\_shape\_draw\_type}}
+\index{geometric\_shape\_draw\_type@{geometric\_shape\_draw\_type}!overlay\_opencv.h@{overlay\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{geometric\_shape\_draw\_type}{geometric\_shape\_draw\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{overlay__opencv_8h_a09895f183d6b42d9fa45212077f47479}{geometric\+\_\+shape\+\_\+draw\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GEOMETRIC\_SHAPE\_DRAW\_TYPE\_SIMPLE@{GEOMETRIC\_SHAPE\_DRAW\_TYPE\_SIMPLE}!overlay\_opencv.h@{overlay\_opencv.h}}\index{overlay\_opencv.h@{overlay\_opencv.h}!GEOMETRIC\_SHAPE\_DRAW\_TYPE\_SIMPLE@{GEOMETRIC\_SHAPE\_DRAW\_TYPE\_SIMPLE}}}\mbox{\Hypertarget{overlay__opencv_8h_a09895f183d6b42d9fa45212077f47479ab60effa02e09e2b4ed0cee7e7a7c3fa3}\label{overlay__opencv_8h_a09895f183d6b42d9fa45212077f47479ab60effa02e09e2b4ed0cee7e7a7c3fa3}} 
+GEOMETRIC\+\_\+\+SHAPE\+\_\+\+DRAW\+\_\+\+TYPE\+\_\+\+SIMPLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GEOMETRIC\_SHAPE\_DRAW\_TYPE\_VERBOSE@{GEOMETRIC\_SHAPE\_DRAW\_TYPE\_VERBOSE}!overlay\_opencv.h@{overlay\_opencv.h}}\index{overlay\_opencv.h@{overlay\_opencv.h}!GEOMETRIC\_SHAPE\_DRAW\_TYPE\_VERBOSE@{GEOMETRIC\_SHAPE\_DRAW\_TYPE\_VERBOSE}}}\mbox{\Hypertarget{overlay__opencv_8h_a09895f183d6b42d9fa45212077f47479a01e5a81a9e741c15c0ca87e6c50f75f3}\label{overlay__opencv_8h_a09895f183d6b42d9fa45212077f47479a01e5a81a9e741c15c0ca87e6c50f75f3}} 
+GEOMETRIC\+\_\+\+SHAPE\+\_\+\+DRAW\+\_\+\+TYPE\+\_\+\+VERBOSE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{overlay__opencv_8h_a5775db654f0b9cc11e93cce0a44451dc}\label{overlay__opencv_8h_a5775db654f0b9cc11e93cce0a44451dc}} 
+\index{overlay\_opencv.h@{overlay\_opencv.h}!line\_type\_opencv@{line\_type\_opencv}}
+\index{line\_type\_opencv@{line\_type\_opencv}!overlay\_opencv.h@{overlay\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{line\_type\_opencv}{line\_type\_opencv}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{overlay__opencv_8h_a5775db654f0b9cc11e93cce0a44451dc}{line\+\_\+type\+\_\+opencv}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LINE\_NONE\_OPENCV@{LINE\_NONE\_OPENCV}!overlay\_opencv.h@{overlay\_opencv.h}}\index{overlay\_opencv.h@{overlay\_opencv.h}!LINE\_NONE\_OPENCV@{LINE\_NONE\_OPENCV}}}\mbox{\Hypertarget{overlay__opencv_8h_a5775db654f0b9cc11e93cce0a44451dca4b3a71a9380f59f21d355988cc176f7b}\label{overlay__opencv_8h_a5775db654f0b9cc11e93cce0a44451dca4b3a71a9380f59f21d355988cc176f7b}} 
+LINE\+\_\+\+NONE\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LINE\_NORMAL\_OPENCV@{LINE\_NORMAL\_OPENCV}!overlay\_opencv.h@{overlay\_opencv.h}}\index{overlay\_opencv.h@{overlay\_opencv.h}!LINE\_NORMAL\_OPENCV@{LINE\_NORMAL\_OPENCV}}}\mbox{\Hypertarget{overlay__opencv_8h_a5775db654f0b9cc11e93cce0a44451dcafffe54c5ef770d48718209e749f1c68f}\label{overlay__opencv_8h_a5775db654f0b9cc11e93cce0a44451dcafffe54c5ef770d48718209e749f1c68f}} 
+LINE\+\_\+\+NORMAL\+\_\+\+OPENCV&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{overlay__opencv_8h_a27b69325b2e331a209db47a315c017ed}\label{overlay__opencv_8h_a27b69325b2e331a209db47a315c017ed}} 
+\index{overlay\_opencv.h@{overlay\_opencv.h}!overlay\_type\_opencv@{overlay\_type\_opencv}}
+\index{overlay\_type\_opencv@{overlay\_type\_opencv}!overlay\_opencv.h@{overlay\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{overlay\_type\_opencv}{overlay\_type\_opencv}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{overlay__opencv_8h_a27b69325b2e331a209db47a315c017ed}{overlay\+\_\+type\+\_\+opencv}}}
+
+Overlays are thought to be things drawn on top of the \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} They are not intented to modify the image but just lay on top of it. They can be anthing implemented through the virtual functions. For further manipulation the possibility to select and deselect the overaly is found to be important.
+
+WARNING\+: the position for drawing inside may be intended in absolute frame. The absolute frame is define by the property of image in \mbox{\hyperlink{classwindow__display__opencv}{window\+\_\+display\+\_\+opencv}} \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OVERLAY\_UNKNOWN\_OPENCV@{OVERLAY\_UNKNOWN\_OPENCV}!overlay\_opencv.h@{overlay\_opencv.h}}\index{overlay\_opencv.h@{overlay\_opencv.h}!OVERLAY\_UNKNOWN\_OPENCV@{OVERLAY\_UNKNOWN\_OPENCV}}}\mbox{\Hypertarget{overlay__opencv_8h_a27b69325b2e331a209db47a315c017edaf89e8ae0959002e78747ab6495fcd923}\label{overlay__opencv_8h_a27b69325b2e331a209db47a315c017edaf89e8ae0959002e78747ab6495fcd923}} 
+OVERLAY\+\_\+\+UNKNOWN\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OVERLAY\_CIRLE\_OPENCV@{OVERLAY\_CIRLE\_OPENCV}!overlay\_opencv.h@{overlay\_opencv.h}}\index{overlay\_opencv.h@{overlay\_opencv.h}!OVERLAY\_CIRLE\_OPENCV@{OVERLAY\_CIRLE\_OPENCV}}}\mbox{\Hypertarget{overlay__opencv_8h_a27b69325b2e331a209db47a315c017edac7ebd6648a069484b9f43d9a57bbb38c}\label{overlay__opencv_8h_a27b69325b2e331a209db47a315c017edac7ebd6648a069484b9f43d9a57bbb38c}} 
+OVERLAY\+\_\+\+CIRLE\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OVERLAY\_RECTANGLE\_OPENCV@{OVERLAY\_RECTANGLE\_OPENCV}!overlay\_opencv.h@{overlay\_opencv.h}}\index{overlay\_opencv.h@{overlay\_opencv.h}!OVERLAY\_RECTANGLE\_OPENCV@{OVERLAY\_RECTANGLE\_OPENCV}}}\mbox{\Hypertarget{overlay__opencv_8h_a27b69325b2e331a209db47a315c017eda39458e8ac6d4d5632a6d24e95125b4bc}\label{overlay__opencv_8h_a27b69325b2e331a209db47a315c017eda39458e8ac6d4d5632a6d24e95125b4bc}} 
+OVERLAY\+\_\+\+RECTANGLE\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OVERLAY\_CONTOUR\_OPENCV@{OVERLAY\_CONTOUR\_OPENCV}!overlay\_opencv.h@{overlay\_opencv.h}}\index{overlay\_opencv.h@{overlay\_opencv.h}!OVERLAY\_CONTOUR\_OPENCV@{OVERLAY\_CONTOUR\_OPENCV}}}\mbox{\Hypertarget{overlay__opencv_8h_a27b69325b2e331a209db47a315c017edad7a138ec4be4cd67b241690ebdcb4dc4}\label{overlay__opencv_8h_a27b69325b2e331a209db47a315c017edad7a138ec4be4cd67b241690ebdcb4dc4}} 
+OVERLAY\+\_\+\+CONTOUR\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OVERLAY\_SCATTER\_OPENCV@{OVERLAY\_SCATTER\_OPENCV}!overlay\_opencv.h@{overlay\_opencv.h}}\index{overlay\_opencv.h@{overlay\_opencv.h}!OVERLAY\_SCATTER\_OPENCV@{OVERLAY\_SCATTER\_OPENCV}}}\mbox{\Hypertarget{overlay__opencv_8h_a27b69325b2e331a209db47a315c017eda2259501fe1a312f7fe673307dbc558b5}\label{overlay__opencv_8h_a27b69325b2e331a209db47a315c017eda2259501fe1a312f7fe673307dbc558b5}} 
+OVERLAY\+\_\+\+SCATTER\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OVERLAY\_AXES\_OPENCV@{OVERLAY\_AXES\_OPENCV}!overlay\_opencv.h@{overlay\_opencv.h}}\index{overlay\_opencv.h@{overlay\_opencv.h}!OVERLAY\_AXES\_OPENCV@{OVERLAY\_AXES\_OPENCV}}}\mbox{\Hypertarget{overlay__opencv_8h_a27b69325b2e331a209db47a315c017edac8d5dbea2d66e627be68ad44eb5cb057}\label{overlay__opencv_8h_a27b69325b2e331a209db47a315c017edac8d5dbea2d66e627be68ad44eb5cb057}} 
+OVERLAY\+\_\+\+AXES\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OVERLAY\_LEGEND\_OPENCV@{OVERLAY\_LEGEND\_OPENCV}!overlay\_opencv.h@{overlay\_opencv.h}}\index{overlay\_opencv.h@{overlay\_opencv.h}!OVERLAY\_LEGEND\_OPENCV@{OVERLAY\_LEGEND\_OPENCV}}}\mbox{\Hypertarget{overlay__opencv_8h_a27b69325b2e331a209db47a315c017edad80224f18512f9cc69d14f3e7c65becc}\label{overlay__opencv_8h_a27b69325b2e331a209db47a315c017edad80224f18512f9cc69d14f3e7c65becc}} 
+OVERLAY\+\_\+\+LEGEND\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OVERLAY\_BARPLOT\_OPENCV@{OVERLAY\_BARPLOT\_OPENCV}!overlay\_opencv.h@{overlay\_opencv.h}}\index{overlay\_opencv.h@{overlay\_opencv.h}!OVERLAY\_BARPLOT\_OPENCV@{OVERLAY\_BARPLOT\_OPENCV}}}\mbox{\Hypertarget{overlay__opencv_8h_a27b69325b2e331a209db47a315c017eda1343744126476d8fb664042b6f250999}\label{overlay__opencv_8h_a27b69325b2e331a209db47a315c017eda1343744126476d8fb664042b6f250999}} 
+OVERLAY\+\_\+\+BARPLOT\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OVERLAY\_TEXT\_RELATIVE\_OPENCV@{OVERLAY\_TEXT\_RELATIVE\_OPENCV}!overlay\_opencv.h@{overlay\_opencv.h}}\index{overlay\_opencv.h@{overlay\_opencv.h}!OVERLAY\_TEXT\_RELATIVE\_OPENCV@{OVERLAY\_TEXT\_RELATIVE\_OPENCV}}}\mbox{\Hypertarget{overlay__opencv_8h_a27b69325b2e331a209db47a315c017edada808fcccc79ee708dcabc5c812db187}\label{overlay__opencv_8h_a27b69325b2e331a209db47a315c017edada808fcccc79ee708dcabc5c812db187}} 
+OVERLAY\+\_\+\+TEXT\+\_\+\+RELATIVE\+\_\+\+OPENCV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OVERLAY\_TEXT\_ABSOLUTE\_OPENCV@{OVERLAY\_TEXT\_ABSOLUTE\_OPENCV}!overlay\_opencv.h@{overlay\_opencv.h}}\index{overlay\_opencv.h@{overlay\_opencv.h}!OVERLAY\_TEXT\_ABSOLUTE\_OPENCV@{OVERLAY\_TEXT\_ABSOLUTE\_OPENCV}}}\mbox{\Hypertarget{overlay__opencv_8h_a27b69325b2e331a209db47a315c017eda3831acc3c2a52751c5994588c643efe1}\label{overlay__opencv_8h_a27b69325b2e331a209db47a315c017eda3831acc3c2a52751c5994588c643efe1}} 
+OVERLAY\+\_\+\+TEXT\+\_\+\+ABSOLUTE\+\_\+\+OPENCV&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{overlay__opencv_8h_a38346f0c073667171c98929bf09a0394}\label{overlay__opencv_8h_a38346f0c073667171c98929bf09a0394}} 
+\index{overlay\_opencv.h@{overlay\_opencv.h}!type\_return\_get\_value\_overlay\_opencv@{type\_return\_get\_value\_overlay\_opencv}}
+\index{type\_return\_get\_value\_overlay\_opencv@{type\_return\_get\_value\_overlay\_opencv}!overlay\_opencv.h@{overlay\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{type\_return\_get\_value\_overlay\_opencv}{type\_return\_get\_value\_overlay\_opencv}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{overlay__opencv_8h_a38346f0c073667171c98929bf09a0394}{type\+\_\+return\+\_\+get\+\_\+value\+\_\+overlay\+\_\+opencv}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OOV\_TYPE\_DOUBLE@{OOV\_TYPE\_DOUBLE}!overlay\_opencv.h@{overlay\_opencv.h}}\index{overlay\_opencv.h@{overlay\_opencv.h}!OOV\_TYPE\_DOUBLE@{OOV\_TYPE\_DOUBLE}}}\mbox{\Hypertarget{overlay__opencv_8h_a38346f0c073667171c98929bf09a0394aa29834ac11581d680d3405ba82590bb5}\label{overlay__opencv_8h_a38346f0c073667171c98929bf09a0394aa29834ac11581d680d3405ba82590bb5}} 
+OOV\+\_\+\+TYPE\+\_\+\+DOUBLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OOV\_TYPE\_STRING@{OOV\_TYPE\_STRING}!overlay\_opencv.h@{overlay\_opencv.h}}\index{overlay\_opencv.h@{overlay\_opencv.h}!OOV\_TYPE\_STRING@{OOV\_TYPE\_STRING}}}\mbox{\Hypertarget{overlay__opencv_8h_a38346f0c073667171c98929bf09a0394af68982c9507f534be42eddc7294c8341}\label{overlay__opencv_8h_a38346f0c073667171c98929bf09a0394af68982c9507f534be42eddc7294c8341}} 
+OOV\+\_\+\+TYPE\+\_\+\+STRING&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{overlay__opencv_8h_a553a506cee3c746d0520a8552656fa4a}\label{overlay__opencv_8h_a553a506cee3c746d0520a8552656fa4a}} 
+\index{overlay\_opencv.h@{overlay\_opencv.h}!select\_overlay@{select\_overlay}}
+\index{select\_overlay@{select\_overlay}!overlay\_opencv.h@{overlay\_opencv.h}}
+\doxysubsubsection{\texorpdfstring{select\_overlay()}{select\_overlay()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoverlay__opencv}{overlay\+\_\+opencv}}$\ast$ select\+\_\+overlay (\begin{DoxyParamCaption}\item[{int}]{i\+\_\+to\+\_\+select,  }\item[{std\+::list$<$ \mbox{\hyperlink{classoverlay__opencv}{overlay\+\_\+opencv}} $\ast$ $>$}]{lst }\end{DoxyParamCaption})}
+
