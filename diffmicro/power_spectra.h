@@ -139,7 +139,7 @@ void calc_power_spectra_ALL(INDEX nimages, INDEX dimy, INDEX dimx, INDEX& dimr, 
 
 bool calc_power_spectra(INDEX dimy, INDEX dimx);
 
-/*This function allows you to plot the structure function */
+/*!This function allows you to plot the structure function */
 void plot_dynamics(INDEX dimx);
 
 /*!Calculating power spectra via time differences and FIFO memory*/
