@@ -70,6 +70,11 @@ STORE_REAL *dev_power_spectra_gpu(NULL);
 STORE_REAL* dev_ALLfft_diff(NULL);
 STORE_REAL* dev_ALLpower_spectra(NULL);
 
+CUFFT_REAL* dev_corr_gpu1(NULL);
+CUFFT_COMPLEX* dev_fft_time_gpu1(NULL);
+CUFFT_COMPLEX* dev_images_gpu1(NULL);
+
+
 
 //! this is the inverse norm of the FFT to have the operation normalized
 CUFFT_REAL one_over_fft_norm;
@@ -118,6 +123,17 @@ __global__ void gain_complex_lut(CUFFT_REAL gain, INDEX dim, unsigned int *lut, 
 	{
 		out[i].x = gain * in[lut[i]].x;
 		out[i].y = gain * in[lut[i]].y;
+	}
+}
+
+__global__ void gain_complex_lut_timeSeries(int ii,INDEX nimages, CUFFT_REAL gain, INDEX dim, unsigned int* lut, CUFFT_COMPLEX in[], CUFFT_COMPLEX out[])
+{
+	INDEX i = blockDim.x * blockIdx.x + threadIdx.x;
+
+	if (i < dim)
+	{
+		out[i* nimages+ii].x = gain * in[lut[i]].x;
+		out[i* nimages+ii].y = gain * in[lut[i]].y;
 	}
 }
 
@@ -176,6 +192,8 @@ __global__ void averagesabs2_array_gpu(INDEX dim, INDEX dim_t, CUFFT_COMPLEX* _i
 	}
 }
 
+
+
 __global__ void gaincomplex_gpu(INDEX dim, CUFFT_COMPLEX in[], FFTW_REAL gain, CUFFT_COMPLEX out[])
 {
 	INDEX i = blockDim.x * blockIdx.x + threadIdx.x;
@@ -184,6 +202,19 @@ __global__ void gaincomplex_gpu(INDEX dim, CUFFT_COMPLEX in[], FFTW_REAL gain, C
 	{
 		out[i].x = gain * in[i].x;
 		out[i].y = gain * in[i].y;
+	}
+}
+
+__global__ void gaincomplex_gpu2(INDEX nimages,INDEX fft_size,INDEX N2, CUFFT_COMPLEX* in, FFTW_REAL gain, CUFFT_COMPLEX* out)
+{
+	INDEX j = blockDim.y * blockIdx.y + threadIdx.y;
+
+	INDEX i = blockDim.x * blockIdx.x + threadIdx.x;
+
+	if ((i < nimages)&&(j< fft_size))
+	{
+		out[i+j*N2].x = gain * in[i+j* nimages].x;
+		out[i+j*N2].y = gain * in[i+j* nimages].y;
 	}
 }
 
@@ -205,6 +236,20 @@ __global__ void updatewithdivrebyramp_gpu(INDEX dim, INDEX ramp_start, CUFFT_COM
 	if (i < dim)
 		update[i] -= (2. / (FFTW_REAL)(ramp_start - i)) * in[i].x;
 }
+
+__global__ void updatewithdivrebyramp_gpu2(INDEX nimages, INDEX fft_size, INDEX N2, CUFFT_COMPLEX* in, FFTW_REAL* update, STORE_REAL* dev_power_spectra_gpu)
+{
+	INDEX j = blockDim.y * blockIdx.y + threadIdx.y;
+
+	INDEX i = blockDim.x * blockIdx.x + threadIdx.x;
+
+	if ((i < nimages) && (j < fft_size)) {
+		update[i + j * nimages] -= (2. / (FFTW_REAL)(nimages - i)) * in[i + j * N2].x;
+		dev_power_spectra_gpu[i * nimages + j] = update[i + j * nimages];
+	}
+
+}
+
 
 __global__ void copyfrom_gpu(INDEX dim, CUFFT_COMPLEX* tseries, FFTW_REAL* corr_memory)
 {
@@ -879,7 +924,160 @@ void Image_to_complex_matrix(unsigned short* dev_im_gpu_, CUFFT_COMPLEX* dev_fft
 
 }
 
-void Calc_structure_function(int nimages,int i,int device_count) {
+void Image_to_complex_matrix2(unsigned short* dev_im_gpu_, CUFFT_COMPLEX* dev_fft_gpu_, int i, INDEX nimages) {
+
+	//CUFFT_COMPLEX* dev_store_ptr;
+	//dev_store_ptr = &(dev_images_gpu[i * s_fft_images.dim]);
+	//int alloc_status_im = cudaMalloc(&dev_images_gpu1, nimages * s_power_spectra.dim * sizeof(CUFFT_COMPLEX));
+
+	time_fft_norm.start();
+	short_to_real_with_gain << <s_load_image.cexe.nbk, s_load_image.cexe.nth >> >
+		(s_load_image.dim, dev_im_gpu_, (CUFFT_REAL)(one_over_fft_norm), dev_fft_gpu_);
+
+	cufftExecZ2Z(plan, dev_fft_gpu_, dev_fft_gpu_, CUFFT_FORWARD);
+
+	cudaDeviceSynchronize();
+
+
+	CUFFT_REAL mean_tmp;
+	STORE_REAL mean;
+	// normalization
+	cudaMemcpy(&mean_tmp, dev_fft_gpu_, sizeof(CUFFT_REAL), cudaMemcpyDeviceToHost);
+
+	mean = mean_tmp;
+	if (mean < 0.000000000000001)
+	{
+		mean = 1.;
+		mean_tmp = 1.;
+		//ret = 1;
+		waitkeyboard(0);
+	}
+	mean_tmp = (CUFFT_REAL)(1. / mean_tmp);
+
+	gain_complex_lut_timeSeries << <s_fft_images.cexe.nbk, s_fft_images.cexe.nth >> >
+		(i,nimages, mean_tmp, s_fft_images.dim, dev_radial_lut_gpu, dev_fft_gpu_, dev_images_gpu);
+
+
+	time_fft_norm.stop();
+
+	cudaDeviceSynchronize();
+	/*CUFFT_COMPLEX* tmp_display_cpx_(NULL);
+
+	tmp_display_cpx_ = new CUFFT_COMPLEX[s_power_spectra.dim * nimages];
+
+	cudaMemcpy(tmp_display_cpx_, dev_images_gpu, nimages*s_fft_images.memory_one, cudaMemcpyDeviceToHost);
+	for (int ii = 0; ii < s_fft_images.dim* nimages; ++ii)
+		std::cout << tmp_display_cpx_[ii].x << "  + i " << tmp_display_cpx_[ii].y << std::endl;
+
+	FILE* version3;
+	version3 = fopen("v33.txt", "w");
+	for (int ii = 0; ii < nimages * s_power_spectra.dim; ++ii)
+		//fprintf()
+		fprintf(version3, "%d   %f    %f\n", ii, tmp_display_cpx_[ii].x, tmp_display_cpx_[ii].y);
+
+	fclose(version3);*/
+
+}
+void Calc_StructureFunction_With_TimeCorrelation(INDEX nimages) {
+
+	
+
+
+	int alloc_status_corr_g = cudaMalloc(&dev_corr_gpu1, nimages * s_power_spectra.dim*sizeof(CUFFT_REAL));
+
+	int alloc_status_fftime = cudaMalloc(&dev_fft_time_gpu1, s_fft_time.dim * s_power_spectra.dim * sizeof(CUFFT_COMPLEX));
+
+
+	int threads = 1024;
+	int blocksx = (s_power_spectra.dim + threads - 1) / threads;
+	//int blocksx = (fft_size + threads - 1) / threads;
+	//int blocksy1 = (nb_fft + threads1 - 2) / threads1;
+	dim3 THREADS(threads);
+	dim3 BLOCKS(blocksx);
+
+	averagesabs2_array_gpu << < BLOCKS, THREADS >> > (nimages, s_power_spectra.dim, dev_images_gpu, dev_corr_gpu1);
+
+	//CUFFT_COMPLEX* tmp_display_cpx_(NULL);
+	/*CUFFT_REAL* dev_corr_cpu1(NULL);
+	dev_corr_cpu1 = new CUFFT_REAL[s_power_spectra.dim * nimages];
+
+	cudaMemcpy(dev_corr_cpu1, dev_corr_gpu1, nimages * s_power_spectra.dim * sizeof(CUFFT_REAL), cudaMemcpyDeviceToHost);
+	FILE* version3;
+	version3 = fopen("v22.txt", "w");
+	for (int ii = 0; ii < nimages * s_power_spectra.dim; ++ii)
+		//fprintf()
+		fprintf(version3, "%d   %f \n", ii, dev_corr_cpu1[ii]);
+
+	fclose(version3);*/
+		//std::cout <<ii<<"   "<< dev_corr_cpu1[ii] << std::endl;
+	int threads1 = 32;
+	int blocksx1 = (nimages + threads1 - 1) / threads1;
+	int blocksy1 = (s_power_spectra.dim  + threads1 - 1) / threads1;
+
+	dim3 THREADS1(threads1, threads1);
+	dim3 BLOCKS1(blocksx1, blocksy1);
+
+	gaincomplex_gpu2 << <BLOCKS1, THREADS1 >> > (nimages, s_power_spectra.dim, s_fft_time.dim, dev_images_gpu,
+		(FFTW_REAL)(1. / std::sqrt((FFTW_REAL)(s_fft_time.dim))), dev_fft_time_gpu1);
+
+	cudaDeviceSynchronize();
+
+	
+	cufftExecZ2Z(tplan, dev_fft_time_gpu1, dev_fft_time_gpu1, CUFFT_FORWARD);
+
+
+	/*CUFFT_COMPLEX* dev_corr_cpu1(NULL);
+	dev_corr_cpu1 = new CUFFT_COMPLEX[s_fft_time.dim * s_power_spectra.dim];
+
+	cudaMemcpy(dev_corr_cpu1, dev_fft_time_gpu1, s_fft_time.dim * s_power_spectra.dim * sizeof(CUFFT_COMPLEX), cudaMemcpyDeviceToHost);
+	FILE* version2;
+	version2 = fopen("v222fft_.txt", "a");
+	for (int ii = 0; ii < s_power_spectra.dim * s_fft_time.dim; ++ii)
+		//fprintf()
+		fprintf(version2, "%d   %f    %f \n", ii, dev_corr_cpu1[ii].x, dev_corr_cpu1[ii].y);
+
+	fclose(version2);*/
+
+	cudaDeviceSynchronize();
+
+	blocksx = (s_fft_time.dim * s_power_spectra.dim + threads - 1) / threads;
+	dim3 THREADS2(threads);
+	dim3 BLOCKS2(blocksx);
+	complexabs2_gpu << <BLOCKS2, THREADS2 >> > (s_fft_time.dim * s_power_spectra.dim, dev_fft_time_gpu1, dev_fft_time_gpu1);
+
+	cudaDeviceSynchronize();
+
+	cufftExecZ2Z(tplan, dev_fft_time_gpu1, dev_fft_time_gpu1, CUFFT_FORWARD);
+
+	cudaDeviceSynchronize();
+
+
+	int threads2 = 32;
+	int blocksx2 = (nimages + threads2 - 1) / threads2;
+	int blocksy2 = (s_power_spectra.dim + threads2 - 1) / threads2;
+
+	dim3 THREADS3(threads2, threads2);
+	dim3 BLOCKS3(blocksx2, blocksy2);
+	updatewithdivrebyramp_gpu2 << <BLOCKS3, THREADS3 >> > (nimages, s_power_spectra.dim, s_fft_time.dim, dev_fft_time_gpu1, dev_corr_gpu1, dev_power_spectra_gpu);
+
+	CUFFT_REAL* dev_corr_cpu1(NULL);
+	dev_corr_cpu1 = new CUFFT_REAL[s_power_spectra.dim * nimages];
+
+	cudaMemcpy(dev_corr_cpu1, dev_corr_gpu1, nimages * s_power_spectra.dim * sizeof(CUFFT_REAL), cudaMemcpyDeviceToHost);
+	FILE* version3;
+	version3 = fopen("v222.txt", "w");
+	for (int ii = 0; ii < nimages * s_power_spectra.dim; ++ii)
+		//fprintf()
+		fprintf(version3, "%d   %.10f \n", ii, dev_corr_cpu1[ii]);
+
+	fclose(version3);
+
+	std::cout << "test" << std::endl;
+
+
+}
+
+void Calc_structure_function(INDEX nimages,int i,int device_count) {
 
 
 	int alloc_status_li_ = cudaMalloc((void**)&dev_ALLfft_diff, s_power_spectra.memory_one * (nimages - 1));
@@ -1215,6 +1413,18 @@ void timeseriesanalysis_gpu(INDEX dimtimeseries, INDEX dim_t, CUFFT_COMPLEX* tse
 	//----------------------------------------------
 	// Calculating the average of the absolute squares
 	averagesabs2_array_gpu << < mycuda_dim_t.nbk, mycuda_dim_t.nth >> > (dimtimeseries,dim_t, tseries, corr_memory);
+
+	/*CUFFT_REAL* dev_corr_cpu1(NULL);
+	dev_corr_cpu1 = new CUFFT_REAL[s_time_series.dim * useri.nthread_gpu];
+
+	cudaMemcpy(dev_corr_cpu1, corr_memory, s_time_series.dim * useri.nthread_gpu *sizeof(CUFFT_REAL), cudaMemcpyDeviceToHost);
+	FILE* version2;
+	version2 = fopen("v2.txt", "a");
+	for (int ii = 0; ii < useri.nthread_gpu * s_time_series.dim; ++ii)
+		//fprintf()
+		fprintf(version2, "%d   %f \n", ii , dev_corr_cpu1[ii]);
+
+	fclose(version2);*/
 	
 
 	//----------------------------------------------
@@ -1241,6 +1451,18 @@ void timeseriesanalysis_gpu(INDEX dimtimeseries, INDEX dim_t, CUFFT_COMPLEX* tse
 		cudaDeviceSynchronize();
 		//std::cout << cudaGetLastError() << std::endl;
 	}
+
+	/*CUFFT_COMPLEX* dev_corr_cpu1(NULL);
+	dev_corr_cpu1 = new CUFFT_COMPLEX[dimfft * useri.nthread_gpu];
+
+	cudaMemcpy(dev_corr_cpu1, fft_memory, dimfft * useri.nthread_gpu * sizeof(CUFFT_COMPLEX), cudaMemcpyDeviceToHost);
+	FILE* version2;
+	version2 = fopen("v2.txt", "a");
+	for (int ii = 0; ii < useri.nthread_gpu * dimfft; ++ii)
+		//fprintf()
+		fprintf(version2, "%d   %f    %f \n", ii, dev_corr_cpu1[ii].x, dev_corr_cpu1[ii].y);
+
+	fclose(version2);*/
 		// FFT execution
 		// FFT execution
 		#if (CUFFT_TYPE == CUFFT_TYPE_FLOAT)
@@ -1254,6 +1476,18 @@ void timeseriesanalysis_gpu(INDEX dimtimeseries, INDEX dim_t, CUFFT_COMPLEX* tse
 
 		cudaDeviceSynchronize();
 		//std::cout << cudaGetLastError() << std::endl;
+
+		/*CUFFT_COMPLEX* dev_corr_cpu1(NULL);
+		dev_corr_cpu1 = new CUFFT_COMPLEX[dimfft * useri.nthread_gpu];
+
+		cudaMemcpy(dev_corr_cpu1, fft_memory, dimfft * useri.nthread_gpu * sizeof(CUFFT_COMPLEX), cudaMemcpyDeviceToHost);
+		FILE* version2;
+		version2 = fopen("v21.txt", "a");
+		for (int ii = 0; ii < dimfft * useri.nthread_gpu; ++ii)
+			//fprintf()
+			fprintf(version2, "%d   %f    %f \n", ii, dev_corr_cpu1[ii].x, dev_corr_cpu1[ii].y);
+
+		fclose(version2);*/
 
 
 		//fftw_execute(tplan[0]);
@@ -1296,6 +1530,19 @@ for (i = 0; i < dim_t; ++i)
 			tseries[j + i * dimtimeseries].y = 0.0;
 		}*/
 	}
+
+CUFFT_REAL* dev_corr_cpu1(NULL);
+dev_corr_cpu1 = new CUFFT_REAL[s_time_series.dim * useri.nthread_gpu];
+
+cudaMemcpy(dev_corr_cpu1, corr_memory, s_time_series.dim * useri.nthread_gpu * sizeof(CUFFT_REAL), cudaMemcpyDeviceToHost);
+FILE* version2;
+version2 = fopen("v22.txt", "a");
+for (int ii = 0; ii < useri.nthread_gpu * s_time_series.dim; ++ii)
+	//fprintf()
+	fprintf(version2, "%d   %.10f \n", ii, dev_corr_cpu1[ii]);
+
+fclose(version2);
+
 }
 
 

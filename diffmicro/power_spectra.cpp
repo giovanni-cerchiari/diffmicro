@@ -367,12 +367,14 @@ bool calc_power_spectra(INDEX dimy, INDEX dimx)
 		power_spectra_avg_counter = new unsigned int[useri.file_list.size()];
 		ram_power_spectra = new STORE_REAL[s_power_spectra.numerosity * dimx * dimy / 2];
 
-		calc_power_spectra_ALL(nimages, dimx, dimy, dimr,ram_power_spectra, azh_avgs);
+		//calc_power_spectra_ALL(nimages, dimx, dimy, dimr,ram_power_spectra, azh_avgs);
+
+		calc_power_spectra_autocorr2(nimages, dimx, dimy, dimr, ram_power_spectra, azh_avgs);
 
 
 		memset(power_spectra_avg_counter, 0, useri.file_list.size() * sizeof(unsigned int));
 		//calc_power_spectra_fifo(nimages, useri_dist_max, image_mean, dimr,
-			             //       power_spectra_avg_counter, ram_power_spectra, azh_avgs);
+			                 //   power_spectra_avg_counter, ram_power_spectra, azh_avgs);
 		if (useri.flg_graph_mode)
 			display_average(useri.file_list.size(), power_spectra_avg_counter, &average_counter_window, &average_counter_scatter, &x_avg_counter, &y_avg_counter, "avg counter");
 
@@ -380,8 +382,10 @@ bool calc_power_spectra(INDEX dimy, INDEX dimx)
 	case DIFFMICRO_MODE_TIMECORRELATION:
 		power_spectra_avg_counter = new unsigned int[useri.file_list.size()];
 		ram_power_spectra = new STORE_REAL[s_power_spectra.numerosity * dimx * dimy / 2];
-		calc_power_spectra_autocorr(dimy, dimx, nimages, image_mean, dimr, power_spectra_avg_counter,
-				ram_power_spectra, azh_avgs);
+
+		calc_power_spectra_autocorr2(nimages, dimx, dimy, dimr, ram_power_spectra, azh_avgs);
+		//calc_power_spectra_autocorr(dimy, dimx, nimages, image_mean, dimr, power_spectra_avg_counter,
+				//ram_power_spectra, azh_avgs);
 		for (INDEX i = 0; i < nimages; i++) 
 
 		{
@@ -641,6 +645,7 @@ void calc_power_spectra_autocorr(INDEX dimy, INDEX dimx, INDEX nimages, STORE_RE
 	n_groups_reload = n_group + 1;
 	group_rem = (INDEX)(group.rem);
 	//-----------------------------------------
+	std::cout<< n_group<<std::endl;
 	for (i = 0; i < n_group; ++i)
 	{
 		// 1) load all images to dev and move the fft values into the storage
@@ -654,8 +659,10 @@ void calc_power_spectra_autocorr(INDEX dimy, INDEX dimx, INDEX nimages, STORE_RE
 	{
 		// 1) load all images to dev and move the fft values into the storage
 		load_memory_for_time_correlation(dimx, dimy, nimages, i* s_time_series.numerosity, group_rem, m_im, image_mean);
+
 		// 2) analyze the time series 
 		time_series_analysis();
+
 		// 3) unrol time series and save partial results
 		save_partial_timeseries(nimages, i, group_rem, ram_power_spectra);
 	}
@@ -664,6 +671,81 @@ void calc_power_spectra_autocorr(INDEX dimy, INDEX dimx, INDEX nimages, STORE_RE
 	read_memory_after_time_correlation(nimages, dimr, azh_avgs, ram_power_spectra);
 	//--------------------------------------------------
 	delete[] m_im;
+}
+
+void calc_power_spectra_autocorr2(INDEX nimages, INDEX dimy, INDEX dimx, INDEX& dimr, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs) {
+
+	
+	CUFFT_COMPLEX* dev_fft_gpu_(NULL);
+	unsigned short* dev_im_gpu_(NULL);
+	unsigned short* m_im_;
+	int alloc_status_li_, alloc_status_fft_;
+	alloc_status_li_ = cudaMalloc(&dev_im_gpu_, s_load_image.memory_tot);
+	if (cudaSuccess != alloc_status_li_) {
+
+		std::cout << "ERROR: cudaMalloc " << std::endl;
+	}
+
+	alloc_status_fft_ = cudaMalloc(&dev_fft_gpu_, s_fft.memory_tot);
+	if (cudaSuccess != alloc_status_fft_) {
+
+		std::cout << "ERROR: cudaMalloc dev_fft_gpu_" << std::endl;
+	}
+	/*alloc_status_fft_ = cudaMalloc(&dev_fft_gpu_, s_fft.memory_tot);
+	if (cudaSuccess != alloc_status_fft_) {
+
+		std::cout << "ERROR: cudaMalloc " << std::endl;
+	}*/
+
+	/*#if (CUFFT_TYPE == CUFFT_TYPE_DOUBLE)
+		cufftExecZ2Z(plan_, dev_fft_gpu_, dev_fft_gpu_, CUFFT_FORWARD);
+	#else
+	#error Unknown CUDA type selected
+	#endif*/
+	m_im_ = new unsigned short[dimx * dimy];
+	for (int i = 0; i < nimages; i++) {
+
+		time_reading_from_disk.start();
+		load_image(useri.file_list[i], dimy, dimx, true, m_im_, flg_display_read);
+		time_reading_from_disk.stop();
+
+		time_from_host_to_device.start();
+		cudaMemcpy(dev_im_gpu_, m_im_, s_load_image.memory_one, cudaMemcpyHostToDevice);
+		time_from_host_to_device.stop();
+
+		// from image to complex matrix
+		Image_to_complex_matrix2(dev_im_gpu_, dev_fft_gpu_, i, nimages);
+
+	}
+
+	/*CUFFT_COMPLEX* tmp_display_cpx_(NULL);
+
+	tmp_display_cpx_ = new CUFFT_COMPLEX[s_fft_images.dim * nimages];
+
+	cudaMemcpy(tmp_display_cpx_, dev_images_gpu, nimages * s_fft_images.memory_one, cudaMemcpyDeviceToHost);
+	for (int ii = 0; ii < s_fft_images.dim * nimages; ++ii)
+		std::cout << tmp_display_cpx_[ii].x << "  + i " << tmp_display_cpx_[ii].y << std::endl;*/
+
+	/*CUFFT_COMPLEX* tmp_display_cpx_(NULL);
+
+	tmp_display_cpx_ = new CUFFT_COMPLEX[s_power_spectra.dim * nimages];
+
+	cudaMemcpy(tmp_display_cpx_, dev_images_gpu, nimages * s_fft_images.memory_one, cudaMemcpyDeviceToHost);
+	for (int ii = 0; ii < s_fft_images.dim* nimages; ++ii)
+		std::cout << tmp_display_cpx_[ii].x << "  + i " << tmp_display_cpx_[ii].y << std::endl;
+
+	FILE* version3;
+	version3 = fopen("v33.txt", "w");
+	for (int ii = 0; ii < nimages * s_power_spectra.dim; ++ii)
+		//fprintf()
+		fprintf(version3, "%d   %f    %f\n", ii, tmp_display_cpx_[ii].x, tmp_display_cpx_[ii].y);
+
+	fclose(version3);*/
+
+	Calc_StructureFunction_With_TimeCorrelation(nimages);
+
+	//pw_save_and_azth_avg(ram_radial_lut, 0, nimages, dimr, azh_avgs, ram_power_spectra);
+
 }
 
 void load_memory_for_time_correlation(INDEX dimx, INDEX dimy, INDEX nimages, INDEX start_spacial_freq_in_lut, INDEX dimfreq, unsigned short *m_im, FFTW_REAL *image_mean)
@@ -684,6 +766,22 @@ void load_memory_for_time_correlation(INDEX dimx, INDEX dimy, INDEX nimages, IND
 		lutfft_to_timeseries(dimfreq, (FFTW_REAL)(1.0), ifile, start_spacial_freq_in_lut);
 		time_reshuffling_memory.stop();
 	}
+
+	/*CUFFT_COMPLEX* tmp_display_cpx_(NULL);
+
+	tmp_display_cpx_ = new CUFFT_COMPLEX[s_power_spectra.dim * nimages];
+
+	cudaMemcpy(tmp_display_cpx_, dev_images_gpu, nimages * s_fft_images.memory_one, cudaMemcpyDeviceToHost);
+	for (int ii = 0; ii < s_fft_images.dim* nimages; ++ii)
+		std::cout << tmp_display_cpx_[ii].x << "  + i " << tmp_display_cpx_[ii].y << std::endl;
+
+	FILE* version3;
+	version3 = fopen("v333.txt", "w");
+	for (int ii = 0; ii < nimages * s_power_spectra.dim; ++ii)
+		//fprintf()
+		fprintf(version3, "%d   %f    %f\n", ii, tmp_display_cpx_[ii].x, tmp_display_cpx_[ii].y);
+
+	fclose(version3);*/
 }
 
 void save_partial_timeseries(INDEX nimages, INDEX igroup, INDEX dimgroup, STORE_REAL *ram_power_spectra)

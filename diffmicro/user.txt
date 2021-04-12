@@ -9,10 +9,10 @@ flg_write_images_average	1
 flg_write_power_spectra	0
 flg_write_azimuthal_averages	1
 # to specify EXECUTION MODE 1 ---> FIFO , 0----> Time correlation
-EXECUTION_MODE	0
+EXECUTION_MODE	1
 # to specify EXECUTION MODE 1 ---> CPU , 0----> GPU
 HARDWARE_SELECTION	0
-NUMBER_THREAD_GPU	2000
+NUMBER_THREAD_GPU	4000
 NUMBER_THREAD_CPU	8
 RAM_CPU	8342177280
 # to show graph 1 ---> show the graph, 0----> don't show

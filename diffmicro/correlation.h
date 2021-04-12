@@ -329,7 +329,12 @@ extern void (*timeseries_to_lutpw)(INDEX dimcopy, FFTW_REAL gain, INDEX t, INDEX
 
 void Image_to_complex_matrix(unsigned short* dev_im_gpu_, CUFFT_COMPLEX* dev_fft_gpu_,int i);
 
-void Calc_structure_function(int nimages,int i,int device_count);
+void Image_to_complex_matrix2(unsigned short* dev_im_gpu_, CUFFT_COMPLEX* dev_fft_gpu_, int i, INDEX nimages);
+
+
+void Calc_structure_function(INDEX nimages,int i,int device_count);
+
+void Calc_StructureFunction_With_TimeCorrelation(INDEX nimages);
 
 //void timeseriesanalysis_gpu(INDEX dimtimeseries, CUFFT_COMPLEX* tseries, INDEX dimfft, CUFFT_COMPLEX* fft_memory, cufftHandle* tplan, CUFFT_REAL* corr_memory);
 
