@@ -367,14 +367,14 @@ bool calc_power_spectra(INDEX dimy, INDEX dimx)
 		power_spectra_avg_counter = new unsigned int[useri.file_list.size()];
 		ram_power_spectra = new STORE_REAL[s_power_spectra.numerosity * dimx * dimy / 2];
 
-		//calc_power_spectra_ALL(nimages, dimx, dimy, dimr,ram_power_spectra, azh_avgs);
+		calc_power_spectra_ALL(nimages, dimx, dimy, dimr,ram_power_spectra, azh_avgs);
 
-		calc_power_spectra_autocorr2(nimages, dimx, dimy, dimr, ram_power_spectra, azh_avgs);
+		//calc_power_spectra_autocorr2(nimages, dimx, dimy, dimr, ram_power_spectra, azh_avgs);
 
 
 		memset(power_spectra_avg_counter, 0, useri.file_list.size() * sizeof(unsigned int));
 		//calc_power_spectra_fifo(nimages, useri_dist_max, image_mean, dimr,
-			                 //   power_spectra_avg_counter, ram_power_spectra, azh_avgs);
+			         //           power_spectra_avg_counter, ram_power_spectra, azh_avgs);
 		if (useri.flg_graph_mode)
 			display_average(useri.file_list.size(), power_spectra_avg_counter, &average_counter_window, &average_counter_scatter, &x_avg_counter, &y_avg_counter, "avg counter");
 
@@ -731,20 +731,28 @@ void calc_power_spectra_autocorr2(INDEX nimages, INDEX dimy, INDEX dimx, INDEX& 
 	tmp_display_cpx_ = new CUFFT_COMPLEX[s_power_spectra.dim * nimages];
 
 	cudaMemcpy(tmp_display_cpx_, dev_images_gpu, nimages * s_fft_images.memory_one, cudaMemcpyDeviceToHost);
-	for (int ii = 0; ii < s_fft_images.dim* nimages; ++ii)
-		std::cout << tmp_display_cpx_[ii].x << "  + i " << tmp_display_cpx_[ii].y << std::endl;
+	//for (int ii = 0; ii < s_fft_images.dim* nimages; ++ii)
+		//std::cout << tmp_display_cpx_[ii].x << "  + i " << tmp_display_cpx_[ii].y << std::endl;
 
 	FILE* version3;
-	version3 = fopen("v33.txt", "w");
+	version3 = fopen("v4_timeSeries.txt", "w");
 	for (int ii = 0; ii < nimages * s_power_spectra.dim; ++ii)
 		//fprintf()
-		fprintf(version3, "%d   %f    %f\n", ii, tmp_display_cpx_[ii].x, tmp_display_cpx_[ii].y);
+		fprintf(version3, "%f   %f\n",tmp_display_cpx_[ii].x, tmp_display_cpx_[ii].y);
 
 	fclose(version3);*/
 
 	Calc_StructureFunction_With_TimeCorrelation(nimages);
 
 	//pw_save_and_azth_avg(ram_radial_lut, 0, nimages, dimr, azh_avgs, ram_power_spectra);
+
+	//save_partial_timeseries(nimages, 0, s_time_series.numerosity, ram_power_spectra);
+
+	//read_memory_after_time_correlation(nimages, dimr, azh_avgs, ram_power_spectra);
+
+	save_partial_timeseries(nimages, 0, s_time_series.numerosity, ram_power_spectra);
+
+    read_memory_after_time_correlation(nimages, dimr, azh_avgs, ram_power_spectra);
 
 }
 
@@ -772,16 +780,41 @@ void load_memory_for_time_correlation(INDEX dimx, INDEX dimy, INDEX nimages, IND
 	tmp_display_cpx_ = new CUFFT_COMPLEX[s_power_spectra.dim * nimages];
 
 	cudaMemcpy(tmp_display_cpx_, dev_images_gpu, nimages * s_fft_images.memory_one, cudaMemcpyDeviceToHost);
-	for (int ii = 0; ii < s_fft_images.dim* nimages; ++ii)
-		std::cout << tmp_display_cpx_[ii].x << "  + i " << tmp_display_cpx_[ii].y << std::endl;
+	//for (int ii = 0; ii < s_fft_images.dim* nimages; ++ii)
+		//std::cout << tmp_display_cpx_[ii].x << "  + i " << tmp_display_cpx_[ii].y << std::endl;
 
 	FILE* version3;
-	version3 = fopen("v333.txt", "w");
+	version3 = fopen("v2_timeSeries.txt", "w");
 	for (int ii = 0; ii < nimages * s_power_spectra.dim; ++ii)
 		//fprintf()
-		fprintf(version3, "%d   %f    %f\n", ii, tmp_display_cpx_[ii].x, tmp_display_cpx_[ii].y);
+		fprintf(version3, "%f   %f\n", tmp_display_cpx_[ii].x, tmp_display_cpx_[ii].y);
 
 	fclose(version3);*/
+
+	/**
+	CUFFT_COMPLEX* v2(NULL);
+
+	v2 = new CUFFT_COMPLEX[s_power_spectra.dim * nimages];
+	CUFFT_COMPLEX* v4(NULL);
+
+	v4 = new CUFFT_COMPLEX[s_power_spectra.dim * nimages];
+
+	FILE* version2;
+	version2 = fopen("C:\\Users\\mchraga\\source\\repos\\diffmicro\\diffmicro\\v2_timeSeries.txt", "r");
+	FILE* version4;
+	version4 = fopen("C:\\Users\\mchraga\\source\\repos\\diffmicro\\diffmicro\\v4_timeSeries.txt", "r");
+	for (int ii = 0; ii < nimages * s_power_spectra.dim; ++ii) {
+		//fprintf()
+		fscanf(version2, "%lf   %lf", &v2[ii].x, &v2[ii].y);
+		fscanf(version4, "%lf   %lf", &v4[ii].x, &v4[ii].y);
+		if ((v2[ii].x != v4[ii].x) || (v2[ii].y != v4[ii].y)) {
+			std::cout << "ERROR at " << ii <<"for timeSeries"<< std::endl;
+			break;
+		}
+		//std::cout << v2[ii].x << "  + i " << v2[ii].y << std::endl;
+
+	}
+	std::cout << "test timeSeries OK" << std::endl;*/
 }
 
 void save_partial_timeseries(INDEX nimages, INDEX igroup, INDEX dimgroup, STORE_REAL *ram_power_spectra)
