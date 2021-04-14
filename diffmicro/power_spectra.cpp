@@ -240,6 +240,23 @@ void pw_save_and_azth_avg(unsigned int *ram_radial_lut, INDEX starting_index,
 		}
 }
 
+void pw_azth_avg(unsigned int* lut,
+	INDEX npw, INDEX dimr, MY_REAL azh_avgs[], STORE_REAL ram_power_spectra[]) {
+
+	for (int i = 0; i < npw; i++) {
+
+		memset(ram_power_spectra, 0, sizeof(STORE_REAL) * s_load_image.dim / 2);
+
+		for (int j = 0; j < s_power_spectra.dim; j++) {
+			ram_power_spectra[lut[j]] = (STORE_REAL)dev_images_cpu[j+i* s_power_spectra.dim][0];
+		}
+
+		power_spectra_to_azhavg(1.0, ram_power_spectra, &(azh_avgs[i * dimr]));
+
+	}
+
+}
+
 
 int diff_autocorr(INDEX dim_file_list, INDEX dim_fifo, unsigned int* counter_avg, INDEX ind_sot, INDEX* file_index, INDEX* dist_map, std::vector<bool>& flg_valid_image_fifo, INDEX n_max_avg)
 {
@@ -383,9 +400,9 @@ bool calc_power_spectra(INDEX dimy, INDEX dimx)
 		power_spectra_avg_counter = new unsigned int[useri.file_list.size()];
 		ram_power_spectra = new STORE_REAL[s_power_spectra.numerosity * dimx * dimy / 2];
 
-		calc_power_spectra_autocorr2(nimages, dimx, dimy, dimr, ram_power_spectra, azh_avgs);
-		//calc_power_spectra_autocorr(dimy, dimx, nimages, image_mean, dimr, power_spectra_avg_counter,
-				//ram_power_spectra, azh_avgs);
+		//calc_power_spectra_autocorr2(nimages, dimx, dimy, dimr, ram_power_spectra, azh_avgs);
+		calc_power_spectra_autocorr(dimy, dimx, nimages, image_mean, dimr, power_spectra_avg_counter,
+				ram_power_spectra, azh_avgs);
 		for (INDEX i = 0; i < nimages; i++) 
 
 		{
@@ -717,6 +734,14 @@ void calc_power_spectra_autocorr2(INDEX nimages, INDEX dimy, INDEX dimx, INDEX& 
 		Image_to_complex_matrix2(dev_im_gpu_, dev_fft_gpu_, i, nimages);
 
 	}
+	cudaFree(dev_fft_gpu_);
+	dev_fft_gpu_ = NULL;
+
+	cudaFree(dev_im_gpu_);
+	dev_im_gpu_ = NULL;
+
+	delete[] m_im_;
+	m_im_ = NULL;
 
 	/*CUFFT_COMPLEX* tmp_display_cpx_(NULL);
 
@@ -742,17 +767,17 @@ void calc_power_spectra_autocorr2(INDEX nimages, INDEX dimy, INDEX dimx, INDEX& 
 
 	fclose(version3);*/
 
-	Calc_StructureFunction_With_TimeCorrelation(nimages);
+	Calc_StructureFunction_With_TimeCorrelation(nimages,dimx,dimy);
+
+	pw_azth_avg(ram_radial_lut,nimages, dimr, azh_avgs, ram_power_spectra);
 
 	//pw_save_and_azth_avg(ram_radial_lut, 0, nimages, dimr, azh_avgs, ram_power_spectra);
 
-	//save_partial_timeseries(nimages, 0, s_time_series.numerosity, ram_power_spectra);
+	
 
-	//read_memory_after_time_correlation(nimages, dimr, azh_avgs, ram_power_spectra);
+    //save_partial_timeseries(nimages, 0, s_time_series.numerosity, ram_power_spectra);
 
-	save_partial_timeseries(nimages, 0, s_time_series.numerosity, ram_power_spectra);
-
-    read_memory_after_time_correlation(nimages, dimr, azh_avgs, ram_power_spectra);
+    //read_memory_after_time_correlation(nimages, dimr, azh_avgs, ram_power_spectra);
 
 }
 

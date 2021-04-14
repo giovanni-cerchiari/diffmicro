@@ -334,7 +334,7 @@ void Image_to_complex_matrix2(unsigned short* dev_im_gpu_, CUFFT_COMPLEX* dev_ff
 
 void Calc_structure_function(INDEX nimages,int i,int device_count);
 
-void Calc_StructureFunction_With_TimeCorrelation(INDEX nimages);
+void Calc_StructureFunction_With_TimeCorrelation(INDEX nimages, INDEX dimx, INDEX dimy);
 
 //void timeseriesanalysis_gpu(INDEX dimtimeseries, CUFFT_COMPLEX* tseries, INDEX dimfft, CUFFT_COMPLEX* fft_memory, cufftHandle* tplan, CUFFT_REAL* corr_memory);
 

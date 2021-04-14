@@ -69,10 +69,10 @@ STORE_REAL *dev_power_spectra_gpu(NULL);
 //CUFFT_COMPLEX* dev_fft_gpu_(NULL);
 STORE_REAL* dev_ALLfft_diff(NULL);
 STORE_REAL* dev_ALLpower_spectra(NULL);
-
 CUFFT_REAL* dev_corr_gpu1(NULL);
 CUFFT_COMPLEX* dev_fft_time_gpu1(NULL);
 CUFFT_COMPLEX* dev_images_gpu1(NULL);
+STORE_REAL* power_spectra_gpu1(NULL);
 
 
 
@@ -276,7 +276,7 @@ __global__ void updatewithdivrebyramp_gpu(INDEX dim, INDEX ramp_start, CUFFT_COM
 		update[i] -= (2. / (FFTW_REAL)(ramp_start - i)) * in[i].x;
 }
 
-__global__ void updatewithdivrebyramp_gpu2(INDEX nimages, INDEX fft_size, INDEX N2, CUFFT_COMPLEX* in, FFTW_REAL* update, CUFFT_COMPLEX* dev_images_gpu)
+__global__ void updatewithdivrebyramp_gpu2(INDEX nimages, INDEX fft_size, INDEX N2, CUFFT_COMPLEX* in, FFTW_REAL* update, CUFFT_COMPLEX* dev_images_gpu,INDEX dimx,INDEX dimy, unsigned int* lut, STORE_REAL* power_spectra_gpu1)
 {
 	INDEX j = blockDim.y * blockIdx.y + threadIdx.y;
 
@@ -284,10 +284,12 @@ __global__ void updatewithdivrebyramp_gpu2(INDEX nimages, INDEX fft_size, INDEX 
 
 	if ((i < nimages) && (j < fft_size)) {
 		update[i + j * nimages] -= (2. / (FFTW_REAL)(nimages - i)) * in[i + j * N2].x;
-		//dev_power_spectra_gpu[i * nimages + j] = update[i + j * nimages];
-		dev_images_gpu[i + j * nimages].x = update[i + j * nimages];
-		dev_images_gpu[i + j * nimages].y = 0.0;
+		
+		dev_images_gpu[j + i * fft_size].x = update[i + j * nimages];
+		dev_images_gpu[j + i * fft_size].y = 0.0;
 
+		//power_spectra_gpu1[lut[j]+dimx*dimy*i] = update[i + j * nimages];
+		
 	}
 
 }
@@ -689,7 +691,7 @@ int gpu_allocation(int flg_mode, INDEX &nimages, INDEX &dimy, INDEX &dimx, INDEX
 		alloc_status_plan_time = cufftPlanMany(&tplan, 1, n,
 			NULL, 1, s_fft_time.dim,  //advanced data layout, NULL shuts it off
 			NULL, 1, s_fft_time.dim,  //advanced data layout, NULL shuts it off
-			CUFFT_Z2Z, s_power_spectra.dim);
+			CUFFT_Z2Z, useri.nthread_gpu);
 		//cufftExecZ2Z(tplan, dev_fft, dev_fft, CUFFT_FORWARD);
 #else
 #error Unknown CUDA type selected
@@ -715,8 +717,10 @@ int gpu_allocation(int flg_mode, INDEX &nimages, INDEX &dimy, INDEX &dimx, INDEX
 		alloc_status_imsot = cudaMalloc(&dev_image_sot_gpu, s_fft_images.memory_one);
 
 		// Mohammed 
-
+		
 		int alloc_status_fftime = cudaMalloc(&dev_fft_time_gpu1, s_fft_time.dim * s_power_spectra.dim * sizeof(CUFFT_COMPLEX));
+		//int alloc_status_pw1 = cudaMalloc(&power_spectra_gpu1, nimages*dimx*dimy/2* sizeof(STORE_REAL));
+
 
 
 
@@ -1026,14 +1030,14 @@ void Image_to_complex_matrix2(unsigned short* dev_im_gpu_, CUFFT_COMPLEX* dev_ff
 	fclose(version3);*/
 
 }
-void Calc_StructureFunction_With_TimeCorrelation(INDEX nimages) {
+void Calc_StructureFunction_With_TimeCorrelation(INDEX nimages, INDEX dimx, INDEX dimy) {
 
 	
 
 
 	int alloc_status_corr_g = cudaMalloc(&dev_corr_gpu1, nimages * s_power_spectra.dim*sizeof(CUFFT_REAL));
 
-
+	time_time_correlation.start();
 
 	int threads = 1024;
 	int blocksx = (s_power_spectra.dim + threads - 1) / threads;
@@ -1042,7 +1046,8 @@ void Calc_StructureFunction_With_TimeCorrelation(INDEX nimages) {
 	dim3 THREADS(threads);
 	dim3 BLOCKS(blocksx);
 
-	averagesabs2_array_gpu2 << < BLOCKS, THREADS >> > (s_fft_time.dim, (FFTW_REAL)(std::sqrt((FFTW_REAL)(s_fft_time.dim))),nimages, s_power_spectra.dim, dev_fft_time_gpu1, dev_corr_gpu1);
+	averagesabs2_array_gpu2 << < BLOCKS, THREADS >> > (s_fft_time.dim, (FFTW_REAL)(std::sqrt((FFTW_REAL)(s_fft_time.dim))),
+		nimages, s_power_spectra.dim, dev_fft_time_gpu1, dev_corr_gpu1);
 	cudaDeviceSynchronize(); 
 
 	//CUFFT_COMPLEX* tmp_display_cpx_(NULL);
@@ -1148,6 +1153,7 @@ void Calc_StructureFunction_With_TimeCorrelation(INDEX nimages) {
 
 	cudaDeviceSynchronize();
 
+	//int alloc_status_pw1 = cudaMalloc(&power_spectra_gpu1, nimages*dimx*dimy/2* sizeof(STORE_REAL));
 
 	int threads2 = 32;
 	int blocksx2 = (nimages + threads2 - 1) / threads2;
@@ -1156,8 +1162,13 @@ void Calc_StructureFunction_With_TimeCorrelation(INDEX nimages) {
 	dim3 THREADS3(threads2, threads2);
 	dim3 BLOCKS3(blocksx2, blocksy2);
 	updatewithdivrebyramp_gpu2 << <BLOCKS3, THREADS3 >> > (nimages, s_power_spectra.dim, s_fft_time.dim, 
-		dev_fft_time_gpu1, dev_corr_gpu1, dev_images_gpu);
+		dev_fft_time_gpu1, dev_corr_gpu1, dev_images_gpu,dimx,dimy, dev_radial_lut_gpu, power_spectra_gpu1);
+
 	cudaDeviceSynchronize();
+	time_time_correlation.stop();
+
+	cudaFree(dev_fft_time_gpu1);
+	dev_fft_time_gpu1 = NULL;
 
 	/*CUFFT_REAL* dev_corr_cpu1(NULL);
 	dev_corr_cpu1 = new CUFFT_REAL[s_power_spectra.dim * nimages];
@@ -1180,10 +1191,10 @@ void Calc_StructureFunction_With_TimeCorrelation(INDEX nimages) {
 	copyfrom_gpu << <BLOCKS22, THREADS22 >> > (nimages*s_power_spectra.dim, dev_images_gpu, dev_corr_gpu1);*/
 
 	
-
+	time_from_device_to_host.start();
 	cudaMemcpy(dev_images_cpu, dev_images_gpu, nimages* s_power_spectra.dim*sizeof(CUFFT_COMPLEX), cudaMemcpyDeviceToHost);
+	time_from_device_to_host.stop();
 
-	
 
 
 }
@@ -1563,7 +1574,7 @@ void timeseriesanalysis_gpu(INDEX dimtimeseries, INDEX dim_t, CUFFT_COMPLEX* tse
 		//std::cout << cudaGetLastError() << std::endl;
 	}
 
-	CUFFT_COMPLEX* dev_corr_cpu1(NULL);
+	/*CUFFT_COMPLEX* dev_corr_cpu1(NULL);
 	dev_corr_cpu1 = new CUFFT_COMPLEX[dimfft * useri.nthread_gpu];
 
 	cudaMemcpy(dev_corr_cpu1, fft_memory, dimfft * useri.nthread_gpu * sizeof(CUFFT_COMPLEX), cudaMemcpyDeviceToHost);
@@ -1573,7 +1584,7 @@ void timeseriesanalysis_gpu(INDEX dimtimeseries, INDEX dim_t, CUFFT_COMPLEX* tse
 		//fprintf()
 		fprintf(version2, "%f    %f \n", dev_corr_cpu1[ii].x, dev_corr_cpu1[ii].y);
 
-	fclose(version2);
+	fclose(version2);*/
 
 
 		// FFT execution
