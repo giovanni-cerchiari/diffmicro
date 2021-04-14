@@ -126,14 +126,17 @@ __global__ void gain_complex_lut(CUFFT_REAL gain, INDEX dim, unsigned int *lut, 
 	}
 }
 
-__global__ void gain_complex_lut_timeSeries(int ii,INDEX nimages, CUFFT_REAL gain, INDEX dim, unsigned int* lut, CUFFT_COMPLEX in[], CUFFT_COMPLEX out[])
+__global__ void gain_complex_lut_timeSeries(INDEX N2, FFTW_REAL gain1, int ii,INDEX nimages, CUFFT_REAL gain, INDEX dim, unsigned int* lut, CUFFT_COMPLEX in[], CUFFT_COMPLEX out[])
 {
 	INDEX i = blockDim.x * blockIdx.x + threadIdx.x;
 
 	if (i < dim)
 	{
-		out[i* nimages+ii].x = gain * in[lut[i]].x;
-		out[i* nimages+ii].y = gain * in[lut[i]].y;
+		//out[i* nimages+ii].x = gain * in[lut[i]].x;
+		//out[i* nimages+ii].y = gain * in[lut[i]].y;
+
+		out[i * N2 + ii].x = gain1 * gain * in[lut[i]].x;
+		out[i * N2 + ii].y = gain1 * gain * in[lut[i]].y;
 	}
 }
 
@@ -192,6 +195,42 @@ __global__ void averagesabs2_array_gpu(INDEX dim, INDEX dim_t, CUFFT_COMPLEX* _i
 	}
 }
 
+__global__ void averagesabs2_array_gpu2(INDEX N2, FFTW_REAL gain1,INDEX dim, INDEX dim_t, CUFFT_COMPLEX* _in, CUFFT_REAL* out)
+{
+	INDEX j = blockDim.x * blockIdx.x + threadIdx.x;
+	// Does the time series exists?
+	if (j < dim_t)
+	{
+		CUFFT_COMPLEX* in;
+		// selection of the time series
+		in = &(_in[j * N2]);
+
+		FFTW_REAL avg = 0.0;
+		FFTW_REAL coef1, coef2, abs2_fromstart, abs2_fromend;
+		INDEX i, ii;
+		for (i = 0; i < dim; ++i)
+		{
+			// next absolute value from the beginning of the array
+			abs2_fromstart = gain1* gain1*(in[i].x * in[i].x + in[i].y * in[i].y);
+
+			// next absolute value from the end of the array
+			ii = dim - 1 - i;
+			abs2_fromend = gain1 * gain1 * (in[ii].x * in[ii].x + in[ii].y * in[ii].y);
+
+			// in-place average
+			coef2 = (FFTW_REAL)(1.0) / (FFTW_REAL)(i + 1);
+			coef1 = (FFTW_REAL)(i)*coef2;
+			avg = coef1 * avg + coef2 * (abs2_fromstart + abs2_fromend);
+
+			// save the result in the output array.
+			// This operation must be done inside the for loop.
+			// ATTENTION! note the index
+			out[ii + j * dim] = avg;
+		}
+	}
+}
+
+
 
 
 __global__ void gaincomplex_gpu(INDEX dim, CUFFT_COMPLEX in[], FFTW_REAL gain, CUFFT_COMPLEX out[])
@@ -237,7 +276,7 @@ __global__ void updatewithdivrebyramp_gpu(INDEX dim, INDEX ramp_start, CUFFT_COM
 		update[i] -= (2. / (FFTW_REAL)(ramp_start - i)) * in[i].x;
 }
 
-__global__ void updatewithdivrebyramp_gpu2(INDEX nimages, INDEX fft_size, INDEX N2, CUFFT_COMPLEX* in, FFTW_REAL* update, STORE_REAL* dev_power_spectra_gpu)
+__global__ void updatewithdivrebyramp_gpu2(INDEX nimages, INDEX fft_size, INDEX N2, CUFFT_COMPLEX* in, FFTW_REAL* update, CUFFT_COMPLEX* dev_images_gpu)
 {
 	INDEX j = blockDim.y * blockIdx.y + threadIdx.y;
 
@@ -246,6 +285,9 @@ __global__ void updatewithdivrebyramp_gpu2(INDEX nimages, INDEX fft_size, INDEX 
 	if ((i < nimages) && (j < fft_size)) {
 		update[i + j * nimages] -= (2. / (FFTW_REAL)(nimages - i)) * in[i + j * N2].x;
 		//dev_power_spectra_gpu[i * nimages + j] = update[i + j * nimages];
+		dev_images_gpu[i + j * nimages].x = update[i + j * nimages];
+		dev_images_gpu[i + j * nimages].y = 0.0;
+
 	}
 
 }
@@ -672,6 +714,11 @@ int gpu_allocation(int flg_mode, INDEX &nimages, INDEX &dimy, INDEX &dimx, INDEX
 		alloc_status_rlut = cudaMalloc(&dev_radial_lut_gpu, s_radial_lut.memory_tot);
 		alloc_status_imsot = cudaMalloc(&dev_image_sot_gpu, s_fft_images.memory_one);
 
+		// Mohammed 
+
+		int alloc_status_fftime = cudaMalloc(&dev_fft_time_gpu1, s_fft_time.dim * s_power_spectra.dim * sizeof(CUFFT_COMPLEX));
+
+
 
 		
 		
@@ -955,7 +1002,8 @@ void Image_to_complex_matrix2(unsigned short* dev_im_gpu_, CUFFT_COMPLEX* dev_ff
 	mean_tmp = (CUFFT_REAL)(1. / mean_tmp);
 
 	gain_complex_lut_timeSeries << <s_fft_images.cexe.nbk, s_fft_images.cexe.nth >> >
-		(i,nimages, mean_tmp, s_fft_images.dim, dev_radial_lut_gpu, dev_fft_gpu_, dev_images_gpu);
+		(s_fft_time.dim,(FFTW_REAL)(1. / std::sqrt((FFTW_REAL)(s_fft_time.dim))),i,nimages, mean_tmp,
+			s_fft_images.dim, dev_radial_lut_gpu, dev_fft_gpu_, dev_fft_time_gpu1);
 
 
 	time_fft_norm.stop();
@@ -985,7 +1033,6 @@ void Calc_StructureFunction_With_TimeCorrelation(INDEX nimages) {
 
 	int alloc_status_corr_g = cudaMalloc(&dev_corr_gpu1, nimages * s_power_spectra.dim*sizeof(CUFFT_REAL));
 
-	int alloc_status_fftime = cudaMalloc(&dev_fft_time_gpu1, s_fft_time.dim * s_power_spectra.dim * sizeof(CUFFT_COMPLEX));
 
 
 	int threads = 1024;
@@ -995,7 +1042,8 @@ void Calc_StructureFunction_With_TimeCorrelation(INDEX nimages) {
 	dim3 THREADS(threads);
 	dim3 BLOCKS(blocksx);
 
-	averagesabs2_array_gpu << < BLOCKS, THREADS >> > (nimages, s_power_spectra.dim, dev_images_gpu, dev_corr_gpu1);
+	averagesabs2_array_gpu2 << < BLOCKS, THREADS >> > (s_fft_time.dim, (FFTW_REAL)(std::sqrt((FFTW_REAL)(s_fft_time.dim))),nimages, s_power_spectra.dim, dev_fft_time_gpu1, dev_corr_gpu1);
+	cudaDeviceSynchronize(); 
 
 	//CUFFT_COMPLEX* tmp_display_cpx_(NULL);
 	/*CUFFT_REAL* dev_corr_cpu1(NULL);
@@ -1035,7 +1083,7 @@ void Calc_StructureFunction_With_TimeCorrelation(INDEX nimages) {
 	std::cout << "test abs2 OK" << std::endl;*/
 	
 		//std::cout <<ii<<"   "<< dev_corr_cpu1[ii] << std::endl;
-	int threads1 = 32;
+	/*int threads1 = 32;
 	int blocksx1 = (nimages + threads1 - 1) / threads1;
 	int blocksy1 = (s_power_spectra.dim  + threads1 - 1) / threads1;
 
@@ -1045,7 +1093,7 @@ void Calc_StructureFunction_With_TimeCorrelation(INDEX nimages) {
 	gaincomplex_gpu2 << <BLOCKS1, THREADS1 >> > (nimages, s_power_spectra.dim, s_fft_time.dim, dev_images_gpu,
 		(FFTW_REAL)(1. / std::sqrt((FFTW_REAL)(s_fft_time.dim))), dev_fft_time_gpu1);
 
-	cudaDeviceSynchronize();
+	cudaDeviceSynchronize();*/
 
 	
 
@@ -1107,7 +1155,8 @@ void Calc_StructureFunction_With_TimeCorrelation(INDEX nimages) {
 
 	dim3 THREADS3(threads2, threads2);
 	dim3 BLOCKS3(blocksx2, blocksy2);
-	updatewithdivrebyramp_gpu2 << <BLOCKS3, THREADS3 >> > (nimages, s_power_spectra.dim, s_fft_time.dim, dev_fft_time_gpu1, dev_corr_gpu1, dev_power_spectra_gpu);
+	updatewithdivrebyramp_gpu2 << <BLOCKS3, THREADS3 >> > (nimages, s_power_spectra.dim, s_fft_time.dim, 
+		dev_fft_time_gpu1, dev_corr_gpu1, dev_images_gpu);
 	cudaDeviceSynchronize();
 
 	/*CUFFT_REAL* dev_corr_cpu1(NULL);
@@ -1124,13 +1173,13 @@ void Calc_StructureFunction_With_TimeCorrelation(INDEX nimages) {
 
 	std::cout << "test" << std::endl;*/
 
-	blocksx = (nimages * s_power_spectra.dim + threads - 1) / threads;
+	/*blocksx = (nimages * s_power_spectra.dim + threads - 1) / threads;
 	dim3 THREADS22(threads);
 	dim3 BLOCKS22(blocksx);
 
-	copyfrom_gpu << <BLOCKS22, THREADS22 >> > (nimages*s_power_spectra.dim, dev_images_gpu, dev_corr_gpu1);
+	copyfrom_gpu << <BLOCKS22, THREADS22 >> > (nimages*s_power_spectra.dim, dev_images_gpu, dev_corr_gpu1);*/
 
-	cudaDeviceSynchronize();
+	
 
 	cudaMemcpy(dev_images_cpu, dev_images_gpu, nimages* s_power_spectra.dim*sizeof(CUFFT_COMPLEX), cudaMemcpyDeviceToHost);
 
