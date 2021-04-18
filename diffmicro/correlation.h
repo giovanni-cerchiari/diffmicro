@@ -51,6 +51,7 @@ by using function pointers. Function pointers selection is performed in
 #include "diffmicro_log.h"
 #include "timeavg_by_correlation.h"
 
+const int version = 0;
 
 //--------------------------------------------------------------------------
 /*!
@@ -129,6 +130,7 @@ extern FFTW_COMPLEX* dev_image_sot_cpu;
 extern STORE_REAL *dev_power_spectra_gpu;
 //! device memory area where power spectra are stored for CPU execution
 extern FFTW_REAL* dev_power_spectra_cpu;
+
 
 //-----------------------------------------------------------------------------------
 
@@ -329,12 +331,12 @@ extern void (*timeseries_to_lutpw)(INDEX dimcopy, FFTW_REAL gain, INDEX t, INDEX
 
 void Image_to_complex_matrix(unsigned short* dev_im_gpu_, CUFFT_COMPLEX* dev_fft_gpu_,int i);
 
-void Image_to_complex_matrix2(unsigned short* dev_im_gpu_, CUFFT_COMPLEX* dev_fft_gpu_, int i, INDEX nimages);
+void Image_to_complex_matrix2(unsigned short* dev_im_gpu_, int i, INDEX nimages);
 
 
 void Calc_structure_function(INDEX nimages,int i,int device_count);
 
-void Calc_StructureFunction_With_TimeCorrelation(INDEX nimages, INDEX dimx, INDEX dimy);
+void Calc_StructureFunction_With_TimeCorrelation(INDEX nimages, INDEX dimx, INDEX dimy, FFTW_REAL* dev_images_cpu1);
 
 //void timeseriesanalysis_gpu(INDEX dimtimeseries, CUFFT_COMPLEX* tseries, INDEX dimfft, CUFFT_COMPLEX* fft_memory, cufftHandle* tplan, CUFFT_REAL* corr_memory);
 

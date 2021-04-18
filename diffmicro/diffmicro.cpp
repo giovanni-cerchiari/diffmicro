@@ -93,7 +93,8 @@ only the upper half of the averaged power spectra.
 		flg_file_init = false;
 	}
 
-	if (0 < path_ui.size())	if (true == useri.load(path_ui))
+	if (0 < path_ui.size())	
+		if (true == useri.load(path_ui))
 		useri.variables_to_gui();
 
 	// start the graphical user interface
@@ -115,12 +116,12 @@ only the upper half of the averaged power spectra.
 	im = new unsigned short[dimx*dimy];
 	load_image(useri.file_list[0], dimy, dimx, true, im, useri.flg_graph_mode);
 
-	if (!useri.flg_execution_mode) 
+	if (useri.flg_execution_mode==0) 
 	{
 		useri.execution_mode = DIFFMICRO_MODE_TIMECORRELATION;
 		std::cout << "execution in \"time correlation\" mode on ";
 	}
-	else {
+	else if (useri.flg_execution_mode == 1) {
 		useri.execution_mode = DIFFMICRO_MODE_FIFO;
 		std::cout << "execution in \"FIFO\" mode on " << std::endl;
 	}
@@ -147,11 +148,13 @@ only the upper half of the averaged power spectra.
 
 	calc_power_spectra(dimy, dimx);
 	
-	plot_dynamics(dimx);
 	
 	//--------------------------------------------------------------
 	// printing elapsed times
 	general_stw.stop();
+
+	plot_dynamics(dimx);
+
 
 	std::cout <<"-----------------------------------------------------------------"<<std::endl;
 	std::cout <<"LOG"<<std::endl<<std::endl;

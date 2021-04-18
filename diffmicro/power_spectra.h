@@ -172,6 +172,6 @@ The temporary files that are written are the output files, which are subsequentl
 void save_partial_timeseries(INDEX nimages, INDEX igroup, INDEX dimgroup, STORE_REAL* ram_power_spectra);
 
 
-void pw_azth_avg(unsigned int* lut,INDEX npw, INDEX dimr, MY_REAL azh_avgs[], STORE_REAL ram_power_spectra[]);
+void pw_azth_avg(unsigned int* lut,INDEX npw, INDEX dimr, MY_REAL azh_avgs[], STORE_REAL ram_power_spectra[], FFTW_REAL* dev_images_cpu1);
 
 #endif

@@ -67,6 +67,7 @@ enum ui_execution_mode_enum
 	DIFFMICRO_MODE_FIFO = 0,
 	/*!TIMECORRELATION mode is called in the article WITH_FT algorithm.*/
 	DIFFMICRO_MODE_TIMECORRELATION = 1
+
 };
 
 /*!Enumerator used as id of the entries of the graphical user interface window*/

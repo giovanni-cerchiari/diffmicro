@@ -241,14 +241,14 @@ void pw_save_and_azth_avg(unsigned int *ram_radial_lut, INDEX starting_index,
 }
 
 void pw_azth_avg(unsigned int* lut,
-	INDEX npw, INDEX dimr, MY_REAL azh_avgs[], STORE_REAL ram_power_spectra[]) {
+	INDEX npw, INDEX dimr, MY_REAL azh_avgs[], STORE_REAL ram_power_spectra[], FFTW_REAL* dev_images_cpu1) {
 
 	for (int i = 0; i < npw; i++) {
 
 		memset(ram_power_spectra, 0, sizeof(STORE_REAL) * s_load_image.dim / 2);
 
 		for (int j = 0; j < s_power_spectra.dim; j++) {
-			ram_power_spectra[lut[j]] = (STORE_REAL)dev_images_cpu[j+i* s_power_spectra.dim][0];
+			ram_power_spectra[lut[j]] = (STORE_REAL)dev_images_cpu1[j+i* s_power_spectra.dim];
 		}
 
 		power_spectra_to_azhavg(1.0, ram_power_spectra, &(azh_avgs[i * dimr]));
@@ -399,10 +399,13 @@ bool calc_power_spectra(INDEX dimy, INDEX dimx)
 	case DIFFMICRO_MODE_TIMECORRELATION:
 		power_spectra_avg_counter = new unsigned int[useri.file_list.size()];
 		ram_power_spectra = new STORE_REAL[s_power_spectra.numerosity * dimx * dimy / 2];
-
-		//calc_power_spectra_autocorr2(nimages, dimx, dimy, dimr, ram_power_spectra, azh_avgs);
-		calc_power_spectra_autocorr(dimy, dimx, nimages, image_mean, dimr, power_spectra_avg_counter,
-				ram_power_spectra, azh_avgs);
+		if (version == 1) {
+			calc_power_spectra_autocorr2(nimages, dimx, dimy, dimr, ram_power_spectra, azh_avgs);
+		}
+		else {
+			calc_power_spectra_autocorr(dimy, dimx, nimages, image_mean, dimr, power_spectra_avg_counter,
+					ram_power_spectra, azh_avgs);
+		}
 		for (INDEX i = 0; i < nimages; i++) 
 
 		{
@@ -693,9 +696,10 @@ void calc_power_spectra_autocorr(INDEX dimy, INDEX dimx, INDEX nimages, STORE_RE
 void calc_power_spectra_autocorr2(INDEX nimages, INDEX dimy, INDEX dimx, INDEX& dimr, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs) {
 
 	
-	CUFFT_COMPLEX* dev_fft_gpu_(NULL);
+	//CUFFT_COMPLEX* dev_fft_gpu_(NULL);
 	unsigned short* dev_im_gpu_(NULL);
 	unsigned short* m_im_;
+	FFTW_REAL* dev_images_cpu1;
 	int alloc_status_li_, alloc_status_fft_;
 	alloc_status_li_ = cudaMalloc(&dev_im_gpu_, s_load_image.memory_tot);
 	if (cudaSuccess != alloc_status_li_) {
@@ -703,11 +707,11 @@ void calc_power_spectra_autocorr2(INDEX nimages, INDEX dimy, INDEX dimx, INDEX& 
 		std::cout << "ERROR: cudaMalloc " << std::endl;
 	}
 
-	alloc_status_fft_ = cudaMalloc(&dev_fft_gpu_, s_fft.memory_tot);
+	/*alloc_status_fft_ = cudaMalloc(&dev_fft_gpu_, s_fft.memory_tot);
 	if (cudaSuccess != alloc_status_fft_) {
 
 		std::cout << "ERROR: cudaMalloc dev_fft_gpu_" << std::endl;
-	}
+	}*/
 	/*alloc_status_fft_ = cudaMalloc(&dev_fft_gpu_, s_fft.memory_tot);
 	if (cudaSuccess != alloc_status_fft_) {
 
@@ -719,6 +723,8 @@ void calc_power_spectra_autocorr2(INDEX nimages, INDEX dimy, INDEX dimx, INDEX& 
 	#else
 	#error Unknown CUDA type selected
 	#endif*/
+	//Mohammed 
+	dev_images_cpu1 = new FFTW_REAL[nimages * s_power_spectra.dim];
 	m_im_ = new unsigned short[dimx * dimy];
 	for (int i = 0; i < nimages; i++) {
 
@@ -731,11 +737,11 @@ void calc_power_spectra_autocorr2(INDEX nimages, INDEX dimy, INDEX dimx, INDEX& 
 		time_from_host_to_device.stop();
 
 		// from image to complex matrix
-		Image_to_complex_matrix2(dev_im_gpu_, dev_fft_gpu_, i, nimages);
+		Image_to_complex_matrix2(dev_im_gpu_, i, nimages);
 
 	}
-	cudaFree(dev_fft_gpu_);
-	dev_fft_gpu_ = NULL;
+	cudaFree(dev_fft_gpu);
+	dev_fft_gpu= NULL;
 
 	cudaFree(dev_im_gpu_);
 	dev_im_gpu_ = NULL;
@@ -767,9 +773,9 @@ void calc_power_spectra_autocorr2(INDEX nimages, INDEX dimy, INDEX dimx, INDEX& 
 
 	fclose(version3);*/
 
-	Calc_StructureFunction_With_TimeCorrelation(nimages,dimx,dimy);
+	Calc_StructureFunction_With_TimeCorrelation(nimages,dimx,dimy, dev_images_cpu1);
 
-	pw_azth_avg(ram_radial_lut,nimages, dimr, azh_avgs, ram_power_spectra);
+	pw_azth_avg(ram_radial_lut,nimages, dimr, azh_avgs, ram_power_spectra, dev_images_cpu1);
 
 	//pw_save_and_azth_avg(ram_radial_lut, 0, nimages, dimr, azh_avgs, ram_power_spectra);
 
