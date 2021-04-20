@@ -1,5 +1,5 @@
 path_images	C:\samples\Binary input\
-images_interval	1	4000
+images_interval	1	100
 flg_file_valid_image	0
 number_of_averages	5000
 delay_max	5000

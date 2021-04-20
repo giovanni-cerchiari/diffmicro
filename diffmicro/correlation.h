@@ -51,7 +51,7 @@ by using function pointers. Function pointers selection is performed in
 #include "diffmicro_log.h"
 #include "timeavg_by_correlation.h"
 
-const int version = 0;
+const int version = 1;
 
 //--------------------------------------------------------------------------
 /*!
