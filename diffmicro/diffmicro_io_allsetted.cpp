@@ -182,6 +182,8 @@ bool diffmicro_user_interface::all_setted()
 		
 	status *= check_positive_integer_set_box(CHECKBOX_DIST_MAX, DIST_MAX);
 	status *= check_positive_integer_set_box(CHECKBOX_N_PW_AVERAGES, N_PW_AVERAGES);
+	//status *= check_positive_integer_set_box(CHECKBOX_VERSION, VERSION);
+
 	status *= check_positive_integer_set_box(CHECKBOX_FREQUENCY_MAX, FREQUENCY_MAX);
 
 	flg = true;

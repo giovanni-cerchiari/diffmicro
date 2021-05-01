@@ -687,7 +687,7 @@ int gpu_allocation(int flg_mode, INDEX &nimages, INDEX &dimy, INDEX &dimx, INDEX
 
 		//int version = 1;
 
-		if (version == 1) {
+		if (useri.VR == 1) {
 
 
 #if (CUFFT_TYPE == CUFFT_TYPE_FLOAT)
@@ -721,20 +721,37 @@ int gpu_allocation(int flg_mode, INDEX &nimages, INDEX &dimy, INDEX &dimx, INDEX
 			//alloc_status_corr_g = cudaMalloc(&dev_corr_gpu, s_time_series.memory_one * useri.nthread_gpu);
 			//alloc_status_pw = cudaMalloc(&dev_power_spectra_gpu, s_power_spectra.memory_one );
 			alloc_status_fft = cudaMalloc(&dev_fft_gpu, s_fft.memory_tot);
+			if (cudaSuccess != alloc_status_fft) {
+
+				std::cout << "ERROR: cudaMalloc dev_fft_gpu" << std::endl;
+			}
 			//alloc_status_li = cudaMalloc(&dev_im_gpu, s_load_image.memory_tot);
 			alloc_status_rlut = cudaMalloc(&dev_radial_lut_gpu, s_radial_lut.memory_tot);
+			if (cudaSuccess != alloc_status_rlut) {
+
+				std::cout << "ERROR: cudaMalloc dev_radial_lut_gpu" << std::endl;
+			}
 			//alloc_status_imsot = cudaMalloc(&dev_image_sot_gpu, s_fft_images.memory_one);
 
 			// Mohammed 
 			int alloc_status_fftime = cudaMalloc(&dev_fft_time_gpu1, s_fft_time.dim * s_power_spectra.dim * sizeof(CUFFT_COMPLEX));
+			if (cudaSuccess != alloc_status_fftime) {
+
+				std::cout << "ERROR: cudaMalloc dev_fft_time_gpu1" << std::endl;
+			}
+			
 			alloc_status_im = cudaMalloc(&dev_images_gpu1, s_time_series.dim * sizeof(FFTW_REAL) * capacity);
+			if (cudaSuccess != alloc_status_im) {
+
+				std::cout << "ERROR: cudaMalloc dev_images_gpu1" << std::endl;
+			}
 			//int alloc_status_pw1 = cudaMalloc(&power_spectra_gpu1, nimages*dimx*dimy/2* sizeof(STORE_REAL));
 
-			INDEX m1 = s_fft_time.dim * s_power_spectra.dim * sizeof(CUFFT_COMPLEX);
-			INDEX m2 = s_time_series.memory_one * capacity;
-			INDEX m22 = 2000 * sizeof(FFTW_REAL) * capacity;
+			//INDEX m1 = s_fft_time.dim * s_power_spectra.dim * sizeof(CUFFT_COMPLEX);
+			//INDEX m2 = s_time_series.memory_one * capacity;
+			//INDEX m22 = 2000 * sizeof(FFTW_REAL) * capacity;
 
-			INDEX free_video_memory1 = (INDEX)(deviceProp.totalGlobalMem) - (m1 + s_radial_lut.memory_tot + s_fft.memory_tot + s_time_series.memory_one * capacity);
+			//INDEX free_video_memory1 = (INDEX)(deviceProp.totalGlobalMem) - (m1 + s_radial_lut.memory_tot + s_fft.memory_tot + s_time_series.memory_one * capacity);
 
 
 
@@ -1218,6 +1235,10 @@ void Calc_StructureFunction_With_TimeCorrelation(INDEX nimages, INDEX dimx, INDE
 
 
 	int alloc_status_corr_g = cudaMalloc(&dev_corr_gpu1, nimages * s_power_spectra.dim*sizeof(CUFFT_REAL));
+	if (cudaSuccess != alloc_status_corr_g) {
+
+		std::cout << "ERROR: cudaMalloc dev_corr_gpu1" << std::endl;
+	}
 
 	time_time_correlation.start();
 
@@ -1350,7 +1371,7 @@ void Calc_StructureFunction_With_TimeCorrelation(INDEX nimages, INDEX dimx, INDE
 	time_time_correlation.stop();
 
 	cudaFree(dev_fft_time_gpu1);
-	dev_fft_time_gpu1 = NULL;
+	//dev_fft_time_gpu1 = NULL;
 
 	/*CUFFT_REAL* dev_corr_cpu1(NULL);
 	dev_corr_cpu1 = new CUFFT_REAL[s_power_spectra.dim * nimages];

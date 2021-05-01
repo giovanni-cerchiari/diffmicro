@@ -93,12 +93,13 @@ only the upper half of the averaged power spectra.
 		flg_file_init = false;
 	}
 
-	if (0 < path_ui.size())	
+	if (0 < path_ui.size())
 		if (true == useri.load(path_ui))
-		useri.variables_to_gui();
+			//std::cout << std::endl;
+		//useri.variables_to_gui();
 
 	// start the graphical user interface
-	start_gui(path_ui, !flg_file_init);
+	//start_gui(path_ui, !flg_file_init);
 
 	if (useri.flg_graph_mode)
 		init_figure_enviroment();
@@ -109,13 +110,13 @@ only the upper half of the averaged power spectra.
 	general_stw.start();
 
 	//load_binary_image(useri.file_list[0], dimy, dimx, false, im);
-	std::string path = "C:\\samples\\performance_image 512\\pippo_0000.tif";
-	load_image(path, dimy, dimx, false, im, false);
+	//std::string path = "C:\\samples\\performance_image 512\\pippo_0000.tif";
+	load_image(useri.file_list[0], dimy, dimx, false, im, false);
 	if (useri.flg_graph_mode)
 		initilize_display(dimx, dimy, useri.file_list.size());
 	im = new unsigned short[dimx*dimy];
 	load_image(useri.file_list[0], dimy, dimx, true, im, useri.flg_graph_mode);
-
+	
 	if (useri.flg_execution_mode==0) 
 	{
 		useri.execution_mode = DIFFMICRO_MODE_TIMECORRELATION;

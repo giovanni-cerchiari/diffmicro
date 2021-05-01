@@ -81,6 +81,8 @@ enum ui_variable_enum
 	//INDEX last_image;
 	/*!number of maxium averages to calculate a power spectrum*/
 	N_PW_AVERAGES = 2,
+
+	VERSION,
 	//INDEX n_pw_averages;
 	/*!maxium temporal delay that must be consider*/
 	DIST_MAX = 3,
@@ -167,6 +169,9 @@ enum ui_variable_enum
 	CHECKBOX_RAM_CPU = 133,
 	CHECKBOX_GRAPH_MODE = 129,
 
+	CHECKBOX_VERSION = 130,
+
+
 
 	FLG_TIME_FILENAME = 1027,
 	FLG_VALID_IMAGE_FILENAME = 1028
@@ -234,6 +239,10 @@ class diffmicro_user_interface
 		/*!quantization time step. It must fit the minimum time difference between to images so that round(min/time_step)>0*/
 		MY_REAL time_step;
 
+		INDEX VR;
+
+		INDEX binary;
+
 		/*!output flag: if ==true write on file the azimuthal averages*/
 		bool flg_write_azimuthal_avg;
 		/*!output flag: if ==true write on file all the averaged power spectrum*/
@@ -279,7 +288,7 @@ class diffmicro_user_interface
 		INDEX hardware;
 		/*!Input path*/
 		std::string path_input;
-
+        std::string path_first_image;
 
 		std::string file_times;
 		/*File that indicates which images are valid. It can only be used in FIFO mode.*/
@@ -313,6 +322,8 @@ class diffmicro_user_interface
 		vector of the files to be processed
 		*/
 		std::vector< std::string> file_list;
+		//std::vector< std::string> file_list1;
+
 		/*!flg to know if an image is valid or not*/
 		std::vector<bool> flg_valid_image;
 		/*!time stamp for each image*/

@@ -210,6 +210,9 @@ void diffmicro_user_interface::initialize()
 	add_input_line(n_cols, n_rows, line, CHECKBOX_FREQUENCY_MAX, 10000 + FREQUENCY_MAX, "maximum spatial frequency :", FREQUENCY_MAX, UI_TYPE_INDEX_DIFFMICRO);
 	++line;
 	add_button_line(n_cols, n_rows, line, CHECKBOX_EXECUTION_MODE, EXECUTION_MODE, "FIFO mode", "Time correlation mode", EXECUTION_MODE, UI_TYPE_STRING_DIFFMICRO);
+	//++line;
+	//add_input_line(n_cols, n_rows, line, CHECKBOX_VERSION, 10000 + VERSION, "Version :", VERSION, UI_TYPE_INDEX_DIFFMICRO);
+
 	++line;
 	add_button_line(n_cols, n_rows, line, CHECKBOX_HARDWARE_SELECTION, HARDWARE_SELECTION, "Run on CPU", "Run on GPU", HARDWARE_SELECTION, UI_TYPE_STRING_DIFFMICRO);
 	++line;

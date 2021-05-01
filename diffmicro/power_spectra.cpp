@@ -383,15 +383,16 @@ bool calc_power_spectra(INDEX dimy, INDEX dimx)
 		// group averages initialization
 		power_spectra_avg_counter = new unsigned int[useri.file_list.size()];
 		ram_power_spectra = new STORE_REAL[s_power_spectra.numerosity * dimx * dimy / 2];
-
-		calc_power_spectra_ALL(nimages, dimx, dimy, dimr,ram_power_spectra, azh_avgs);
-
-		//calc_power_spectra_autocorr2(nimages, dimx, dimy, dimr, ram_power_spectra, azh_avgs);
-
-
 		memset(power_spectra_avg_counter, 0, useri.file_list.size() * sizeof(unsigned int));
-		//calc_power_spectra_fifo(nimages, useri_dist_max, image_mean, dimr,
-			         //           power_spectra_avg_counter, ram_power_spectra, azh_avgs);
+		if (useri.VR == 1) {
+			std::cout << "Version 1" << std::endl;
+			calc_power_spectra_ALL(nimages, dimx, dimy, dimr, ram_power_spectra, azh_avgs);
+		}
+		else {
+			std::cout << "Version 0" << std::endl;
+			calc_power_spectra_fifo(nimages, useri_dist_max, image_mean, dimr,
+				power_spectra_avg_counter, ram_power_spectra, azh_avgs);
+		}
 		if (useri.flg_graph_mode)
 			display_average(useri.file_list.size(), power_spectra_avg_counter, &average_counter_window, &average_counter_scatter, &x_avg_counter, &y_avg_counter, "avg counter");
 
@@ -399,10 +400,12 @@ bool calc_power_spectra(INDEX dimy, INDEX dimx)
 	case DIFFMICRO_MODE_TIMECORRELATION:
 		power_spectra_avg_counter = new unsigned int[useri.file_list.size()];
 		ram_power_spectra = new STORE_REAL[s_power_spectra.numerosity * dimx * dimy / 2];
-		if (version == 1) {
+		if (useri.VR == 1) {
+			std::cout << "Version 1" << std::endl;
 			calc_power_spectra_autocorr2(nimages, dimx, dimy, dimr, ram_power_spectra, azh_avgs);
 		}
 		else {
+			std::cout << "Version 0" << std::endl;
 			calc_power_spectra_autocorr(dimy, dimx, nimages, image_mean, dimr, power_spectra_avg_counter,
 					ram_power_spectra, azh_avgs);
 		}
@@ -665,7 +668,6 @@ void calc_power_spectra_autocorr(INDEX dimy, INDEX dimx, INDEX nimages, STORE_RE
 	n_groups_reload = n_group + 1;
 	group_rem = (INDEX)(group.rem);
 	//-----------------------------------------
-	std::cout<< n_group<<std::endl;
 	for (i = 0; i < n_group; ++i)
 	{
 		// 1) load all images to dev and move the fft values into the storage

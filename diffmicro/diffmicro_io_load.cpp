@@ -59,6 +59,7 @@ void diffmicro_user_interface::variables_to_gui()
 	set_int(FIRST_IMAGE, first_image);
 	set_int(LAST_IMAGE, last_image);
 	set_int(N_PW_AVERAGES, n_pw_averages);
+	set_int(VERSION, VR);
 	set_int(DIST_MAX, dist_max);
 	/*set_int(TIME_STEP, (INDEX)(time_step));*/
 	set_int(FREQUENCY_MAX, frequency_max);
@@ -194,6 +195,8 @@ bool diffmicro_user_interface::load(std::string file_ui)
 	std::fstream fin;
 	std::string line;
 	std::string path;
+	std::string path1;
+
 	
 	std::vector< std::string> entry, list_dir, list_file_tmp;
 
@@ -240,6 +243,18 @@ bool diffmicro_user_interface::load(std::string file_ui)
 			}
 			flg_path = true;
 		}
+		if (0 == strcmp(entry[0].c_str(), "path_first_image"))
+		{
+			if (entry.size() != 2)
+			{
+				std::cerr << "invalid path_binay" << std::endl;
+				return false;
+			}
+
+			path1 = entry[1];
+			this->path_first_image = path1;
+			
+		}
 		/*if (0 == strcmp(entry[0].c_str(), "file_times"))
 		{
 			if (entry.size() != 2)
@@ -280,6 +295,12 @@ bool diffmicro_user_interface::load(std::string file_ui)
 
 		if (0 == strcmp(entry[0].c_str(), "number_of_averages") && (entry.size() == 2))
 			this->n_pw_averages = convert_string<INDEX>(entry[1]);
+
+		if (0 == strcmp(entry[0].c_str(), "Version") && (entry.size() == 2))
+			this->VR = convert_string<INDEX>(entry[1]);
+
+		if (0 == strcmp(entry[0].c_str(), "Binary") && (entry.size() == 2))
+			this->binary = convert_string<INDEX>(entry[1]);
 
 		if (0 == strcmp(entry[0].c_str(), "delay_max") && (entry.size() == 2))
 			this->dist_max = convert_string<INDEX>(entry[1]);
