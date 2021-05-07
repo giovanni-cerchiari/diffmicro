@@ -293,7 +293,7 @@ void timeseries_analysis_cpu(INDEX nth);
 /*!This function executes the time series analysis on the wavevectors. CPU version.*/
 void time_series_analysis_cpu();
 /*!This function executes the time series analysis on the wavevectors. GPU version.*/
-void time_series_analysis_gpu();
+void time_series_analysis_gpu(INDEX i);
 /*!The function pointer allows selecting the execution on gpu or cpu, while retaining the same code structure.*/
 extern void (*time_series_analysis)();
 
@@ -331,6 +331,8 @@ extern void (*timeseries_to_lutpw)(INDEX dimcopy, FFTW_REAL gain, INDEX t, INDEX
 void Image_to_complex_matrix(unsigned short* dev_im_gpu_, CUFFT_COMPLEX* dev_fft_gpu_,int i);
 
 void Image_to_complex_matrix2(unsigned short* dev_im_gpu_, int i, INDEX nimages);
+
+void Image_to_complex_matrix3(INDEX dimfreq,INDEX ifr,int i, INDEX nimages);
 
 
 void Calc_structure_function(INDEX nimages,int i,int device_count);

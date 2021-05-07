@@ -257,6 +257,23 @@ void pw_azth_avg(unsigned int* lut,
 
 }
 
+void pw_azth_avg2(unsigned int* lut,
+	INDEX npw, INDEX dimr, MY_REAL azh_avgs[], STORE_REAL ram_power_spectra[], FFTW_COMPLEX* dev_images_cpu) {
+
+	for (int i = 0; i < npw; i++) {
+
+		memset(ram_power_spectra, 0, sizeof(STORE_REAL) * s_load_image.dim / 2);
+
+		for (int j = 0; j < s_power_spectra.dim; j++) {
+			ram_power_spectra[lut[j]] = (STORE_REAL)dev_images_cpu[i + j * npw][0];
+			//std::cout << ram_power_spectra[lut[j]] << std::endl;
+		}
+
+		power_spectra_to_azhavg(1.0, ram_power_spectra, &(azh_avgs[i * dimr]));
+
+	}
+
+}
 
 int diff_autocorr(INDEX dim_file_list, INDEX dim_fifo, unsigned int* counter_avg, INDEX ind_sot, INDEX* file_index, INDEX* dist_map, std::vector<bool>& flg_valid_image_fifo, INDEX n_max_avg)
 {
@@ -337,7 +354,7 @@ bool calc_power_spectra(INDEX dimy, INDEX dimx)
 	// cuda allocation
 	cudaError_t err = cudaGetLastError();
 	if (err != cudaSuccess)
-		printf("Error: %s\n", cudaGetErrorString(err));
+		//printf("Error: %s\n", cudaGetErrorString(err));
 
 	if(0 != diffmicro_allocation(useri.execution_mode, nimages, dimy, dimx, dim_radial_lut, ram_radial_lut))
 		{
@@ -403,9 +420,12 @@ bool calc_power_spectra(INDEX dimy, INDEX dimx)
 		if (useri.VR == 1) {
 			std::cout << "Version 1" << std::endl;
 			calc_power_spectra_autocorr2(nimages, dimx, dimy, dimr, ram_power_spectra, azh_avgs);
+			
 		}
 		else {
 			std::cout << "Version 0" << std::endl;
+			//calc_power_spectra_autocorr3(dimy, dimx, nimages, image_mean, dimr, power_spectra_avg_counter,
+				//ram_power_spectra, azh_avgs);
 			calc_power_spectra_autocorr(dimy, dimx, nimages, image_mean, dimr, power_spectra_avg_counter,
 					ram_power_spectra, azh_avgs);
 		}
@@ -673,6 +693,52 @@ void calc_power_spectra_autocorr(INDEX dimy, INDEX dimx, INDEX nimages, STORE_RE
 		// 1) load all images to dev and move the fft values into the storage
 		load_memory_for_time_correlation(dimx, dimy, nimages, i* s_time_series.numerosity, s_time_series.numerosity, m_im, image_mean);
 		// 2) analyze the time series 
+		//time_series_analysis();
+		time_series_analysis_gpu(i);
+
+
+		// 3) unrol time series and save partial results
+		//save_partial_timeseries(nimages, i, s_time_series.numerosity, ram_power_spectra);
+	}
+	if (0 != group_rem)
+	{
+		// 1) load all images to dev and move the fft values into the storage
+		load_memory_for_time_correlation(dimx, dimy, nimages, i* s_time_series.numerosity, group_rem, m_im, image_mean);
+
+		// 2) analyze the time series 
+		//time_series_analysis();
+		time_series_analysis_gpu(i);
+
+		// 3) unrol time series and save partial results
+		//save_partial_timeseries(nimages, i, group_rem, ram_power_spectra);
+	}
+	//-------------------------------------------------
+	// reload merged partial results 
+	//read_memory_after_time_correlation(nimages, dimr, azh_avgs, ram_power_spectra);
+	//--------------------------------------------------
+	pw_azth_avg2(ram_radial_lut, nimages, dimr, azh_avgs, ram_power_spectra, dev_images_cpu);
+
+	delete[] m_im;
+}
+void calc_power_spectra_autocorr3(INDEX dimy, INDEX dimx, INDEX nimages, STORE_REAL* image_mean, INDEX& dimr, unsigned int* power_spectra_avg_counter, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs) {
+
+	INDEX j, i;
+	lldiv_t group;
+	INDEX n_group, group_rem;
+	fifo_min fifo;
+	INDEX npw;
+	unsigned short* m_im = new unsigned short[dimy * dimx];
+
+	group = std::div((long long)(s_fft_images.dim), (long long)(s_time_series.numerosity));
+	n_group = (INDEX)(group.quot);
+	n_groups_reload = n_group + 1;
+	group_rem = (INDEX)(group.rem);
+	//-----------------------------------------
+	for (i = 0; i < n_group; ++i)
+	{
+		// 1) load all images to dev and move the fft values into the storage
+		load_memory_for_time_correlation(dimx, dimy, nimages, i * s_time_series.numerosity, s_time_series.numerosity, m_im, image_mean);
+		// 2) analyze the time series 
 		time_series_analysis();
 		// 3) unrol time series and save partial results
 		save_partial_timeseries(nimages, i, s_time_series.numerosity, ram_power_spectra);
@@ -680,7 +746,7 @@ void calc_power_spectra_autocorr(INDEX dimy, INDEX dimx, INDEX nimages, STORE_RE
 	if (0 != group_rem)
 	{
 		// 1) load all images to dev and move the fft values into the storage
-		load_memory_for_time_correlation(dimx, dimy, nimages, i* s_time_series.numerosity, group_rem, m_im, image_mean);
+		load_memory_for_time_correlation(dimx, dimy, nimages, i * s_time_series.numerosity, group_rem, m_im, image_mean);
 
 		// 2) analyze the time series 
 		time_series_analysis();
@@ -693,21 +759,30 @@ void calc_power_spectra_autocorr(INDEX dimy, INDEX dimx, INDEX nimages, STORE_RE
 	read_memory_after_time_correlation(nimages, dimr, azh_avgs, ram_power_spectra);
 	//--------------------------------------------------
 	delete[] m_im;
+
 }
 
 void calc_power_spectra_autocorr2(INDEX nimages, INDEX dimy, INDEX dimx, INDEX& dimr, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs) {
 
 	
 	//CUFFT_COMPLEX* dev_fft_gpu_(NULL);
-	unsigned short* dev_im_gpu_(NULL);
+	//unsigned short* dev_im_gpu_(NULL);
 	unsigned short* m_im_;
 	FFTW_REAL* dev_images_cpu1;
-	int alloc_status_li_, alloc_status_fft_;
-	alloc_status_li_ = cudaMalloc(&dev_im_gpu_, s_load_image.memory_tot);
+
+	lldiv_t group;
+	INDEX n_group, group_rem;
+
+	group = std::div((long long)(s_fft_images.dim), (long long)(s_time_series.numerosity));
+	n_group = (INDEX)(group.quot);
+	n_groups_reload = n_group + 1;
+	group_rem = (INDEX)(group.rem);
+	//int alloc_status_li_, alloc_status_fft_;
+	/*alloc_status_li_ = cudaMalloc(&dev_im_gpu_, s_load_image.memory_tot);
 	if (cudaSuccess != alloc_status_li_) {
 
 		std::cout << "ERROR: cudaMalloc " << std::endl;
-	}
+	}*/
 
 	/*alloc_status_fft_ = cudaMalloc(&dev_fft_gpu_, s_fft.memory_tot);
 	if (cudaSuccess != alloc_status_fft_) {
@@ -725,7 +800,7 @@ void calc_power_spectra_autocorr2(INDEX nimages, INDEX dimy, INDEX dimx, INDEX& 
 	#else
 	#error Unknown CUDA type selected
 	#endif*/
-	//Mohammed 
+	
 	dev_images_cpu1 = new FFTW_REAL[nimages * s_power_spectra.dim];
 	m_im_ = new unsigned short[dimx * dimy];
 	for (int i = 0; i < nimages; i++) {
@@ -735,21 +810,21 @@ void calc_power_spectra_autocorr2(INDEX nimages, INDEX dimy, INDEX dimx, INDEX& 
 		time_reading_from_disk.stop();
 
 		time_from_host_to_device.start();
-		cudaMemcpy(dev_im_gpu_, m_im_, s_load_image.memory_one, cudaMemcpyHostToDevice);
+		cudaMemcpy(dev_im_gpu, m_im_, s_load_image.memory_one, cudaMemcpyHostToDevice);
 		time_from_host_to_device.stop();
 
 		// from image to complex matrix
-		Image_to_complex_matrix2(dev_im_gpu_, i, nimages);
+		Image_to_complex_matrix2(dev_im_gpu, i, nimages);
 
 	}
 	cudaFree(dev_fft_gpu);
-	dev_fft_gpu= NULL;
+	//dev_fft_gpu= NULL;
 
-	cudaFree(dev_im_gpu_);
-	dev_im_gpu_ = NULL;
+	//cudaFree(dev_im_gpu_);
+	//dev_im_gpu_ = NULL;
 
 	delete[] m_im_;
-	m_im_ = NULL;
+	//m_im_ = NULL;
 
 	/*CUFFT_COMPLEX* tmp_display_cpx_(NULL);
 
@@ -789,7 +864,8 @@ void calc_power_spectra_autocorr2(INDEX nimages, INDEX dimy, INDEX dimx, INDEX& 
 
 }
 
-void load_memory_for_time_correlation(INDEX dimx, INDEX dimy, INDEX nimages, INDEX start_spacial_freq_in_lut, INDEX dimfreq, unsigned short *m_im, FFTW_REAL *image_mean)
+void load_memory_for_time_correlation(INDEX dimx, INDEX dimy, INDEX nimages, INDEX start_spacial_freq_in_lut, 
+	INDEX dimfreq, unsigned short *m_im, FFTW_REAL *image_mean)
 {
 	INDEX ifile;
 	for (ifile = 0; ifile < nimages; ++ifile)
@@ -798,14 +874,22 @@ void load_memory_for_time_correlation(INDEX dimx, INDEX dimy, INDEX nimages, IND
 		//load_binary_image(useri.file_list[ind_sot], dimy, dimx, true, m_im, flg_display_read);
 		load_image(useri.file_list[ifile], dimy, dimx, true, m_im, flg_display_read);
 		time_reading_from_disk.stop();
-		if (1 == image_to_dev(-1, image_mean[ifile], m_im, false))
+
+		time_from_host_to_device.start();
+		cudaMemcpy(dev_im_gpu, m_im, s_load_image.memory_one, cudaMemcpyHostToDevice);
+		time_from_host_to_device.stop();
+
+		Image_to_complex_matrix3(dimfreq,start_spacial_freq_in_lut, ifile, nimages);
+
+
+		/*if (1 == image_to_dev(-1, image_mean[ifile], m_im, false))
 		{
 			std::cerr << "warning an image (index = " << ifile << " appears to be null" << std::endl
 				<< "\t=> average has been put equal to one to avoid bad divisions" << std::endl;
 		}
 		time_reshuffling_memory.start();
 		lutfft_to_timeseries(dimfreq, (FFTW_REAL)(1.0), ifile, start_spacial_freq_in_lut);
-		time_reshuffling_memory.stop();
+		time_reshuffling_memory.stop();*/
 	}
 
 	/*CUFFT_COMPLEX* tmp_display_cpx_(NULL);

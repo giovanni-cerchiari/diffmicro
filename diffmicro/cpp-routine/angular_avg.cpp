@@ -100,7 +100,8 @@ void power_spectrum_to_azhavg(STORE_REAL *pw, MY_REAL *azh_avg, STORE_REAL *mat,
 		row_pw = &(pw[j * dims_b_2]);
 		row_mat = &(mat[j * dims]);
 		row_mat[0] = row_pw[0];
-		for (i = 1; i<dims; ++i) row_mat[i] = zp5 * (row_pw[i] + row_pw[dims_b_2 - i]);
+		for (i = 1; i<dims; ++i) 
+			row_mat[i] = zp5 * (row_pw[i] + row_pw[dims_b_2 - i]);
 	}
 
 	//--------------------------------------------------------------------------

@@ -147,6 +147,8 @@ void calc_power_spectra_fifo(INDEX nimages, INDEX& useri_dist_max, STORE_REAL* i
 /*! Calculating the power spectra via Fourier tranform of power series*/
 void calc_power_spectra_autocorr(INDEX dimy, INDEX dimx, INDEX nimages, STORE_REAL* image_mean, INDEX& dimr, unsigned int* power_spectra_avg_counter, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs);
 
+void calc_power_spectra_autocorr3(INDEX dimy, INDEX dimx, INDEX nimages, STORE_REAL* image_mean, INDEX& dimr, unsigned int* power_spectra_avg_counter, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs);
+
 void calc_power_spectra_autocorr2(INDEX nimages, INDEX dimy, INDEX dimx, INDEX& dimr, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs);
 
 /*!This function executes the calculation on a macro-diagonal of the FIFO algorithm.*/
@@ -173,5 +175,8 @@ void save_partial_timeseries(INDEX nimages, INDEX igroup, INDEX dimgroup, STORE_
 
 
 void pw_azth_avg(unsigned int* lut,INDEX npw, INDEX dimr, MY_REAL azh_avgs[], STORE_REAL ram_power_spectra[], FFTW_REAL* dev_images_cpu1);
+
+void pw_azth_avg2(unsigned int* lut, INDEX npw, INDEX dimr, MY_REAL azh_avgs[], STORE_REAL ram_power_spectra[], FFTW_COMPLEX* dev_images_cpu);
+
 
 #endif
