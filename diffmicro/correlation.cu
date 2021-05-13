@@ -309,9 +309,9 @@ __global__ void updatewithdivrebyramp_gpu_2d(INDEX dimfft,INDEX dimt,INDEX dim, 
 	INDEX i = blockDim.x * blockIdx.x + threadIdx.x;
 
 	if ((i < dim) && (j < dimt)) {
-		update[i + j * dim] -= (2. / (FFTW_REAL)(ramp_start - i)) * in[i + j * dimfft].x;
-		tseries[i + j * dim].x = update[i + j * dim];
-		tseries[i + j * dim].y = 0.0;
+		tseries[i + j * dim].x=update[i + j * dim] - (2. / (FFTW_REAL)(ramp_start - i)) * in[i + j * dimfft].x;
+		//tseries[i + j * dim].x = update[i + j * dim];
+		//tseries[i + j * dim].y = 0.0;
 	}
 }
 

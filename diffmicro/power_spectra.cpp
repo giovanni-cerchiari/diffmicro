@@ -260,7 +260,7 @@ void pw_azth_avg(unsigned int* lut,
 void pw_azth_avg2(unsigned int* lut,
 	INDEX npw, INDEX dimr, MY_REAL azh_avgs[], STORE_REAL ram_power_spectra[], FFTW_COMPLEX* dev_images_cpu) {
 
-	for (int i = 0; i < npw; i++) {
+	for (int i = 1; i < npw; i++) {
 
 		memset(ram_power_spectra, 0, sizeof(STORE_REAL) * s_load_image.dim / 2);
 

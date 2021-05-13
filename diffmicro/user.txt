@@ -1,11 +1,11 @@
-path_images	C:\Users\mchraga\Documents\80_bar_2K_2\
+path_images	C:\samples\Mohammed 512_512\
 path_first_image	C:\samples\performance_image 512\pippo_0000.tif
 images_interval	1	500
 flg_file_valid_image	0
 number_of_averages	9999
 delay_max	9999
-frequency_max	100
-path_output	C:\samples\output\
+frequency_max	256
+path_output	C:\samples\Mohammed 512_512\output
 flg_write_images_average	1
 flg_write_power_spectra	0
 flg_write_azimuthal_averages	1
@@ -15,7 +15,7 @@ Version	0
 Binary	0
 # to specify EXECUTION MODE 1 ---> CPU , 0----> GPU
 HARDWARE_SELECTION	0
-NUMBER_THREAD_GPU	2000
+NUMBER_THREAD_GPU	4000
 NUMBER_THREAD_CPU	8
 RAM_CPU	8342177280
 # to show graph 1 ---> show the graph, 0----> don't show
