@@ -96,10 +96,10 @@ only the upper half of the averaged power spectra.
 	if (0 < path_ui.size())
 		if (true == useri.load(path_ui))
 			//std::cout << std::endl;
-		//useri.variables_to_gui();
+		useri.variables_to_gui();
 
 	// start the graphical user interface
-	//start_gui(path_ui, !flg_file_init);
+	start_gui(path_ui, !flg_file_init);
 
 	if (useri.flg_graph_mode)
 		init_figure_enviroment();
@@ -120,7 +120,7 @@ only the upper half of the averaged power spectra.
 	if (useri.flg_execution_mode==0) 
 	{
 		useri.execution_mode = DIFFMICRO_MODE_TIMECORRELATION;
-		std::cout << "execution in \"time correlation\" mode on ";
+		std::cout << "execution in \"time correlation 2D\" mode on ";
 	}
 	else if (useri.flg_execution_mode == 1) {
 		useri.execution_mode = DIFFMICRO_MODE_FIFO;

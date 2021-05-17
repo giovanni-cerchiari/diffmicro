@@ -1,18 +1,15 @@
 path_images	C:\samples\Mohammed 512_512\
-path_first_image	C:\samples\performance_image 512\pippo_0000.tif
-images_interval	1	500
+images_interval	1	100
 flg_file_valid_image	0
 number_of_averages	9999
 delay_max	9999
 frequency_max	256
-path_output	C:\samples\Mohammed 512_512\output
+path_output	C:\samples\Mohammed 512_512\output\
 flg_write_images_average	1
 flg_write_power_spectra	0
 flg_write_azimuthal_averages	1
 # to specify EXECUTION MODE 1 ---> FIFO , 0----> Time correlation
 EXECUTION_MODE	0
-Version	0
-Binary	0
 # to specify EXECUTION MODE 1 ---> CPU , 0----> GPU
 HARDWARE_SELECTION	0
 NUMBER_THREAD_GPU	4000

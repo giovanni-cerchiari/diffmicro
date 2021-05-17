@@ -423,7 +423,7 @@ bool calc_power_spectra(INDEX dimy, INDEX dimx)
 			
 		}
 		else {
-			std::cout << "Version 0" << std::endl;
+			std::cout << "Version 1.4" << std::endl;
 			//calc_power_spectra_autocorr3(dimy, dimx, nimages, image_mean, dimr, power_spectra_avg_counter,
 				//ram_power_spectra, azh_avgs);
 			calc_power_spectra_autocorr(dimy, dimx, nimages, image_mean, dimr, power_spectra_avg_counter,
