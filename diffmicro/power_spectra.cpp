@@ -426,7 +426,7 @@ bool calc_power_spectra(INDEX dimy, INDEX dimx)
 			std::cout << "Version 1.4" << std::endl;
 			//calc_power_spectra_autocorr3(dimy, dimx, nimages, image_mean, dimr, power_spectra_avg_counter,
 				//ram_power_spectra, azh_avgs);
-			calc_power_spectra_autocorr(dimy, dimx, nimages, image_mean, dimr, power_spectra_avg_counter,
+			calc_power_spectra_autocorr_2D(dimy, dimx, nimages, image_mean, dimr, power_spectra_avg_counter,
 					ram_power_spectra, azh_avgs);
 		}
 		for (INDEX i = 0; i < nimages; i++) 
@@ -674,7 +674,7 @@ void calc_power_spectra_fifo(INDEX nimages, INDEX &useri_dist_max, STORE_REAL* i
 	update_execution_map(useri.file_list.size(), execution_map);
 }
 
-void calc_power_spectra_autocorr(INDEX dimy, INDEX dimx, INDEX nimages, STORE_REAL* image_mean, INDEX& dimr, unsigned int* power_spectra_avg_counter, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs)
+void calc_power_spectra_autocorr_2D(INDEX dimy, INDEX dimx, INDEX nimages, STORE_REAL* image_mean, INDEX& dimr, unsigned int* power_spectra_avg_counter, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs)
 {
 	INDEX j,i;
 	lldiv_t group;

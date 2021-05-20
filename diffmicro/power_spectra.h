@@ -145,7 +145,7 @@ void plot_dynamics(INDEX dimx);
 /*!Calculating power spectra via time differences and FIFO memory*/
 void calc_power_spectra_fifo(INDEX nimages, INDEX& useri_dist_max, STORE_REAL* image_mean, INDEX& dimr, unsigned int* power_spectra_avg_counter, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs);
 /*! Calculating the power spectra via Fourier tranform of power series*/
-void calc_power_spectra_autocorr(INDEX dimy, INDEX dimx, INDEX nimages, STORE_REAL* image_mean, INDEX& dimr, unsigned int* power_spectra_avg_counter, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs);
+void calc_power_spectra_autocorr_2D(INDEX dimy, INDEX dimx, INDEX nimages, STORE_REAL* image_mean, INDEX& dimr, unsigned int* power_spectra_avg_counter, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs);
 
 void calc_power_spectra_autocorr3(INDEX dimy, INDEX dimx, INDEX nimages, STORE_REAL* image_mean, INDEX& dimr, unsigned int* power_spectra_avg_counter, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs);
 

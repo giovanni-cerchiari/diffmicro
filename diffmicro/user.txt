@@ -1,10 +1,10 @@
-path_images	C:\samples\Mohammed 512_512\
-images_interval	1	100
+path_images	E:\Test fabrizio\test_ORCA_1006\
+images_interval	1	200
 flg_file_valid_image	0
-number_of_averages	9999
-delay_max	9999
+number_of_averages	999
+delay_max	999
 frequency_max	256
-path_output	C:\samples\Mohammed 512_512\output\
+path_output	E:\Test fabrizio\output\
 flg_write_images_average	1
 flg_write_power_spectra	0
 flg_write_azimuthal_averages	1
