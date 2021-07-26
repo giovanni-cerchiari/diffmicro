@@ -27,7 +27,8 @@ This file is part of diffmicro.
 
 #include "stdafx.h"
 #include "angular_avg.h"
-
+//#include <vector>
+//#include <algorithm>
 
 INDEX dimside(0);
 INDEX dim(0);
@@ -85,7 +86,7 @@ void power_spectrum_to_azhavg(STORE_REAL *pw, MY_REAL *azh_avg, STORE_REAL *mat,
 {
 	//---------------------------------------------------------------------------
 	// declaration
-	INDEX i, j;
+	int i, j;
 	INDEX dims = ang_int->dimside();
 	INDEX dims_b_2 = dims * 2;
 	INDEX dimrad = ang_int->dimr();
@@ -95,23 +96,31 @@ void power_spectrum_to_azhavg(STORE_REAL *pw, MY_REAL *azh_avg, STORE_REAL *mat,
 
 	//----------------------------------------------------------------------------
 	// reducing half power spectrum to one quarter power spectrum
+//#pragma omp parallel for
+	
 	for (j = 0; j<dims; ++j)
 	{
 		row_pw = &(pw[j * dims_b_2]);
 		row_mat = &(mat[j * dims]);
 		row_mat[0] = row_pw[0];
-		for (i = 1; i<dims; ++i) 
+		for (i = 1; i < dims; ++i) {
+
 			row_mat[i] = zp5 * (row_pw[i] + row_pw[dims_b_2 - i]);
+			//std::cout <<i<<"    "<< row_pw[i] <<"    "<< row_pw[dims_b_2 - i] << std::endl;
+		}
+
 	}
 
 	//--------------------------------------------------------------------------
 	// angular integral and division to obtain the average 
 	ang_int->operator()(mat, azh_avg);
+#pragma omp parallel for
 	for (i = 0; i < dimrad; ++i)
 	{
 		azh_avg[i] = azh_avg[i] / wr[i];
 	}
 }
+
 
 void power_spectra_to_azhavg(INDEX npw, STORE_REAL* pw, MY_REAL* azh_avgs)
 {
@@ -147,4 +156,52 @@ void power_spectra_to_azhavg(INDEX npw, STORE_REAL* pw, MY_REAL* azh_avgs)
 		}
 
 	delete[] th;
+}
+
+void power_spectra_to_azhavg_test(int indx,INDEX npw, STORE_REAL* pw, FFTW_COMPLEX* dev_images_cpu, unsigned int* lut, MY_REAL* azh_avgs)
+{
+
+	// declaration
+	int i, j;
+	INDEX dims = th_arg[0].ang_int->dimside();
+	INDEX dims_b_2 = dims * 2;
+	INDEX dimrad = th_arg[0].ang_int->dimr();
+	STORE_REAL* row_mat, * row_pw;
+	STORE_REAL zp5 = 0.5;
+	MY_REAL* wr = th_arg[0].ang_int->wr();
+	//STORE_REAL a=0, b=0;
+	//int c;
+	//typedef IntContainer::iterator IntIterator;
+	//----------------------------------------------------------------------------
+	// reducing half power spectrum to one quarter power spectrum
+//#pragma omp parallel for
+
+	for (j = 0; j < dims; ++j)
+	{
+		//row_pw = &(pw[j * dims_b_2]);
+		row_mat = &(th_arg[0].tmp_mat[j * dims]);
+		//row_mat[0] = row_pw[0];
+		for (i = 1; i < dims; ++i) {
+			
+			/*for (int k = 0; k < 15798; k++) {
+				if ((i + j * dims_b_2) == lut[k]) {
+					a = (STORE_REAL)dev_images_cpu[indx + k * 100][0]; //pw[i + j * dims_b_2]
+					break;
+				}
+			}*/
+
+			row_mat[i] = zp5 * (pw[i + j * dims_b_2] + pw[dims_b_2 - i + j * dims_b_2]);
+
+
+		}
+	}
+
+	//--------------------------------------------------------------------------
+	// angular integral and division to obtain the average 
+	th_arg[0].ang_int->operator()(th_arg[0].tmp_mat, azh_avgs);
+#pragma omp parallel for
+	for (i = 0; i < dimrad; ++i)
+	{
+		azh_avgs[i] = azh_avgs[i] / wr[i];
+	}
 }

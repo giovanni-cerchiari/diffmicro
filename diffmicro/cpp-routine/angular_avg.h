@@ -57,6 +57,8 @@ It runs N_MAX_THREADS threads over N_MAX_THREADS different power spectra and com
 each azimuthal average
 */
 void power_spectra_to_azhavg(INDEX npw, STORE_REAL* pw, MY_REAL* azh_avgs);
+void power_spectra_to_azhavg_test(int indx,INDEX npw, STORE_REAL* pw, FFTW_COMPLEX* dev_images_cpu, unsigned int* lut,MY_REAL* azh_avgs);
+
 
 /*!
 This function organize the parallelization over the azimuthal averages.

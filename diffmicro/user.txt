@@ -1,19 +1,23 @@
-path_images	C:\samples\Mohammed 512_512\
+path_images	C:\Users\mchraga\Documents\
+series	80_bar_2K_2
+binary	0
 images_interval	1	100
+step_of_time	1
 flg_file_valid_image	0
-number_of_averages	9999
-delay_max	9999
+number_of_averages	10000
+delay_max	10000
 frequency_max	256
-path_output	C:\samples\Mohammed 512_512\output\
+path_output	C:\samples\output\
 flg_write_images_average	1
 flg_write_power_spectra	0
 flg_write_azimuthal_averages	1
 # to specify EXECUTION MODE 1 ---> FIFO , 0----> Time correlation
 EXECUTION_MODE	0
+Version	1
 # to specify EXECUTION MODE 1 ---> CPU , 0----> GPU
 HARDWARE_SELECTION	0
-NUMBER_THREAD_GPU	4000
-NUMBER_THREAD_CPU	8
+NUMBER_THREAD_GPU	5000
+NUMBER_THREAD_CPU	16
 RAM_CPU	8342177280
 # to show graph 1 ---> show the graph, 0----> don't show
 GRAPH_MODE	0

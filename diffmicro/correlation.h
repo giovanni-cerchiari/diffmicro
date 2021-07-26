@@ -130,7 +130,6 @@ extern STORE_REAL *dev_power_spectra_gpu;
 //! device memory area where power spectra are stored for CPU execution
 extern FFTW_REAL* dev_power_spectra_cpu;
 
-
 //-----------------------------------------------------------------------------------
 
 /*!
@@ -293,7 +292,14 @@ void timeseries_analysis_cpu(INDEX nth);
 /*!This function executes the time series analysis on the wavevectors. CPU version.*/
 void time_series_analysis_cpu();
 /*!This function executes the time series analysis on the wavevectors. GPU version.*/
-void time_series_analysis_gpu(INDEX i);
+void time_series_analysis_gpu();
+
+void time_series_analysis_gpu_2D(INDEX i);
+
+void CUDA_free();
+
+void pw_azth_avg2_gpu(unsigned int* lut, INDEX npw, STORE_REAL* ram_power_spectra, CUFFT_COMPLEX* dev_images_cpu);
+void test_pw_gpu(STORE_REAL* ram_power_spectra);
 /*!The function pointer allows selecting the execution on gpu or cpu, while retaining the same code structure.*/
 extern void (*time_series_analysis)();
 
@@ -328,16 +334,7 @@ void timeseries_to_lutpw_cpu(INDEX dimcopy, FFTW_REAL gain, INDEX t, INDEX start
 /*!The function pointer allows selecting the execution on gpu or cpu, while retaining the same code structure.*/
 extern void (*timeseries_to_lutpw)(INDEX dimcopy, FFTW_REAL gain, INDEX t, INDEX starting_freq, STORE_REAL* ram_power_spectra);
 
-void Image_to_complex_matrix(unsigned short* dev_im_gpu_, CUFFT_COMPLEX* dev_fft_gpu_,int i);
-
-void Image_to_complex_matrix2(unsigned short* dev_im_gpu_, int i, INDEX nimages);
-
-void Image_to_complex_matrix3(INDEX dimfreq,INDEX ifr,int i, INDEX nimages);
-
-
-void Calc_structure_function(INDEX nimages,int i,int device_count);
-
-void Calc_StructureFunction_With_TimeCorrelation(INDEX nimages, INDEX dimx, INDEX dimy, FFTW_REAL* dev_images_cpu1);
+void Image_to_complex_matrix3(INDEX dimfreq, INDEX ifr, int i, INDEX nimages);
 
 //void timeseriesanalysis_gpu(INDEX dimtimeseries, CUFFT_COMPLEX* tseries, INDEX dimfft, CUFFT_COMPLEX* fft_memory, cufftHandle* tplan, CUFFT_REAL* corr_memory);
 
@@ -346,8 +343,14 @@ void timeseriesanalysis_cpu(INDEX dimtimeseries, INDEX dim_t, FFTW_COMPLEX* tser
 /*!This function calculates the operation of the time series on a group of wavevectors on gpu hardware.*/
 void timeseriesanalysis_gpu(INDEX dimtimeseries, INDEX dim_t, CUFFT_COMPLEX* tseries, INDEX dimfft, CUFFT_COMPLEX* fft_memory, cufftHandle* tplan, CUFFT_REAL* corr_memory, cuda_exec mycuda_dim_t, cuda_exec mycuda_dim, cuda_exec mycuda_dim_dim_t);
 
+void timeseriesanalysis_gpu_2D(INDEX ii,INDEX i,INDEX dimtimeseries, INDEX dim_t, CUFFT_COMPLEX* tseries, INDEX dimfft, CUFFT_COMPLEX* fft_memory, cufftHandle* tplan, CUFFT_REAL* corr_memory, cuda_exec mycuda_dim_t, cuda_exec mycuda_dim, cuda_exec mycuda_dim_dim_t);
+
+
 /*!This kernel is used to compute the average part of the TIME_CORRELATION algorithm.
 It performs a two-sided in-place average of the time series values.*/
 __global__ void averagesabs2_array_gpu(INDEX dim, INDEX dim_t, CUFFT_COMPLEX* _in, CUFFT_REAL* out);
+
+void power_spectra_from_dev_test(INDEX n_pw, STORE_REAL ram_power_spectra[]);
+
 
 #endif

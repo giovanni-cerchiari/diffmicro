@@ -144,6 +144,9 @@
     <ClCompile Include="test_Cpu_Gpu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Threads.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cpp-routine\angular_avg.h">
@@ -277,6 +280,9 @@
     </ClInclude>
     <ClInclude Include="cpp-routine\tensor.h">
       <Filter>Header Files\cpp-routine</Filter>
+    </ClInclude>
+    <ClInclude Include="Threads.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

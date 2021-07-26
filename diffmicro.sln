@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "diffmicro", "diffmicro\diffmicro.vcxproj", "{0ECF8EE6-37BD-4B82-8C1F-626A8AC570CA}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{4F932D2A-60A5-4E70-AC09-CAEC700830EF}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{7F944622-F779-4517-AB77-1FDE2147AD8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{0ECF8EE6-37BD-4B82-8C1F-626A8AC570CA}.Release|x64.Build.0 = Release|x64
 		{0ECF8EE6-37BD-4B82-8C1F-626A8AC570CA}.Release|x86.ActiveCfg = Release|Win32
 		{0ECF8EE6-37BD-4B82-8C1F-626A8AC570CA}.Release|x86.Build.0 = Release|Win32
-		{4F932D2A-60A5-4E70-AC09-CAEC700830EF}.Debug|x64.ActiveCfg = Debug
-		{4F932D2A-60A5-4E70-AC09-CAEC700830EF}.Debug|x86.ActiveCfg = Debug
-		{4F932D2A-60A5-4E70-AC09-CAEC700830EF}.Release|x64.ActiveCfg = Release
-		{4F932D2A-60A5-4E70-AC09-CAEC700830EF}.Release|x86.ActiveCfg = Release
+		{7F944622-F779-4517-AB77-1FDE2147AD8F}.Debug|x64.ActiveCfg = Debug
+		{7F944622-F779-4517-AB77-1FDE2147AD8F}.Debug|x86.ActiveCfg = Debug
+		{7F944622-F779-4517-AB77-1FDE2147AD8F}.Release|x64.ActiveCfg = Release
+		{7F944622-F779-4517-AB77-1FDE2147AD8F}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

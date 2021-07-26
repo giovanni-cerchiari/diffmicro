@@ -100,7 +100,7 @@ bool comp_str(std::string &st1, std::string &st2)
 diffmicro_user_interface::diffmicro_user_interface()
 {
 
-	initialize();
+	//initialize();
 	
 	first_image = 0;
 	last_image = 0;
@@ -111,8 +111,6 @@ diffmicro_user_interface::diffmicro_user_interface()
 	nthread_gpu = 1024;
 	RAM = (INDEX)(1) << 30;
 	RAM = (INDEX)(1) << 27;
-	VR = 0;
-	binary = 0;
 	//useri.hardware = HARDWARE_GPU,
 
 	// default init
@@ -326,48 +324,26 @@ void write_power_spectra(INDEX start_dist, INDEX npw, INDEX dimy, INDEX dimx, ST
 
 bool load_image(std::string &filename, INDEX &dimy, INDEX &dimx, bool read_im, unsigned short im[], bool flg_display)
 {
+	//int Binary = 1;
 	FILE* file_bin;
 	INDEX i, j;
 	cv::Mat img_cv;
 	int nb_val_lues;
+	unsigned short dx, dy;
 	
-	
-	if ((false == read_im) && (useri.binary == 1)) {
-		//std::string path = "C:\\samples\\performance_image 512\\pippo_0000.tif";
-
-		img_cv = cv::imread(useri.path_first_image, CV_LOAD_IMAGE_ANYDEPTH);
-		if (!img_cv.data)                              // Check for invalid input
-		{
-			std::cerr << "Could not open or find image : " << filename << std::endl;
-			return false;
-		}
-		dimx = img_cv.cols;
-		dimy = img_cv.rows;
-	}
-
 	if ((true == read_im) && (useri.binary == 1)) {
-
-		if (useri.flg_execution_mode == 1) {
-			img_cv = cv::imread(useri.path_first_image, CV_LOAD_IMAGE_ANYDEPTH);
-			if (!img_cv.data)                              // Check for invalid input
-			{
-				std::cerr << "Could not open or find image : " << filename << std::endl;
-				return false;
-			}
-			dimx = img_cv.cols;
-			dimy = img_cv.rows;
-
-		}
-		
 		file_bin = fopen(filename.c_str(), "rb");
 		if (file_bin == NULL)
-			std::cout << "Could not open or find image : " << filename << std::endl;
+			std::cout << "ERROR" << std::endl;
+		nb_val_lues = fread(&dx, sizeof(unsigned short), 1, file_bin);
+		nb_val_lues = fread(&dy, sizeof(unsigned short), 1, file_bin);
+		dimy = dy;
+		dimx = dx;
 		nb_val_lues = fread(im, sizeof(unsigned short), dimx*dimy, file_bin);
 		fclose(file_bin);
 	}
 	else {
 		if (useri.binary != 1) {
-
 			img_cv = cv::imread(filename, CV_LOAD_IMAGE_ANYDEPTH);
 
 			if (!img_cv.data)                              // Check for invalid input
@@ -380,7 +356,6 @@ bool load_image(std::string &filename, INDEX &dimy, INDEX &dimx, bool read_im, u
 
 			dimx = img_cv.cols;
 			dimy = img_cv.rows;
-
 			if ((true == read_im) && (1 == img_cv.elemSize()))
 			{
 				for (j = 0; j < img_cv.rows; ++j)
@@ -578,8 +553,7 @@ void start_gui(std::string file_ui, bool force_start_gui)
 		if (true == force_start_gui)
 		{
 			force_start_gui = false;
-			var = useri.get_variable(FLG_START); 
-			var->control->set_value(&force_start_gui);
+			var = useri.get_variable(FLG_START); var->control->set_value(&force_start_gui);
 		}
 		while (false == useri.all_setted())
 		{

@@ -134,25 +134,22 @@ as the images stored and both of them contains elements contiguous in time separ
 it is possible to select the appropriate frame that make all the possible differences storable
 in into the memory area of the power spectra with a refreshing calculus of the average value
 */
-
-void calc_power_spectra_ALL(INDEX nimages, INDEX dimy, INDEX dimx, INDEX& dimr, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs);
-
 bool calc_power_spectra(INDEX dimy, INDEX dimx);
 
-/*!This function allows you to plot the structure function */
-void plot_dynamics(INDEX dimx);
+/*! This function allows you to plot the structure function */
+void plot_dynamics(INDEX dimx,INDEX i);
 
 /*!Calculating power spectra via time differences and FIFO memory*/
 void calc_power_spectra_fifo(INDEX nimages, INDEX& useri_dist_max, STORE_REAL* image_mean, INDEX& dimr, unsigned int* power_spectra_avg_counter, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs);
 /*! Calculating the power spectra via Fourier tranform of power series*/
 void calc_power_spectra_autocorr(INDEX dimy, INDEX dimx, INDEX nimages, STORE_REAL* image_mean, INDEX& dimr, unsigned int* power_spectra_avg_counter, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs);
 
-void calc_power_spectra_autocorr3(INDEX dimy, INDEX dimx, INDEX nimages, STORE_REAL* image_mean, INDEX& dimr, unsigned int* power_spectra_avg_counter, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs);
+/*! Calculating the power spectra via Fourier tranform of power series using CUDA 2D*/
+void calc_power_spectra_autocorr_2D(INDEX dimy, INDEX dimx, INDEX nimages, STORE_REAL* image_mean, INDEX& dimr, unsigned int* power_spectra_avg_counter, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs);
 
-void calc_power_spectra_autocorr2(INDEX nimages, INDEX dimy, INDEX dimx, INDEX& dimr, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs);
 
 /*!This function executes the calculation on a macro-diagonal of the FIFO algorithm.*/
-void calc_diagonal(int k,INDEX starting_index, unsigned int power_spectra_avg_counter[], fifo_min &fifo, INDEX nimages, STORE_REAL image_mean[], bool flg_debug = false);
+void calc_diagonal(INDEX starting_index, unsigned int power_spectra_avg_counter[], fifo_min &fifo, INDEX nimages, STORE_REAL image_mean[], bool flg_debug = false);
 
 /*!
 copy n_pw power spectra from video card to ram_power_spectra. Note that power_spectra on the video card
@@ -166,6 +163,8 @@ int diff_autocorr(INDEX dim_file_list, INDEX dim_fifo, unsigned int* counter_avg
 The time series are the series of fft pixel of each image sorted by increasing time.*/
 void load_memory_for_time_correlation(INDEX dimx, INDEX dimy, INDEX nimages, INDEX start_spacial_freq_in_lut, INDEX dimfreq, unsigned short* m_im, FFTW_REAL* image_mean);
 
+void load_memory_for_time_correlation_2D(INDEX dimx, INDEX dimy, INDEX nimages, INDEX start_spacial_freq_in_lut, INDEX dimfreq, unsigned short* m_im, FFTW_REAL* image_mean);
+
 /*!This function reads the final result of the calculation to reconverted the elaborated time series into images*/
 void read_memory_after_time_correlation(INDEX nimages, INDEX dimr, MY_REAL* azh_avgs, FFTW_REAL* ram_power_spectra);
 
@@ -173,10 +172,8 @@ void read_memory_after_time_correlation(INDEX nimages, INDEX dimr, MY_REAL* azh_
 The temporary files that are written are the output files, which are subsequently overwritten after the merge.*/
 void save_partial_timeseries(INDEX nimages, INDEX igroup, INDEX dimgroup, STORE_REAL* ram_power_spectra);
 
-
-void pw_azth_avg(unsigned int* lut,INDEX npw, INDEX dimr, MY_REAL azh_avgs[], STORE_REAL ram_power_spectra[], FFTW_REAL* dev_images_cpu1);
-
 void pw_azth_avg2(unsigned int* lut, INDEX npw, INDEX dimr, MY_REAL azh_avgs[], STORE_REAL ram_power_spectra[], FFTW_COMPLEX* dev_images_cpu);
+
 
 
 #endif

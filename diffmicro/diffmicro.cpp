@@ -70,10 +70,13 @@ only the upper half of the averaged power spectra.
 
 	
 	INDEX dimx, dimy;
-	unsigned short *im = NULL;
+	
 	std::string path_ui;
 	bool flg_file_init;
-	
+	std::vector<std::string > list_dir;
+	std::vector<std::string > list_file_tmp;
+	std::string path1;
+
 	std::cout <<"==============================================================="<<std::endl;
 	std::cout <<"diffmicro  Copyright (C) 2011  Giovanni Cerchiari"<<std::endl;
 	std::cout <<"diffmicro  Copyright (C) 2020  Giovanni Cerchiari, Mojtaba Norouzisadeh"<<std::endl;
@@ -82,6 +85,7 @@ only the upper half of the averaged power spectra.
 	std::cout <<"under certain conditions;  visit : https://www.gnu.org/licenses/ for details."<<std::endl;
 	std::cout <<"==============================================================="<<std::endl;
 	
+
 	if (1 < argc)
 	{
 		path_ui = argv[1];
@@ -93,84 +97,139 @@ only the upper half of the averaged power spectra.
 		flg_file_init = false;
 	}
 
-	if (0 < path_ui.size())
-		if (true == useri.load(path_ui))
-			//std::cout << std::endl;
-		useri.variables_to_gui();
+	if (0 < path_ui.size())	
+		if (true == useri.load(path_ui)) {
+
+			//useri.variables_to_gui();
+
+		}
 
 	// start the graphical user interface
-	start_gui(path_ui, !flg_file_init);
-
-	if (useri.flg_graph_mode)
-		init_figure_enviroment();
-
-	
-
-	init_log(useri.file_list.size());
-	general_stw.start();
-
-	//load_binary_image(useri.file_list[0], dimy, dimx, false, im);
-	//std::string path = "C:\\samples\\performance_image 512\\pippo_0000.tif";
-	load_image(useri.file_list[0], dimy, dimx, false, im, false);
-	if (useri.flg_graph_mode)
-		initilize_display(dimx, dimy, useri.file_list.size());
-	im = new unsigned short[dimx*dimy];
-	load_image(useri.file_list[0], dimy, dimx, true, im, useri.flg_graph_mode);
-	
-	if (useri.flg_execution_mode==0) 
+	//start_gui(path_ui, !flg_file_init);
+	/*if (false == list_directory(useri.path_input, list_dir, list_file_tmp))
 	{
-		useri.execution_mode = DIFFMICRO_MODE_TIMECORRELATION;
-		std::cout << "execution in \"time correlation 2D\" mode on ";
-	}
-	else if (useri.flg_execution_mode == 1) {
-		useri.execution_mode = DIFFMICRO_MODE_FIFO;
-		std::cout << "execution in \"FIFO\" mode on " << std::endl;
+		return false;
 	}
 
-	if (!useri.flg_hardware_selection)
-	{
-		useri.hardware = HARDWARE_GPU;
-		std::cout << "GPU selected " << std::endl;
-	}
-	else {
-		useri.hardware = HARDWARE_CPU;
-		std::cout << "CPU selected " << std::endl;
-	}
+	std::cout << useri.series.size() << std::endl;*/
+	for (int i = 0; i < useri.series.size(); i++) {
 
-	if (false == cuda_init(false))
-	{
-		std::cerr << "Execution on GPU is not possible" << std::endl << "Execuation changed to CPU" << std::endl;
+		unsigned short* im = NULL;
+		/*if (useri.nb_of_series == 1) {
 
-		useri.hardware = HARDWARE_CPU;
+			useri.list_images_in_file(useri.path_input, useri.file_list);
+
+		}
+		else {*/
+
+		path1 = useri.path_input + useri.series[i] + "\\";
+		useri.list_images_in_file(path1, useri.file_list);
+
+		//}
+
+
+
+		if (useri.flg_graph_mode)
+			init_figure_enviroment();
+
+
+
+		init_log(useri.file_list.size());
+		general_stw.start();
+
+		//load_binary_image(useri.file_list[0], dimy, dimx, false, im);
+		//std::string path = "C:\\samples\\performance_image 512\\pippo_0000.tif";
+		//load_image(useri.file_list[0], dimy, dimx, false, im, false);
+		FILE* file_bin;
+		unsigned short dimx_y;
+		if (useri.binary == 0) {
+			cv::Mat img_cv;
+			img_cv = cv::imread(useri.file_list[0], CV_LOAD_IMAGE_ANYDEPTH);
+
+			if (!img_cv.data)                              // Check for invalid input
+			{
+				std::cerr << "Could not open or find image : " << useri.file_list[0] << std::endl;
+				return false;
+			}
+
+			dimx = img_cv.cols;
+			dimy = img_cv.rows;
+		}
+		else
+		{
+			
+			file_bin = fopen(useri.file_list[0].c_str(), "rb");
+			if (file_bin == NULL)
+				std::cout << "ERROR" << std::endl;
+			int nb_val_lues = fread(&dimx_y, sizeof(unsigned short), 1, file_bin);
+			dimy = dimx_y;
+			dimx = dimx_y;
+			//nb_val_lues = fread(im, sizeof(unsigned short), dimx * dimy, file_bin);
+			fclose(file_bin);
+
+		}
+		
+
+		if (useri.flg_graph_mode)
+			initilize_display(dimx, dimy, useri.file_list.size());
+		im = new unsigned short[dimx * dimy];
+		load_image(useri.file_list[0], dimy, dimx, true, im, useri.flg_graph_mode);
+
+		if (!useri.flg_execution_mode)
+		{
+			useri.execution_mode = DIFFMICRO_MODE_TIMECORRELATION;
+			std::cout << "execution in \"time correlation\" mode on ";
+		}
+		else {
+			useri.execution_mode = DIFFMICRO_MODE_FIFO;
+			std::cout << "execution in \"FIFO\" mode on " << std::endl;
+		}
+
+		if (!useri.flg_hardware_selection)
+		{
+			useri.hardware = HARDWARE_GPU;
+			std::cout << "GPU selected " << std::endl;
+		}
+		else {
+			useri.hardware = HARDWARE_CPU;
+			std::cout << "CPU selected " << std::endl;
+		}
+
+		if (false == cuda_init(false))
+		{
+			std::cerr << "Execution on GPU is not possible" << std::endl << "Execuation changed to CPU" << std::endl;
+
+			useri.hardware = HARDWARE_CPU;
+		}
+
+
+		hardware_function_selection(useri.hardware);
+
+		calc_power_spectra(dimy, dimx);
+
+		general_stw.stop();
+
+		plot_dynamics(dimx,i);
+
+		//--------------------------------------------------------------
+		// printing elapsed times
+
+		std::cout << "-----------------------------------------------------------------" << std::endl;
+		std::cout << "LOG" << std::endl << std::endl;
+		print_log(std::cout, dimy, dimx);
+
+		std::fstream fout;
+		fout.open(useri.log_filename.c_str(), std::ios::out);
+		print_log(fout, dimy, dimx);
+		fout.close();
+		delete[] im;
 	}
-
+		waitkeyboard(10);
+		//--------------------------------------------------------------
+		close_display();
+		
+		close_log();
 	
-	hardware_function_selection(useri.hardware);
-
-	calc_power_spectra(dimy, dimx);
-	
-	
-	//--------------------------------------------------------------
-	// printing elapsed times
-	general_stw.stop();
-
-	plot_dynamics(dimx);
-
-
-	std::cout <<"-----------------------------------------------------------------"<<std::endl;
-	std::cout <<"LOG"<<std::endl<<std::endl;
-	print_log(std::cout, dimy, dimx);
-
-	std::fstream fout;
-	fout.open( useri.log_filename.c_str(),std::ios::out);
-	print_log(fout, dimy, dimx);
-	fout.close();
-
-	waitkeyboard(10);
-	//--------------------------------------------------------------
-	close_display();
-	delete[] im;
-	close_log();
 	system("pause");
 //	delete[] im_default;
 	return 0;
