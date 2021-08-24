@@ -219,7 +219,9 @@ void pw_save_and_azth_avg(unsigned int *ram_radial_lut, INDEX starting_index,
 					time_writing_on_disk.stop();
 				}
 
+			time_azh_avg.start();
 			power_spectra_to_azhavg(npw, ram_power_spectra, &(azh_avgs[starting_index * dimr]));
+			time_azh_avg.stop();
 
 			//--------------------------------------------------------------------
 			// Hi,yes, always me, welcome Mojtaba!
@@ -587,7 +589,16 @@ void pw_azth_avg2(unsigned int* lut,
 	for (int k = 0; k < s_power_spectra.dim; k++) {
 
 		vec.push_back(lut[k]);
+	}
+	std::sort(vec.begin(), vec.end());*/
+
+	/*for (int i=0; i < s_power_spectra.dim;i++) {
+		if (vec[i] != i) {
+			std::cout << i << std::endl;
+			break;
+		}
 	}*/
+
 	for (int i = 1; i < npw; i++) {
 
 		//time_from_device_to_host.start();
@@ -602,7 +613,7 @@ void pw_azth_avg2(unsigned int* lut,
 //#pragma acc kernels 
 //#pragma acc parallel loop
 
-//#pragma omp parallel for
+#pragma omp parallel for
 		for (int j = 0; j < s_power_spectra.dim; j++) {
 			//std::cout << omp_get_thread_num() << std::endl;
 			
@@ -634,8 +645,10 @@ void pw_azth_avg2(unsigned int* lut,
 		//int nb_val_lues = fread(ram_power_spectra, sizeof(STORE_REAL), s_load_image.dim / 2, fichier_binaire);
 
 		//fwrite(ram_power_spectra, sizeof(STORE_REAL), s_load_image.dim / 2, fichier_binaire);
-
+		time_azh_avg.start();
 		power_spectra_to_azhavg(1.0, ram_power_spectra, &(azh_avgs[i * dimr]));
+		time_azh_avg.stop();
+
 
 		//power_spectra_to_azhavg_test(i,1.0, ram_power_spectra, dev_images_cpu , lut, &(azh_avgs[i * dimr]));
 

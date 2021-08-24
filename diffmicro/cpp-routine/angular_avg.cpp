@@ -98,15 +98,20 @@ void power_spectrum_to_azhavg(STORE_REAL *pw, MY_REAL *azh_avg, STORE_REAL *mat,
 	// reducing half power spectrum to one quarter power spectrum
 //#pragma omp parallel for
 	
-	for (j = 0; j<dims; ++j)
+	for (j = 0; j< dims; ++j) //256 !!
 	{
 		row_pw = &(pw[j * dims_b_2]);
 		row_mat = &(mat[j * dims]);
 		row_mat[0] = row_pw[0];
-		for (i = 1; i < dims; ++i) {
+		for (i = 1; i < dims; ++i) {  //256 !!
 
 			row_mat[i] = zp5 * (row_pw[i] + row_pw[dims_b_2 - i]);
-			//std::cout <<i<<"    "<< row_pw[i] <<"    "<< row_pw[dims_b_2 - i] << std::endl;
+			//std::cout <<j<<"  "<<i<<"    "<< row_pw[i] <<"    "<< row_pw[dims_b_2 - i] << std::endl;
+			/*if ((row_pw[i] == 0) & (row_pw[dims_b_2 - i] == 0)){
+				std::cout << i << std::endl;
+				produit += i;
+			    break;
+			}*/
 		}
 
 	}

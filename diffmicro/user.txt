@@ -1,7 +1,7 @@
 path_images	C:\Users\mchraga\Documents\
 series	80_bar_2K_2
 binary	0
-images_interval	1	100
+images_interval	1	500
 step_of_time	1
 flg_file_valid_image	0
 number_of_averages	10000
@@ -12,8 +12,8 @@ flg_write_images_average	1
 flg_write_power_spectra	0
 flg_write_azimuthal_averages	1
 # to specify EXECUTION MODE 1 ---> FIFO , 0----> Time correlation
-EXECUTION_MODE	0
-Version	1
+EXECUTION_MODE	1
+Version	0
 # to specify EXECUTION MODE 1 ---> CPU , 0----> GPU
 HARDWARE_SELECTION	0
 NUMBER_THREAD_GPU	5000

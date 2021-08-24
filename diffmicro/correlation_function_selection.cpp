@@ -78,7 +78,7 @@ void hardware_function_selection(INDEX hardware)
 		
 		diff_power_spectrum_to_avg = diff_power_spectrum_to_avg_gpu_gpu;
 		lutfft_to_timeseries = lutfft_to_timeseries_gpu;
-		//time_series_analysis = time_series_analysis_gpu;
+		time_series_analysis = time_series_analysis_gpu;
 		timeseries_to_lutpw = timeseries_to_lutpw_cpu;
 		timeseries_to_lutfft = timeseries_to_lutfft_gpu;
 
