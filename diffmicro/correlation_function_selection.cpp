@@ -25,7 +25,7 @@ This file is part of diffmicro.
 
 #include "correlation.h"
 
-int (*diffmicro_allocation)(int flg_mode, INDEX& nimages, INDEX& dimy, INDEX& dimx, INDEX& dim_power_spectrum, unsigned int* ram_radial_lut);
+int (*diffmicro_allocation)(int size_frq,int flg_mode, INDEX& nimages, INDEX& dimy, INDEX& dimx, INDEX& dim_power_spectrum, unsigned int* ram_radial_lut);
 void (*diffmicro_free_pointers)();
 void (*diffmicro_deallocation)();
 int (*image_to_dev)(SIGNED_INDEX ind_fifo, STORE_REAL& mean, unsigned short* im, bool flg_debug);

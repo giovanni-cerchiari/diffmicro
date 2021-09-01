@@ -210,7 +210,7 @@ only the upper half of the averaged power spectra.
 		general_stw.stop();
 
 		plot_dynamics(dimx,i);
-
+		//plot_dynamics_cc(dimx, i);
 		//--------------------------------------------------------------
 		// printing elapsed times
 

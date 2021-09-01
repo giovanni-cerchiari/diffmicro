@@ -465,6 +465,9 @@ bool diffmicro_user_interface::load(std::string file_ui)
 		if (0 == strcmp(entry[0].c_str(), "binary") && (entry.size() == 2))
 			this->binary = convert_string<INDEX>(entry[1]);
 
+		if (0 == strcmp(entry[0].c_str(), "shifted_fft") && (entry.size() == 2))
+			this->shifted_fft = convert_string<INDEX>(entry[1]);
+
 		/*if (0 == strcmp(entry[0].c_str(), "number_of_series") && (entry.size() == 2))
 			this->nb_of_series = convert_string<INDEX>(entry[1]);*/
 

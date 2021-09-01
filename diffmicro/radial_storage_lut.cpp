@@ -91,4 +91,22 @@ void radial_storage_lut(INDEX dimy, INDEX dimx, INDEX dimr, unsigned int *lut)
 
 }
 
+void index_shiftedFFT(INDEX dimx,INDEX dim_freq, unsigned int* ram_radial_lut) {
+
+	int crop_image = dimx; 
+	int azim_crop = dim_freq;
+	int xx = (crop_image) / 2 - (azim_crop - 1) / 2;
+	int yy = (crop_image) / 2 + (azim_crop - 1) / 2;
+	//std::vector<int> v;
+	for (int i = 0; i < dim_freq; i++) {
+		for (int j = 0; j < dim_freq; j++) {
+
+			ram_radial_lut[j + i * dim_freq] = xx + xx * dimx + j + i * dimx;
+			//v.push_back(xx + xx * dimx + j + i *dimx);
+		}
+	}
+
+}
+
+
 

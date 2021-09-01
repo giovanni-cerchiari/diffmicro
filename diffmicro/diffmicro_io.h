@@ -241,6 +241,8 @@ class diffmicro_user_interface
 
 		INDEX step_of_time;
 
+		INDEX shifted_fft;
+
 		/*!output flag: if ==true write on file the azimuthal averages*/
 		bool flg_write_azimuthal_avg;
 		/*!output flag: if ==true write on file all the averaged power spectrum*/

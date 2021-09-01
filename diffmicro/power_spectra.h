@@ -141,12 +141,16 @@ void plot_dynamics(INDEX dimx,INDEX i);
 
 /*!Calculating power spectra via time differences and FIFO memory*/
 void calc_power_spectra_fifo(INDEX nimages, INDEX& useri_dist_max, STORE_REAL* image_mean, INDEX& dimr, unsigned int* power_spectra_avg_counter, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs);
+
+void calc_power_spectra_fifo_cc(int size_freq, INDEX dimx,INDEX dimy,INDEX nimages, INDEX& useri_dist_max, STORE_REAL* image_mean, INDEX& dimr, unsigned int* power_spectra_avg_counter, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs);
+
 /*! Calculating the power spectra via Fourier tranform of power series*/
 void calc_power_spectra_autocorr(INDEX dimy, INDEX dimx, INDEX nimages, STORE_REAL* image_mean, INDEX& dimr, unsigned int* power_spectra_avg_counter, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs);
 
 /*! Calculating the power spectra via Fourier tranform of power series using CUDA 2D*/
 void calc_power_spectra_autocorr_2D(INDEX dimy, INDEX dimx, INDEX nimages, STORE_REAL* image_mean, INDEX& dimr, unsigned int* power_spectra_avg_counter, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs);
 
+void calc_power_spectra_autocorr_2D_FFTshifted(INDEX dimy, INDEX dimx, INDEX nimages, STORE_REAL* image_mean, INDEX& dimr, unsigned int* power_spectra_avg_counter, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs);
 
 /*!This function executes the calculation on a macro-diagonal of the FIFO algorithm.*/
 void calc_diagonal(INDEX starting_index, unsigned int power_spectra_avg_counter[], fifo_min &fifo, INDEX nimages, STORE_REAL image_mean[], bool flg_debug = false);
@@ -165,6 +169,8 @@ void load_memory_for_time_correlation(INDEX dimx, INDEX dimy, INDEX nimages, IND
 
 void load_memory_for_time_correlation_2D(INDEX dimx, INDEX dimy, INDEX nimages, INDEX start_spacial_freq_in_lut, INDEX dimfreq, unsigned short* m_im, FFTW_REAL* image_mean);
 
+void load_memory_for_time_correlation_2D_FFTshifted(INDEX dimx, INDEX dimy, INDEX nimages, INDEX start_spacial_freq_in_lut, INDEX dimfreq, unsigned short* m_im, FFTW_REAL* image_mean);
+
 /*!This function reads the final result of the calculation to reconverted the elaborated time series into images*/
 void read_memory_after_time_correlation(INDEX nimages, INDEX dimr, MY_REAL* azh_avgs, FFTW_REAL* ram_power_spectra);
 
@@ -174,6 +180,7 @@ void save_partial_timeseries(INDEX nimages, INDEX igroup, INDEX dimgroup, STORE_
 
 void pw_azth_avg2(unsigned int* lut, INDEX npw, INDEX dimr, MY_REAL azh_avgs[], STORE_REAL ram_power_spectra[], FFTW_COMPLEX* dev_images_cpu);
 
+void plot_dynamics_cc(INDEX nimages, int m);
 
 
 #endif

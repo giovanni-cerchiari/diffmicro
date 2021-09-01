@@ -68,6 +68,9 @@ void radial_lut_dimr_from_max_freq(INDEX dimy, INDEX dimx, float max_freq, INDEX
 and prepare lut of correct length.*/
 void radial_storage_lut(INDEX dimy, INDEX dimx, INDEX dimr, unsigned int *lut);
 
+void index_shiftedFFT(INDEX dimx, INDEX dim_freq, unsigned int* ram_radial_lut);
+
+
 /*!This function converts a vector into a matrix by using the look up table. It is the inverse transform of radial_lut_normal_to_rad.*/
 template<typename TYPEIN, typename TYPEOUT>
 void radial_lut_rad_to_normal(INDEX dimnormal, INDEX dimr, unsigned int *lut, TYPEIN *in, TYPEOUT *out)

@@ -140,7 +140,7 @@ It is found that if any memory allocation error occurs it is better to reallocat
 Note that, since the power spectrum is a symmetric matrix, we can store only the upper half
 of the FFTs and perform the difference operation only over this upper half.
 */
-int gpu_allocation(int flg_mode, INDEX &nimages, INDEX &dimy, INDEX &dimx, INDEX &dim_power_spectrum, unsigned int *ram_radial_lut);
+int gpu_allocation(int size_freq,int flg_mode, INDEX &nimages, INDEX &dimy, INDEX &dimx, INDEX &dim_power_spectrum, unsigned int *ram_radial_lut);
 /*!
 This function allocates the memory card and initialize all
 sizes variable necessary to run the calculus for cpu execution. \n
@@ -149,12 +149,12 @@ It is found that if any memory allocation error occurs it is better to reallocat
 Note that, since the power spectrum is a symmetric matrix, we can store only the upper half
 of the FFTs and perform the difference operation only over this upper half.
 */
-int cpu_allocation(int flg_mode, INDEX& nimages, INDEX& dimy, INDEX& dimx, INDEX& dim_power_spectrum, unsigned int* ram_radial_lut);
+int cpu_allocation(int size_freq,int flg_mode, INDEX& nimages, INDEX& dimy, INDEX& dimx, INDEX& dim_power_spectrum, unsigned int* ram_radial_lut);
 /*!
 This function allocates the memory card and initialize all
 sizes variable necessary to run the calculus for cpu and gpu execution.
 */
-extern int (*diffmicro_allocation)(int flg_mode, INDEX& nimages, INDEX& dimy, INDEX& dimx, INDEX& dim_power_spectrum, unsigned int* ram_radial_lut);
+extern int (*diffmicro_allocation)(int size_freq,int flg_mode, INDEX& nimages, INDEX& dimy, INDEX& dimx, INDEX& dim_power_spectrum, unsigned int* ram_radial_lut);
 
 /*!This function releases memory allocated by gpu_allocation*/
 void gpu_free_pointers();
@@ -336,6 +336,8 @@ extern void (*timeseries_to_lutpw)(INDEX dimcopy, FFTW_REAL gain, INDEX t, INDEX
 
 void Image_to_complex_matrix3(INDEX dimfreq, INDEX ifr, int i, INDEX nimages);
 
+void Image_to_complex_matrix3_FFTshifted(INDEX dimx,INDEX mean,INDEX dimfreq, INDEX ifr, int i, INDEX nimages);
+
 //void timeseriesanalysis_gpu(INDEX dimtimeseries, CUFFT_COMPLEX* tseries, INDEX dimfft, CUFFT_COMPLEX* fft_memory, cufftHandle* tplan, CUFFT_REAL* corr_memory);
 
 /*!This function calculates the operation over the time series of a single wavevector on cpu hardware.*/
@@ -351,6 +353,16 @@ It performs a two-sided in-place average of the time series values.*/
 __global__ void averagesabs2_array_gpu(INDEX dim, INDEX dim_t, CUFFT_COMPLEX* _in, CUFFT_REAL* out);
 
 void power_spectra_from_dev_test(INDEX n_pw, STORE_REAL ram_power_spectra[]);
+
+void Image_to_complex_matrix(INDEX ifreq,INDEX dimfreq,INDEX p,INDEX dimx,double mean,unsigned short* dev_im_gpu_, CUFFT_COMPLEX* dev_fft_gpu_, int i);
+
+void Calc_structure_function(INDEX ifreq,INDEX p,INDEX nimages,int m);
+
+void remove_EdgeEffects_fct(INDEX nimages);
+
+MY_REAL* radialavg(INDEX nimages, INDEX frq, STORE_REAL* ALL_power_spectra_cpu, int  m);
+
+
 
 
 #endif

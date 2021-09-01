@@ -375,7 +375,7 @@ void diff_power_spectrum_to_avg_cpu(INDEX nth, INDEX dim, FFTW_COMPLEX min[], FF
 }
 
 
-int cpu_allocation(int flg_mode, INDEX& nimages, INDEX& dimy, INDEX& dimx, INDEX& dim_power_spectrum, unsigned int* ram_radial_lut)
+int cpu_allocation(int size_freq,int flg_mode, INDEX& nimages, INDEX& dimy, INDEX& dimx, INDEX& dim_power_spectrum, unsigned int* ram_radial_lut)
 {
 //	int alloc_status_li, alloc_status_fft, alloc_status_pw, alloc_status_im, alloc_status_plan;
 	INDEX i,free_video_memory, image_p_spectrum_memory;
