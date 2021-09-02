@@ -362,6 +362,8 @@ void remove_EdgeEffects_fct(INDEX nimages);
 
 MY_REAL* radialavg(INDEX nimages, INDEX frq, STORE_REAL* ALL_power_spectra_cpu, int  m);
 
+void dealloc_cuda();
+
 
 
 

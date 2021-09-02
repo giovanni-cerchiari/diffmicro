@@ -385,6 +385,45 @@ __global__ void remove_edge_effects(INDEX im,INDEX frq, STORE_REAL power_spectra
 		power_spectra[127 + i * frq +z* frq * frq] = 0.5 * (power_spectra[126 + i * frq + z * frq * frq] + power_spectra[128 + i * frq + z * frq * frq]);
 	}
 }
+__global__ void radialavg_gpu(int nimages,int m,int N, STORE_REAL* r, STORE_REAL* rbins, STORE_REAL* z, STORE_REAL* Zr) {
+
+	int k = blockIdx.y * blockDim.y + threadIdx.y;
+
+	int i = blockIdx.x * blockDim.x + threadIdx.x;
+	int n;
+	double s = 0.0;
+	//for (int k = 0; k < nimages; k++) {
+	//if (k < nimages){
+	//for (int i = 0; i < m - 1; i++) {
+	if ((k < nimages) & (i < m - 1)) {
+		n = 0;
+		s = 0.0;
+		for (int j = 0; j < N * N; j++) {
+			if ((r[j] >= rbins[i]) & (r[j] < rbins[i + 1])) {
+				n += 1; s += z[j + k * N * N];
+			}
+		}
+
+		if (n != 0) Zr[i + k * m] = (double)s / n;
+		else Zr[i + k * m] = NAN;
+	}
+
+		//}
+	if ((k < nimages) & (i == m-1 )) {
+
+		n = 0;
+		s = 0.0;
+		for (int j = 0; j < N * N; j++) {
+			if ((r[j] >= rbins[m - 1]) & (r[j] <= 1)) {
+				n += 1; s += z[j + k * N * N];
+			}
+		}
+
+		if (n != 0) Zr[m - 1 + k * m] = (double)s / n;
+		else Zr[m - 1 + k * m] = NAN;
+	}
+	//}
+}
 
 /*__global__ void matrix_avg(double* ad, double* bd,int N)
 {
@@ -1387,7 +1426,8 @@ void diff_power_spectrum_to_avg_gpu_gpu(CUFFT_REAL coef1, CUFFT_REAL coef2, INDE
 	cudaDeviceSynchronize();
 }
 
-void timeseriesanalysis_gpu_2D(INDEX ii, INDEX id_group,INDEX dimtimeseries, INDEX dim_t, CUFFT_COMPLEX* tseries, INDEX dimfft, CUFFT_COMPLEX* fft_memory, cufftHandle* tplan, CUFFT_REAL* corr_memory, cuda_exec mycuda_dim_t, cuda_exec mycuda_dim, cuda_exec mycuda_dim_dim_t)
+void timeseriesanalysis_gpu_2D(INDEX ii, INDEX id_group,INDEX dimtimeseries, 
+	INDEX dim_t, CUFFT_COMPLEX* tseries, INDEX dimfft, CUFFT_COMPLEX* fft_memory, cufftHandle* tplan, CUFFT_REAL* corr_memory, cuda_exec mycuda_dim_t, cuda_exec mycuda_dim, cuda_exec mycuda_dim_dim_t)
 {
 	INDEX i;
 
@@ -1838,7 +1878,7 @@ void Image_to_complex_matrix(INDEX ifreq,INDEX dimfreq,INDEX p,INDEX dimx,double
 	time_fft_norm.start();
 
 	short_to_real_with_gain << <s_load_image.cexe.nbk, s_load_image.cexe.nth >> >
-		(s_load_image.dim, dev_im_gpu_, (CUFFT_REAL)(1.0)/ mean2, dev_fft_gpu_);
+		(s_load_image.dim, dev_im_gpu_, (CUFFT_REAL)(1.0)/mean2, dev_fft_gpu_);
 
 	//int dim_test = 1024 * 1024;
 	int threads2 = 32;
@@ -1893,8 +1933,6 @@ void Image_to_complex_matrix(INDEX ifreq,INDEX dimfreq,INDEX p,INDEX dimx,double
 		std::cout <<tmp_display_cpx_[ii].x << "  + i " << tmp_display_cpx_[ii].y << std::endl;*/
 
 
-
-
 	time_fft_norm.stop();
 
 	cudaDeviceSynchronize();
@@ -1907,22 +1945,26 @@ void Image_to_complex_matrix(INDEX ifreq,INDEX dimfreq,INDEX p,INDEX dimx,double
 		std::cout << tmp_display_cpx_[ii].x << "  + i " << tmp_display_cpx_[ii].y << std::endl;*/
 
 }
-std::vector<double> linespace(double start, double ed, int num) {
+STORE_REAL* linespace(double start, double ed, int num) {
 	// catch rarely, throw often
 	if (num < 2) {
 		//throw new exception();
 	}
 	int partitions = num - 1;
-	std::vector<double> pts;
+	//std::vector<double> pts;
+	STORE_REAL* pts=new STORE_REAL[num+1];
 	// length of each segment    
 	double length = (ed - start) / partitions;
 	// first, not to change
-	pts.push_back(start);
+	pts[0] = start;
+	//pts.push_back(start);
 	for (int i = 1; i < num - 1; i++) {
-		pts.push_back(start + i * length);
+		//pts.push_back(start + i * length);
+		pts[i] = start + i * length;
 	}
 	// last, not to change
-	pts.push_back(ed);
+	//pts.push_back(ed);
+	pts[num-1] = ed;
 	return pts;
 }
 
@@ -1934,7 +1976,9 @@ MY_REAL* radialavg(INDEX nimages, INDEX frq, STORE_REAL* z, int  m) {
 	double a, b,s;
 	int n;
 	STORE_REAL* r(NULL);
-	std::vector<double> rbins; // R
+	STORE_REAL* rbins(NULL);
+
+	//std::vector<double> rbins; // R
 	double dr = 1.0 / (m - 1);
 
 	Zr = new MY_REAL[m * nimages];
@@ -1948,6 +1992,7 @@ MY_REAL* radialavg(INDEX nimages, INDEX frq, STORE_REAL* z, int  m) {
 	//X.resize(N*N);
 	//Y.resize(N * N);
 	r = new STORE_REAL[N*N];
+	rbins = new STORE_REAL[m+1];
 
 	//r.resize(N * N);
 	//bins.resize(N * N);
@@ -1964,18 +2009,46 @@ MY_REAL* radialavg(INDEX nimages, INDEX frq, STORE_REAL* z, int  m) {
 
 	rbins=linespace(-dr / 2, 1 + dr / 2, m + 1);
 
-	/*STORE_REAL* r_gpu(NULL);
-	
-	int alloc_status = cudaMalloc(&r_gpu, N * N * sizeof(STORE_REAL));
+	// *************** radialavg GPU **********************
 
-	cudaMemcpy(r_gpu, r, N * N*sizeof(STORE_REAL), cudaMemcpyHostToDevice);*/
+	STORE_REAL* r_gpu(NULL);
+	int alloc_status = cudaMalloc(&r_gpu, N * N * sizeof(STORE_REAL));
+	cudaMemcpy(r_gpu, r, N * N*sizeof(STORE_REAL), cudaMemcpyHostToDevice);
+
+
+
+	STORE_REAL* rbins_gpu(NULL);
+	alloc_status = cudaMalloc(&rbins_gpu, (m + 1) * sizeof(STORE_REAL));
+	cudaMemcpy(rbins_gpu, rbins, (m+1)*sizeof(STORE_REAL), cudaMemcpyHostToDevice);
+
+
+	STORE_REAL* Zr_gpu(NULL);
+	alloc_status = cudaMalloc(&Zr_gpu, m * nimages * sizeof(STORE_REAL));
+	//cudaMemcpy(&rbins_gpu, &rbins, (N + 1) * sizeof(STORE_REAL), cudaMemcpyHostToDevice);
+
+
+	int threads = 32;
+	int blocksx = (m + threads - 1) / threads;
+	int blocksy = (nimages + threads - 1) / threads;
+
+	dim3 THREADS3(threads, threads);
+	dim3 BLOCKS3(blocksx,blocksy);
+	//__global__ void radialavg_gpu(int nimages, int m, int N, STORE_REAL * r, STORE_REAL * rbins, STORE_REAL * z, STORE_REAL * Zr) {
+
+	radialavg_gpu << <BLOCKS3, THREADS3 >> > (nimages,m,N, r_gpu, rbins_gpu, dev_power_spectra_gpu,Zr_gpu);
+
+	cudaMemcpy(Zr, Zr_gpu, m * nimages * sizeof(STORE_REAL), cudaMemcpyDeviceToHost);
+
+	// ***********************************************
 
 
 	// radial positions are midpoints of the bins
 	/*for (int i = 0; i < m; i++) {
 		R.push_back((rbins[i] + rbins[i + 1]) / 2);
 	}*/
-	for (int k = 0; k < nimages; k++) {
+
+	// *****************radialavg CPU********************
+	/*for (int k = 0; k < nimages; k++) {
 
 		for (int i = 0; i < m - 1; i++) {
 			n = 0;
@@ -2001,14 +2074,26 @@ MY_REAL* radialavg(INDEX nimages, INDEX frq, STORE_REAL* z, int  m) {
 
 		if (n != 0) Zr[m - 1 +k*m] = (double)s / n;
 		else Zr[m - 1+k*m] = NAN;
-	}
-	
+	}*/
+	// **************************************************
+
+	delete r;
+	delete rbins;
+	//cudaFree(r_gpu);
+	cudaFree(rbins);
+	//cudaFree(Zr_gpu);
 
 	return Zr;
-
-
 }
 
+void dealloc_cuda() {
+
+	cudaFree(dev_im_gpu);
+	cudaFree(dev_fft_gpu);
+	cudaFree(dev_radial_lut_gpu);
+	cudaFree(dev_ALLfft_diff); 
+	cudaFree(dev_images_gpu_test); 
+}
 
 void Calc_structure_function(INDEX ifreq,INDEX p,INDEX nimages,int m) {
 

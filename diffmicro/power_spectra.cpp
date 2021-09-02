@@ -391,7 +391,7 @@ bool calc_power_spectra(INDEX dimy, INDEX dimx)
 		// group averages initialization
 		
 		if (useri.shifted_fft == 1) {
-			std::cout << "calculating power spectra ..." << std::endl;
+			std::cout << "calculating power spectra with FFT shifted..." << std::endl;
 
 			//power_spectra_avg_counter = new unsigned int[nimages];
 			ram_power_spectra = new STORE_REAL[useri.frequency_max* useri.frequency_max *nimages];
@@ -637,7 +637,7 @@ void calc_power_spectra_fifo_cc(int size_freq, INDEX dimx, INDEX dimy,INDEX nima
 	//n_groups_reload = n_group + 1;
 	group_rem = (INDEX)(group.rem);
 	//-----------------------------------------
-
+	
 	for (p = 0; p < n_group; p++) {
 
 		for (int i = 0; i < nimages; i++) {
@@ -698,11 +698,13 @@ void calc_power_spectra_fifo_cc(int size_freq, INDEX dimx, INDEX dimy,INDEX nima
 	ALL_power_spectra_cpu = new STORE_REAL[useri.frequency_max * useri.frequency_max * nimages];*/
 	//tmp_display_cpx_cpy = new STORE_REAL[255 * 255];
 
-	cudaMemcpy(ram_power_spectra, dev_power_spectra_gpu, useri.frequency_max * useri.frequency_max * nimages * sizeof(STORE_REAL), cudaMemcpyDeviceToHost);
+	//cudaMemcpy(ram_power_spectra, dev_power_spectra_gpu, useri.frequency_max * useri.frequency_max * nimages * sizeof(STORE_REAL), cudaMemcpyDeviceToHost);
 
 	//std::vector< STORE_REAL> Zr;
 	//Zr.resize(m * nimages);
 	//STORE_REAL* Zr = new STORE_REAL[m * nimages];
+
+	dealloc_cuda();
 
 	azh_avgs = radialavg(nimages, useri.frequency_max, ram_power_spectra, m);
 
@@ -1002,7 +1004,10 @@ void calc_power_spectra_autocorr_2D_FFTshifted(INDEX dimy, INDEX dimx, INDEX nim
 
 		for (int i = 0; i < useri.frequency_max; i++) {
 			for (int j = 0; j < useri.frequency_max; j++) {
-				ALL_power_spectra_cpu[j + i * useri.frequency_max+k*255*255] = dev_images_cpu[j + i * useri.frequency_max + k * 255 * 255][0];
+				ALL_power_spectra_cpu[j + i * useri.frequency_max+k*255*255] = dev_images_cpu[i + j * useri.frequency_max + k * 255 * 255][0];
+				//std::cout << j + i * useri.frequency_max + k * 255 * 255 << "   " << ALL_power_spectra_cpu[j + i * useri.frequency_max + k * 255 * 255] << std::endl;
+				//std::cout << i + j * useri.frequency_max + k * 255 * 255 << "   " << dev_images_cpu[i + j * useri.frequency_max + k * 255 * 255][0] << std::endl;
+
 			}
 		}
 	}
