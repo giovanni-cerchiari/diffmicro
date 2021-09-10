@@ -1784,27 +1784,27 @@ void Image_to_complex_matrix3_FFTshifted(INDEX dimx,INDEX mean2,INDEX dimfr, IND
 	time_fft_norm.start();
 
 	short_to_real_with_gain << <s_load_image.cexe.nbk, s_load_image.cexe.nth >> >
-		(s_load_image.dim, dev_im_gpu, (CUFFT_REAL)(1.0) / mean2, dev_fft_gpu);
+		(s_load_image.dim, dev_im_gpu, (CUFFT_REAL)(one_over_fft_norm), dev_fft_gpu);
 
 	//int dim_test = 1024 * 1024;
-	int threads2 = 32;
+	/*int threads2 = 32;
 	int blocksx2 = (dimx + threads2 - 1) / threads2;
 	int blocksy2 = (dimx + threads2 - 1) / threads2;
 
 	dim3 THREADS3(threads2, threads2);
 	dim3 BLOCKS3(blocksx2, blocksy2);
 
-	fftshift << <BLOCKS3, THREADS3 >> > (0.0, dev_fft_gpu, dimx);
+	fftshift << <BLOCKS3, THREADS3 >> > (0.0, dev_fft_gpu, dimx);*/
 
 	cufftExecZ2Z(plan, dev_fft_gpu, dev_fft_gpu, CUFFT_FORWARD);
 
 	cudaDeviceSynchronize();
 
 
-	/*CUFFT_REAL mean_tmp;
+	CUFFT_REAL mean_tmp;
 	STORE_REAL mean;
 	// normalization
-	cudaMemcpy(&mean_tmp, dev_fft_gpu_, sizeof(CUFFT_REAL), cudaMemcpyDeviceToHost);
+	cudaMemcpy(&mean_tmp, dev_fft_gpu, sizeof(CUFFT_REAL), cudaMemcpyDeviceToHost);
 
 	mean = mean_tmp;
 	if (mean < 0.000000000000001)
@@ -1814,12 +1814,12 @@ void Image_to_complex_matrix3_FFTshifted(INDEX dimx,INDEX mean2,INDEX dimfr, IND
 		//ret = 1;
 		//waitkeyboard(0);
 	}
-	mean_tmp = (CUFFT_REAL)(1. / mean_tmp);*/
+	mean_tmp = (CUFFT_REAL)(1. / mean_tmp);
 
 	// fftshift computing !!
 
 
-	fftshift << <BLOCKS3, THREADS3 >> > (0.0, dev_fft_gpu, dimx);
+	//fftshift << <BLOCKS3, THREADS3 >> > (0.0, dev_fft_gpu, dimx);
 
 	cudaDeviceSynchronize();
 
@@ -1829,7 +1829,7 @@ void Image_to_complex_matrix3_FFTshifted(INDEX dimx,INDEX mean2,INDEX dimfr, IND
 	cuda_exec mycuda_dim_i;
 	calc_cuda_exec(dimfr, deviceProp.maxThreadsPerBlock, &mycuda_dim_i);
 
-	cpx_row2col_gain_lut_gpu << <mycuda_dim_i.nbk, mycuda_dim_i.nth >> > (1.0, dev_radial_lut_gpu, dimfr,
+	cpx_row2col_gain_lut_gpu << <mycuda_dim_i.nbk, mycuda_dim_i.nth >> > (mean_tmp, dev_radial_lut_gpu, dimfr,
 		(INDEX)(1), ifr, dev_fft_gpu, (FFTW_REAL)(1.0), s_time_series.dim, i, dev_images_gpu);
 
 

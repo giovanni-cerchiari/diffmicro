@@ -358,15 +358,15 @@ bool load_image(std::string &filename, INDEX &dimy, INDEX &dimx, bool read_im, u
 			dimy = img_cv.rows;
 			if ((true == read_im) && (1 == img_cv.elemSize()))
 			{
-				for (j = 0; j < img_cv.rows; ++j)
-					for (i = 0; i < img_cv.cols; ++i) {
+				for (j = 0; j < dimy; ++j)
+					for (i = 0; i < dimx; ++i) {
 						im[j * dimx + i] = (unsigned short)(img_cv.data[j * img_cv.step[0] + i]);
 					}
 			}
 			if ((true == read_im) && (2 == img_cv.elemSize()))
 			{
-				for (j = 0; j < img_cv.rows; ++j)
-					for (i = 0; i < img_cv.cols ; ++i) 
+				for (j = 0; j < dimy; ++j)
+					for (i = 0; i < dimx ; ++i) 
 						im[j * dimx + i] = *((unsigned short*)(&(img_cv.data[j * img_cv.step[0] + i * img_cv.step[1]])));
 
 			}

@@ -994,7 +994,7 @@ void calc_power_spectra_autocorr_2D_FFTshifted(INDEX dimy, INDEX dimx, INDEX nim
 		// 3) unrol time series and save partial results
 		//save_partial_timeseries(nimages, i, group_rem, ram_power_spectra);
 	}
-	STORE_REAL* ALL_power_spectra_cpu(NULL);
+	/*STORE_REAL* ALL_power_spectra_cpu(NULL);
 	//STORE_REAL* tmp_display_cpx_cpy(NULL);
 
 	ALL_power_spectra_cpu = new STORE_REAL[useri.frequency_max * useri.frequency_max * nimages];
@@ -1011,7 +1011,7 @@ void calc_power_spectra_autocorr_2D_FFTshifted(INDEX dimy, INDEX dimx, INDEX nim
 			}
 		}
 	}
-	Zr = radialavg(nimages, useri.frequency_max, ALL_power_spectra_cpu, m);
+	Zr = radialavg(nimages, useri.frequency_max, ALL_power_spectra_cpu, m);*/
 
 	/*for (int i = 0; i < m* nimages; i++) {
 		//for(int j=0;j<nimages-1;j++)
@@ -1020,7 +1020,7 @@ void calc_power_spectra_autocorr_2D_FFTshifted(INDEX dimy, INDEX dimx, INDEX nim
 
 	//std::cout << Zr[128 * 99 - 1];
 
-	FILE* fichier_binaire;
+	/*FILE* fichier_binaire;
 	//int b[50];
 	//char s[100];
 	//sprintf(s, "pow_%d.bin", i);
@@ -1033,7 +1033,9 @@ void calc_power_spectra_autocorr_2D_FFTshifted(INDEX dimy, INDEX dimx, INDEX nim
 	fclose(fichier_binaire);
 
 	plot_dynamics_cc(nimages, m);
-	exit(0);
+	exit(0);*/
+	pw_azth_avg2(ram_radial_lut, nimages, dimr, azh_avgs, ram_power_spectra, dev_images_cpu);
+
 }
 
 void calc_power_spectra_autocorr(INDEX dimy, INDEX dimx, INDEX nimages, STORE_REAL* image_mean, INDEX& dimr, unsigned int* power_spectra_avg_counter, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs)

@@ -97,7 +97,7 @@ only the upper half of the averaged power spectra.
 		flg_file_init = false;
 	}
 
-	if (0 < path_ui.size())	
+	if (0 < path_ui.size())
 		if (true == useri.load(path_ui)) {
 
 			//useri.variables_to_gui();
@@ -115,6 +115,13 @@ only the upper half of the averaged power spectra.
 	for (int i = 0; i < useri.series.size(); i++) {
 
 		unsigned short* im = NULL;
+		if (0 < path_ui.size())
+			if (true == useri.load(path_ui)) {
+
+				//useri.variables_to_gui();
+
+			}
+
 		/*if (useri.nb_of_series == 1) {
 
 			useri.list_images_in_file(useri.path_input, useri.file_list);

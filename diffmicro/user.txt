@@ -4,8 +4,8 @@ binary	0
 images_interval	1	99
 step_of_time	1
 flg_file_valid_image	0
-number_of_averages	99
-delay_max	99
+number_of_averages	100
+delay_max	100
 frequency_max	255
 path_output	C:\samples\output\
 flg_write_images_average	1
