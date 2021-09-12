@@ -116,6 +116,7 @@ only the upper half of the averaged power spectra.
 
 		unsigned short* im = NULL;
 		if (0 < path_ui.size())
+
 			if (true == useri.load(path_ui)) {
 
 				//useri.variables_to_gui();
@@ -159,8 +160,8 @@ only the upper half of the averaged power spectra.
 				return false;
 			}
 
-			dimx = img_cv.cols;
-			dimy = img_cv.rows;
+			dimx = img_cv.cols - useri.shifted_fft;
+			dimy = img_cv.rows - useri.shifted_fft;
 		}
 		else
 		{
@@ -177,10 +178,10 @@ only the upper half of the averaged power spectra.
 		}
 		
 
-		if (useri.flg_graph_mode)
+		/*if (useri.flg_graph_mode)
 			initilize_display(dimx, dimy, useri.file_list.size());
 		im = new unsigned short[dimx * dimy];
-		load_image(useri.file_list[0], dimy, dimx, true, im, useri.flg_graph_mode);
+		load_image(useri.file_list[0], dimy, dimx, true, im, useri.flg_graph_mode);*/
 
 		if (!useri.flg_execution_mode)
 		{
@@ -189,7 +190,11 @@ only the upper half of the averaged power spectra.
 		}
 		else {
 			useri.execution_mode = DIFFMICRO_MODE_FIFO;
-			std::cout << "execution in \"FIFO\" mode on " << std::endl;
+			if(useri.shifted_fft==0)
+			    std::cout << "execution in \"FIFO\" mode on " << std::endl;
+			else
+				std::cout << "execution in using \"shifted FFT\" mode on " << std::endl;
+
 		}
 
 		if (!useri.flg_hardware_selection)

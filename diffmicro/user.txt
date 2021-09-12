@@ -4,8 +4,10 @@ binary	0
 images_interval	1	99
 step_of_time	1
 flg_file_valid_image	0
+# number of maxium averages to calculate a power spectrum
 number_of_averages	100
-delay_max	100
+# maxium temporal delay that must be consider
+delay_max	10
 frequency_max	255
 path_output	C:\samples\output\
 flg_write_images_average	1

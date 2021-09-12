@@ -287,7 +287,7 @@ int diff_autocorr(INDEX dim_file_list, INDEX dim_fifo, unsigned int* counter_avg
 
 bool calc_power_spectra(INDEX dimy, INDEX dimx)
 {
-		//------------------------------------------------------------------
+	//------------------------------------------------------------------
 	// declaration
 
 	// allocation
@@ -324,7 +324,6 @@ bool calc_power_spectra(INDEX dimy, INDEX dimx)
 		radial_lut_length = dim_radial_lut;
 		ram_radial_lut = new unsigned int[dim_radial_lut];
 		index_shiftedFFT(dimx, useri.frequency_max, ram_radial_lut);
-
 	}
 
 	//--------------------------------------------------------------------
@@ -389,19 +388,20 @@ bool calc_power_spectra(INDEX dimy, INDEX dimx)
 	case DIFFMICRO_MODE_FIFO:
 		//-------------------------------------------------------------------
 		// group averages initialization
-		
+	std::cout <<"calculating power spectra ..."<<std::endl;
+
 		if (useri.shifted_fft == 1) {
-			std::cout << "calculating power spectra with FFT shifted..." << std::endl;
+			//std::cout << "calculating power spectra with FFT shifted..." << std::endl;
 
 			//power_spectra_avg_counter = new unsigned int[nimages];
 			ram_power_spectra = new STORE_REAL[useri.frequency_max* useri.frequency_max *nimages];
 			//memset(power_spectra_avg_counter, 0, useri.file_list.size() * sizeof(unsigned int));
-			calc_power_spectra_fifo_cc(size_freq,dimx, dimy, nimages, useri_dist_max, image_mean, dimr,
+			calc_power_spectra_fifo_FFTshifted(size_freq,dimx, dimy, nimages, useri_dist_max, image_mean, dimr,
 				power_spectra_avg_counter, ram_power_spectra, azh_avgs);
 			
 		}
 		else {
-			std::cout << "calculating power spectra FIFO ..." << std::endl;
+			//std::cout << "calculating power spectra FIFO ..." << std::endl;
 
 			power_spectra_avg_counter = new unsigned int[nimages];
 			ram_power_spectra = new STORE_REAL[s_power_spectra.numerosity * dimx * dimy / 2];
@@ -620,12 +620,12 @@ void plot_dynamics_cc(INDEX nimages, int m) {
 	engEvalString(m_Engine, "for ii=1:nimages-1  loglog(azhavgs(1:m, ii), '-'); hold on; end");
 	
 }
-void calc_power_spectra_fifo_cc(int size_freq, INDEX dimx, INDEX dimy,INDEX nimages, INDEX& useri_dist_max, STORE_REAL* image_mean, INDEX& m, unsigned int* power_spectra_avg_counter, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs)
+void calc_power_spectra_fifo_FFTshifted(int size_freq, INDEX dimx, INDEX dimy,INDEX nimages, INDEX& useri_dist_max, STORE_REAL* image_mean, INDEX& m, unsigned int* power_spectra_avg_counter, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs)
 {
 	lldiv_t group;
 	INDEX n_group, group_rem;
 	unsigned short* m_im_;
-	double mean2;
+	//double mean2;
 
 	//int m = (useri.frequency_max - 1) / 2 + 1;
 
@@ -642,13 +642,14 @@ void calc_power_spectra_fifo_cc(int size_freq, INDEX dimx, INDEX dimy,INDEX nima
 
 		for (int i = 0; i < nimages; i++) {
 
+			useri.mean_im = 0.0;
 			time_reading_from_disk.start();
 			load_image(useri.file_list[i], dimy, dimx, true, m_im_, flg_display_read);
 			time_reading_from_disk.stop();
-			mean2 = double(m_im_[0]) / (dimx * dimy);
+			/*mean2 = double(m_im_[0]) / (dimx * dimy);
 			for (int i = 1; i < dimx * dimy; i++) {
 				mean2 = mean2 + double(m_im_[i]) / (dimx * dimy);
-			}
+			}*/
 			//mean2 = mean2;// / (dimx * dimy);
 			time_from_host_to_device.start();
 			cudaMemcpy(dev_im_gpu, m_im_, s_load_image.memory_one, cudaMemcpyHostToDevice);
@@ -656,7 +657,7 @@ void calc_power_spectra_fifo_cc(int size_freq, INDEX dimx, INDEX dimy,INDEX nima
 
 
 			// from image to complex matrix
-			Image_to_complex_matrix(p * dimfreq, dimfreq,p,dimx, mean2, dev_im_gpu, dev_fft_gpu, i);
+			Image_to_complex_matrix(p * dimfreq, dimfreq,p,dimx, useri.mean_im, i);
 
 		}
 
@@ -669,10 +670,10 @@ void calc_power_spectra_fifo_cc(int size_freq, INDEX dimx, INDEX dimy,INDEX nima
 			time_reading_from_disk.start();
 			load_image(useri.file_list[i], dimy, dimx, true, m_im_, flg_display_read);
 			time_reading_from_disk.stop();
-			mean2 = double(m_im_[0]) / (dimx * dimy);
+			/*mean2 = double(m_im_[0]) / (dimx * dimy);
 			for (int i = 1; i < dimx * dimy; i++) {
 				mean2 = mean2 + double(m_im_[i]) / (dimx * dimy);
-			}
+			}*/
 			//mean2 = mean2;// / (dimx * dimy);
 			time_from_host_to_device.start();
 			cudaMemcpy(dev_im_gpu, m_im_, s_load_image.memory_one, cudaMemcpyHostToDevice);
@@ -680,7 +681,7 @@ void calc_power_spectra_fifo_cc(int size_freq, INDEX dimx, INDEX dimy,INDEX nima
 
 
 			// from image to complex matrix
-			Image_to_complex_matrix(p * dimfreq, group_rem, p, dimx, mean2, dev_im_gpu, dev_fft_gpu, i);
+			Image_to_complex_matrix(p * dimfreq, group_rem, p, dimx, useri.mean_im, i);
 
 
 		}
@@ -691,7 +692,7 @@ void calc_power_spectra_fifo_cc(int size_freq, INDEX dimx, INDEX dimy,INDEX nima
 
 	remove_EdgeEffects_fct(nimages);
 
-	std::cout << "end computing" << std::endl;
+	//std::cout << "end computing" << std::endl;
 	/*STORE_REAL* ALL_power_spectra_cpu(NULL);
 	//STORE_REAL* tmp_display_cpx_cpy(NULL);
 
@@ -708,7 +709,9 @@ void calc_power_spectra_fifo_cc(int size_freq, INDEX dimx, INDEX dimy,INDEX nima
 
 	azh_avgs = radialavg(nimages, useri.frequency_max, ram_power_spectra, m);
 
-	write_mat_to_file(useri.azimuthal_avg_filename, nimages, m, azh_avgs);
+	time_writing_on_disk.start();
+	write_mat_to_file(useri.azimuthal_avg_filename, nimages-1, m, azh_avgs);
+	time_writing_on_disk.stop();
 
 	
 	/*FILE* fichier_binaire;

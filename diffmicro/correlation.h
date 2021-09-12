@@ -354,7 +354,7 @@ __global__ void averagesabs2_array_gpu(INDEX dim, INDEX dim_t, CUFFT_COMPLEX* _i
 
 void power_spectra_from_dev_test(INDEX n_pw, STORE_REAL ram_power_spectra[]);
 
-void Image_to_complex_matrix(INDEX ifreq,INDEX dimfreq,INDEX p,INDEX dimx,double mean,unsigned short* dev_im_gpu_, CUFFT_COMPLEX* dev_fft_gpu_, int i);
+void Image_to_complex_matrix(INDEX ifreq,INDEX dimfreq,INDEX p,INDEX dimx,double mean, int i);
 
 void Calc_structure_function(INDEX ifreq,INDEX p,INDEX nimages,int m);
 

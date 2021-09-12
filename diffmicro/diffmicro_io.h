@@ -331,6 +331,8 @@ class diffmicro_user_interface
 		/*!*/
 		std::list<ui_variable*> option;
 
+		double mean_im=0.0;
+
 		/*!
 		class initialization from file. The input entry must be store in diffrenet The file is made with a series of tags in char* format that sould be satisfaid.
 		After the tag a tab ("\t") character should be left to separate the entry value. Tags can be placed in any order

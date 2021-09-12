@@ -354,20 +354,24 @@ bool load_image(std::string &filename, INDEX &dimy, INDEX &dimx, bool read_im, u
 
 			//std::cerr << "img_cv.elemSize() = " << img_cv.elemSize() << std::endl;
 
-			dimx = img_cv.cols;
-			dimy = img_cv.rows;
+			dimx = img_cv.cols - useri.shifted_fft;
+			dimy = img_cv.rows - useri.shifted_fft;
+			
 			if ((true == read_im) && (1 == img_cv.elemSize()))
 			{
 				for (j = 0; j < dimy; ++j)
 					for (i = 0; i < dimx; ++i) {
 						im[j * dimx + i] = (unsigned short)(img_cv.data[j * img_cv.step[0] + i]);
+						useri.mean_im = useri.mean_im+double(im[j * dimx + i]) / (dimx * dimy);
 					}
 			}
 			if ((true == read_im) && (2 == img_cv.elemSize()))
 			{
 				for (j = 0; j < dimy; ++j)
-					for (i = 0; i < dimx ; ++i) 
+					for (i = 0; i < dimx; ++i) {
 						im[j * dimx + i] = *((unsigned short*)(&(img_cv.data[j * img_cv.step[0] + i * img_cv.step[1]])));
+						useri.mean_im = useri.mean_im + double(im[j * dimx + i]) / (dimx * dimy);
+					}
 
 			}
 		}
