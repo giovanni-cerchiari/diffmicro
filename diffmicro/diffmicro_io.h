@@ -243,6 +243,8 @@ class diffmicro_user_interface
 
 		INDEX shifted_fft;
 
+		INDEX crop_image;
+
 		/*!output flag: if ==true write on file the azimuthal averages*/
 		bool flg_write_azimuthal_avg;
 		/*!output flag: if ==true write on file all the averaged power spectrum*/

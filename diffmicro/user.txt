@@ -1,22 +1,30 @@
 path_images	C:\Users\mchraga\Documents\
+# series names (series1,series2, ...)
 series	80_bar_2K_2
+# 1 for data.bin and 0 for data.tif or other  
 binary	0
+# index position in the  directory of the first file to be processed
 images_interval	1	99
+# 1 crop images with dimx/2 and dimy/2, 0 if not
+crop_image	0
 step_of_time	1
 flg_file_valid_image	0
 # number of maxium averages to calculate a power spectrum
 number_of_averages	100
 # maxium temporal delay that must be consider
-delay_max	10
+delay_max	97
+# maximum frequency to save for each power spectra
 frequency_max	255
 path_output	C:\samples\output\
 flg_write_images_average	1
 flg_write_power_spectra	0
 flg_write_azimuthal_averages	1
-shifted_fft	1
 # to specify EXECUTION MODE 1 --> FIFO , 0 --> Time correlation
 EXECUTION_MODE	1
+# to specify version of Time correlation mode   0---> 1D, 1 --->2D
 Version	1
+# in case if FIFO mode  1 to use FFTs shifted, 0 if not
+shifted_fft	1
 # to specify EXECUTION MODE 1 ---> CPU , 0----> GPU
 HARDWARE_SELECTION	0
 NUMBER_THREAD_GPU	65025

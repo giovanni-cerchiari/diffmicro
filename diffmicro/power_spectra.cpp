@@ -421,10 +421,10 @@ bool calc_power_spectra(INDEX dimy, INDEX dimx)
 
 			std::cout << "calculating power spectra 2D ..." << std::endl;
 
-			if (useri.shifted_fft == 1) {
+			/*if (useri.shifted_fft == 1) {
 				calc_power_spectra_autocorr_2D_FFTshifted(dimy, dimx, nimages, image_mean, dimr, power_spectra_avg_counter,
 					ram_power_spectra, azh_avgs);
-			}
+			}*/
 
 			calc_power_spectra_autocorr_2D(dimy, dimx, nimages, image_mean, dimr, power_spectra_avg_counter,
 				ram_power_spectra, azh_avgs);
@@ -634,8 +634,12 @@ void calc_power_spectra_fifo_FFTshifted(int size_freq, INDEX dimx, INDEX dimy,IN
 	int dimfreq =  size_freq;
 	group = std::div((long long)(s_fft_images.dim), (long long)(dimfreq));
 	n_group = (INDEX)(group.quot);
-	//n_groups_reload = n_group + 1;
 	group_rem = (INDEX)(group.rem);
+	if (group_rem != 0)
+		n_groups_reload = n_group + 1;
+	else
+		n_groups_reload = n_group;
+
 	//-----------------------------------------
 	
 	for (p = 0; p < n_group; p++) {

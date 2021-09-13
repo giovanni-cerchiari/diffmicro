@@ -62,9 +62,9 @@ void print_log(std::ostream &out, INDEX &dimy, INDEX &dimx)
 	out <<"#_images:\t"<<useri.file_list.size()<<std::endl;
 	out <<"image_size:\t"<<dimx<<"\t"<<dimy<<std::endl;
 	out <<"#_storable_FFT:\t"<<s_power_spectra.numerosity<<std::endl;
-	out <<"#_averages_requested:\t"<<useri.get_int(N_PW_AVERAGES)<<std::endl;
-	out <<"#_computed_FFTs:\t"<<n_computed_fft<<std::endl;
-	out <<"#_computed_differences:\t"<<n_computed_diff<<std::endl;
+	//out <<"#_averages_requested:\t"<<useri.get_int(N_PW_AVERAGES)<<std::endl;
+	//out <<"#_computed_FFTs:\t"<<n_computed_fft<<std::endl;
+	//out <<"#_computed_differences:\t"<<n_computed_diff<<std::endl;
 	out <<std::endl<<"ELAPSED_TIMES"<<std::endl;
 	out <<"1)reading_from_disk_[s]:\t"<<time_reading_from_disk.t()<<std::endl;
 	out <<"2)writing_to_disk_[s]:\t"<<time_writing_on_disk.t()<<std::endl;

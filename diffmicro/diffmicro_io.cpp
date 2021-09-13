@@ -354,24 +354,58 @@ bool load_image(std::string &filename, INDEX &dimy, INDEX &dimx, bool read_im, u
 
 			//std::cerr << "img_cv.elemSize() = " << img_cv.elemSize() << std::endl;
 
-			dimx = img_cv.cols - useri.shifted_fft;
-			dimy = img_cv.rows - useri.shifted_fft;
+			dimx = img_cv.cols / (useri.crop_image + 1) - useri.shifted_fft;
+			dimy = img_cv.rows / (useri.crop_image + 1) - useri.shifted_fft;
 			
-			if ((true == read_im) && (1 == img_cv.elemSize()))
-			{
-				for (j = 0; j < dimy; ++j)
-					for (i = 0; i < dimx; ++i) {
-						im[j * dimx + i] = (unsigned short)(img_cv.data[j * img_cv.step[0] + i]);
-						useri.mean_im = useri.mean_im+double(im[j * dimx + i]) / (dimx * dimy);
-					}
+			if (useri.crop_image == 0) {
+				if ((true == read_im) && (1 == img_cv.elemSize()))
+				{
+					for (j = 0; j < dimy; ++j)
+						for (i = 0; i < dimx; ++i) {
+							im[j * dimx + i] = (unsigned short)(img_cv.data[j * img_cv.step[0] + i]);
+							useri.mean_im = useri.mean_im + double(im[j * dimx + i]) / (dimx * dimy);
+						}
+				}
+				if ((true == read_im) && (2 == img_cv.elemSize()))
+				{
+					for (j = 0; j < dimy; ++j)
+						for (i = 0; i < dimx; ++i) {
+							im[j * dimx + i] = *((unsigned short*)(&(img_cv.data[j * img_cv.step[0] + i * img_cv.step[1]])));
+							useri.mean_im = useri.mean_im + double(im[j * dimx + i]) / (dimx * dimy);
+						}
+
+				}
 			}
-			if ((true == read_im) && (2 == img_cv.elemSize()))
-			{
-				for (j = 0; j < dimy; ++j)
-					for (i = 0; i < dimx; ++i) {
-						im[j * dimx + i] = *((unsigned short*)(&(img_cv.data[j * img_cv.step[0] + i * img_cv.step[1]])));
-						useri.mean_im = useri.mean_im + double(im[j * dimx + i]) / (dimx * dimy);
+			else {
+
+				INDEX xy_start = img_cv.cols / 4-1;
+				INDEX xy_end = img_cv.cols / 2 + xy_start-1;
+				INDEX x = 0, y = 0;
+				if ((true == read_im) && (1 == img_cv.elemSize()))
+				{
+					for (j = xy_start; j < xy_end; ++j) {
+						for (i = xy_start; i < xy_end; ++i) {
+							im[x * dimx + y] = (unsigned short)(img_cv.data[j * img_cv.step[0] + i]);
+							useri.mean_im = useri.mean_im + double(im[x * dimx + y]) / (dimx * dimy);
+							y++;
+						}
+						x++;
+						y = 0;
 					}
+				}
+				if ((true == read_im) && (2 == img_cv.elemSize()))
+				{
+					for (j = xy_start; j < xy_end; ++j) {
+						for (i = xy_start; i < xy_end; ++i) {
+							im[x * dimx + y] = *((unsigned short*)(&(img_cv.data[j * img_cv.step[0] + i * img_cv.step[1]])));
+							useri.mean_im = useri.mean_im + double(im[x * dimx + y]) / (dimx * dimy);
+							y++;
+						}
+						x++;
+						y = 0;
+					}
+
+				}
 
 			}
 		}
