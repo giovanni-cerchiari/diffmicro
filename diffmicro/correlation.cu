@@ -1018,6 +1018,7 @@ int gpu_allocation(int size_freq, int flg_mode, INDEX& nimages, INDEX& dimy, IND
 
 		
 	
+		alloc_status_fft_shifted = cudaMalloc(&dev_fft_gpu_shifted, dimx * dimx * sizeof(CUFFT_COMPLEX));
 
 		alloc_status_im = cudaMalloc(&dev_images_gpu, s_time_series.memory_one * capacity);
 		alloc_status_fftime = cudaMalloc(&dev_fft_time_gpu, s_fft_time.memory_one * useri.nthread_gpu);
@@ -1758,7 +1759,7 @@ void Image_to_complex_matrix3(INDEX dimfr, INDEX ifr, int i, INDEX nimages) {
 
 }
 
-void Image_to_complex_matrix3_FFTshifted(INDEX dimx,INDEX mean2,INDEX dimfr, INDEX ifr, int i, INDEX nimages) {
+void Image_to_complex_matrix3_FFTshifted(INDEX dimx,double mean2,INDEX dimfr, INDEX ifr, int i, INDEX nimages) {
 
 	
 
@@ -1772,9 +1773,17 @@ void Image_to_complex_matrix3_FFTshifted(INDEX dimx,INDEX mean2,INDEX dimfr, IND
 
 	time_fft_norm.start();
 
+	
 	short_to_real_with_gain << <s_load_image.cexe.nbk, s_load_image.cexe.nth >> >
-		(s_load_image.dim, dev_im_gpu, (CUFFT_REAL)(one_over_fft_norm), dev_fft_gpu);
+		(s_load_image.dim, dev_im_gpu, (CUFFT_REAL)(1.0) / mean2, dev_fft_gpu);
 
+	//int dim_test = 1024 * 1024;
+	int threads2 = 32;
+	int blocksx2 = (dimx + threads2 - 1) / threads2;
+	int blocksy2 = (dimx + threads2 - 1) / threads2;
+
+	dim3 THREADS3(threads2, threads2);
+	dim3 BLOCKS3(blocksx2, blocksy2);
 	//int dim_test = 1024 * 1024;
 	/*int threads2 = 32;
 	int blocksx2 = (dimx + threads2 - 1) / threads2;
@@ -1789,8 +1798,9 @@ void Image_to_complex_matrix3_FFTshifted(INDEX dimx,INDEX mean2,INDEX dimfr, IND
 
 	cudaDeviceSynchronize();
 
+	fftshift2D << <BLOCKS3, THREADS3 >> > (dev_fft_gpu, dev_fft_gpu_shifted, dimx, dimx);
 
-	CUFFT_REAL mean_tmp;
+	/*CUFFT_REAL mean_tmp;
 	STORE_REAL mean;
 	// normalization
 	cudaMemcpy(&mean_tmp, dev_fft_gpu, sizeof(CUFFT_REAL), cudaMemcpyDeviceToHost);
@@ -1803,7 +1813,7 @@ void Image_to_complex_matrix3_FFTshifted(INDEX dimx,INDEX mean2,INDEX dimfr, IND
 		//ret = 1;
 		//waitkeyboard(0);
 	}
-	mean_tmp = (CUFFT_REAL)(1. / mean_tmp);
+	mean_tmp = (CUFFT_REAL)(1. / mean_tmp);*/
 
 	// fftshift computing !!
 
@@ -1818,8 +1828,8 @@ void Image_to_complex_matrix3_FFTshifted(INDEX dimx,INDEX mean2,INDEX dimfr, IND
 	cuda_exec mycuda_dim_i;
 	calc_cuda_exec(dimfr, deviceProp.maxThreadsPerBlock, &mycuda_dim_i);
 
-	cpx_row2col_gain_lut_gpu << <mycuda_dim_i.nbk, mycuda_dim_i.nth >> > (mean_tmp, dev_radial_lut_gpu, dimfr,
-		(INDEX)(1), ifr, dev_fft_gpu, (FFTW_REAL)(1.0), s_time_series.dim, i, dev_images_gpu);
+	cpx_row2col_gain_lut_gpu << <mycuda_dim_i.nbk, mycuda_dim_i.nth >> > (1.0, dev_radial_lut_gpu, dimfr,
+		(INDEX)(1), ifr, dev_fft_gpu_shifted, (FFTW_REAL)(1.0), s_time_series.dim, i, dev_images_gpu);
 
 
 	/*CUFFT_COMPLEX* tmp_display_cpx_(NULL);
@@ -1876,6 +1886,7 @@ void Image_to_complex_matrix(INDEX ifreq,INDEX dimfreq,INDEX p,INDEX dimx,double
 
 	dim3 THREADS3(threads2, threads2);
 	dim3 BLOCKS3(blocksx2, blocksy2);
+
 
 	if (dimx % 2 == 0) {
 
@@ -1987,7 +1998,7 @@ STORE_REAL* linespace(double start, double ed, int num) {
 	return pts;
 }
 
-MY_REAL* radialavg(INDEX nimages, INDEX frq, STORE_REAL* z, int  m) {
+MY_REAL* radialavg_gpu(INDEX nimages, INDEX frq, STORE_REAL* z, int  m) {
 
 	//std::vector<STORE_REAL> Zr;
 	MY_REAL* Zr;
@@ -2110,6 +2121,90 @@ MY_REAL* radialavg(INDEX nimages, INDEX frq, STORE_REAL* z, int  m) {
 
 	return Zr;
 }
+
+MY_REAL* radialavg_cpu(INDEX nimages, INDEX frq, STORE_REAL* z, int  m) {
+
+	//std::vector<STORE_REAL> Zr;
+	MY_REAL* Zr;
+
+	double a, b, s;
+	int n;
+	STORE_REAL* r(NULL);
+	STORE_REAL* rbins(NULL);
+
+	//std::vector<double> rbins; // R
+	double dr = 1.0 / (m - 1);
+
+	Zr = new MY_REAL[m * nimages ];
+	//Zr.resize(m * 99);
+
+	int N = frq;
+
+	//int size = (N + 1) / 2;
+
+	//std::vector<int> bins;
+	//X.resize(N*N);
+	//Y.resize(N * N);
+	r = new STORE_REAL[N * N];
+	rbins = new STORE_REAL[m + 1];
+
+	//r.resize(N * N);
+	//bins.resize(N * N);
+
+	//double p = (2.0 / (N - 1));
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j < N; j++) {
+			a = -1 + j * (double)(2.0 / (N - 1));
+			b = -1 + i * (double)(2.0 / (N - 1));
+			r[j + i * N] = sqrt(a * a + b * b);
+		}
+	}
+
+
+	rbins = linespace(-dr / 2, 1 + dr / 2, m + 1);
+
+	time_azh_avg.start();
+
+	
+	// *****************radialavg CPU********************
+	for (int k = 1; k < nimages; k++) {
+
+		for (int i = 0; i < m - 1; i++) {
+			n = 0;
+			s = 0.0;
+			for (int j = 0; j < N * N; j++) {
+				if ((r[j] >= rbins[i]) & (r[j] < rbins[i + 1])) {
+					n += 1; s += z[j+k*N*N];
+				}
+			}
+
+			if (n != 0) Zr[i+k*m] = (double)s / n;
+			else Zr[i+k*m] = NAN;
+
+		}
+
+		n = 0;
+		s = 0.0;
+		for (int j = 0; j < N * N; j++) {
+			if ((r[j] >= rbins[m - 1]) & (r[j] <= 1)) {
+				n += 1; s += z[j+k*N*N];
+			}
+		}
+
+		if (n != 0) Zr[m - 1 +k*m] = (double)s / n;
+		else Zr[m - 1+k*m] = NAN;
+	}
+	// **************************************************
+
+	delete r;
+	delete rbins;
+	//cudaFree(r_gpu);
+	cudaFree(rbins);
+	//cudaFree(Zr_gpu);
+
+	return Zr;
+}
+
 
 void dealloc_cuda() {
 

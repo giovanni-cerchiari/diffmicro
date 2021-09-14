@@ -336,7 +336,7 @@ extern void (*timeseries_to_lutpw)(INDEX dimcopy, FFTW_REAL gain, INDEX t, INDEX
 
 void Image_to_complex_matrix3(INDEX dimfreq, INDEX ifr, int i, INDEX nimages);
 
-void Image_to_complex_matrix3_FFTshifted(INDEX dimx,INDEX mean,INDEX dimfreq, INDEX ifr, int i, INDEX nimages);
+void Image_to_complex_matrix3_FFTshifted(INDEX dimx,double mean,INDEX dimfreq, INDEX ifr, int i, INDEX nimages);
 
 //void timeseriesanalysis_gpu(INDEX dimtimeseries, CUFFT_COMPLEX* tseries, INDEX dimfft, CUFFT_COMPLEX* fft_memory, cufftHandle* tplan, CUFFT_REAL* corr_memory);
 
@@ -360,7 +360,10 @@ void Calc_structure_function(INDEX ifreq,INDEX p,INDEX nimages,int m);
 
 void remove_EdgeEffects_fct(INDEX nimages);
 
-MY_REAL* radialavg(INDEX nimages, INDEX frq, STORE_REAL* ALL_power_spectra_cpu, int  m);
+MY_REAL* radialavg_gpu(INDEX nimages, INDEX frq, STORE_REAL* ALL_power_spectra_cpu, int  m);
+
+MY_REAL* radialavg_cpu(INDEX nimages, INDEX frq, STORE_REAL* ALL_power_spectra_cpu, int  m);
+
 
 void dealloc_cuda();
 

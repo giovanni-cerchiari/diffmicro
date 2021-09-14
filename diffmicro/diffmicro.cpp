@@ -180,8 +180,8 @@ only the upper half of the averaged power spectra.
 
 		if (useri.flg_graph_mode)
 			initilize_display(dimx, dimy, useri.file_list.size());
-		im = new unsigned short[dimx * dimy];
-		load_image(useri.file_list[0], dimy, dimx, true, im, useri.flg_graph_mode);
+		/*im = new unsigned short[dimx * dimy];
+		load_image(useri.file_list[0], dimy, dimx, true, im, useri.flg_graph_mode);*/
 
 		if (!useri.flg_execution_mode)
 		{
