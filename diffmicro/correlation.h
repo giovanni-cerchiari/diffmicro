@@ -296,6 +296,9 @@ void time_series_analysis_gpu();
 
 void time_series_analysis_gpu_2D(INDEX i);
 
+void time_series_analysis_gpu_2D_FFTshifted(INDEX i);
+
+
 void CUDA_free();
 
 void pw_azth_avg2_gpu(unsigned int* lut, INDEX npw, STORE_REAL* ram_power_spectra, CUFFT_COMPLEX* dev_images_cpu);
@@ -347,6 +350,7 @@ void timeseriesanalysis_gpu(INDEX dimtimeseries, INDEX dim_t, CUFFT_COMPLEX* tse
 
 void timeseriesanalysis_gpu_2D(INDEX ii,INDEX i,INDEX dimtimeseries, INDEX dim_t, CUFFT_COMPLEX* tseries, INDEX dimfft, CUFFT_COMPLEX* fft_memory, cufftHandle* tplan, CUFFT_REAL* corr_memory, cuda_exec mycuda_dim_t, cuda_exec mycuda_dim, cuda_exec mycuda_dim_dim_t);
 
+void timeseriesanalysis_gpu_2D_FFTshifted(INDEX ii, INDEX i, INDEX dimtimeseries, INDEX dim_t, CUFFT_COMPLEX* tseries, INDEX dimfft, CUFFT_COMPLEX* fft_memory, cufftHandle* tplan, CUFFT_REAL* corr_memory, cuda_exec mycuda_dim_t, cuda_exec mycuda_dim, cuda_exec mycuda_dim_dim_t,STORE_REAL* dev_power_spectra_gpu);
 
 /*!This kernel is used to compute the average part of the TIME_CORRELATION algorithm.
 It performs a two-sided in-place average of the time series values.*/
@@ -360,7 +364,10 @@ void Calc_structure_function(INDEX ifreq,INDEX p,INDEX nimages,int m);
 
 void remove_EdgeEffects_fct(INDEX nimages);
 
-MY_REAL* radialavg_gpu(INDEX nimages, INDEX frq, STORE_REAL* ALL_power_spectra_cpu, int  m);
+MY_REAL* radialavg_gpu(INDEX nimages, INDEX frq, int  m);
+
+MY_REAL* radialavg_gpu_bis(INDEX nimages, INDEX frq, int  m);
+
 
 MY_REAL* radialavg_cpu(INDEX nimages, INDEX frq, STORE_REAL* ALL_power_spectra_cpu, int  m);
 

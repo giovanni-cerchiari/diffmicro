@@ -186,7 +186,11 @@ only the upper half of the averaged power spectra.
 		if (!useri.flg_execution_mode)
 		{
 			useri.execution_mode = DIFFMICRO_MODE_TIMECORRELATION;
-			std::cout << "execution in \"time correlation\" mode on ";
+			if (useri.shifted_fft == 0)
+		        std::cout << "execution in \"time correlation\" mode on ";
+			else
+				std::cout << "execution in \"time correlation with shifted FFT\" mode on ";
+
 		}
 		else {
 			useri.execution_mode = DIFFMICRO_MODE_FIFO;
