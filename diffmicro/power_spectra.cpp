@@ -963,7 +963,7 @@ void calc_power_spectra_autocorr_2D(INDEX dimy, INDEX dimx, INDEX nimages, STORE
 }
 
 
-void calc_power_spectra_autocorr_2D_FFTshifted(INDEX dimy, INDEX dimx, INDEX nimages, STORE_REAL* image_mean, INDEX& dimr, unsigned int* power_spectra_avg_counter, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs) {
+void calc_power_spectra_autocorr_2D_FFTshifted(INDEX dimy, INDEX dimx, INDEX nimages, STORE_REAL* image_mean, INDEX& m, unsigned int* power_spectra_avg_counter, STORE_REAL* ram_power_spectra, MY_REAL* azh_avgs) {
 
 	INDEX j, i;
 	lldiv_t group;
@@ -1031,9 +1031,6 @@ void calc_power_spectra_autocorr_2D_FFTshifted(INDEX dimy, INDEX dimx, INDEX nim
 
 		ALL_power_spectra_cpu_[i] = ALL_power_spectra_cpu[i + useri.frequency_max * useri.frequency_max];
 	}*/
-
-	
-	int m = 128;
 
 
 	remove_EdgeEffects_fct(nimages);

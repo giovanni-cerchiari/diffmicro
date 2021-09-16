@@ -79,7 +79,7 @@ only the upper half of the averaged power spectra.
 
 	std::cout <<"==============================================================="<<std::endl;
 	std::cout <<"diffmicro  Copyright (C) 2011  Giovanni Cerchiari"<<std::endl;
-	std::cout <<"diffmicro  Copyright (C) 2020  Giovanni Cerchiari, Mojtaba Norouzisadeh"<<std::endl;
+	std::cout <<"diffmicro  Copyright (C) 2020  Giovanni Cerchiari, Mojtaba Norouzisadeh, Mohammed CHRAGA"<<std::endl;
 	std::cout <<"This program comes with ABSOLUTELY NO WARRANTY; for details visit : https://www.gnu.org/licenses/"<<std::endl;
 	std::cout <<"This is free software, and you are welcome to redistribute it"<<std::endl;
 	std::cout <<"under certain conditions;  visit : https://www.gnu.org/licenses/ for details."<<std::endl;

@@ -379,7 +379,7 @@ __global__ void updatewithdivrebyramp_gpu_2d_FFTshifted(INDEX id_thr,INDEX ii, u
 }
 
 
-__global__ void fft_diff(INDEX p,int z, INDEX fft_size, INDEX nb_fft, CUFFT_COMPLEX ALLfft[], STORE_REAL ALLfft_diff[])
+__global__ void fft_diff(int z, INDEX fft_size, INDEX nb_fft, CUFFT_COMPLEX ALLfft[], STORE_REAL ALLfft_diff[])
 {
 	int ii = blockIdx.y * blockDim.y + threadIdx.y;
 	int j = blockIdx.x * blockDim.x + threadIdx.x;
@@ -923,7 +923,9 @@ int gpu_allocation(int size_freq, int flg_mode, INDEX& nimages, INDEX& dimy, IND
 		std::cerr << "cuda error in inizializing plan for FFT" << std::endl;
 		return 1;
 	}
-
+	std::vector<int> d;
+	lldiv_t di;
+	int id;
 	switch (useri.execution_mode)
 	{
 	case DIFFMICRO_MODE_FIFO:
@@ -933,7 +935,16 @@ int gpu_allocation(int size_freq, int flg_mode, INDEX& nimages, INDEX& dimy, IND
 			alloc_status_imsot = cudaMalloc(&dev_image_sot_gpu, s_fft_images.memory_one);  
 		}
 		else {
-			size_freq = s_fft_images.dim;
+			
+			id = 0;
+			//INDEX n_group = (INDEX)(group.quot);
+			for (int i = 1; i < 100; i++) {
+				 di = std::div((long long)(s_fft_images.dim), (long long)(i));
+				 if (di.rem == 0) {
+					 d.push_back(di.quot);
+				 }
+			}
+			size_freq = d[0];
 			alloc_status_im = cudaMalloc(&dev_images_gpu_test, size_freq * sizeof(CUFFT_COMPLEX) * capacity);
 			alloc_status_imsot = cudaMalloc((void**)&dev_ALLfft_diff, size_freq * sizeof(STORE_REAL) * (nimages - 1));
 		}
@@ -963,9 +974,10 @@ int gpu_allocation(int size_freq, int flg_mode, INDEX& nimages, INDEX& dimy, IND
 					if (cudaSuccess == alloc_status_im) cudaFree(dev_images_gpu); //
 				}
 				else {
+					id++;
 					capacity_d *= 0.95;
-					capacity_d = std::floor(size_freq * 0.95);
-					size_freq = (INDEX)(capacity_d);
+					capacity_d = d[id]; //std::floor(size_freq * 0.95);
+					size_freq = d[id];// (INDEX)(capacity_d);
 					if (cudaSuccess == alloc_status_imsot) cudaFree(dev_ALLfft_diff); //
 					if (cudaSuccess == alloc_status_im) cudaFree(dev_images_gpu_test); //
 
@@ -1064,11 +1076,15 @@ int gpu_allocation(int size_freq, int flg_mode, INDEX& nimages, INDEX& dimy, IND
 		
 		if (useri.shifted_fft == 1) {
 			alloc_status_fft_shifted = cudaMalloc(&dev_fft_gpu_shifted, dimx * dimx * sizeof(CUFFT_COMPLEX));
-			alloc_status_pw = cudaMalloc(&dev_power_spectra_gpu, s_power_spectra.memory_one*nimages);
+			alloc_status_pw = cudaMalloc(&dev_power_spectra_gpu, s_power_spectra.memory_one*nimages); //
+			alloc_status_imsot = cudaSuccess;
+
 		}
 		else {
 			alloc_status_pw = cudaMalloc(&dev_power_spectra_gpu, s_power_spectra.memory_one);
 			alloc_status_fft_shifted = cudaSuccess;
+			alloc_status_imsot = cudaMalloc(&dev_image_sot_gpu, s_fft_images.memory_one);
+
 		}
 
 		alloc_status_im = cudaMalloc(&dev_images_gpu, s_time_series.memory_one * capacity);
@@ -1078,7 +1094,6 @@ int gpu_allocation(int size_freq, int flg_mode, INDEX& nimages, INDEX& dimy, IND
 		alloc_status_fft = cudaMalloc(&dev_fft_gpu, s_fft.memory_tot);
 		alloc_status_li = cudaMalloc(&dev_im_gpu, s_load_image.memory_tot);
 		alloc_status_rlut = cudaMalloc(&dev_radial_lut_gpu, s_radial_lut.memory_tot);
-		alloc_status_imsot = cudaMalloc(&dev_image_sot_gpu, s_fft_images.memory_one);
 
 		/*int alloc_status_testpw = cudaMalloc(&test_pw, nimages*dimx*dimy/2*sizeof(STORE_REAL));
 		if (cudaSuccess != alloc_status_testpw) {
@@ -1139,10 +1154,15 @@ int gpu_allocation(int size_freq, int flg_mode, INDEX& nimages, INDEX& dimy, IND
 
 			if (useri.shifted_fft == 1) {
 				alloc_status_fft_shifted = cudaMalloc(&dev_fft_gpu_shifted, dimx * dimx * sizeof(CUFFT_COMPLEX));
-				alloc_status_pw = cudaMalloc(&dev_power_spectra_gpu, s_power_spectra.memory_one * nimages);
+				alloc_status_pw = cudaMalloc(&dev_power_spectra_gpu, s_power_spectra.memory_one * nimages); //
+				alloc_status_imsot = cudaSuccess;
+
 			}
 			else {
 				alloc_status_pw = cudaMalloc(&dev_power_spectra_gpu, s_power_spectra.memory_one);
+				alloc_status_fft_shifted = cudaSuccess;
+				alloc_status_imsot = cudaMalloc(&dev_image_sot_gpu, s_fft_images.memory_one);
+
 			}
 
 			alloc_status_im = cudaMalloc(&dev_images_gpu, s_time_series.memory_one * capacity);
@@ -1151,7 +1171,6 @@ int gpu_allocation(int size_freq, int flg_mode, INDEX& nimages, INDEX& dimy, IND
 			alloc_status_fft = cudaMalloc(&dev_fft_gpu, s_fft.memory_tot);
 			alloc_status_li = cudaMalloc(&dev_im_gpu, s_load_image.memory_tot);
 			alloc_status_rlut = cudaMalloc(&dev_radial_lut_gpu, s_radial_lut.memory_tot);
-			alloc_status_imsot = cudaMalloc(&dev_image_sot_gpu, s_fft_images.memory_one);
 			
 			//alloc_status_testpw = cudaMalloc(&test_pw, nimages * dimx * dimy / 2 * sizeof(STORE_REAL));
 
@@ -1917,8 +1936,8 @@ void Image_to_complex_matrix3_FFTshifted(INDEX dimx,double mean2,INDEX dimfr, IN
 	////////////////////////////////////////////////////////
 
 
-	CUFFT_COMPLEX* dev_store_ptr;
-	dev_store_ptr = &(dev_images_gpu_test[i * s_fft_images.dim]);
+	//CUFFT_COMPLEX* dev_store_ptr;
+	//dev_store_ptr = &(dev_images_gpu_test[i * s_fft_images.dim]);
 
 	//std::cout << (CUFFT_REAL)(1.0) / mean2;
 
@@ -2071,24 +2090,6 @@ void Image_to_complex_matrix(INDEX ifreq,INDEX dimfreq,INDEX p,INDEX dimx,double
 		cudaDeviceSynchronize();
 
 
-		/*CUFFT_REAL mean_tmp;
-		STORE_REAL mean;
-		// normalization
-		cudaMemcpy(&mean_tmp, dev_fft_gpu_, sizeof(CUFFT_REAL), cudaMemcpyDeviceToHost);
-
-		mean = mean_tmp;
-		if (mean < 0.000000000000001)
-		{
-			mean = 1.;
-			mean_tmp = 1.;
-			//ret = 1;
-			//waitkeyboard(0);
-		}
-		mean_tmp = (CUFFT_REAL)(1. / mean_tmp);*/
-
-		// fftshift computing !!
-
-
 		//fftshift << <BLOCKS3, THREADS3 >> > (0.0,dev_fft_gpu, dimx);
 
 
@@ -2098,7 +2099,13 @@ void Image_to_complex_matrix(INDEX ifreq,INDEX dimfreq,INDEX p,INDEX dimx,double
 
 		cudaDeviceSynchronize();
 
-		gain_complex_lut_FFTshifted << <s_fft_images.cexe.nbk, s_fft_images.cexe.nth >> >
+		int threads = 1024;
+		int blocksx = (dimfreq + threads2 - 1) / threads2;
+
+		dim3 THREADS(threads);
+		dim3 BLOCKS(blocksx);
+
+		gain_complex_lut_FFTshifted << <BLOCKS, THREADS >> >
 			(ifreq, 1.0, dimfreq, dev_radial_lut_gpu, dev_fft_gpu_shifted, dev_store_ptr); //s_fft_images.dim
 
 		/*CUFFT_COMPLEX* tmp_display_cpx_(NULL);
@@ -2510,7 +2517,7 @@ void Calc_structure_function(INDEX ifreq,INDEX p,INDEX nimages,int m) {
 
 	//Kernel 1 dim
 	int threads = 32;
-	int blocksx = (s_power_spectra.dim + threads - 1) / threads;
+	int blocksx = (p + threads - 1) / threads;
 	int blocksy;// = (nb_fft + threads - 2) / threads;
    // dim3 THREADS(threads, threads);
    // dim3 BLOCKS(blocksx, blocksy);
@@ -2518,7 +2525,7 @@ void Calc_structure_function(INDEX ifreq,INDEX p,INDEX nimages,int m) {
 
 	//Kernel 2 dim
 	int threads1 = 32;
-	int blocksx1 = (s_power_spectra.dim + threads1 - 1) / threads1;
+	int blocksx1 = (p + threads1 - 1) / threads1;
 	//int blocksx = (fft_size + threads - 1) / threads;
 	//int blocksy1 = (nb_fft + threads1 - 2) / threads1;
 	dim3 THREADS1(threads1);
@@ -2548,7 +2555,7 @@ void Calc_structure_function(INDEX ifreq,INDEX p,INDEX nimages,int m) {
 	
 		time_differences.start();
 
-		fft_diff << <BLOCKS, THREADS >> > (p,z, p, nimages, dev_images_gpu_test, dev_ALLfft_diff); //s_power_spectra.dim
+		fft_diff << <BLOCKS, THREADS >> > (z, p, nimages, dev_images_gpu_test, dev_ALLfft_diff); //s_power_spectra.dim
 
 		cudaDeviceSynchronize();
 
